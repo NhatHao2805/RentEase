@@ -1,0 +1,9 @@
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\bin\Debug\RentEase.exe.config
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\bin\Debug\RentEase.exe
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\bin\Debug\RentEase.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\obj\Debug\RentEase.Properties.Resources.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\obj\Debug\RentEase.exe
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\RentEase\obj\Debug\RentEase.pdb

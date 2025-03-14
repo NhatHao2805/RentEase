@@ -1,0 +1,9 @@
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\obj\Debug\DAL.pdb
