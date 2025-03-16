@@ -4,3 +4,5 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.Assembl
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\bin\Debug\Guna.UI2.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
