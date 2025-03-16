@@ -6,97 +6,130 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Security.Principal;
+using MySql.Data.MySqlClient;
 using DTO;
 namespace DAL
 {
-    public class SqlConnectionData
+    public class MySqlConnectionData
     {
-        //Tạo kết nối với csdl
-        public static string connectString = @"Data Source=HONHATHAO\SQLEXPRESS;Initial Catalog=QuanLyThueNha;Integrated Security=True;Encrypt=False";
-        public static SqlConnection sqlConnection = null;
-        public static SqlConnection Connect()
+        // Chuỗi kết nối
+        public static string connectString = "server=localhost;user=root;pwd=zxcvbnm;database=rentease;port=3306";
+
+        // Phương thức tạo và mở kết nối
+        public static MySqlConnection Connect()
         {
+            MySqlConnection conn = new MySqlConnection(connectString);
             try
             {
-                if(sqlConnection == null)
+                if (conn.State == ConnectionState.Closed)
                 {
-                    sqlConnection = new SqlConnection(connectString);
-                    sqlConnection.Close();
+                    conn.Open();
                 }
-
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.Error.WriteLine(e.ToString());
+                Console.Error.WriteLine("Lỗi khi mở kết nối: " + ex.Message);
             }
-            Console.WriteLine(sqlConnection.State.ToString());
-            return sqlConnection;
+            return conn;
         }
     }
     public class DatabaseAccess
     {
+        // Phương thức kiểm tra đăng nhập
         public static string checkLoginDatabase(Account taikhoan)
         {
-            
             string user = null;
-            SqlConnection conn = SqlConnectionData.Connect();
-            if (conn.State == ConnectionState.Closed)
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
             {
-                conn.Open();
-            }
-            SqlCommand command = new SqlCommand("proc_login", conn);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@user", taikhoan.taikhoan);
-            command.Parameters.AddWithValue("@pass", taikhoan.matkhau);
-            command.Connection = conn;
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
+                try
                 {
-                    user = reader.GetString(0);
+                    using (MySqlCommand command = new MySqlCommand("proc_login", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("p_user", taikhoan.taikhoan);
+                        command.Parameters.AddWithValue("p_pass", taikhoan.matkhau);
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    user = reader.GetString(0); // Lấy giá trị cột đầu tiên (username)
+                                }
+                            }
+                            else
+                            {
+                                return "Tài khoản hoặc mật khẩu không chính xác!";
+                            }
+                        }
+                    }
                 }
-                //conn.Close();
-
-                reader.Close();
+                catch (Exception ex)
+                {
+                    Console.Error.WriteLine("Lỗi khi đăng nhập: " + ex.Message);
+                    return "Đã xảy ra lỗi khi đăng nhập!";
+                }
             }
-            else
-            {
-                conn.Close();
-
-                return "Tài khoản hoặc mật khẩu không chính xác!";
-            }
-            conn.Close();
             return user;
         }
 
+        // Phương thức thêm tài khoản
         public static string addAccountDatabase(Account taikhoan)
         {
             bool check = false;
-
-            using (SqlConnection conn = SqlConnectionData.Connect())
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
             {
-                conn.Open();
-                using (SqlCommand command2 = new SqlCommand("select dbo.check_account(@user)", conn))
+                try
                 {
-                    command2.Parameters.AddWithValue("@user", taikhoan.taikhoan);
-                    object a = command2.ExecuteScalar();
-                    if (a != null)
+                    // Kiểm tra tài khoản đã tồn tại chưa
+                    using (MySqlCommand command2 = new MySqlCommand("SELECT check_account(@p_user, @p_pass)", conn))
                     {
-                        int result = Convert.ToInt32(a);
-                        if(result == 1) check = true;
+                        command2.Parameters.AddWithValue("@p_user", taikhoan.taikhoan);
+                        command2.Parameters.AddWithValue("@p_pass", taikhoan.matkhau);
+                        object result = command2.ExecuteScalar();
+                        if (result != null && Convert.ToInt32(result) == 1)
+                        {
+                            check = true;
+                        }
+                        else
+                        {
+                            if (result != null && Convert.ToInt32(result) == 2)
+                            {
+                                return "Mật khẩu bao gồm tổi thiểu 6 kí tự";
+                            }
+                            else if (result != null && Convert.ToInt32(result) == 3)
+                            {
+                                return "Mật khẩu bao gồm tối đa 20 kí tự";
+                            }
+                            else
+                            {
+                                check = false;
+                            }
+                        }
+                    }
+
+                    // Nếu tài khoản chưa tồn tại, thêm tài khoản mới
+                    if (!check)
+                    {
+                        
+                        using (MySqlCommand command = new MySqlCommand("proc_addAccount", conn))
+                        {
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.AddWithValue("p_user", taikhoan.taikhoan);
+                            command.Parameters.AddWithValue("p_pass", taikhoan.matkhau);
+                            command.ExecuteNonQuery();
+                        }
                     }
                 }
-
-                using (SqlCommand command = new SqlCommand("proc_addAccount", conn))
+                catch (Exception ex)
                 {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@user", taikhoan.taikhoan);
-                    command.Parameters.AddWithValue("@pass", taikhoan.matkhau);
-                    command.ExecuteNonQuery();
+                    Console.Error.WriteLine("Lỗi khi đăng ký: " + ex.Message);
+                    return "Đã xảy ra lỗi khi đăng ký!";
                 }
-               
             }
+
+            // Trả về thông báo kết quả
             if (check)
             {
                 return "Tài khoản đã tồn tại!";
@@ -108,4 +141,3 @@ namespace DAL
         }
     }
 }
-
