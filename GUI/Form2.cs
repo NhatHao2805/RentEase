@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -217,6 +219,31 @@ namespace GUI
         {
             //changePanel(panel_quanlyphong);
 
+        }
+
+        // Them Hop Dong
+        private void button16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // DataGridView Click
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private ContractBLL contractBLL = new ContractBLL();
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            List<ContractDTO> contractList = contractBLL.GetContractList();
+            dataGridView2.DataSource = contractList;
         }
     }
 }

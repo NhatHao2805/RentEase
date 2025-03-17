@@ -10,12 +10,12 @@ namespace DAL
     {
         public string CheckLogic(Account taikhoan)
         {
-            string info = checkLoginDatabase(taikhoan);
+            string info = CheckLoginDatabase(taikhoan);
             return info;
         }
         public string addAccount(Account taikhoan)
         {
-            return addAccountDatabase(taikhoan);
+            return AddAccountDatabase(taikhoan);
         }
 
 

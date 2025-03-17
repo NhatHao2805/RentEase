@@ -451,7 +451,7 @@
             this.panel_quanlyhopdong.Controls.Add(this.groupBox6);
             this.panel_quanlyhopdong.Location = new System.Drawing.Point(309, 9);
             this.panel_quanlyhopdong.Name = "panel_quanlyhopdong";
-            this.panel_quanlyhopdong.Size = new System.Drawing.Size(46, 15);
+            this.panel_quanlyhopdong.Size = new System.Drawing.Size(666, 344);
             this.panel_quanlyhopdong.TabIndex = 15;
             // 
             // groupBox7
@@ -488,6 +488,7 @@
             this.button16.Text = "Thêm Hợp Đồng";
             this.button16.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button15
             // 
@@ -628,6 +629,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(969, 387);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // panel_quanlyphong
             // 
