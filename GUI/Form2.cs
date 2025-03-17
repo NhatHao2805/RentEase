@@ -265,7 +265,7 @@ namespace GUI
         // sap het hạn hop dong
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3.Checked)
+            if (checkBox4.Checked)
             {
                 // Nếu checkbox được tick → Hiển thị dữ liệu A
                 LoadData("Expire Soon");
@@ -279,7 +279,7 @@ namespace GUI
         // con hieu luc
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3.Checked)
+            if (checkBox1.Checked)
             {
                 // Nếu checkbox được tick → Hiển thị dữ liệu A
                 LoadData("Active");
@@ -294,7 +294,7 @@ namespace GUI
         // Dang bao ket thuc
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox3.Checked)
+            if (checkBox2.Checked)
             {
                 // Nếu checkbox được tick → Hiển thị dữ liệu A
                 LoadData("Ending");

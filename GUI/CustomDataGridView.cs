@@ -43,6 +43,10 @@ public class CustomDataGridView : DataGridView
         this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         this.ScrollBars = ScrollBars.Both;
         this.AllowUserToResizeColumns = true;  // Cho phép kéo thả thay đổi kích thước cột
+        this.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        this.ReadOnly = true;
+
+
 
     }
 

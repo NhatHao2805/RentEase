@@ -46,11 +46,11 @@ namespace DAL
             }
             else if (required == "Ending")
             {
-                query = "SELECT * FROM CONTRACT WHERE STATUS = 'Đã chấm dứt'";
+                query = "SELECT * FROM CONTRACT WHERE STATUS = 'Đang kết thúc'";
             }
-            else if (required == "NonAutoRenew")
+            else if (required == "Expire Soon")
             {
-                query = "SELECT * FROM CONTRACT WHERE AUTO_RENEW = 0";
+                query = "SELECT * FROM CONTRACT WHERE STATUS = 'Sắp hết hạn'";
             }
             else
             {
