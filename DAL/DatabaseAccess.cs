@@ -44,6 +44,18 @@ namespace DAL
             {
                 query = "SELECT * FROM CONTRACT WHERE STATUS = 'Đã chấm dứt'";
             }
+            else if (required == "Ending")
+            {
+                query = "SELECT * FROM CONTRACT WHERE STATUS = 'Đã chấm dứt'";
+            }
+            else if (required == "NonAutoRenew")
+            {
+                query = "SELECT * FROM CONTRACT WHERE AUTO_RENEW = 0";
+            }
+            else
+            {
+
+            }
                 using (MySqlConnection conn = Connect())
                 {
                     if (conn == null)

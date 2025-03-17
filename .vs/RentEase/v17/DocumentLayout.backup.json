@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\RentEaseTDT\\RentEase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease\\gui\\customdatagridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\customdatagridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\customdatagridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -117,7 +117,7 @@
               "RelativeDocumentMoniker": "GUI\\Form2.cs",
               "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.cs",
               "RelativeToolTip": "GUI\\Form2.cs",
-              "ViewState": "AgIAAPYAAAAAAAAAAAAAwPsAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAPYAAAAAAAAAAAAAwAMBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T07:45:18.524Z",
               "EditorCaption": ""
@@ -132,8 +132,7 @@
               "RelativeToolTip": "BLL\\ContractBLL.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAawBIAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T05:11:02.784Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T05:11:02.784Z"
             },
             {
               "$type": "Document",
@@ -145,8 +144,7 @@
               "RelativeToolTip": "DAL\\DatabaseAccess.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAuwCcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T16:02:31.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T16:02:31.204Z"
             },
             {
               "$type": "Document",
@@ -158,8 +156,7 @@
               "RelativeToolTip": "GUI\\CustomDataGridView.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAAwCYAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T07:09:17.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T07:09:17.048Z"
             },
             {
               "$type": "Document",
@@ -182,8 +179,7 @@
               "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\CustomDataGridView.cs [Design]",
               "RelativeToolTip": "GUI\\CustomDataGridView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T07:14:09.117Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-17T07:14:09.117Z"
             },
             {
               "$type": "Document",

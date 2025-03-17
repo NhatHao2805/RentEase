@@ -161,10 +161,7 @@ namespace GUI
 
         }
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
         public void setPosition_hoaDon_thuChi(Panel p1, Panel p2)
@@ -264,6 +261,49 @@ namespace GUI
                 LoadData("All");
             }
             
+        }
+        // sap het hạn hop dong
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                // Nếu checkbox được tick → Hiển thị dữ liệu A
+                LoadData("Expire Soon");
+            }
+            else
+            {
+                // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
+                LoadData("All");
+            }
+        }
+        // con hieu luc
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                // Nếu checkbox được tick → Hiển thị dữ liệu A
+                LoadData("Active");
+            }
+            else
+            {
+                // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
+                LoadData("All");
+            }
+        }
+
+        // Dang bao ket thuc
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                // Nếu checkbox được tick → Hiển thị dữ liệu A
+                LoadData("Ending");
+            }
+            else
+            {
+                // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
+                LoadData("All");
+            }
         }
     }
 }
