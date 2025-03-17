@@ -199,13 +199,17 @@ namespace GUI
         private void btn_hopdong_Click(object sender, EventArgs e)
         {
             changePanel(panel_quanlyhopdong);
-            LoadData();
-
+            LoadData("All");
         }
-        private void LoadData()
+        private void LoadData(String required)
         {
-            List<ContractDTO> contractList = contractBLL.GetContractList();
+            List<ContractDTO> contractList = contractBLL.GetContractList(required);
             dataGridView2.DataSource = contractList;
+        }
+        // QuanlIkHACHtHUE
+        private void button19_Click(object sender, EventArgs e)
+        {
+           
         }
         private void btn_taichinh_Click(object sender, EventArgs e)
         {
@@ -245,7 +249,21 @@ namespace GUI
 
         private ContractBLL contractBLL = new ContractBLL();
 
+        // Filter đã hết hạn
 
-
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                // Nếu checkbox được tick → Hiển thị dữ liệu A
+                LoadData("Inactive");
+            }
+            else
+            {
+                // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
+                LoadData("All");
+            }
+            
+        }
     }
 }

@@ -14,9 +14,9 @@ namespace BLL
     {
         private MySqlConnectionData contractDAL = new MySqlConnectionData();
 
-        public List<ContractDTO> GetContractList()
+        public List<ContractDTO> GetContractList(String required)
         {
-            return contractDAL.GetAllContracts();
+            return contractDAL.GetAllContracts(required);
         }
     }
 

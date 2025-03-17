@@ -28,49 +28,60 @@ namespace DAL
         }
 
 
-        public List<ContractDTO> GetAllContracts()
+        public List<ContractDTO> GetAllContracts(String required)
         {
             List<ContractDTO> contractList = new List<ContractDTO>();
             string query = "SELECT * FROM CONTRACT";
-
-            using (MySqlConnection conn = Connect())
+            if (required == "All")
             {
-                if (conn == null)
+                query = "SELECT * FROM CONTRACT"; ;
+            }
+            else if (required == "Active")
+            {
+                query = "SELECT * FROM CONTRACT WHERE STATUS = 'Đang hiệu lực'";
+            }
+            else if (required == "Inactive")
+            {
+                query = "SELECT * FROM CONTRACT WHERE STATUS = 'Đã chấm dứt'";
+            }
+                using (MySqlConnection conn = Connect())
                 {
-                    throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
-                }
-
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                {
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    if (conn == null)
                     {
-                        while (reader.Read())
+                        throw new Exception("Không thể kết nối đến cơ sở dữ liệu.");
+                    }
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            ContractDTO contract = new ContractDTO(
-                                reader.GetString("CONTRACTID"),
-                                reader.GetString("HOUSEID"),
-                                reader.GetString("TENANTID"),
-                                reader.GetDateTime("CREATEDATE"),
-                                reader.GetDateTime("STARTDATE"),
-                                reader.GetDateTime("ENDDATE"),
-                                reader.GetFloat("MONTHLYRENT"),
-                                reader.GetString("PAYMENTSCHEDULE"),
-                                reader.GetFloat("DEPOSIT"),
-                                reader.GetString("STATUS"),
-                                reader.GetString("NOTES"),
-                                reader.GetBoolean("AUTO_RENEW"),
-                                reader.IsDBNull(reader.GetOrdinal("TERMINATION_REASON")) ? "" : reader.GetString("TERMINATION_REASON"),
-                                reader.IsDBNull(reader.GetOrdinal("CONTRACT_FILE_PATH")) ? "" : reader.GetString("CONTRACT_FILE_PATH")
-                            );
+                            while (reader.Read())
+                            {
+                                ContractDTO contract = new ContractDTO(
+                                    reader.GetString("CONTRACTID"),
+                                    reader.GetString("HOUSEID"),
+                                    reader.GetString("TENANTID"),
+                                    reader.GetDateTime("CREATEDATE"),
+                                    reader.GetDateTime("STARTDATE"),
+                                    reader.GetDateTime("ENDDATE"),
+                                    reader.GetFloat("MONTHLYRENT"),
+                                    reader.GetString("PAYMENTSCHEDULE"),
+                                    reader.GetFloat("DEPOSIT"),
+                                    reader.GetString("STATUS"),
+                                    reader.GetString("NOTES"),
+                                    reader.GetBoolean("AUTO_RENEW"),
+                                    reader.IsDBNull(reader.GetOrdinal("TERMINATION_REASON")) ? "" : reader.GetString("TERMINATION_REASON"),
+                                    reader.IsDBNull(reader.GetOrdinal("CONTRACT_FILE_PATH")) ? "" : reader.GetString("CONTRACT_FILE_PATH")
+                                );
 
-                            // In ra console để kiểm tra
-                            Console.WriteLine($"Contract ID: {contract.ContractID}, House ID: {contract.HouseID}, Tenant ID: {contract.TenantID}");
+                                // In ra console để kiểm tra
+                                Console.WriteLine($"Contract ID: {contract.ContractID}, House ID: {contract.HouseID}, Tenant ID: {contract.TenantID}");
 
-                            contractList.Add(contract);
+                                contractList.Add(contract);
+                            }
                         }
                     }
                 }
-            }
             return contractList;
         }
 
