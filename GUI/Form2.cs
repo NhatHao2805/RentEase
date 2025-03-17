@@ -55,6 +55,10 @@ namespace GUI
             changePanel(panel_quanlyphong);
 
         }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void loadVariable()
         {   
@@ -191,12 +195,18 @@ namespace GUI
             changePanel(panel_quanlyphong);
         }
 
+        // QL HOP DONG
         private void btn_hopdong_Click(object sender, EventArgs e)
         {
             changePanel(panel_quanlyhopdong);
+            LoadData();
 
         }
-
+        private void LoadData()
+        {
+            List<ContractDTO> contractList = contractBLL.GetContractList();
+            dataGridView2.DataSource = contractList;
+        }
         private void btn_taichinh_Click(object sender, EventArgs e)
         {
             changePanel(panel_quanlytaichinh);
@@ -235,15 +245,7 @@ namespace GUI
 
         private ContractBLL contractBLL = new ContractBLL();
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
 
-        private void LoadData()
-        {
-            List<ContractDTO> contractList = contractBLL.GetContractList();
-            dataGridView2.DataSource = contractList;
-        }
+
     }
 }
