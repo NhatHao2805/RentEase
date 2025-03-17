@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "D:\\RentEaseTDT\\RentEase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:dto\\contractdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|d:\\renteasetdt\\rentease\\dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\RentEaseTDT\\RentEase\\dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -98,8 +98,7 @@
               "RelativeToolTip": "DAL\\DatabaseAccess.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAA+wEUAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T16:02:31.204Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T16:02:31.204Z"
             },
             {
               "$type": "Document",
@@ -111,8 +110,7 @@
               "RelativeToolTip": "DTO\\ContractDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T05:02:31.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-17T05:02:31.049Z"
             },
             {
               "$type": "Document",
@@ -137,8 +135,7 @@
               "RelativeToolTip": "GUI\\Program.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T07:28:34.399Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T07:28:34.399Z"
             },
             {
               "$type": "Document",
@@ -148,7 +145,7 @@
               "RelativeDocumentMoniker": "GUI\\Form2.cs",
               "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.cs",
               "RelativeToolTip": "GUI\\Form2.cs",
-              "ViewState": "AgIAAMQAAAAAAAAAAAAqwNAAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAqwNQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T07:45:18.524Z",
               "EditorCaption": ""
