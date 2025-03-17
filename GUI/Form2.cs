@@ -235,7 +235,13 @@ namespace GUI
         // Them Hop Dong
         private void button16_Click(object sender, EventArgs e)
         {
-
+            using (ContractForm contractForm = new ContractForm())
+            {
+                if (contractForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Contract has been saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         // DataGridView Click

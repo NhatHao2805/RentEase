@@ -9,18 +9,11 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\DTO.pdb
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\obj\Debug\BLL.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\obj\Debug\BLL.pdb
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\BLL.dll.config
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\BLL.dll
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\BLL.pdb
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\DAL.dll
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\DTO.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\DAL.pdb
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\DTO.pdb
-D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
-D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.csproj.Up2Date
-D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.dll
-D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.pdb
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\BLL.dll.config
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
@@ -31,6 +24,17 @@ D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Memory.dll
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Numerics.Vectors.dll
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\MySql.Data.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\Google.Protobuf.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\ZstdSharp.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\BouncyCastle.Cryptography.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.IO.Pipelines.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\K4os.Hash.xxHash.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\DAL.dll.config
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\DTO.pdb
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\DTO.dll.config
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
@@ -42,15 +46,6 @@ D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Memory.xml
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Numerics.Vectors.xml
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\MySql.Data.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\Google.Protobuf.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\ZstdSharp.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.Streams.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\BouncyCastle.Cryptography.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.IO.Pipelines.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\K4os.Hash.xxHash.dll
-D:\RentEaseTDT\RentEase\BLL\bin\Debug\DAL.dll.config
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\MySql.Data.xml
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\Google.Protobuf.pdb
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\Google.Protobuf.xml
@@ -59,3 +54,8 @@ D:\RentEaseTDT\RentEase\BLL\bin\Debug\BouncyCastle.Cryptography.xml
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.xml
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.IO.Pipelines.xml
 D:\RentEaseTDT\RentEase\BLL\bin\Debug\K4os.Hash.xxHash.xml
+D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.dll
+D:\RentEaseTDT\RentEase\BLL\obj\Debug\BLL.pdb
