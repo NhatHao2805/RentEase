@@ -206,7 +206,10 @@ namespace GUI
      
         private void button19_Click(object sender, EventArgs e)
         {
-     
+            checkBox1.Visible = false;
+            checkBox2.Visible = false;
+            checkBox3.Visible = false;
+            checkBox4.Visible = false;
             ThongtinkhachthueBLL tenantBLL = new ThongtinkhachthueBLL();
             List<ThongtinkhachthueDTO> tenants = tenantBLL.GetAllTenants();
 
