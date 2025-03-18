@@ -10,5 +10,10 @@ namespace BLL
         {
             return DatabaseAccess.GetAllTenants();
         }
+
+        public bool SaveTenant(ThongtinkhachthueDTO tenant)
+        {
+            return DatabaseAccess.SaveTenant(tenant);
+        }
     }
 }

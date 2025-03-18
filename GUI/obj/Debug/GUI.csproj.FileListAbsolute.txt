@@ -134,3 +134,4 @@ D:\RentEase\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\RentEase\GUI\obj\Debug\GUI.exe
 D:\RentEase\GUI\obj\Debug\GUI.pdb
+D:\RentEase\GUI\obj\Debug\GUI.ContractForm.resources

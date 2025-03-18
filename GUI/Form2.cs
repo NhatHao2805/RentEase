@@ -206,43 +206,54 @@ namespace GUI
      
         private void button19_Click(object sender, EventArgs e)
         {
-            checkBox1.Visible = false;
-            checkBox2.Visible = false;
-            checkBox3.Visible = false;
-            checkBox4.Visible = false;
-            ThongtinkhachthueBLL tenantBLL = new ThongtinkhachthueBLL();
-            List<ThongtinkhachthueDTO> tenants = tenantBLL.GetAllTenants();
-
-        
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("Mã Khách Thuê", typeof(string));
-            dt.Columns.Add("Tên", typeof(string));
-            dt.Columns.Add("Họ", typeof(string));
-            dt.Columns.Add("Ngày Sinh", typeof(string));
-            dt.Columns.Add("Giới Tính", typeof(string));
-            dt.Columns.Add("Số Điện Thoại", typeof(string));
-            dt.Columns.Add("Email", typeof(string));
-
- 
-            foreach (ThongtinkhachthueDTO tenant in tenants)
+            try
             {
-                dt.Rows.Add(
-                    tenant.TenantID,
-                    tenant.FirstName,
-                    tenant.LastName,
-                    tenant.Birthday.ToShortDateString(),
-                    tenant.Gender,
-                    tenant.PhoneNumber,
-                    tenant.Email
-                );
+                // Ẩn các checkbox
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+
+                // Lấy dữ liệu khách thuê
+                ThongtinkhachthueBLL tenantBLL = new ThongtinkhachthueBLL();
+                List<ThongtinkhachthueDTO> tenants = tenantBLL.GetAllTenants();
+
+                // Tạo DataTable mới
+                DataTable dt = new DataTable();
+
+                // Thêm các cột vào DataTable
+                dt.Columns.Add("Mã Khách Thuê", typeof(string));
+                dt.Columns.Add("Tên", typeof(string));
+                dt.Columns.Add("Họ", typeof(string));
+                dt.Columns.Add("Ngày Sinh", typeof(string));
+                dt.Columns.Add("Giới Tính", typeof(string));
+                dt.Columns.Add("Số Điện Thoại", typeof(string));
+                dt.Columns.Add("Email", typeof(string));
+
+                // Thêm dữ liệu vào DataTable
+                foreach (ThongtinkhachthueDTO tenant in tenants)
+                {
+                    dt.Rows.Add(
+                        tenant.TenantID,
+                        tenant.FirstName,
+                        tenant.LastName,
+                        tenant.Birthday.ToShortDateString(),
+                        tenant.Gender,
+                        tenant.PhoneNumber,
+                        tenant.Email
+                    );
+                }
+
+                // Gán DataTable cho DataGridView2
+                dataGridView2.DataSource = dt;
+
+                // Điều chỉnh độ rộng cột
+                dataGridView2.AutoResizeColumns();
             }
-
-            // 5. Gán DataTable cho DataGridView2
-            dataGridView2.DataSource = dt;
-
-            // 6. Tự động điều chỉnh độ rộng cột
-            dataGridView2.AutoResizeColumns();
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách khách thuê: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_taichinh_Click(object sender, EventArgs e)
@@ -276,7 +287,9 @@ namespace GUI
             {
                 if (contractForm.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Contract has been saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Hợp đồng đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Tự động refresh danh sách khách thuê
+                    button19_Click(sender, e);
                 }
             }
         }

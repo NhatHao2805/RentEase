@@ -18,6 +18,25 @@ namespace BLL
         {
             return contractDAL.GetAllContracts(required);
         }
+
+        //public List<ContractDTO> GetAllContracts(string status)
+        //{
+        //    return DatabaseAccess.GetAllContracts(status);
+        //}
+
+        public bool SaveContract(ContractDTO contract)
+        {
+            // Validate contract data
+            if (string.IsNullOrEmpty(contract.ContractID) ||
+                string.IsNullOrEmpty(contract.HouseID) ||
+                string.IsNullOrEmpty(contract.TenantID))
+            {
+                return false;
+            }
+
+            // Save to database
+            return DatabaseAccess.SaveContract(contract);
+        }
     }
 
 }

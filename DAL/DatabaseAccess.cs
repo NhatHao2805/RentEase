@@ -201,6 +201,86 @@ namespace DAL
             }
             return tenantList;
         }
+
+        public static bool SaveTenant(ThongtinkhachthueDTO tenant)
+        {
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return false;
+
+                string query = @"INSERT INTO TENANT 
+                    (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL, PROFILE_PICTURE) 
+                    VALUES (@TenantId, @FirstName, @LastName, @Birthday, @Gender, @PhoneNumber, @Email, @ProfilePicture)";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenantId", tenant.TenantID);
+                    cmd.Parameters.AddWithValue("@FirstName", tenant.FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", tenant.LastName);
+                    cmd.Parameters.AddWithValue("@Birthday", tenant.Birthday);
+                    cmd.Parameters.AddWithValue("@Gender", tenant.Gender);
+                    cmd.Parameters.AddWithValue("@PhoneNumber", tenant.PhoneNumber);
+                    cmd.Parameters.AddWithValue("@Email", tenant.Email);
+                    cmd.Parameters.AddWithValue("@ProfilePicture", tenant.ProfilePicture ?? (object)DBNull.Value);
+
+                    try
+                    {
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Error.WriteLine($"Error saving tenant: {ex.Message}");
+                        return false;
+                    }
+                }
+            }
+        }
+
+        public static bool SaveContract(ContractDTO contract)
+        {
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return false;
+
+                string query = @"INSERT INTO CONTRACT 
+                    (CONTRACTID, HOUSEID, TENANTID, CREATEDATE, STARTDATE, ENDDATE, 
+                    MONTHLYRENT, PAYMENTSCHEDULE, DEPOSIT, STATUS, NOTES, AUTO_RENEW, 
+                    TERMINATION_REASON, CONTRACT_FILE_PATH) 
+                    VALUES 
+                    (@ContractId, @HouseId, @TenantId, @CreateDate, @StartDate, @EndDate, 
+                    @MonthlyRent, @PaymentSchedule, @Deposit, @Status, @Notes, @AutoRenew, 
+                    @TerminationReason, @ContractFilePath)";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@ContractId", contract.ContractID);
+                        cmd.Parameters.AddWithValue("@HouseId", contract.HouseID);
+                        cmd.Parameters.AddWithValue("@TenantId", contract.TenantID);
+                        cmd.Parameters.AddWithValue("@CreateDate", contract.CreateDate);
+                        cmd.Parameters.AddWithValue("@StartDate", contract.StartDate);
+                        cmd.Parameters.AddWithValue("@EndDate", contract.EndDate);
+                        cmd.Parameters.AddWithValue("@MonthlyRent", contract.MonthlyRent);
+                        cmd.Parameters.AddWithValue("@PaymentSchedule", contract.PaymentSchedule);
+                        cmd.Parameters.AddWithValue("@Deposit", contract.Deposit);
+                        cmd.Parameters.AddWithValue("@Status", contract.Status);
+                        cmd.Parameters.AddWithValue("@Notes", contract.Notes ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@AutoRenew", contract.AutoRenew);
+                        cmd.Parameters.AddWithValue("@TerminationReason", contract.TerminationReason ?? (object)DBNull.Value);
+                        cmd.Parameters.AddWithValue("@ContractFilePath", contract.ContractFilePath ?? (object)DBNull.Value);
+
+                        int result = cmd.ExecuteNonQuery();
+                        return result > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Error.WriteLine($"Error saving contract: {ex.Message}");
+                        return false;
+                    }
+                }
+            }
+        }
     }
 
 }

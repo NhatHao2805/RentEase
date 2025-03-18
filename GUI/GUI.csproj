@@ -113,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ContractForm.resx">
+      <DependentUpon>ContractForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateContract.resx">
       <DependentUpon>CreateContract.cs</DependentUpon>
     </EmbeddedResource>
