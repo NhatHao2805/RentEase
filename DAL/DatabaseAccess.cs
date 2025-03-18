@@ -98,6 +98,9 @@ namespace DAL
         }
 
 
+     
+
+
 
     }
 
@@ -166,6 +169,37 @@ namespace DAL
                 }
             }
             return "Tài khoản đã tồn tại!";
+        }
+        public static List<ThongtinkhachthueDTO> GetAllTenants()
+        {
+            List<ThongtinkhachthueDTO> tenantList = new List<ThongtinkhachthueDTO>();
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return tenantList;
+
+                string query = "SELECT * FROM TENANT";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ThongtinkhachthueDTO tenant = new ThongtinkhachthueDTO(
+                                reader.GetString("TENANTID"),
+                                reader.GetString("FIRSTNAME"),
+                                reader.GetString("LASTNAME"),
+                                reader.GetDateTime("BIRTHDAY"),
+                                reader.GetString("GENDER"),
+                                reader.GetString("PHONENUMBER"),
+                                reader.GetString("EMAIL"),
+                                reader.IsDBNull(reader.GetOrdinal("PROFILE_PICTURE")) ? "" : reader.GetString("PROFILE_PICTURE")
+                            );
+                            tenantList.Add(tenant);
+                        }
+                    }
+                }
+            }
+            return tenantList;
         }
     }
 

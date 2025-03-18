@@ -192,7 +192,7 @@ namespace GUI
             changePanel(panel_quanlyphong);
         }
 
-        // QL HOP DONG
+
         private void btn_hopdong_Click(object sender, EventArgs e)
         {
             changePanel(panel_quanlyhopdong);
@@ -203,11 +203,45 @@ namespace GUI
             List<ContractDTO> contractList = contractBLL.GetContractList(required);
             dataGridView2.DataSource = contractList;
         }
-        // QuanlIkHACHtHUE
+     
         private void button19_Click(object sender, EventArgs e)
         {
-           
+     
+            ThongtinkhachthueBLL tenantBLL = new ThongtinkhachthueBLL();
+            List<ThongtinkhachthueDTO> tenants = tenantBLL.GetAllTenants();
+
+        
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Mã Khách Thuê", typeof(string));
+            dt.Columns.Add("Tên", typeof(string));
+            dt.Columns.Add("Họ", typeof(string));
+            dt.Columns.Add("Ngày Sinh", typeof(string));
+            dt.Columns.Add("Giới Tính", typeof(string));
+            dt.Columns.Add("Số Điện Thoại", typeof(string));
+            dt.Columns.Add("Email", typeof(string));
+
+ 
+            foreach (ThongtinkhachthueDTO tenant in tenants)
+            {
+                dt.Rows.Add(
+                    tenant.TenantID,
+                    tenant.FirstName,
+                    tenant.LastName,
+                    tenant.Birthday.ToShortDateString(),
+                    tenant.Gender,
+                    tenant.PhoneNumber,
+                    tenant.Email
+                );
+            }
+
+            // 5. Gán DataTable cho DataGridView2
+            dataGridView2.DataSource = dt;
+
+            // 6. Tự động điều chỉnh độ rộng cột
+            dataGridView2.AutoResizeColumns();
         }
+
         private void btn_taichinh_Click(object sender, EventArgs e)
         {
             changePanel(panel_quanlytaichinh);
@@ -310,6 +344,11 @@ namespace GUI
                 // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
                 LoadData("All");
             }
+        }
+
+        private void quanlynha_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
