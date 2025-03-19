@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 using DTO;
 namespace DAL
 {
-    public class AccountAccess:DatabaseAccess
+    public class AccountAccess : DatabaseAccess
     {
-        public string CheckLogic(Account taikhoan)
+        public string CheckLogic(User taikhoan)
         {
             string info = checkLoginDatabase(taikhoan);
             return info;
         }
-        public string addAccount(Account taikhoan)
-        {
-            return addAccountDatabase(taikhoan);
-        }
+        //public string addAccount(User taikhoan)
+        //{
+        //    return addAccountDatabase(taikhoan);
+        //}
 
 
     }

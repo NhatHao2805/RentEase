@@ -10,15 +10,15 @@ namespace BLL
     public class AccountBLL
     {
         AccountAccess tkAccess = new AccountAccess();
-        public string CheckLogic(Account taikhoan)
+        public string CheckLogic(User taikhoan)
         {
             // Kiểm tra nghiệp vụ
-            if (taikhoan.taikhoan == "")
+            if (taikhoan.username == "")
             {
                 return "requeid_taikhoan";
             }
 
-            if (taikhoan.matkhau == "")
+            if (taikhoan.password == "")
             {
                 return "requeid_password";
             }
@@ -26,9 +26,9 @@ namespace BLL
             string info = tkAccess.CheckLogic(taikhoan);
             return info;
         }
-        public string addAccountBLL(Account taikhoan)
-        {
-           return tkAccess.addAccount(taikhoan);
-        }
+        //public string addAccountBLL(User taikhoan)
+        //{
+        //    return tkAccess.addAccount(taikhoan);
+        //}
     }
 }

@@ -6,138 +6,174 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Security.Principal;
-using MySql.Data.MySqlClient;
 using DTO;
+using MySql.Data.MySqlClient;
 namespace DAL
 {
-    public class MySqlConnectionData
+    public class SqlDataConnection
     {
-        // Chuỗi kết nối
-        public static string connectString = "server=localhost;user=root;pwd=zxcvbnm;database=rentease;port=3306";
+        //Tạo kết nối với csdl
+        private static MySqlConnection conn = null;
 
-        // Phương thức tạo và mở kết nối
+        public static string connectString = @"Server=localhost;Database=rentease;Uid=root;Pwd=zxcvbnm;Pooling=false;Character Set=utf8";
+
         public static MySqlConnection Connect()
         {
-            MySqlConnection conn = new MySqlConnection(connectString);
             try
             {
-                if (conn.State == ConnectionState.Closed)
-                {
-                    conn.Open();
-                }
+                conn = new MySqlConnection(connectString);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.Error.WriteLine("Lỗi khi mở kết nối: " + ex.Message);
+                Console.Error.WriteLine(e.ToString());
             }
             return conn;
+
         }
     }
     public class DatabaseAccess
     {
-        // Phương thức kiểm tra đăng nhập
-        public static string checkLoginDatabase(Account taikhoan)
+        public static string checkLoginDatabase(User taikhoan)
         {
+            string query = "proc_login";
             string user = null;
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            MySqlConnection conn = SqlDataConnection.Connect();
+            if (conn.State == ConnectionState.Closed)
             {
-                try
-                {
-                    using (MySqlCommand command = new MySqlCommand("proc_login", conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("p_user", taikhoan.taikhoan);
-                        command.Parameters.AddWithValue("p_pass", taikhoan.matkhau);
-
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.HasRows)
-                            {
-                                while (reader.Read())
-                                {
-                                    user = reader.GetString(0); // Lấy giá trị cột đầu tiên (username)
-                                }
-                            }
-                            else
-                            {
-                                return "Tài khoản hoặc mật khẩu không chính xác!";
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.Error.WriteLine("Lỗi khi đăng nhập: " + ex.Message);
-                    return "Đã xảy ra lỗi khi đăng nhập!";
-                }
+                conn.Open();
             }
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("username", taikhoan.username);
+            cmd.Parameters.AddWithValue("password", taikhoan.password);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    user = reader.GetString(0);
+                }
+                reader.Close();
+            }
+            else
+            {
+                user = "Tài khoản hoặc mật khẩu không chính xác!";
+            }
+            conn.Close();
             return user;
         }
 
-        // Phương thức thêm tài khoản
-        public static string addAccountDatabase(Account taikhoan)
+        //public static string addAccountDatabase(User taikhoan)
+        //{
+        //    //bool check = false;
+
+        //    //using (SqlConnection conn = SqlConnectionData.Connect())
+        //    //{
+        //    //    conn.Open();
+        //    //    using (SqlCommand command2 = new SqlCommand("select dbo.check_account(@user)", conn))
+        //    //    {
+        //    //        command2.Parameters.AddWithValue("@user", taikhoan.taikhoan);
+        //    //        object a = command2.ExecuteScalar();
+        //    //        if (a != null)
+        //    //        {
+        //    //            int result = Convert.ToInt32(a);
+        //    //            if(result == 1) check = true;
+        //    //        }
+        //    //    }
+
+        //    //    using (SqlCommand command = new SqlCommand("proc_addAccount", conn))
+        //    //    {
+        //    //        command.CommandType = CommandType.StoredProcedure;
+        //    //        command.Parameters.AddWithValue("@user", taikhoan.taikhoan);
+        //    //        command.Parameters.AddWithValue("@pass", taikhoan.matkhau);
+        //    //        command.ExecuteNonQuery();
+        //    //    }
+
+        //    //}
+        //    //if (check)
+        //    //{
+        //    //    return "Tài khoản đã tồn tại!";
+        //    //}
+        //    //else
+        //    //{
+        //    //    return "Đăng ký thành công!";
+        //    //}
+        //}
+
+        public static string connectString = @"Server=localhost;Database=rentease;Uid=root;Pwd=zxcvbnm;Pooling=false;Character Set=utf8";
+        public DataTable LoadHouse()
         {
-            bool check = false;
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            DataTable dt = new DataTable();
+            using (MySqlConnection connection = new MySqlConnection(connectString))
+            {
+                connection.Open();
+                using (MySqlDataAdapter adt = new MySqlDataAdapter("SELECT * FROM HOUSE", connection))
+                {
+                    adt.Fill(dt);
+                }
+                connection.Close();
+            }
+            return dt;
+        }
+
+        public static string addHouseDatabase(House house)
+        {
+            bool houseExists = false;
+            using (MySqlConnection conn = SqlDataConnection.Connect())
             {
                 try
                 {
-                    // Kiểm tra tài khoản đã tồn tại chưa
-                    using (MySqlCommand command2 = new MySqlCommand("SELECT check_account(@p_user, @p_pass)", conn))
+                    conn.Open();
+
+                    // Kiểm tra nhà đã tồn tại chưa
+                    using (MySqlCommand command2 = new MySqlCommand("SELECT check_house(@new_houseid)", conn))
                     {
-                        command2.Parameters.AddWithValue("@p_user", taikhoan.taikhoan);
-                        command2.Parameters.AddWithValue("@p_pass", taikhoan.matkhau);
+                        command2.Parameters.AddWithValue("@new_houseid", house.houseID);
                         object result = command2.ExecuteScalar();
-                        if (result != null && Convert.ToInt32(result) == 1)
+                        if (result != null && Convert.ToInt32(result) == 0)
                         {
-                            check = true;
-                        }
-                        else
-                        {
-                            if (result != null && Convert.ToInt32(result) == 2)
-                            {
-                                return "Mật khẩu bao gồm tổi thiểu 6 kí tự";
-                            }
-                            else if (result != null && Convert.ToInt32(result) == 3)
-                            {
-                                return "Mật khẩu bao gồm tối đa 20 kí tự";
-                            }
-                            else
-                            {
-                                check = false;
-                            }
+                            houseExists = true;
                         }
                     }
 
-                    // Nếu tài khoản chưa tồn tại, thêm tài khoản mới
-                    if (!check)
+                    // Nếu nhà chưa tồn tại, thêm nhà mới
+                    if (!houseExists)
                     {
-                        
-                        using (MySqlCommand command = new MySqlCommand("proc_addAccount", conn))
+                        using (MySqlCommand command = new MySqlCommand("proc_addHouse", conn))
                         {
                             command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.AddWithValue("p_user", taikhoan.taikhoan);
-                            command.Parameters.AddWithValue("p_pass", taikhoan.matkhau);
+                            command.Parameters.AddWithValue("new_houseid", house.houseID);
+                            command.Parameters.AddWithValue("new_address", house.address);
+                            command.Parameters.AddWithValue("new_type", house.type);
+                            command.Parameters.AddWithValue("new_convenient", house.convenient);
+                            command.Parameters.AddWithValue("new_area", house.area);
+                            command.Parameters.AddWithValue("new_price", house.price);
+                            command.Parameters.AddWithValue("new_status", house.status);
+                            command.Parameters.AddWithValue("new_last_maintenance_date", house.lastMaintenanceDate);
                             command.ExecuteNonQuery();
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.Error.WriteLine("Lỗi khi đăng ký: " + ex.Message);
-                    return "Đã xảy ra lỗi khi đăng ký!";
+                    Console.Error.WriteLine("Lỗi khi thêm: " + ex.Message);
+                    Console.Error.WriteLine("Stack Trace: " + ex.StackTrace);
+                    return "Đã xảy ra lỗi khi thêm!";
                 }
             }
 
             // Trả về thông báo kết quả
-            if (check)
+            if (houseExists)
             {
-                return "Tài khoản đã tồn tại!";
+                return "Nhà đã tồn tại!";
             }
             else
             {
-                return "Đăng ký thành công!";
+                return "Thêm thành công!";
             }
         }
     }
 }
+

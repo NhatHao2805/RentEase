@@ -4,9 +4,13 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.Assembl
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.pdb
-C:\Users\ASUS\Downloads\RentEase-master\RentEase-master\DTO\bin\Debug\DTO.dll
-C:\Users\ASUS\Downloads\RentEase-master\RentEase-master\DTO\bin\Debug\DTO.pdb
-C:\Users\ASUS\Downloads\RentEase-master\RentEase-master\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
-C:\Users\ASUS\Downloads\RentEase-master\RentEase-master\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
-C:\Users\ASUS\Downloads\RentEase-master\RentEase-master\DTO\obj\Debug\DTO.dll
-C:\Users\ASUS\Downloads\RentEase-master\RentEase-master\DTO\obj\Debug\DTO.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\bin\Debug\Guna.UI2.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\bin\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\bin\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\bin\Debug\Guna.UI2.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\obj\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\obj\Debug\DTO.pdb
