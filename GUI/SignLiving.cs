@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DTO;
+using GUI.Custom;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +10,7 @@ namespace GUI
 {
     using GUI.Custom;
     using System;
-    using System.Windows.Forms;
+using System.Windows.Forms;
 
         public partial class SignLiving : CustomForm
         {
@@ -192,12 +194,12 @@ namespace GUI
             }
 
             private void BtnCancel_Click(object sender, EventArgs e)
-            {
+{
                 this.Close();
             }
         }
     
-
+    
 }
 
 
