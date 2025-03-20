@@ -398,13 +398,11 @@ namespace GUI
 
         private void Theemnoiluutru_Click(object sender, EventArgs e)
         {
-            using (TenantForm tenantForm = new TenantForm())
-            {
-                if (tenantForm.ShowDialog() == DialogResult.OK)
+            using (SignLiving signLV = new SignLiving()){;
+                if (signLV.ShowDialog() == DialogResult.OK)
                 {
-
                     // Tự động refresh danh sách khách thuê
-                    button19_Click(sender, e);
+                    button20_Click(sender, e);
                 }
             }
         }
@@ -413,6 +411,7 @@ namespace GUI
 
         private void button20_Click(object sender, EventArgs e)
         {
+            Theemnoiluutru.Visible = true;
             try
             {
                 // Hiển thị trạng thái đang xử lý
@@ -425,7 +424,7 @@ namespace GUI
                 checkBox4.Visible = false;
                 button16.Visible = false;
                 button15.Visible = false;
-                customButton1.Visible = true;
+                customButton1.Visible = false;
                 
                 // Hiển thị button thêm tạm trú mới nếu có
           
@@ -499,21 +498,7 @@ namespace GUI
                 Cursor = Cursors.Default;
             }
         }
-        private void btnAddTemporaryResidence_Click(object sender, EventArgs e)
-        {
-            using (TemporaryResidenceForm residenceForm = new TemporaryResidenceForm())
-            {
-                if (residenceForm.ShowDialog() == DialogResult.OK)
-                {
-                    // Hiển thị thông báo
-                    MessageBox.Show("Đăng ký tạm trú thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Cập nhật lại DataGridView
-                    button20_Click(sender, e);
-                }
-            }
-        }
+      
         private void FormatTemporaryResidenceDataGridView()
         {
             // Định dạng lại các cột trong DataGridView
