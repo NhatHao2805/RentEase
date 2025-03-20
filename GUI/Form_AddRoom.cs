@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class Form_ThemPhong : Form
+    public partial class Form_AddRoom : Form
     {
-        HouseBLL houseBLL = new HouseBLL();
+        RoomBLL roomBLL = new RoomBLL();
         QuanLyNha form;
-        House house = new House();
+        Room room = new Room();
 
-        public Form_ThemPhong()
+        public Form_AddRoom()
         {
             InitializeComponent();
         }
@@ -26,12 +26,12 @@ namespace GUI
         private void add_bt_Click(object sender, EventArgs e)
         {
             // Loại bỏ placeholder nếu có
-            house.houseID = (HouseID_tb.Text == "  ID nhà") ? "" : HouseID_tb.Text;
-            house.address = (address_tb.Text == "  Địa chỉ nhà") ? "" : address_tb.Text;
-            house.type = type_cb.Text;
-            house.convenient = (convenient_tb.Text == "  Tiện ích") ? "" : convenient_tb.Text;
-            house.area = (area_tb.Text == "  Diện tích(m2)") ? "" : area_tb.Text;
-            house.price = (price_tb.Text == "  Giá(VND)") ? "" : price_tb.Text;
+            room.roomID = (RoomID_tb.Text == "  ID phòng") ? "" : RoomID_tb.Text;
+            room.buildingID = buildingID.Text;
+            room.type = type_cb.Text;
+            room.convenient = (convenient_tb.Text == "  Tiện ích") ? "" : convenient_tb.Text;
+            room.area = (area_tb.Text == "  Diện tích(m2)") ? "" : area_tb.Text;
+            room.price = (price_tb.Text == "  Giá(VND)") ? "" : price_tb.Text;
 
             string status = "";
             foreach (Control control in status_grbox.Controls)
@@ -41,19 +41,16 @@ namespace GUI
                     status += checkBox.Text + "; ";
                 }
             }
-            house.status = status.TrimEnd(';', ' ');
+            room.status = status.TrimEnd(';', ' ');
 
-            house.lastMaintenanceDate = birth_datepicker.Value.ToString("yyyy-MM-dd");
+            room.lastMaintenanceDate = birth_datepicker.Value.ToString("yyyy-MM-dd");
 
-            string check = houseBLL.CheckLogic(house);
+            string check = roomBLL.CheckLogic(room);
 
             switch (check)
             {
-                case "required_houseid":
-                    MessageBox.Show("Bạn chưa nhập mã nhà");
-                    return;
-                case "required_address":
-                    MessageBox.Show("Bạn chưa nhập địa chỉ");
+                case "required_roomid":
+                    MessageBox.Show("Bạn chưa nhập mã phòng");
                     return;
                 case "required_area":
                     MessageBox.Show("Bạn chưa nhập diện tích");
@@ -67,8 +64,8 @@ namespace GUI
                 case "Đã xảy ra lỗi khi thêm!":
                     MessageBox.Show("Đã xảy ra lỗi khi thêm!");
                     return;
-                case "Nhà đã tồn tại!":
-                    MessageBox.Show("Nhà đã tồn tại!");
+                case "Phòng đã tồn tại!":
+                    MessageBox.Show("Phòng đã tồn tại!");
                     return;
                 case "Thêm thành công!":
                     MessageBox.Show("Thêm thành công");
@@ -78,21 +75,18 @@ namespace GUI
                     return;
             }
         }
-        private void Form_ThemNha_Load(object sender, EventArgs e)
+        private void Form_AddRoom_Load(object sender, EventArgs e)
         {
             this.MaximizeBox = false;
             this.MaximumSize = this.Size;
             this.MinimumSize = this.Size;
 
-            HouseID_tb.Text = "  ID nhà";
-            HouseID_tb.ForeColor = Color.Silver;
-            HouseID_tb.Enter += new EventHandler(HouseID_tb_Enter);
-            HouseID_tb.Leave += new EventHandler(HouseID_tb_Leave);
+            RoomID_tb.Text = "  ID phòng";
+            RoomID_tb.ForeColor = Color.Silver;
+            RoomID_tb.Enter += new EventHandler(RoomID_tb_Enter);
+            RoomID_tb.Leave += new EventHandler(RoomID_tb_Leave);
 
-            address_tb.Text = "  Địa chỉ nhà";
-            address_tb.ForeColor = Color.Silver;
-            address_tb.Enter += new EventHandler(address_tb_Enter);
-            address_tb.Leave += new EventHandler(address_tb_Leave);
+            buildingID_cb.Items.Add("B001");
 
             type_cb.Focus();
             type_cb.Items.Add("Nhà trọ");
@@ -134,24 +128,14 @@ namespace GUI
             birth_datepicker.ValueChanged += new EventHandler(birth_datepicker_ValueChanged);
 
         }
-        private void HouseID_tb_Enter(object sender, EventArgs e)
+        private void RoomID_tb_Enter(object sender, EventArgs e)
         {
-            placeHolderText_2(HouseID_tb, "  ID nhà");
+            placeHolderText_2(RoomID_tb, "  ID phòng");
         }
 
-        private void HouseID_tb_Leave(object sender, EventArgs e)
+        private void RoomID_tb_Leave(object sender, EventArgs e)
         {
-            placeHolderText_1(HouseID_tb, "  ID nhà");
-        }
-
-        private void address_tb_Enter(object sender, EventArgs e)
-        {
-            placeHolderText_2(address_tb, "  Địa chỉ nhà");
-        }
-
-        private void address_tb_Leave(object sender, EventArgs e)
-        {
-            placeHolderText_1(address_tb, "  Địa chỉ nhà");
+            placeHolderText_1(RoomID_tb, "  ID phòng");
         }
 
         private void convenient_tb_Enter(object sender, EventArgs e)

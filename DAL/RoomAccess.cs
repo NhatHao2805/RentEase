@@ -8,18 +8,18 @@ using DTO;
 
 namespace DAL
 {
-    public class HouseAccess: DatabaseAccess
+    public class RoomAccess: DatabaseAccess
     {
         private DatabaseAccess databaseAccess = new DatabaseAccess();
 
-        public DataTable getHouse()
+        public DataTable getRoom()
         {
-            return databaseAccess.LoadHouse();
+            return databaseAccess.LoadRoom();
         }
 
-        public string addHouse(House house)
+        public string addRoom(Room room)
         {
-            return addHouseDatabase(house);
+            return addRoomDatabase(room);
         }
     }
 }

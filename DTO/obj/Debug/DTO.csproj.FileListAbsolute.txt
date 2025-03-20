@@ -14,3 +14,11 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\D
 C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\obj\Debug\DTO.csproj.Up2Date
 C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\obj\Debug\DTO.dll
 C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase-NhatHao\RentEase-NhatHao\DTO\obj\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\DTO\bin\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\DTO\bin\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\DTO\bin\Debug\Guna.UI2.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\DTO\obj\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\DTO\obj\Debug\DTO.pdb

@@ -230,38 +230,77 @@ namespace GUI
 
         private void QuanLyNha_Load(object sender, EventArgs e)
         {
-            LoadHouse();
-            FilterHouse();
+            LoadRoom();
+            FilterRoom();
+            CustomizeDataGridView();
         }
 
-        public HouseBLL house = new HouseBLL();
-        private void LoadHouse()
+        public RoomBLL house = new RoomBLL();
+        private void LoadRoom()
         {
             
             DataTable dt = new DataTable();
-            dt = house.LoadHouse();
-            dtgridview_LoadHouse.AutoGenerateColumns = true;
-            dtgridview_LoadHouse.DataSource = dt;
-            dtgridview_LoadHouse.ReadOnly = true;
-            dtgridview_LoadHouse.Columns["HOUSEID"].HeaderText = "Mã nhà";
-            dtgridview_LoadHouse.Columns["ADDRESS"].HeaderText = "Địa chỉ";
-            dtgridview_LoadHouse.Columns["TYPE"].HeaderText = "Phân loại";
-            dtgridview_LoadHouse.Columns["CONVENIENT"].HeaderText = "Tiện ích";
-            dtgridview_LoadHouse.Columns["PRICE"].HeaderText = "Giá";
-            dtgridview_LoadHouse.Columns["AREA"].HeaderText = "Diện tích";
-            dtgridview_LoadHouse.Columns["STATUS"].HeaderText = "Tình trạng";
-            dtgridview_LoadHouse.Columns["LAST_MAINTENANCE_DATE"].HeaderText = "Ngày bảo trì gần nhất";
-
+            dt = house.LoadRoom();
+            dtgridview_LoadRoom.AutoGenerateColumns = true;
+            dtgridview_LoadRoom.DataSource = dt;
+            dtgridview_LoadRoom.ReadOnly = true;
+            dtgridview_LoadRoom.Columns["ROOMID"].HeaderText = "Mã phòng";
+            dtgridview_LoadRoom.Columns["BUILDINGID"].HeaderText = "Mã tòa nhà";
+            dtgridview_LoadRoom.Columns["TYPE"].HeaderText = "Phân loại";
+            dtgridview_LoadRoom.Columns["CONVENIENT"].HeaderText = "Tiện ích";
+            dtgridview_LoadRoom.Columns["PRICE"].HeaderText = "Giá";
+            dtgridview_LoadRoom.Columns["AREA"].HeaderText = "Diện tích";
+            dtgridview_LoadRoom.Columns["STATUS"].HeaderText = "Tình trạng";
+            dtgridview_LoadRoom.Columns["LAST_MAINTENANCE_DATE"].HeaderText = "Ngày bảo trì gần nhất";
+            
         }
 
-        private void addHouse_Click(object sender, EventArgs e)
+        private void CustomizeDataGridView()
+        {
+            // Căn chỉnh giao diện chung
+            dtgridview_LoadRoom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgridview_LoadRoom.RowHeadersVisible = false;
+            dtgridview_LoadRoom.AllowUserToAddRows = false;
+            dtgridview_LoadRoom.AllowUserToDeleteRows = false;
+            dtgridview_LoadRoom.ReadOnly = true;
+
+            // Thiết lập style cho header
+            dtgridview_LoadRoom.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            dtgridview_LoadRoom.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dtgridview_LoadRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            dtgridview_LoadRoom.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgridview_LoadRoom.EnableHeadersVisualStyles = false;
+
+
+            // Thiết lập style cho các dòng
+            dtgridview_LoadRoom.AlternatingRowsDefaultCellStyle.BackColor = Color.DimGray;
+            dtgridview_LoadRoom.DefaultCellStyle.Font = new Font("Arial", 9);
+            dtgridview_LoadRoom.DefaultCellStyle.ForeColor = Color.Black;
+            dtgridview_LoadRoom.DefaultCellStyle.BackColor = Color.White;
+            dtgridview_LoadRoom.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dtgridview_LoadRoom.DefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // Thiết lập style khi chọn dòng
+            dtgridview_LoadRoom.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgridview_LoadRoom.MultiSelect = false;
+
+            // Thiết lập màu nền và đường viền
+            dtgridview_LoadRoom.GridColor = Color.Gray;
+            dtgridview_LoadRoom.BackgroundColor = Color.White;
+
+            // Tùy chỉnh font và kích thước
+            dtgridview_LoadRoom.Font = new Font("Arial", 10);
+            dtgridview_LoadRoom.RowTemplate.Height = 30;
+        }
+
+        private void addRoom_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form_ThemPhong addHouse = new Form_ThemPhong();
-            addHouse.Show();
+            Form_AddRoom addRoom = new Form_AddRoom();
+            addRoom.Show();
         }
 
-        private void FilterHouse()
+        private void FilterRoom()
         {
             string status = "";
             foreach (Control control in chbox_datagridview_grbox.Controls)
@@ -278,13 +317,13 @@ namespace GUI
             // Nếu không có CheckBox nào được chọn, hiển thị tất cả dữ liệu
             if (string.IsNullOrEmpty(status))
             {
-                LoadHouse();
+                LoadRoom();
                 return;
             }
 
             // Lọc dữ liệu và hiển thị
-            DataTable filteredData = house.FilterHouseByStatus(status);
-            dtgridview_LoadHouse.DataSource = filteredData;
+            DataTable filteredData = house.FilterRoomByStatus(status);
+            dtgridview_LoadRoom.DataSource = filteredData;
         }
 
 
@@ -295,7 +334,7 @@ namespace GUI
                 MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DangO_chbox.Checked = false;
             }
-            FilterHouse();
+            FilterRoom();
         }
 
         private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
@@ -305,7 +344,7 @@ namespace GUI
                 MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DangTrong_chbox.Checked = false;
             }
-            FilterHouse();
+            FilterRoom();
         }
 
         private void DangKetThuc_chbox_CheckedChanged(object sender, EventArgs e)
@@ -315,7 +354,7 @@ namespace GUI
                 MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DangKetThuc_chbox.Checked = false;
             }
-            FilterHouse();
+            FilterRoom();
         }
 
         private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
@@ -325,7 +364,7 @@ namespace GUI
                 MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang ở' hoặc 'Đang báo kết thúc'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DangCoc_chbox.Checked = false;
             }
-            FilterHouse();
+            FilterRoom();
         }
 
         private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
@@ -335,7 +374,7 @@ namespace GUI
                 MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 SapHetHan_chbox.Checked = false;
             }
-            FilterHouse();
+            FilterRoom();
         }
 
         private void QuaHan_chbox_CheckedChanged(object sender, EventArgs e)
@@ -345,12 +384,12 @@ namespace GUI
                 MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 QuaHan_chbox.Checked = false;
             }
-            FilterHouse();
+            FilterRoom();
         }
 
         private void DangNoTien_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            FilterHouse();
+            FilterRoom();
         }
     }
 }

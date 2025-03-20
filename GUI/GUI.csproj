@@ -58,11 +58,11 @@
     <Compile Include="Form_DangNhap.Designer.cs">
       <DependentUpon>Form_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ThemPhong.cs">
+    <Compile Include="Form_AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_ThemPhong.Designer.cs">
-      <DependentUpon>Form_ThemPhong.cs</DependentUpon>
+    <Compile Include="Form_AddRoom.Designer.cs">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNha.cs">
       <SubType>Form</SubType>
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="Form_DangNhap.resx">
       <DependentUpon>Form_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_ThemPhong.resx">
-      <DependentUpon>Form_ThemPhong.cs</DependentUpon>
+    <EmbeddedResource Include="Form_AddRoom.resx">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNha.resx">
       <DependentUpon>QuanLyNha.cs</DependentUpon>

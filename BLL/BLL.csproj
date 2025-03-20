@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
-    <Compile Include="HouseBLL.cs" />
+    <Compile Include="RoomBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -18,10 +18,10 @@ namespace DTO
         public string address { get; set; }
     }
 
-    public class House
+    public class Room
     {
-        public string houseID { get; set; }
-        public string address { get; set; }
+        public string roomID { get; set; }
+        public string buildingID { get; set; }
         public string type { get; set; }
         public string convenient { get; set; }
         public string area { get; set; }

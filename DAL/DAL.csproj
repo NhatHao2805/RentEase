@@ -100,7 +100,7 @@
   <ItemGroup>
     <Compile Include="AccountAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
-    <Compile Include="HouseAccess.cs" />
+    <Compile Include="RoomAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

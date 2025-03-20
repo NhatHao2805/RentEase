@@ -103,13 +103,13 @@ namespace DAL
         //}
 
         public static string connectString = @"Server=localhost;Database=rentease;Uid=root;Pwd=zxcvbnm;Pooling=false;Character Set=utf8";
-        public DataTable LoadHouse()
+        public DataTable LoadRoom()
         {
             DataTable dt = new DataTable();
             using (MySqlConnection connection = new MySqlConnection(connectString))
             {
                 connection.Open();
-                using (MySqlDataAdapter adt = new MySqlDataAdapter("SELECT * FROM HOUSE", connection))
+                using (MySqlDataAdapter adt = new MySqlDataAdapter("SELECT * FROM ROOM", connection))
                 {
                     adt.Fill(dt);
                 }
@@ -118,9 +118,9 @@ namespace DAL
             return dt;
         }
 
-        public static string addHouseDatabase(House house)
+        public static string addRoomDatabase(Room room)
         {
-            bool houseExists = false;
+            bool roomExists = false;
             using (MySqlConnection conn = SqlDataConnection.Connect())
             {
                 try
@@ -128,30 +128,30 @@ namespace DAL
                     conn.Open();
 
                     // Kiểm tra nhà đã tồn tại chưa
-                    using (MySqlCommand command2 = new MySqlCommand("SELECT check_house(@new_houseid)", conn))
+                    using (MySqlCommand command2 = new MySqlCommand("SELECT check_Room(@new_roomid)", conn))
                     {
-                        command2.Parameters.AddWithValue("@new_houseid", house.houseID);
+                        command2.Parameters.AddWithValue("@new_roomid", room.roomID);
                         object result = command2.ExecuteScalar();
                         if (result != null && Convert.ToInt32(result) == 0)
                         {
-                            houseExists = true;
+                            roomExists = true;
                         }
                     }
 
                     // Nếu nhà chưa tồn tại, thêm nhà mới
-                    if (!houseExists)
+                    if (!roomExists)
                     {
-                        using (MySqlCommand command = new MySqlCommand("proc_addHouse", conn))
+                        using (MySqlCommand command = new MySqlCommand("proc_addRoom", conn))
                         {
                             command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.AddWithValue("new_houseid", house.houseID);
-                            command.Parameters.AddWithValue("new_address", house.address);
-                            command.Parameters.AddWithValue("new_type", house.type);
-                            command.Parameters.AddWithValue("new_convenient", house.convenient);
-                            command.Parameters.AddWithValue("new_area", house.area);
-                            command.Parameters.AddWithValue("new_price", house.price);
-                            command.Parameters.AddWithValue("new_status", house.status);
-                            command.Parameters.AddWithValue("new_last_maintenance_date", house.lastMaintenanceDate);
+                            command.Parameters.AddWithValue("new_roomid", room.roomID);
+                            command.Parameters.AddWithValue("new_address", room.buildingID);
+                            command.Parameters.AddWithValue("new_type", room.type);
+                            command.Parameters.AddWithValue("new_convenient", room.convenient);
+                            command.Parameters.AddWithValue("new_area", room.area);
+                            command.Parameters.AddWithValue("new_price", room.price);
+                            command.Parameters.AddWithValue("new_status", room.status);
+                            command.Parameters.AddWithValue("new_last_maintenance_date", room.lastMaintenanceDate);
                             command.ExecuteNonQuery();
                         }
                     }
@@ -165,9 +165,9 @@ namespace DAL
             }
 
             // Trả về thông báo kết quả
-            if (houseExists)
+            if (roomExists)
             {
-                return "Nhà đã tồn tại!";
+                return "Phòng đã tồn tại!";
             }
             else
             {

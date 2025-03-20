@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -82,7 +83,7 @@
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button22 = new System.Windows.Forms.Button();
-            this.addHouse = new System.Windows.Forms.Button();
+            this.addRoom = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.chbox_datagridview_grbox = new System.Windows.Forms.GroupBox();
             this.DangNoTien_chbox = new System.Windows.Forms.CheckBox();
@@ -93,7 +94,7 @@
             this.QuaHan_chbox = new System.Windows.Forms.CheckBox();
             this.DangKetThuc_chbox = new System.Windows.Forms.CheckBox();
             this.DangO_chbox = new System.Windows.Forms.CheckBox();
-            this.dtgridview_LoadHouse = new System.Windows.Forms.DataGridView();
+            this.dtgridview_LoadRoom = new System.Windows.Forms.DataGridView();
             this.panel_quanlytaichinh = new System.Windows.Forms.Panel();
             this.panel_qltc_hoadon = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -161,7 +162,7 @@
             this.groupBox8.SuspendLayout();
             this.chbox_datagridview_grbox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgridview_LoadHouse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgridview_LoadRoom)).BeginInit();
             this.panel_quanlytaichinh.SuspendLayout();
             this.panel_qltc_hoadon.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -774,7 +775,7 @@
             // 
             this.groupBox8.Controls.Add(this.label6);
             this.groupBox8.Controls.Add(this.button22);
-            this.groupBox8.Controls.Add(this.addHouse);
+            this.groupBox8.Controls.Add(this.addRoom);
             this.groupBox8.Controls.Add(this.button21);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(22, 119);
@@ -804,18 +805,18 @@
             this.button22.Text = "Ẩn Hiện Cột";
             this.button22.UseVisualStyleBackColor = true;
             // 
-            // addHouse
+            // addRoom
             // 
-            this.addHouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addHouse.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.addHouse.Location = new System.Drawing.Point(478, 18);
-            this.addHouse.Name = "addHouse";
-            this.addHouse.Size = new System.Drawing.Size(184, 60);
-            this.addHouse.TabIndex = 7;
-            this.addHouse.Text = "Thêm Phòng";
-            this.addHouse.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.addHouse.UseVisualStyleBackColor = true;
-            this.addHouse.Click += new System.EventHandler(this.addHouse_Click);
+            this.addRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addRoom.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.addRoom.Location = new System.Drawing.Point(478, 18);
+            this.addRoom.Name = "addRoom";
+            this.addRoom.Size = new System.Drawing.Size(184, 60);
+            this.addRoom.TabIndex = 7;
+            this.addRoom.Text = "Thêm Phòng";
+            this.addRoom.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.addRoom.UseVisualStyleBackColor = true;
+            this.addRoom.Click += new System.EventHandler(this.addRoom_Click);
             // 
             // button21
             // 
@@ -837,7 +838,7 @@
             this.chbox_datagridview_grbox.Controls.Add(this.QuaHan_chbox);
             this.chbox_datagridview_grbox.Controls.Add(this.DangKetThuc_chbox);
             this.chbox_datagridview_grbox.Controls.Add(this.DangO_chbox);
-            this.chbox_datagridview_grbox.Controls.Add(this.dtgridview_LoadHouse);
+            this.chbox_datagridview_grbox.Controls.Add(this.dtgridview_LoadRoom);
             this.chbox_datagridview_grbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chbox_datagridview_grbox.Location = new System.Drawing.Point(22, 196);
             this.chbox_datagridview_grbox.Name = "chbox_datagridview_grbox";
@@ -939,16 +940,26 @@
             this.DangO_chbox.UseVisualStyleBackColor = true;
             this.DangO_chbox.CheckedChanged += new System.EventHandler(this.DangO_chbox_CheckedChanged);
             // 
-            // dtgridview_LoadHouse
+            // dtgridview_LoadRoom
             // 
-            this.dtgridview_LoadHouse.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dtgridview_LoadHouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgridview_LoadHouse.Location = new System.Drawing.Point(14, 77);
-            this.dtgridview_LoadHouse.Name = "dtgridview_LoadHouse";
-            this.dtgridview_LoadHouse.RowHeadersWidth = 51;
-            this.dtgridview_LoadHouse.RowTemplate.Height = 24;
-            this.dtgridview_LoadHouse.Size = new System.Drawing.Size(969, 387);
-            this.dtgridview_LoadHouse.TabIndex = 0;
+            this.dtgridview_LoadRoom.AllowUserToAddRows = false;
+            this.dtgridview_LoadRoom.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dtgridview_LoadRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgridview_LoadRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgridview_LoadRoom.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dtgridview_LoadRoom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtgridview_LoadRoom.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgridview_LoadRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgridview_LoadRoom.Location = new System.Drawing.Point(14, 77);
+            this.dtgridview_LoadRoom.Name = "dtgridview_LoadRoom";
+            this.dtgridview_LoadRoom.ReadOnly = true;
+            this.dtgridview_LoadRoom.RowHeadersVisible = false;
+            this.dtgridview_LoadRoom.RowHeadersWidth = 51;
+            this.dtgridview_LoadRoom.RowTemplate.Height = 24;
+            this.dtgridview_LoadRoom.Size = new System.Drawing.Size(969, 387);
+            this.dtgridview_LoadRoom.TabIndex = 0;
             // 
             // panel_quanlytaichinh
             // 
@@ -1514,7 +1525,7 @@
             this.chbox_datagridview_grbox.ResumeLayout(false);
             this.chbox_datagridview_grbox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgridview_LoadHouse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgridview_LoadRoom)).EndInit();
             this.panel_quanlytaichinh.ResumeLayout(false);
             this.panel_qltc_hoadon.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1581,7 +1592,7 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Panel panel_quanlyphong;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button addHouse;
+        private System.Windows.Forms.Button addRoom;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.GroupBox chbox_datagridview_grbox;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -1589,7 +1600,7 @@
         private System.Windows.Forms.CheckBox QuaHan_chbox;
         private System.Windows.Forms.CheckBox DangKetThuc_chbox;
         private System.Windows.Forms.CheckBox DangO_chbox;
-        private System.Windows.Forms.DataGridView dtgridview_LoadHouse;
+        private System.Windows.Forms.DataGridView dtgridview_LoadRoom;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label8;
