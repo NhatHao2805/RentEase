@@ -153,7 +153,8 @@
               "RelativeToolTip": "GUI\\Form2.Designer.cs",
               "ViewState": "AgIAAMwBAAAAAAAAAIAwwOMBAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T07:08:44.379Z"
+              "WhenOpened": "2025-03-17T07:08:44.379Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -187,7 +188,7 @@
               "RelativeDocumentMoniker": "GUI\\Form2.cs",
               "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.cs",
               "RelativeToolTip": "GUI\\Form2.cs",
-              "ViewState": "AgIAAGkBAAAAAAAAAAApwHsBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGkBAAAAAAAAAAApwHIBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T07:45:18.524Z",
               "EditorCaption": ""
