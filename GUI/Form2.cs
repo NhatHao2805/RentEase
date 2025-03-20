@@ -385,11 +385,16 @@ namespace GUI
             {
                 if (tenantForm.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Hợp đồng đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+     
                     // Tự động refresh danh sách khách thuê
                     button19_Click(sender, e);
                 }
             }
+        }
+
+        private void Theemnoiluutru_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
