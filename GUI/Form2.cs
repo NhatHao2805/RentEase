@@ -425,7 +425,8 @@ namespace GUI
                 checkBox4.Visible = false;
                 button16.Visible = false;
                 button15.Visible = false;
-                customButton1.Visible = false;
+                customButton1.Visible = true;
+                
                 // Hiển thị button thêm tạm trú mới nếu có
           
 
