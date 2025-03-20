@@ -135,3 +135,5 @@ D:\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\RentEase\GUI\obj\Debug\GUI.exe
 D:\RentEase\GUI\obj\Debug\GUI.pdb
 D:\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.TenantForm.resources

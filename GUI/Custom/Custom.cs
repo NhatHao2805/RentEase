@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.Drawing;
+using Guna.UI2.WinForms;
+using System.Runtime.InteropServices;
 namespace GUI.Custom
 {
     public class CustomForm : Form
@@ -15,7 +17,9 @@ namespace GUI.Custom
         public CustomForm()
         {
             this.FormBorderStyle = FormBorderStyle.None;
-            this.BackColor = ColorTranslator.FromHtml("#112D4E");
+            this.BackColor = ColorTranslator.FromHtml("#BFDEF8");
+           
+            this.BackgroundImageLayout = ImageLayout.Stretch;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Padding = new Padding(10);
 
@@ -103,28 +107,70 @@ namespace GUI.Custom
             this.Padding = new Padding(5);
         }
     }
-    public class NumericTextBox : CustomTextBox
+    //public class NumericTextBox : CustomTextBox
+    //{
+    //    public int MinValue { get; set; } = int.MinValue;
+    //    public int MaxValue { get; set; } = int.MaxValue;
+
+      
+
+    //    protected override void OnTextChanged(EventArgs e)
+    //    {
+    //        base.OnTextChanged(e);
+    //        if (int.TryParse(this.Text, out int value))
+    //        {
+    //            if (value < MinValue) this.Text = MinValue.ToString();
+    //            if (value > MaxValue) this.Text = MaxValue.ToString();
+    //        }
+    //    }
+    //}
+
+    public class MyGunaButton : Guna2Button
     {
-        public int MinValue { get; set; } = int.MinValue;
-        public int MaxValue { get; set; } = int.MaxValue;
-
-        protected override void OnKeyPress(KeyPressEventArgs e)
+     
+        public MyGunaButton()
         {
-            base.OnKeyPress(e);
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+
+            this.Font = new Font("Arial", 12, FontStyle.Bold);
+            this.BorderRadius = 10;                        // Bo góc
+            this.TextAlign = HorizontalAlignment.Center;   // Căn giữa chữ
+            this.Size = new Size(250, 50);                 // Kích thước cố định
+
+            // Thêm hiệu ứng hover
+            this.HoverState.FillColor = Color.FromArgb(85, 60, 150); // Màu khi hover
         }
+       
+       
+    }
+    public class MyGunaTextBox : Guna2TextBox
+    {
+        [DllImport("user32.dll")]
+        private static extern bool ShowCaret(IntPtr hWnd);
 
-        protected override void OnTextChanged(EventArgs e)
+        public MyGunaTextBox()
         {
-            base.OnTextChanged(e);
-            if (int.TryParse(this.Text, out int value))
-            {
-                if (value < MinValue) this.Text = MinValue.ToString();
-                if (value > MaxValue) this.Text = MaxValue.ToString();
-            }
+            // 🌟 Thiết lập giao diện mặc định
+            this.BorderRadius = 10; // Bo tròn góc
+            this.BorderThickness = 1;
+            this.BorderColor = Color.Gray; // Màu viền mặc định
+            this.FillColor = Color.White; // Màu nền
+            this.Font = new Font("Segoe UI", 8, FontStyle.Regular);
+            this.ForeColor = Color.Black;
+            this.PlaceholderForeColor = Color.Gray;
+
+            this.Height = 45; // Độ cao phù hợp
+           
+            this.Padding = new Padding(10, 0, 10, 0);  // Để top & bottom bằng 0
+            this.TextOffset = new Point(5, 0);  // Không lệch xuống
+
+
+            // 🌟 Sự kiện focus để đảm bảo hiển thị Caret
+            this.Enter += (s, e) => ShowCaret(this.Handle);
+            this.Click += (s, e) => this.Focus();
+
+            // 🌟 Hiệu ứng nhấp nháy viền khi nhập
+            this.GotFocus += (s, e) => this.BorderColor = Color.FromArgb(100, 149, 237); // Màu xanh dương nhạt
+            this.LostFocus += (s, e) => this.BorderColor = Color.Gray; // Trả lại màu viền gốc
         }
     }
 

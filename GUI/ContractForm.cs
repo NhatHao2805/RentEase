@@ -10,17 +10,20 @@ namespace GUI
 {
     public class ContractForm : CustomForm
     {
-        private CustomTextBox txtContractID;
-        private CustomTextBox txtHouseID;
-        private CustomTextBox txtTenantID;
+        private MyGunaTextBox txtContractID;
+        private MyGunaTextBox txtHouseID;
+        private MyGunaTextBox txtTenantID;
+
         private DateTimePicker dtpCreateDate;
         private DateTimePicker dtpStartDate;
         private DateTimePicker dtpEndDate;
-        private NumericTextBox txtMonthlyRent;
-        private NumericTextBox txtPaymentSchedule;
-        private NumericTextBox txtDeposit;
-        private CustomTextBox txtStatus;
-        private CustomTextBox txtNotes;
+        private MyGunaTextBox txtMonthlyRent;
+        private MyGunaTextBox txtPaymentSchedule;
+        private MyGunaTextBox txtDeposit;
+
+        private MyGunaTextBox txtStatus;
+        private MyGunaTextBox txtNotes;
+
         private CustomButton btnSubmit;
         private ContractBLL contractBLL;
         private ThongtinkhachthueBLL tenantBLL;
@@ -36,7 +39,7 @@ namespace GUI
         private void InitializeControls()
         {
             this.Text = "Create Contract";
-            this.Size = new Size(500, 600);
+            this.Size = new Size(700, 600);
 
             Label titleLabel = new Label()
             {
@@ -47,65 +50,82 @@ namespace GUI
                 Location = new Point(150, 20)
             };
 
+            // Sử dụng các hàm create có sẵn
             string[] labels = { "Contract ID", "House ID", "Tenant ID", "Create Date", "Start Date", "End Date", "Monthly Rent", "Payment Schedule", "Deposit", "Status", "Notes" };
             int startY = 70;
             int spacing = 40;
+            int labelX = 75;
+            int controlX = 240;
 
             // Contract ID
-            txtContractID = CreateTextBox(200, startY);
-            this.Controls.Add(CreateLabel(labels[0], 50, startY));
+            txtContractID = CreateTextBox(controlX, startY);
+
+            this.Controls.Add(CreateLabel(labels[0], labelX, startY));
             this.Controls.Add(txtContractID);
 
             // House ID
-            txtHouseID = CreateTextBox(200, startY + spacing);
-            this.Controls.Add(CreateLabel(labels[1], 50, startY + spacing));
+            txtHouseID = CreateTextBox(controlX, startY + spacing);
+
+            this.Controls.Add(CreateLabel(labels[1], labelX, startY + spacing));
             this.Controls.Add(txtHouseID);
 
             // Tenant ID
-            txtTenantID = CreateTextBox(200, startY + spacing * 2);
-            this.Controls.Add(CreateLabel(labels[2], 50, startY + spacing * 2));
+            txtTenantID = CreateTextBox(controlX, startY + spacing * 2);
+
+            this.Controls.Add(CreateLabel(labels[2], labelX, startY + spacing * 2));
             this.Controls.Add(txtTenantID);
 
             // Create Date
-            dtpCreateDate = CreateDatePicker(200, startY + spacing * 3);
-            this.Controls.Add(CreateLabel(labels[3], 50, startY + spacing * 3));
+            dtpCreateDate = CreateDatePicker(controlX, startY + spacing * 3);
+            dtpCreateDate.Value = DateTime.Now;
+            this.Controls.Add(CreateLabel(labels[3], labelX, startY + spacing * 3));
             this.Controls.Add(dtpCreateDate);
 
             // Start Date
-            dtpStartDate = CreateDatePicker(200, startY + spacing * 4);
-            this.Controls.Add(CreateLabel(labels[4], 50, startY + spacing * 4));
+            dtpStartDate = CreateDatePicker(controlX, startY + spacing * 4);
+            dtpStartDate.Value = DateTime.Now;
+            this.Controls.Add(CreateLabel(labels[4], labelX, startY + spacing * 4));
             this.Controls.Add(dtpStartDate);
 
             // End Date
-            dtpEndDate = CreateDatePicker(200, startY + spacing * 5);
-            this.Controls.Add(CreateLabel(labels[5], 50, startY + spacing * 5));
+            dtpEndDate = CreateDatePicker(controlX, startY + spacing * 5);
+            dtpEndDate.Value = DateTime.Now.AddYears(1); // Default to 1 year contract
+            this.Controls.Add(CreateLabel(labels[5], labelX, startY + spacing * 5));
             this.Controls.Add(dtpEndDate);
 
             // Monthly Rent
-            txtMonthlyRent = CreateNumericBox(200, startY + spacing * 6);
-            this.Controls.Add(CreateLabel(labels[6], 50, startY + spacing * 6));
+            txtMonthlyRent = CreateTextBox(controlX, startY + spacing * 6);
+
+            this.Controls.Add(CreateLabel(labels[6], labelX, startY + spacing * 6));
             this.Controls.Add(txtMonthlyRent);
 
             // Payment Schedule
-            txtPaymentSchedule = CreateNumericBox(200, startY + spacing * 7, 1, 12);
-            this.Controls.Add(CreateLabel(labels[7], 50, startY + spacing * 7));
+            txtPaymentSchedule = CreateTextBox(controlX, startY + spacing * 7);
+
+            this.Controls.Add(CreateLabel(labels[7], labelX, startY + spacing * 7));
             this.Controls.Add(txtPaymentSchedule);
 
             // Deposit
-            txtDeposit = CreateNumericBox(200, startY + spacing * 8);
-            this.Controls.Add(CreateLabel(labels[8], 50, startY + spacing * 8));
+            txtDeposit = CreateTextBox(controlX, startY + spacing * 8); // Adjusted for multiline payment schedule
+
+            this.Controls.Add(CreateLabel(labels[8], labelX, startY + spacing * 8));
             this.Controls.Add(txtDeposit);
 
             // Status
-            txtStatus = CreateTextBox(200, startY + spacing * 9);
+            txtStatus = CreateTextBox(controlX, startY + spacing * 9);
+
             txtStatus.Text = "Đang hiệu lực";
             txtStatus.Enabled = false;
-            this.Controls.Add(CreateLabel(labels[9], 50, startY + spacing * 9));
+       
+            this.Controls.Add(CreateLabel(labels[9], labelX, startY + spacing * 9));
             this.Controls.Add(txtStatus);
 
             // Notes
-            txtNotes = CreateTextBox(200, startY + spacing * 10);
-            this.Controls.Add(CreateLabel(labels[10], 50, startY + spacing * 10));
+            txtNotes = CreateTextBox(controlX, startY + spacing * 10);
+
+
+
+            this.Controls.Add(CreateLabel(labels[10], labelX, startY + spacing * 10));
             this.Controls.Add(txtNotes);
 
             // Submit button
@@ -135,13 +155,14 @@ namespace GUI
             };
         }
 
-        private CustomTextBox CreateTextBox(int x, int y)
+        private MyGunaTextBox CreateTextBox(int x, int y)
         {
-            return new CustomTextBox()
-            {
-                Location = new Point(x, y),
-                Width = 250
-            };
+            
+            var textBox = new MyGunaTextBox();
+            textBox.Location = new Point(x, y);
+            textBox.Size = new Size(250, 20);
+            return textBox;
+            
         }
 
         private DateTimePicker CreateDatePicker(int x, int y)
@@ -154,17 +175,7 @@ namespace GUI
             };
         }
 
-        private NumericTextBox CreateNumericBox(int x, int y, int min = 0, int max = int.MaxValue)
-        {
-            return new NumericTextBox()
-            {
-                Location = new Point(x, y),
-                Width = 250,
-                MinValue = min,
-                MaxValue = max
-            };
-        }
-
+     
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             try
@@ -206,9 +217,9 @@ namespace GUI
                     float.Parse(txtDeposit.Text.Trim()),
                     txtStatus.Text,
                     txtNotes.Text?.Trim() ?? string.Empty,
-                    false, // Auto renew
+                    true, // Auto renew
                     string.Empty, // Termination reason
-                    string.Empty // Contract file path
+                    "/contracts/" + txtContractID.Text.Trim() + ".pdf" // Contract file path
                 );
 
                 // Lưu hợp đồng
@@ -238,7 +249,7 @@ namespace GUI
             // 
             // ContractForm
             // 
-            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.ClientSize = new System.Drawing.Size(764, 524);
             this.Name = "ContractForm";
             this.Load += new System.EventHandler(this.ContractForm_Load);
             this.ResumeLayout(false);

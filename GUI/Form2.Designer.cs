@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using GUI.Custom;
+
+namespace GUI
 {
     partial class quanlynha
     {
@@ -55,6 +57,7 @@
             this.panel1_timer = new System.Windows.Forms.Timer(this.components);
             this.panel_quanlyhopdong = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.customButton1 = new GUI.Custom.MyGunaButton();
             this.label5 = new System.Windows.Forms.Label();
             this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
@@ -452,13 +455,14 @@
             this.panel_quanlyhopdong.Controls.Add(this.button18);
             this.panel_quanlyhopdong.Controls.Add(this.button17);
             this.panel_quanlyhopdong.Controls.Add(this.groupBox6);
-            this.panel_quanlyhopdong.Location = new System.Drawing.Point(309, 9);
+            this.panel_quanlyhopdong.Location = new System.Drawing.Point(304, 9);
             this.panel_quanlyhopdong.Name = "panel_quanlyhopdong";
-            this.panel_quanlyhopdong.Size = new System.Drawing.Size(935, 344);
+            this.panel_quanlyhopdong.Size = new System.Drawing.Size(1051, 344);
             this.panel_quanlyhopdong.TabIndex = 15;
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.customButton1);
             this.groupBox7.Controls.Add(this.label5);
             this.groupBox7.Controls.Add(this.button16);
             this.groupBox7.Controls.Add(this.button15);
@@ -469,6 +473,19 @@
             this.groupBox7.TabIndex = 14;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Danh Sách Hợp Đồng Của Bạn";
+            // 
+            // customButton1
+            // 
+            this.customButton1.BorderRadius = 10;
+            this.customButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.customButton1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.Location = new System.Drawing.Point(499, 20);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(145, 54);
+            this.customButton1.TabIndex = 11;
+            this.customButton1.Text = "Thêm Khách Thuê";
+            this.customButton1.Click += new System.EventHandler(this.customButton1_Click);
             // 
             // label5
             // 
@@ -549,9 +566,10 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(264, 92);
             this.button17.TabIndex = 10;
-            this.button17.Text = "Nhắc Nhở Sắp Hết Hạn Hợp Đồng";
+            this.button17.Text = "Quản Lí Hợp Đồng";
             this.button17.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // groupBox6
             // 
@@ -1345,7 +1363,7 @@
             this.panel_quanlycsvc.Controls.Add(this.button13);
             this.panel_quanlycsvc.Location = new System.Drawing.Point(411, 12);
             this.panel_quanlycsvc.Name = "panel_quanlycsvc";
-            this.panel_quanlycsvc.Size = new System.Drawing.Size(49, 13);
+            this.panel_quanlycsvc.Size = new System.Drawing.Size(62, 21);
             this.panel_quanlycsvc.TabIndex = 18;
             // 
             // groupBox5
@@ -1501,7 +1519,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1318, 745);
+            this.ClientSize = new System.Drawing.Size(1382, 745);
             this.Controls.Add(this.panel_quanlyhopdong);
             this.Controls.Add(this.panel_quanlytaichinh);
             this.Controls.Add(this.panel_quanlyphong);
@@ -1684,5 +1702,6 @@
         private System.Windows.Forms.CheckBox checkBox23;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.TextBox textBox1;
+        private MyGunaButton customButton1;
     }
 }

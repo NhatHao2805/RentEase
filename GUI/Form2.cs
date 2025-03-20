@@ -57,7 +57,7 @@ namespace GUI
         }
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void loadVariable()
@@ -195,6 +195,7 @@ namespace GUI
 
         private void btn_hopdong_Click(object sender, EventArgs e)
         {
+            customButton1.Visible = false;
             changePanel(panel_quanlyhopdong);
             LoadData("All");
         }
@@ -203,7 +204,7 @@ namespace GUI
             List<ContractDTO> contractList = contractBLL.GetContractList(required);
             dataGridView2.DataSource = contractList;
         }
-     
+        // QL Thong Tin KT
         private void button19_Click(object sender, EventArgs e)
         {
             try
@@ -213,7 +214,9 @@ namespace GUI
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
                 checkBox4.Visible = false;
-
+                button16.Visible = false;
+                button15.Visible = false;
+                customButton1.Visible = true;
                 // Lấy dữ liệu khách thuê
                 ThongtinkhachthueBLL tenantBLL = new ThongtinkhachthueBLL();
                 List<ThongtinkhachthueDTO> tenants = tenantBLL.GetAllTenants();
@@ -365,6 +368,28 @@ namespace GUI
         private void quanlynha_Load(object sender, EventArgs e)
         {
 
+        }
+
+        // QUan Li Hop Dong
+        private void button17_Click(object sender, EventArgs e)
+        {
+            btn_hopdong_Click(this, e);
+            button15.Visible = true;
+            button16.Visible = true;
+        }
+
+        // Them khach thue
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            using (TenantForm tenantForm = new TenantForm())
+            {
+                if (tenantForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Hợp đồng đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Tự động refresh danh sách khách thuê
+                    button19_Click(sender, e);
+                }
+            }
         }
     }
 }
