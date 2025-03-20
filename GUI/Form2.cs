@@ -195,6 +195,7 @@ namespace GUI
 
         private void btn_hopdong_Click(object sender, EventArgs e)
         {
+            Theemnoiluutru.Visible = false;
             customButton1.Visible = false;
             changePanel(panel_quanlyhopdong);
             LoadData("All");
@@ -210,6 +211,7 @@ namespace GUI
             try
             {
                 // Ẩn các checkbox
+                
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
@@ -217,6 +219,8 @@ namespace GUI
                 button16.Visible = false;
                 button15.Visible = false;
                 customButton1.Visible = true;
+
+                
                 // Lấy dữ liệu khách thuê
                 ThongtinkhachthueBLL tenantBLL = new ThongtinkhachthueBLL();
                 List<ThongtinkhachthueDTO> tenants = tenantBLL.GetAllTenants();
@@ -394,7 +398,150 @@ namespace GUI
 
         private void Theemnoiluutru_Click(object sender, EventArgs e)
         {
+            using (TenantForm tenantForm = new TenantForm())
+            {
+                if (tenantForm.ShowDialog() == DialogResult.OK)
+                {
 
+                    // Tự động refresh danh sách khách thuê
+                    button19_Click(sender, e);
+                }
+            }
+        }
+        
+        private TemporaryResidenceBLL temporaryResidenceBLL = new TemporaryResidenceBLL();
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Hiển thị trạng thái đang xử lý
+                Cursor = Cursors.WaitCursor;
+
+                // Ẩn các controls không liên quan
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                button16.Visible = false;
+                button15.Visible = false;
+                customButton1.Visible = false;
+                // Hiển thị button thêm tạm trú mới nếu có
+          
+
+                // Lấy danh sách tạm trú từ BLL
+                List<TemporaryResidenceDTO> residences = temporaryResidenceBLL.GetAllTemporaryResidences();
+
+                // Tạo DataTable để hiển thị trên DataGridView
+                DataTable dt = new DataTable();
+
+                // Thêm các cột vào DataTable
+                dt.Columns.Add("Mã Khách Thuê", typeof(string));
+                dt.Columns.Add("Tên", typeof(string));
+                dt.Columns.Add("Họ", typeof(string));
+                dt.Columns.Add("Ngày Sinh", typeof(string));
+                dt.Columns.Add("Giới Tính", typeof(string));
+                dt.Columns.Add("Số Điện Thoại", typeof(string));
+                dt.Columns.Add("Địa Chỉ Thường Trú", typeof(string));
+                dt.Columns.Add("Địa Chỉ Tạm Trú", typeof(string));
+                dt.Columns.Add("Ngày Bắt Đầu", typeof(string));
+                dt.Columns.Add("Ngày Hết Hạn", typeof(string));
+                dt.Columns.Add("Trạng Thái", typeof(string));
+
+                // Thêm dữ liệu vào DataTable
+                foreach (TemporaryResidenceDTO residence in residences)
+                {
+                    // Tính trạng thái tạm trú
+                    string status = "Đang hiệu lực";
+                    if (DateTime.Now > residence.ExpiryDate)
+                    {
+                        status = "Hết hạn";
+                    }
+                    else if ((residence.ExpiryDate - DateTime.Now).TotalDays <= 30)
+                    {
+                        status = "Sắp hết hạn";
+                    }
+
+                    // Thêm một dòng vào DataTable
+                    dt.Rows.Add(
+                        residence.TenantID,
+                        residence.FirstName,
+                        residence.LastName,
+                        residence.Birthday.ToShortDateString(),
+                        residence.Gender,
+                        residence.PhoneNumber,
+                        residence.PermanentAddress,
+                        residence.RegisteredAddress,
+                        residence.StartDate.ToShortDateString(),
+                        residence.ExpiryDate.ToShortDateString(),
+                        status
+                    );
+                }
+
+                // Gán DataTable làm nguồn dữ liệu cho DataGridView
+                dataGridView2.DataSource = dt;
+
+                // Định dạng DataGridView
+                FormatTemporaryResidenceDataGridView();
+
+                // Hiển thị tiêu đề
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách tạm trú: {ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Khôi phục con trỏ
+                Cursor = Cursors.Default;
+            }
+        }
+        private void btnAddTemporaryResidence_Click(object sender, EventArgs e)
+        {
+            using (TemporaryResidenceForm residenceForm = new TemporaryResidenceForm())
+            {
+                if (residenceForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Hiển thị thông báo
+                    MessageBox.Show("Đăng ký tạm trú thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Cập nhật lại DataGridView
+                    button20_Click(sender, e);
+                }
+            }
+        }
+        private void FormatTemporaryResidenceDataGridView()
+        {
+            // Định dạng lại các cột trong DataGridView
+            dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+
+            // Giới hạn độ rộng cột địa chỉ
+            if (dataGridView2.Columns["Địa Chỉ Thường Trú"] != null)
+                dataGridView2.Columns["Địa Chỉ Thường Trú"].Width = 150;
+
+            if (dataGridView2.Columns["Địa Chỉ Tạm Trú"] != null)
+                dataGridView2.Columns["Địa Chỉ Tạm Trú"].Width = 150;
+
+            // Định dạng màu sắc dựa trên trạng thái
+            foreach (DataGridViewRow row in dataGridView2.Rows)
+            {
+                if (row.Cells["Trạng Thái"].Value != null)
+                {
+                    string status = row.Cells["Trạng Thái"].Value.ToString();
+
+                    if (status == "Hết hạn")
+                    {
+                        row.DefaultCellStyle.BackColor = System.Drawing.Color.LightPink;
+                    }
+                    else if (status == "Sắp hết hạn")
+                    {
+                        row.DefaultCellStyle.BackColor = System.Drawing.Color.LightYellow;
+                    }
+                }
+            }
         }
     }
 }

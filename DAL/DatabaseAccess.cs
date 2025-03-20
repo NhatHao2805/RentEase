@@ -235,7 +235,47 @@ namespace DAL
                 }
             }
         }
+        // Thêm vào lớp DatabaseAccess trong file DatabaseAccess.cs
+        public static List<TemporaryResidenceDTO> GetAllTemporaryResidences()
+        {
+            List<TemporaryResidenceDTO> residenceList = new List<TemporaryResidenceDTO>();
 
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return residenceList;
+
+                string query = "SELECT * FROM TEMPORARY_RESIDENCE";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            TemporaryResidenceDTO residence = new TemporaryResidenceDTO(
+                                reader.GetString("TENANTID"),
+                                reader.GetString("FIRSTNAME"),
+                                reader.GetString("LASTNAME"),
+                                reader.GetDateTime("BIRTHDAY"),
+                                reader.GetString("GENDER"),
+                                reader.GetString("PHONENUMBER"),
+                                reader.IsDBNull(reader.GetOrdinal("EMAIL")) ? "" : reader.GetString("EMAIL"),
+                                reader.GetString("PERMANENTADDRESS"),
+                                reader.GetString("REGISTEDADDRESS"),
+                                reader.GetDateTime("STARTDATE"),
+                                reader.IsDBNull(reader.GetOrdinal("NOTES")) ? "" : reader.GetString("NOTES"),
+                                reader.GetDateTime("EXPIRY_DATE"),
+                                reader.IsDBNull(reader.GetOrdinal("REGISTRATION_FILE_PATH")) ? "" : reader.GetString("REGISTRATION_FILE_PATH")
+                            );
+
+                            residenceList.Add(residence);
+                        }
+                    }
+                }
+            }
+
+            return residenceList;
+        }
         public static bool SaveContract(ContractDTO contract)
         {
             using (MySqlConnection conn = MySqlConnectionData.Connect())

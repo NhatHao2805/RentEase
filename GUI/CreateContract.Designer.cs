@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(984, 448);
             this.Name = "CreateContract";
             this.Text = "CreateContract";
+            this.Load += new System.EventHandler(this.CreateContract_Load);
             this.ResumeLayout(false);
 
         }
