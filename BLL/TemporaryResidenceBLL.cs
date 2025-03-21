@@ -11,5 +11,9 @@ namespace BLL
             // Gọi DAL để lấy dữ liệu
             return DatabaseAccess.GetAllTemporaryResidences();
         }
+        public bool AddTemporaryResidence(TemporaryResidenceDTO residence)
+        {
+            return DatabaseAccess.SaveTemporaryResidence(residence);
+        }
     }
 }

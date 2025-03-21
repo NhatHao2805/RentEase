@@ -138,5 +138,5 @@ D:\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
 D:\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
-D:\RentEase\GUI\obj\Debug\GUI.TemporaryResidenceForm.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.SignLiving.resources
+D:\RentEase\GUI\obj\Debug\GUI.SignLiving.resources

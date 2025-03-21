@@ -1,121 +1,125 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\RentEaseTDT\\RentEase\\",
+  "WorkspaceRootPath": "D:\\RentEase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease\\gui\\signliving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\signliving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\signliving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\signliving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\tenantform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\tenantform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\tenantform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\tenantform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\GUI\\Form2.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:GUI\\Form2.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\signliving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\signliving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEaseTDT\\RentEase\\bll\\thongtinkhachthuebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\thongtinkhachthuebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEaseTDT\\RentEase\\dto\\thongtinkhachthuedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:dto\\thongtinkhachthuedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEaseTDT\\RentEase\\bll\\temporaryresidencebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEase\\bll\\temporaryresidencebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\temporaryresidencebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\RentEaseTDT\\RentEase\\DAL\\DatabaseAccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:DAL\\DatabaseAccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\tenantform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\tenantform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEaseTDT\\RentEase\\dto\\temporaryresidencedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\RentEase\\dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEase\\dto\\thongtinkhachthuedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:dto\\thongtinkhachthuedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEase\\dto\\temporaryresidencedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:dto\\temporaryresidencedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\tenantform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\tenantform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\createcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\createcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\createcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\createcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\contractform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\contractform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEaseTDT\\RentEase\\DTO\\ContractDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:DTO\\ContractDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEaseTDT\\RentEase\\DTO\\Account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:DTO\\Account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\custom\\custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\custom\\custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\contractform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\contractform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEaseTDT\\RentEase\\bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\createcontract.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\createcontract.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\GUI\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\GUI\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:GUI\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEaseTDT\\RentEase\\bll\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\GUI\\Form2.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:GUI\\Form2.Designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEaseTDT\\RentEase\\BLL\\AccountBLL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEase\\bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEase\\DTO\\ContractDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:DTO\\ContractDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\createcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\createcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\createcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\createcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\contractform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\contractform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\contractform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\contractform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEase\\DTO\\Account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:DTO\\Account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\RentEase\\dal\\accountaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\accountaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\RentEase\\dal\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEase\\bll\\thongtinkhachthuebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\thongtinkhachthuebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEase\\BLL\\AccountBLL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:BLL\\AccountBLL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\customdatagridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\custom\\custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\custom\\custom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\createcontract.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\createcontract.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEase\\bll\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\gui\\customdatagridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\customdatagridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\GUI\\CustomDataGridView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEase\\GUI\\CustomDataGridView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:GUI\\CustomDataGridView.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -130,6 +134,10 @@
           "Children": [
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
             },
             {
@@ -142,204 +150,149 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SignLiving.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\SignLiving.cs",
-              "RelativeDocumentMoniker": "GUI\\SignLiving.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\SignLiving.cs [Design]",
-              "RelativeToolTip": "GUI\\SignLiving.cs [Design]",
+              "Title": "Form2.cs [Design]",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\Form2.cs",
+              "RelativeDocumentMoniker": "GUI\\Form2.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\Form2.cs [Design]",
+              "RelativeToolTip": "GUI\\Form2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T14:02:35.359Z",
+              "WhenOpened": "2025-03-20T02:03:14.353Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\Form2.cs",
+              "RelativeDocumentMoniker": "GUI\\Form2.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\Form2.cs",
+              "RelativeToolTip": "GUI\\Form2.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADgvy0AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:45:18.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "TenantForm.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\TenantForm.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\TenantForm.cs",
               "RelativeDocumentMoniker": "GUI\\TenantForm.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\TenantForm.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\TenantForm.cs",
               "RelativeToolTip": "GUI\\TenantForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAI0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-20T14:02:21.79Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SignLiving.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\SignLiving.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\SignLiving.cs",
               "RelativeDocumentMoniker": "GUI\\SignLiving.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\SignLiving.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\SignLiving.cs",
               "RelativeToolTip": "GUI\\SignLiving.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAqwDYAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAwBAAAAAAAAAAAAABYBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-20T13:56:11.371Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.cs",
-              "RelativeDocumentMoniker": "GUI\\Form2.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.cs",
-              "RelativeToolTip": "GUI\\Form2.cs",
-              "ViewState": "AgIAAPABAAAAAAAAAAAuwPQBAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2025-03-14T07:45:18.524Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TenantForm.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\TenantForm.cs",
-              "RelativeDocumentMoniker": "GUI\\TenantForm.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\TenantForm.cs [Design]",
-              "RelativeToolTip": "GUI\\TenantForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2025-03-20T07:34:34.263Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ThongtinkhachthueBLL.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\BLL\\ThongtinkhachthueBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\ThongtinkhachthueBLL.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\BLL\\ThongtinkhachthueBLL.cs",
-              "RelativeToolTip": "BLL\\ThongtinkhachthueBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T09:23:47.111Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Form2.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.cs",
-              "RelativeDocumentMoniker": "GUI\\Form2.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.cs [Design]",
-              "RelativeToolTip": "GUI\\Form2.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2025-03-20T02:03:14.353Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form2.Designer.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.Designer.cs",
-              "RelativeDocumentMoniker": "GUI\\Form2.Designer.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Form2.Designer.cs",
-              "RelativeToolTip": "GUI\\Form2.Designer.cs",
-              "ViewState": "AgIAAK8GAAAAAAAAAAApwLkGAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
-              "WhenOpened": "2025-03-17T07:08:44.379Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 3,
               "Title": "TemporaryResidenceBLL.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\BLL\\TemporaryResidenceBLL.cs",
+              "DocumentMoniker": "D:\\RentEase\\BLL\\TemporaryResidenceBLL.cs",
               "RelativeDocumentMoniker": "BLL\\TemporaryResidenceBLL.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\BLL\\TemporaryResidenceBLL.cs",
+              "ToolTip": "D:\\RentEase\\BLL\\TemporaryResidenceBLL.cs",
               "RelativeToolTip": "BLL\\TemporaryResidenceBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-20T09:04:15.65Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ThongtinkhachthueDTO.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\DTO\\ThongtinkhachthueDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\ThongtinkhachthueDTO.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\DTO\\ThongtinkhachthueDTO.cs",
-              "RelativeToolTip": "DTO\\ThongtinkhachthueDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T02:08:08.236Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TemporaryResidenceDTO.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\DTO\\TemporaryResidenceDTO.cs",
-              "RelativeDocumentMoniker": "DTO\\TemporaryResidenceDTO.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\DTO\\TemporaryResidenceDTO.cs",
-              "RelativeToolTip": "DTO\\TemporaryResidenceDTO.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAkwBkAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T09:03:44.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Form1.cs",
-              "RelativeDocumentMoniker": "GUI\\Form1.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Form1.cs",
-              "RelativeToolTip": "GUI\\Form1.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAAAJgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T08:30:35.968Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "DatabaseAccess.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\DAL\\DatabaseAccess.cs",
+              "DocumentMoniker": "D:\\RentEase\\DAL\\DatabaseAccess.cs",
               "RelativeDocumentMoniker": "DAL\\DatabaseAccess.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\DAL\\DatabaseAccess.cs",
+              "ToolTip": "D:\\RentEase\\DAL\\DatabaseAccess.cs",
               "RelativeToolTip": "DAL\\DatabaseAccess.cs",
-              "ViewState": "AgIAAOkAAAAAAAAAAAAAAPkAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAAH0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T16:02:31.204Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Form1.cs",
-              "RelativeDocumentMoniker": "GUI\\Form1.cs",
-              "ToolTip": "D:\\RentEase\\GUI\\Form1.cs [Design]",
-              "RelativeToolTip": "..\\..\\RentEase\\GUI\\Form1.cs [Design]",
+              "DocumentIndex": 6,
+              "Title": "ThongtinkhachthueDTO.cs",
+              "DocumentMoniker": "D:\\RentEase\\DTO\\ThongtinkhachthueDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\ThongtinkhachthueDTO.cs",
+              "ToolTip": "D:\\RentEase\\DTO\\ThongtinkhachthueDTO.cs",
+              "RelativeToolTip": "DTO\\ThongtinkhachthueDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T08:30:28.752Z"
+              "WhenOpened": "2025-03-18T02:08:08.236Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CreateContract.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\CreateContract.cs",
-              "RelativeDocumentMoniker": "GUI\\CreateContract.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\CreateContract.cs",
-              "RelativeToolTip": "GUI\\CreateContract.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAmwBAAAAAeAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "TemporaryResidenceDTO.cs",
+              "DocumentMoniker": "D:\\RentEase\\DTO\\TemporaryResidenceDTO.cs",
+              "RelativeDocumentMoniker": "DTO\\TemporaryResidenceDTO.cs",
+              "ToolTip": "D:\\RentEase\\DTO\\TemporaryResidenceDTO.cs",
+              "RelativeToolTip": "DTO\\TemporaryResidenceDTO.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA3wCcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T08:57:20.738Z"
+              "WhenOpened": "2025-03-20T09:03:44.785Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CreateContract.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\CreateContract.cs",
-              "RelativeDocumentMoniker": "GUI\\CreateContract.cs",
-              "ToolTip": "D:\\RentEase\\GUI\\CreateContract.cs [Design]",
-              "RelativeToolTip": "..\\..\\RentEase\\GUI\\CreateContract.cs [Design]",
+              "DocumentIndex": 8,
+              "Title": "TenantForm.cs [Design]",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\TenantForm.cs",
+              "RelativeDocumentMoniker": "GUI\\TenantForm.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\TenantForm.cs [Design]",
+              "RelativeToolTip": "GUI\\TenantForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T13:26:35.52Z"
+              "WhenOpened": "2025-03-20T07:34:34.263Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\Program.cs",
+              "RelativeToolTip": "GUI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:28:34.399Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form2.Designer.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\Form2.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Form2.Designer.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\Form2.Designer.cs",
+              "RelativeToolTip": "GUI\\Form2.Designer.cs",
+              "ViewState": "AgIAAEwGAAAAAAAAAAAAAGIGAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:08:44.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "packages.config",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\packages.config",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\packages.config",
               "RelativeDocumentMoniker": "GUI\\packages.config",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\packages.config",
+              "ToolTip": "D:\\RentEase\\GUI\\packages.config",
               "RelativeToolTip": "GUI\\packages.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -347,70 +300,164 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ContractForm.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\ContractForm.cs",
-              "RelativeDocumentMoniker": "GUI\\ContractForm.cs",
-              "ToolTip": "D:\\RentEase\\GUI\\ContractForm.cs [Design]",
-              "RelativeToolTip": "..\\..\\RentEase\\GUI\\ContractForm.cs [Design]",
+              "DocumentIndex": 12,
+              "Title": "ContractBLL.cs",
+              "DocumentMoniker": "D:\\RentEase\\BLL\\ContractBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\ContractBLL.cs",
+              "ToolTip": "D:\\RentEase\\BLL\\ContractBLL.cs",
+              "RelativeToolTip": "BLL\\ContractBLL.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T08:30:21.451Z"
+              "WhenOpened": "2025-03-17T05:11:02.784Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 13,
               "Title": "ContractDTO.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\DTO\\ContractDTO.cs",
+              "DocumentMoniker": "D:\\RentEase\\DTO\\ContractDTO.cs",
               "RelativeDocumentMoniker": "DTO\\ContractDTO.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\DTO\\ContractDTO.cs",
+              "ToolTip": "D:\\RentEase\\DTO\\ContractDTO.cs",
               "RelativeToolTip": "DTO\\ContractDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T05:02:31.049Z"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\Form1.cs",
+              "RelativeDocumentMoniker": "GUI\\Form1.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\Form1.cs",
+              "RelativeToolTip": "GUI\\Form1.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAAAJAAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T08:30:35.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\Form1.cs",
+              "RelativeDocumentMoniker": "GUI\\Form1.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\Form1.cs [Design]",
+              "RelativeToolTip": "GUI\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T08:30:28.752Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CreateContract.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\CreateContract.cs",
+              "RelativeDocumentMoniker": "GUI\\CreateContract.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\CreateContract.cs",
+              "RelativeToolTip": "GUI\\CreateContract.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T08:57:20.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CreateContract.cs [Design]",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\CreateContract.cs",
+              "RelativeDocumentMoniker": "GUI\\CreateContract.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\CreateContract.cs [Design]",
+              "RelativeToolTip": "GUI\\CreateContract.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T13:26:35.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ContractForm.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\ContractForm.cs",
+              "RelativeDocumentMoniker": "GUI\\ContractForm.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\ContractForm.cs",
+              "RelativeToolTip": "GUI\\ContractForm.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAAAAABAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T13:30:12.923Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 19,
+              "Title": "ContractForm.cs [Design]",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\ContractForm.cs",
+              "RelativeDocumentMoniker": "GUI\\ContractForm.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\ContractForm.cs [Design]",
+              "RelativeToolTip": "GUI\\ContractForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T08:30:21.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "Account.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\DTO\\Account.cs",
+              "DocumentMoniker": "D:\\RentEase\\DTO\\Account.cs",
               "RelativeDocumentMoniker": "DTO\\Account.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\DTO\\Account.cs",
+              "ToolTip": "D:\\RentEase\\DTO\\Account.cs",
               "RelativeToolTip": "DTO\\Account.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T16:08:33.785Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "ContractForm.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\ContractForm.cs",
-              "RelativeDocumentMoniker": "GUI\\ContractForm.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\ContractForm.cs",
-              "RelativeToolTip": "GUI\\ContractForm.cs",
-              "ViewState": "AgIAAPcAAAAAAAAAAAAqwPAAAAANAAAAAAAAAA==",
+              "Title": "AccountAccess.cs",
+              "DocumentMoniker": "D:\\RentEase\\DAL\\AccountAccess.cs",
+              "RelativeDocumentMoniker": "DAL\\AccountAccess.cs",
+              "ToolTip": "D:\\RentEase\\DAL\\AccountAccess.cs",
+              "RelativeToolTip": "DAL\\AccountAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T13:30:12.923Z"
+              "WhenOpened": "2025-03-20T14:41:53.009Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "ContractBLL.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\BLL\\ContractBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\ContractBLL.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\BLL\\ContractBLL.cs",
-              "RelativeToolTip": "BLL\\ContractBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T05:11:02.784Z"
+              "Title": "app.config",
+              "DocumentMoniker": "D:\\RentEase\\DAL\\app.config",
+              "RelativeDocumentMoniker": "DAL\\app.config",
+              "ToolTip": "D:\\RentEase\\DAL\\app.config",
+              "RelativeToolTip": "DAL\\app.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-03-20T14:41:52.159Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
+              "Title": "ThongtinkhachthueBLL.cs",
+              "DocumentMoniker": "D:\\RentEase\\BLL\\ThongtinkhachthueBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\ThongtinkhachthueBLL.cs",
+              "ToolTip": "D:\\RentEase\\BLL\\ThongtinkhachthueBLL.cs",
+              "RelativeToolTip": "BLL\\ThongtinkhachthueBLL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T09:23:47.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AccountBLL.cs",
+              "DocumentMoniker": "D:\\RentEase\\BLL\\AccountBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\AccountBLL.cs",
+              "ToolTip": "D:\\RentEase\\BLL\\AccountBLL.cs",
+              "RelativeToolTip": "BLL\\AccountBLL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T16:01:30.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "Custom.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Custom\\Custom.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\Custom\\Custom.cs",
               "RelativeDocumentMoniker": "GUI\\Custom\\Custom.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Custom\\Custom.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\Custom\\Custom.cs",
               "RelativeToolTip": "GUI\\Custom\\Custom.cs",
               "ViewState": "AgIAAGUAAAAAAAAAAAAwwH8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -418,11 +465,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "CreateContract.Designer.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\CreateContract.Designer.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\CreateContract.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\CreateContract.Designer.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\CreateContract.Designer.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\CreateContract.Designer.cs",
               "RelativeToolTip": "GUI\\CreateContract.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -430,23 +477,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Program.cs",
-              "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T07:28:34.399Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "packages.config",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\BLL\\packages.config",
+              "DocumentMoniker": "D:\\RentEase\\BLL\\packages.config",
               "RelativeDocumentMoniker": "BLL\\packages.config",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\BLL\\packages.config",
+              "ToolTip": "D:\\RentEase\\BLL\\packages.config",
               "RelativeToolTip": "BLL\\packages.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -454,34 +489,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AccountBLL.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\BLL\\AccountBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\AccountBLL.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\BLL\\AccountBLL.cs",
-              "RelativeToolTip": "BLL\\AccountBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T16:01:30.536Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "CustomDataGridView.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\CustomDataGridView.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\CustomDataGridView.cs",
               "RelativeDocumentMoniker": "GUI\\CustomDataGridView.cs",
               "ToolTip": "D:\\RentEase\\GUI\\CustomDataGridView.cs [Design]",
-              "RelativeToolTip": "..\\..\\RentEase\\GUI\\CustomDataGridView.cs [Design]",
+              "RelativeToolTip": "GUI\\CustomDataGridView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-17T07:14:09.117Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "CustomDataGridView.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\CustomDataGridView.cs",
+              "DocumentMoniker": "D:\\RentEase\\GUI\\CustomDataGridView.cs",
               "RelativeDocumentMoniker": "GUI\\CustomDataGridView.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\CustomDataGridView.cs",
+              "ToolTip": "D:\\RentEase\\GUI\\CustomDataGridView.cs",
               "RelativeToolTip": "GUI\\CustomDataGridView.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAIwC4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

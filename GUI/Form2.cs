@@ -161,9 +161,6 @@ namespace GUI
 
         }
 
-       
-
-
         public void setPosition_hoaDon_thuChi(Panel p1, Panel p2)
         {
             p1.Size = size_component_quanlytaichinh;
@@ -172,40 +169,6 @@ namespace GUI
             p2.Location = location_component_quanlytaichinh_1;
         }
 
-        private void btn_hoadon_Click(object sender, EventArgs e)
-        {
-            setPosition_hoaDon_thuChi(panel_qltc_hoadon,panel_qltc_thuchi);
-        }
-
-        private void btn_thuchi_Click(object sender, EventArgs e)
-        {
-            setPosition_hoaDon_thuChi(panel_qltc_thuchi, panel_qltc_hoadon);
-        }
-
-        private void button28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_phong_Click(object sender, EventArgs e)
-        {
-            changePanel(panel_quanlyphong);
-        }
-
-
-        private void btn_hopdong_Click(object sender, EventArgs e)
-        {
-            Theemnoiluutru.Visible = false;
-            customButton1.Visible = false;
-            changePanel(panel_quanlyhopdong);
-            LoadData("All");
-        }
-        private void LoadData(String required)
-        {
-            List<ContractDTO> contractList = contractBLL.GetContractList(required);
-            dataGridView2.DataSource = contractList;
-        }
-        // QL Thong Tin KT
         private void button19_Click(object sender, EventArgs e)
         {
             try
@@ -261,6 +224,40 @@ namespace GUI
             {
                 MessageBox.Show($"Lỗi khi tải danh sách khách thuê: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btn_hoadon_Click(object sender, EventArgs e)
+        {
+            setPosition_hoaDon_thuChi(panel_qltc_hoadon,panel_qltc_thuchi);
+        }
+
+        private void btn_thuchi_Click(object sender, EventArgs e)
+        {
+            setPosition_hoaDon_thuChi(panel_qltc_thuchi, panel_qltc_hoadon);
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_phong_Click(object sender, EventArgs e)
+        {
+            changePanel(panel_quanlyphong);
+        }
+
+
+        private void btn_hopdong_Click(object sender, EventArgs e)
+        {
+            Theemnoiluutru.Visible = false;
+            customButton1.Visible = false;
+            changePanel(panel_quanlyhopdong);
+            LoadData("All");
+        }
+        private void LoadData(String required)
+        {
+            List<ContractDTO> contractList = contractBLL.GetContractList(required);
+            dataGridView2.DataSource = contractList;
         }
 
         private void btn_taichinh_Click(object sender, EventArgs e)
@@ -395,29 +392,29 @@ namespace GUI
                 }
             }
         }
-
         private void Theemnoiluutru_Click(object sender, EventArgs e)
         {
-            using (SignLiving signLV = new SignLiving()){;
-                if (signLV.ShowDialog() == DialogResult.OK)
+            using (SignLiving sign = new SignLiving())
+            {
+                if (sign.ShowDialog() == DialogResult.OK)
                 {
+
                     // Tự động refresh danh sách khách thuê
                     button20_Click(sender, e);
                 }
             }
         }
-        
+
+       
+
+
         private TemporaryResidenceBLL temporaryResidenceBLL = new TemporaryResidenceBLL();
 
         private void button20_Click(object sender, EventArgs e)
         {
-            Theemnoiluutru.Visible = true;
             try
             {
-                // Hiển thị trạng thái đang xử lý
-                Cursor = Cursors.WaitCursor;
-
-                // Ẩn các controls không liên quan
+                // Ẩn các checkbox
                 checkBox1.Visible = false;
                 checkBox2.Visible = false;
                 checkBox3.Visible = false;
@@ -425,10 +422,8 @@ namespace GUI
                 button16.Visible = false;
                 button15.Visible = false;
                 customButton1.Visible = false;
+                Theemnoiluutru.Visible = true;
                 
-                // Hiển thị button thêm tạm trú mới nếu có
-          
-
                 // Lấy danh sách tạm trú từ BLL
                 List<TemporaryResidenceDTO> residences = temporaryResidenceBLL.GetAllTemporaryResidences();
 
@@ -481,53 +476,17 @@ namespace GUI
                 // Gán DataTable làm nguồn dữ liệu cho DataGridView
                 dataGridView2.DataSource = dt;
 
-                // Định dạng DataGridView
-                FormatTemporaryResidenceDataGridView();
-
-                // Hiển thị tiêu đề
-                
+                // Điều chỉnh độ rộng cột
+                dataGridView2.AutoResizeColumns();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Lỗi khi tải danh sách tạm trú: {ex.Message}", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                // Khôi phục con trỏ
-                Cursor = Cursors.Default;
-            }
         }
-      
-        private void FormatTemporaryResidenceDataGridView()
-        {
-            // Định dạng lại các cột trong DataGridView
-            dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-            // Giới hạn độ rộng cột địa chỉ
-            if (dataGridView2.Columns["Địa Chỉ Thường Trú"] != null)
-                dataGridView2.Columns["Địa Chỉ Thường Trú"].Width = 150;
+       
 
-            if (dataGridView2.Columns["Địa Chỉ Tạm Trú"] != null)
-                dataGridView2.Columns["Địa Chỉ Tạm Trú"].Width = 150;
-
-            // Định dạng màu sắc dựa trên trạng thái
-            foreach (DataGridViewRow row in dataGridView2.Rows)
-            {
-                if (row.Cells["Trạng Thái"].Value != null)
-                {
-                    string status = row.Cells["Trạng Thái"].Value.ToString();
-
-                    if (status == "Hết hạn")
-                    {
-                        row.DefaultCellStyle.BackColor = System.Drawing.Color.LightPink;
-                    }
-                    else if (status == "Sắp hết hạn")
-                    {
-                        row.DefaultCellStyle.BackColor = System.Drawing.Color.LightYellow;
-                    }
-                }
-            }
-        }
     }
 }

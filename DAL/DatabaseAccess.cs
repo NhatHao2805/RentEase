@@ -321,6 +321,48 @@ namespace DAL
                 }
             }
         }
+        public static bool SaveTemporaryResidence(TemporaryResidenceDTO residence)
+        {
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return false;
+
+                string query = @"INSERT INTO TEMPORARY_RESIDENCE 
+            (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL, 
+             PERMANENTADDRESS, REGISTEDADDRESS, STARTDATE, NOTES, EXPIRY_DATE, REGISTRATION_FILE_PATH) 
+            VALUES (@TenantId, @FirstName, @LastName, @Birthday, @Gender, @PhoneNumber, @Email, 
+                    @PermanentAddress, @RegisteredAddress, @StartDate, @Notes, @ExpiryDate, @RegistrationFilePath)";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenantId", residence.TenantID);
+                    cmd.Parameters.AddWithValue("@FirstName", residence.FirstName);
+                    cmd.Parameters.AddWithValue("@LastName", residence.LastName);
+                    cmd.Parameters.AddWithValue("@Birthday", residence.Birthday);
+                    cmd.Parameters.AddWithValue("@Gender", residence.Gender);
+                    cmd.Parameters.AddWithValue("@PhoneNumber", residence.PhoneNumber);
+                    cmd.Parameters.AddWithValue("@Email", residence.Email ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@PermanentAddress", residence.PermanentAddress);
+                    cmd.Parameters.AddWithValue("@RegisteredAddress", residence.RegisteredAddress);
+                    cmd.Parameters.AddWithValue("@StartDate", residence.StartDate);
+                    cmd.Parameters.AddWithValue("@Notes", residence.Notes ?? (object)DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ExpiryDate", residence.ExpiryDate);
+                    cmd.Parameters.AddWithValue("@RegistrationFilePath", residence.RegistrationFilePath ?? (object)DBNull.Value);
+
+                    try
+                    {
+                        int result = cmd.ExecuteNonQuery();
+                        Console.WriteLine($"SaveTemporaryResidence result: {result}");
+                        return result > 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Error.WriteLine($"Error saving temporary residence: {ex.Message}");
+                        return false;
+                    }
+                }
+            }
+        }
     }
 
 }
