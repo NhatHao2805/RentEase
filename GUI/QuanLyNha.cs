@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +54,10 @@ namespace GUI
             setPosition_hoaDon_thuChi(panel_qltc_hoadon, panel_qltc_thuchi);
             changePanel(panel_quanlyphong);
 
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void loadVariable()
@@ -155,18 +161,69 @@ namespace GUI
 
         }
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         public void setPosition_hoaDon_thuChi(Panel p1, Panel p2)
         {
             p1.Size = size_component_quanlytaichinh;
             p1.Location = location_component_quanlytaichinh;
             p2.Size = size_component_quanlytaichinh_1;
             p2.Location = location_component_quanlytaichinh_1;
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ẩn các checkbox
+                
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                button16.Visible = false;
+                button15.Visible = false;
+                customButton1.Visible = true;
+
+                
+                // Lấy dữ liệu khách thuê
+                ThongtinkhachthueBLL tenantBLL = new ThongtinkhachthueBLL();
+                List<ThongtinkhachthueDTO> tenants = tenantBLL.GetAllTenants();
+
+                // Tạo DataTable mới
+                DataTable dt = new DataTable();
+
+                // Thêm các cột vào DataTable
+                dt.Columns.Add("Mã Khách Thuê", typeof(string));
+                dt.Columns.Add("Tên", typeof(string));
+                dt.Columns.Add("Họ", typeof(string));
+                dt.Columns.Add("Ngày Sinh", typeof(string));
+                dt.Columns.Add("Giới Tính", typeof(string));
+                dt.Columns.Add("Số Điện Thoại", typeof(string));
+                dt.Columns.Add("Email", typeof(string));
+
+                // Thêm dữ liệu vào DataTable
+                foreach (ThongtinkhachthueDTO tenant in tenants)
+                {
+                    dt.Rows.Add(
+                        tenant.TenantID,
+                        tenant.FirstName,
+                        tenant.LastName,
+                        tenant.Birthday.ToShortDateString(),
+                        tenant.Gender,
+                        tenant.PhoneNumber,
+                        tenant.Email
+                    );
+                }
+
+                // Gán DataTable cho DataGridView2
+                dataGridView2.DataSource = dt;
+
+                // Điều chỉnh độ rộng cột
+                dataGridView2.AutoResizeColumns();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách khách thuê: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btn_hoadon_Click(object sender, EventArgs e)
@@ -189,10 +246,18 @@ namespace GUI
             changePanel(panel_quanlyphong);
         }
 
+
         private void btn_hopdong_Click(object sender, EventArgs e)
         {
+            Theemnoiluutru.Visible = false;
+            customButton1.Visible = false;
             changePanel(panel_quanlyhopdong);
-
+            LoadData("All");
+        }
+        private void LoadData(String required)
+        {
+            List<ContractDTO> contractList = contractBLL.GetContractList(required);
+            dataGridView2.DataSource = contractList;
         }
 
         private void btn_taichinh_Click(object sender, EventArgs e)
@@ -216,6 +281,221 @@ namespace GUI
         private void btn_caidat_Click(object sender, EventArgs e)
         {
             //changePanel(panel_quanlyphong);
+        }
+
+        // Them Hop Dong
+        private void button16_Click(object sender, EventArgs e)
+        {
+            using (ContractForm contractForm = new ContractForm())
+            {
+                if (contractForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Hợp đồng đã được lưu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Tự động refresh danh sách khách thuê
+                    button19_Click(sender, e);
+                }
+            }
+        }
+
+        // DataGridView Click
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private ContractBLL contractBLL = new ContractBLL();
+        private TemporaryResidenceBLL temporaryResidenceBLL = new TemporaryResidenceBLL();
+
+        // Filter đã hết hạn
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                // Nếu checkbox được tick → Hiển thị dữ liệu A
+                LoadData("Inactive");
+            }
+            else
+            {
+                // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
+                LoadData("All");
+            }
+            
+        }
+        // sap het hạn hop dong
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked)
+            {
+                // Nếu checkbox được tick → Hiển thị dữ liệu A
+                LoadData("Expire Soon");
+            }
+            else
+            {
+                // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
+                LoadData("All");
+            }
+        }
+        // con hieu luc
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                // Nếu checkbox được tick → Hiển thị dữ liệu A
+                LoadData("Active");
+            }
+            else
+            {
+                // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
+                LoadData("All");
+            }
+        }
+
+        // Dang bao ket thuc
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                // Nếu checkbox được tick → Hiển thị dữ liệu A
+                LoadData("Ending");
+            }
+            else
+            {
+                // Nếu checkbox bỏ tick → Hiển thị lại toàn bộ dữ liệu
+                LoadData("All");
+            }
+        }
+
+        private void quanlynha_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        // QUan Li Hop Dong
+        private void button17_Click(object sender, EventArgs e)
+        {
+            btn_hopdong_Click(this, e);
+            button15.Visible = true;
+            button16.Visible = true;
+        }
+
+        // Them khach thue
+        private void customButton1_Click(object sender, EventArgs e)
+        {
+            using (TenantForm tenantForm = new TenantForm())
+            {
+                if (tenantForm.ShowDialog() == DialogResult.OK)
+                {
+     
+                    // Tự động refresh danh sách khách thuê
+                    button19_Click(sender, e);
+                }
+            }
+        }
+        private void Theemnoiluutru_Click(object sender, EventArgs e)
+        {
+            using (SignLiving sign = new SignLiving())
+            {
+                if (sign.ShowDialog() == DialogResult.OK)
+                {
+
+                    // Tự động refresh danh sách khách thuê
+                    button20_Click(sender, e);
+                }
+            }
+        }
+
+       
+
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ẩn các checkbox
+                checkBox1.Visible = false;
+                checkBox2.Visible = false;
+                checkBox3.Visible = false;
+                checkBox4.Visible = false;
+                button16.Visible = false;
+                button15.Visible = false;
+                customButton1.Visible = false;
+                Theemnoiluutru.Visible = true;
+                
+                // Lấy danh sách tạm trú từ BLL
+                List<TemporaryResidenceDTO> residences = temporaryResidenceBLL.GetAllTemporaryResidences();
+
+                // Tạo DataTable để hiển thị trên DataGridView
+                DataTable dt = new DataTable();
+
+                // Thêm các cột vào DataTable
+                dt.Columns.Add("Mã Khách Thuê", typeof(string));
+                dt.Columns.Add("Tên", typeof(string));
+                dt.Columns.Add("Họ", typeof(string));
+                dt.Columns.Add("Ngày Sinh", typeof(string));
+                dt.Columns.Add("Giới Tính", typeof(string));
+                dt.Columns.Add("Số Điện Thoại", typeof(string));
+                dt.Columns.Add("Địa Chỉ Thường Trú", typeof(string));
+                dt.Columns.Add("Địa Chỉ Tạm Trú", typeof(string));
+                dt.Columns.Add("Ngày Bắt Đầu", typeof(string));
+                dt.Columns.Add("Ngày Hết Hạn", typeof(string));
+                dt.Columns.Add("Trạng Thái", typeof(string));
+
+                // Thêm dữ liệu vào DataTable
+                foreach (TemporaryResidenceDTO residence in residences)
+                {
+                    // Tính trạng thái tạm trú
+                    string status = "Đang hiệu lực";
+                    if (DateTime.Now > residence.ExpiryDate)
+                    {
+                        status = "Hết hạn";
+                    }
+                    else if ((residence.ExpiryDate - DateTime.Now).TotalDays <= 30)
+                    {
+                        status = "Sắp hết hạn";
+                    }
+
+                    // Thêm một dòng vào DataTable
+                    dt.Rows.Add(
+                        residence.TenantID,
+                        residence.FirstName,
+                        residence.LastName,
+                        residence.Birthday.ToShortDateString(),
+                        residence.Gender,
+                        residence.PhoneNumber,
+                        residence.PermanentAddress,
+                        residence.RegisteredAddress,
+                        residence.StartDate.ToShortDateString(),
+                        residence.ExpiryDate.ToShortDateString(),
+                        status
+                    );
+                }
+
+                // Gán DataTable làm nguồn dữ liệu cho DataGridView
+                dataGridView2.DataSource = dt;
+
+                // Điều chỉnh độ rộng cột
+                dataGridView2.AutoResizeColumns();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải danh sách tạm trú: {ex.Message}", "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create an instance of a contract template form
+                ContractTemplateForm templateForm = new ContractTemplateForm();
+                templateForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi mở mẫu hợp đồng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

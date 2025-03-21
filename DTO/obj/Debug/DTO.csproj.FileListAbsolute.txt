@@ -4,5 +4,64 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.Assembl
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.pdb
+<<<<<<< HEAD
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\bin\Debug\Guna.UI2.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+=======
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\DTO.dll.config
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\DTO.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\MySqlConnector.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Buffers.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Memory.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\MySqlConnector.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Buffers.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Memory.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.dll
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.pdb
+D:\RentEase\DTO\bin\Debug\DTO.dll.config
+D:\RentEase\DTO\bin\Debug\DTO.dll
+D:\RentEase\DTO\bin\Debug\DTO.pdb
+D:\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEase\DTO\bin\Debug\MySqlConnector.dll
+D:\RentEase\DTO\bin\Debug\System.Buffers.dll
+D:\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEase\DTO\bin\Debug\System.Memory.dll
+D:\RentEase\DTO\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEase\DTO\bin\Debug\MySqlConnector.xml
+D:\RentEase\DTO\bin\Debug\System.Buffers.xml
+D:\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEase\DTO\bin\Debug\System.Memory.xml
+D:\RentEase\DTO\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEase\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\RentEase\DTO\obj\Debug\DTO.dll
+D:\RentEase\DTO\obj\Debug\DTO.pdb
+>>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94
