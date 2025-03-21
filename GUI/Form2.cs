@@ -305,6 +305,7 @@ namespace GUI
         }
 
         private ContractBLL contractBLL = new ContractBLL();
+        private TemporaryResidenceBLL temporaryResidenceBLL = new TemporaryResidenceBLL();
 
         // Filter đã hết hạn
 
@@ -408,8 +409,6 @@ namespace GUI
        
 
 
-        private TemporaryResidenceBLL temporaryResidenceBLL = new TemporaryResidenceBLL();
-
         private void button20_Click(object sender, EventArgs e)
         {
             try
@@ -486,7 +485,18 @@ namespace GUI
             }
         }
 
-       
-
+        private void button15_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Create an instance of a contract template form
+                ContractTemplateForm templateForm = new ContractTemplateForm();
+                templateForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi mở mẫu hợp đồng: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
