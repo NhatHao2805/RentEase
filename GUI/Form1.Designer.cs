@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using GUI.Custom;
+using System.Drawing;
+namespace GUI
 {
     partial class Form1
     {
@@ -34,17 +36,19 @@
             this.labelMK_DK2 = new System.Windows.Forms.Label();
             this.labelMK_DK1 = new System.Windows.Forms.Label();
             this.labelTK_DK = new System.Windows.Forms.Label();
-            this.textBoxMK_DK2 = new System.Windows.Forms.TextBox();
-            this.textBoxMK_DK1 = new System.Windows.Forms.TextBox();
-            this.textBoxTK_DK = new System.Windows.Forms.TextBox();
-            this.buttonDangKy2 = new System.Windows.Forms.Button();
+            this.textBoxMK_DK2 = new MyGunaTextBox();
+            this.textBoxMK_DK1 = new MyGunaTextBox();
+            this.textBoxTK_DK = new MyGunaTextBox();
+
+            this.buttonDangKy2 = new MyGunaButton();
+
             this.btnClose = new System.Windows.Forms.Button();
             this.buttonXemPass = new System.Windows.Forms.Button();
-            this.textBoxTK_DN = new System.Windows.Forms.TextBox();
-            this.textBoxMK_DN = new System.Windows.Forms.TextBox();
+            this.textBoxTK_DN = new MyGunaTextBox();
+            this.textBoxMK_DN = new MyGunaTextBox();
             this.labelTK_DN = new System.Windows.Forms.Label();
             this.labelMK_DN = new System.Windows.Forms.Label();
-            this.buttonDangNhap1 = new System.Windows.Forms.Button();
+            this.buttonDangNhap1 = new MyGunaButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -114,7 +118,7 @@
             // 
             // textBoxMK_DK1
             // 
-            this.textBoxMK_DK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+
             this.textBoxMK_DK1.Location = new System.Drawing.Point(472, 180);
             this.textBoxMK_DK1.Multiline = true;
             this.textBoxMK_DK1.Name = "textBoxMK_DK1";
@@ -125,7 +129,7 @@
             // textBoxTK_DK
             // 
             this.textBoxTK_DK.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxTK_DK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+
             this.textBoxTK_DK.Location = new System.Drawing.Point(472, 103);
             this.textBoxTK_DK.Multiline = true;
             this.textBoxTK_DK.Name = "textBoxTK_DK";
@@ -140,7 +144,9 @@
             this.buttonDangKy2.Size = new System.Drawing.Size(255, 40);
             this.buttonDangKy2.TabIndex = 1;
             this.buttonDangKy2.Text = "Đăng ký";
-            this.buttonDangKy2.UseVisualStyleBackColor = true;
+            this.buttonDangKy2.FillColor = ColorTranslator.FromHtml("#3297DA");
+            this.buttonDangNhap1.ForeColor = Color.White;
+            //this.buttonDangKy2.UseVisualStyleBackColor = true;
             this.buttonDangKy2.Click += new System.EventHandler(this.buttonDangKy2_Click);
             // 
             // btnClose
@@ -169,19 +175,21 @@
             // textBoxTK_DN
             // 
             this.textBoxTK_DN.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBoxTK_DN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.textBoxTK_DN.Location = new System.Drawing.Point(68, 103);
             this.textBoxTK_DN.Multiline = true;
             this.textBoxTK_DN.Name = "textBoxTK_DN";
+     
             this.textBoxTK_DN.Size = new System.Drawing.Size(250, 40);
             this.textBoxTK_DN.TabIndex = 16;
             // 
             // textBoxMK_DN
             // 
-            this.textBoxMK_DN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            //this.textBoxMK_DN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxMK_DN.Location = new System.Drawing.Point(70, 180);
             this.textBoxMK_DN.Multiline = true;
             this.textBoxMK_DN.Name = "textBoxMK_DN";
+
             this.textBoxMK_DN.PasswordChar = '*';
             this.textBoxMK_DN.Size = new System.Drawing.Size(248, 40);
             this.textBoxMK_DN.TabIndex = 17;
@@ -214,7 +222,9 @@
             this.buttonDangNhap1.Size = new System.Drawing.Size(253, 40);
             this.buttonDangNhap1.TabIndex = 14;
             this.buttonDangNhap1.Text = "Đăng nhập";
-            this.buttonDangNhap1.UseVisualStyleBackColor = true;
+            this.buttonDangNhap1.FillColor = Color.FromArgb(102, 78, 167); // Màu tím
+            this.buttonDangNhap1.ForeColor = Color.White;
+            //this.buttonDangNhap1.UseVisualStyleBackColor = true;
             this.buttonDangNhap1.Click += new System.EventHandler(this.buttonDangNhap_Click);
             // 
             // pictureBox1
@@ -281,6 +291,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -291,19 +302,21 @@
         private System.Windows.Forms.Label labelMK_DK2;
         private System.Windows.Forms.Label labelMK_DK1;
         private System.Windows.Forms.Label labelTK_DK;
-        private System.Windows.Forms.TextBox textBoxMK_DK2;
-        private System.Windows.Forms.TextBox textBoxMK_DK1;
-        private System.Windows.Forms.TextBox textBoxTK_DK;
-        private System.Windows.Forms.Button buttonDangKy2;
+        private MyGunaTextBox textBoxMK_DK2;
+        private MyGunaTextBox textBoxMK_DK1;
+        private MyGunaTextBox textBoxTK_DK;
+        private MyGunaButton buttonDangKy2;
         private System.Windows.Forms.Button buttonXemPass2;
         private System.Windows.Forms.Button buttonXemPass1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button buttonXemPass;
-        private System.Windows.Forms.TextBox textBoxTK_DN;
-        private System.Windows.Forms.TextBox textBoxMK_DN;
+        private MyGunaTextBox textBoxTK_DN;
+        private MyGunaTextBox textBoxMK_DN;
         private System.Windows.Forms.Label labelTK_DN;
         private System.Windows.Forms.Label labelMK_DN;
-        private System.Windows.Forms.Button buttonDangNhap1;
+
+        private MyGunaButton buttonDangNhap1;
+
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.LinkLabel linkLabel1;

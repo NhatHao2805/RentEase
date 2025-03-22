@@ -1,48 +1,54 @@
-create database QuanLyThueNha;
-go
-use QuanLyThueNha;
-go
 
-create table Account(
-	taikhoan varchar(100) primary key,
-	matkhau varchar(20) not null
+USE rentease;
+CREATE TABLE Account (
+    taikhoan VARCHAR(100) PRIMARY KEY,
+    matkhau VARCHAR(20) NOT NULL
 );
 
-insert into Account values
-('admin','admin'),
-('user1','1234');
+INSERT INTO Account VALUES
+('admin', 'admin'),
+('user1', '1234');
 
-create proc proc_login 
-@user varchar(100),
-@pass varchar(20)
-as
-begin
-	SELECT * FROM Account WHERE taikhoan = @user AND matkhau = @pass
-end
+-- Stored Procedure: proc_login
+DELIMITER //
+CREATE PROCEDURE proc_login (
+    IN user VARCHAR(100),
+    IN pass VARCHAR(20)
+)
+BEGIN
+    SELECT * FROM Account WHERE taikhoan = user AND matkhau = pass;
+END;
+//
+DELIMITER ;
 
-create proc proc_addAccount 
-@user varchar(100),
-@pass varchar(20)
-as
-begin
-	
-		IF NOT EXISTS (SELECT 1 FROM Account WHERE taikhoan = @user)
-        BEGIN
-            insert into Account values 
-			(@user,@pass)
-        END
-end
-go
+-- Stored Procedure: proc_addAccount
+DELIMITER //
+CREATE PROCEDURE proc_addAccount (
+    IN user VARCHAR(100),
+    IN pass VARCHAR(20)
+)
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Account WHERE taikhoan = user) THEN
+        INSERT INTO Account (taikhoan, matkhau) VALUES (user, pass);
+    END IF;
+END;
+//
+DELIMITER ;
 
-create function dbo.check_account(@user varchar(100))
-returns int
-as
-begin	
-	IF NOT EXISTS (SELECT 1 FROM Account WHERE taikhoan = @user)
-	begin
-		return 1
-	end
-	return 0 
-		
-end
-
+-- Function: check_account
+DELIMITER //
+CREATE FUNCTION check_account(user VARCHAR(100)) RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE account_exists INT;
+    
+    SELECT COUNT(*) INTO account_exists FROM Account WHERE taikhoan = user;
+    
+    IF account_exists = 0 THEN
+        RETURN 1;
+    ELSE
+        RETURN 0;
+    END IF;
+END;
+//
+DELIMITER ;

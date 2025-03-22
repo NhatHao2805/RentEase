@@ -1,5 +1,4 @@
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form1.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
@@ -8,11 +7,169 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\GUI.exe
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\GUI.pdb
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\BLL.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\DTO.dll
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\DAL.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\BLL.pdb
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\DTO.pdb
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\DAL.pdb
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.exe
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.pdb
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.quanlynha.resources
+<<<<<<< HEAD
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_DangNhap.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_DangKy.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\BLL.dll.config
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\DAL.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\MySql.Data.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Memory.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Buffers.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\DAL.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\DAL.dll.config
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\MySql.Data.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Memory.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Buffers.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Guna.UI2.dll
+=======
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\GUI.exe
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\BLL.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\DTO.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\DAL.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\MySql.Data.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Guna.UI2.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\MySqlConnector.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Buffers.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Memory.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Google.Protobuf.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\ZstdSharp.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.IO.Pipelines.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\BLL.pdb
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\BLL.dll.config
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\DTO.dll.config
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\MySqlConnector.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Buffers.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Memory.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\DAL.dll.config
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\MySql.Data.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Google.Protobuf.pdb
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Google.Protobuf.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.IO.Pipelines.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.xml
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form1.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.quanlynha.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.exe
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.pdb
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\GUI.exe.config
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\GUI.pdb
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.CreateContract.resources
+D:\RentEase\GUI\bin\Debug\GUI.exe.config
+D:\RentEase\GUI\bin\Debug\GUI.exe
+D:\RentEase\GUI\bin\Debug\GUI.pdb
+D:\RentEase\GUI\bin\Debug\BLL.dll
+D:\RentEase\GUI\bin\Debug\DTO.dll
+D:\RentEase\GUI\bin\Debug\Guna.UI2.dll
+D:\RentEase\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEase\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEase\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEase\GUI\bin\Debug\MySqlConnector.dll
+D:\RentEase\GUI\bin\Debug\System.Buffers.dll
+D:\RentEase\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEase\GUI\bin\Debug\System.Memory.dll
+D:\RentEase\GUI\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEase\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEase\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEase\GUI\bin\Debug\DAL.dll
+D:\RentEase\GUI\bin\Debug\MySql.Data.dll
+D:\RentEase\GUI\bin\Debug\Google.Protobuf.dll
+D:\RentEase\GUI\bin\Debug\ZstdSharp.dll
+D:\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\RentEase\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+D:\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.dll
+D:\RentEase\GUI\bin\Debug\System.IO.Pipelines.dll
+D:\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.dll
+D:\RentEase\GUI\bin\Debug\BLL.pdb
+D:\RentEase\GUI\bin\Debug\BLL.dll.config
+D:\RentEase\GUI\bin\Debug\DTO.pdb
+D:\RentEase\GUI\bin\Debug\DTO.dll.config
+D:\RentEase\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEase\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEase\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEase\GUI\bin\Debug\MySqlConnector.xml
+D:\RentEase\GUI\bin\Debug\System.Buffers.xml
+D:\RentEase\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEase\GUI\bin\Debug\System.Memory.xml
+D:\RentEase\GUI\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEase\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEase\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEase\GUI\bin\Debug\DAL.pdb
+D:\RentEase\GUI\bin\Debug\DAL.dll.config
+D:\RentEase\GUI\bin\Debug\MySql.Data.xml
+D:\RentEase\GUI\bin\Debug\Google.Protobuf.pdb
+D:\RentEase\GUI\bin\Debug\Google.Protobuf.xml
+D:\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\RentEase\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+D:\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.xml
+D:\RentEase\GUI\bin\Debug\System.IO.Pipelines.xml
+D:\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.xml
+D:\RentEase\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\RentEase\GUI\obj\Debug\GUI.CreateContract.resources
+D:\RentEase\GUI\obj\Debug\GUI.Form1.resources
+D:\RentEase\GUI\obj\Debug\GUI.quanlynha.resources
+D:\RentEase\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\RentEase\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\RentEase\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\RentEase\GUI\obj\Debug\GUI.exe
+D:\RentEase\GUI\obj\Debug\GUI.pdb
+D:\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
+D:\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.SignLiving.resources
+D:\RentEase\GUI\obj\Debug\GUI.SignLiving.resources
+>>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94
