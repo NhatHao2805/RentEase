@@ -1,4 +1,4 @@
-proc_login/*==============================================================*/
+/*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
 /* Created on:     3/14/2025 4:50:50 PM                         */
 /*==============================================================*/
@@ -391,22 +391,58 @@ ALTER TABLE VEHICLE ADD CONSTRAINT FK_VEHICLE_TENANT FOREIGN KEY (TENANTID)
 
 ALTER TABLE WATERELECTRICITY ADD CONSTRAINT FK_WATERELECTRICITY_TENANT FOREIGN KEY (TENANTID)
       REFERENCES TENANT (TENANTID);
-<<<<<<< HEAD
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_login`(
-	IN username VARCHAR(20),
-	IN password VARCHAR(20)
+      
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addAccount`(
+	IN `usern` VARCHAR(50),
+	IN `passw` VARCHAR(50),
+	IN `fulln` VARCHAR(100),
+	IN `emai` VARCHAR(150),
+	IN `birthd` DATE,
+	IN `gender` VARCHAR(50),
+	IN `phonen` VARCHAR(11),
+	IN `addre` VARCHAR(200)
 )
 LANGUAGE SQL
 NOT DETERMINISTIC
 CONTAINS SQL
-SQL SECURITY INVOKER
+SQL SECURITY DEFINER
 COMMENT ''
 BEGIN
-	SELECT * FROM user  WHERE user.USERNAME = username AND user.PASSWORD = password;
+   INSERT INTO user (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBER, ADDRESS) VALUES (usern,fulln, passw,emai,birthd,gender,phonen,addre);
 END
-=======
-      
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_login`(
+	IN `usern` VARCHAR(20),
+	IN `passw` VARCHAR(20)
+)
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+SQL SECURITY DEFINER
+COMMENT ''
+BEGIN
+SELECT * FROM user WHERE USERNAME = usern AND PASSWORD = passw;
+END
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `check_account`(
+	`usern` INT
+)
+RETURNS int(11)
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+SQL SECURITY DEFINER
+COMMENT ''
+BEGIN
+	DECLARE account_exists INT;
+   SELECT COUNT(*) INTO account_exists FROM user WHERE USERNAME = usern;
+   IF account_exists = 0 THEN
+      RETURN 1;
+   ELSE
+      RETURN 0;
+   END IF;
+END
+
 -- Thêm dữ liệu cho bảng USER
 INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBER, ADDRESS)
 VALUES 
@@ -514,4 +550,3 @@ VALUES
 ('SV004', 'T003', '2023-03-15', NULL),
 ('SV001', 'T004', '2023-04-15', '2023-12-15'),
 ('SV001', 'T005', '2023-05-15', NULL)
->>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94

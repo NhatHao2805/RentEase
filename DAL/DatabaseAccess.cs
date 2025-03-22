@@ -2,18 +2,6 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 using DTO;
-<<<<<<< HEAD
-using MySql.Data.MySqlClient;
-namespace DAL
-{
-    public class SqlDataConnection
-    {
-        //Tạo kết nối với csdl
-        private static MySqlConnection conn = null;
-        
-        private static string connectString = @"Server = localhost; Database = rentease; Uid = root; pwd = ; Pooling = false; Character Set = utf8";
-        
-=======
 using System.Collections.Generic;
 
 namespace DAL
@@ -23,100 +11,19 @@ namespace DAL
         // Connection string for MySQL
         private static readonly string connectString = "server=localhost;port=3306;database=rentease;user=root;password=;";
 
->>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94
         public static MySqlConnection Connect()
         {
             MySqlConnection connection = null;
             try
             {
-<<<<<<< HEAD
-                conn = new MySqlConnection(connectString);
-=======
                 connection = new MySqlConnection(connectString);
                 connection.Open();
                 Console.WriteLine("Connected to MySQL successfully!");
->>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94
             }
             catch (Exception e)
             {
                 Console.Error.WriteLine("Connection error: " + e.Message);
             }
-<<<<<<< HEAD
-            return conn;
-
-        }
-    }
-    public class DatabaseAccess
-    {
-        public static string checkLoginDatabase(User taikhoan)
-        {
-            string query = "proc_login";
-            string user = null;
-            MySqlConnection conn = SqlDataConnection.Connect();
-            if (conn.State == ConnectionState.Closed)
-            {
-                conn.Open();
-            }
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("username", taikhoan.username);
-            cmd.Parameters.AddWithValue("password", taikhoan.password);
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    user = reader.GetString(0);
-                }
-                reader.Close();
-            }
-            else
-            {
-                user = "Tài khoản hoặc mật khẩu không chính xác!";
-            }
-            conn.Close();
-            return user;
-        }
-
-        //public static string addAccountDatabase(User taikhoan)
-        //{
-        //    //bool check = false;
-
-        //    //using (SqlConnection conn = SqlConnectionData.Connect())
-        //    //{
-        //    //    conn.Open();
-        //    //    using (SqlCommand command2 = new SqlCommand("select dbo.check_account(@user)", conn))
-        //    //    {
-        //    //        command2.Parameters.AddWithValue("@user", taikhoan.taikhoan);
-        //    //        object a = command2.ExecuteScalar();
-        //    //        if (a != null)
-        //    //        {
-        //    //            int result = Convert.ToInt32(a);
-        //    //            if(result == 1) check = true;
-        //    //        }
-        //    //    }
-
-        //    //    using (SqlCommand command = new SqlCommand("proc_addAccount", conn))
-        //    //    {
-        //    //        command.CommandType = CommandType.StoredProcedure;
-        //    //        command.Parameters.AddWithValue("@user", taikhoan.taikhoan);
-        //    //        command.Parameters.AddWithValue("@pass", taikhoan.matkhau);
-        //    //        command.ExecuteNonQuery();
-        //    //    }
-
-        //    //}
-        //    //if (check)
-        //    //{
-        //    //    return "Tài khoản đã tồn tại!";
-        //    //}
-        //    //else
-        //    //{
-        //    //    return "Đăng ký thành công!";
-        //    //}
-        //}
-=======
             return connection;
         }
 
@@ -189,80 +96,10 @@ namespace DAL
                 }
             return contractList;
         }
-
-
-     
-
-
-
     }
 
-    public class DatabaseAccess
+    public partial class DatabaseAccess
     {
-        public static string CheckLoginDatabase(Account taikhoan)
-        {
-            string user = null;
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
-            {
-                if (conn == null) return "Database connection failed!";
-
-                using (MySqlCommand command = new MySqlCommand("proc_login", conn))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@user", taikhoan.taikhoan);
-                    command.Parameters.AddWithValue("@pass", taikhoan.matkhau);
-
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                user = reader.GetString(0);
-                            }
-                        }
-                        else
-                        {
-                            return "Tài khoản hoặc mật khẩu không chính xác!";
-                        }
-                    }
-                }
-            }
-            return user;
-        }
-
-        public static string AddAccountDatabase(Account taikhoan)
-        {
-            bool check = false;
-
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
-            {
-                if (conn == null) return "Database connection failed!";
-
-                using (MySqlCommand command2 = new MySqlCommand("SELECT check_account(@user)", conn))
-                {
-                    command2.Parameters.AddWithValue("@user", taikhoan.taikhoan);
-                    object a = command2.ExecuteScalar();
-                    if (a != null && Convert.ToInt32(a) == 1)
-                    {
-                        check = true;
-                    }
-                }
-
-                if (!check)
-                {
-                    using (MySqlCommand command = new MySqlCommand("proc_addAccount", conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@user", taikhoan.taikhoan);
-                        command.Parameters.AddWithValue("@pass", taikhoan.matkhau);
-                        command.ExecuteNonQuery();
-                    }
-                    return "Đăng ký thành công!";
-                }
-            }
-            return "Tài khoản đã tồn tại!";
-        }
         public static List<ThongtinkhachthueDTO> GetAllTenants()
         {
             List<ThongtinkhachthueDTO> tenantList = new List<ThongtinkhachthueDTO>();
@@ -456,7 +293,6 @@ namespace DAL
                 }
             }
         }
->>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94
     }
 
 }

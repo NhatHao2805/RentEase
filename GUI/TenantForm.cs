@@ -96,6 +96,7 @@ namespace GUI
             this.Name = "TenantForm";
             this.Load += new System.EventHandler(this.TenantForm_Load);
             this.ResumeLayout(false);
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -203,6 +204,11 @@ namespace GUI
         private void TenantForm_Load(object sender, EventArgs e)
         {
             // Không cần thêm code ở đây
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

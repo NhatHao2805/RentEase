@@ -2,7 +2,7 @@
 
 namespace GUI
 {
-    partial class QuanLyNha
+    partial class quanlynha
     {
         /// <summary>
         /// Required designer variable.
@@ -31,18 +31,13 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_hopdong = new System.Windows.Forms.Button();
             this.btn_caidat = new System.Windows.Forms.Button();
-            this.btn_csvc = new System.Windows.Forms.Button();
-            this.btn_dichvu = new System.Windows.Forms.Button();
-            this.btn_taichinh = new System.Windows.Forms.Button();
-            this.btn_phong = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -147,6 +142,11 @@ namespace GUI
             this.Theemnoiluutru = new GUI.Custom.MyGunaButton();
             this.customButton1 = new GUI.Custom.MyGunaButton();
             this.dataGridView2 = new CustomDataGridView();
+            this.btn_csvc = new System.Windows.Forms.Button();
+            this.btn_dichvu = new System.Windows.Forms.Button();
+            this.btn_taichinh = new System.Windows.Forms.Button();
+            this.btn_hopdong = new System.Windows.Forms.Button();
+            this.btn_phong = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -209,7 +209,7 @@ namespace GUI
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(251, 745);
+            this.panelMain.Size = new System.Drawing.Size(251, 838);
             this.panelMain.TabIndex = 13;
             // 
             // panel2
@@ -227,19 +227,6 @@ namespace GUI
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // btn_hopdong
-            // 
-            this.btn_hopdong.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_hopdong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_hopdong.Location = new System.Drawing.Point(-3, 61);
-            this.btn_hopdong.Name = "btn_hopdong";
-            this.btn_hopdong.Size = new System.Drawing.Size(260, 60);
-            this.btn_hopdong.TabIndex = 6;
-            this.btn_hopdong.Text = "       Quản Lý Hợp Đồng";
-            this.btn_hopdong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_hopdong.UseVisualStyleBackColor = true;
-            this.btn_hopdong.Click += new System.EventHandler(this.btn_hopdong_Click);
-            // 
             // btn_caidat
             // 
             this.btn_caidat.Enabled = false;
@@ -253,60 +240,6 @@ namespace GUI
             this.btn_caidat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_caidat.UseVisualStyleBackColor = true;
             this.btn_caidat.Click += new System.EventHandler(this.btn_caidat_Click);
-            // 
-            // btn_csvc
-            // 
-            this.btn_csvc.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_csvc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_csvc.Location = new System.Drawing.Point(-1, 241);
-            this.btn_csvc.Name = "btn_csvc";
-            this.btn_csvc.Size = new System.Drawing.Size(260, 60);
-            this.btn_csvc.TabIndex = 4;
-            this.btn_csvc.Text = "      Quản Lý Cơ sở Vật chất";
-            this.btn_csvc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_csvc.UseVisualStyleBackColor = true;
-            this.btn_csvc.Click += new System.EventHandler(this.btn_csvc_Click);
-            // 
-            // btn_dichvu
-            // 
-            this.btn_dichvu.Enabled = false;
-            this.btn_dichvu.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_dichvu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dichvu.Location = new System.Drawing.Point(-1, 181);
-            this.btn_dichvu.Name = "btn_dichvu";
-            this.btn_dichvu.Size = new System.Drawing.Size(260, 60);
-            this.btn_dichvu.TabIndex = 3;
-            this.btn_dichvu.Text = "      Quản Lý Dịch Vụ";
-            this.btn_dichvu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_dichvu.UseVisualStyleBackColor = true;
-            this.btn_dichvu.Click += new System.EventHandler(this.btn_dichvu_Click);
-            // 
-            // btn_taichinh
-            // 
-            this.btn_taichinh.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_taichinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_taichinh.Location = new System.Drawing.Point(-1, 121);
-            this.btn_taichinh.Name = "btn_taichinh";
-            this.btn_taichinh.Size = new System.Drawing.Size(260, 60);
-            this.btn_taichinh.TabIndex = 2;
-            this.btn_taichinh.Text = "      Quản Lý Tài Chính";
-            this.btn_taichinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_taichinh.UseVisualStyleBackColor = true;
-            this.btn_taichinh.Click += new System.EventHandler(this.btn_taichinh_Click);
-            // 
-            // btn_phong
-            // 
-            this.btn_phong.BackColor = System.Drawing.Color.White;
-            this.btn_phong.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_phong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_phong.Location = new System.Drawing.Point(-1, 1);
-            this.btn_phong.Name = "btn_phong";
-            this.btn_phong.Size = new System.Drawing.Size(260, 60);
-            this.btn_phong.TabIndex = 0;
-            this.btn_phong.Text = "      Quản Lý Phòng";
-            this.btn_phong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_phong.UseVisualStyleBackColor = false;
-            this.btn_phong.Click += new System.EventHandler(this.btn_phong_Click);
             // 
             // panel1
             // 
@@ -458,11 +391,7 @@ namespace GUI
             this.panel_quanlyhopdong.Controls.Add(this.groupBox6);
             this.panel_quanlyhopdong.Location = new System.Drawing.Point(304, 9);
             this.panel_quanlyhopdong.Name = "panel_quanlyhopdong";
-<<<<<<< HEAD:GUI/QuanLyNha.Designer.cs
-            this.panel_quanlyhopdong.Size = new System.Drawing.Size(34, 16);
-=======
-            this.panel_quanlyhopdong.Size = new System.Drawing.Size(1051, 344);
->>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94:GUI/Form2.Designer.cs
+            this.panel_quanlyhopdong.Size = new System.Drawing.Size(30, 15);
             this.panel_quanlyhopdong.TabIndex = 15;
             // 
             // groupBox7
@@ -649,7 +578,7 @@ namespace GUI
             this.panel_quanlyphong.Controls.Add(this.groupBox9);
             this.panel_quanlyphong.Location = new System.Drawing.Point(257, 9);
             this.panel_quanlyphong.Name = "panel_quanlyphong";
-            this.panel_quanlyphong.Size = new System.Drawing.Size(46, 16);
+            this.panel_quanlyphong.Size = new System.Drawing.Size(41, 15);
             this.panel_quanlyphong.TabIndex = 16;
             // 
             // groupBox10
@@ -958,9 +887,9 @@ namespace GUI
             this.panel_quanlytaichinh.Controls.Add(this.panel_qltc_thuchi);
             this.panel_quanlytaichinh.Controls.Add(this.btn_thuchi);
             this.panel_quanlytaichinh.Controls.Add(this.btn_hoadon);
-            this.panel_quanlytaichinh.Location = new System.Drawing.Point(361, 9);
+            this.panel_quanlytaichinh.Location = new System.Drawing.Point(357, 9);
             this.panel_quanlytaichinh.Name = "panel_quanlytaichinh";
-            this.panel_quanlytaichinh.Size = new System.Drawing.Size(33, 21);
+            this.panel_quanlytaichinh.Size = new System.Drawing.Size(38, 21);
             this.panel_quanlytaichinh.TabIndex = 17;
             // 
             // panel_qltc_hoadon
@@ -969,7 +898,7 @@ namespace GUI
             this.panel_qltc_hoadon.Controls.Add(this.groupBox2);
             this.panel_qltc_hoadon.Location = new System.Drawing.Point(30, 30);
             this.panel_qltc_hoadon.Name = "panel_qltc_hoadon";
-            this.panel_qltc_hoadon.Size = new System.Drawing.Size(26, 19);
+            this.panel_qltc_hoadon.Size = new System.Drawing.Size(61, 49);
             this.panel_qltc_hoadon.TabIndex = 13;
             // 
             // groupBox1
@@ -1317,11 +1246,7 @@ namespace GUI
             this.panel_quanlycsvc.Controls.Add(this.button13);
             this.panel_quanlycsvc.Location = new System.Drawing.Point(411, 12);
             this.panel_quanlycsvc.Name = "panel_quanlycsvc";
-<<<<<<< HEAD:GUI/QuanLyNha.Designer.cs
-            this.panel_quanlycsvc.Size = new System.Drawing.Size(42, 23);
-=======
-            this.panel_quanlycsvc.Size = new System.Drawing.Size(62, 21);
->>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94:GUI/Form2.Designer.cs
+            this.panel_quanlycsvc.Size = new System.Drawing.Size(42, 18);
             this.panel_quanlycsvc.TabIndex = 18;
             // 
             // groupBox5
@@ -1472,9 +1397,6 @@ namespace GUI
             this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button13.UseVisualStyleBackColor = true;
             // 
-<<<<<<< HEAD:GUI/QuanLyNha.Designer.cs
-            // QuanLyNha
-=======
             // Theemnoiluutru
             // 
             this.Theemnoiluutru.BorderRadius = 10;
@@ -1504,32 +1426,32 @@ namespace GUI
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 10F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.Location = new System.Drawing.Point(14, 77);
             this.dataGridView2.Name = "dataGridView2";
@@ -1542,21 +1464,87 @@ namespace GUI
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // btn_csvc
+            // 
+            this.btn_csvc.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.btn_csvc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_csvc.Location = new System.Drawing.Point(-1, 241);
+            this.btn_csvc.Name = "btn_csvc";
+            this.btn_csvc.Size = new System.Drawing.Size(260, 60);
+            this.btn_csvc.TabIndex = 4;
+            this.btn_csvc.Text = "      Quản Lý Cơ sở Vật chất";
+            this.btn_csvc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_csvc.UseVisualStyleBackColor = true;
+            this.btn_csvc.Click += new System.EventHandler(this.btn_csvc_Click);
+            // 
+            // btn_dichvu
+            // 
+            this.btn_dichvu.Enabled = false;
+            this.btn_dichvu.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.btn_dichvu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dichvu.Location = new System.Drawing.Point(-1, 181);
+            this.btn_dichvu.Name = "btn_dichvu";
+            this.btn_dichvu.Size = new System.Drawing.Size(260, 60);
+            this.btn_dichvu.TabIndex = 3;
+            this.btn_dichvu.Text = "      Quản Lý Dịch Vụ";
+            this.btn_dichvu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_dichvu.UseVisualStyleBackColor = true;
+            this.btn_dichvu.Click += new System.EventHandler(this.btn_dichvu_Click);
+            // 
+            // btn_taichinh
+            // 
+            this.btn_taichinh.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.btn_taichinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_taichinh.Location = new System.Drawing.Point(-1, 121);
+            this.btn_taichinh.Name = "btn_taichinh";
+            this.btn_taichinh.Size = new System.Drawing.Size(260, 60);
+            this.btn_taichinh.TabIndex = 2;
+            this.btn_taichinh.Text = "      Quản Lý Tài Chính";
+            this.btn_taichinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_taichinh.UseVisualStyleBackColor = true;
+            this.btn_taichinh.Click += new System.EventHandler(this.btn_taichinh_Click);
+            // 
+            // btn_hopdong
+            // 
+            this.btn_hopdong.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.btn_hopdong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_hopdong.Location = new System.Drawing.Point(-3, 61);
+            this.btn_hopdong.Name = "btn_hopdong";
+            this.btn_hopdong.Size = new System.Drawing.Size(260, 60);
+            this.btn_hopdong.TabIndex = 6;
+            this.btn_hopdong.Text = "       Quản Lý Hợp Đồng";
+            this.btn_hopdong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_hopdong.UseVisualStyleBackColor = true;
+            this.btn_hopdong.Click += new System.EventHandler(this.btn_hopdong_Click);
+            // 
+            // btn_phong
+            // 
+            this.btn_phong.BackColor = System.Drawing.Color.White;
+            this.btn_phong.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.btn_phong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_phong.Location = new System.Drawing.Point(-1, 1);
+            this.btn_phong.Name = "btn_phong";
+            this.btn_phong.Size = new System.Drawing.Size(260, 60);
+            this.btn_phong.TabIndex = 0;
+            this.btn_phong.Text = "      Quản Lý Phòng";
+            this.btn_phong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_phong.UseVisualStyleBackColor = false;
+            this.btn_phong.Click += new System.EventHandler(this.btn_phong_Click);
+            // 
             // quanlynha
->>>>>>> 6eb7bf71ccfcf093d01505c8501d25f943368f94:GUI/Form2.Designer.cs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1382, 745);
-            this.Controls.Add(this.panel_quanlyhopdong);
+            this.ClientSize = new System.Drawing.Size(1382, 838);
             this.Controls.Add(this.panel_quanlytaichinh);
             this.Controls.Add(this.panel_quanlyphong);
             this.Controls.Add(this.panel_quanlycsvc);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.panel_quanlyhopdong);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "QuanLyNha";
+            this.Name = "quanlynha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.quanlynha_Load);
@@ -1631,12 +1619,7 @@ namespace GUI
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button extendBtnPanel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_phong;
         private System.Windows.Forms.Button btn_caidat;
-        private System.Windows.Forms.Button btn_csvc;
-        private System.Windows.Forms.Button btn_dichvu;
-        private System.Windows.Forms.Button btn_taichinh;
-        private System.Windows.Forms.Button btn_hopdong;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -1733,5 +1716,10 @@ namespace GUI
         private System.Windows.Forms.TextBox textBox1;
         private MyGunaButton customButton1;
         private MyGunaButton Theemnoiluutru;
+        private System.Windows.Forms.Button btn_hopdong;
+        private System.Windows.Forms.Button btn_csvc;
+        private System.Windows.Forms.Button btn_dichvu;
+        private System.Windows.Forms.Button btn_taichinh;
+        private System.Windows.Forms.Button btn_phong;
     }
 }

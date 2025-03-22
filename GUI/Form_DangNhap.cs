@@ -15,32 +15,35 @@ namespace GUI
 {
     public partial class Form_DangNhap: Form
     {
+        Account taikhoan = new Account();
         AccountBLL taikhoanBLL = new AccountBLL();
-        QuanLyNha f2;
-        User taikhoan = new User();
-        bool check_picBox1 = true;
-
-        private Point init_Location = new Point(290,0);
-        private Point ter_Location = new Point(-300,0);
+        quanlynha f2;
         public Form_DangNhap()
         {
             InitializeComponent();
-            setStartPositon();
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr one, int two, int three, int four);
+
+        [DllImport("gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private extern static IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+        private void guna2Panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
 
-        private void setStartPositon()
-        {
-           
-        }
         private void buttonDangNhap_Click(object sender, EventArgs e)
         {
-            taikhoan.username = textBoxTK_DN.Text;
-            taikhoan.password = textBoxMK_DN.Text;
+            taikhoan.taikhoan = textBoxTK_DN.Text;
+            taikhoan.matkhau = textBoxMK_DN.Text;
 
-            string check = taikhoanBLL.CheckLogic(taikhoan);
+            string check = taikhoanBLL.AccountBLL_CheckLogin(taikhoan);
 
-            switch (check)
-            {
+            switch (check) {
                 case "requeid_taikhoan":
                     MessageBox.Show("Bạn chưa nhập tài khoản!");
                     return;
@@ -50,30 +53,15 @@ namespace GUI
                     return;
                 case "Tài khoản hoặc mật khẩu không chính xác!":
                     MessageBox.Show(check);
+
                     return;
             }
             //Chưa hoàn chỉnh
-            MessageBox.Show("Đăng nhập thành công");
-            
-            //f2 = new QuanLyNha(this);
-            //f2.Show();
-            //this.Hide();
+            f2 = new quanlynha(this);
+            f2.Show();
+            this.Hide();
 
         }
-
-        private void buttonDangKy2_Click(object sender, EventArgs e)
-        {
-            //if(textBoxMK_DK1.Text != textBoxMK_DK2.Text)
-            //{
-            //    MessageBox.Show("Mật khẩu không trùng khớp!");
-            //    return;
-            //}
-            //taikhoan.taikhoan = textBoxTK_DK.Text;
-            //taikhoan.matkhau = textBoxMK_DK1.Text;
-            //string check = taikhoanBLL.addAccountBLL(taikhoan);
-            //MessageBox.Show(check);
-        }
-
 
         //Xử lí các nút xem password
         private void buttonXemPass_MouseDown(object sender, MouseEventArgs e)
@@ -86,23 +74,22 @@ namespace GUI
             textBoxMK_DN.PasswordChar = '*';
 
         }
-
-
-        private void btnClose_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
+
             Application.Exit();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void minimizedButton_Click(object sender, EventArgs e)
         {
-            
-            
+            WindowState = FormWindowState.Minimized;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void dk_lb_Click(object sender, EventArgs e)
         {
-            //timer1.Start();
-
+            Form_DangKy dk = new Form_DangKy();
+            dk.Show();
         }
     }
+    
 }

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class QuanLyNha: Form
+    public partial class quanlynha: Form
     {
         Form_DangNhap form1;
         private int panel1_originalSize = 90;
@@ -31,12 +31,12 @@ namespace GUI
         private Point location_component_quanlytaichinh = new Point(12, 86);
         private Point location_component_quanlytaichinh_1 = new Point(30,30);
 
-        public QuanLyNha()
+        public quanlynha(Form_DangNhap form1)
         {
             InitializeComponent();
             loadVariable();
             setStartPositon();
-            //this.form1 = form1;
+            this.form1 = form1;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -71,7 +71,7 @@ namespace GUI
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            //form1.Close();
+            form1.Close();
             Application.Exit();
         }
 
@@ -281,6 +281,7 @@ namespace GUI
         private void btn_caidat_Click(object sender, EventArgs e)
         {
             //changePanel(panel_quanlyphong);
+
         }
 
         // Them Hop Dong

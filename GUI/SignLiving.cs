@@ -1,108 +1,23 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using GUI.Custom;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
 
 namespace GUI
 {
-    public partial class SignLiving : CustomForm
+    public partial class SignLiving: Form
     {
         public SignLiving()
         {
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-
-            // Form settings
-            this.Text = "Đăng Ký Tạm Trú";
-            this.Size = new System.Drawing.Size(800, 700);
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            // Add controls
-            SetupFormControls();
-
-            this.ResumeLayout(false);
-            this.PerformLayout();
-        }
-
-        private void SetupFormControls()
-        {
-            // Labels
-            System.Windows.Forms.Label lblTitle = new System.Windows.Forms.Label();
-            lblTitle.Text = "THÔNG TIN ĐĂNG KÝ TẠM TRÚ";
-            lblTitle.Font = new System.Drawing.Font("Arial", 16, System.Drawing.FontStyle.Bold);
-            lblTitle.AutoSize = true;
-            lblTitle.Location = new System.Drawing.Point(250, 20);
-            this.Controls.Add(lblTitle);
-
-            int labelWidth = 100;
-            int textBoxWidth = 175; // Rút ngắn xuống còn 100px
-            int textBoxHeight = 30; // Tăng chiều cao lên 30px
-            int addressWidth = 250; // Giữ nguyên chiều dài cho địa chỉ
-            int marginLeft = 50;
-            int marginTop = 70;
-            int verticalSpacing = 50; // Tăng khoảng cách dọc do tăng chiều cao control
-            int horizontalSpacing = 40;
-
-            // TENANTID - Required field
-            CreateLabelAndTextBox("ID người thuê:", "txtTenantId", marginLeft, marginTop, labelWidth, textBoxWidth, textBoxHeight, true);
-
-            // First and Last Name on the same row
-            CreateLabelAndTextBox("Họ:", "txtLastName", marginLeft, marginTop + verticalSpacing, labelWidth, textBoxWidth, textBoxHeight);
-            CreateLabelAndTextBox("Tên:", "txtFirstName", marginLeft + labelWidth + textBoxWidth + horizontalSpacing, marginTop + verticalSpacing, labelWidth, textBoxWidth, textBoxHeight);
-
-            // Birthday and Gender on the same row
-            CreateLabelAndTextBox("Ngày sinh:", "dtpBirthday", marginLeft, marginTop + verticalSpacing * 2, labelWidth, textBoxWidth, textBoxHeight, false, "date");
-            CreateLabelAndTextBox("Giới tính:", "cboGender", marginLeft + labelWidth + textBoxWidth + horizontalSpacing, marginTop + verticalSpacing * 2, labelWidth, textBoxWidth, textBoxHeight, false, "combobox", new string[] { "Nam", "Nữ" }); // Chỉ Nam hoặc Nữ
-
-            // Phone and Email on the same row
-            CreateLabelAndTextBox("Số điện thoại:", "txtPhoneNumber", marginLeft, marginTop + verticalSpacing * 3, labelWidth, textBoxWidth, textBoxHeight);
-            CreateLabelAndTextBox("Email:", "txtEmail", marginLeft + labelWidth + textBoxWidth + horizontalSpacing, marginTop + verticalSpacing * 3, labelWidth, textBoxWidth, textBoxHeight);
-
-            // Addresses - each on their own row since they're longer
-            CreateLabelAndTextBox("Địa chỉ thường trú:", "txtPermanentAddress", marginLeft, marginTop + verticalSpacing * 4, labelWidth, addressWidth * 2, textBoxHeight);
-            CreateLabelAndTextBox("Địa chỉ đăng ký:", "txtRegistedAddress", marginLeft, marginTop + verticalSpacing * 5, labelWidth, addressWidth * 2, textBoxHeight);
-
-            // Start Date and Expiry Date on the same row
-            CreateLabelAndTextBox("Ngày bắt đầu:", "dtpStartDate", marginLeft, marginTop + verticalSpacing * 6, labelWidth, textBoxWidth, textBoxHeight, false, "date");
-            CreateLabelAndTextBox("Ngày hết hạn:", "dtpExpiryDate", marginLeft + labelWidth + textBoxWidth + horizontalSpacing, marginTop + verticalSpacing * 6, labelWidth, textBoxWidth, textBoxHeight, false, "date");
-
-            // Notes
-            CreateLabelAndTextBox("Ghi chú:", "txtNotes", marginLeft, marginTop + verticalSpacing * 7, labelWidth, addressWidth * 2, textBoxHeight * 2, false, "multiline");
-
-            // Registration File Path
-            CreateLabelAndTextBox("Đường dẫn giấy tờ:", "txtRegistrationFilePath", marginLeft, marginTop + verticalSpacing * 9, labelWidth, addressWidth * 2, textBoxHeight);
-
-            // Browse button for file path
-            MyGunaButton btnBrowse = new MyGunaButton();
-            btnBrowse.Text = "Chọn tệp";
-            btnBrowse.Location = new System.Drawing.Point(marginLeft + labelWidth + addressWidth * 2 + 10, marginTop + verticalSpacing * 9);
-            btnBrowse.Size = new System.Drawing.Size(100, textBoxHeight);
-            btnBrowse.Click += new EventHandler(BtnBrowse_Click);
-            this.Controls.Add(btnBrowse);
-
-            // Action buttons
-            MyGunaButton btnSave = new MyGunaButton();
-            btnSave.Text = "Lưu";
-            btnSave.Location = new System.Drawing.Point(marginLeft + labelWidth + textBoxWidth, marginTop + verticalSpacing * 11);
-            btnSave.Size = new System.Drawing.Size(100, 35);
-            btnSave.Click += new EventHandler(BtnSave_Click);
-            this.Controls.Add(btnSave);
-
-            MyGunaButton btnCancel = new MyGunaButton();
-            btnCancel.Text = "Hủy";
-            btnCancel.Location = new System.Drawing.Point(marginLeft + labelWidth + textBoxWidth + 120, marginTop + verticalSpacing * 11);
-            btnCancel.Size = new System.Drawing.Size(100, 35);
-            btnCancel.Click += new EventHandler(BtnCancel_Click);
-            this.Controls.Add(btnCancel);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -298,8 +213,3 @@ namespace GUI
         }
     }
 }
-
-
-
-
-
