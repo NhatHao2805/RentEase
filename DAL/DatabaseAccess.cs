@@ -145,7 +145,7 @@ namespace DAL
                         {
                             command.CommandType = CommandType.StoredProcedure;
                             command.Parameters.AddWithValue("new_roomid", room.roomID);
-                            command.Parameters.AddWithValue("new_address", room.buildingID);
+                            command.Parameters.AddWithValue("new_buildingid", room.buildingID);
                             command.Parameters.AddWithValue("new_type", room.type);
                             command.Parameters.AddWithValue("new_convenient", room.convenient);
                             command.Parameters.AddWithValue("new_area", room.area);

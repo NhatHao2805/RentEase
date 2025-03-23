@@ -27,7 +27,6 @@ namespace GUI
         {
             // Loại bỏ placeholder nếu có
             room.roomID = (RoomID_tb.Text == "  ID phòng") ? "" : RoomID_tb.Text;
-            room.buildingID = buildingID.Text;
             room.type = type_cb.Text;
             room.convenient = (convenient_tb.Text == "  Tiện ích") ? "" : convenient_tb.Text;
             room.area = (area_tb.Text == "  Diện tích(m2)") ? "" : area_tb.Text;
@@ -86,7 +85,6 @@ namespace GUI
             RoomID_tb.Enter += new EventHandler(RoomID_tb_Enter);
             RoomID_tb.Leave += new EventHandler(RoomID_tb_Leave);
 
-            buildingID_cb.Items.Add("B001");
 
             type_cb.Focus();
             type_cb.Items.Add("Nhà trọ");
@@ -125,6 +123,7 @@ namespace GUI
             day_tb.Enter += new EventHandler(day_tb_Enter);
             day_tb.Leave += new EventHandler(day_tb_Leave);
 
+            birth_datepicker.MaxDate = DateTime.Now;
             birth_datepicker.ValueChanged += new EventHandler(birth_datepicker_ValueChanged);
 
         }

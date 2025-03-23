@@ -48,8 +48,6 @@
             this.DangKetThuc_chbox = new System.Windows.Forms.CheckBox();
             this.DangTrong_chbox = new System.Windows.Forms.CheckBox();
             this.DangO_chbox = new System.Windows.Forms.CheckBox();
-            this.buildingID_cb = new System.Windows.Forms.ComboBox();
-            this.buildingID = new System.Windows.Forms.Label();
             this.status_grbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +56,7 @@
             this.RoomID_tb.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.RoomID_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RoomID_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.RoomID_tb.Location = new System.Drawing.Point(12, 33);
+            this.RoomID_tb.Location = new System.Drawing.Point(15, 30);
             this.RoomID_tb.Multiline = true;
             this.RoomID_tb.Name = "RoomID_tb";
             this.RoomID_tb.Size = new System.Drawing.Size(195, 23);
@@ -68,7 +66,7 @@
             // 
             this.convenient_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.convenient_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.convenient_tb.Location = new System.Drawing.Point(12, 99);
+            this.convenient_tb.Location = new System.Drawing.Point(15, 69);
             this.convenient_tb.Multiline = true;
             this.convenient_tb.Name = "convenient_tb";
             this.convenient_tb.Size = new System.Drawing.Size(195, 23);
@@ -78,7 +76,7 @@
             // 
             this.area_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.area_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.area_tb.Location = new System.Drawing.Point(12, 212);
+            this.area_tb.Location = new System.Drawing.Point(15, 150);
             this.area_tb.Multiline = true;
             this.area_tb.Name = "area_tb";
             this.area_tb.Size = new System.Drawing.Size(195, 23);
@@ -89,7 +87,7 @@
             // 
             this.price_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.price_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.price_tb.Location = new System.Drawing.Point(12, 157);
+            this.price_tb.Location = new System.Drawing.Point(15, 109);
             this.price_tb.Multiline = true;
             this.price_tb.Name = "price_tb";
             this.price_tb.Size = new System.Drawing.Size(195, 23);
@@ -100,14 +98,14 @@
             // 
             this.type_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.type_cb.FormattingEnabled = true;
-            this.type_cb.Location = new System.Drawing.Point(258, 99);
+            this.type_cb.Location = new System.Drawing.Point(258, 30);
             this.type_cb.Name = "type_cb";
             this.type_cb.Size = new System.Drawing.Size(244, 30);
             this.type_cb.TabIndex = 5;
             // 
             // birth_datepicker
             // 
-            this.birth_datepicker.Location = new System.Drawing.Point(187, 283);
+            this.birth_datepicker.Location = new System.Drawing.Point(190, 209);
             this.birth_datepicker.Name = "birth_datepicker";
             this.birth_datepicker.Size = new System.Drawing.Size(20, 24);
             this.birth_datepicker.TabIndex = 7;
@@ -125,7 +123,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(255, 76);
+            this.label2.Location = new System.Drawing.Point(255, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 18);
             this.label2.TabIndex = 11;
@@ -134,7 +132,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 249);
+            this.label3.Location = new System.Drawing.Point(12, 188);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 18);
             this.label3.TabIndex = 12;
@@ -145,7 +143,7 @@
             this.day_tb.BackColor = System.Drawing.Color.White;
             this.day_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.day_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.day_tb.Location = new System.Drawing.Point(12, 283);
+            this.day_tb.Location = new System.Drawing.Point(15, 209);
             this.day_tb.Multiline = true;
             this.day_tb.Name = "day_tb";
             this.day_tb.ReadOnly = true;
@@ -158,7 +156,7 @@
             this.month_tb.BackColor = System.Drawing.Color.White;
             this.month_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.month_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.month_tb.Location = new System.Drawing.Point(70, 283);
+            this.month_tb.Location = new System.Drawing.Point(73, 209);
             this.month_tb.Multiline = true;
             this.month_tb.Name = "month_tb";
             this.month_tb.ReadOnly = true;
@@ -171,7 +169,7 @@
             this.year_tb.BackColor = System.Drawing.Color.White;
             this.year_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.year_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.year_tb.Location = new System.Drawing.Point(123, 283);
+            this.year_tb.Location = new System.Drawing.Point(126, 209);
             this.year_tb.Multiline = true;
             this.year_tb.Name = "year_tb";
             this.year_tb.ReadOnly = true;
@@ -189,7 +187,7 @@
             this.status_grbox.Controls.Add(this.DangTrong_chbox);
             this.status_grbox.Controls.Add(this.add_bt);
             this.status_grbox.Controls.Add(this.DangO_chbox);
-            this.status_grbox.Location = new System.Drawing.Point(258, 139);
+            this.status_grbox.Location = new System.Drawing.Point(258, 69);
             this.status_grbox.Name = "status_grbox";
             this.status_grbox.Size = new System.Drawing.Size(379, 183);
             this.status_grbox.TabIndex = 74;
@@ -280,31 +278,11 @@
             this.DangO_chbox.UseVisualStyleBackColor = true;
             this.DangO_chbox.CheckedChanged += new System.EventHandler(this.DangO_chbox_CheckedChanged);
             // 
-            // buildingID_cb
-            // 
-            this.buildingID_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buildingID_cb.FormattingEnabled = true;
-            this.buildingID_cb.Location = new System.Drawing.Point(258, 33);
-            this.buildingID_cb.Name = "buildingID_cb";
-            this.buildingID_cb.Size = new System.Drawing.Size(216, 30);
-            this.buildingID_cb.TabIndex = 75;
-            // 
-            // buildingID
-            // 
-            this.buildingID.AutoSize = true;
-            this.buildingID.Location = new System.Drawing.Point(255, 12);
-            this.buildingID.Name = "buildingID";
-            this.buildingID.Size = new System.Drawing.Size(82, 18);
-            this.buildingID.TabIndex = 76;
-            this.buildingID.Text = "Mã tòa nhà";
-            // 
             // Form_AddRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 340);
-            this.Controls.Add(this.buildingID);
-            this.Controls.Add(this.buildingID_cb);
+            this.ClientSize = new System.Drawing.Size(661, 260);
             this.Controls.Add(this.status_grbox);
             this.Controls.Add(this.year_tb);
             this.Controls.Add(this.month_tb);
@@ -351,7 +329,5 @@
         private System.Windows.Forms.CheckBox DangKetThuc_chbox;
         private System.Windows.Forms.CheckBox DangTrong_chbox;
         private System.Windows.Forms.CheckBox DangO_chbox;
-        private System.Windows.Forms.ComboBox buildingID_cb;
-        private System.Windows.Forms.Label buildingID;
     }
 }
