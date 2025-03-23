@@ -10,25 +10,48 @@ USE rentease;
 /* Table: BILL                                                  */
 /*==============================================================*/
 CREATE TABLE BILL (
-    BILLID               VARCHAR(20) NOT NULL COMMENT 'ID hóa đơn',
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
-    FIGUREID             VARCHAR(20) NOT NULL COMMENT 'ID chỉ số',
+    BILLID               VARCHAR(10) NOT NULL COMMENT 'ID hóa đơn',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     CONTRACTID           VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
     TOTAL                FLOAT COMMENT 'Tổng số tiền',
-    PAYMENTTIME          DATETIME COMMENT 'Thời gian thanh toán',
-    METHOD               VARCHAR(50) COMMENT 'Phương thức thanh toán',
+    START_DATE           DATETIME COMMENT 'Thời gian bắt đầu thanh toán',
+    END_DATE          	 DATETIME COMMENT 'Thời gian kết thúc thanh toán',
     NOTIFICATION_SENT    BOOLEAN DEFAULT FALSE COMMENT 'Đánh dấu thông báo nhắc nợ đã được gửi',
     REFUND_AMOUNT        FLOAT COMMENT 'Số tiền hoàn trả',
     PRIMARY KEY (BILLID)
 );
 
 /*==============================================================*/
-/* Table: BILL_SERVICE                                          */
+/* Table: SERVICE                                                  */
 /*==============================================================*/
-CREATE TABLE BILL_SERVICE (
-    SERVICEID            VARCHAR(10) NOT NULL COMMENT 'ID dịch vụ',
-    BILLID               VARCHAR(20) NOT NULL COMMENT 'ID hóa đơn',
-    PRIMARY KEY (SERVICEID, BILLID)
+CREATE TABLE SERVICE (
+    SERVICEID               VARCHAR(10) NOT NULL COMMENT 'ID dịch vụ',
+    SERVICENAME             VARCHAR(100) NOT NULL COMMENT 'Tên dịch vụ',
+    UNITPRICE           	FLOAT NOT NULL COMMENT 'Đơn giá',
+    PRIMARY KEY (SERVICEID)
+);
+
+/*==============================================================*/
+/* Table: BILLDETAIL                                                  */
+/*==============================================================*/
+CREATE TABLE BILLDETAIL (
+	BILLID               	VARCHAR(10) NOT NULL COMMENT 'ID hóa đơn',
+    SERVICEID               VARCHAR(10) NOT NULL COMMENT 'ID dịch vụ',
+    QUANTITY             	FLOAT NOT NULL COMMENT 'Số lượng',
+    AMOUNT           		FLOAT NOT NULL COMMENT 'Thành tiền',
+    PRIMARY KEY (BILLID, SERVICEID)
+);
+
+/*==============================================================*/
+/* Table: PAYMENT                                                  */
+/*==============================================================*/
+CREATE TABLE PAYMENT (
+	PAYMENTID               VARCHAR(10) NOT NULL COMMENT 'ID thanh toán',
+    BILLID               	VARCHAR(10) NOT NULL COMMENT 'ID hóa đơn',
+    METHOD               	VARCHAR(10) NOT NULL COMMENT 'Phương thức',
+    TOTAL             		FLOAT NOT NULL COMMENT 'Tổng tiền',
+    PAYMENTTIME           	FLOAT NOT NULL COMMENT 'Thời gian thanh toán',
+    PRIMARY KEY (PAYMENTID)
 );
 
 /*==============================================================*/
@@ -37,7 +60,7 @@ CREATE TABLE BILL_SERVICE (
 CREATE TABLE FINGERPRINTS (
     FINGERID             VARCHAR(10) NOT NULL COMMENT 'ID vân tay',
     USERNAME             VARCHAR(20) NOT NULL COMMENT 'Tên chủ trọ/quản lý',
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     AREAPERMISSION       VARCHAR(200) COMMENT 'Quyền truy cập khu vực',
     ENROLLMENT_DATE      DATE COMMENT 'Ngày đăng ký vân tay',
     PRIMARY KEY (FINGERID)
@@ -48,8 +71,8 @@ CREATE TABLE FINGERPRINTS (
 /*==============================================================*/
 CREATE TABLE CONTRACT (
     CONTRACTID           VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
-    ROOMID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
+    ROOMID              VARCHAR(10) NOT NULL COMMENT 'ID nhà',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     CREATEDATE           DATETIME COMMENT 'Ngày tạo hợp đồng',
     STARTDATE            DATETIME COMMENT 'Ngày bắt đầu hợp đồng',
     ENDDATE              DATETIME COMMENT 'Ngày kết thúc hợp đồng',
@@ -69,7 +92,7 @@ CREATE TABLE CONTRACT (
 /*==============================================================*/
 CREATE TABLE FEEDBACK (
     FEEDBACKID           VARCHAR(10) NOT NULL COMMENT 'ID phản hồi',
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     TYPE                 VARCHAR(50) COMMENT 'Loại phản hồi',
     CONTENT              VARCHAR(200) COMMENT 'Nội dung',
     STATUS               ENUM('PENDING', 'RESOLVED') DEFAULT 'PENDING' COMMENT 'Trạng thái xử lý',
@@ -93,7 +116,7 @@ CREATE TABLE BUILDING (
 /* Table: ROOM                                                 */
 /*==============================================================*/
 CREATE TABLE ROOM (
-    ROOMID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
+    ROOMID              VARCHAR(10) NOT NULL COMMENT 'ID nhà',
     BUILDINGID           VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
     TYPE                 VARCHAR(50) COMMENT 'Loại nhà',
     CONVENIENT           VARCHAR(200) COMMENT 'Tiện ích',
@@ -132,25 +155,10 @@ CREATE TABLE PARKINGMANAGEMENT (
 );
 
 /*==============================================================*/
-/* Table: PAYMENTHISTORY                                        */
-/*==============================================================*/
-CREATE TABLE PAYMENTHISTORY (
-    BILLID               VARCHAR(20) NOT NULL COMMENT 'ID hóa đơn',
-    TENANTID             VARCHAR(20) COMMENT 'ID người thuê',
-    FIGUREID             VARCHAR(20) COMMENT 'ID chỉ số',
-    CONTRACTID           VARCHAR(10) COMMENT 'ID hợp đồng',
-    TOTAL                FLOAT COMMENT 'Tổng số tiền',
-    PAYMENTTIME          DATETIME COMMENT 'Thời gian thanh toán',
-    METHOD               VARCHAR(50) COMMENT 'Phương thức thanh toán',
-    NOTES                VARCHAR(200) COMMENT 'Ghi chú',
-    PRIMARY KEY (BILLID)
-);
-
-/*==============================================================*/
 /* Table: PET                                                   */
 /*==============================================================*/
 CREATE TABLE PET (
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     FIRSTNAME            VARCHAR(50) COMMENT 'Tên',
     LASTNAME             VARCHAR(50) COMMENT 'Họ',
     BIRTHDAY             DATE COMMENT 'Ngày sinh',
@@ -165,11 +173,10 @@ CREATE TABLE PET (
 /* Table: RELATIONSHIP                                          */
 /*==============================================================*/
 CREATE TABLE TENANTRELATIVES (
-    RELATIVEID       VARCHAR(20) NOT NULL COMMENT 'ID mối quan hệ',
+    RELATIVEID       	 VARCHAR(10) NOT NULL COMMENT 'ID mối quan hệ',
     FULLNAME             VARCHAR(50) COMMENT 'Họ và tên',
     BIRTH                DATE COMMENT 'Ngày sinh',
     GENDER               VARCHAR(10) COMMENT 'Giới tính',
-    RELATIONSHIP         VARCHAR(50) COMMENT 'Mối quan hệ',
     PRIMARY KEY (RELATIVEID)
 );
 
@@ -177,8 +184,9 @@ CREATE TABLE TENANTRELATIVES (
 /* Table: RELATIVE                                              */
 /*==============================================================*/
 CREATE TABLE RELATIVE (
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
-    RELATIVEID       VARCHAR(20) NOT NULL COMMENT 'ID mối quan hệ',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
+    RELATIVEID       	 VARCHAR(10) NOT NULL COMMENT 'ID mối quan hệ',
+    RELATIONSHIP         VARCHAR(50) COMMENT 'Mối quan hệ',
     PRIMARY KEY (TENANTID, RELATIVEID)
 );
 
@@ -186,9 +194,9 @@ CREATE TABLE RELATIVE (
 /* Table: RENTALHISTORY                                         */
 /*==============================================================*/
 CREATE TABLE RENTALHISTORY (
-    ROOMID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
+    ROOMID               VARCHAR(10) NOT NULL COMMENT 'ID nhà',
     OLDTENANTID          VARCHAR(10) NOT NULL COMMENT 'ID người thuê cũ',
-    ADDRESS            VARCHAR(100) COMMENT 'Tên nhà',
+    ADDRESS            	 VARCHAR(100) COMMENT 'Tên nhà',
     TYPE                 VARCHAR(50) COMMENT 'Loại nhà',
     CONVENIENT           VARCHAR(200) COMMENT 'Tiện ích',
     AREA                 VARCHAR(50) COMMENT 'Diện tích',
@@ -208,7 +216,7 @@ CREATE TABLE RENTALHISTORY (
 /* Table: TEMPORARY_RESIDENCE                                   */
 /*==============================================================*/
 CREATE TABLE TEMPORARY_RESIDENCE (
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     FIRSTNAME            VARCHAR(50) COMMENT 'Tên',
     LASTNAME             VARCHAR(50) COMMENT 'Họ',
     BIRTHDAY             DATE COMMENT 'Ngày sinh',
@@ -228,7 +236,7 @@ CREATE TABLE TEMPORARY_RESIDENCE (
 /* Table: TENANT                                                */
 /*==============================================================*/
 CREATE TABLE TENANT (
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     FIRSTNAME            VARCHAR(50) COMMENT 'Tên',
     LASTNAME             VARCHAR(50) COMMENT 'Họ',
     BIRTHDAY             DATE COMMENT 'Ngày sinh',
@@ -243,7 +251,7 @@ CREATE TABLE TENANT (
 /* Table: TENANTHISTORY                                         */
 /*==============================================================*/
 CREATE TABLE TENANTHISTORY (
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     FIRSTNAME            VARCHAR(50) COMMENT 'Tên',
     LASTNAME             VARCHAR(50) COMMENT 'Họ',
     BIRTHDAY             DATE COMMENT 'Ngày sinh',
@@ -256,16 +264,6 @@ CREATE TABLE TENANTHISTORY (
     PRIMARY KEY (TENANTID)
 );
 
-/*==============================================================*/
-/* Table: TENANT_SERVICE                                        */
-/*==============================================================*/
-CREATE TABLE TENANT_SERVICE (
-    SERVICEID            VARCHAR(10) NOT NULL COMMENT 'ID dịch vụ',
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
-    START_DATE           DATE COMMENT 'Ngày bắt đầu sử dụng dịch vụ',
-    END_DATE             DATE COMMENT 'Ngày kết thúc sử dụng dịch vụ',
-    PRIMARY KEY (SERVICEID, TENANTID)
-);
 
 /*==============================================================*/
 /* Table: VEHICLE                                               */
@@ -287,46 +285,21 @@ CREATE TABLE VEHICLE (
 /* Table: WATERELECTRICITY                                      */
 /*==============================================================*/
 CREATE TABLE WATERELECTRICITY (
-    FIGUREID             VARCHAR(20) NOT NULL COMMENT 'ID chỉ số',
-    TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
+    FIGUREID             VARCHAR(10) NOT NULL COMMENT 'ID chỉ số',
+    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     OLDFIGURE            FLOAT COMMENT 'Chỉ số cũ',
     NEWFIGURE            FLOAT COMMENT 'Chỉ số mới',
-    REGISTEDADDRESS      VARCHAR(100) COMMENT 'Địa chỉ đăng ký',
     UNIT                 VARCHAR(10) COMMENT 'Đơn vị tính',
-    UNITPRICE            FLOAT COMMENT 'Đơn giá',
     RECORD_DATE          DATE COMMENT 'Ngày ghi chỉ số',
     TYPE                 ENUM('ELECTRICITY', 'WATER') NOT NULL COMMENT 'Loại chỉ số (điện/nước)',
     PRIMARY KEY (FIGUREID)
 );
 
 /*==============================================================*/
-/* Table: SERVICE                                               */
-/*==============================================================*/
-CREATE TABLE SERVICE (
-    SERVICEID            VARCHAR(10) NOT NULL COMMENT 'ID dịch vụ',
-    SERVICENAME          VARCHAR(100) COMMENT 'Tên dịch vụ',
-    DESCRIPTION          VARCHAR(200) COMMENT 'Mô tả dịch vụ',
-    UNIT_PRICE           FLOAT COMMENT 'Đơn giá',
-    PRIMARY KEY (SERVICEID)
-);
-
-/*==============================================================*/
-/* Table: INVOICE_DETAIL                                        */
-/*==============================================================*/
-CREATE TABLE INVOICE_DETAIL (
-    INVOICEID            VARCHAR(20) NOT NULL COMMENT 'ID hóa đơn',
-    BILLID               VARCHAR(20) NOT NULL COMMENT 'ID hóa đơn tổng hợp',
-    ITEM_NAME            VARCHAR(100) COMMENT 'Tên khoản phí',
-    AMOUNT               FLOAT COMMENT 'Số tiền',
-    PRIMARY KEY (INVOICEID),
-    FOREIGN KEY (BILLID) REFERENCES BILL(BILLID)
-);
-
-/*==============================================================*/
 /* Table: CONTRACT_NOTIFICATION                                 */
 /*==============================================================*/
 CREATE TABLE CONTRACT_NOTIFICATION (
-    NOTIFICATIONID       VARCHAR(20) NOT NULL COMMENT 'ID thông báo',
+    NOTIFICATIONID       VARCHAR(10) NOT NULL COMMENT 'ID thông báo',
     CONTRACTID           VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
     NOTIFICATION_DATE    DATE COMMENT 'Ngày gửi thông báo',
     STATUS               ENUM('SENT', 'PENDING') DEFAULT 'PENDING' COMMENT 'Trạng thái thông báo',
@@ -337,74 +310,54 @@ CREATE TABLE CONTRACT_NOTIFICATION (
 /*==============================================================*/
 /* Foreign Key Constraints                                      */
 /*==============================================================*/
-ALTER TABLE BILL ADD CONSTRAINT FK_BILL_WATERELECTRICITY FOREIGN KEY (FIGUREID)
-      REFERENCES WATERELECTRICITY (FIGUREID);
+ALTER TABLE BILL
+ADD CONSTRAINT FK_BILL_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID),
+ADD CONSTRAINT FK_BILL_CONTRACT FOREIGN KEY (CONTRACTID) REFERENCES CONTRACT(CONTRACTID);
 
-ALTER TABLE BILL ADD CONSTRAINT FK_BILL_CONTRACT FOREIGN KEY (CONTRACTID)
-      REFERENCES CONTRACT (CONTRACTID);
+ALTER TABLE BILLDETAIL
+ADD CONSTRAINT FK_BILLDETAIL_BILL FOREIGN KEY (BILLID) REFERENCES BILL(BILLID),
+ADD CONSTRAINT FK_BILLDETAIL_SERVICE FOREIGN KEY (SERVICEID) REFERENCES SERVICE(SERVICEID);
 
-ALTER TABLE BILL ADD CONSTRAINT FK_BILL_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
+ALTER TABLE PAYMENT
+ADD CONSTRAINT FK_PAYMENT_BILL FOREIGN KEY (BILLID) REFERENCES BILL(BILLID);
 
-ALTER TABLE BILL_SERVICE ADD CONSTRAINT FK_BILL_SERVICE_BILL FOREIGN KEY (BILLID)
-      REFERENCES BILL (BILLID);
+ALTER TABLE FINGERPRINTS
+ADD CONSTRAINT FK_FINGERPRINTS_USER FOREIGN KEY (USERNAME) REFERENCES USER(USERNAME),
+ADD CONSTRAINT FK_FINGERPRINTS_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID);
+
+ALTER TABLE CONTRACT
+ADD CONSTRAINT FK_CONTRACT_ROOM FOREIGN KEY (ROOMID) REFERENCES ROOM(ROOMID),
+ADD CONSTRAINT FK_CONTRACT_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID);
       
-ALTER TABLE BILL_SERVICE ADD CONSTRAINT FK_BILL_SERVICE_SERVICE FOREIGN KEY (SERVICEID)
-      REFERENCES SERVICE (SERVICEID);
-
-ALTER TABLE FINGERPRINTS ADD CONSTRAINT FK_FINGERPRINTS_USER FOREIGN KEY (USERNAME)
-      REFERENCES USER (USERNAME);
-
-ALTER TABLE FINGERPRINTS ADD CONSTRAINT FK_FINGERPRINTS_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
-
-ALTER TABLE CONTRACT ADD CONSTRAINT FK_CONTRACT_ROOM FOREIGN KEY (ROOMID)
-      REFERENCES ROOM (ROOMID);
-
-ALTER TABLE CONTRACT ADD CONSTRAINT FK_CONTRACT_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
+ALTER TABLE ROOM
+ADD CONSTRAINT FK_ROOM_BUILDING FOREIGN KEY (BUILDINGID) REFERENCES BUILDING(BUILDINGID);
       
-ALTER TABLE ROOM ADD CONSTRAINT FK_ROOM_BUILDING FOREIGN KEY (BUILDINGID)
-      REFERENCES BUILDING (BUILDINGID);
-      
-ALTER TABLE BUILDING ADD CONSTRAINT FK_BUILDING_USER FOREIGN KEY (USERNAME)
-      REFERENCES USER (USERNAME);
+ALTER TABLE BUILDING
+ADD CONSTRAINT FK_BUILDING_USER FOREIGN KEY (USERNAME) REFERENCES USER(USERNAME);
 
-ALTER TABLE FEEDBACK ADD CONSTRAINT FK_FEEDBACK_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
+ALTER TABLE FEEDBACK
+ADD CONSTRAINT FK_FEEDBACK_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID);
 
-ALTER TABLE PAYMENTHISTORY ADD CONSTRAINT FK_PAYMENTHISTORY_BILL FOREIGN KEY (BILLID)
-      REFERENCES BILL (BILLID);
+ALTER TABLE PET
+ADD CONSTRAINT FK_PET_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID);
 
-ALTER TABLE PET ADD CONSTRAINT FK_PET_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
+ALTER TABLE RELATIVE
+ADD CONSTRAINT FK_RELATIVE_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID),
+ADD CONSTRAINT FK_RELATIVE_TENANTRELATIVES FOREIGN KEY (RELATIVEID) REFERENCES TENANTRELATIVES(RELATIVEID);
 
-ALTER TABLE RELATIVE ADD CONSTRAINT FK_RELATIVE_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
+ALTER TABLE RENTALHISTORY
+ADD CONSTRAINT FK_RENTALHISTORY_ROOM FOREIGN KEY (ROOMID) REFERENCES ROOM(ROOMID);
 
-ALTER TABLE RELATIVE ADD CONSTRAINT FK_RELATIVE_TENANTRELATIVES FOREIGN KEY (RELATIVEID)
-      REFERENCES TENANTRELATIVES (RELATIVEID);
+ALTER TABLE TEMPORARY_RESIDENCE
+ADD CONSTRAINT FK_TEMPORARY_RESIDENCE_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID);
 
-ALTER TABLE RENTALHISTORY ADD CONSTRAINT FK_RENTALHISTORY_ROOM FOREIGN KEY (ROOMID)
-      REFERENCES ROOM (ROOMID);
+ALTER TABLE TENANTHISTORY
+ADD CONSTRAINT FK_TENANTHISTORY_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID);
 
-ALTER TABLE TEMPORARY_RESIDENCE ADD CONSTRAINT FK_TEMPORARY_RESIDENCE_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
-
-ALTER TABLE TENANTHISTORY ADD CONSTRAINT FK_TENANTHISTORY_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
-
-ALTER TABLE TENANT_SERVICE ADD CONSTRAINT FK_TENANT_SERVICE_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
-
-ALTER TABLE VEHICLE ADD CONSTRAINT FK_VEHICLE_BILL FOREIGN KEY (BILLID)
-      REFERENCES BILL (BILLID);
-
-ALTER TABLE VEHICLE ADD CONSTRAINT FK_VEHICLE_PARKINGMANAGEMENT FOREIGN KEY (PARKINGID)
-      REFERENCES PARKINGMANAGEMENT (PARKINGID);
-
-ALTER TABLE VEHICLE ADD CONSTRAINT FK_VEHICLE_TENANT FOREIGN KEY (TENANTID)
-      REFERENCES TENANT (TENANTID);
+ALTER TABLE VEHICLE
+ADD CONSTRAINT FK_VEHICLE_BILL FOREIGN KEY (BILLID) REFERENCES BILL(BILLID),
+ADD CONSTRAINT FK_VEHICLE_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID),
+ADD CONSTRAINT FK_VEHICLE_PARKINGMANAGEMENT FOREIGN KEY (PARKINGID) REFERENCES PARKINGMANAGEMENT(PARKINGID);
 
 ALTER TABLE WATERELECTRICITY ADD CONSTRAINT FK_WATERELECTRICITY_TENANT FOREIGN KEY (TENANTID)
       REFERENCES TENANT (TENANTID);
