@@ -48,7 +48,7 @@ CREATE TABLE FINGERPRINTS (
 /*==============================================================*/
 CREATE TABLE CONTRACT (
     CONTRACTID           VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
-    HOUSEID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
+    ROOMID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
     TENANTID             VARCHAR(20) NOT NULL COMMENT 'ID người thuê',
     CREATEDATE           DATETIME COMMENT 'Ngày tạo hợp đồng',
     STARTDATE            DATETIME COMMENT 'Ngày bắt đầu hợp đồng',
@@ -78,18 +78,30 @@ CREATE TABLE FEEDBACK (
 );
 
 /*==============================================================*/
-/* Table: HOUSE                                                 */
+/* Table: BUILDING                                                 */
 /*==============================================================*/
-CREATE TABLE HOUSE (
-    HOUSEID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
-    ADDRESS            VARCHAR(100) COMMENT 'Địa chỉ nhà',
+CREATE TABLE BUILDING (
+    BUILDINGID              VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
+    USERNAME             VARCHAR(20) NOT NULL COMMENT 'Tên người dùng',
+    ADDRESS                 VARCHAR(100) COMMENT 'Địa chỉ',
+    NUMOFFLOORS             INT COMMENT 'Số lượng tầng',
+    NUMOFROOMS              INT COMMENT 'Số lượng phòng',
+    PRIMARY KEY (BUILDINGID)
+);
+
+/*==============================================================*/
+/* Table: ROOM                                                 */
+/*==============================================================*/
+CREATE TABLE ROOM (
+    ROOMID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
+    BUILDINGID           VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
     TYPE                 VARCHAR(50) COMMENT 'Loại nhà',
     CONVENIENT           VARCHAR(200) COMMENT 'Tiện ích',
-    AREA                 VARCHAR(50) COMMENT 'Diện tích',
+    AREA                 FLOAT COMMENT 'Diện tích',
     PRICE                FLOAT COMMENT 'Giá',
     STATUS               VARCHAR(50) COMMENT 'Trạng thái',
     LAST_MAINTENANCE_DATE DATE COMMENT 'Ngày bảo trì gần nhất',
-    PRIMARY KEY (HOUSEID)
+    PRIMARY KEY (ROOMID)
 );
 
 /*==============================================================*/
@@ -146,7 +158,6 @@ CREATE TABLE PET (
     PHONENUMBER          VARCHAR(20) COMMENT 'Số điện thoại',
     EMAIL                VARCHAR(50) COMMENT 'Email',
     TYPEOFANIMAL         VARCHAR(20) COMMENT 'Loại động vật',
-    QUANTITY             INT COMMENT 'Số lượng',
     PRIMARY KEY (TENANTID)
 );
 
@@ -175,9 +186,9 @@ CREATE TABLE RELATIVE (
 /* Table: RENTALHISTORY                                         */
 /*==============================================================*/
 CREATE TABLE RENTALHISTORY (
-    HOUSEID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
+    ROOMID              VARCHAR(20) NOT NULL COMMENT 'ID nhà',
     OLDTENANTID          VARCHAR(10) NOT NULL COMMENT 'ID người thuê cũ',
-    HOUSENAME            VARCHAR(100) COMMENT 'Tên nhà',
+    ADDRESS            VARCHAR(100) COMMENT 'Tên nhà',
     TYPE                 VARCHAR(50) COMMENT 'Loại nhà',
     CONVENIENT           VARCHAR(200) COMMENT 'Tiện ích',
     AREA                 VARCHAR(50) COMMENT 'Diện tích',
@@ -190,7 +201,7 @@ CREATE TABLE RENTALHISTORY (
     STARTDATE            DATETIME COMMENT 'Ngày bắt đầu',
     ENDDATE              DATETIME COMMENT 'Ngày kết thúc',
     REASON_FOR_LEAVING   VARCHAR(200) COMMENT 'Lý do rời đi',
-    PRIMARY KEY (HOUSEID, OLDTENANTID)
+    PRIMARY KEY (ROOMID, OLDTENANTID)
 );
 
 /*==============================================================*/
@@ -347,11 +358,17 @@ ALTER TABLE FINGERPRINTS ADD CONSTRAINT FK_FINGERPRINTS_USER FOREIGN KEY (USERNA
 ALTER TABLE FINGERPRINTS ADD CONSTRAINT FK_FINGERPRINTS_TENANT FOREIGN KEY (TENANTID)
       REFERENCES TENANT (TENANTID);
 
-ALTER TABLE CONTRACT ADD CONSTRAINT FK_CONTRACT_HOUSE FOREIGN KEY (HOUSEID)
-      REFERENCES HOUSE (HOUSEID);
+ALTER TABLE CONTRACT ADD CONSTRAINT FK_CONTRACT_ROOM FOREIGN KEY (ROOMID)
+      REFERENCES ROOM (ROOMID);
 
 ALTER TABLE CONTRACT ADD CONSTRAINT FK_CONTRACT_TENANT FOREIGN KEY (TENANTID)
       REFERENCES TENANT (TENANTID);
+      
+ALTER TABLE ROOM ADD CONSTRAINT FK_ROOM_BUILDING FOREIGN KEY (BUILDINGID)
+      REFERENCES BUILDING (BUILDINGID);
+      
+ALTER TABLE BUILDING ADD CONSTRAINT FK_BUILDING_USER FOREIGN KEY (USERNAME)
+      REFERENCES USER (USERNAME);
 
 ALTER TABLE FEEDBACK ADD CONSTRAINT FK_FEEDBACK_TENANT FOREIGN KEY (TENANTID)
       REFERENCES TENANT (TENANTID);
@@ -368,8 +385,8 @@ ALTER TABLE RELATIVE ADD CONSTRAINT FK_RELATIVE_TENANT FOREIGN KEY (TENANTID)
 ALTER TABLE RELATIVE ADD CONSTRAINT FK_RELATIVE_TENANTRELATIVES FOREIGN KEY (RELATIVEID)
       REFERENCES TENANTRELATIVES (RELATIVEID);
 
-ALTER TABLE RENTALHISTORY ADD CONSTRAINT FK_RENTALHISTORY_HOUSE FOREIGN KEY (HOUSEID)
-      REFERENCES HOUSE (HOUSEID);
+ALTER TABLE RENTALHISTORY ADD CONSTRAINT FK_RENTALHISTORY_ROOM FOREIGN KEY (ROOMID)
+      REFERENCES ROOM (ROOMID);
 
 ALTER TABLE TEMPORARY_RESIDENCE ADD CONSTRAINT FK_TEMPORARY_RESIDENCE_TENANT FOREIGN KEY (TENANTID)
       REFERENCES TENANT (TENANTID);
