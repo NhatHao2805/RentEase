@@ -16,7 +16,7 @@ VALUES
 
 INSERT INTO ROOM (ROOMID, BUILDINGID, TYPE, CONVENIENT, AREA, PRICE, STATUS, LAST_MAINTENANCE_DATE)
 VALUES 
-('R001', 'B001', 'Căn hộ', 'Điều hòa, Wifi, Bếp', 50.5, 12000000, 'Còn trống', '2023-09-15'),
+('R001', 'B001', 'Căn hộ', 'Điều hòa, Wifi, Bếp', 50.5, 12000000, 'Đang trống', '2023-09-15'),
 ('R002', 'B001', 'Căn hộ', 'Điều hòa, Wifi, Bếp, Máy giặt', 60.0, 15000000, 'Đã thuê', '2023-08-20'),
 ('R003', 'B002', 'Văn phòng', 'Điều hòa, Wifi, Máy in', 100.0, 25000000, 'Còn trống', '2023-07-10'),
 ('R004', 'B003', 'Căn hộ', 'Điều hòa, Wifi, Bếp, Máy giặt, Gym', 70.5, 18000000, 'Còn trống', '2023-09-01'),
