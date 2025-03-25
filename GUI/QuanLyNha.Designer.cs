@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnClose = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -130,17 +130,17 @@
             this.panel_quanlycsvc = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button29 = new System.Windows.Forms.Button();
+            this.addAssets_btn = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.assetName_tb = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.checkBox22 = new System.Windows.Forms.CheckBox();
-            this.checkBox23 = new System.Windows.Forms.CheckBox();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.button28 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.searchByName_chbox = new System.Windows.Forms.CheckBox();
+            this.sortPriceDescend_chbox = new System.Windows.Forms.CheckBox();
+            this.sortPriceAscend_chbox = new System.Windows.Forms.CheckBox();
+            this.assetsList_dtgridview = new System.Windows.Forms.DataGridView();
+            this.repairRequest_btn = new System.Windows.Forms.Button();
+            this.maintenance_btn = new System.Windows.Forms.Button();
+            this.manageAssets_btn = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -178,7 +178,7 @@
             this.groupBox5.SuspendLayout();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsList_dtgridview)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -452,7 +452,7 @@
             this.panel_quanlyhopdong.Controls.Add(this.groupBox6);
             this.panel_quanlyhopdong.Location = new System.Drawing.Point(309, 9);
             this.panel_quanlyhopdong.Name = "panel_quanlyhopdong";
-            this.panel_quanlyhopdong.Size = new System.Drawing.Size(34, 16);
+            this.panel_quanlyhopdong.Size = new System.Drawing.Size(35, 26);
             this.panel_quanlyhopdong.TabIndex = 15;
             // 
             // groupBox7
@@ -640,7 +640,7 @@
             this.panel_quanlyphong.Controls.Add(this.chbox_datagridview_grbox);
             this.panel_quanlyphong.Location = new System.Drawing.Point(257, 9);
             this.panel_quanlyphong.Name = "panel_quanlyphong";
-            this.panel_quanlyphong.Size = new System.Drawing.Size(832, 671);
+            this.panel_quanlyphong.Size = new System.Drawing.Size(25, 49);
             this.panel_quanlyphong.TabIndex = 16;
             // 
             // groupBox10
@@ -944,9 +944,9 @@
             // 
             this.dtgridview_LoadRoom.AllowUserToAddRows = false;
             this.dtgridview_LoadRoom.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.dtgridview_LoadRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.dtgridview_LoadRoom.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtgridview_LoadRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgridview_LoadRoom.BackgroundColor = System.Drawing.Color.LightGray;
             this.dtgridview_LoadRoom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -969,7 +969,7 @@
             this.panel_quanlytaichinh.Controls.Add(this.btn_hoadon);
             this.panel_quanlytaichinh.Location = new System.Drawing.Point(361, 9);
             this.panel_quanlytaichinh.Name = "panel_quanlytaichinh";
-            this.panel_quanlytaichinh.Size = new System.Drawing.Size(33, 21);
+            this.panel_quanlytaichinh.Size = new System.Drawing.Size(44, 26);
             this.panel_quanlytaichinh.TabIndex = 17;
             // 
             // panel_qltc_hoadon
@@ -1321,18 +1321,18 @@
             // 
             this.panel_quanlycsvc.Controls.Add(this.groupBox5);
             this.panel_quanlycsvc.Controls.Add(this.groupBox14);
-            this.panel_quanlycsvc.Controls.Add(this.button28);
-            this.panel_quanlycsvc.Controls.Add(this.button27);
-            this.panel_quanlycsvc.Controls.Add(this.button13);
-            this.panel_quanlycsvc.Location = new System.Drawing.Point(411, 12);
+            this.panel_quanlycsvc.Controls.Add(this.repairRequest_btn);
+            this.panel_quanlycsvc.Controls.Add(this.maintenance_btn);
+            this.panel_quanlycsvc.Controls.Add(this.manageAssets_btn);
+            this.panel_quanlycsvc.Location = new System.Drawing.Point(257, 12);
             this.panel_quanlycsvc.Name = "panel_quanlycsvc";
-            this.panel_quanlycsvc.Size = new System.Drawing.Size(42, 23);
+            this.panel_quanlycsvc.Size = new System.Drawing.Size(1020, 686);
             this.panel_quanlycsvc.TabIndex = 18;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label12);
-            this.groupBox5.Controls.Add(this.button29);
+            this.groupBox5.Controls.Add(this.addAssets_btn);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(22, 119);
             this.groupBox5.Name = "groupBox5";
@@ -1351,40 +1351,42 @@
             this.label12.TabIndex = 10;
             this.label12.Text = "Danh sách tài sản hiện có";
             // 
-            // button29
+            // addAssets_btn
             // 
-            this.button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button29.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.button29.Location = new System.Drawing.Point(814, 19);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(181, 60);
-            this.button29.TabIndex = 7;
-            this.button29.Text = "Thêm Tài Sản";
-            this.button29.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button29.UseVisualStyleBackColor = true;
+            this.addAssets_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addAssets_btn.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.addAssets_btn.Location = new System.Drawing.Point(814, 19);
+            this.addAssets_btn.Name = "addAssets_btn";
+            this.addAssets_btn.Size = new System.Drawing.Size(181, 60);
+            this.addAssets_btn.TabIndex = 7;
+            this.addAssets_btn.Text = "Thêm Tài Sản";
+            this.addAssets_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.addAssets_btn.UseVisualStyleBackColor = true;
+            this.addAssets_btn.Click += new System.EventHandler(this.addAssets_btn_Click);
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.textBox1);
+            this.groupBox14.Controls.Add(this.assetName_tb);
             this.groupBox14.Controls.Add(this.pictureBox4);
-            this.groupBox14.Controls.Add(this.checkBox19);
-            this.groupBox14.Controls.Add(this.checkBox22);
-            this.groupBox14.Controls.Add(this.checkBox23);
-            this.groupBox14.Controls.Add(this.dataGridView5);
+            this.groupBox14.Controls.Add(this.searchByName_chbox);
+            this.groupBox14.Controls.Add(this.sortPriceDescend_chbox);
+            this.groupBox14.Controls.Add(this.sortPriceAscend_chbox);
+            this.groupBox14.Controls.Add(this.assetsList_dtgridview);
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox14.Location = new System.Drawing.Point(22, 196);
+            this.groupBox14.Location = new System.Drawing.Point(22, 200);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(998, 481);
+            this.groupBox14.Size = new System.Drawing.Size(998, 477);
             this.groupBox14.TabIndex = 15;
             this.groupBox14.TabStop = false;
             // 
-            // textBox1
+            // assetName_tb
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(754, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 27);
-            this.textBox1.TabIndex = 6;
+            this.assetName_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assetName_tb.Location = new System.Drawing.Point(754, 34);
+            this.assetName_tb.Name = "assetName_tb";
+            this.assetName_tb.Size = new System.Drawing.Size(232, 27);
+            this.assetName_tb.TabIndex = 6;
+            this.assetName_tb.TextChanged += new System.EventHandler(this.assetName_tb_TextChanged);
             // 
             // pictureBox4
             // 
@@ -1396,86 +1398,91 @@
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
             // 
-            // checkBox19
+            // searchByName_chbox
             // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox19.Location = new System.Drawing.Point(587, 34);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(148, 22);
-            this.checkBox19.TabIndex = 3;
-            this.checkBox19.Text = "Tìm kiếm theo tên";
-            this.checkBox19.UseVisualStyleBackColor = true;
+            this.searchByName_chbox.AutoSize = true;
+            this.searchByName_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchByName_chbox.Location = new System.Drawing.Point(587, 34);
+            this.searchByName_chbox.Name = "searchByName_chbox";
+            this.searchByName_chbox.Size = new System.Drawing.Size(148, 22);
+            this.searchByName_chbox.TabIndex = 3;
+            this.searchByName_chbox.Text = "Tìm kiếm theo tên";
+            this.searchByName_chbox.UseVisualStyleBackColor = true;
+            this.searchByName_chbox.CheckedChanged += new System.EventHandler(this.searchByName_chbox_CheckedChanged);
             // 
-            // checkBox22
+            // sortPriceDescend_chbox
             // 
-            this.checkBox22.AutoSize = true;
-            this.checkBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox22.Location = new System.Drawing.Point(318, 34);
-            this.checkBox22.Name = "checkBox22";
-            this.checkBox22.Size = new System.Drawing.Size(219, 22);
-            this.checkBox22.TabIndex = 2;
-            this.checkBox22.Text = "Sắp xếp theo giá trị giảm dần";
-            this.checkBox22.UseVisualStyleBackColor = true;
+            this.sortPriceDescend_chbox.AutoSize = true;
+            this.sortPriceDescend_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sortPriceDescend_chbox.Location = new System.Drawing.Point(318, 34);
+            this.sortPriceDescend_chbox.Name = "sortPriceDescend_chbox";
+            this.sortPriceDescend_chbox.Size = new System.Drawing.Size(219, 22);
+            this.sortPriceDescend_chbox.TabIndex = 2;
+            this.sortPriceDescend_chbox.Text = "Sắp xếp theo giá trị giảm dần";
+            this.sortPriceDescend_chbox.UseVisualStyleBackColor = true;
+            this.sortPriceDescend_chbox.CheckedChanged += new System.EventHandler(this.sortPriceDescend_chbox_CheckedChanged);
             // 
-            // checkBox23
+            // sortPriceAscend_chbox
             // 
-            this.checkBox23.AutoSize = true;
-            this.checkBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox23.Location = new System.Drawing.Point(74, 34);
-            this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(215, 22);
-            this.checkBox23.TabIndex = 1;
-            this.checkBox23.Text = "Sắp xếp theo giá trị tăng dần";
-            this.checkBox23.UseVisualStyleBackColor = true;
+            this.sortPriceAscend_chbox.AutoSize = true;
+            this.sortPriceAscend_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sortPriceAscend_chbox.Location = new System.Drawing.Point(74, 34);
+            this.sortPriceAscend_chbox.Name = "sortPriceAscend_chbox";
+            this.sortPriceAscend_chbox.Size = new System.Drawing.Size(215, 22);
+            this.sortPriceAscend_chbox.TabIndex = 1;
+            this.sortPriceAscend_chbox.Text = "Sắp xếp theo giá trị tăng dần";
+            this.sortPriceAscend_chbox.UseVisualStyleBackColor = true;
+            this.sortPriceAscend_chbox.CheckedChanged += new System.EventHandler(this.sortPriceAscend_chbox_CheckedChanged);
             // 
-            // dataGridView5
+            // assetsList_dtgridview
             // 
-            this.dataGridView5.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(14, 77);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowHeadersWidth = 51;
-            this.dataGridView5.RowTemplate.Height = 24;
-            this.dataGridView5.Size = new System.Drawing.Size(969, 387);
-            this.dataGridView5.TabIndex = 0;
+            this.assetsList_dtgridview.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.assetsList_dtgridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.assetsList_dtgridview.Location = new System.Drawing.Point(14, 77);
+            this.assetsList_dtgridview.Name = "assetsList_dtgridview";
+            this.assetsList_dtgridview.RowHeadersWidth = 51;
+            this.assetsList_dtgridview.RowTemplate.Height = 24;
+            this.assetsList_dtgridview.Size = new System.Drawing.Size(969, 387);
+            this.assetsList_dtgridview.TabIndex = 0;
             // 
-            // button28
+            // repairRequest_btn
             // 
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.button28.Location = new System.Drawing.Point(373, 23);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(310, 92);
-            this.button28.TabIndex = 13;
-            this.button28.Text = "Yêu cầu sửa chữa từ khách thuê";
-            this.button28.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button28.UseVisualStyleBackColor = true;
-            this.button28.Click += new System.EventHandler(this.button28_Click);
+            this.repairRequest_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repairRequest_btn.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.repairRequest_btn.Location = new System.Drawing.Point(373, 23);
+            this.repairRequest_btn.Name = "repairRequest_btn";
+            this.repairRequest_btn.Size = new System.Drawing.Size(310, 92);
+            this.repairRequest_btn.TabIndex = 13;
+            this.repairRequest_btn.Text = "Yêu cầu sửa chữa từ khách thuê";
+            this.repairRequest_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.repairRequest_btn.UseVisualStyleBackColor = true;
+            this.repairRequest_btn.Click += new System.EventHandler(this.repairRequest_btn_Click);
             // 
-            // button27
+            // maintenance_btn
             // 
-            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.button27.Location = new System.Drawing.Point(724, 23);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(298, 92);
-            this.button27.TabIndex = 12;
-            this.button27.Text = "Theo dõi tình trạng bảo trì sữa chữa";
-            this.button27.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button27.UseVisualStyleBackColor = true;
+            this.maintenance_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maintenance_btn.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.maintenance_btn.Location = new System.Drawing.Point(724, 23);
+            this.maintenance_btn.Name = "maintenance_btn";
+            this.maintenance_btn.Size = new System.Drawing.Size(298, 92);
+            this.maintenance_btn.TabIndex = 12;
+            this.maintenance_btn.Text = "Theo dõi tình trạng bảo trì sữa chữa";
+            this.maintenance_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.maintenance_btn.UseVisualStyleBackColor = true;
+            this.maintenance_btn.Click += new System.EventHandler(this.maintenance_btn_Click);
             // 
-            // button13
+            // manageAssets_btn
             // 
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.button13.Location = new System.Drawing.Point(22, 24);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(310, 92);
-            this.button13.TabIndex = 11;
-            this.button13.Text = "Quản lý tài sản phòng";
-            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button13.UseVisualStyleBackColor = true;
+            this.manageAssets_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageAssets_btn.Image = global::GUI.Properties.Resources.img_Login__1_;
+            this.manageAssets_btn.Location = new System.Drawing.Point(22, 24);
+            this.manageAssets_btn.Name = "manageAssets_btn";
+            this.manageAssets_btn.Size = new System.Drawing.Size(310, 92);
+            this.manageAssets_btn.TabIndex = 11;
+            this.manageAssets_btn.Text = "Quản lý tài sản phòng";
+            this.manageAssets_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.manageAssets_btn.UseVisualStyleBackColor = true;
+            this.manageAssets_btn.Click += new System.EventHandler(this.manageAssets_btn_Click);
             // 
             // QuanLyNha
             // 
@@ -1547,7 +1554,7 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsList_dtgridview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1652,18 +1659,18 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Panel panel_quanlycsvc;
-        private System.Windows.Forms.Button button28;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button repairRequest_btn;
+        private System.Windows.Forms.Button maintenance_btn;
+        private System.Windows.Forms.Button manageAssets_btn;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button addAssets_btn;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.CheckBox checkBox22;
-        private System.Windows.Forms.CheckBox checkBox23;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox searchByName_chbox;
+        private System.Windows.Forms.CheckBox sortPriceDescend_chbox;
+        private System.Windows.Forms.CheckBox sortPriceAscend_chbox;
+        private System.Windows.Forms.DataGridView assetsList_dtgridview;
+        private System.Windows.Forms.TextBox assetName_tb;
     }
 }

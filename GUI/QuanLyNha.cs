@@ -61,7 +61,7 @@ namespace GUI
         {
             setPosition_hoaDon_thuChi(panel_qltc_hoadon, panel_qltc_thuchi);
             changePanel(panel_quanlyphong);
-
+            changePanel(panel_quanlycsvc);
         }
 
         private void loadVariable()
@@ -189,11 +189,6 @@ namespace GUI
             setPosition_hoaDon_thuChi(panel_qltc_thuchi, panel_qltc_hoadon);
         }
 
-        private void button28_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_phong_Click(object sender, EventArgs e)
         {
             changePanel(panel_quanlyphong);
@@ -231,16 +226,18 @@ namespace GUI
         private void QuanLyNha_Load(object sender, EventArgs e)
         {
             LoadRoom();
+            LoadAsset();
             FilterRoom();
-            CustomizeDataGridView();
+            CustomizeDataGridView(dtgridview_LoadRoom);
+            CustomizeDataGridView(assetsList_dtgridview);
         }
 
-        public RoomBLL house = new RoomBLL();
+        public RoomBLL room = new RoomBLL();
         private void LoadRoom()
         {
             
             DataTable dt = new DataTable();
-            dt = house.LoadRoom();
+            dt = room.LoadRoom();
             dtgridview_LoadRoom.AutoGenerateColumns = true;
             dtgridview_LoadRoom.DataSource = dt;
             dtgridview_LoadRoom.ReadOnly = true;
@@ -255,42 +252,42 @@ namespace GUI
             
         }
 
-        private void CustomizeDataGridView()
+        public void CustomizeDataGridView(DataGridView dtgridview)
         {
             // Căn chỉnh giao diện chung
-            dtgridview_LoadRoom.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtgridview_LoadRoom.RowHeadersVisible = false;
-            dtgridview_LoadRoom.AllowUserToAddRows = false;
-            dtgridview_LoadRoom.AllowUserToDeleteRows = false;
-            dtgridview_LoadRoom.ReadOnly = true;
+            dtgridview.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgridview.RowHeadersVisible = false;
+            dtgridview.AllowUserToAddRows = false;
+            dtgridview.AllowUserToDeleteRows = false;
+            dtgridview.ReadOnly = true;
 
             // Thiết lập style cho header
-            dtgridview_LoadRoom.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
-            dtgridview_LoadRoom.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dtgridview_LoadRoom.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
-            dtgridview_LoadRoom.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dtgridview_LoadRoom.EnableHeadersVisualStyles = false;
+            dtgridview.ColumnHeadersDefaultCellStyle.BackColor = Color.Navy;
+            dtgridview.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dtgridview.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            dtgridview.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtgridview.EnableHeadersVisualStyles = false;
 
 
             // Thiết lập style cho các dòng
-            dtgridview_LoadRoom.AlternatingRowsDefaultCellStyle.BackColor = Color.DimGray;
-            dtgridview_LoadRoom.DefaultCellStyle.Font = new Font("Arial", 9);
-            dtgridview_LoadRoom.DefaultCellStyle.ForeColor = Color.Black;
-            dtgridview_LoadRoom.DefaultCellStyle.BackColor = Color.White;
-            dtgridview_LoadRoom.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
-            dtgridview_LoadRoom.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dtgridview.AlternatingRowsDefaultCellStyle.BackColor = Color.DimGray;
+            dtgridview.DefaultCellStyle.Font = new Font("Arial", 9);
+            dtgridview.DefaultCellStyle.ForeColor = Color.Black;
+            dtgridview.DefaultCellStyle.BackColor = Color.White;
+            dtgridview.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            dtgridview.DefaultCellStyle.SelectionForeColor = Color.Black;
 
             // Thiết lập style khi chọn dòng
-            dtgridview_LoadRoom.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgridview_LoadRoom.MultiSelect = false;
+            dtgridview.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgridview.MultiSelect = false;
 
             // Thiết lập màu nền và đường viền
-            dtgridview_LoadRoom.GridColor = Color.Gray;
-            dtgridview_LoadRoom.BackgroundColor = Color.White;
+            dtgridview.GridColor = Color.Gray;
+            dtgridview.BackgroundColor = Color.White;
 
             // Tùy chỉnh font và kích thước
-            dtgridview_LoadRoom.Font = new Font("Arial", 10);
-            dtgridview_LoadRoom.RowTemplate.Height = 30;
+            dtgridview.Font = new Font("Arial", 10);
+            dtgridview.RowTemplate.Height = 30;
         }
 
         private void addRoom_Click(object sender, EventArgs e)
@@ -322,7 +319,7 @@ namespace GUI
             }
 
             // Lọc dữ liệu và hiển thị
-            DataTable filteredData = house.FilterRoomByStatus(status);
+            DataTable filteredData = room.FilterRoomByStatus(status);
             dtgridview_LoadRoom.DataSource = filteredData;
         }
 
@@ -391,5 +388,102 @@ namespace GUI
         {
             FilterRoom();
         }
+
+
+        //QuanLyCSVC
+        public AssetsBLL asset = new AssetsBLL();
+        private void LoadAsset()
+        {
+
+            DataTable dt = new DataTable();
+            dt = asset.LoadAsset();
+            assetsList_dtgridview.AutoGenerateColumns = true;
+            assetsList_dtgridview.DataSource = dt;
+            assetsList_dtgridview.ReadOnly = true;
+            assetsList_dtgridview.Columns["ASSETID"].HeaderText = "Mã tài sản";
+            assetsList_dtgridview.Columns["ROOMID"].HeaderText = "Mã phòng";
+            assetsList_dtgridview.Columns["ASSETNAME"].HeaderText = "Tên tài sản";
+            assetsList_dtgridview.Columns["PRICE"].HeaderText = "Giá";
+            assetsList_dtgridview.Columns["STATUS"].HeaderText = "Tình trạng";
+            assetsList_dtgridview.Columns["USE_DATE"].HeaderText = "Ngày đưa vào sử dụng";
+
+        }
+
+        private void FilterAssets()
+        {
+            //string status = "";
+            //foreach (Control control in chbox_datagridview_grbox.Controls)
+            //{
+            //    if (control is CheckBox checkBox && checkBox.Checked)
+            //    {
+            //        status += checkBox.Text + "; ";
+            //    }
+            //}
+
+            //// Loại bỏ dấu "; " cuối cùng
+            //status = status.TrimEnd(';', ' ');
+
+            //// Nếu không có CheckBox nào được chọn, hiển thị tất cả dữ liệu
+            //if (string.IsNullOrEmpty(status))
+            //{
+            //    LoadRoom();
+            //    return;
+            //}
+
+            // Lọc dữ liệu và hiển thị
+            //DataTable filteredData = asset.FilterRoomByStatus(status);
+            DataTable filteredData = asset.LoadAsset();
+            assetsList_dtgridview.DataSource = filteredData;
+        }
+
+        private void manageAssets_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_ManageAsset manageAsset = new Form_ManageAsset();
+            manageAsset.Show();
+        }
+
+        private void repairRequest_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_RepairRequest repairRequest = new Form_RepairRequest(this);
+            repairRequest.Show();
+        }
+
+        private void maintenance_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_Maintenance maintenance = new Form_Maintenance(this);
+            maintenance.Show();
+        }
+
+        private void addAssets_btn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form_AddAssets addAsset = new Form_AddAssets();
+            addAsset.Show();
+        }
+
+        private void sortPriceAscend_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sortPriceDescend_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchByName_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void assetName_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        //RepairRequesst
     }
 }

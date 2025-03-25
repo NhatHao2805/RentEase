@@ -39,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_AddAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AddAssets.Designer.cs">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +70,24 @@
     </Compile>
     <Compile Include="Form_AddRoom.Designer.cs">
       <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Maintenance.Designer.cs">
+      <DependentUpon>Form_Maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ManageAsset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ManageAsset.Designer.cs">
+      <DependentUpon>Form_ManageAsset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RepairRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RepairRequest.Designer.cs">
+      <DependentUpon>Form_RepairRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNha.cs">
       <SubType>Form</SubType>
@@ -78,11 +103,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_AddAssets.resx">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_DangNhap.resx">
       <DependentUpon>Form_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AddRoom.resx">
       <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Maintenance.resx">
+      <DependentUpon>Form_Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ManageAsset.resx">
+      <DependentUpon>Form_ManageAsset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RepairRequest.resx">
+      <DependentUpon>Form_RepairRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNha.resx">
       <DependentUpon>QuanLyNha.cs</DependentUpon>

@@ -144,3 +144,7 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\GUI\bin\Debug\Syste
 C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\GUI\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\GUI\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\GUI\obj\Debug\GUI.Form_AddAssets.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\GUI\obj\Debug\GUI.Form_Maintenance.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\GUI\obj\Debug\GUI.Form_ManageAsset.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase Source\GUI\obj\Debug\GUI.Form_RepairRequest.resources

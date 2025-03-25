@@ -99,7 +99,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountAccess.cs" />
+    <Compile Include="AssetsAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="MaintenanceAccess.cs" />
+    <Compile Include="RepairRequestAccess.cs" />
     <Compile Include="RoomAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

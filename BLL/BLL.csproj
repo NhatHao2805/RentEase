@@ -48,6 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
+    <Compile Include="AssetsBLL.cs" />
+    <Compile Include="MaintenanceBLL.cs" />
+    <Compile Include="RepairRequestBLL.cs" />
     <Compile Include="RoomBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
