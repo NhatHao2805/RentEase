@@ -9,9 +9,9 @@ using MySql.Data.MySqlClient;
 
 namespace DAL
 {
-    public class AccountAccess:DatabaseAccess
+    public class AccountAccess
     {
-        public static string AccountAccess_CheckLogin(Account taikhoan)
+        public static string AccountAccess_CheckLogin(User taikhoan)
         {
             string user = null;
             using (MySqlConnection conn = MySqlConnectionData.Connect())
@@ -21,8 +21,8 @@ namespace DAL
                 using (MySqlCommand command = new MySqlCommand("proc_login", conn))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@usern", taikhoan.taikhoan);
-                    command.Parameters.AddWithValue("@passw", taikhoan.matkhau);
+                    command.Parameters.AddWithValue("@usern", taikhoan.Username);
+                    command.Parameters.AddWithValue("@passw", taikhoan.Password);
 
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
@@ -42,7 +42,7 @@ namespace DAL
             }
             return user;
         }
-        public static string AccountAccess_CheckSignUp(Account taikhoan)
+        public static string AccountAccess_CheckSignUp(User taikhoan)
         {
             bool check = false;
 
@@ -52,28 +52,31 @@ namespace DAL
 
                 using (MySqlCommand command2 = new MySqlCommand("SELECT check_account(@usern)", conn))
                 {
-                    command2.Parameters.AddWithValue("@usern", taikhoan.taikhoan);
+                    command2.Parameters.AddWithValue("@usern", taikhoan.Username);
                     object a = command2.ExecuteScalar();
+                    Console.WriteLine(Convert.ToInt32(a));
+                    Console.WriteLine(a != null);
+                    Console.WriteLine(a != null && Convert.ToInt32(a) == 1);
                     if (a != null && Convert.ToInt32(a) == 1)
                     {
                         check = true;
                     }
                 }
 
-                if (!check)
+                if (check)
                 {
                     using (MySqlCommand command = new MySqlCommand("proc_addAccount", conn))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         //usern,fulln, passw,emai,birthd,gender,phonen,addre
-                        command.Parameters.AddWithValue("@usern", taikhoan.taikhoan);
-                        command.Parameters.AddWithValue("@passw", taikhoan.matkhau);
-                        command.Parameters.AddWithValue("@fulln", taikhoan.hovaten);
-                        command.Parameters.AddWithValue("@emai", taikhoan.email);
-                        command.Parameters.AddWithValue("@birthd", taikhoan.ngaysinh);
-                        command.Parameters.AddWithValue("@gender", taikhoan.gioitinh);
-                        command.Parameters.AddWithValue("@phonen", taikhoan.sdt);
-                        command.Parameters.AddWithValue("@addre", taikhoan.diachi);
+                        command.Parameters.AddWithValue("@usern", taikhoan.Username);
+                        command.Parameters.AddWithValue("@passw", taikhoan.Password);
+                        command.Parameters.AddWithValue("@fulln", taikhoan.FullName);
+                        command.Parameters.AddWithValue("@emai", taikhoan.Email);
+                        command.Parameters.AddWithValue("@birthd", taikhoan.Birth);
+                        command.Parameters.AddWithValue("@gender", taikhoan.Gender);
+                        command.Parameters.AddWithValue("@phonen", taikhoan.PhoneNumber);
+                        command.Parameters.AddWithValue("@addre", taikhoan.Address);
                         command.ExecuteNonQuery();
                         return "Đăng ký thành công!";
                     }
@@ -82,11 +85,36 @@ namespace DAL
             }
             return "Tài khoản đã tồn tại!";
         }
+
+        public static List<string> Load_TenantName()
+        {
+            List<string> name = new List<string>();
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return name;
+
+                using (MySqlCommand command = new MySqlCommand("Select FIRSTNAME,LASTNAME from tenant", conn))
+                {
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                name.Add(reader.GetString(1) + " " + reader.GetString(0));
+                            }
+                        }
+                        else
+                        {
+                            return name;
+                        }
+                    }
+                }
+            }
+            return name;
+
+        }
     }
 
-    public partial class DatabaseAccess
-    {
-        
-        
-    }
 }

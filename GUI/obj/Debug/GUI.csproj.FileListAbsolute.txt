@@ -179,9 +179,6 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\BouncyCastle.Crypt
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.xml
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\System.IO.Pipelines.xml
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.CreateContract.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.SignLiving.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_DangKy.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_DangNhap.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_AddContract.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_SignUp.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_Login.resources

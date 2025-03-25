@@ -37,25 +37,30 @@ namespace BLL
             withoutDiacritics = withoutDiacritics.Replace('đ', 'd').Replace('Đ', 'D');
             return withoutDiacritics;
         }
-        public string AccountBLL_CheckLogin(Account taikhoan)
+        public string AccountBLL_CheckLogin(User taikhoan)
         {
             // Kiểm tra nghiệp vụ
-            if (taikhoan.taikhoan == "") return "requeid_taikhoan";
-            if (taikhoan.matkhau == "") return "requeid_password";
+            if (taikhoan.Username == "") return "requeid_taikhoan";
+            if (taikhoan.Password == "") return "requeid_password";
 
             string info = AccountAccess.AccountAccess_CheckLogin(taikhoan);
             return info;
         }
-        public string AccountBLL_CheckSignUp(Account taikhoan)
+        public string AccountBLL_CheckSignUp(User taikhoan)
         {
-            if (!checkPattern_0(taikhoan.taikhoan)) return "requeid_taikhoan";
-            if (taikhoan.matkhau == "") return "requeid_password";
-            if (!checkPattern_1(RemoveDiacritics(taikhoan.hovaten))) return "requeid_username";
-            if (taikhoan.email == "") return "requeid_email";
-            if (taikhoan.gioitinh == "") return "requeid_gender";
-            if (!checkPattern_2(taikhoan.sdt)) return "requeid_phonenumber";
-            if (taikhoan.diachi == "") return "requeid_address";
+            if (!checkPattern_0(taikhoan.Username)) return "requeid_taikhoan";
+            if (taikhoan.Password == "") return "requeid_password";
+            if (!checkPattern_1(RemoveDiacritics(taikhoan.FullName))) return "requeid_username";
+            if (taikhoan.Email == "") return "requeid_email";
+            if (taikhoan.Gender == "") return "requeid_gender";
+            if (!checkPattern_2(taikhoan.PhoneNumber)) return "requeid_phonenumber";
+            if (taikhoan.Address == "") return "requeid_address";
             return AccountAccess.AccountAccess_CheckSignUp(taikhoan);
+        }
+
+        public List<string> AccountBLL_Load_TenantName()
+        {
+            return AccountAccess.Load_TenantName();
         }
     }
 }

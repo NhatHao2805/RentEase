@@ -84,67 +84,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContractForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ContractTemplateForm .cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateContract.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateContract.Designer.cs">
-      <DependentUpon>CreateContract.cs</DependentUpon>
     </Compile>
     <Compile Include="Custom\Custom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomDataGridView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Form_DangKy.cs">
+    <Compile Include="Form_AddContract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_DangKy.Designer.cs">
-      <DependentUpon>Form_DangKy.cs</DependentUpon>
+    <Compile Include="Form_AddContract.Designer.cs">
+      <DependentUpon>Form_AddContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_DangNhap.cs">
+    <Compile Include="Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_DangNhap.Designer.cs">
-      <DependentUpon>Form_DangNhap.cs</DependentUpon>
+    <Compile Include="Form_SignUp.Designer.cs">
+      <DependentUpon>Form_SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="SignLiving.cs">
+    <Compile Include="QuanLyNha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignLiving.Designer.cs">
-      <DependentUpon>SignLiving.cs</DependentUpon>
+    <Compile Include="QuanLyNha.Designer.cs">
+      <DependentUpon>QuanLyNha.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TenantForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <EmbeddedResource Include="ContractForm.resx">
-      <DependentUpon>ContractForm.cs</DependentUpon>
+    <EmbeddedResource Include="Form_AddContract.resx">
+      <DependentUpon>Form_AddContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateContract.resx">
-      <DependentUpon>CreateContract.cs</DependentUpon>
+    <EmbeddedResource Include="Form_SignUp.resx">
+      <DependentUpon>Form_SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_DangKy.resx">
-      <DependentUpon>Form_DangKy.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_DangNhap.resx">
-      <DependentUpon>Form_DangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="QuanLyNha.resx">
+      <DependentUpon>QuanLyNha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,12 +138,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SignLiving.resx">
-      <DependentUpon>SignLiving.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TenantForm.resx">
-      <DependentUpon>TenantForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
