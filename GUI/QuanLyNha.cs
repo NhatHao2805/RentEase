@@ -42,8 +42,13 @@ namespace GUI
         }
 
         private void loadInfo()
-        {  
+        {
+            load_QLP();
+            loar_Contract();
+        }
 
+        private void load_QLP()
+        {
             dgv_QLP.DataSource = RoomBLL.RoomBLL_load_Room(form1.taikhoan.Username);
             dgv_QLP.Columns[0].Width = 90;
             dgv_QLP.Columns[1].Width = 90;
@@ -54,7 +59,10 @@ namespace GUI
             dgv_QLP.Columns[6].Width = 80;
             dgv_QLP.Columns[7].Width = 250;
             dgv_QLP.ScrollBars = ScrollBars.Both;
+        }
 
+        private void loar_Contract()
+        {
             dgv_QLHD.DataSource = ContractBLL.ContractBLL_load_Contract(form1.taikhoan.Username);
             dgv_QLHD.Columns[0].Width = 90;
             dgv_QLHD.Columns[1].Width = 90;
@@ -65,7 +73,6 @@ namespace GUI
             dgv_QLHD.Columns[6].Width = 80;
             dgv_QLHD.Columns[7].Width = 250;
             dgv_QLHD.ScrollBars = ScrollBars.Both;
-
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
