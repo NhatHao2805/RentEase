@@ -102,4 +102,20 @@ BEGIN
     SET new_id = CONCAT('c', LPAD(number_part, 3, '0'));
     RETURN new_id;
 END//
+
+-- Lay Ten Khach Hien Co
+CREATE PROCEDURE sp_GetAllTenants
+AS
+BEGIN
+    SELECT TenantID, TenantName FROM Tenants ORDER BY TenantName;
+END
+
+-- Lay Ten Dich Vu
+CREATE PROCEDURE sp_GetAllServices
+AS
+BEGIN
+    SELECT ServiceName FROM Services ORDER BY ServiceName;
+END
+
+
 DELIMITER ;

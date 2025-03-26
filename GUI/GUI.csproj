@@ -108,6 +108,12 @@
     <Compile Include="Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Service\AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI_Service\AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyNha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI_Service\AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNha.resx">
       <DependentUpon>QuanLyNha.cs</DependentUpon>

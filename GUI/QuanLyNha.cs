@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.GUI_Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -381,6 +382,16 @@ namespace GUI
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        // them dich vu
+        private void button49_Click(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            AddService addServiceForm = new AddService();
+
+            // Hiển thị form đó
+            addServiceForm.Show();
         }
     }
 }
