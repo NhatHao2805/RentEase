@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease-nhathao\\rentease\\gui\\form_addcontract.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease-nhathao\\rentease\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\gui\\contracttemplateform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\contracttemplateform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|d:\\renteasetdt\\rentease-nhathao\\rentease\\dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\dal\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\gui\\contracttemplateform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\contracttemplateform .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\dto\\temporaryresidencedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -125,7 +133,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 269,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -145,19 +153,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "packages.config",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\DAL\\packages.config",
-              "RelativeDocumentMoniker": "DAL\\packages.config",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\DAL\\packages.config",
-              "RelativeToolTip": "DAL\\packages.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-03-21T02:25:47.057Z"
+              "DocumentIndex": 0,
+              "Title": "Form_AddContract.Designer.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\Form_AddContract.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Form_AddContract.Designer.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\Form_AddContract.Designer.cs*",
+              "RelativeToolTip": "GUI\\Form_AddContract.Designer.cs*",
+              "ViewState": "AgIAAE8BAAAAAAAAAAAUwFQBAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T05:33:13.599Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Form_AddContract.cs [Design]",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\Form_AddContract.cs",
+              "RelativeDocumentMoniker": "GUI\\Form_AddContract.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\Form_AddContract.cs [Design]*",
+              "RelativeToolTip": "GUI\\Form_AddContract.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T05:30:52.878Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "packages.config",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\BLL\\packages.config",
               "RelativeDocumentMoniker": "BLL\\packages.config",
@@ -169,7 +190,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 2,
+              "Title": "ContractTemplateForm .cs [Design]",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\ContractTemplateForm .cs",
+              "RelativeDocumentMoniker": "GUI\\ContractTemplateForm .cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\ContractTemplateForm .cs [Design]",
+              "RelativeToolTip": "GUI\\ContractTemplateForm .cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T02:41:43.358Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "packages.config",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\DAL\\packages.config",
+              "RelativeDocumentMoniker": "DAL\\packages.config",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\DAL\\packages.config",
+              "RelativeToolTip": "DAL\\packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-03-21T02:25:47.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "ContractForm.resx",
               "DocumentMoniker": "D:\\RentEase\\GUI\\ContractForm.resx",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\ContractForm.resx",
@@ -180,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CreateContract.cs [Design]",
               "DocumentMoniker": "D:\\RentEase\\GUI\\CreateContract.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\CreateContract.cs",
@@ -191,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "DatabaseAccess.cs",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\DAL\\DatabaseAccess.cs",
               "RelativeDocumentMoniker": "DAL\\DatabaseAccess.cs",
@@ -204,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ContractTemplateForm .cs",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\ContractTemplateForm .cs",
               "RelativeDocumentMoniker": "GUI\\ContractTemplateForm .cs",
@@ -212,11 +257,12 @@
               "RelativeToolTip": "GUI\\ContractTemplateForm .cs",
               "ViewState": "AgIAAHMDAAAAAAAAAAAcwIcDAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:37:58.994Z"
+              "WhenOpened": "2025-03-21T02:37:58.994Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "CustomDataGridView.cs [Design]",
               "DocumentMoniker": "D:\\RentEase\\GUI\\CustomDataGridView.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\CustomDataGridView.cs",
@@ -227,18 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ContractTemplateForm .cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\ContractTemplateForm .cs",
-              "RelativeDocumentMoniker": "GUI\\ContractTemplateForm .cs",
-              "ToolTip": "D:\\RentEase\\GUI\\ContractTemplateForm .cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\RentEase\\GUI\\ContractTemplateForm .cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T02:41:43.358Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "TemporaryResidenceDTO.cs",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\DTO\\TemporaryResidenceDTO.cs",
               "RelativeDocumentMoniker": "DTO\\TemporaryResidenceDTO.cs",
@@ -250,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ContractDTO.cs",
               "DocumentMoniker": "D:\\RentEase\\DTO\\ContractDTO.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\DTO\\ContractDTO.cs",
@@ -262,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "ThongtinkhachthueDTO.cs",
               "DocumentMoniker": "D:\\RentEase\\DTO\\ThongtinkhachthueDTO.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\DTO\\ThongtinkhachthueDTO.cs",
@@ -274,7 +309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Form2.cs [Design]",
               "DocumentMoniker": "D:\\RentEase\\GUI\\Form2.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\Form2.cs",
@@ -285,7 +320,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "Form2.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\Form2.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\Form2.cs",
@@ -297,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "ContractForm.cs [Design]",
               "DocumentMoniker": "D:\\RentEase\\GUI\\ContractForm.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\ContractForm.cs",
@@ -308,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "Account.cs",
               "DocumentMoniker": "D:\\RentEase\\DTO\\Account.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\DTO\\Account.cs",
@@ -320,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "AccountAccess.cs",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\DAL\\AccountAccess.cs",
               "RelativeDocumentMoniker": "DAL\\AccountAccess.cs",
@@ -332,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "ThongtinkhachthueBLL.cs",
               "DocumentMoniker": "D:\\RentEase\\BLL\\ThongtinkhachthueBLL.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\BLL\\ThongtinkhachthueBLL.cs",
@@ -344,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "TemporaryResidenceBLL.cs",
               "DocumentMoniker": "D:\\RentEase\\BLL\\TemporaryResidenceBLL.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\BLL\\TemporaryResidenceBLL.cs",
@@ -356,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Form2.Designer.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\Form2.Designer.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\Form2.Designer.cs",
@@ -368,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "AccountBLL.cs",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\BLL\\AccountBLL.cs",
               "RelativeDocumentMoniker": "BLL\\AccountBLL.cs",
@@ -380,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "ContractBLL.cs",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\BLL\\ContractBLL.cs",
               "RelativeDocumentMoniker": "BLL\\ContractBLL.cs",
@@ -392,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "SignLiving.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\SignLiving.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\SignLiving.cs",
@@ -404,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "TenantForm.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\TenantForm.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\TenantForm.cs",
@@ -415,7 +450,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "TenantForm.cs [Design]",
               "DocumentMoniker": "D:\\RentEase\\GUI\\TenantForm.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\TenantForm.cs",
@@ -426,7 +461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\Program.cs",
               "RelativeDocumentMoniker": "GUI\\Program.cs",
@@ -438,7 +473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "packages.config",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\packages.config",
               "RelativeDocumentMoniker": "GUI\\packages.config",
@@ -450,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\Form1.cs",
@@ -461,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\RentEase\\GUI\\Form1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\Form1.cs",
@@ -472,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "CreateContract.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\CreateContract.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\CreateContract.cs",
@@ -484,7 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "ContractForm.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\ContractForm.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\ContractForm.cs",
@@ -496,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "app.config",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\DAL\\app.config",
               "RelativeDocumentMoniker": "DAL\\app.config",
@@ -508,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Custom.cs",
               "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-NhatHao\\RentEase\\GUI\\Custom\\Custom.cs",
               "RelativeDocumentMoniker": "GUI\\Custom\\Custom.cs",
@@ -520,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "CreateContract.Designer.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\CreateContract.Designer.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\CreateContract.Designer.cs",
@@ -532,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "CustomDataGridView.cs",
               "DocumentMoniker": "D:\\RentEase\\GUI\\CustomDataGridView.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\RentEase\\GUI\\CustomDataGridView.cs",
