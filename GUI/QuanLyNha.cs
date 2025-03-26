@@ -391,7 +391,12 @@ namespace GUI
             AddService addServiceForm = new AddService();
 
             // Hiển thị form đó
-            addServiceForm.Show();
+            addServiceForm.ShowDialog();
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

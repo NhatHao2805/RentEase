@@ -12,4 +12,12 @@ namespace DTO.DTO_Service
         public string RoomID { get; set; }
         public string TenantID { get; set; }
     }
+    public class ServiceDTO
+    {
+        public string RoomId { get; set; }
+        public string TenantName { get; set; }
+        public string ServiceName { get; set; }
+        public decimal UnitPrice { get; set; }
+    }
+    
 }

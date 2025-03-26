@@ -48,5 +48,11 @@ namespace BLL.BLL_Service
             }
             return list;
         }
+
+        public Boolean AddService(string tenantID, string roomID, string serviceID, int price)
+        {
+            return DichVuAccess.AddService(tenantID, roomID, serviceID, price);
+        }
     }
+
 }

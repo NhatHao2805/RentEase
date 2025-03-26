@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO.DTO_Service;
 using MySql.Data.MySqlClient;
 namespace DAL.DAL_Service
 {
@@ -33,4 +35,5 @@ namespace DAL.DAL_Service
             return roomList;
         }
     }
+    
 }

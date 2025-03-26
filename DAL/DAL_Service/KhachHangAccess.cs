@@ -125,6 +125,24 @@ namespace DAL.DAL_Service
             }
             return list;
         }
+
+        public static bool AddService(string tenantID, string roomID, string serviceID, int price)
+        {
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return false;
+                string query = "INSERT INTO servicecontract (TENANTID, ROOMID, SERVICEID, PRICE) VALUES (@tenantID, @roomID, @serviceID, @price)";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@tenantID", tenantID);
+                    cmd.Parameters.AddWithValue("@roomID", roomID);
+                    cmd.Parameters.AddWithValue("@serviceID", serviceID);
+                    cmd.Parameters.AddWithValue("@price", price);
+                    return cmd.ExecuteNonQuery() == 1;
+                }
+            }
+
+            }
     }
 
 }

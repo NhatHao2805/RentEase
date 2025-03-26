@@ -77,5 +77,24 @@ namespace GUI.GUI_Service
         {
 
         }
+        //todo: fix lai cai dgvServiceInfo
+        //todo: fix ham ben duoi ( chi truyen vao 2 cai, BE se xu ly lay gia tri cua cai con lai)
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            if (TenantName.SelectedValue == null || Room.SelectedValue == null || Service.SelectedValue == null || string.IsNullOrEmpty(Cost.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            //todo: tao hang create id khach hang theo index
+            if (dichVuBLL.AddService("T00" + TenantName.SelectedIndex, Room.SelectedValue.ToString(), Service.SelectedValue.ToString(), int.Parse(Cost.Text)))
+            {
+                MessageBox.Show("Thêm dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Thêm dịch vụ thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
