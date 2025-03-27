@@ -31,53 +31,41 @@ namespace GUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle105 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle106 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle107 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle108 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1_timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.extendBtnPanel1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_hopdong = new System.Windows.Forms.Button();
-            this.btn_caidat = new System.Windows.Forms.Button();
-            this.btn_csvc = new System.Windows.Forms.Button();
-            this.btn_dichvu = new System.Windows.Forms.Button();
-            this.btn_taichinh = new System.Windows.Forms.Button();
-            this.btn_phong = new System.Windows.Forms.Button();
             this.tabQuanLy = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -90,7 +78,6 @@ namespace GUI
             this.checkBox11 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
@@ -98,10 +85,6 @@ namespace GUI
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabHopDong = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.dklt1 = new System.Windows.Forms.Button();
-            this.ttkt1 = new System.Windows.Forms.Button();
-            this.lstn1 = new System.Windows.Forms.Button();
-            this.hd1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button42 = new System.Windows.Forms.Button();
             this.button38 = new System.Windows.Forms.Button();
@@ -109,36 +92,25 @@ namespace GUI
             this.button40 = new System.Windows.Forms.Button();
             this.button41 = new System.Windows.Forms.Button();
             this.dgv_QLHD = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.dklt2 = new System.Windows.Forms.Button();
-            this.ttkt2 = new System.Windows.Forms.Button();
-            this.lstn2 = new System.Windows.Forms.Button();
-            this.hd2 = new System.Windows.Forms.Button();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.checkBox18 = new System.Windows.Forms.CheckBox();
             this.checkBox24 = new System.Windows.Forms.CheckBox();
             this.checkBox25 = new System.Windows.Forms.CheckBox();
             this.checkBox26 = new System.Windows.Forms.CheckBox();
             this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.dklt3 = new System.Windows.Forms.Button();
-            this.ttkt3 = new System.Windows.Forms.Button();
-            this.lstn3 = new System.Windows.Forms.Button();
-            this.hd3 = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.guna2DataGridView4 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.button30 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button31 = new System.Windows.Forms.Button();
             this.button34 = new System.Windows.Forms.Button();
             this.checkBox27 = new System.Windows.Forms.CheckBox();
@@ -147,22 +119,33 @@ namespace GUI
             this.checkBox29 = new System.Windows.Forms.CheckBox();
             this.checkBox30 = new System.Windows.Forms.CheckBox();
             this.tabPage10 = new System.Windows.Forms.TabPage();
-            this.dklt4 = new System.Windows.Forms.Button();
-            this.ttkt4 = new System.Windows.Forms.Button();
-            this.lstn4 = new System.Windows.Forms.Button();
-            this.hd4 = new System.Windows.Forms.Button();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.guna2DataGridView5 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.checkBox31 = new System.Windows.Forms.CheckBox();
             this.checkBox32 = new System.Windows.Forms.CheckBox();
             this.checkBox33 = new System.Windows.Forms.CheckBox();
             this.checkBox34 = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.button10 = new System.Windows.Forms.Button();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.button21 = new System.Windows.Forms.Button();
@@ -171,33 +154,12 @@ namespace GUI
             this.button23 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button24 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.button25 = new System.Windows.Forms.Button();
             this.checkBox19 = new System.Windows.Forms.CheckBox();
             this.button26 = new System.Windows.Forms.Button();
             this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.checkBox23 = new System.Windows.Forms.CheckBox();
-            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
-            this.checkBox13 = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.button10 = new System.Windows.Forms.Button();
-            this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button43 = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button45 = new System.Windows.Forms.Button();
             this.button46 = new System.Windows.Forms.Button();
@@ -211,6 +173,7 @@ namespace GUI
             this.checkBox21 = new System.Windows.Forms.CheckBox();
             this.checkBox35 = new System.Windows.Forms.CheckBox();
             this.checkBox36 = new System.Windows.Forms.CheckBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button52 = new System.Windows.Forms.Button();
             this.button53 = new System.Windows.Forms.Button();
@@ -224,47 +187,132 @@ namespace GUI
             this.checkBox39 = new System.Windows.Forms.CheckBox();
             this.checkBox40 = new System.Windows.Forms.CheckBox();
             this.checkBox41 = new System.Windows.Forms.CheckBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.btn_hopdong = new System.Windows.Forms.Button();
+            this.btn_caidat = new System.Windows.Forms.Button();
+            this.btn_csvc = new System.Windows.Forms.Button();
+            this.btn_dichvu = new System.Windows.Forms.Button();
+            this.btn_taichinh = new System.Windows.Forms.Button();
+            this.btn_phong = new System.Windows.Forms.Button();
+            this.hd1 = new System.Windows.Forms.Button();
+            this.lstn1 = new System.Windows.Forms.Button();
+            this.ttkt1 = new System.Windows.Forms.Button();
+            this.dklt1 = new System.Windows.Forms.Button();
+            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox10 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox9 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox7 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dklt2 = new System.Windows.Forms.Button();
+            this.ttkt2 = new System.Windows.Forms.Button();
+            this.lstn2 = new System.Windows.Forms.Button();
+            this.hd2 = new System.Windows.Forms.Button();
+            this.dklt3 = new System.Windows.Forms.Button();
+            this.ttkt3 = new System.Windows.Forms.Button();
+            this.lstn3 = new System.Windows.Forms.Button();
+            this.hd3 = new System.Windows.Forms.Button();
+            this.dklt4 = new System.Windows.Forms.Button();
+            this.ttkt4 = new System.Windows.Forms.Button();
+            this.lstn4 = new System.Windows.Forms.Button();
+            this.hd4 = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox11 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox12 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox13 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox14 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox15 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox16 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox17 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox18 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox19 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox20 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox21 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox22 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabQuanLy.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabHopDong.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLHD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.tabPage8.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabPage9.SuspendLayout();
             this.groupBox18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabPage10.SuspendLayout();
             this.groupBox20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel3.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView6)).BeginInit();
+            this.tabPage6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView7)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox19)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1_timer
@@ -291,66 +339,6 @@ namespace GUI
             this.panel1.Size = new System.Drawing.Size(251, 112);
             this.panel1.TabIndex = 0;
             // 
-            // button5
-            // 
-            this.button5.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(1, 278);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(247, 40);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "    Đăng Xuất";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(1, 236);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(247, 40);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "    Cài Đặt Chung";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(1, 194);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(247, 40);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "    Thông Báo";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1, 152);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(247, 40);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "    Tài Khoản";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1, 110);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "    Quản Lý Nhà";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // extendBtnPanel1
             // 
             this.extendBtnPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -362,17 +350,6 @@ namespace GUI
             this.extendBtnPanel1.UseVisualStyleBackColor = true;
             this.extendBtnPanel1.Click += new System.EventHandler(this.extendBtnPanel1_Click);
             this.extendBtnPanel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.extendBtnPanel1_MouseDown);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::GUI.Properties.Resources.img_Login;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -421,6 +398,12 @@ namespace GUI
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(151)))), ((int)(((byte)(218)))));
+            this.panel2.Controls.Add(this.guna2PictureBox6);
+            this.panel2.Controls.Add(this.guna2PictureBox5);
+            this.panel2.Controls.Add(this.guna2PictureBox4);
+            this.panel2.Controls.Add(this.guna2PictureBox3);
+            this.panel2.Controls.Add(this.guna2PictureBox2);
+            this.panel2.Controls.Add(this.guna2PictureBox1);
             this.panel2.Controls.Add(this.btn_hopdong);
             this.panel2.Controls.Add(this.btn_caidat);
             this.panel2.Controls.Add(this.btn_csvc);
@@ -433,85 +416,6 @@ namespace GUI
             this.panel2.Size = new System.Drawing.Size(251, 485);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // btn_hopdong
-            // 
-            this.btn_hopdong.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_hopdong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_hopdong.Location = new System.Drawing.Point(-3, 61);
-            this.btn_hopdong.Name = "btn_hopdong";
-            this.btn_hopdong.Size = new System.Drawing.Size(260, 60);
-            this.btn_hopdong.TabIndex = 6;
-            this.btn_hopdong.Text = "       Quản Lý Hợp Đồng";
-            this.btn_hopdong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_hopdong.UseVisualStyleBackColor = true;
-            this.btn_hopdong.Click += new System.EventHandler(this.btn_hopdong_Click);
-            // 
-            // btn_caidat
-            // 
-            this.btn_caidat.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_caidat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_caidat.Location = new System.Drawing.Point(-3, 296);
-            this.btn_caidat.Name = "btn_caidat";
-            this.btn_caidat.Size = new System.Drawing.Size(260, 60);
-            this.btn_caidat.TabIndex = 5;
-            this.btn_caidat.Text = "      Quản lý bãi đậu xe";
-            this.btn_caidat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_caidat.UseVisualStyleBackColor = true;
-            this.btn_caidat.Click += new System.EventHandler(this.btn_caidat_Click);
-            // 
-            // btn_csvc
-            // 
-            this.btn_csvc.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_csvc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_csvc.Location = new System.Drawing.Point(-1, 241);
-            this.btn_csvc.Name = "btn_csvc";
-            this.btn_csvc.Size = new System.Drawing.Size(260, 60);
-            this.btn_csvc.TabIndex = 4;
-            this.btn_csvc.Text = "      Quản Lý Cơ sở Vật chất";
-            this.btn_csvc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_csvc.UseVisualStyleBackColor = true;
-            this.btn_csvc.Click += new System.EventHandler(this.btn_csvc_Click);
-            // 
-            // btn_dichvu
-            // 
-            this.btn_dichvu.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_dichvu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dichvu.Location = new System.Drawing.Point(-1, 181);
-            this.btn_dichvu.Name = "btn_dichvu";
-            this.btn_dichvu.Size = new System.Drawing.Size(260, 60);
-            this.btn_dichvu.TabIndex = 3;
-            this.btn_dichvu.Text = "      Quản Lý Dịch Vụ";
-            this.btn_dichvu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_dichvu.UseVisualStyleBackColor = true;
-            this.btn_dichvu.Click += new System.EventHandler(this.btn_dichvu_Click);
-            // 
-            // btn_taichinh
-            // 
-            this.btn_taichinh.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_taichinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_taichinh.Location = new System.Drawing.Point(-1, 121);
-            this.btn_taichinh.Name = "btn_taichinh";
-            this.btn_taichinh.Size = new System.Drawing.Size(260, 60);
-            this.btn_taichinh.TabIndex = 2;
-            this.btn_taichinh.Text = "      Quản Lý Thanh Toán";
-            this.btn_taichinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_taichinh.UseVisualStyleBackColor = true;
-            this.btn_taichinh.Click += new System.EventHandler(this.btn_taichinh_Click);
-            // 
-            // btn_phong
-            // 
-            this.btn_phong.BackColor = System.Drawing.Color.White;
-            this.btn_phong.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.btn_phong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_phong.Location = new System.Drawing.Point(-1, 1);
-            this.btn_phong.Name = "btn_phong";
-            this.btn_phong.Size = new System.Drawing.Size(260, 60);
-            this.btn_phong.TabIndex = 0;
-            this.btn_phong.Text = "      Quản Lý Phòng";
-            this.btn_phong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_phong.UseVisualStyleBackColor = false;
-            this.btn_phong.Click += new System.EventHandler(this.btn_phong_Click);
             // 
             // tabQuanLy
             // 
@@ -618,26 +522,26 @@ namespace GUI
             // 
             // dgv_QLP
             // 
-            dataGridViewCellStyle82.BackColor = System.Drawing.Color.White;
-            this.dgv_QLP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle82;
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.White;
+            this.dgv_QLP.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle37;
             this.dgv_QLP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle83.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle83.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_QLP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle83;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_QLP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle38;
             this.dgv_QLP.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle84.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle84.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle84.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_QLP.DefaultCellStyle = dataGridViewCellStyle84;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_QLP.DefaultCellStyle = dataGridViewCellStyle39;
             this.dgv_QLP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_QLP.Location = new System.Drawing.Point(14, 186);
             this.dgv_QLP.Name = "dgv_QLP";
@@ -702,16 +606,6 @@ namespace GUI
             this.checkBox9.TabIndex = 6;
             this.checkBox9.Text = "Đang trống";
             this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.pictureBox7.Location = new System.Drawing.Point(30, 134);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
             // 
             // checkBox5
             // 
@@ -782,6 +676,10 @@ namespace GUI
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.guna2PictureBox10);
+            this.tabPage7.Controls.Add(this.guna2PictureBox9);
+            this.tabPage7.Controls.Add(this.guna2PictureBox8);
+            this.tabPage7.Controls.Add(this.guna2PictureBox7);
             this.tabPage7.Controls.Add(this.dklt1);
             this.tabPage7.Controls.Add(this.ttkt1);
             this.tabPage7.Controls.Add(this.lstn1);
@@ -795,67 +693,15 @@ namespace GUI
             this.tabPage7.Text = "Hợp đồng";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // dklt1
-            // 
-            this.dklt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dklt1.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.dklt1.Location = new System.Drawing.Point(777, 26);
-            this.dklt1.Name = "dklt1";
-            this.dklt1.Size = new System.Drawing.Size(215, 81);
-            this.dklt1.TabIndex = 25;
-            this.dklt1.Text = "Quản Lý Đăng Ký Lưu Trú";
-            this.dklt1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.dklt1.UseVisualStyleBackColor = true;
-            this.dklt1.Click += new System.EventHandler(this.dklt1_Click);
-            // 
-            // ttkt1
-            // 
-            this.ttkt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ttkt1.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.ttkt1.Location = new System.Drawing.Point(523, 26);
-            this.ttkt1.Name = "ttkt1";
-            this.ttkt1.Size = new System.Drawing.Size(235, 81);
-            this.ttkt1.TabIndex = 24;
-            this.ttkt1.Text = "Quản Lý Thông Tin Khách Thuê";
-            this.ttkt1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ttkt1.UseVisualStyleBackColor = true;
-            this.ttkt1.Click += new System.EventHandler(this.ttkt1_Click);
-            // 
-            // lstn1
-            // 
-            this.lstn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstn1.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.lstn1.Location = new System.Drawing.Point(281, 26);
-            this.lstn1.Name = "lstn1";
-            this.lstn1.Size = new System.Drawing.Size(223, 81);
-            this.lstn1.TabIndex = 23;
-            this.lstn1.Text = "Quản Lý Lịch Sử Thuê Nhà";
-            this.lstn1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.lstn1.UseVisualStyleBackColor = true;
-            this.lstn1.Click += new System.EventHandler(this.lstn1_Click);
-            // 
-            // hd1
-            // 
-            this.hd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hd1.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.hd1.Location = new System.Drawing.Point(13, 26);
-            this.hd1.Name = "hd1";
-            this.hd1.Size = new System.Drawing.Size(249, 81);
-            this.hd1.TabIndex = 22;
-            this.hd1.Text = "Quản Lí Hợp Đồng";
-            this.hd1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.hd1.UseVisualStyleBackColor = true;
-            this.hd1.Click += new System.EventHandler(this.hd1_Click);
-            // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.pictureBox8);
             this.groupBox6.Controls.Add(this.button42);
             this.groupBox6.Controls.Add(this.button38);
             this.groupBox6.Controls.Add(this.button39);
             this.groupBox6.Controls.Add(this.button40);
             this.groupBox6.Controls.Add(this.button41);
             this.groupBox6.Controls.Add(this.dgv_QLHD);
-            this.groupBox6.Controls.Add(this.pictureBox6);
             this.groupBox6.Controls.Add(this.checkBox4);
             this.groupBox6.Controls.Add(this.checkBox3);
             this.groupBox6.Controls.Add(this.checkBox2);
@@ -924,26 +770,26 @@ namespace GUI
             // 
             // dgv_QLHD
             // 
-            dataGridViewCellStyle85.BackColor = System.Drawing.Color.White;
-            this.dgv_QLHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle85;
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
+            this.dgv_QLHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle40;
             this.dgv_QLHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            dataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle86.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle86.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle86.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle86.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle86.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_QLHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle86;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_QLHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.dgv_QLHD.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle87.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle87.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle87.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle87.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_QLHD.DefaultCellStyle = dataGridViewCellStyle87;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_QLHD.DefaultCellStyle = dataGridViewCellStyle42;
             this.dgv_QLHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_QLHD.Location = new System.Drawing.Point(14, 167);
             this.dgv_QLHD.Name = "dgv_QLHD";
@@ -975,16 +821,6 @@ namespace GUI
             this.dgv_QLHD.ThemeStyle.RowsStyle.Height = 24;
             this.dgv_QLHD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_QLHD.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.pictureBox6.Location = new System.Drawing.Point(25, 109);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
             // 
             // checkBox4
             // 
@@ -1032,6 +868,10 @@ namespace GUI
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.guna2PictureBox20);
+            this.tabPage8.Controls.Add(this.guna2PictureBox17);
+            this.tabPage8.Controls.Add(this.guna2PictureBox14);
+            this.tabPage8.Controls.Add(this.guna2PictureBox11);
             this.tabPage8.Controls.Add(this.dklt2);
             this.tabPage8.Controls.Add(this.ttkt2);
             this.tabPage8.Controls.Add(this.lstn2);
@@ -1045,72 +885,20 @@ namespace GUI
             this.tabPage8.Text = "Lịch Sử Thuê Nhà";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
-            // dklt2
-            // 
-            this.dklt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dklt2.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.dklt2.Location = new System.Drawing.Point(787, 26);
-            this.dklt2.Name = "dklt2";
-            this.dklt2.Size = new System.Drawing.Size(215, 81);
-            this.dklt2.TabIndex = 31;
-            this.dklt2.Text = "Quản Lý Đăng Ký Lưu Trú";
-            this.dklt2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.dklt2.UseVisualStyleBackColor = true;
-            this.dklt2.Click += new System.EventHandler(this.dklt2_Click);
-            // 
-            // ttkt2
-            // 
-            this.ttkt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ttkt2.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.ttkt2.Location = new System.Drawing.Point(531, 26);
-            this.ttkt2.Name = "ttkt2";
-            this.ttkt2.Size = new System.Drawing.Size(235, 81);
-            this.ttkt2.TabIndex = 30;
-            this.ttkt2.Text = "Quản Lý Thông Tin Khách Thuê";
-            this.ttkt2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ttkt2.UseVisualStyleBackColor = true;
-            this.ttkt2.Click += new System.EventHandler(this.ttkt2_Click);
-            // 
-            // lstn2
-            // 
-            this.lstn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstn2.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.lstn2.Location = new System.Drawing.Point(289, 26);
-            this.lstn2.Name = "lstn2";
-            this.lstn2.Size = new System.Drawing.Size(223, 81);
-            this.lstn2.TabIndex = 29;
-            this.lstn2.Text = "Quản Lý Lịch Sử Thuê Nhà";
-            this.lstn2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.lstn2.UseVisualStyleBackColor = true;
-            this.lstn2.Click += new System.EventHandler(this.lstn2_Click);
-            // 
-            // hd2
-            // 
-            this.hd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hd2.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.hd2.Location = new System.Drawing.Point(19, 26);
-            this.hd2.Name = "hd2";
-            this.hd2.Size = new System.Drawing.Size(249, 81);
-            this.hd2.TabIndex = 28;
-            this.hd2.Text = "Quản Lí Hợp Đồng";
-            this.hd2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.hd2.UseVisualStyleBackColor = true;
-            this.hd2.Click += new System.EventHandler(this.hd2_Click);
-            // 
             // groupBox16
             // 
+            this.groupBox16.Controls.Add(this.pictureBox2);
             this.groupBox16.Controls.Add(this.guna2DataGridView1);
             this.groupBox16.Controls.Add(this.button12);
             this.groupBox16.Controls.Add(this.button11);
             this.groupBox16.Controls.Add(this.button6);
             this.groupBox16.Controls.Add(this.button9);
-            this.groupBox16.Controls.Add(this.pictureBox2);
             this.groupBox16.Controls.Add(this.checkBox18);
             this.groupBox16.Controls.Add(this.checkBox24);
             this.groupBox16.Controls.Add(this.checkBox25);
             this.groupBox16.Controls.Add(this.checkBox26);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(19, 125);
+            this.groupBox16.Location = new System.Drawing.Point(7, 125);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(992, 491);
             this.groupBox16.TabIndex = 27;
@@ -1119,26 +907,26 @@ namespace GUI
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle88.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle88;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle89.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle89.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle89.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle89;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.guna2DataGridView1.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle90.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle90.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle90.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle90.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle90.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle90;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle45;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(24, 161);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -1214,16 +1002,6 @@ namespace GUI
             this.button9.Text = "Xuất sang Excel";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.pictureBox2.Location = new System.Drawing.Point(25, 109);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // checkBox18
             // 
             this.checkBox18.AutoSize = true;
@@ -1270,6 +1048,10 @@ namespace GUI
             // 
             // tabPage9
             // 
+            this.tabPage9.Controls.Add(this.guna2PictureBox21);
+            this.tabPage9.Controls.Add(this.guna2PictureBox18);
+            this.tabPage9.Controls.Add(this.guna2PictureBox15);
+            this.tabPage9.Controls.Add(this.guna2PictureBox12);
             this.tabPage9.Controls.Add(this.dklt3);
             this.tabPage9.Controls.Add(this.ttkt3);
             this.tabPage9.Controls.Add(this.lstn3);
@@ -1283,63 +1065,11 @@ namespace GUI
             this.tabPage9.Text = "Thông tin Khách thuê";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
-            // dklt3
-            // 
-            this.dklt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dklt3.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.dklt3.Location = new System.Drawing.Point(787, 26);
-            this.dklt3.Name = "dklt3";
-            this.dklt3.Size = new System.Drawing.Size(215, 81);
-            this.dklt3.TabIndex = 37;
-            this.dklt3.Text = "Quản Lý Đăng Ký Lưu Trú";
-            this.dklt3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.dklt3.UseVisualStyleBackColor = true;
-            this.dklt3.Click += new System.EventHandler(this.dklt3_Click);
-            // 
-            // ttkt3
-            // 
-            this.ttkt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ttkt3.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.ttkt3.Location = new System.Drawing.Point(531, 26);
-            this.ttkt3.Name = "ttkt3";
-            this.ttkt3.Size = new System.Drawing.Size(235, 81);
-            this.ttkt3.TabIndex = 36;
-            this.ttkt3.Text = "Quản Lý Thông Tin Khách Thuê";
-            this.ttkt3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ttkt3.UseVisualStyleBackColor = true;
-            this.ttkt3.Click += new System.EventHandler(this.ttkt3_Click);
-            // 
-            // lstn3
-            // 
-            this.lstn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstn3.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.lstn3.Location = new System.Drawing.Point(289, 26);
-            this.lstn3.Name = "lstn3";
-            this.lstn3.Size = new System.Drawing.Size(223, 81);
-            this.lstn3.TabIndex = 35;
-            this.lstn3.Text = "Quản Lý Lịch Sử Thuê Nhà";
-            this.lstn3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.lstn3.UseVisualStyleBackColor = true;
-            this.lstn3.Click += new System.EventHandler(this.lstn3_Click);
-            // 
-            // hd3
-            // 
-            this.hd3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hd3.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.hd3.Location = new System.Drawing.Point(19, 26);
-            this.hd3.Name = "hd3";
-            this.hd3.Size = new System.Drawing.Size(249, 81);
-            this.hd3.TabIndex = 34;
-            this.hd3.Text = "Quản Lí Hợp Đồng";
-            this.hd3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.hd3.UseVisualStyleBackColor = true;
-            this.hd3.Click += new System.EventHandler(this.hd3_Click);
-            // 
             // groupBox18
             // 
+            this.groupBox18.Controls.Add(this.pictureBox3);
             this.groupBox18.Controls.Add(this.guna2DataGridView4);
             this.groupBox18.Controls.Add(this.button30);
-            this.groupBox18.Controls.Add(this.pictureBox3);
             this.groupBox18.Controls.Add(this.button31);
             this.groupBox18.Controls.Add(this.button34);
             this.groupBox18.Controls.Add(this.checkBox27);
@@ -1357,26 +1087,26 @@ namespace GUI
             // 
             // guna2DataGridView4
             // 
-            dataGridViewCellStyle91.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle91;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView4.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
             this.guna2DataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            dataGridViewCellStyle92.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle92.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle92.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle92.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle92.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle92.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle92;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
             this.guna2DataGridView4.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle93.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle93.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle93.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle93.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle93.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle93.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView4.DefaultCellStyle = dataGridViewCellStyle93;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView4.DefaultCellStyle = dataGridViewCellStyle48;
             this.guna2DataGridView4.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView4.Location = new System.Drawing.Point(11, 140);
             this.guna2DataGridView4.Name = "guna2DataGridView4";
@@ -1419,16 +1149,6 @@ namespace GUI
             this.button30.Text = "Thêm";
             this.button30.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button30.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.pictureBox3.Location = new System.Drawing.Point(25, 91);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
             // 
             // button31
             // 
@@ -1508,6 +1228,10 @@ namespace GUI
             // 
             // tabPage10
             // 
+            this.tabPage10.Controls.Add(this.guna2PictureBox22);
+            this.tabPage10.Controls.Add(this.guna2PictureBox19);
+            this.tabPage10.Controls.Add(this.guna2PictureBox16);
+            this.tabPage10.Controls.Add(this.guna2PictureBox13);
             this.tabPage10.Controls.Add(this.dklt4);
             this.tabPage10.Controls.Add(this.ttkt4);
             this.tabPage10.Controls.Add(this.lstn4);
@@ -1521,66 +1245,14 @@ namespace GUI
             this.tabPage10.Text = "Đăng ký lưu trú";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
-            // dklt4
-            // 
-            this.dklt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dklt4.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.dklt4.Location = new System.Drawing.Point(787, 26);
-            this.dklt4.Name = "dklt4";
-            this.dklt4.Size = new System.Drawing.Size(215, 81);
-            this.dklt4.TabIndex = 37;
-            this.dklt4.Text = "Quản Lý Đăng Ký Tạm Trú";
-            this.dklt4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.dklt4.UseVisualStyleBackColor = true;
-            this.dklt4.Click += new System.EventHandler(this.dklt4_Click);
-            // 
-            // ttkt4
-            // 
-            this.ttkt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ttkt4.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.ttkt4.Location = new System.Drawing.Point(531, 26);
-            this.ttkt4.Name = "ttkt4";
-            this.ttkt4.Size = new System.Drawing.Size(235, 81);
-            this.ttkt4.TabIndex = 36;
-            this.ttkt4.Text = "Quản Lý Thông Tin Khách Thuê";
-            this.ttkt4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.ttkt4.UseVisualStyleBackColor = true;
-            this.ttkt4.Click += new System.EventHandler(this.ttkt4_Click);
-            // 
-            // lstn4
-            // 
-            this.lstn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstn4.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.lstn4.Location = new System.Drawing.Point(289, 26);
-            this.lstn4.Name = "lstn4";
-            this.lstn4.Size = new System.Drawing.Size(223, 81);
-            this.lstn4.TabIndex = 35;
-            this.lstn4.Text = "Quản Lý Lịch Sử Thuê Nhà";
-            this.lstn4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.lstn4.UseVisualStyleBackColor = true;
-            this.lstn4.Click += new System.EventHandler(this.lstn4_Click);
-            // 
-            // hd4
-            // 
-            this.hd4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hd4.Image = global::GUI.Properties.Resources.img_Login__1_;
-            this.hd4.Location = new System.Drawing.Point(19, 26);
-            this.hd4.Name = "hd4";
-            this.hd4.Size = new System.Drawing.Size(249, 81);
-            this.hd4.TabIndex = 34;
-            this.hd4.Text = "Quản Lí Hợp Đồng";
-            this.hd4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.hd4.UseVisualStyleBackColor = true;
-            this.hd4.Click += new System.EventHandler(this.hd4_Click);
-            // 
             // groupBox20
             // 
+            this.groupBox20.Controls.Add(this.pictureBox5);
             this.groupBox20.Controls.Add(this.guna2DataGridView5);
             this.groupBox20.Controls.Add(this.button14);
             this.groupBox20.Controls.Add(this.button15);
             this.groupBox20.Controls.Add(this.button16);
             this.groupBox20.Controls.Add(this.button17);
-            this.groupBox20.Controls.Add(this.pictureBox5);
             this.groupBox20.Controls.Add(this.checkBox31);
             this.groupBox20.Controls.Add(this.checkBox32);
             this.groupBox20.Controls.Add(this.checkBox33);
@@ -1595,26 +1267,26 @@ namespace GUI
             // 
             // guna2DataGridView5
             // 
-            dataGridViewCellStyle94.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle94;
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
             this.guna2DataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
-            dataGridViewCellStyle95.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle95.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle95.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle95.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle95.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle95.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle95.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle95;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
             this.guna2DataGridView5.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle96.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle96.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle96.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle96.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle96.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle96.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle96.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView5.DefaultCellStyle = dataGridViewCellStyle96;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView5.DefaultCellStyle = dataGridViewCellStyle51;
             this.guna2DataGridView5.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView5.Location = new System.Drawing.Point(14, 140);
             this.guna2DataGridView5.Name = "guna2DataGridView5";
@@ -1690,16 +1362,6 @@ namespace GUI
             this.button17.Text = "Xuất sang Excel";
             this.button17.UseVisualStyleBackColor = true;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.pictureBox5.Location = new System.Drawing.Point(25, 90);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
-            // 
             // checkBox31
             // 
             this.checkBox31.AutoSize = true;
@@ -1755,6 +1417,233 @@ namespace GUI
             this.tabPage3.Text = "Thanh Toán";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button43);
+            this.groupBox2.Controls.Add(this.button20);
+            this.groupBox2.Controls.Add(this.button19);
+            this.groupBox2.Controls.Add(this.button18);
+            this.groupBox2.Controls.Add(this.guna2DataGridView2);
+            this.groupBox2.Controls.Add(this.button10);
+            this.groupBox2.Controls.Add(this.checkBox12);
+            this.groupBox2.Controls.Add(this.button7);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.checkBox13);
+            this.groupBox2.Controls.Add(this.checkBox14);
+            this.groupBox2.Controls.Add(this.checkBox15);
+            this.groupBox2.Controls.Add(this.checkBox16);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(6, 15);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(991, 680);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tất cả hóa đơn";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // button43
+            // 
+            this.button43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button43.Location = new System.Drawing.Point(696, 20);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(146, 60);
+            this.button43.TabIndex = 37;
+            this.button43.Text = "Thông báo đến khách thuê";
+            this.button43.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button43.UseVisualStyleBackColor = true;
+            // 
+            // button20
+            // 
+            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.Location = new System.Drawing.Point(334, 20);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(84, 60);
+            this.button20.TabIndex = 36;
+            this.button20.Text = "Xóa";
+            this.button20.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button20.UseVisualStyleBackColor = true;
+            // 
+            // button19
+            // 
+            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button19.Location = new System.Drawing.Point(244, 20);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(84, 60);
+            this.button19.TabIndex = 35;
+            this.button19.Text = "Sửa";
+            this.button19.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button19.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button18.Location = new System.Drawing.Point(560, 20);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(130, 60);
+            this.button18.TabIndex = 11;
+            this.button18.Text = "Xem lịch sử thanh toán";
+            this.button18.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // guna2DataGridView2
+            // 
+            dataGridViewCellStyle52.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle53.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle53.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle53.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle53.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle53.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle53;
+            this.guna2DataGridView2.ColumnHeadersHeight = 4;
+            this.guna2DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle54.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle54.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle54.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle54.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle54.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle54;
+            this.guna2DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView2.Location = new System.Drawing.Point(9, 139);
+            this.guna2DataGridView2.Name = "guna2DataGridView2";
+            this.guna2DataGridView2.RowHeadersVisible = false;
+            this.guna2DataGridView2.RowHeadersWidth = 51;
+            this.guna2DataGridView2.RowTemplate.Height = 24;
+            this.guna2DataGridView2.Size = new System.Drawing.Size(976, 535);
+            this.guna2DataGridView2.TabIndex = 34;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView2.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.Height = 4;
+            this.guna2DataGridView2.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.Height = 24;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(424, 20);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(130, 60);
+            this.button10.TabIndex = 10;
+            this.button10.Text = "Xem chi tiết";
+            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.checkBox12.Location = new System.Drawing.Point(700, 93);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(128, 22);
+            this.checkBox12.TabIndex = 33;
+            this.checkBox12.Text = "Lọc theo tháng";
+            this.checkBox12.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(154, 20);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(84, 60);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "Thêm";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(848, 91);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(52, 28);
+            this.comboBox1.TabIndex = 31;
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(848, 20);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(137, 60);
+            this.button8.TabIndex = 8;
+            this.button8.Text = "Xuất sang Excel";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(905, 91);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(85, 28);
+            this.comboBox2.TabIndex = 32;
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox13.Location = new System.Drawing.Point(318, 93);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(144, 22);
+            this.checkBox13.TabIndex = 30;
+            this.checkBox13.Text = "Hóa đơn đang nợ";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox14.Location = new System.Drawing.Point(480, 93);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(134, 22);
+            this.checkBox14.TabIndex = 29;
+            this.checkBox14.Text = "Hóa đơn đã hủy";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox15.Location = new System.Drawing.Point(154, 93);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(147, 22);
+            this.checkBox15.TabIndex = 28;
+            this.checkBox15.Text = "Hóa đơn chưa thu";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox16.Location = new System.Drawing.Point(12, 93);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(131, 22);
+            this.checkBox16.TabIndex = 27;
+            this.checkBox16.Text = "Hóa đơn đã thu";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox14);
@@ -1768,13 +1657,13 @@ namespace GUI
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.pictureBox4);
             this.groupBox14.Controls.Add(this.button21);
             this.groupBox14.Controls.Add(this.guna2DataGridView3);
             this.groupBox14.Controls.Add(this.button22);
             this.groupBox14.Controls.Add(this.button23);
             this.groupBox14.Controls.Add(this.textBox1);
             this.groupBox14.Controls.Add(this.button24);
-            this.groupBox14.Controls.Add(this.pictureBox4);
             this.groupBox14.Controls.Add(this.button25);
             this.groupBox14.Controls.Add(this.checkBox19);
             this.groupBox14.Controls.Add(this.button26);
@@ -1801,26 +1690,26 @@ namespace GUI
             // 
             // guna2DataGridView3
             // 
-            dataGridViewCellStyle97.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle97;
-            dataGridViewCellStyle98.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle98.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle98.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle98.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle98.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle98.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle98.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle98;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView3.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
             this.guna2DataGridView3.ColumnHeadersHeight = 4;
             this.guna2DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle99.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle99.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle99.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle99.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle99.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle99.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle99.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView3.DefaultCellStyle = dataGridViewCellStyle99;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView3.DefaultCellStyle = dataGridViewCellStyle30;
             this.guna2DataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView3.Location = new System.Drawing.Point(9, 145);
             this.guna2DataGridView3.Name = "guna2DataGridView3";
@@ -1892,16 +1781,6 @@ namespace GUI
             this.button24.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button24.UseVisualStyleBackColor = true;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::GUI.Properties.Resources.img_Login__2_;
-            this.pictureBox4.Location = new System.Drawing.Point(25, 96);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
-            // 
             // button25
             // 
             this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1956,33 +1835,6 @@ namespace GUI
             this.checkBox23.Text = "Sắp xếp theo giá trị tăng dần";
             this.checkBox23.UseVisualStyleBackColor = true;
             // 
-            // exitButton
-            // 
-            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
-            this.exitButton.Location = new System.Drawing.Point(1003, 0);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(40, 39);
-            this.exitButton.TabIndex = 20;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.exitButton);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(251, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1043, 39);
-            this.panel3.TabIndex = 21;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.groupBox1);
@@ -1993,245 +1845,9 @@ namespace GUI
             this.tabPage5.Text = "Dịch vụ";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.groupBox3);
-            this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1017, 698);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Bãi đỗ xe";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox16
-            // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox16.Location = new System.Drawing.Point(12, 93);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(131, 22);
-            this.checkBox16.TabIndex = 27;
-            this.checkBox16.Text = "Hóa đơn đã thu";
-            this.checkBox16.UseVisualStyleBackColor = true;
-            // 
-            // checkBox15
-            // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox15.Location = new System.Drawing.Point(154, 93);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(147, 22);
-            this.checkBox15.TabIndex = 28;
-            this.checkBox15.Text = "Hóa đơn chưa thu";
-            this.checkBox15.UseVisualStyleBackColor = true;
-            // 
-            // checkBox14
-            // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox14.Location = new System.Drawing.Point(480, 93);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(134, 22);
-            this.checkBox14.TabIndex = 29;
-            this.checkBox14.Text = "Hóa đơn đã hủy";
-            this.checkBox14.UseVisualStyleBackColor = true;
-            // 
-            // checkBox13
-            // 
-            this.checkBox13.AutoSize = true;
-            this.checkBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox13.Location = new System.Drawing.Point(318, 93);
-            this.checkBox13.Name = "checkBox13";
-            this.checkBox13.Size = new System.Drawing.Size(144, 22);
-            this.checkBox13.TabIndex = 30;
-            this.checkBox13.Text = "Hóa đơn đang nợ";
-            this.checkBox13.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(905, 91);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(85, 28);
-            this.comboBox2.TabIndex = 32;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(848, 20);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(137, 60);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Xuất sang Excel";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(848, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(52, 28);
-            this.comboBox1.TabIndex = 31;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(154, 20);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 60);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "Thêm";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.checkBox12.Location = new System.Drawing.Point(700, 93);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(128, 22);
-            this.checkBox12.TabIndex = 33;
-            this.checkBox12.Text = "Lọc theo tháng";
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(424, 20);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(130, 60);
-            this.button10.TabIndex = 10;
-            this.button10.Text = "Xem chi tiết";
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // guna2DataGridView2
-            // 
-            dataGridViewCellStyle100.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle100;
-            dataGridViewCellStyle101.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle101.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle101.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle101.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle101.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle101.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle101.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle101;
-            this.guna2DataGridView2.ColumnHeadersHeight = 4;
-            this.guna2DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle102.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle102.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle102.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle102.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle102.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle102.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle102;
-            this.guna2DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView2.Location = new System.Drawing.Point(9, 139);
-            this.guna2DataGridView2.Name = "guna2DataGridView2";
-            this.guna2DataGridView2.RowHeadersVisible = false;
-            this.guna2DataGridView2.RowHeadersWidth = 51;
-            this.guna2DataGridView2.RowTemplate.Height = 24;
-            this.guna2DataGridView2.Size = new System.Drawing.Size(976, 535);
-            this.guna2DataGridView2.TabIndex = 34;
-            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.guna2DataGridView2.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView2.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView2.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView2.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView2.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.guna2DataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView2.ThemeStyle.HeaderStyle.Height = 4;
-            this.guna2DataGridView2.ThemeStyle.ReadOnly = false;
-            this.guna2DataGridView2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView2.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.guna2DataGridView2.ThemeStyle.RowsStyle.Height = 24;
-            this.guna2DataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // button18
-            // 
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(560, 20);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(130, 60);
-            this.button18.TabIndex = 11;
-            this.button18.Text = "Xem lịch sử thanh toán";
-            this.button18.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button19
-            // 
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(244, 20);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(84, 60);
-            this.button19.TabIndex = 35;
-            this.button19.Text = "Sửa";
-            this.button19.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button19.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(334, 20);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(84, 60);
-            this.button20.TabIndex = 36;
-            this.button20.Text = "Xóa";
-            this.button20.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button20.UseVisualStyleBackColor = true;
-            // 
-            // button43
-            // 
-            this.button43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button43.Location = new System.Drawing.Point(696, 20);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(146, 60);
-            this.button43.TabIndex = 37;
-            this.button43.Text = "Thông báo đến khách thuê";
-            this.button43.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button43.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.button43);
-            this.groupBox2.Controls.Add(this.button20);
-            this.groupBox2.Controls.Add(this.button19);
-            this.groupBox2.Controls.Add(this.button18);
-            this.groupBox2.Controls.Add(this.guna2DataGridView2);
-            this.groupBox2.Controls.Add(this.button10);
-            this.groupBox2.Controls.Add(this.checkBox12);
-            this.groupBox2.Controls.Add(this.button7);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.button8);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.checkBox13);
-            this.groupBox2.Controls.Add(this.checkBox14);
-            this.groupBox2.Controls.Add(this.checkBox15);
-            this.groupBox2.Controls.Add(this.checkBox16);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 15);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(991, 680);
-            this.groupBox2.TabIndex = 29;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tất cả hóa đơn";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox6);
             this.groupBox1.Controls.Add(this.button45);
             this.groupBox1.Controls.Add(this.button46);
             this.groupBox1.Controls.Add(this.guna2DataGridView6);
@@ -2276,26 +1892,26 @@ namespace GUI
             // 
             // guna2DataGridView6
             // 
-            dataGridViewCellStyle103.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView6.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle103;
-            dataGridViewCellStyle104.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle104.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle104.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle104.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle104.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle104.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle104;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView6.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.guna2DataGridView6.ColumnHeadersHeight = 4;
             this.guna2DataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle105.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle105.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle105.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle105.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle105.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle105.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle105.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView6.DefaultCellStyle = dataGridViewCellStyle105;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView6.DefaultCellStyle = dataGridViewCellStyle33;
             this.guna2DataGridView6.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView6.Location = new System.Drawing.Point(9, 149);
             this.guna2DataGridView6.Name = "guna2DataGridView6";
@@ -2380,7 +1996,7 @@ namespace GUI
             // 
             this.checkBox20.AutoSize = true;
             this.checkBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox20.Location = new System.Drawing.Point(318, 105);
+            this.checkBox20.Location = new System.Drawing.Point(368, 105);
             this.checkBox20.Name = "checkBox20";
             this.checkBox20.Size = new System.Drawing.Size(144, 22);
             this.checkBox20.TabIndex = 30;
@@ -2391,7 +2007,7 @@ namespace GUI
             // 
             this.checkBox21.AutoSize = true;
             this.checkBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox21.Location = new System.Drawing.Point(480, 105);
+            this.checkBox21.Location = new System.Drawing.Point(530, 105);
             this.checkBox21.Name = "checkBox21";
             this.checkBox21.Size = new System.Drawing.Size(134, 22);
             this.checkBox21.TabIndex = 29;
@@ -2402,7 +2018,7 @@ namespace GUI
             // 
             this.checkBox35.AutoSize = true;
             this.checkBox35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox35.Location = new System.Drawing.Point(154, 105);
+            this.checkBox35.Location = new System.Drawing.Point(204, 105);
             this.checkBox35.Name = "checkBox35";
             this.checkBox35.Size = new System.Drawing.Size(147, 22);
             this.checkBox35.TabIndex = 28;
@@ -2413,15 +2029,26 @@ namespace GUI
             // 
             this.checkBox36.AutoSize = true;
             this.checkBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox36.Location = new System.Drawing.Point(12, 105);
+            this.checkBox36.Location = new System.Drawing.Point(62, 105);
             this.checkBox36.Name = "checkBox36";
             this.checkBox36.Size = new System.Drawing.Size(131, 22);
             this.checkBox36.TabIndex = 27;
             this.checkBox36.Text = "Hóa đơn đã thu";
             this.checkBox36.UseVisualStyleBackColor = true;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.groupBox3);
+            this.tabPage6.Location = new System.Drawing.Point(4, 25);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1017, 698);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Bãi đỗ xe";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.pictureBox9);
             this.groupBox3.Controls.Add(this.button52);
             this.groupBox3.Controls.Add(this.button53);
             this.groupBox3.Controls.Add(this.guna2DataGridView7);
@@ -2466,26 +2093,26 @@ namespace GUI
             // 
             // guna2DataGridView7
             // 
-            dataGridViewCellStyle106.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView7.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle106;
-            dataGridViewCellStyle107.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle107.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle107.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle107.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle107.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle107.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle107.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView7.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle107;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView7.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView7.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.guna2DataGridView7.ColumnHeadersHeight = 4;
             this.guna2DataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle108.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle108.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle108.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle108.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle108.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle108.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView7.DefaultCellStyle = dataGridViewCellStyle108;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView7.DefaultCellStyle = dataGridViewCellStyle36;
             this.guna2DataGridView7.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView7.Location = new System.Drawing.Point(9, 149);
             this.guna2DataGridView7.Name = "guna2DataGridView7";
@@ -2570,7 +2197,7 @@ namespace GUI
             // 
             this.checkBox38.AutoSize = true;
             this.checkBox38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox38.Location = new System.Drawing.Point(318, 103);
+            this.checkBox38.Location = new System.Drawing.Point(385, 103);
             this.checkBox38.Name = "checkBox38";
             this.checkBox38.Size = new System.Drawing.Size(144, 22);
             this.checkBox38.TabIndex = 30;
@@ -2581,7 +2208,7 @@ namespace GUI
             // 
             this.checkBox39.AutoSize = true;
             this.checkBox39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox39.Location = new System.Drawing.Point(480, 103);
+            this.checkBox39.Location = new System.Drawing.Point(547, 103);
             this.checkBox39.Name = "checkBox39";
             this.checkBox39.Size = new System.Drawing.Size(134, 22);
             this.checkBox39.TabIndex = 29;
@@ -2592,7 +2219,7 @@ namespace GUI
             // 
             this.checkBox40.AutoSize = true;
             this.checkBox40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox40.Location = new System.Drawing.Point(154, 103);
+            this.checkBox40.Location = new System.Drawing.Point(221, 103);
             this.checkBox40.Name = "checkBox40";
             this.checkBox40.Size = new System.Drawing.Size(147, 22);
             this.checkBox40.TabIndex = 28;
@@ -2603,12 +2230,784 @@ namespace GUI
             // 
             this.checkBox41.AutoSize = true;
             this.checkBox41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox41.Location = new System.Drawing.Point(12, 103);
+            this.checkBox41.Location = new System.Drawing.Point(79, 103);
             this.checkBox41.Name = "checkBox41";
             this.checkBox41.Size = new System.Drawing.Size(131, 22);
             this.checkBox41.TabIndex = 27;
             this.checkBox41.Text = "Hóa đơn đã thu";
             this.checkBox41.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.exitButton);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(251, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1043, 39);
+            this.panel3.TabIndex = 21;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
+            // 
+            // btn_hopdong
+            // 
+            this.btn_hopdong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_hopdong.Location = new System.Drawing.Point(-3, 66);
+            this.btn_hopdong.Name = "btn_hopdong";
+            this.btn_hopdong.Size = new System.Drawing.Size(260, 60);
+            this.btn_hopdong.TabIndex = 6;
+            this.btn_hopdong.Text = "       Quản Lý Hợp Đồng";
+            this.btn_hopdong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_hopdong.UseVisualStyleBackColor = true;
+            this.btn_hopdong.Click += new System.EventHandler(this.btn_hopdong_Click);
+            // 
+            // btn_caidat
+            // 
+            this.btn_caidat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_caidat.Location = new System.Drawing.Point(-3, 327);
+            this.btn_caidat.Name = "btn_caidat";
+            this.btn_caidat.Size = new System.Drawing.Size(260, 60);
+            this.btn_caidat.TabIndex = 5;
+            this.btn_caidat.Text = "      Quản lý bãi đậu xe";
+            this.btn_caidat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_caidat.UseVisualStyleBackColor = true;
+            this.btn_caidat.Click += new System.EventHandler(this.btn_caidat_Click);
+            // 
+            // btn_csvc
+            // 
+            this.btn_csvc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_csvc.Location = new System.Drawing.Point(-1, 261);
+            this.btn_csvc.Name = "btn_csvc";
+            this.btn_csvc.Size = new System.Drawing.Size(260, 60);
+            this.btn_csvc.TabIndex = 4;
+            this.btn_csvc.Text = "      Quản Lý Cơ sở Vật chất";
+            this.btn_csvc.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_csvc.UseVisualStyleBackColor = true;
+            this.btn_csvc.Click += new System.EventHandler(this.btn_csvc_Click);
+            // 
+            // btn_dichvu
+            // 
+            this.btn_dichvu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_dichvu.Location = new System.Drawing.Point(-1, 196);
+            this.btn_dichvu.Name = "btn_dichvu";
+            this.btn_dichvu.Size = new System.Drawing.Size(260, 60);
+            this.btn_dichvu.TabIndex = 3;
+            this.btn_dichvu.Text = "      Quản Lý Dịch Vụ";
+            this.btn_dichvu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_dichvu.UseVisualStyleBackColor = true;
+            this.btn_dichvu.Click += new System.EventHandler(this.btn_dichvu_Click);
+            // 
+            // btn_taichinh
+            // 
+            this.btn_taichinh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_taichinh.Location = new System.Drawing.Point(-1, 131);
+            this.btn_taichinh.Name = "btn_taichinh";
+            this.btn_taichinh.Size = new System.Drawing.Size(260, 60);
+            this.btn_taichinh.TabIndex = 2;
+            this.btn_taichinh.Text = "      Quản Lý Thanh Toán";
+            this.btn_taichinh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_taichinh.UseVisualStyleBackColor = true;
+            this.btn_taichinh.Click += new System.EventHandler(this.btn_taichinh_Click);
+            // 
+            // btn_phong
+            // 
+            this.btn_phong.BackColor = System.Drawing.Color.White;
+            this.btn_phong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_phong.Location = new System.Drawing.Point(-1, 1);
+            this.btn_phong.Name = "btn_phong";
+            this.btn_phong.Size = new System.Drawing.Size(260, 60);
+            this.btn_phong.TabIndex = 0;
+            this.btn_phong.Text = "      Quản Lý Phòng";
+            this.btn_phong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_phong.UseVisualStyleBackColor = false;
+            this.btn_phong.Click += new System.EventHandler(this.btn_phong_Click);
+            // 
+            // hd1
+            // 
+            this.hd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hd1.Location = new System.Drawing.Point(13, 26);
+            this.hd1.Name = "hd1";
+            this.hd1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.hd1.Size = new System.Drawing.Size(249, 81);
+            this.hd1.TabIndex = 22;
+            this.hd1.Text = "Quản Lí Hợp Đồng";
+            this.hd1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hd1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.hd1.UseVisualStyleBackColor = true;
+            this.hd1.Click += new System.EventHandler(this.hd1_Click);
+            // 
+            // lstn1
+            // 
+            this.lstn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstn1.Location = new System.Drawing.Point(281, 26);
+            this.lstn1.Name = "lstn1";
+            this.lstn1.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.lstn1.Size = new System.Drawing.Size(223, 81);
+            this.lstn1.TabIndex = 23;
+            this.lstn1.Text = "Quản Lý Lịch Sử Thuê Nhà";
+            this.lstn1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lstn1.UseVisualStyleBackColor = true;
+            this.lstn1.Click += new System.EventHandler(this.lstn1_Click);
+            // 
+            // ttkt1
+            // 
+            this.ttkt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ttkt1.Location = new System.Drawing.Point(523, 26);
+            this.ttkt1.Name = "ttkt1";
+            this.ttkt1.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.ttkt1.Size = new System.Drawing.Size(235, 81);
+            this.ttkt1.TabIndex = 24;
+            this.ttkt1.Text = "Quản Lý Thông Tin Khách Thuê";
+            this.ttkt1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ttkt1.UseVisualStyleBackColor = true;
+            this.ttkt1.Click += new System.EventHandler(this.ttkt1_Click);
+            // 
+            // dklt1
+            // 
+            this.dklt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dklt1.Location = new System.Drawing.Point(777, 26);
+            this.dklt1.Name = "dklt1";
+            this.dklt1.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.dklt1.Size = new System.Drawing.Size(215, 81);
+            this.dklt1.TabIndex = 25;
+            this.dklt1.Text = "Quản Lý Đăng Ký Lưu Trú";
+            this.dklt1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.dklt1.UseVisualStyleBackColor = true;
+            this.dklt1.Click += new System.EventHandler(this.dklt1_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exitButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
+            this.exitButton.Location = new System.Drawing.Point(1003, 0);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(40, 39);
+            this.exitButton.TabIndex = 20;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // guna2PictureBox6
+            // 
+            this.guna2PictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox6.Enabled = false;
+            this.guna2PictureBox6.Image = global::GUI.Properties.Resources.icons8_parking_lot_100;
+            this.guna2PictureBox6.ImageRotate = 0F;
+            this.guna2PictureBox6.Location = new System.Drawing.Point(12, 332);
+            this.guna2PictureBox6.Name = "guna2PictureBox6";
+            this.guna2PictureBox6.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox6.TabIndex = 54;
+            this.guna2PictureBox6.TabStop = false;
+            this.guna2PictureBox6.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox5.Enabled = false;
+            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_mortgage_96;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(12, 266);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 53;
+            this.guna2PictureBox5.TabStop = false;
+            this.guna2PictureBox5.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox4.Enabled = false;
+            this.guna2PictureBox4.Image = global::GUI.Properties.Resources.icons8_service_100;
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(12, 201);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox4.TabIndex = 52;
+            this.guna2PictureBox4.TabStop = false;
+            this.guna2PictureBox4.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Enabled = false;
+            this.guna2PictureBox3.Image = global::GUI.Properties.Resources.icons8_cash_96;
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(11, 136);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 51;
+            this.guna2PictureBox3.TabStop = false;
+            this.guna2PictureBox3.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Enabled = false;
+            this.guna2PictureBox2.Image = global::GUI.Properties.Resources.icons8_contract_96;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(11, 71);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 50;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Enabled = false;
+            this.guna2PictureBox1.Image = global::GUI.Properties.Resources.icons8_room_90__1_;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(11, 6);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 49;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
+            // 
+            // button5
+            // 
+            this.button5.Image = global::GUI.Properties.Resources.img_Login__2_;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(1, 278);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(247, 40);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "    Đăng Xuất";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Image = global::GUI.Properties.Resources.img_Login__2_;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(1, 236);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(247, 40);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "    Cài Đặt Chung";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Image = global::GUI.Properties.Resources.img_Login__2_;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(1, 194);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(247, 40);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "    Thông Báo";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Image = global::GUI.Properties.Resources.img_Login__2_;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(1, 152);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(247, 40);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "    Tài Khoản";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::GUI.Properties.Resources.img_Login__2_;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(1, 110);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(247, 40);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "    Quản Lý Nhà";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::GUI.Properties.Resources.icons8_homeQL_100;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::GUI.Properties.Resources.icons8_filter_90;
+            this.pictureBox7.Location = new System.Drawing.Point(14, 127);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 5;
+            this.pictureBox7.TabStop = false;
+            // 
+            // guna2PictureBox10
+            // 
+            this.guna2PictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox10.Enabled = false;
+            this.guna2PictureBox10.Image = global::GUI.Properties.Resources.icons8_tenant_64;
+            this.guna2PictureBox10.ImageRotate = 0F;
+            this.guna2PictureBox10.Location = new System.Drawing.Point(925, 42);
+            this.guna2PictureBox10.Name = "guna2PictureBox10";
+            this.guna2PictureBox10.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox10.TabIndex = 57;
+            this.guna2PictureBox10.TabStop = false;
+            this.guna2PictureBox10.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox9
+            // 
+            this.guna2PictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox9.Enabled = false;
+            this.guna2PictureBox9.Image = global::GUI.Properties.Resources.icons8_registration_100;
+            this.guna2PictureBox9.ImageRotate = 0F;
+            this.guna2PictureBox9.Location = new System.Drawing.Point(688, 42);
+            this.guna2PictureBox9.Name = "guna2PictureBox9";
+            this.guna2PictureBox9.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox9.TabIndex = 56;
+            this.guna2PictureBox9.TabStop = false;
+            this.guna2PictureBox9.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox8
+            // 
+            this.guna2PictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox8.Enabled = false;
+            this.guna2PictureBox8.Image = global::GUI.Properties.Resources.icons8_invoice_100;
+            this.guna2PictureBox8.ImageRotate = 0F;
+            this.guna2PictureBox8.Location = new System.Drawing.Point(198, 42);
+            this.guna2PictureBox8.Name = "guna2PictureBox8";
+            this.guna2PictureBox8.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox8.TabIndex = 55;
+            this.guna2PictureBox8.TabStop = false;
+            this.guna2PictureBox8.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox7
+            // 
+            this.guna2PictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox7.Enabled = false;
+            this.guna2PictureBox7.Image = global::GUI.Properties.Resources.icons8_activity_history_100;
+            this.guna2PictureBox7.ImageRotate = 0F;
+            this.guna2PictureBox7.Location = new System.Drawing.Point(436, 42);
+            this.guna2PictureBox7.Name = "guna2PictureBox7";
+            this.guna2PictureBox7.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox7.TabIndex = 54;
+            this.guna2PictureBox7.TabStop = false;
+            this.guna2PictureBox7.UseTransparentBackground = true;
+            this.guna2PictureBox7.Click += new System.EventHandler(this.guna2PictureBox7_Click);
+            // 
+            // dklt2
+            // 
+            this.dklt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dklt2.Location = new System.Drawing.Point(779, 26);
+            this.dklt2.Name = "dklt2";
+            this.dklt2.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.dklt2.Size = new System.Drawing.Size(215, 81);
+            this.dklt2.TabIndex = 31;
+            this.dklt2.Text = "Quản Lý Đăng Ký Lưu Trú";
+            this.dklt2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.dklt2.UseVisualStyleBackColor = true;
+            this.dklt2.Click += new System.EventHandler(this.dklt2_Click);
+            // 
+            // ttkt2
+            // 
+            this.ttkt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ttkt2.Location = new System.Drawing.Point(519, 26);
+            this.ttkt2.Name = "ttkt2";
+            this.ttkt2.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.ttkt2.Size = new System.Drawing.Size(235, 81);
+            this.ttkt2.TabIndex = 30;
+            this.ttkt2.Text = "Quản Lý Thông Tin Khách Thuê";
+            this.ttkt2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ttkt2.UseVisualStyleBackColor = true;
+            this.ttkt2.Click += new System.EventHandler(this.ttkt2_Click);
+            // 
+            // lstn2
+            // 
+            this.lstn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstn2.Location = new System.Drawing.Point(274, 26);
+            this.lstn2.Name = "lstn2";
+            this.lstn2.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.lstn2.Size = new System.Drawing.Size(223, 81);
+            this.lstn2.TabIndex = 29;
+            this.lstn2.Text = "Quản Lý Lịch Sử Thuê Nhà";
+            this.lstn2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lstn2.UseVisualStyleBackColor = true;
+            this.lstn2.Click += new System.EventHandler(this.lstn2_Click);
+            // 
+            // hd2
+            // 
+            this.hd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hd2.Location = new System.Drawing.Point(7, 26);
+            this.hd2.Name = "hd2";
+            this.hd2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.hd2.Size = new System.Drawing.Size(249, 81);
+            this.hd2.TabIndex = 28;
+            this.hd2.Text = "Quản Lí Hợp Đồng";
+            this.hd2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hd2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.hd2.UseVisualStyleBackColor = true;
+            this.hd2.Click += new System.EventHandler(this.hd2_Click);
+            // 
+            // dklt3
+            // 
+            this.dklt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dklt3.Location = new System.Drawing.Point(779, 26);
+            this.dklt3.Name = "dklt3";
+            this.dklt3.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.dklt3.Size = new System.Drawing.Size(215, 81);
+            this.dklt3.TabIndex = 37;
+            this.dklt3.Text = "Quản Lý Đăng Ký Lưu Trú";
+            this.dklt3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.dklt3.UseVisualStyleBackColor = true;
+            this.dklt3.Click += new System.EventHandler(this.dklt3_Click);
+            // 
+            // ttkt3
+            // 
+            this.ttkt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ttkt3.Location = new System.Drawing.Point(518, 26);
+            this.ttkt3.Name = "ttkt3";
+            this.ttkt3.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.ttkt3.Size = new System.Drawing.Size(235, 81);
+            this.ttkt3.TabIndex = 36;
+            this.ttkt3.Text = "Quản Lý Thông Tin Khách Thuê";
+            this.ttkt3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ttkt3.UseVisualStyleBackColor = true;
+            this.ttkt3.Click += new System.EventHandler(this.ttkt3_Click);
+            // 
+            // lstn3
+            // 
+            this.lstn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstn3.Location = new System.Drawing.Point(279, 26);
+            this.lstn3.Name = "lstn3";
+            this.lstn3.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.lstn3.Size = new System.Drawing.Size(223, 81);
+            this.lstn3.TabIndex = 35;
+            this.lstn3.Text = "Quản Lý Lịch Sử Thuê Nhà";
+            this.lstn3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lstn3.UseVisualStyleBackColor = true;
+            this.lstn3.Click += new System.EventHandler(this.lstn3_Click);
+            // 
+            // hd3
+            // 
+            this.hd3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hd3.Location = new System.Drawing.Point(13, 26);
+            this.hd3.Name = "hd3";
+            this.hd3.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.hd3.Size = new System.Drawing.Size(249, 81);
+            this.hd3.TabIndex = 34;
+            this.hd3.Text = "Quản Lí Hợp Đồng";
+            this.hd3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hd3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.hd3.UseVisualStyleBackColor = true;
+            this.hd3.Click += new System.EventHandler(this.hd3_Click);
+            // 
+            // dklt4
+            // 
+            this.dklt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dklt4.Location = new System.Drawing.Point(779, 26);
+            this.dklt4.Name = "dklt4";
+            this.dklt4.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.dklt4.Size = new System.Drawing.Size(215, 81);
+            this.dklt4.TabIndex = 37;
+            this.dklt4.Text = "Quản Lý Đăng Ký Tạm Trú";
+            this.dklt4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.dklt4.UseVisualStyleBackColor = true;
+            this.dklt4.Click += new System.EventHandler(this.dklt4_Click);
+            // 
+            // ttkt4
+            // 
+            this.ttkt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ttkt4.Location = new System.Drawing.Point(524, 26);
+            this.ttkt4.Name = "ttkt4";
+            this.ttkt4.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.ttkt4.Size = new System.Drawing.Size(235, 81);
+            this.ttkt4.TabIndex = 36;
+            this.ttkt4.Text = "Quản Lý Thông Tin Khách Thuê";
+            this.ttkt4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.ttkt4.UseVisualStyleBackColor = true;
+            this.ttkt4.Click += new System.EventHandler(this.ttkt4_Click);
+            // 
+            // lstn4
+            // 
+            this.lstn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstn4.Location = new System.Drawing.Point(280, 26);
+            this.lstn4.Name = "lstn4";
+            this.lstn4.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
+            this.lstn4.Size = new System.Drawing.Size(223, 81);
+            this.lstn4.TabIndex = 35;
+            this.lstn4.Text = "Quản Lý Lịch Sử Thuê Nhà";
+            this.lstn4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.lstn4.UseVisualStyleBackColor = true;
+            this.lstn4.Click += new System.EventHandler(this.lstn4_Click);
+            // 
+            // hd4
+            // 
+            this.hd4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hd4.Location = new System.Drawing.Point(13, 26);
+            this.hd4.Name = "hd4";
+            this.hd4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.hd4.Size = new System.Drawing.Size(249, 81);
+            this.hd4.TabIndex = 34;
+            this.hd4.Text = "Quản Lí Hợp Đồng";
+            this.hd4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.hd4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.hd4.UseVisualStyleBackColor = true;
+            this.hd4.Click += new System.EventHandler(this.hd4_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::GUI.Properties.Resources.icons8_filter_90;
+            this.pictureBox8.Location = new System.Drawing.Point(14, 100);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 30;
+            this.pictureBox8.TabStop = false;
+            // 
+            // guna2PictureBox11
+            // 
+            this.guna2PictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox11.Enabled = false;
+            this.guna2PictureBox11.Image = global::GUI.Properties.Resources.icons8_invoice_100;
+            this.guna2PictureBox11.ImageRotate = 0F;
+            this.guna2PictureBox11.Location = new System.Drawing.Point(203, 42);
+            this.guna2PictureBox11.Name = "guna2PictureBox11";
+            this.guna2PictureBox11.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox11.TabIndex = 56;
+            this.guna2PictureBox11.TabStop = false;
+            this.guna2PictureBox11.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox12
+            // 
+            this.guna2PictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox12.Enabled = false;
+            this.guna2PictureBox12.Image = global::GUI.Properties.Resources.icons8_invoice_100;
+            this.guna2PictureBox12.ImageRotate = 0F;
+            this.guna2PictureBox12.Location = new System.Drawing.Point(198, 42);
+            this.guna2PictureBox12.Name = "guna2PictureBox12";
+            this.guna2PictureBox12.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox12.TabIndex = 56;
+            this.guna2PictureBox12.TabStop = false;
+            this.guna2PictureBox12.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox13
+            // 
+            this.guna2PictureBox13.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox13.Enabled = false;
+            this.guna2PictureBox13.Image = global::GUI.Properties.Resources.icons8_invoice_100;
+            this.guna2PictureBox13.ImageRotate = 0F;
+            this.guna2PictureBox13.Location = new System.Drawing.Point(202, 42);
+            this.guna2PictureBox13.Name = "guna2PictureBox13";
+            this.guna2PictureBox13.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox13.TabIndex = 56;
+            this.guna2PictureBox13.TabStop = false;
+            this.guna2PictureBox13.UseTransparentBackground = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GUI.Properties.Resources.icons8_filter_90;
+            this.pictureBox2.Location = new System.Drawing.Point(24, 95);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox14
+            // 
+            this.guna2PictureBox14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox14.Enabled = false;
+            this.guna2PictureBox14.Image = global::GUI.Properties.Resources.icons8_activity_history_100;
+            this.guna2PictureBox14.ImageRotate = 0F;
+            this.guna2PictureBox14.Location = new System.Drawing.Point(438, 42);
+            this.guna2PictureBox14.Name = "guna2PictureBox14";
+            this.guna2PictureBox14.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox14.TabIndex = 57;
+            this.guna2PictureBox14.TabStop = false;
+            this.guna2PictureBox14.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox15
+            // 
+            this.guna2PictureBox15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox15.Enabled = false;
+            this.guna2PictureBox15.Image = global::GUI.Properties.Resources.icons8_activity_history_100;
+            this.guna2PictureBox15.ImageRotate = 0F;
+            this.guna2PictureBox15.Location = new System.Drawing.Point(439, 42);
+            this.guna2PictureBox15.Name = "guna2PictureBox15";
+            this.guna2PictureBox15.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox15.TabIndex = 57;
+            this.guna2PictureBox15.TabStop = false;
+            this.guna2PictureBox15.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox16
+            // 
+            this.guna2PictureBox16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox16.Enabled = false;
+            this.guna2PictureBox16.Image = global::GUI.Properties.Resources.icons8_activity_history_100;
+            this.guna2PictureBox16.ImageRotate = 0F;
+            this.guna2PictureBox16.Location = new System.Drawing.Point(444, 42);
+            this.guna2PictureBox16.Name = "guna2PictureBox16";
+            this.guna2PictureBox16.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox16.TabIndex = 57;
+            this.guna2PictureBox16.TabStop = false;
+            this.guna2PictureBox16.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox17
+            // 
+            this.guna2PictureBox17.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox17.Enabled = false;
+            this.guna2PictureBox17.Image = global::GUI.Properties.Resources.icons8_registration_100;
+            this.guna2PictureBox17.ImageRotate = 0F;
+            this.guna2PictureBox17.Location = new System.Drawing.Point(692, 42);
+            this.guna2PictureBox17.Name = "guna2PictureBox17";
+            this.guna2PictureBox17.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox17.TabIndex = 58;
+            this.guna2PictureBox17.TabStop = false;
+            this.guna2PictureBox17.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox18
+            // 
+            this.guna2PictureBox18.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox18.Enabled = false;
+            this.guna2PictureBox18.Image = global::GUI.Properties.Resources.icons8_registration_100;
+            this.guna2PictureBox18.ImageRotate = 0F;
+            this.guna2PictureBox18.Location = new System.Drawing.Point(690, 42);
+            this.guna2PictureBox18.Name = "guna2PictureBox18";
+            this.guna2PictureBox18.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox18.TabIndex = 58;
+            this.guna2PictureBox18.TabStop = false;
+            this.guna2PictureBox18.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox19
+            // 
+            this.guna2PictureBox19.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox19.Enabled = false;
+            this.guna2PictureBox19.Image = global::GUI.Properties.Resources.icons8_registration_100;
+            this.guna2PictureBox19.ImageRotate = 0F;
+            this.guna2PictureBox19.Location = new System.Drawing.Point(697, 42);
+            this.guna2PictureBox19.Name = "guna2PictureBox19";
+            this.guna2PictureBox19.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox19.TabIndex = 58;
+            this.guna2PictureBox19.TabStop = false;
+            this.guna2PictureBox19.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox20
+            // 
+            this.guna2PictureBox20.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox20.Enabled = false;
+            this.guna2PictureBox20.Image = global::GUI.Properties.Resources.icons8_tenant_64;
+            this.guna2PictureBox20.ImageRotate = 0F;
+            this.guna2PictureBox20.Location = new System.Drawing.Point(935, 42);
+            this.guna2PictureBox20.Name = "guna2PictureBox20";
+            this.guna2PictureBox20.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox20.TabIndex = 59;
+            this.guna2PictureBox20.TabStop = false;
+            this.guna2PictureBox20.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox21
+            // 
+            this.guna2PictureBox21.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox21.Enabled = false;
+            this.guna2PictureBox21.Image = global::GUI.Properties.Resources.icons8_tenant_64;
+            this.guna2PictureBox21.ImageRotate = 0F;
+            this.guna2PictureBox21.Location = new System.Drawing.Point(935, 42);
+            this.guna2PictureBox21.Name = "guna2PictureBox21";
+            this.guna2PictureBox21.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox21.TabIndex = 59;
+            this.guna2PictureBox21.TabStop = false;
+            this.guna2PictureBox21.UseTransparentBackground = true;
+            // 
+            // guna2PictureBox22
+            // 
+            this.guna2PictureBox22.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox22.Enabled = false;
+            this.guna2PictureBox22.Image = global::GUI.Properties.Resources.icons8_tenant_64;
+            this.guna2PictureBox22.ImageRotate = 0F;
+            this.guna2PictureBox22.Location = new System.Drawing.Point(934, 42);
+            this.guna2PictureBox22.Name = "guna2PictureBox22";
+            this.guna2PictureBox22.Size = new System.Drawing.Size(50, 50);
+            this.guna2PictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox22.TabIndex = 58;
+            this.guna2PictureBox22.TabStop = false;
+            this.guna2PictureBox22.UseTransparentBackground = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GUI.Properties.Resources.icons8_filter_90;
+            this.pictureBox3.Location = new System.Drawing.Point(20, 80);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 32;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::GUI.Properties.Resources.icons8_filter_90;
+            this.pictureBox5.Location = new System.Drawing.Point(18, 79);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 32;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::GUI.Properties.Resources.icons8_filter_90;
+            this.pictureBox4.Location = new System.Drawing.Point(9, 90);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 43;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::GUI.Properties.Resources.icons8_filter_90;
+            this.pictureBox6.Location = new System.Drawing.Point(9, 91);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 37;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::GUI.Properties.Resources.icons8_filter_90;
+            this.pictureBox9.Location = new System.Drawing.Point(20, 89);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 37;
+            this.pictureBox9.TabStop = false;
             // 
             // quanlynha
             // 
@@ -2626,7 +3025,6 @@ namespace GUI
             this.Load += new System.EventHandler(this.quanlynha_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabQuanLy.ResumeLayout(false);
@@ -2634,47 +3032,72 @@ namespace GUI
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabHopDong.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_QLHD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabPage10.ResumeLayout(false);
             this.groupBox20.ResumeLayout(false);
             this.groupBox20.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView6)).EndInit();
+            this.tabPage6.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView7)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox19)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2716,7 +3139,6 @@ namespace GUI
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.CheckBox checkBox19;
         private System.Windows.Forms.CheckBox checkBox22;
         private System.Windows.Forms.CheckBox checkBox23;
@@ -2729,7 +3151,6 @@ namespace GUI
         private System.Windows.Forms.Button lstn1;
         private System.Windows.Forms.Button hd1;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
@@ -2742,7 +3163,6 @@ namespace GUI
         private System.Windows.Forms.Button lstn2;
         private System.Windows.Forms.Button hd2;
         private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.CheckBox checkBox18;
         private System.Windows.Forms.CheckBox checkBox24;
         private System.Windows.Forms.CheckBox checkBox25;
@@ -2752,7 +3172,6 @@ namespace GUI
         private System.Windows.Forms.Button lstn3;
         private System.Windows.Forms.Button hd3;
         private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.CheckBox checkBox27;
         private System.Windows.Forms.CheckBox checkBox28;
         private System.Windows.Forms.CheckBox checkBox29;
@@ -2762,7 +3181,6 @@ namespace GUI
         private System.Windows.Forms.Button lstn4;
         private System.Windows.Forms.Button hd4;
         private System.Windows.Forms.GroupBox groupBox20;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.CheckBox checkBox31;
         private System.Windows.Forms.CheckBox checkBox32;
         private System.Windows.Forms.CheckBox checkBox33;
@@ -2846,5 +3264,34 @@ namespace GUI
         private System.Windows.Forms.CheckBox checkBox39;
         private System.Windows.Forms.CheckBox checkBox40;
         private System.Windows.Forms.CheckBox checkBox41;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox7;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox9;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox11;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox12;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox13;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox15;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox16;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox20;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox17;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox21;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox18;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox22;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox19;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }

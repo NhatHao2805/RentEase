@@ -177,5 +177,41 @@
   <ItemGroup>
     <None Include="Resources\icon_0.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-homeQL-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-room-90 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contract-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cash-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-service-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mortgage-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-lot-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-activity-history-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-invoice-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-registration-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tenant-64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

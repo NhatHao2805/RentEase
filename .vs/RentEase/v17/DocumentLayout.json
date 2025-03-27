@@ -1,45 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\",
+  "WorkspaceRootPath": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\onedrive\\m\u00E1y t\u00EDnh\\cnpm\\rentease\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\hoc\\cn phan mem\\d\u1EF1 \u00E1n\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\quanlynha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\gui\\quanlynha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\gui\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\bll\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\dal\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\dto\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:dto\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\gui\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\dal\\houseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\bll\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\dal\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\dto\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E52B73AD-2E97-44A4-9BF1-CD9437DA4018}|DTO\\DTO.csproj|solutionrelative:dto\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\dal\\houseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\houseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -50,15 +50,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 269,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QuanLyNha.cs [Design]",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\QuanLyNha.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\QuanLyNha.cs [Design]",
+              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-25T11:17:11.897Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Form_AddContract.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_AddContract.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\Form_AddContract.cs",
               "RelativeDocumentMoniker": "GUI\\Form_AddContract.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_AddContract.cs [Design]",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\Form_AddContract.cs [Design]",
               "RelativeToolTip": "GUI\\Form_AddContract.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T14:42:46.398Z"
@@ -67,21 +99,22 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "QuanLyNha.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.Designer.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\QuanLyNha.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.Designer.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.Designer.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\QuanLyNha.Designer.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.Designer.cs",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAlwB4AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwBgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T11:30:09.317Z"
+              "WhenOpened": "2025-03-25T11:30:09.317Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "RoomBLL.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\BLL\\RoomBLL.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\BLL\\RoomBLL.cs",
               "RelativeDocumentMoniker": "BLL\\RoomBLL.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\BLL\\RoomBLL.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\BLL\\RoomBLL.cs",
               "RelativeToolTip": "BLL\\RoomBLL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -89,13 +122,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Form_Login.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_Login.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\Form_Login.cs",
               "RelativeDocumentMoniker": "GUI\\Form_Login.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_Login.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\Form_Login.cs",
               "RelativeToolTip": "GUI\\Form_Login.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABEAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAowBEAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T11:35:20.671Z"
             },
@@ -103,44 +136,33 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Form_Login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_Login.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\Form_Login.cs",
               "RelativeDocumentMoniker": "GUI\\Form_Login.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_Login.cs [Design]",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\Form_Login.cs [Design]",
               "RelativeToolTip": "GUI\\Form_Login.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T11:35:18.986Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\GUI\\QuanLyNha.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAAC0AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAHUBAAAAAAAAAAAmwIMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-25T11:17:16.215Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs [Design]",
-              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T11:17:11.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "RoomAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\RoomAccess.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\DAL\\RoomAccess.cs",
               "RelativeDocumentMoniker": "DAL\\RoomAccess.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\RoomAccess.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\DAL\\RoomAccess.cs",
               "RelativeToolTip": "DAL\\RoomAccess.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAiwBAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -150,9 +172,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "HouseAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\HouseAccess.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\DAL\\HouseAccess.cs",
               "RelativeDocumentMoniker": "DAL\\HouseAccess.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\HouseAccess.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\DAL\\HouseAccess.cs",
               "RelativeToolTip": "DAL\\HouseAccess.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -160,29 +182,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Contract.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DTO\\Contract.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\DTO\\Contract.cs",
               "RelativeDocumentMoniker": "DTO\\Contract.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DTO\\Contract.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\DTO\\Contract.cs",
               "RelativeToolTip": "DTO\\Contract.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAcwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T11:51:53.182Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 140,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }
