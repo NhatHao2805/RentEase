@@ -15,7 +15,12 @@ namespace BLL.BLL_Service
             var list = new List<object>();
             foreach (var kh in KhachHangAccess.Load_KhachHang())
             {
-                list.Add(new { ID = kh.ID, Name = kh.FullName });
+
+                list.Add(new
+                {
+                    ID = kh.ID,
+                    Name = $"{kh.FullName} - {kh.ID}" // Hiển thị cả Tên và ID
+                });
             }
             return list;
         }

@@ -1,7 +1,8 @@
 ﻿using BLL;
-using BLL.Quanlyphuongtien;
+using BLL.BLL_Service;
 using DTO;
-using GUI.QuanLyPhuongTien;
+using DTO.DTO_Service;
+using GUI.GUI_Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class quanlynha: Form
+    public partial class quanlynha : Form
     {
         Form_Login form1;
         private int panel1_originalSize = 90;
@@ -33,7 +34,7 @@ namespace GUI
         private Size size_component_quanlytaichinh = new Size(1010, 552);
         private Size size_component_quanlytaichinh_1 = new Size(10, 10);
         private Point location_component_quanlytaichinh = new Point(12, 86);
-        private Point location_component_quanlytaichinh_1 = new Point(30,30);
+        private Point location_component_quanlytaichinh_1 = new Point(30, 30);
 
         public quanlynha(Form_Login form1)
         {
@@ -156,7 +157,7 @@ namespace GUI
 
         private void extendBtnPanel1_Click(object sender, EventArgs e)
         {
-            if(extendBtnPanel1.Text == "Xem Thêm")
+            if (extendBtnPanel1.Text == "Xem Thêm")
             {
                 extendBtnPanel1.Text = "Ẩn bớt";
             }
@@ -181,17 +182,17 @@ namespace GUI
 
         private void button19_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_hoadon_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btn_thuchi_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void button28_Click(object sender, EventArgs e)
@@ -210,7 +211,7 @@ namespace GUI
         }
         private void LoadData(String required)
         {
-           
+
         }
 
         private void btn_taichinh_Click(object sender, EventArgs e)
@@ -227,10 +228,18 @@ namespace GUI
 
 
         }
-
-        private void btn_dichvu_Click(object sender, EventArgs e)
+        private UserService serviceUsageBLL = new UserService();
+        // QL Dich Vu
+        public void btn_dichvu_Click(object sender, EventArgs e)
         {
             tabQuanLy.SelectedIndex = 4;
+            var data = serviceUsageBLL.GetServiceUsage();
+            if (data == null || data.Count == 0) // Nếu là List
+            {
+                MessageBox.Show("Không có dữ liệu!");
+            }
+            dgvServiceInfo.DataSource = data;
+
         }
         //Quản lý bãi đậu xe
         private void btn_caidat_Click(object sender, EventArgs e)
@@ -244,7 +253,7 @@ namespace GUI
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
-            
+
         }
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
@@ -268,7 +277,7 @@ namespace GUI
 
         private void button17_Click(object sender, EventArgs e)
         {
-     
+
         }
 
         private void customButton1_Click(object sender, EventArgs e)
@@ -280,7 +289,7 @@ namespace GUI
 
         }
 
-       
+
 
 
         private void button20_Click(object sender, EventArgs e)

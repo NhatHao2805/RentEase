@@ -74,7 +74,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Building.cs" />
-    <Compile Include="Quanlyphuongtien\Payment.cs" />
+    <Compile Include="DTO_Service\Contract_Service.cs" />
+    <Compile Include="DTO_Service\KhachHangDTO.cs" />
+    <Compile Include="DTO_Service\ServiceUsageDTO.cs" />
+    <Compile Include="DTO_Service\UserServiceDTO.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="User.cs" />
     <Compile Include="WaterElectricity.cs" />
