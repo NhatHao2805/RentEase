@@ -104,8 +104,8 @@
   <ItemGroup>
     <Compile Include="AccountAccess.cs" />
     <Compile Include="ContractAccess.cs" />
-    <Compile Include="DAL_Service\ContractAccess.cs" />
-    <Compile Include="DAL_Service\KhachHangAccess.cs" />
+    <Compile Include="QuanLyphuongtien\ParkingAreaAccess.cs" />
+    <Compile Include="QuanLyphuongtien\PaymentAccess.cs" />
     <Compile Include="RoomAccess.cs" />
     <Compile Include="HouseAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
