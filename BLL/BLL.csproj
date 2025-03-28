@@ -76,8 +76,12 @@
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
     <Compile Include="BLL_Service\ContractBLL_SV.cs" />
+    <Compile Include="BLL_Service\DeleteDichVuBLL.cs" />
+    <Compile Include="BLL_Service\InsertServiceBLL.cs" />
     <Compile Include="BLL_Service\KhachHangBLL.cs" />
     <Compile Include="BLL_Service\ServiceBLL.cs" />
+    <Compile Include="BLL_Service\ServiceUsageBLL.cs" />
+    <Compile Include="BLL_Service\UserService.cs" />
     <Compile Include="ContractBLL.cs" />
     <Compile Include="RoomBLL.cs" />
     <Compile Include="HouseBLL.cs" />

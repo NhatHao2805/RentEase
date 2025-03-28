@@ -243,3 +243,5 @@ D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.exe
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.pdb
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
