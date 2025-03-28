@@ -104,14 +104,8 @@
   <ItemGroup>
     <Compile Include="AccountAccess.cs" />
     <Compile Include="ContractAccess.cs" />
-    <Compile Include="DAL_Service\ContractAccess.cs" />
-    <Compile Include="DAL_Service\DeleteTenantService.cs" />
-    <Compile Include="DAL_Service\DichVuDAL.cs" />
-    <Compile Include="DAL_Service\InsertServiceDAL.cs" />
-    <Compile Include="DAL_Service\KhachHangAccess.cs" />
-    <Compile Include="DAL_Service\ServiceUsageDAL.cs" />
-    <Compile Include="DAL_Service\UpdatePriceDAL.cs" />
-    <Compile Include="DAL_Service\UserServiceDAL.cs" />
+    <Compile Include="QuanLyphuongtien\ParkingAreaAccess.cs" />
+    <Compile Include="QuanLyphuongtien\PaymentAccess.cs" />
     <Compile Include="RoomAccess.cs" />
     <Compile Include="HouseAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />

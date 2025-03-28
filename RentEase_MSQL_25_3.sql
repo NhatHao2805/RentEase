@@ -291,7 +291,7 @@ CREATE TABLE TEMPORARY_RESIDENCE (
 /*==============================================================*/
 CREATE TABLE USE_SERVICE (
     TENANTID            VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
-    SERVICEID			VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
+	SERVICEID			VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     START_DATE          DATE COMMENT 'Ngày bắt đầu sử dụng',
     END_DATE            DATE COMMENT 'Ngày kết thúc sử dụng',
     PRIMARY KEY (TENANTID, SERVICEID)
