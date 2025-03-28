@@ -245,3 +245,9 @@ D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.pdb
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+D:\RentEase\GUI\obj\Debug\GUI.Form_AddContract.resources
+D:\RentEase\GUI\obj\Debug\GUI.Form_SignUp.resources
+D:\RentEase\GUI\obj\Debug\GUI.Form_Login.resources
+D:\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+D:\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+D:\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources

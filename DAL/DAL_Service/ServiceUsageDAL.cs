@@ -29,14 +29,29 @@ namespace DAL.DAL_Service
                         cmd.Parameters.AddWithValue("@StartDate", serviceUsage.StartDate);
                         cmd.Parameters.AddWithValue("@EndDate", serviceUsage.EndDate);
 
-                        return cmd.ExecuteNonQuery() > 0;
+                        try {
+                            return cmd.ExecuteNonQuery() > 0;
+                        }
+                        catch (MySqlException sqlEx)
+                        {
+                            // Nếu lỗi là duplicate key, nghĩa là tenant đã đăng ký dịch vụ này
+                            if (sqlEx.Number == 1062) // Mã lỗi Duplicate Entry
+                            {
+                                Console.WriteLine("Duplicate entry: " + sqlEx.Message);
+                                return false;
+                            }
+                            
+                            // Các lỗi khác
+                            Console.WriteLine("SQL Error: " + sqlEx.Message);
+                            return false;
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    return false; // Nếu có lỗi, cứ cho là đã tồn tại để tránh insert sai
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
                 }
-               
             }
         }
 

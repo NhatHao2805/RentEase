@@ -23,8 +23,8 @@ namespace GUI.GUI_Service
             this.parentForm = parent;
         }
         private KhachHangBLL khachHangBLL = new KhachHangBLL();
-        private PhongBLL phongBLL = new PhongBLL();
-        private DichVuBLL dichVuBLL = new DichVuBLL();
+        private BLL.BLL_Service.PhongBLL phongBLL = new BLL.BLL_Service.PhongBLL();
+        private BLL.BLL_Service.DichVuBLL dichVuBLL = new BLL.BLL_Service.DichVuBLL();
 
         public void AddService_Load(object sender, EventArgs e)
         {
@@ -86,7 +86,7 @@ namespace GUI.GUI_Service
         }
         //todo: fix lai cai dgvServiceInfo
         //todo: fix ham ben duoi ( chi truyen vao 2 cai, BE se xu ly lay gia tri cua cai con lai)
-        private ServiceUsageBLL serviceUsageBLL = new ServiceUsageBLL();
+        private BLL.BLL_Service.ServiceUsageBLL serviceUsageBLL = new BLL.BLL_Service.ServiceUsageBLL();
         //private void btnDangKy_Click(object sender, EventArgs e)
         //{
         //    string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox

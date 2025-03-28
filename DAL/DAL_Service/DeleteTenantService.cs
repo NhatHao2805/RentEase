@@ -15,23 +15,38 @@ namespace DAL.DAL_Service
         {
             using (MySqlConnection conn = MySqlConnectionData.Connect())
             {
-                if (conn.State == ConnectionState.Closed)
+                try
                 {
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+
+                    using (MySqlCommand cmd = new MySqlCommand("DeleteTenantService", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure; // Không cần CALL
+
+                        cmd.Parameters.AddWithValue("p_TenantID", serviceUsage1.TenantID);
+                        cmd.Parameters.AddWithValue("p_ServiceID", serviceUsage1.ServiceID);
+
+                        try
+                        {
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            return rowsAffected > 0; // Trả về true nếu xóa thành công (có dòng bị ảnh hưởng)
+                        }
+                        catch (MySqlException sqlEx)
+                        {
+                            Console.WriteLine("SQL Error when deleting: " + sqlEx.Message);
+                            return false;
+                        }
+                    }
                 }
-
-                using (MySqlCommand cmd = new MySqlCommand("DeleteTenantService", conn))
+                catch (Exception ex)
                 {
-                    cmd.CommandType = CommandType.StoredProcedure; // Không cần CALL
-
-                    cmd.Parameters.AddWithValue("p_TenantID", serviceUsage1.TenantID);
-                    cmd.Parameters.AddWithValue("p_ServiceID", serviceUsage1.ServiceID);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0; // Trả về true nếu xóa thành công
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
                 }
             }
-
         }
     }
 }

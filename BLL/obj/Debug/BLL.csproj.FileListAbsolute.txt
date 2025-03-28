@@ -1,0 +1,4 @@
+D:\RentEase\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\RentEase\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\RentEase\BLL\obj\Debug\BLL.dll
+D:\RentEase\BLL\obj\Debug\BLL.pdb
