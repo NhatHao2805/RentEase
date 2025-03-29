@@ -10,68 +10,174 @@ namespace BLL
 {
     public class RoomBLL
     {
-        RoomAccess roomAccess = new RoomAccess();
-
-        public DataTable LoadRoom()
+        public static DataTable RoomBLL_load_Room(string Username)
         {
-            return roomAccess.getRoom();
+            return RoomAccess.LoadRoomByUser(Username);
         }
 
         public string CheckLogic(Room room)
         {
-            // Kiểm tra nghiệp vụ
-            if (string.IsNullOrWhiteSpace(room.roomID) || room.roomID == "  ID phòng")
+            if (string.IsNullOrEmpty(room.BuildingId))
             {
-                return "required_roomid";
+                return "required_buildingid";
             }
 
-            if (string.IsNullOrWhiteSpace(room.price) || room.price == "  Giá")
+            if (string.IsNullOrEmpty(room.Floor))
+            {
+                return "required_floor";
+            }
+
+            if (string.IsNullOrEmpty(room.Type))
+            {
+                return "required_type";
+            }
+
+            if (string.IsNullOrEmpty(room.Area))
+            {
+                return "required_area";
+            }
+            else
+            {
+                if (!decimal.TryParse(room.Area, out decimal areaValue) || areaValue <= 0)
+                {
+                    return "invalid_area_format";
+                }
+            }
+
+            if (string.IsNullOrEmpty(room.Price))
             {
                 return "required_price";
             }
 
-            if (string.IsNullOrWhiteSpace(room.area) || room.area == "  Diện tích")
+            else
+            {
+                if (!decimal.TryParse(room.Price, out decimal priceValue) || priceValue <= 0)
+                {
+                    return "invalid_price_format";
+                }
+            }
+
+            if(room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") < room.Status.IndexOf("Đang trống"))
+            {
+                return "Không thể vừa 'Đang ở' vừa 'Đang trống'.";
+            }
+
+            if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") > room.Status.IndexOf("Đang trống"))
+            {
+                return "Không thể vừa 'Đang trống' vừa 'Đang ở'.";
+            }
+
+            if (room.Status.Contains("Đang cọc giữ chỗ") && room.Status.Contains("Đang báo kết thúc") && room.Status.IndexOf("Đang cọc giữ chỗ") < room.Status.IndexOf("Đang báo kết thúc"))
+            {
+                return "Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang báo kết thúc'.";
+            }
+
+            if (room.Status.Contains("Đang cọc giữ chỗ") && room.Status.Contains("Đang báo kết thúc") && room.Status.IndexOf("Đang cọc giữ chỗ") > room.Status.IndexOf("Đang báo kết thúc"))
+            {
+                return "Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.";
+            }
+
+            if (room.Status.Contains("Đã quá hạn hợp đồng") && room.Status.Contains("Sắp hết hạn hợp đồng") && room.Status.IndexOf("Đã quá hạn hợp đồng") < room.Status.IndexOf("Sắp hết hạn hợp đồng"))
+            {
+                return "Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.";
+            }
+
+            if (room.Status.Contains("Đã quá hạn hợp đồng") && room.Status.Contains("Sắp hết hạn hợp đồng") && room.Status.IndexOf("Đã quá hạn hợp đồng") > room.Status.IndexOf("Sắp hết hạn hợp đồng"))
+            {
+                return "Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.";
+            }
+
+            string infor = RoomAccess.AddRoom(room);
+            return infor;
+        }
+
+        public static string UpdateRoom(Room room)
+        {
+            if (string.IsNullOrEmpty(room.Area))
             {
                 return "required_area";
             }
-
-            if (string.IsNullOrWhiteSpace(room.lastMaintenanceDate))
+            else
             {
-                return "required_last_maintenance_date";
+                if (!decimal.TryParse(room.Area, out decimal areaValue) || areaValue <= 0)
+                {
+                    return "invalid_area_format";
+                }
             }
 
-            string info = roomAccess.addRoom(room);
-            return info;
+            if (string.IsNullOrEmpty(room.Price))
+            {
+                return "required_price";
+            }
+
+            else
+            {
+                if (!decimal.TryParse(room.Price, out decimal priceValue) || priceValue <= 0)
+                {
+                    return "invalid_price_format";
+                }
+            }
+
+            if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") < room.Status.IndexOf("Đang trống"))
+            {
+                return "Không thể vừa 'Đang ở' vừa 'Đang trống'.";
+            }
+
+            if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") > room.Status.IndexOf("Đang trống"))
+            {
+                return "Không thể vừa 'Đang trống' vừa 'Đang ở'.";
+            }
+
+            if (room.Status.Contains("Đang cọc giữ chỗ") && room.Status.Contains("Đang báo kết thúc") && room.Status.IndexOf("Đang cọc giữ chỗ") < room.Status.IndexOf("Đang báo kết thúc"))
+            {
+                return "Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang báo kết thúc'.";
+            }
+
+            if (room.Status.Contains("Đang cọc giữ chỗ") && room.Status.Contains("Đang báo kết thúc") && room.Status.IndexOf("Đang cọc giữ chỗ") > room.Status.IndexOf("Đang báo kết thúc"))
+            {
+                return "Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.";
+            }
+
+            if (room.Status.Contains("Đã quá hạn hợp đồng") && room.Status.Contains("Sắp hết hạn hợp đồng") && room.Status.IndexOf("Đã quá hạn hợp đồng") < room.Status.IndexOf("Sắp hết hạn hợp đồng"))
+            {
+                return "Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.";
+            }
+
+            if (room.Status.Contains("Đã quá hạn hợp đồng") && room.Status.Contains("Sắp hết hạn hợp đồng") && room.Status.IndexOf("Đã quá hạn hợp đồng") > room.Status.IndexOf("Sắp hết hạn hợp đồng"))
+            {
+                return "Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.";
+            }
+
+            string infor = RoomAccess.UpdateRoom(room);
+            return infor;
         }
 
-        public DataTable FilterRoomByStatus(string status)
+        public static (bool success, string message) DeleteRoom(string roomId)
         {
-            DataTable allRooms = roomAccess.getRoom();
-
-            string[] statuses = status.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-
-            DataTable filteredTable = allRooms.Clone();
-            foreach (DataRow row in allRooms.Rows)
+            return RoomAccess.DeleteRoom(roomId);
+        }
+        public static DataTable FilterRoomByStatus(string status, string UserName)
+        {
+            if (string.IsNullOrEmpty(status))
             {
-                string roomStatus = row["STATUS"].ToString();
-
-                bool isMatch = true;
-                foreach (var s in statuses)
-                {
-                    if (!roomStatus.Contains(s.Trim()))
-                    {
-                        isMatch = false;
-                        break;
-                    }
-                }
-
-                if (isMatch)
-                {
-                    filteredTable.ImportRow(row);
-                }
+                return RoomBLL_load_Room(UserName);
             }
 
-            return filteredTable;
+            return RoomAccess.FilterRoomByStatus(status, UserName);
+        }
+
+
+        public static DataTable LoadBuildingID(string username)
+        {
+            return RoomAccess.LoadBuildingID(username);
+        }
+        public static int LoadFloorByBuildingID(string buildingID)
+        {
+            return RoomAccess.LoadFloorByBuildingID(buildingID);
+        }
+        public static DataTable LoadRoomIdByBuildingID(string buildingID)
+        {
+            return RoomAccess.LoadRoomIdByBuildingID(buildingID);
         }
 
     }

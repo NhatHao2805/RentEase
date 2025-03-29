@@ -28,197 +28,323 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.add_btn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.assetID_tb = new System.Windows.Forms.TextBox();
-            this.assetName_tb = new System.Windows.Forms.TextBox();
-            this.price_tb = new System.Windows.Forms.TextBox();
-            this.roomID_cb = new System.Windows.Forms.ComboBox();
-            this.status_cb = new System.Windows.Forms.ComboBox();
-            this.useDate_dtpicker = new System.Windows.Forms.DateTimePicker();
-            this.selectAll_chbox = new System.Windows.Forms.CheckBox();
-            this.roomID_chlistbox = new System.Windows.Forms.CheckedListBox();
+            this.components = new System.ComponentModel.Container();
+            this.convenient_tb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.abc = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.buildingid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.SapHetHan_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.DaHetHan_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.DangO_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.DangCoc_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.DangKT_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.DangNoTien_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.add_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.DangTrong_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.price_tb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SuspendLayout();
+            // 
+            // convenient_tb
+            // 
+            this.convenient_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.convenient_tb.DefaultText = "";
+            this.convenient_tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.convenient_tb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.convenient_tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.convenient_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.convenient_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.convenient_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.convenient_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.convenient_tb.Location = new System.Drawing.Point(207, 102);
+            this.convenient_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.convenient_tb.Name = "convenient_tb";
+            this.convenient_tb.PlaceholderText = "";
+            this.convenient_tb.SelectedText = "";
+            this.convenient_tb.Size = new System.Drawing.Size(357, 36);
+            this.convenient_tb.TabIndex = 95;
+            // 
+            // abc
+            // 
+            this.abc.BackColor = System.Drawing.Color.Transparent;
+            this.abc.Location = new System.Drawing.Point(54, 50);
+            this.abc.Name = "abc";
+            this.abc.Size = new System.Drawing.Size(63, 18);
+            this.abc.TabIndex = 94;
+            this.abc.Text = "Mã phòng";
+            // 
+            // buildingid_cb
+            // 
+            this.buildingid_cb.BackColor = System.Drawing.Color.Transparent;
+            this.buildingid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.buildingid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.buildingid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.buildingid_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.buildingid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.buildingid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.buildingid_cb.ItemHeight = 30;
+            this.buildingid_cb.Location = new System.Drawing.Point(207, 41);
+            this.buildingid_cb.Name = "buildingid_cb";
+            this.buildingid_cb.Size = new System.Drawing.Size(357, 36);
+            this.buildingid_cb.TabIndex = 93;
+            // 
+            // SapHetHan_chbox
+            // 
+            this.SapHetHan_chbox.AutoSize = true;
+            this.SapHetHan_chbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SapHetHan_chbox.CheckedState.BorderRadius = 0;
+            this.SapHetHan_chbox.CheckedState.BorderThickness = 0;
+            this.SapHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.SapHetHan_chbox.Location = new System.Drawing.Point(404, 393);
+            this.SapHetHan_chbox.Name = "SapHetHan_chbox";
+            this.SapHetHan_chbox.Size = new System.Drawing.Size(160, 20);
+            this.SapHetHan_chbox.TabIndex = 90;
+            this.SapHetHan_chbox.Text = "Sắp hết hạn hợp đồng";
+            this.SapHetHan_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.SapHetHan_chbox.UncheckedState.BorderRadius = 0;
+            this.SapHetHan_chbox.UncheckedState.BorderThickness = 0;
+            this.SapHetHan_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // DaHetHan_chbox
+            // 
+            this.DaHetHan_chbox.AutoSize = true;
+            this.DaHetHan_chbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DaHetHan_chbox.CheckedState.BorderRadius = 0;
+            this.DaHetHan_chbox.CheckedState.BorderThickness = 0;
+            this.DaHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DaHetHan_chbox.Location = new System.Drawing.Point(207, 393);
+            this.DaHetHan_chbox.Name = "DaHetHan_chbox";
+            this.DaHetHan_chbox.Size = new System.Drawing.Size(152, 20);
+            this.DaHetHan_chbox.TabIndex = 91;
+            this.DaHetHan_chbox.Text = "Đã hết hạn hợp đồng";
+            this.DaHetHan_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DaHetHan_chbox.UncheckedState.BorderRadius = 0;
+            this.DaHetHan_chbox.UncheckedState.BorderThickness = 0;
+            this.DaHetHan_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // DangO_chbox
+            // 
+            this.DangO_chbox.AutoSize = true;
+            this.DangO_chbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangO_chbox.CheckedState.BorderRadius = 0;
+            this.DangO_chbox.CheckedState.BorderThickness = 0;
+            this.DangO_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangO_chbox.Location = new System.Drawing.Point(207, 297);
+            this.DangO_chbox.Name = "DangO_chbox";
+            this.DangO_chbox.Size = new System.Drawing.Size(72, 20);
+            this.DangO_chbox.TabIndex = 86;
+            this.DangO_chbox.Text = "Đang ở";
+            this.DangO_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangO_chbox.UncheckedState.BorderRadius = 0;
+            this.DangO_chbox.UncheckedState.BorderThickness = 0;
+            this.DangO_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // DangCoc_chbox
+            // 
+            this.DangCoc_chbox.AutoSize = true;
+            this.DangCoc_chbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangCoc_chbox.CheckedState.BorderRadius = 0;
+            this.DangCoc_chbox.CheckedState.BorderThickness = 0;
+            this.DangCoc_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangCoc_chbox.Location = new System.Drawing.Point(432, 346);
+            this.DangCoc_chbox.Name = "DangCoc_chbox";
+            this.DangCoc_chbox.Size = new System.Drawing.Size(132, 20);
+            this.DangCoc_chbox.TabIndex = 89;
+            this.DangCoc_chbox.Text = "Đang cọc giữ chỗ";
+            this.DangCoc_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangCoc_chbox.UncheckedState.BorderRadius = 0;
+            this.DangCoc_chbox.UncheckedState.BorderThickness = 0;
+            this.DangCoc_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // DangKT_chbox
+            // 
+            this.DangKT_chbox.AutoSize = true;
+            this.DangKT_chbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangKT_chbox.CheckedState.BorderRadius = 0;
+            this.DangKT_chbox.CheckedState.BorderThickness = 0;
+            this.DangKT_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangKT_chbox.Location = new System.Drawing.Point(207, 346);
+            this.DangKT_chbox.Name = "DangKT_chbox";
+            this.DangKT_chbox.Size = new System.Drawing.Size(136, 20);
+            this.DangKT_chbox.TabIndex = 88;
+            this.DangKT_chbox.Text = "Đang báo kết thúc";
+            this.DangKT_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangKT_chbox.UncheckedState.BorderRadius = 0;
+            this.DangKT_chbox.UncheckedState.BorderThickness = 0;
+            this.DangKT_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // DangNoTien_chbox
+            // 
+            this.DangNoTien_chbox.AutoSize = true;
+            this.DangNoTien_chbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangNoTien_chbox.CheckedState.BorderRadius = 0;
+            this.DangNoTien_chbox.CheckedState.BorderThickness = 0;
+            this.DangNoTien_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangNoTien_chbox.Location = new System.Drawing.Point(461, 297);
+            this.DangNoTien_chbox.Name = "DangNoTien_chbox";
+            this.DangNoTien_chbox.Size = new System.Drawing.Size(103, 20);
+            this.DangNoTien_chbox.TabIndex = 92;
+            this.DangNoTien_chbox.Text = "Đang nợ tiền";
+            this.DangNoTien_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangNoTien_chbox.UncheckedState.BorderRadius = 0;
+            this.DangNoTien_chbox.UncheckedState.BorderThickness = 0;
+            this.DangNoTien_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(277, 434);
+            this.add_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.add_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.add_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.add_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.add_btn.ForeColor = System.Drawing.Color.White;
+            this.add_btn.Location = new System.Drawing.Point(207, 437);
             this.add_btn.Name = "add_btn";
-            this.add_btn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.add_btn.Size = new System.Drawing.Size(80, 27);
-            this.add_btn.TabIndex = 0;
-            this.add_btn.Text = "Thêm";
-            this.add_btn.UseVisualStyleBackColor = true;
-            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
+            this.add_btn.Size = new System.Drawing.Size(180, 45);
+            this.add_btn.TabIndex = 85;
+            this.add_btn.Text = "Tạo";
             // 
-            // label1
+            // guna2HtmlLabel10
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mã tài sản";
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(54, 299);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(63, 18);
+            this.guna2HtmlLabel10.TabIndex = 84;
+            this.guna2HtmlLabel10.Text = "Trạng thái";
             // 
-            // label2
+            // DangTrong_chbox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tên tài sản";
+            this.DangTrong_chbox.AutoSize = true;
+            this.DangTrong_chbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangTrong_chbox.CheckedState.BorderRadius = 0;
+            this.DangTrong_chbox.CheckedState.BorderThickness = 0;
+            this.DangTrong_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.DangTrong_chbox.Location = new System.Drawing.Point(325, 297);
+            this.DangTrong_chbox.Name = "DangTrong_chbox";
+            this.DangTrong_chbox.Size = new System.Drawing.Size(94, 20);
+            this.DangTrong_chbox.TabIndex = 87;
+            this.DangTrong_chbox.Text = "Đang trống";
+            this.DangTrong_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangTrong_chbox.UncheckedState.BorderRadius = 0;
+            this.DangTrong_chbox.UncheckedState.BorderThickness = 0;
+            this.DangTrong_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
-            // label3
+            // guna2HtmlLabel8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 260);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Mã phòng";
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(54, 176);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(37, 18);
+            this.guna2HtmlLabel8.TabIndex = 83;
+            this.guna2HtmlLabel8.Text = "Giá trị";
             // 
-            // label4
+            // guna2HtmlLabel2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 134);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 16);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Giá (VND)";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 197);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 16);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Tình trạng";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 348);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 16);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Ngày đưa vào sử dụng";
-            // 
-            // assetID_tb
-            // 
-            this.assetID_tb.Location = new System.Drawing.Point(111, 18);
-            this.assetID_tb.Name = "assetID_tb";
-            this.assetID_tb.Size = new System.Drawing.Size(246, 22);
-            this.assetID_tb.TabIndex = 8;
-            // 
-            // assetName_tb
-            // 
-            this.assetName_tb.Location = new System.Drawing.Point(111, 71);
-            this.assetName_tb.Name = "assetName_tb";
-            this.assetName_tb.Size = new System.Drawing.Size(246, 22);
-            this.assetName_tb.TabIndex = 9;
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(54, 111);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 18);
+            this.guna2HtmlLabel2.TabIndex = 81;
+            this.guna2HtmlLabel2.Text = "Tên tài sản";
             // 
             // price_tb
             // 
-            this.price_tb.Location = new System.Drawing.Point(111, 131);
+            this.price_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.price_tb.DefaultText = "";
+            this.price_tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.price_tb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.price_tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.price_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.price_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.price_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.price_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.price_tb.Location = new System.Drawing.Point(207, 167);
+            this.price_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.price_tb.Name = "price_tb";
-            this.price_tb.Size = new System.Drawing.Size(246, 22);
-            this.price_tb.TabIndex = 10;
+            this.price_tb.PlaceholderText = "";
+            this.price_tb.SelectedText = "";
+            this.price_tb.Size = new System.Drawing.Size(357, 36);
+            this.price_tb.TabIndex = 79;
             // 
-            // roomID_cb
+            // guna2DateTimePicker1
             // 
-            this.roomID_cb.FormattingEnabled = true;
-            this.roomID_cb.Location = new System.Drawing.Point(111, 239);
-            this.roomID_cb.Name = "roomID_cb";
-            this.roomID_cb.Size = new System.Drawing.Size(246, 24);
-            this.roomID_cb.TabIndex = 11;
+            this.guna2DateTimePicker1.Checked = true;
+            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(207, 230);
+            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
+            this.guna2DateTimePicker1.Size = new System.Drawing.Size(357, 36);
+            this.guna2DateTimePicker1.TabIndex = 96;
+            this.guna2DateTimePicker1.Value = new System.DateTime(2025, 3, 29, 3, 52, 29, 826);
             // 
-            // status_cb
+            // guna2HtmlLabel1
             // 
-            this.status_cb.FormattingEnabled = true;
-            this.status_cb.Location = new System.Drawing.Point(111, 194);
-            this.status_cb.Name = "status_cb";
-            this.status_cb.Size = new System.Drawing.Size(246, 24);
-            this.status_cb.TabIndex = 12;
-            // 
-            // useDate_dtpicker
-            // 
-            this.useDate_dtpicker.Location = new System.Drawing.Point(111, 378);
-            this.useDate_dtpicker.Name = "useDate_dtpicker";
-            this.useDate_dtpicker.Size = new System.Drawing.Size(246, 22);
-            this.useDate_dtpicker.TabIndex = 15;
-            // 
-            // selectAll_chbox
-            // 
-            this.selectAll_chbox.AutoSize = true;
-            this.selectAll_chbox.Location = new System.Drawing.Point(111, 304);
-            this.selectAll_chbox.Name = "selectAll_chbox";
-            this.selectAll_chbox.Size = new System.Drawing.Size(95, 20);
-            this.selectAll_chbox.TabIndex = 16;
-            this.selectAll_chbox.Text = "Chọn tất cả";
-            this.selectAll_chbox.UseVisualStyleBackColor = true;
-            this.selectAll_chbox.CheckedChanged += new System.EventHandler(this.selectAll_chbox_CheckedChanged);
-            // 
-            // roomID_chlistbox
-            // 
-            this.roomID_chlistbox.FormattingEnabled = true;
-            this.roomID_chlistbox.Location = new System.Drawing.Point(111, 260);
-            this.roomID_chlistbox.Name = "roomID_chlistbox";
-            this.roomID_chlistbox.Size = new System.Drawing.Size(246, 38);
-            this.roomID_chlistbox.TabIndex = 17;
-            this.roomID_chlistbox.SelectedIndexChanged += new System.EventHandler(this.roomID_chlistbox_SelectedIndexChanged);
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(54, 239);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(109, 18);
+            this.guna2HtmlLabel1.TabIndex = 97;
+            this.guna2HtmlLabel1.Text = "Thời gian sử dụng";
             // 
             // Form_AddAssets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 486);
-            this.Controls.Add(this.roomID_chlistbox);
-            this.Controls.Add(this.selectAll_chbox);
-            this.Controls.Add(this.useDate_dtpicker);
-            this.Controls.Add(this.status_cb);
-            this.Controls.Add(this.roomID_cb);
-            this.Controls.Add(this.price_tb);
-            this.Controls.Add(this.assetName_tb);
-            this.Controls.Add(this.assetID_tb);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(628, 510);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.guna2DateTimePicker1);
+            this.Controls.Add(this.convenient_tb);
+            this.Controls.Add(this.abc);
+            this.Controls.Add(this.buildingid_cb);
+            this.Controls.Add(this.SapHetHan_chbox);
+            this.Controls.Add(this.DaHetHan_chbox);
+            this.Controls.Add(this.DangO_chbox);
+            this.Controls.Add(this.DangCoc_chbox);
+            this.Controls.Add(this.DangKT_chbox);
+            this.Controls.Add(this.DangNoTien_chbox);
             this.Controls.Add(this.add_btn);
+            this.Controls.Add(this.guna2HtmlLabel10);
+            this.Controls.Add(this.DangTrong_chbox);
+            this.Controls.Add(this.guna2HtmlLabel8);
+            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.price_tb);
             this.Name = "Form_AddAssets";
-            this.ShowIcon = false;
-            this.Text = "Thêm tài sản";
-            this.Load += new System.EventHandler(this.Form_AddAssets_Load);
+            this.Text = "Form_AddAssets";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button add_btn;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox assetID_tb;
-        private System.Windows.Forms.TextBox assetName_tb;
-        private System.Windows.Forms.TextBox price_tb;
-        private System.Windows.Forms.ComboBox roomID_cb;
-        private System.Windows.Forms.ComboBox status_cb;
-        private System.Windows.Forms.DateTimePicker useDate_dtpicker;
-        private System.Windows.Forms.CheckBox selectAll_chbox;
-        private System.Windows.Forms.CheckedListBox roomID_chlistbox;
+        private Guna.UI2.WinForms.Guna2TextBox convenient_tb;
+        private Guna.UI2.WinForms.Guna2HtmlLabel abc;
+        private Guna.UI2.WinForms.Guna2ComboBox buildingid_cb;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private Guna.UI2.WinForms.Guna2CheckBox SapHetHan_chbox;
+        private Guna.UI2.WinForms.Guna2CheckBox DaHetHan_chbox;
+        private Guna.UI2.WinForms.Guna2CheckBox DangO_chbox;
+        private Guna.UI2.WinForms.Guna2CheckBox DangCoc_chbox;
+        private Guna.UI2.WinForms.Guna2CheckBox DangKT_chbox;
+        private Guna.UI2.WinForms.Guna2CheckBox DangNoTien_chbox;
+        private Guna.UI2.WinForms.Guna2Button add_btn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2CheckBox DangTrong_chbox;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2TextBox price_tb;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }
