@@ -87,14 +87,14 @@ namespace GUI
             this.button35 = new System.Windows.Forms.Button();
             this.button36 = new System.Windows.Forms.Button();
             this.dgv_QLP = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.DangNoTien_chbox = new System.Windows.Forms.CheckBox();
+            this.DangCoc_chbox = new System.Windows.Forms.CheckBox();
+            this.DangTrong_chbox = new System.Windows.Forms.CheckBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.SapHetHan_chbox = new System.Windows.Forms.CheckBox();
+            this.DaQuaHan_chbox = new System.Windows.Forms.CheckBox();
+            this.DangKT_chbox = new System.Windows.Forms.CheckBox();
+            this.DangO_chbox = new System.Windows.Forms.CheckBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabHopDong = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -546,14 +546,14 @@ namespace GUI
             this.groupBox9.Controls.Add(this.button35);
             this.groupBox9.Controls.Add(this.button36);
             this.groupBox9.Controls.Add(this.dgv_QLP);
-            this.groupBox9.Controls.Add(this.checkBox11);
-            this.groupBox9.Controls.Add(this.checkBox10);
-            this.groupBox9.Controls.Add(this.checkBox9);
+            this.groupBox9.Controls.Add(this.DangNoTien_chbox);
+            this.groupBox9.Controls.Add(this.DangCoc_chbox);
+            this.groupBox9.Controls.Add(this.DangTrong_chbox);
             this.groupBox9.Controls.Add(this.pictureBox7);
-            this.groupBox9.Controls.Add(this.checkBox5);
-            this.groupBox9.Controls.Add(this.checkBox6);
-            this.groupBox9.Controls.Add(this.checkBox7);
-            this.groupBox9.Controls.Add(this.checkBox8);
+            this.groupBox9.Controls.Add(this.SapHetHan_chbox);
+            this.groupBox9.Controls.Add(this.DaQuaHan_chbox);
+            this.groupBox9.Controls.Add(this.DangKT_chbox);
+            this.groupBox9.Controls.Add(this.DangO_chbox);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(6, 10);
             this.groupBox9.Name = "groupBox9";
@@ -572,6 +572,7 @@ namespace GUI
             this.button29.Text = "Xóa";
             this.button29.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
             // button32
             // 
@@ -583,6 +584,7 @@ namespace GUI
             this.button32.Text = "Sửa";
             this.button32.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // button33
             // 
@@ -594,6 +596,7 @@ namespace GUI
             this.button33.Text = "Xem lịch sử thuê phòng";
             this.button33.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
             // 
             // button35
             // 
@@ -605,6 +608,7 @@ namespace GUI
             this.button35.Text = "Thêm";
             this.button35.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button35.UseVisualStyleBackColor = true;
+            this.button35.Click += new System.EventHandler(this.button35_Click);
             // 
             // button36
             // 
@@ -615,6 +619,7 @@ namespace GUI
             this.button36.TabIndex = 44;
             this.button36.Text = "Xuất sang Excel";
             this.button36.UseVisualStyleBackColor = true;
+            this.button36.Click += new System.EventHandler(this.button36_Click);
             // 
             // dgv_QLP
             // 
@@ -670,38 +675,41 @@ namespace GUI
             this.dgv_QLP.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_QLP.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // checkBox11
+            // DangNoTien_chbox
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox11.Location = new System.Drawing.Point(582, 127);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(113, 22);
-            this.checkBox11.TabIndex = 8;
-            this.checkBox11.Text = "Đang nợ tiền";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.DangNoTien_chbox.AutoSize = true;
+            this.DangNoTien_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangNoTien_chbox.Location = new System.Drawing.Point(582, 127);
+            this.DangNoTien_chbox.Name = "DangNoTien_chbox";
+            this.DangNoTien_chbox.Size = new System.Drawing.Size(113, 22);
+            this.DangNoTien_chbox.TabIndex = 8;
+            this.DangNoTien_chbox.Text = "Đang nợ tiền";
+            this.DangNoTien_chbox.UseVisualStyleBackColor = true;
+            this.DangNoTien_chbox.CheckedChanged += new System.EventHandler(this.DangNoTien_chbox_CheckedChanged);
             // 
-            // checkBox10
+            // DangCoc_chbox
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox10.Location = new System.Drawing.Point(210, 152);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(146, 22);
-            this.checkBox10.TabIndex = 7;
-            this.checkBox10.Text = "Đang cọc giữ chỗ";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.DangCoc_chbox.AutoSize = true;
+            this.DangCoc_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangCoc_chbox.Location = new System.Drawing.Point(210, 152);
+            this.DangCoc_chbox.Name = "DangCoc_chbox";
+            this.DangCoc_chbox.Size = new System.Drawing.Size(146, 22);
+            this.DangCoc_chbox.TabIndex = 7;
+            this.DangCoc_chbox.Text = "Đang cọc giữ chỗ";
+            this.DangCoc_chbox.UseVisualStyleBackColor = true;
+            this.DangCoc_chbox.CheckedChanged += new System.EventHandler(this.DangCoc_chbox_CheckedChanged);
             // 
-            // checkBox9
+            // DangTrong_chbox
             // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox9.Location = new System.Drawing.Point(76, 152);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(103, 22);
-            this.checkBox9.TabIndex = 6;
-            this.checkBox9.Text = "Đang trống";
-            this.checkBox9.UseVisualStyleBackColor = true;
+            this.DangTrong_chbox.AutoSize = true;
+            this.DangTrong_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangTrong_chbox.Location = new System.Drawing.Point(76, 152);
+            this.DangTrong_chbox.Name = "DangTrong_chbox";
+            this.DangTrong_chbox.Size = new System.Drawing.Size(103, 22);
+            this.DangTrong_chbox.TabIndex = 6;
+            this.DangTrong_chbox.Text = "Đang trống";
+            this.DangTrong_chbox.UseVisualStyleBackColor = true;
+            this.DangTrong_chbox.CheckedChanged += new System.EventHandler(this.DangTrong_chbox_CheckedChanged);
             // 
             // pictureBox7
             // 
@@ -713,49 +721,53 @@ namespace GUI
             this.pictureBox7.TabIndex = 5;
             this.pictureBox7.TabStop = false;
             // 
-            // checkBox5
+            // SapHetHan_chbox
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(383, 125);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(174, 22);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Sắp hết hạn hợp đồng";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.SapHetHan_chbox.AutoSize = true;
+            this.SapHetHan_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SapHetHan_chbox.Location = new System.Drawing.Point(383, 125);
+            this.SapHetHan_chbox.Name = "SapHetHan_chbox";
+            this.SapHetHan_chbox.Size = new System.Drawing.Size(174, 22);
+            this.SapHetHan_chbox.TabIndex = 4;
+            this.SapHetHan_chbox.Text = "Sắp hết hạn hợp đồng";
+            this.SapHetHan_chbox.UseVisualStyleBackColor = true;
+            this.SapHetHan_chbox.CheckedChanged += new System.EventHandler(this.SapHetHan_chbox_CheckedChanged);
             // 
-            // checkBox6
+            // DaQuaHan_chbox
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(383, 152);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(171, 22);
-            this.checkBox6.TabIndex = 3;
-            this.checkBox6.Text = "Đã quá hạn hợp đồng";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.DaQuaHan_chbox.AutoSize = true;
+            this.DaQuaHan_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DaQuaHan_chbox.Location = new System.Drawing.Point(383, 152);
+            this.DaQuaHan_chbox.Name = "DaQuaHan_chbox";
+            this.DaQuaHan_chbox.Size = new System.Drawing.Size(171, 22);
+            this.DaQuaHan_chbox.TabIndex = 3;
+            this.DaQuaHan_chbox.Text = "Đã quá hạn hợp đồng";
+            this.DaQuaHan_chbox.UseVisualStyleBackColor = true;
+            this.DaQuaHan_chbox.CheckedChanged += new System.EventHandler(this.DaQuaHan_chbox_CheckedChanged);
             // 
-            // checkBox7
+            // DangKT_chbox
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.Location = new System.Drawing.Point(210, 125);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(150, 22);
-            this.checkBox7.TabIndex = 2;
-            this.checkBox7.Text = "Đang báo kết thúc";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.DangKT_chbox.AutoSize = true;
+            this.DangKT_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangKT_chbox.Location = new System.Drawing.Point(210, 125);
+            this.DangKT_chbox.Name = "DangKT_chbox";
+            this.DangKT_chbox.Size = new System.Drawing.Size(150, 22);
+            this.DangKT_chbox.TabIndex = 2;
+            this.DangKT_chbox.Text = "Đang báo kết thúc";
+            this.DangKT_chbox.UseVisualStyleBackColor = true;
+            this.DangKT_chbox.CheckedChanged += new System.EventHandler(this.DangKT_chbox_CheckedChanged);
             // 
-            // checkBox8
+            // DangO_chbox
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox8.Location = new System.Drawing.Point(76, 125);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(78, 22);
-            this.checkBox8.TabIndex = 1;
-            this.checkBox8.Text = "Đang ở";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.DangO_chbox.AutoSize = true;
+            this.DangO_chbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangO_chbox.Location = new System.Drawing.Point(76, 125);
+            this.DangO_chbox.Name = "DangO_chbox";
+            this.DangO_chbox.Size = new System.Drawing.Size(78, 22);
+            this.DangO_chbox.TabIndex = 1;
+            this.DangO_chbox.Text = "Đang ở";
+            this.DangO_chbox.UseVisualStyleBackColor = true;
+            this.DangO_chbox.CheckedChanged += new System.EventHandler(this.DangO_chbox_CheckedChanged);
             // 
             // tabPage2
             // 
@@ -2706,14 +2718,14 @@ namespace GUI
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox DangNoTien_chbox;
+        private System.Windows.Forms.CheckBox DangCoc_chbox;
+        private System.Windows.Forms.CheckBox DangTrong_chbox;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox SapHetHan_chbox;
+        private System.Windows.Forms.CheckBox DaQuaHan_chbox;
+        private System.Windows.Forms.CheckBox DangKT_chbox;
+        private System.Windows.Forms.CheckBox DangO_chbox;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox4;

@@ -345,7 +345,7 @@ namespace GUI
             if (addRoom.ShowDialog() == DialogResult.OK)
             {
                 // Nếu thêmthành công thì load lại dữ liệu
-                loadInfo();
+                load_QLP();
             }
         }
 
@@ -374,7 +374,7 @@ namespace GUI
 
                 if (success)
                 {
-                    loadInfo(); // Load lại dữ liệu sau khi xóa thành công
+                    load_QLP(); // Load lại dữ liệu sau khi xóa thành công
                 }
             }
         }
@@ -413,8 +413,8 @@ namespace GUI
             {
                 RoomId = selectedRow.Cells["RoomID"].Value.ToString(),
                 BuildingId = selectedRow.Cells["BuildingID"].Value.ToString(),
-                Floor = selectedRow.Cells["Floor"].Value?.ToString(),
                 Type = selectedRow.Cells["Type"].Value?.ToString(),
+                Floor = selectedRow.Cells["Floor"].Value?.ToString(),
                 Convenient = selectedRow.Cells["Convenient"].Value?.ToString(),
                 Area = selectedRow.Cells["Area"].Value?.ToString(),
                 Price = selectedRow.Cells["Price"].Value?.ToString(),
@@ -426,7 +426,7 @@ namespace GUI
             if (updateRoom.ShowDialog() == DialogResult.OK)
             {
                 // Nếu cập nhật thành công thì load lại dữ liệu
-                loadInfo();
+                load_QLP();
             }
         }
 
@@ -493,62 +493,62 @@ namespace GUI
         //Hoài An Chỉnh lại bên tên bên phần giao diện (lỗi do sai tên nút)
         private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            //if (DangO_chbox.Checked && DangTrong_chbox.Checked)
-            //{
-            //    MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    DangO_chbox.Checked = false;
-            //}
-            //FilterRoomByStatus();
+            if (DangO_chbox.Checked && DangTrong_chbox.Checked)
+            {
+                MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DangO_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
         }
 
         private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            //if (DangTrong_chbox.Checked && DangO_chbox.Checked)
-            //{
-            //    MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    DangTrong_chbox.Checked = false;
-            //}
-            //FilterRoomByStatus();
+            if (DangTrong_chbox.Checked && DangO_chbox.Checked)
+            {
+                MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DangTrong_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
         }
 
         private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            //if (DangKT_chbox.Checked && DangCoc_chbox.Checked)
-            //{
-            //    MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    DangKT_chbox.Checked = false;
-            //}
-            //FilterRoomByStatus();
+            if (DangKT_chbox.Checked && DangCoc_chbox.Checked)
+            {
+                MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DangKT_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
         }
 
         private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            //if (DangCoc_chbox.Checked && (DangO_chbox.Checked || DangKT_chbox.Checked))
-            //{
-            //    MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang ở' hoặc 'Đang báo kết thúc'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    DangCoc_chbox.Checked = false;
-            //}
-            //FilterRoomByStatus();
+            if (DangCoc_chbox.Checked && (DangO_chbox.Checked || DangKT_chbox.Checked))
+            {
+                MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang ở' hoặc 'Đang báo kết thúc'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DangCoc_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
         }
 
         private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            //if (SapHetHan_chbox.Checked && DaQuaHan_chbox.Checked)
-            //{
-            //    MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    SapHetHan_chbox.Checked = false;
-            //}
-            //FilterRoomByStatus();
+            if (SapHetHan_chbox.Checked && DaQuaHan_chbox.Checked)
+            {
+                MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SapHetHan_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
         }
 
         private void DaQuaHan_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            //if (DaQuaHan_chbox.Checked && SapHetHan_chbox.Checked)
-            //{
-            //    MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    DaQuaHan_chbox.Checked = false;
-            //}
-            //FilterRoomByStatus();
+            if (DaQuaHan_chbox.Checked && SapHetHan_chbox.Checked)
+            {
+                MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DaQuaHan_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
         }
 
         private void DangNoTien_chbox_CheckedChanged(object sender, EventArgs e)
@@ -557,53 +557,161 @@ namespace GUI
         }
         private void FilterRoomByStatus()
         {
-            //try
-            //{
-            //    // Tạo danh sách trạng thái được chọn
-            //    List<string> selectedStatuses = new List<string>();
+            try
+            {
+                // Tạo danh sách trạng thái được chọn
+                List<string> selectedStatuses = new List<string>();
 
-            //    if (DangO_chbox.Checked) selectedStatuses.Add(DangO_chbox.Text);
-            //    if (DangTrong_chbox.Checked) selectedStatuses.Add(DangTrong_chbox.Text);
-            //    if (DangKT_chbox.Checked) selectedStatuses.Add(DangKT_chbox.Text);
-            //    if (DangCoc_chbox.Checked) selectedStatuses.Add(DangCoc_chbox.Text);
-            //    if (SapHetHan_chbox.Checked) selectedStatuses.Add(SapHetHan_chbox.Text);
-            //    if (DaQuaHan_chbox.Checked) selectedStatuses.Add(DaQuaHan_chbox.Text);
-            //    if (DangNoTien_chbox.Checked) selectedStatuses.Add(DangNoTien_chbox.Text);
+                if (DangO_chbox.Checked) selectedStatuses.Add(DangO_chbox.Text);
+                if (DangTrong_chbox.Checked) selectedStatuses.Add(DangTrong_chbox.Text);
+                if (DangKT_chbox.Checked) selectedStatuses.Add(DangKT_chbox.Text);
+                if (DangCoc_chbox.Checked) selectedStatuses.Add(DangCoc_chbox.Text);
+                if (SapHetHan_chbox.Checked) selectedStatuses.Add(SapHetHan_chbox.Text);
+                if (DaQuaHan_chbox.Checked) selectedStatuses.Add(DaQuaHan_chbox.Text);
+                if (DangNoTien_chbox.Checked) selectedStatuses.Add(DangNoTien_chbox.Text);
 
-            //    // Chuyển danh sách thành chuỗi phân cách bằng dấu ;
-            //    string statusFilter = string.Join("; ", selectedStatuses);
+                // Chuyển danh sách thành chuỗi phân cách bằng dấu ;
+                string statusFilter = string.Join("; ", selectedStatuses);
 
 
-            //    // Lấy dữ liệu đã lọc
-            //    DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username);
+                // Lấy dữ liệu đã lọc
+                DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username);
 
-            //    // Cập nhật DataGridView
-            //    dgv_QLP.DataSource = null; // Xóa dữ liệu cũ trước
-            //    dgv_QLP.DataSource = filteredData;
+                // Cập nhật DataGridView
+                dgv_QLP.DataSource = null; // Xóa dữ liệu cũ trước
+                dgv_QLP.DataSource = filteredData;
 
-            //    ConfigureDataGridView();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
-            //                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                ConfigureDataGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ConfigureDataGridView()
         {
-            if (dgv_QLP.Columns.Count > 0)
+            // Đảm bảo thứ tự cột không thay đổi sau khi lọc
+            dgv_QLP.Columns["RoomID"].DisplayIndex = 0;
+            dgv_QLP.Columns["BuildingID"].DisplayIndex = 1;
+            dgv_QLP.Columns["Floor"].DisplayIndex = 2;
+            dgv_QLP.Columns["Type"].DisplayIndex = 3;
+            dgv_QLP.Columns["Convenient"].DisplayIndex = 4;
+            dgv_QLP.Columns["Area"].DisplayIndex = 5;
+            dgv_QLP.Columns["Price"].DisplayIndex = 6;
+            dgv_QLP.Columns["Status"].DisplayIndex = 7;
+
+            // Thiết lập width
+            dgv_QLP.Columns["RoomID"].Width = 90;
+            dgv_QLP.Columns["BuildingID"].Width = 90;
+            dgv_QLP.Columns["Floor"].Width = 150;
+            dgv_QLP.Columns["Type"].Width = 150;
+            dgv_QLP.Columns["Convenient"].Width = 250;
+            dgv_QLP.Columns["Area"].Width = 80;
+            dgv_QLP.Columns["Price"].Width = 80;
+            dgv_QLP.Columns["Status"].Width = 150;
+
+            dgv_QLP.ScrollBars = ScrollBars.Both;
+        }
+
+        private void button35_Click(object sender, EventArgs e)
+        {
+            Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username);
+            if (addRoom.ShowDialog() == DialogResult.OK)
             {
-                dgv_QLP.Columns["RoomID"].Width = 90;
-                dgv_QLP.Columns["BuildingID"].Width = 90;
-                dgv_QLP.Columns["Type"].Width = 150;
-                dgv_QLP.Columns["Convenient"].Width = 250;
-                dgv_QLP.Columns["Area"].Width = 80;
-                dgv_QLP.Columns["Price"].Width = 100;
-                dgv_QLP.Columns["Status"].Width = 150;
-                dgv_QLP.ScrollBars = ScrollBars.Both;
+                // Nếu thêm thành công thì load lại dữ liệu
+                load_QLP();
             }
         }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            if (dgv_QLP.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần sửa");
+                return;
+            }
+
+            // Lấy dữ liệu từ hàng được chọn
+            DataGridViewRow selectedRow = dgv_QLP.SelectedRows[0];
+
+            Room selectedRoom = new Room
+            {
+                RoomId = selectedRow.Cells["RoomID"].Value.ToString(),
+                BuildingId = selectedRow.Cells["BuildingID"].Value.ToString(),
+                Type = selectedRow.Cells["Type"].Value?.ToString(),
+                Floor = selectedRow.Cells["Floor"].Value?.ToString(),
+                
+                Convenient = selectedRow.Cells["Convenient"].Value?.ToString(),
+                Area = selectedRow.Cells["Area"].Value?.ToString(),
+                Price = selectedRow.Cells["Price"].Value?.ToString(),
+                Status = selectedRow.Cells["Status"].Value?.ToString()
+            };
+
+            // Mở form sửa với dữ liệu đã chọn
+            Form_UpdateRoom updateRoom = new Form_UpdateRoom(form1.taikhoan.Username, selectedRoom);
+            if (updateRoom.ShowDialog() == DialogResult.OK)
+            {
+                // Nếu cập nhật thành công thì load lại dữ liệu
+                load_QLP();
+            }
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            if (dgv_QLP.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần xóa", "Thông báo",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string roomId = dgv_QLP.SelectedRows[0].Cells["RoomID"].Value.ToString();
+
+            if (MessageBox.Show($"Bạn có chắc muốn xóa phòng {roomId}?",
+                              "Xác nhận xóa",
+                              MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var (success, message) = RoomBLL.DeleteRoom(roomId);
+
+                MessageBox.Show(message,
+                              success ? "Thành công" : "Lỗi",
+                              MessageBoxButtons.OK,
+                              success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+
+                if (success)
+                {
+                    load_QLP(); // Load lại dữ liệu sau khi xóa thành công
+                }
+            }
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username);
+            rentalHistory.Show();
+        }
+
+        private void button36_Click(object sender, EventArgs e)
+        {
+            if (dgv_QLP.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_QLP, "Danh sách phòng");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+
+
+
+
+
         //Huy và Thế An
 
         // QUAN lI dICH vU
@@ -896,5 +1004,7 @@ namespace GUI
             // Hiển thị form đó
             insertServiceForm.ShowDialog();
         }
+
+        
     }
 }
