@@ -103,10 +103,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountAccess.cs" />
+    <Compile Include="AssetAccess.cs" />
     <Compile Include="ContractAccess.cs" />
-    <Compile Include="RoomAccess.cs" />
+    <Compile Include="dal_service\ContractAccess.cs" />
+    <Compile Include="dal_service\DeleteTenantService.cs" />
+    <Compile Include="dal_service\DichVuDAL.cs" />
+    <Compile Include="dal_service\InsertServiceDAL.cs" />
+    <Compile Include="dal_service\KhachHangAccess.cs" />
+    <Compile Include="dal_service\ServiceUsageDAL.cs" />
+    <Compile Include="dal_service\UpdatePriceDAL.cs" />
+    <Compile Include="dal_service\UserServiceDAL.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="quanlyphuongtien\ParkingAreaAccess.cs" />
+    <Compile Include="quanlyphuongtien\PaymentAccess.cs" />
+    <Compile Include="quanlyphuongtien\SettingAccess.cs" />
+    <Compile Include="RentalHistoryAccess.cs" />
+    <Compile Include="RoomAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

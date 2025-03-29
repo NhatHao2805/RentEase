@@ -1,5 +1,8 @@
 ﻿using BLL;
+using BLL.BLL_Service;
+using BLL.Quanlyphuongtien;
 using DTO;
+using GUI.GUI_Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +48,19 @@ namespace GUI
         {
             load_QLP();
             loar_Contract();
+            load_Assets();
+        }
+
+        private void load_Assets()
+        {
+            dgv_QLCSVC.DataSource = AssetBLL.AssetsBLL_load_Assets(form1.taikhoan.Username);
+            dgv_QLCSVC.Columns[0].Width = 90;
+            dgv_QLCSVC.Columns[1].Width = 90;
+            dgv_QLCSVC.Columns[2].Width = 90;
+            dgv_QLCSVC.Columns[3].Width = 150;
+            dgv_QLCSVC.Columns[4].Width = 250;
+            dgv_QLCSVC.Columns[5].Width = 80;
+            dgv_QLCSVC.ScrollBars = ScrollBars.Both;
         }
 
         private void load_QLP()
@@ -145,7 +161,7 @@ namespace GUI
 
             panel1_timer.Start();
         }
-
+        //-------------------------------------------------------------------------------------
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -164,10 +180,6 @@ namespace GUI
             }
         }
 
-        private void button18_Click(object sender, EventArgs e)
-        {
-
-        }
 
         public void setPosition_hoaDon_thuChi(Panel p1, Panel p2)
         {
@@ -177,25 +189,7 @@ namespace GUI
             p2.Location = location_component_quanlytaichinh_1;
         }
 
-        private void button19_Click(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void btn_hoadon_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btn_thuchi_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void button28_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_phong_Click(object sender, EventArgs e)
         {
@@ -206,11 +200,6 @@ namespace GUI
         {
             tabQuanLy.SelectedIndex = 1;
         }
-        private void LoadData(String required)
-        {
-           
-        }
-
         private void btn_taichinh_Click(object sender, EventArgs e)
         {
             tabQuanLy.SelectedIndex = 2;
@@ -235,62 +224,6 @@ namespace GUI
             tabQuanLy.SelectedIndex = 5;
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-            
-        }
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void quanlynha_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-     
-        }
-
-        private void customButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Theemnoiluutru_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
@@ -377,11 +310,9 @@ namespace GUI
             tabHopDong.SelectedIndex = 3;
 
         }
+        //-------------------------------------------------------------------------------------
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
 
-        }
 
         private void button38_Click(object sender, EventArgs e)
         {
@@ -406,6 +337,564 @@ namespace GUI
                 loar_Contract();
             }
 
+        }
+
+        private void addRoom_btn_Click(object sender, EventArgs e)
+        {
+            Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username);
+            if (addRoom.ShowDialog() == DialogResult.OK)
+            {
+                // Nếu thêmthành công thì load lại dữ liệu
+                loadInfo();
+            }
+        }
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            if (dgv_QLP.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần xóa", "Thông báo",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string roomId = dgv_QLP.SelectedRows[0].Cells["RoomID"].Value.ToString();
+
+            if (MessageBox.Show($"Bạn có chắc muốn xóa phòng {roomId}?",
+                              "Xác nhận xóa",
+                              MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var (success, message) = RoomBLL.DeleteRoom(roomId);
+
+                MessageBox.Show(message,
+                              success ? "Thành công" : "Lỗi",
+                              MessageBoxButtons.OK,
+                              success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+
+                if (success)
+                {
+                    loadInfo(); // Load lại dữ liệu sau khi xóa thành công
+                }
+            }
+        }
+
+        private void RentalHistory_btn_Click(object sender, EventArgs e)
+        {
+            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username);
+            rentalHistory.Show();
+        }
+
+        private void ExcelExporterQLP_btn_Click(object sender, EventArgs e)
+        {
+            if (dgv_QLP.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_QLP, "Danh sách phòng");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void updateRoom_btn_Click(object sender, EventArgs e)
+        {
+            if (dgv_QLP.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần sửa");
+                return;
+            }
+
+            // Lấy dữ liệu từ hàng được chọn
+            DataGridViewRow selectedRow = dgv_QLP.SelectedRows[0];
+
+            Room selectedRoom = new Room
+            {
+                RoomId = selectedRow.Cells["RoomID"].Value.ToString(),
+                BuildingId = selectedRow.Cells["BuildingID"].Value.ToString(),
+                Floor = selectedRow.Cells["Floor"].Value?.ToString(),
+                Type = selectedRow.Cells["Type"].Value?.ToString(),
+                Convenient = selectedRow.Cells["Convenient"].Value?.ToString(),
+                Area = selectedRow.Cells["Area"].Value?.ToString(),
+                Price = selectedRow.Cells["Price"].Value?.ToString(),
+                Status = selectedRow.Cells["Status"].Value?.ToString()
+            };
+
+            // Mở form sửa với dữ liệu đã chọn
+            Form_UpdateRoom updateRoom = new Form_UpdateRoom(form1.taikhoan.Username, selectedRoom);
+            if (updateRoom.ShowDialog() == DialogResult.OK)
+            {
+                // Nếu cập nhật thành công thì load lại dữ liệu
+                loadInfo();
+            }
+        }
+
+        private void addAsset_btn_Click(object sender, EventArgs e)
+        {
+            Form_AddAssets addAssets = new Form_AddAssets();
+            this.Hide();
+        }
+
+        private void updateAssets_btn_Click(object sender, EventArgs e)
+        {
+            Form_UpdateAssets updateAssets = new Form_UpdateAssets();
+            this.Hide();
+        }
+
+        private void deleteAssets_btn_Click(object sender, EventArgs e)
+        {
+            string assetid = dgv_QLCSVC.SelectedRows[0].Cells["AssetID"].Value.ToString();
+
+            if (MessageBox.Show($"Bạn có chắc muốn xóa tài sản {assetid}?",
+                                "Xác nhận xóa",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var (success, message) = AssetBLL.DeleteAssets(assetid);
+
+                MessageBox.Show(message,
+                                success ? "Thông báo" : "Lỗi",
+                                MessageBoxButtons.OK,
+                                success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+
+                if (success)
+                {
+                    loadInfo();
+                }
+            }
+        }
+
+        private void assetsDetail_btn_Click(object sender, EventArgs e)
+        {
+            Form_AssetsDetail assetsDetail = new Form_AssetsDetail(form1.taikhoan.Username);
+            this.Hide();
+        }
+
+        private void paymentHistoryAssets_btn_Click(object sender, EventArgs e)
+        {
+            Form_PaymentHistory paymentHistory = new Form_PaymentHistory();
+            this.Hide();
+        }
+
+        private void excelExportAssets_btn_Click(object sender, EventArgs e)
+        {
+            if (dgv_QLCSVC.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_QLCSVC, "Danh sách tài sản");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        //Hoài An Chỉnh lại bên tên bên phần giao diện (lỗi do sai tên nút)
+        private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (DangO_chbox.Checked && DangTrong_chbox.Checked)
+            //{
+            //    MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    DangO_chbox.Checked = false;
+            //}
+            //FilterRoomByStatus();
+        }
+
+        private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (DangTrong_chbox.Checked && DangO_chbox.Checked)
+            //{
+            //    MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    DangTrong_chbox.Checked = false;
+            //}
+            //FilterRoomByStatus();
+        }
+
+        private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (DangKT_chbox.Checked && DangCoc_chbox.Checked)
+            //{
+            //    MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    DangKT_chbox.Checked = false;
+            //}
+            //FilterRoomByStatus();
+        }
+
+        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (DangCoc_chbox.Checked && (DangO_chbox.Checked || DangKT_chbox.Checked))
+            //{
+            //    MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang ở' hoặc 'Đang báo kết thúc'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    DangCoc_chbox.Checked = false;
+            //}
+            //FilterRoomByStatus();
+        }
+
+        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (SapHetHan_chbox.Checked && DaQuaHan_chbox.Checked)
+            //{
+            //    MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    SapHetHan_chbox.Checked = false;
+            //}
+            //FilterRoomByStatus();
+        }
+
+        private void DaQuaHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (DaQuaHan_chbox.Checked && SapHetHan_chbox.Checked)
+            //{
+            //    MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    DaQuaHan_chbox.Checked = false;
+            //}
+            //FilterRoomByStatus();
+        }
+
+        private void DangNoTien_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterRoomByStatus();
+        }
+        private void FilterRoomByStatus()
+        {
+            //try
+            //{
+            //    // Tạo danh sách trạng thái được chọn
+            //    List<string> selectedStatuses = new List<string>();
+
+            //    if (DangO_chbox.Checked) selectedStatuses.Add(DangO_chbox.Text);
+            //    if (DangTrong_chbox.Checked) selectedStatuses.Add(DangTrong_chbox.Text);
+            //    if (DangKT_chbox.Checked) selectedStatuses.Add(DangKT_chbox.Text);
+            //    if (DangCoc_chbox.Checked) selectedStatuses.Add(DangCoc_chbox.Text);
+            //    if (SapHetHan_chbox.Checked) selectedStatuses.Add(SapHetHan_chbox.Text);
+            //    if (DaQuaHan_chbox.Checked) selectedStatuses.Add(DaQuaHan_chbox.Text);
+            //    if (DangNoTien_chbox.Checked) selectedStatuses.Add(DangNoTien_chbox.Text);
+
+            //    // Chuyển danh sách thành chuỗi phân cách bằng dấu ;
+            //    string statusFilter = string.Join("; ", selectedStatuses);
+
+
+            //    // Lấy dữ liệu đã lọc
+            //    DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username);
+
+            //    // Cập nhật DataGridView
+            //    dgv_QLP.DataSource = null; // Xóa dữ liệu cũ trước
+            //    dgv_QLP.DataSource = filteredData;
+
+            //    ConfigureDataGridView();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
+            //                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
+
+        private void ConfigureDataGridView()
+        {
+            if (dgv_QLP.Columns.Count > 0)
+            {
+                dgv_QLP.Columns["RoomID"].Width = 90;
+                dgv_QLP.Columns["BuildingID"].Width = 90;
+                dgv_QLP.Columns["Type"].Width = 150;
+                dgv_QLP.Columns["Convenient"].Width = 250;
+                dgv_QLP.Columns["Area"].Width = 80;
+                dgv_QLP.Columns["Price"].Width = 100;
+                dgv_QLP.Columns["Status"].Width = 150;
+                dgv_QLP.ScrollBars = ScrollBars.Both;
+            }
+        }
+        //Huy và Thế An
+
+        // QUAN lI dICH vU
+        private UserService serviceUsageBLL = new UserService();
+        //public void btn_dichvu_Click(object sender, EventArgs e)
+        //{
+        //    tabQuanLy.SelectedIndex = 4;
+        //    tabQuanLy.SelectedIndex = 4;
+        //    var data = serviceUsageBLL.GetServiceUsage();
+        //    if (data == null || data.Count == 0) // Nếu là List
+        //    {
+        //        MessageBox.Show("Không có dữ liệu!");
+        //    }
+        //    dgvServiceInfo.DataSource = data;
+        //}
+        //Quản lý bãi đậu xe
+        //private void btn_caidat_Click(object sender, EventArgs e)
+        //{
+        //    tabQuanLy.SelectedIndex = 5;
+        //    LoadParkingAreaData();
+
+        //}
+        //thêm chỗ bãi đậu xe
+        private void button56_Click(object sender, EventArgs e)
+        {
+            GUI.QuanLyPhuongTien.QuanLyPhuonTien quanLyPhuonTienForm = new GUI.QuanLyPhuongTien.QuanLyPhuonTien();
+            quanLyPhuonTienForm.Owner = this;
+            quanLyPhuonTienForm.ShowDialog();
+
+        }
+
+        // Thêm phương thức public để load dữ liệu
+        public void RefreshParkingAreaData()
+        {
+            LoadParkingAreaData();
+        }
+        public void LoadParkingAreaDataWithFilter(DataTable filteredData)
+        {
+            try
+            {
+                // Gán nguồn dữ liệu đã lọc cho DataGridView
+                guna2DataGridView7.DataSource = filteredData;
+
+                // Cố định thanh header
+                guna2DataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+                guna2DataGridView7.EnableHeadersVisualStyles = false;
+
+                // Đặt chiều cao cho header
+                guna2DataGridView7.ColumnHeadersHeight = 40;
+
+                // Không cho phép người dùng sửa trực tiếp
+                guna2DataGridView7.ReadOnly = true;
+                guna2DataGridView7.AllowUserToAddRows = false;
+                guna2DataGridView7.AllowUserToDeleteRows = false;
+                guna2DataGridView7.AllowUserToOrderColumns = false;
+                guna2DataGridView7.AllowUserToResizeRows = false;
+                guna2DataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                // Định dạng hiển thị các cột
+                if (guna2DataGridView7.Columns.Count > 0)
+                {
+                    // Đặt tiêu đề cho các cột
+                    guna2DataGridView7.Columns["AREAID"].HeaderText = "ID Bãi Đỗ Xe";
+                    guna2DataGridView7.Columns["BUILDINGID"].HeaderText = "ID Tòa Nhà";
+                    guna2DataGridView7.Columns["ADDRESS"].HeaderText = "Địa Chỉ";
+                    guna2DataGridView7.Columns["TYPE"].HeaderText = "Loại Bãi Đỗ Xe";
+                    guna2DataGridView7.Columns["CAPACITY"].HeaderText = "Sức Chứa";
+
+                    // Đặt độ rộng cho các cột
+                    guna2DataGridView7.Columns["AREAID"].Width = 100;
+                    guna2DataGridView7.Columns["BUILDINGID"].Width = 100;
+                    guna2DataGridView7.Columns["ADDRESS"].Width = 200;
+                    guna2DataGridView7.Columns["TYPE"].Width = 150;
+                    guna2DataGridView7.Columns["CAPACITY"].Width = 100;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        //load dữ liệu thanh toán
+        private void LoadSettingsData()
+        {
+            DataTable dt = BLL.PaymentBLL.GetAllPayments();
+
+
+
+
+            guna2DataGridView2.DataSource = dt;
+
+            // Thiết lập style cho header thông qua Guna Theme
+            guna2DataGridView2.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(0, 120, 215); // Màu xanh như trong ảnh
+            guna2DataGridView2.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            guna2DataGridView2.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            guna2DataGridView2.ColumnHeadersHeight = 40;
+
+            // Đặt tên hiển thị cho các cột
+            if (guna2DataGridView2.Columns.Count > 0)
+            {
+                guna2DataGridView2.Columns[0].HeaderText = "Mã thanh toán";
+                guna2DataGridView2.Columns[1].HeaderText = "Mã hóa đơn";
+                guna2DataGridView2.Columns[2].HeaderText = "Phương thức";
+                guna2DataGridView2.Columns[3].HeaderText = "Số tiền";
+                guna2DataGridView2.Columns[4].HeaderText = "Thời gian";
+                // Thêm những dòng này để định dạng hiển thị
+                // Định dạng hiển thị số tiền với dấu phân cách hàng nghìn
+                guna2DataGridView2.Columns[3].DefaultCellStyle.Format = "N0";
+
+
+            }
+
+
+
+
+
+
+            guna2DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Refresh bảng
+            guna2DataGridView2.Refresh();
+        }
+        // Thêm phương thức LoadParkingAreaData
+        private void LoadParkingAreaData()
+        {
+            try
+            {
+                // Gán nguồn dữ liệu cho DataGridView
+                guna2DataGridView7.DataSource = ParkingAreaBLL.GetAllParkingAreas();
+
+                // Cố định thanh header
+                guna2DataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+                guna2DataGridView7.EnableHeadersVisualStyles = false;
+
+                // Đặt chiều cao cho header (tùy chọn)
+                guna2DataGridView7.ColumnHeadersHeight = 40;
+
+
+                // Không cho phép người dùng sửa trực tiếp
+                guna2DataGridView7.ReadOnly = true;
+                guna2DataGridView7.AllowUserToAddRows = false;
+                guna2DataGridView7.AllowUserToDeleteRows = false;
+                guna2DataGridView7.AllowUserToOrderColumns = false;
+                guna2DataGridView7.AllowUserToResizeRows = false;
+                guna2DataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                // Định dạng hiển thị các cột
+                if (guna2DataGridView7.Columns.Count > 0)
+                {
+                    // Đặt tiêu đề cho các cột
+                    guna2DataGridView7.Columns["AREAID"].HeaderText = "ID Bãi Đỗ Xe";
+                    guna2DataGridView7.Columns["BUILDINGID"].HeaderText = "ID Tòa Nhà";
+                    guna2DataGridView7.Columns["ADDRESS"].HeaderText = "Địa Chỉ";
+                    guna2DataGridView7.Columns["TYPE"].HeaderText = "Loại Bãi Đỗ Xe";
+                    guna2DataGridView7.Columns["CAPACITY"].HeaderText = "Sức Chứa";
+
+                    // Đặt độ rộng cho các cột
+                    guna2DataGridView7.Columns["AREAID"].Width = 100;
+                    guna2DataGridView7.Columns["BUILDINGID"].Width = 100;
+                    guna2DataGridView7.Columns["ADDRESS"].Width = 200;
+                    guna2DataGridView7.Columns["TYPE"].Width = 150;
+                    guna2DataGridView7.Columns["CAPACITY"].Width = 100;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void button52_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có dòng nào được chọn không
+                if (guna2DataGridView7.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một khu vực đỗ xe để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Lấy areaId từ dòng được chọn
+                string areaId = guna2DataGridView7.SelectedRows[0].Cells["AREAID"].Value.ToString();
+
+                // Xác nhận xóa
+                DialogResult confirm = MessageBox.Show($"Bạn có chắc chắn muốn xóa khu vực đỗ xe {areaId} không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.No)
+                {
+                    return;
+                }
+
+                // Gọi phương thức xóa từ BLL
+                if (ParkingAreaBLL.DeleteParkingArea(areaId, out string message))
+                {
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); // Sử dụng message từ stored procedure
+                    RefreshParkingAreaData(); // Làm mới dữ liệu
+                }
+                else
+                {
+                    MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); // Hiển thị lý do thất bại từ stored procedure
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button57_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Mở hộp thoại lưu file
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "CSV Files (*.csv)|*.csv";
+                    sfd.FileName = $"DanhSachBaiDoXe_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+                    if (sfd.ShowDialog() != DialogResult.OK)
+                    {
+                        return; // Người dùng hủy thao tác
+                    }
+
+                    // Gọi BLL để xuất dữ liệu
+                    if (ParkingAreaBLL.ExportParkingAreasToCsv(sfd.FileName, out string message))
+                    {
+                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void button13_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                    sfd.FileName = $"ThongKeBaiDoXe_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
+                    if (sfd.ShowDialog() != DialogResult.OK)
+                    {
+                        return;
+                    }
+
+                    if (ParkingAreaBLL.ExportParkingAreasToExcelWithChart(sfd.FileName, out string message))
+                    {
+                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button49_Click(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            AddService addServiceForm = new AddService(this);
+
+            // Hiển thị form đó
+            addServiceForm.ShowDialog();
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            DeleteService delServiceForm = new DeleteService(this);
+
+            // Hiển thị form đó
+            delServiceForm.ShowDialog();
+        }
+
+        private void themDV_btn_Click(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            InsertService insertServiceForm = new InsertService();
+
+            // Hiển thị form đó
+            insertServiceForm.ShowDialog();
         }
     }
 }

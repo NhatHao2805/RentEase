@@ -23,19 +23,19 @@ INSERT INTO BUILDING (BUILDINGID, USERNAME, ADDRESS, NUMOFFLOORS, NUMOFROOMS) VA
 ('B008', 'accountant08', '258 Đường Nguyễn Trãi, Q5, TP.HCM', 3, 10),
 ('B009', 'technician09', '369 Đường Bà Hạt, Q10, TP.HCM', 5, 18),
 ('B010', 'reception10', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM', 4, 16);
-
+select * from room;
 -- 3 ROOM
-INSERT INTO ROOM (ROOMID, BUILDINGID, TYPE, CONVENIENT, AREA, PRICE, STATUS, LAST_MAINTENANCE_DATE) VALUES
-('R001', 'B001', 'Studio', 'Điều hòa, Wifi, Tủ lạnh', 25.5, 5000000, 'Đã thuê', '2024-01-15'),
-('R002', 'B001', '1 Phòng ngủ', 'Điều hòa, Wifi, Máy giặt', 35.0, 7000000, 'Trống', '2024-02-20'),
-('R003', 'B002', '2 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 45.5, 9000000, 'Đã thuê', '2024-03-10'),
-('R004', 'B003', 'Studio', 'Điều hòa, Wifi', 22.0, 4500000, 'Đã thuê', '2024-04-05'),
-('R005', 'B004', '1 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh', 30.0, 6000000, 'Trống', '2024-05-12'),
-('R006', 'B005', '3 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh, Máy giặt, Bếp', 60.0, 12000000, 'Đã thuê', '2024-06-18'),
-('R007', 'B006', 'Studio', 'Điều hòa, Wifi', 20.0, 4000000, 'Trống', '2024-07-22'),
-('R008', 'B007', '2 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 42.0, 8500000, 'Đã thuê', '2024-08-30'),
-('R009', 'B008', '1 Phòng ngủ', 'Điều hòa, Wifi', 28.0, 5500000, 'Trống', '2024-09-05'),
-('R010', 'B009', 'Studio', 'Điều hòa, Wifi, Tủ lạnh', 24.0, 4800000, 'Đã thuê', '2024-10-10');
+INSERT INTO ROOM (ROOMID, BUILDINGID, TYPE, FLOOR, CONVENIENT, AREA, PRICE, STATUS) VALUES
+('R001', 'B001', 'Studio', 1, 'Điều hòa, Wifi, Tủ lạnh', 25.5, 5000000, 'Đang ở; Sắp hết hạn hợp đồng'),
+('R002', 'B001', '1 Phòng ngủ', 2, 'Điều hòa, Wifi, Máy giặt', 35.0, 7000000, 'Đang trống'),
+('R003', 'B002', '2 Phòng ngủ', 3, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 45.5, 9000000, 'Đang ở; Đang nợ tiền'),
+('R004', 'B003', 'Studio', 1, 'Điều hòa, Wifi', 22.0, 4500000, 'Đang báo kết thúc; Đã quá hạn hợp đồng'),
+('R005', 'B004', '1 Phòng ngủ', 2, 'Điều hòa, Wifi, Tủ lạnh', 30.0, 6000000, 'Đang trống'),
+('R006', 'B005', '3 Phòng ngủ', 4, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt, Bếp', 60.0, 12000000, 'Đang ở; Sắp hết hạn hợp đồng; Đang nợ tiền'),
+('R007', 'B006', 'Studio', 1, 'Điều hòa, Wifi', 20.0, 4000000, 'Đang cọc giữ chỗ'),
+('R008', 'B007', '2 Phòng ngủ', 3, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 42.0, 8500000, 'Đang ở; Đã quá hạn hợp đồng'),
+('R009', 'B008', '1 Phòng ngủ', 2, 'Điều hòa, Wifi', 28.0, 5500000, 'Đang trống'),
+('R010', 'B009', 'Studio', 1, 'Điều hòa, Wifi, Tủ lạnh', 24.0, 4800000, 'Đang ở');
 
 -- 4 TENANT
 INSERT INTO TENANT (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL) VALUES
@@ -52,13 +52,13 @@ INSERT INTO TENANT (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER
 
 -- 5 CONTRACT
 INSERT INTO CONTRACT (CONTRACTID, ROOMID, TENANTID, CREATEDATE, STARTDATE, ENDDATE, MONTHLYRENT, PAYMENTSCHEDULE, DEPOSIT, STATUS, NOTES, AUTO_RENEW, TERMINATION_REASON, CONTRACT_FILE_PATH) VALUES
-('CT001', 'R001', 'T001', '2024-01-10', '2024-01-15', '2025-01-14', 5000000, 'Đầu tháng', 10000000, 'Active', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct001.pdf'),
+('CT001', 'R001', 'T001', '2024-01-10', '2024-01-15', '2025-01-14', 5000000, 'Đầu tháng', 10000000, 'InActive', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct001.pdf'),
 ('CT002', 'R003', 'T002', '2024-02-05', '2024-02-10', '2024-08-09', 9000000, 'Cuối tháng', 18000000, 'Active', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct002.pdf'),
 ('CT003', 'R004', 'T003', '2024-03-01', '2024-03-05', '2025-03-04', 4500000, 'Đầu tháng', 9000000, 'Active', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct003.pdf'),
 ('CT004', 'R006', 'T004', '2024-04-15', '2024-04-20', '2024-10-19', 12000000, 'Cuối tháng', 24000000, 'Active', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct004.pdf'),
 ('CT005', 'R008', 'T005', '2024-05-10', '2024-05-15', '2025-05-14', 8500000, 'Đầu tháng', 17000000, 'Active', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct005.pdf'),
 ('CT006', 'R010', 'T006', '2024-06-05', '2024-06-10', '2024-12-09', 4800000, 'Cuối tháng', 9600000, 'Active', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct006.pdf'),
-('CT007', 'R002', 'T007', '2024-07-01', '2024-07-05', '2025-07-04', 7000000, 'Đầu tháng', 14000000, 'Active', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct007.pdf'),
+('CT007', 'R002', 'T007', '2024-07-01', '2024-07-05', '2025-07-04', 7000000, 'Đầu tháng', 14000000, 'InActive', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct007.pdf'),
 ('CT008', 'R005', 'T008', '2024-08-15', '2024-08-20', '2025-02-19', 6000000, 'Cuối tháng', 12000000, 'Active', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct008.pdf'),
 ('CT009', 'R007', 'T009', '2024-09-10', '2024-09-15', '2025-09-14', 4000000, 'Đầu tháng', 8000000, 'Active', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct009.pdf'),
 ('CT010', 'R009', 'T010', '2024-10-05', '2024-10-10', '2025-04-09', 5500000, 'Cuối tháng', 11000000, 'Active', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct010.pdf');
@@ -284,7 +284,6 @@ INSERT INTO TEMPORARY_RESIDENCE (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER
 ('T008', 'Lý Thị', 'Nga', '1991-02-14', 'Nữ', '0988999888', 'tenant8@gmail.com', '258 Đường Bà Hạt, Q10, TP.HCM', '258 Đường Nguyễn Trãi, Q5, TP.HCM', '2024-08-20', 'Tạm trú học tập', '2025-02-19', '/temp_res/t008.pdf'),
 ('T009', 'Đặng Văn', 'Phong', '1983-08-10', 'Nam', '0911222444', 'tenant9@gmail.com', '369 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM', '369 Đường Bà Hạt, Q10, TP.HCM', '2024-09-15', 'Tạm trú công tác', '2025-09-14', '/temp_res/t009.pdf'),
 ('T010', 'Bùi Thị', 'Quỳnh', '1994-05-28', 'Nữ', '0909111222', 'tenant10@gmail.com', '753 Đường Nguyễn Văn Cừ, Q5, TP.HCM', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM', '2024-10-10', 'Tạm trú học tập', '2025-04-09', '/temp_res/t010.pdf');
-
 -- 24 TENANTHISTORY
 INSERT INTO TENANTHISTORY (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL, ADDRESS, STARTDATE, NOTES) VALUES
 ('T001', 'Lê Văn', 'Cường', '1990-07-25', 'Nam', '0911222333', 'tenant1@gmail.com', '123 Đường Lê Lợi, Q1, TP.HCM', '2024-01-15', 'Người thuê tốt'),
@@ -310,4 +309,3 @@ INSERT INTO RENTALHISTORY (ROOMID, OLDTENANTID, ADDRESS, TYPE, CONVENIENT, AREA,
 ('R008', 'T000', '147 Đường Lê Văn Sỹ, Q.Phú Nhuận, TP.HCM', '2 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 42.0, 8500000, 'Đã trả phòng', 'Vũ Thị', 'H', 'Nữ', '0988888888', '2023-08-20', '2024-08-19', 'Mua nhà riêng'),
 ('R009', 'T000', '258 Đường Nguyễn Trãi, Q5, TP.HCM', '1 Phòng ngủ', 'Điều hòa, Wifi', 28.0, 5500000, 'Đã trả phòng', 'Phan Văn', 'I', 'Nam', '0999999999', '2023-09-15', '2024-09-14', 'Về quê'),
 ('R010', 'T000', '369 Đường Bà Hạt, Q10, TP.HCM', 'Studio', 'Điều hòa, Wifi, Tủ lạnh', 24.0, 4800000, 'Đã trả phòng', 'Phan Văn', 'I', 'Nam', '0999999999', '2023-09-15', '2024-09-14', 'Về quê');
-
