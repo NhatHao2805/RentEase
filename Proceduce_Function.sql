@@ -5,19 +5,16 @@ BEGIN
    SELECT 
       c.CONTRACTID,
 		c.ROOMID,
-		c.TENANTID,
+		CONCAT(t.FIRSTNAME, ' ', t.LASTNAME) AS FullName,
 		c.CREATEDATE,
 		c.STARTDATE,
 		c.ENDDATE,
 		c.MONTHLYRENT , 
 		c.PAYMENTSCHEDULE,
 		c.DEPOSIT,
-		c.STATUS,
-		c.NOTES,
-		c.AUTO_RENEW,
-		c.TERMINATION_REASON,
-		c.CONTRACT_FILE_PATH
+		c.NOTES
    FROM contract c
+   JOIN tenant t ON t.TENANTID = c.TENANTID
    JOIN room r ON r.ROOMID = c.ROOMID
    JOIN building b ON r.BUILDINGID = b.BUILDINGID
    JOIN user u ON u.USERNAME = b.USERNAME
@@ -90,16 +87,20 @@ BEGIN
 END//
 
 CREATE FUNCTION `createContractID`()
-RETURNS varchar(20) 
-COMMENT ''
+RETURNS VARCHAR(20) 
+DETERMINISTIC
 BEGIN
-	DECLARE max_id VARCHAR(20);
+    DECLARE max_id VARCHAR(20);
     DECLARE number_part INT;
     DECLARE new_id VARCHAR(20);
     
-    SELECT IFNULL(MAX(ContractID), 'c000') INTO max_id FROM Contract;
-    SET number_part = CAST(SUBSTRING(max_id, 2) AS UNSIGNED) + 1;
-    SET new_id = CONCAT('c', LPAD(number_part, 3, '0'));
+    SELECT IFNULL(MAX(ContractID), 'CT000') INTO max_id FROM contract;
+
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+
+    SET new_id = CONCAT('CT', LPAD(number_part, 3, '0'));
+    
     RETURN new_id;
 END//
+
 DELIMITER ;

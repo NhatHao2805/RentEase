@@ -105,7 +105,6 @@
     <Compile Include="AccountAccess.cs" />
     <Compile Include="ContractAccess.cs" />
     <Compile Include="RoomAccess.cs" />
-    <Compile Include="HouseAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

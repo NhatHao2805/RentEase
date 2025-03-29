@@ -13,5 +13,19 @@ namespace BLL
         {
             return RoomAccess.LoadRoomByUser(Username);
         }
+
+        public static List<string> RoomBLL_Load_RoomAddress(string Username)
+        {
+            return RoomAccess.RoomAccess_Load_RoomAddress(Username);
+        }
+        public static List<string> RoomBLL_Load_RoomInBuilding(string Address)
+        {
+            return RoomAccess.RoomAccess_Load_RoomInBuilding(Address);
+        }
+
+        public static string RoomBLL_TakePrice(string roomid)
+        {
+            return RoomAccess.RoomAccess_TakePrice(roomid);
+        }
     }
 }

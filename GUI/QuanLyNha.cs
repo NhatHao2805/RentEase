@@ -382,5 +382,30 @@ namespace GUI
         {
 
         }
+
+        private void button38_Click(object sender, EventArgs e)
+        {
+            int row = dgv_QLHD.CurrentCell.RowIndex;
+            if (row >= 0)
+            {
+                DataGridViewRow dataRow = dgv_QLHD.Rows[row];
+                Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 0, dataRow);
+                f.ShowDialog();
+                loar_Contract();
+            }
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            int row = dgv_QLHD.CurrentCell.RowIndex;
+            if(row >= 0)
+            {
+                DataGridViewRow dataRow = dgv_QLHD.Rows[row];
+                Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 1, dataRow);
+                f.ShowDialog();
+                loar_Contract();
+            }
+
+        }
     }
 }

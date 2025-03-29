@@ -102,7 +102,7 @@ namespace DAL
                         {
                             while (reader.Read())
                             {
-                                name.Add(reader.GetString(1) + " " + reader.GetString(0));
+                                name.Add(reader.GetString(0) + " " + reader.GetString(1));
                             }
                         }
                         else
