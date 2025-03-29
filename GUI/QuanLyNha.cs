@@ -1,6 +1,8 @@
 ﻿using BLL;
+using BLL.BLL_Service;
 using BLL.Quanlyphuongtien;
 using DTO;
+using GUI.GUI_Service;
 using GUI.QuanLyPhuongTien;
 using System;
 using System.Collections.Generic;
@@ -13,7 +15,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI;
 using System.Windows.Forms;
-
 
 namespace GUI
 {
@@ -227,10 +228,18 @@ namespace GUI
 
 
         }
-
-        private void btn_dichvu_Click(object sender, EventArgs e)
+        // QUAN lI dICH vU
+        private UserService serviceUsageBLL = new UserService();
+        public void btn_dichvu_Click(object sender, EventArgs e)
         {
             tabQuanLy.SelectedIndex = 4;
+            tabQuanLy.SelectedIndex = 4;
+            var data = serviceUsageBLL.GetServiceUsage();
+            if (data == null || data.Count == 0) // Nếu là List
+            {
+                MessageBox.Show("Không có dữ liệu!");
+            }
+            dgvServiceInfo.DataSource = data;
         }
         //Quản lý bãi đậu xe
         private void btn_caidat_Click(object sender, EventArgs e)
@@ -661,6 +670,33 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button49_Click(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            AddService addServiceForm = new AddService(this);
+
+            // Hiển thị form đó
+            addServiceForm.ShowDialog();
+        }
+
+        private void button45_Click(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            DeleteService delServiceForm = new DeleteService(this);
+
+            // Hiển thị form đó
+            delServiceForm.ShowDialog();
+        }
+
+        private void themDV_btn_Click(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            InsertService insertServiceForm = new InsertService();
+
+            // Hiển thị form đó
+            insertServiceForm.ShowDialog();
         }
     }
 }
