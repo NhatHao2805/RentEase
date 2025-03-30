@@ -3,6 +3,7 @@ using BLL.BLL_Service;
 using BLL.Quanlyphuongtien;
 using DTO;
 using GUI.GUI_Service;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -214,11 +215,102 @@ namespace GUI
 
         }
 
+        // Load DIch VU
+        private List<CheckBox> sortOptions = new List<CheckBox>();
+
+        public string filet_Service = "Default";
         private void btn_dichvu_Click(object sender, EventArgs e)
         {
             tabQuanLy.SelectedIndex = 4;
-        }
+            
+            var data = serviceUsageBLL.GetServiceUsage(filet_Service);
 
+            if (data == null || data.Count == 0) // Nếu là List
+            {
+                MessageBox.Show("Không có dữ liệu!");
+            }
+            dgvServiceInfo.DataSource = data;
+
+            //combo_DV1.Visible = false;
+            //combo_DV2.Visible = false;
+
+            // Thêm các checkbox vào danh sách
+            sortOptions.Add(checkBox_DV1); // Giá cao-thấp
+            sortOptions.Add(checkBox_DV2); // Giá thấp-cao
+            sortOptions.Add(checkBox_DV3); // Ngày gần đây
+            sortOptions.Add(checkBox_DV4); // Ngày xa nhất
+            sortOptions.Add(checkBox_DV5); // Tên tăng dần
+
+
+
+            // Đăng ký sự kiện cho tất cả checkbox
+            foreach (var chk in sortOptions)
+            {
+                chk.CheckedChanged += CheckBox_CheckedChanged;
+            }
+           
+        }
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox current = (CheckBox)sender;
+            // Chỉ xử lý khi checkbox được chọn
+            if (current.Checked)
+            {
+                // Tạm ngừng sự kiện để tránh lặp vô hạn
+                foreach (var chk in sortOptions)
+                {
+                    chk.CheckedChanged -= CheckBox_CheckedChanged;
+                }
+
+                // Bỏ chọn tất cả checkbox khác
+                foreach (var chk in sortOptions)
+                {
+                    if (chk != current)
+                    {
+                        chk.Checked = false;
+                    }
+                }
+
+                // Khôi phục sự kiện
+                foreach (var chk in sortOptions)
+                {
+                    chk.CheckedChanged += CheckBox_CheckedChanged;
+                }
+
+
+                // Thay đổi filter dựa trên checkbox được chọn
+                if (current.Name == "checkBox_DV1" || current.Text == "Giá cao-thấp")
+                {
+                    filet_Service = "GiaGiam";
+
+                }
+                else if (current.Name == "checkBox_DV2" || current.Text == "Giá thấp-cao")
+                {
+                    filet_Service = "GiaTang";
+                }
+                else if (current.Name == "checkBox_DV3" || current.Text == "Ngày gần đây")
+                {
+                    filet_Service = "NgayMoi";
+                }
+                else if (current.Name == "checkBox_DV4" || current.Text == "Ngày xa nhất")
+                {
+                    filet_Service = "NgayCu";
+                }
+                else if (current.Name == "checkBox_DV4" || current.Text == "Tên tăng dần")
+                {
+                    filet_Service = "TenTang";
+                }
+                var data = serviceUsageBLL.GetServiceUsage(filet_Service);
+
+                if (data == null || data.Count == 0) // Nếu là List
+                {
+                    MessageBox.Show("Không có dữ liệu!");
+                }
+                dgvServiceInfo.DataSource = data;
+
+            }
+        }
+      
         private void btn_caidat_Click(object sender, EventArgs e)
         {
             tabQuanLy.SelectedIndex = 5;
@@ -1005,6 +1097,76 @@ namespace GUI
             insertServiceForm.ShowDialog();
         }
 
-        
+        private void button49_Click_1(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            AddService addServiceForm = new AddService(this);
+
+            // Hiển thị form đó
+            addServiceForm.ShowDialog();
+        }
+
+        private void button45_Click_1(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            DeleteService delServiceForm = new DeleteService(this);
+
+            // Hiển thị form đó
+            delServiceForm.ShowDialog();
+        }
+
+        private void themDV_btn_Click_1(object sender, EventArgs e)
+        {
+            // Tạo một instance của form AddService
+            InsertService insertServiceForm = new InsertService();
+
+            // Hiển thị form đó
+            insertServiceForm.ShowDialog();
+        }
+
+        private void button50_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox_DV1_CheckedChanged(object sender, EventArgs e)
+        {
+
+          
+        }
+
+        private void checkBox_DV2_CheckedChanged(object sender, EventArgs e)
+        {
+
+           
+        }
+
+        private void checkBox_DV3_CheckedChanged(object sender, EventArgs e)
+        {
+
+          
+        }
+
+        private void checkBox_DV4_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+           
+         
+        }
+
+        private void checkBox_DV5_CheckedChanged(object sender, EventArgs e)
+        {
+    
+         
+            //checkBox_DV1.Checked = false;
+            //checkBox_DV2.Checked = false;
+            //checkBox_DV3.Checked = false;
+            //checkBox_DV4.Checked = false;
+
+
+            //combo_DV1.Visible = false;
+            //combo_DV2.Visible = false;
+        }
     }
 }

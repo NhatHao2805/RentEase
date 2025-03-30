@@ -15,10 +15,11 @@ namespace DAL.DAL_Service
 {
     public class UserServiceDAL
     {
-        public List<UserServiceDTO> GetServiceUsage()
+        public List<UserServiceDTO> GetServiceUsage(String filter)
         {
             List<UserServiceDTO> list = new List<UserServiceDTO>();
-        
+
+            string orderby = filter; // hoặc "DESC" khi cần sắp xếp giảm dần
             try
             {
                 using (MySqlConnection conn = MySqlConnectionData.Connect())
@@ -29,11 +30,12 @@ namespace DAL.DAL_Service
                         {
                             conn.Open();
                         }
-
                         using (MySqlCommand cmd = new MySqlCommand("GetServiceUsage", conn))
                         {
 
                             cmd.CommandType = CommandType.StoredProcedure;
+                            // Thêm tham số orderBy
+                            cmd.Parameters.AddWithValue("@p_sortOption", orderby);
 
                             using (MySqlDataReader reader = cmd.ExecuteReader())
                             {
@@ -50,8 +52,9 @@ namespace DAL.DAL_Service
                                             TenantName = reader.GetString("TENANTNAME"),
                                             ServiceName = reader.GetString("SERVICENAME"),
                                             ServicePrice = reader.GetDecimal("UNITPRICE"),
-                                            Start = reader.GetDateTime("START_DATE"),
-                                            End = reader.GetDateTime("END_DATE")
+
+                                            StartedDay = reader.GetDateTime("START_DATE").ToString("dd/MM/yyyy"),
+                                            EndDay = reader.GetDateTime("END_DATE").ToString("dd/MM/yyyy")
                                         };
                                         list.Add(item);
                                     }

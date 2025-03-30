@@ -138,3 +138,31 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DTO\obj\Debug\DTO.csproj
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DTO\obj\Debug\DTO.csproj.Up2Date
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DTO\obj\Debug\DTO.dll
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DTO\obj\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\DTO.dll.config
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\DTO.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\MySqlConnector.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Buffers.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Memory.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\MySqlConnector.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Buffers.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Memory.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.pdb
