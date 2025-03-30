@@ -1,40 +1,26 @@
 DELIMITER //
 
-    CREATE PROCEDURE GetServiceUsage(IN p_sortOption VARCHAR(10))
-    BEGIN
-        SET @row_num = 0;
-        
-        -- Xác định điều kiện sắp xếp dựa trên tham số
-        SET @orderClause = CASE 
-            WHEN p_sortOption = 'TenTang' THEN 'TENANTNAME ASC'  -- Sắp xếp theo tên A-Z
-            WHEN p_sortOption = 'GiaTang' THEN 'UNITPRICE ASC'   -- Sắp xếp theo giá tăng dần
-            WHEN p_sortOption = 'GiaGiam' THEN 'UNITPRICE DESC'  -- Sắp xếp theo giá giảm dần
-            WHEN p_sortOption = 'NgayMoi' THEN 'START_DATE DESC'  -- Sắp xếp theo ngày mới nhất
-            WHEN p_sortOption = 'NgayCu' THEN 'START_DATE ASC'  -- Sắp xếp theo ngày cũ nhất
-            ELSE 'ROOMID ASC'                        -- Mặc định
-        END;
-        
-        SET @sql = CONCAT('
-            SELECT 
-                (@row_num := @row_num + 1) AS STT,
-                R.ROOMID, 
-                CONCAT(T.FIRSTNAME, '' '', T.LASTNAME) AS TENANTNAME,
-                S.SERVICENAME, 
-                S.UNITPRICE,
-                US.START_DATE,
-                US.END_DATE
-            FROM USE_SERVICE US
-            JOIN TENANT T ON US.TENANTID = T.TENANTID
-            JOIN SERVICE S ON US.SERVICEID = S.SERVICEID
-            JOIN CONTRACT C ON C.TENANTID = T.TENANTID
-            JOIN ROOM R ON C.ROOMID = R.ROOMID
-            ORDER BY ', @orderClause);
-        
-        PREPARE stmt FROM @sql;
-        EXECUTE stmt;
-        DEALLOCATE PREPARE stmt;
-    END //
+CREATE PROCEDURE GetServiceUsage()
+BEGIN
+    -- Khai báo biến STT toàn cục
+    SET @row_num = 0;
 
+    -- Lấy danh sách dịch vụ đã sử dụng
+    SELECT 
+        (@row_num := @row_num + 1) AS STT,  -- Số thứ tự tự động tăng
+        R.ROOMID, 
+        CONCAT(T.FIRSTNAME, ' ', T.LASTNAME) AS TENANTNAME,  -- Ghép họ và tên
+        S.SERVICENAME, 
+        S.UNITPRICE,
+        US.START_DATE,
+        US.END_DATE
+    FROM USE_SERVICE US
+    JOIN TENANT T ON US.TENANTID = T.TENANTID
+    JOIN SERVICE S ON US.SERVICEID = S.SERVICEID
+    JOIN CONTRACT C ON C.TENANTID = T.TENANTID
+    JOIN ROOM R ON C.ROOMID = R.ROOMID;
+    
+END //
 
 
 CREATE PROCEDURE INSERT_SERVICE_USAGE(
@@ -543,9 +529,9 @@ BEGIN
     DECLARE number_part INT;
     DECLARE new_id VARCHAR(20);
     
-    SELECT IFNULL(MAX(ContractID), 'c000') INTO max_id FROM Contract;
-    SET number_part = CAST(SUBSTRING(max_id, 2) AS UNSIGNED) + 1;
-    SET new_id = CONCAT('c', LPAD(number_part, 3, '0'));
+    SELECT IFNULL(MAX(ContractID), 'CT000') INTO max_id FROM Contract;
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('CT', LPAD(number_part, 3, '0'));
     RETURN new_id;
 END//
 
@@ -622,6 +608,15 @@ BEGIN
    JOIN user u ON u.USERNAME = b.USERNAME
    WHERE u.USERNAME = p_username;
 END//
+
+CREATE PROCEDURE del_Contract(
+    IN contract_id VARCHAR(20)
+)
+BEGIN
+    DELETE FROM contract
+    WHERE contract.CONTRACTID = contract_id;
+END//
+
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Room`(IN p_username VARCHAR(50))
 BEGIN

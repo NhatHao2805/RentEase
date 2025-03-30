@@ -55,8 +55,8 @@ namespace DAL
 
         public static String add_Contract(string HouseAddress, string RoomId, string TenantName, string CreateDate, string StartDate, string EndDate, string PaymenSchedule, string Deposite, string Note)
         {
-            try
-            {
+            //try
+            //{
                 using (MySqlConnection conn = MySqlConnectionData.Connect())
                 {
                     using (MySqlCommand command = new MySqlCommand("add_Contract", conn))
@@ -74,12 +74,12 @@ namespace DAL
                         command.ExecuteNonQuery();
                     }
                 }
-                
-            }
-            catch (Exception ex)
-            {
-                return "Fail to Add Contract";
-            }
+
+        //}
+            //catch (Exception ex)
+            //{
+            //    return "Fail to Add Contract";
+            //}
             return "Success to Add Contract";
         }
         //alter_Contract
@@ -164,6 +164,28 @@ namespace DAL
                 return "Fail to update Contract";
             }
             return "Success to update Contract";
+
+        }
+
+        public static string delete_Contract(string contractid)
+        {
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    using (MySqlCommand command = new MySqlCommand("del_Contract", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@contract_id", contractid);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Fail to delete Contract";
+            }
+            return "Success to delete Contract";
 
         }
     }

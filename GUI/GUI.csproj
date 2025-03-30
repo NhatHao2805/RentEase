@@ -131,16 +131,16 @@
     <Compile Include="Form_RentalHistory.Designer.cs">
       <DependentUpon>Form_RentalHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_SignUp.cs">
+    <Compile Include="Login\Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_SignUp.Designer.cs">
+    <Compile Include="Login\Form_SignUp.Designer.cs">
       <DependentUpon>Form_SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Login.cs">
+    <Compile Include="Login\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Login.Designer.cs">
+    <Compile Include="Login\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_UpdateAssets.cs">
@@ -208,10 +208,10 @@
     <EmbeddedResource Include="Form_RentalHistory.resx">
       <DependentUpon>Form_RentalHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_SignUp.resx">
+    <EmbeddedResource Include="Login\Form_SignUp.resx">
       <DependentUpon>Form_SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Login.resx">
+    <EmbeddedResource Include="Login\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_UpdateAssets.resx">

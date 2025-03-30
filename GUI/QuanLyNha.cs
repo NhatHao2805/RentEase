@@ -410,27 +410,54 @@ namespace GUI
 
         private void button38_Click(object sender, EventArgs e)
         {
-            int row = dgv_QLHD.CurrentCell.RowIndex;
-            if (row >= 0)
-            {
-                DataGridViewRow dataRow = dgv_QLHD.Rows[row];
-                Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 0, dataRow);
-                f.ShowDialog();
-                loar_Contract();
-            }
+            DataGridViewRow dataRow = null;
+            Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 0, dataRow);
+            f.ShowDialog();
+            loar_Contract();
         }
 
         private void button40_Click(object sender, EventArgs e)
         {
-            int row = dgv_QLHD.CurrentCell.RowIndex;
-            if(row >= 0)
+
+            try {
+                int row = dgv_QLHD.CurrentCell.RowIndex;
+                if (row >= 0)
+                {
+                    DataGridViewRow dataRow = dgv_QLHD.Rows[row];
+                    Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 1, dataRow);
+                    f.ShowDialog();
+                    loar_Contract();
+                }
+            }
+            catch (Exception ex)
             {
-                DataGridViewRow dataRow = dgv_QLHD.Rows[row];
-                Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 1, dataRow);
-                f.ShowDialog();
-                loar_Contract();
+                MessageBox.Show("Vui lòng chọn hợp đồng cần sửa", "Thông báo",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+        }
+
+        private void button39_Click(object sender, EventArgs e)
+        {
+
+
+            try {
+                int row = dgv_QLHD.CurrentCell.RowIndex;
+                DataGridViewRow selectedRow = dgv_QLHD.Rows[row];
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa hợp đồng này không?", "Xác nhận xóa", buttons);
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show(ContractBLL.ContractBLL_delete_Contract(selectedRow.Cells[0].Value.ToString()));
+                }
+                loar_Contract();
+            }
+             
+            catch(Exception ex)
+            {
+                MessageBox.Show("Vui lòng chọn hợp đồng cần xóa", "Thông báo",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void addRoom_btn_Click(object sender, EventArgs e)
@@ -1340,6 +1367,19 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            if (dgv_QLHD.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_QLHD, "Danh sách Hợp đồng");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

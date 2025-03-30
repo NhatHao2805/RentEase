@@ -323,3 +323,12 @@ D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\obj\Debug\BLL.csproj.Up2Date
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\obj\Debug\BLL.dll
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\obj\Debug\BLL.pdb
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\EPPlus.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\System.Security.Cryptography.Xml.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\EPPlus.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\BLL\bin\Debug\System.Security.Cryptography.Xml.xml

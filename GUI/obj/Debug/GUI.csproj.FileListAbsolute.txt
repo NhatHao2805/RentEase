@@ -411,3 +411,20 @@ D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.exe
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\obj\Debug\GUI.pdb
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\GUI\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\EPPlus.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\EPPlus.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_AddAssets.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_AddRoom.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_RentalHistory.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
