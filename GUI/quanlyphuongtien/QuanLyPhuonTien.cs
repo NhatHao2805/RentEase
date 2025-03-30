@@ -70,7 +70,7 @@ namespace GUI.QuanLyPhuongTien
         "Khu vực sau tòa nhà",
         "Khu vực trước tòa nhà",
         "Khu vực bên hông",
-        
+
     };
                 guna2ComboBox2.Items.Clear();
                 guna2ComboBox2.Items.AddRange(locations);
@@ -80,7 +80,6 @@ namespace GUI.QuanLyPhuongTien
                 guna2ComboBox4.DataSource = ParkingAreaBLL.GetParkingTypes();
                 guna2ComboBox4.DisplayMember = "Type";
                 guna2ComboBox4.ValueMember = "Type";
-
                 // Load danh sách sức chứa
                 guna2ComboBox5.DataSource = ParkingAreaBLL.GetCapacityOptions();
                 guna2ComboBox5.DisplayMember = "Capacity";
@@ -190,7 +189,7 @@ namespace GUI.QuanLyPhuongTien
         {
 
         }
-        
+
 
         private void guna2ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {

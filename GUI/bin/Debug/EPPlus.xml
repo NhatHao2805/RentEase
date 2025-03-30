@@ -185,165 +185,6 @@
             Property names used for the sort.
             </summary>
         </member>
-        <member name="F:OfficeOpenXml.CellPictures.CalcOrigins.Formula">
-            <summary>
-            RichValue created directly by formula (ex, =IMAGE)
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.CellPictures.CalcOrigins.StandAlone">
-            <summary>
-            Standalone RichValue directly stored in a cell without formula dependency (copy/paste as value or LocalImageValue)
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.CellPictures.CalcOrigins.StandaloneDecorative">
-            <summary>
-            Standalone RichValue created from the alt text pane after selecting "decorative"
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.CellPicturesManager.DeleteCellPicture(System.Int32,System.Int32)">
-            <summary>
-            Deletes a cell picture.
-            </summary>
-            <param name="row">Cell row</param>
-            <param name="col">Cell column</param>
-        </member>
-        <member name="T:OfficeOpenXml.CellPictures.ExcelCellPicture">
-            <summary>
-            Represents an in-cell picture
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelCellPicture.#ctor(System.UInt32,System.Uri,OfficeOpenXml.Drawing.PictureStore,OfficeOpenXml.CellPictures.ExcelCellPictureTypes)">
-            <summary>
-            Constructor
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.CellPictures.ExcelCellPicture.ImageUri">
-            <summary>
-            Internal uri in the workbook of the image.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.CellPictures.ExcelCellPicture.ExternalAddress">
-            <summary>
-            External Uri, only set for images retrieved via the IMAGE function
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.CellPictures.ExcelCellPicture.PictureType">
-            <summary>
-            Type of cell picture
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelCellPicture.GetImage">
-            <summary>
-            Returns the <see cref="T:OfficeOpenXml.Drawing.ExcelImage" /> with information abount the image file.
-            </summary>
-            <exception cref="T:System.IO.InvalidDataException"></exception>
-            <returns>The <see cref="T:OfficeOpenXml.Drawing.ExcelImage" /> object.</returns>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelCellPicture.GetImageBytes">
-            <summary>
-            The bytes of the image file
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:OfficeOpenXml.CellPictures.ExcelCellPicture.FileName">
-            <summary>
-            Name of the image file including file extension
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.CellPictures.ExcelCellPicture.AltText">
-            <summary>
-            Alt text of the image
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.CellPictures.ExcelCellPicture.CalcOrigin">
-            <summary>
-            Indicates the calculation context in which this image was created.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.CellPictures.ExcelCellPicture.CellAddress">
-            <summary>
-            Address of the cell picture
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.CellPictures.ExcelCellPictureTypes">
-            <summary>
-            Types of picture that can reside inside a cell
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.CellPictures.ExcelCellPictureTypes.LocalImage">
-            <summary>
-            Local image
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.CellPictures.ExcelCellPictureTypes.WebImage">
-            <summary>
-            Image that is retrieved via an URL.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.CellPictures.ExcelRangePicture">
-            <summary>
-            Pictures in the cell/range
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelRangePicture.#ctor(OfficeOpenXml.ExcelRangeBase)">
-            <summary>
-            Constructur
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.CellPictures.ExcelRangePicture.Exists">
-            <summary>
-            Returns true if the range has a picture, otherwise false
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelRangePicture.Get">
-            <summary>
-            Returns a picture of the top-left cell in the range.
-            </summary>
-            <returns>An <see cref="T:OfficeOpenXml.CellPictures.ExcelCellPicture"/> or null if it doesn't exist</returns>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelRangePicture.Set(System.Byte[],System.String,System.Boolean)">
-            <summary>
-            Adds (or replaces) a cell picture.
-            EPPlus supports the following image types: Png, Jpg, Gif, Bmp, WebP, Tif, Ico
-            </summary>
-            <param name="imageBytes">byte array of the image file</param>
-            
-            
-            <param name="altText">Alt text for the cell/range picture</param>
-            <param name="isDecorative">Sets the decorative property (used by accessibility tools)</param>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelRangePicture.Set(System.IO.Stream,System.String,System.Boolean)">
-            <summary>
-            Adds (or replaces) a cell picture.
-            EPPlus supports the following image types: Png, Jpg, Gif, Bmp, WebP, Tif, Ico
-            </summary>
-            <param name="imageStream"><see cref="T:System.IO.Stream"/> containing the image bytes</param>
-            <param name="altText">Alt text for the cell/range picture</param>
-            <param name="isDecorative">>Sets the decorative property (used by accessibility tools)</param>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelRangePicture.Set(System.String,System.String,System.Boolean)">
-            <summary>
-            Adds (or replaces) a cell picture.
-            EPPlus supports the following image types: Png, Jpg, Gif, Bmp, WebP, Tif, Ico
-            </summary>
-            <param name="path">File path to the image file</param>
-            <param name="altText">Alt text for the cell/range picture</param>
-            <param name="isDecorative">>Sets the decorative property (used by accessibility tools)</param>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelRangePicture.Set(System.IO.FileInfo,System.String,System.Boolean)">
-            <summary>
-            Adds (or replaces) a cell picture.
-            EPPlus supports the following image types: Png, Jpg, Gif, Bmp, WebP, Tif, Ico
-            </summary>
-            <param name="fileInfo"><see cref="T:System.IO.FileInfo" /> representing the path to the image file</param>
-            <param name="altText">Alt text for the cell/range picture</param>
-            <param name="isDecorative">>Sets the decorative property (used by accessibility tools)</param>
-        </member>
-        <member name="M:OfficeOpenXml.CellPictures.ExcelRangePicture.Remove">
-            <summary>
-            Remove any cell picture in the entire range
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.Compatibility.CompatibilitySettings">
             <summary>
             Settings to stay compatible with older versions of EPPlus
@@ -4474,7 +4315,7 @@
         </member>
         <member name="M:OfficeOpenXml.Core.CellStore.CellStore`1.#ctor">
             <summary>
-            For internal use only.
+            For internal use only. 
             Must be set before any instance of the CellStore is created.
             </summary>
         </member>
@@ -5049,6 +4890,11 @@
             Defines mode for Input Method Editor used in east-asian languages
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidation.IsStale">
+            <summary>
+            Indicates whether this instance is stale, see https://github.com/EPPlusSoftware/EPPlus/wiki/Data-validation-Exceptions
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidationAny">
             <summary>
             Data validation interface for Any value validation.
@@ -5233,6 +5079,13 @@
         <member name="P:OfficeOpenXml.DataValidation.ExcelDataValidation.As">
             <summary>
             Us this property to case <see cref="T:OfficeOpenXml.DataValidation.Contracts.IExcelDataValidation"/>s to its subtypes
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.DataValidation.ExcelDataValidation.IsStale">
+            <summary>
+            Indicates whether this instance is stale, see https://github.com/EPPlusSoftware/EPPlus/wiki/Data-validation-Exceptions
+            DEPRECATED as of Epplus 6.2.
+            This as validations can no longer be stale since all attributes are now always fresh and held in the system.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.DataValidation.ExcelDataValidation.Operator">
@@ -6057,7 +5910,7 @@
             Default constructor
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.DataValidation.ExcelTime.#ctor(System.Double)">
+        <member name="M:OfficeOpenXml.DataValidation.ExcelTime.#ctor(System.Decimal)">
             <summary>
             Constructor
             </summary>
@@ -6309,181 +6162,6 @@
             </summary>
             <param name="deleteIfEmpty">Deletes the dataValidation if it has no addresses after clear</param>
             <exception cref="T:System.InvalidOperationException"></exception>
-        </member>
-        <member name="T:OfficeOpenXml.DigitalSignatures.AdditionalSignatureInfo">
-            <summary>
-            Details about the signer of a digital signature, such as role, title, address etc.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.AdditionalSignatureInfo.SignerRoleTitle">
-            <summary>
-            Role or Title
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.AdditionalSignatureInfo.Address1">
-            <summary>
-            Address
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.AdditionalSignatureInfo.Address2">
-            <summary>
-            Address 2
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.AdditionalSignatureInfo.ZipOrPostalCode">
-            <summary>
-            Zip or Postal Code
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.AdditionalSignatureInfo.City">
-            <summary>
-            City
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.AdditionalSignatureInfo.CountryOrRegion">
-            <summary>
-            Country or region
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.AdditionalSignatureInfo.StateOrProvince">
-            <summary>
-            State or province
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.DigitalSignatures.CommitmentType">
-            <summary>
-            Commitment types for signatures
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.CommitmentType.None">
-            <summary>
-            None
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.CommitmentType.Approved">
-            <summary>
-            Approved this document
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.CommitmentType.Created">
-            <summary>
-            Created this document
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.CommitmentType.CreatedAndApproved">
-            <summary>
-            Created and approved this document
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.DigitalSignatures.DigitalSignatureHashAlgorithm">
-            <summary>
-            Hash algorithm used for digital signatures.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.DigitalSignatureHashAlgorithm.SHA1">
-            <summary>
-            Specifies that the SHA-1 algorithm, as defined by ISO/IEC 10118-3:2004 shall be used.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.DigitalSignatureHashAlgorithm.SHA256">
-            <summary>
-            Specifies that the SHA-256 algorithm, as defined by ISO/IEC10118-3:2004 shall be used.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.DigitalSignatureHashAlgorithm.SHA384">
-            <summary>
-            Specifies that the SHA-384 algorithm, as defined by ISO/IEC 10118-3:2004 shall be used.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.DigitalSignatureHashAlgorithm.SHA512">
-            <summary>
-            Specifies that the SHA-512 algorithm, as defined by ISO/IEC10118-3:2004 shall be used.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.DigitalSignatures.DigitalSignatureType">
-            <summary>
-            Digital Signature Types
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.DigitalSignatureType.Invisible">
-            <summary>
-            No visible representation of the digital signature
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.DigitalSignatureType.SignatureLine">
-            <summary>
-            There is a visible representation of the digital signature
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignature">
-            <summary>
-            Digital Signature class to sign a workbook
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignature.Certificate">
-            <summary>
-            The Certificate used to sign this digital signature
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignature.Details">
-            <summary>
-            Details about the signer of a DigitalSignature, such as role, title, address etc.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignature.PurposeForSigning">
-            <summary>
-            Reason for signing the document-
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignature.CommitmentTyping">
-            <summary>
-            Commitment Type.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignature.IsValid">
-            <summary>
-            Whether the Signature was valid when the file was read/saved
-            Is dirty and outdated until after package is saved if any changes have been made to package files.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignature.SetDigestMethod(OfficeOpenXml.DigitalSignatures.DigitalSignatureHashAlgorithm)">
-            <summary>
-            Set the digest method/Hash Algorithm for the package
-            Note: All Digital Signatures in the package will use the latest algorithm.
-            </summary>
-            <param name="algorithm"></param>
-            <exception cref="T:System.InvalidOperationException"></exception>
-        </member>
-        <member name="T:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignatureCollection">
-            <summary>
-            Collection of digital signatures
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignatureCollection.Item(System.Int32)">
-            <summary>
-            Get the signature at index.
-            </summary>
-            <param name="index"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignatureCollection.Add(System.Security.Cryptography.X509Certificates.X509Certificate2)">
-            <summary>
-            Add digital signature
-            Requires a valid X509Certificate2 with a private key.
-            </summary>
-            <param name="certificate"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.DigitalSignatures.ExcelDigitalSignatureCollection.Remove(OfficeOpenXml.DigitalSignatures.ExcelDigitalSignature)">
-            <summary>
-            Remove digital signature
-            </summary>
-            <param name="signature"></param>
-        </member>
-        <member name="T:OfficeOpenXml.DigitalSignatures.SignatureInfoV1">
-            <summary>
-            Information about the signature including OSversion and office version
-            </summary>
         </member>
         <member name="T:OfficeOpenXml.Drawing.Chart.ChartEx.eColorBy">
             <summary>
@@ -11076,29 +10754,6 @@
             Literals for the X serie, if the literal values are strings
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartSerie.StringLiteralsY">
-            <summary>
-            Literals for the Y serie, if the literal values are strings
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Chart.ExcelChartSerie.UpdateAddressesInsert(System.Int32,System.Int32,OfficeOpenXml.ExcelAddressBase,OfficeOpenXml.eShiftTypeInsert)">
-            <summary>
-            
-            </summary>
-            <param name="fromCol"></param>
-            <param name="columns"></param>
-            <param name="affectedRange"></param>
-            <param name="insertType">Wheter Inserting rows or columns</param>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Chart.ExcelChartSerie.UpdateAddressesDelete(System.Int32,System.Int32,OfficeOpenXml.ExcelAddressBase,OfficeOpenXml.eShiftTypeDelete)">
-            <summary>
-            
-            </summary>
-            <param name="fromCol"></param>
-            <param name="columns"></param>
-            <param name="affectedRange"></param>
-            <param name="insertType">Wheter Inserting rows or columns</param>
-        </member>
         <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartSerie.HeaderAddress">
             <summary>
             The header address for the serie.
@@ -11436,26 +11091,6 @@
         <member name="T:OfficeOpenXml.Drawing.Chart.ExcelChartStandardSerie">
             <summary>
             A chart serie
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartStandardSerie.NumberLiteralsY">
-            <summary>
-            Literals for the Y serie, if the literal values are numeric
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartStandardSerie.NumberLiteralsX">
-            <summary>
-            Literals for the X serie, if the literal values are numeric
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartStandardSerie.StringLiteralsY">
-            <summary>
-            Literals for the Y serie, if the literal values are strings
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelChartStandardSerie.StringLiteralsX">
-            <summary>
-            Literals for the X serie, if the literal values are strings
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Drawing.Chart.ExcelChartStandardSerie.#ctor(OfficeOpenXml.Drawing.Chart.ExcelChart,System.Xml.XmlNamespaceManager,System.Xml.XmlNode,System.Boolean)">
@@ -11959,6 +11594,45 @@
             A collection of the individual datapoints
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelLineChartSerie.LineColor">
+             <summary>
+             Line color.
+             </summary>
+            
+             <value>
+             The color of the line.
+             </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelLineChartSerie.MarkerSize">
+             <summary>
+             Gets or sets the size of the marker.
+             </summary>
+            
+             <remarks>
+             value between 2 and 72.
+             </remarks>
+            
+             <value>
+             The size of the marker.
+             </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelLineChartSerie.LineWidth">
+            <summary>
+            Gets or sets the width of the line in pt.
+            </summary>
+            <value>
+            The width of the line.
+            </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelLineChartSerie.MarkerLineColor">
+            <summary>
+            Marker Line color. 
+            (not to be confused with LineColor)
+            </summary>
+            <value>
+            The color of the Marker line.
+            </value>
+        </member>
         <member name="T:OfficeOpenXml.Drawing.Chart.ExcelManualLayout">
             <summary>
             Manual layout for specifing positions of elements manually.
@@ -12187,6 +11861,11 @@
             A collection of the individual datapoints
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelRadarChartSerie.MarkerSize">
+            <summary>
+            The size of a markers
+            </summary>
+        </member>
         <member name="T:OfficeOpenXml.Drawing.Chart.ExcelScatterChart">
             <summary>
             Provides access to scatter chart specific properties
@@ -12262,6 +11941,55 @@
             A collection of the individual datapoints
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelScatterChartSerie.LineColor">
+             <summary>
+             Line color.
+             </summary>
+            
+             <value>
+             The color of the line.
+             </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelScatterChartSerie.MarkerSize">
+             <summary>
+             Gets or sets the size of the marker.
+             </summary>
+            
+             <remarks>
+             value between 2 and 72.
+             </remarks>
+            
+             <value>
+             The size of the marker.
+             </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelScatterChartSerie.MarkerColor">
+            <summary>
+            Marker color.
+            </summary>
+            <value>
+            The color of the Marker.
+            </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelScatterChartSerie.LineWidth">
+             <summary>
+             Gets or sets the width of the line in pt.
+             </summary>
+            
+             <value>
+             The width of the line.
+             </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelScatterChartSerie.MarkerLineColor">
+             <summary>
+             Marker Line color.
+             (not to be confused with LineColor)
+             </summary>
+            
+             <value>
+             The color of the Marker line.
+             </value>
+        </member>
         <member name="T:OfficeOpenXml.Drawing.Chart.ExcelStockChart">
             <summary>
             Provides access to stock chart specific properties
@@ -12316,6 +12044,55 @@
             <summary>
             A collection of the individual datapoints
             </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelStockChartSerie.LineColor">
+             <summary>
+             Line color.
+             </summary>
+            
+             <value>
+             The color of the line.
+             </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelStockChartSerie.MarkerSize">
+             <summary>
+             Gets or sets the size of the marker.
+             </summary>
+            
+             <remarks>
+             value between 2 and 72.
+             </remarks>
+            
+             <value>
+             The size of the marker.
+             </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelStockChartSerie.MarkerColor">
+            <summary>
+            Marker color.
+            </summary>
+            <value>
+            The color of the Marker.
+            </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelStockChartSerie.LineWidth">
+             <summary>
+             Gets or sets the width of the line in pt.
+             </summary>
+            
+             <value>
+             The width of the line.
+             </value>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Chart.ExcelStockChartSerie.MarkerLineColor">
+             <summary>
+             Marker Line color.
+             (not to be confused with LineColor)
+             </summary>
+            
+             <value>
+             The color of the Marker line.
+             </value>
         </member>
         <member name="T:OfficeOpenXml.Drawing.Chart.ExcelSurfaceChart">
             <summary>
@@ -16717,229 +16494,6 @@
             Access to text body properties.
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.BitMapType">
-            <summary>
-            All but BM is OS/2 operating system.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.BitMapType.BM">
-            <summary>
-            Windows bitmap.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.BitMapType.BA">
-            <summary>
-            Bitmap Array
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.BitMapType.CI">
-            <summary>
-            Color Icon
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.BitMapType.CP">
-            <summary>
-            Color Pointer
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.BitMapType.IC">
-            <summary>
-            Icon
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.BitMapType.PT">
-            <summary>
-            Pointer
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.Signature">
-            <summary>
-            Type of bitmap
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.Size">
-            <summary>
-            Byte size of bitmap
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.Reserved1">
-            <summary>
-            Application dependent reserved space
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitMapFileHeader.Offset">
-            <summary>
-            Offse to pixel array/image data
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.BitmapHandler.OptionalData2">
-            <summary>
-            Gap2 + ICC color profile if they exist
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.EMF.EmfImage.InsertSaveAndRestoreRecords(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Save before and restore playback state after a record range
-            </summary>
-            <param name="startRecord">Record before which to place the EMR_SAVEDC record</param>
-            <param name="endRecord">Record after which to place the EMR_RESTOREDC record</param>
-            <param name="stackState">Current number of stacked saved records for EMR_RESTOREDC to restore to. -1 if only this.</param>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.FamilyFont.FF_DONTCARE">
-            <summary>
-            Implementation dependent
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.FamilyFont.FF_ROMAN">
-            <summary>
-            Variable stroke widths proportional and with serifs
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.FamilyFont.FF_SWISS">
-            <summary>
-            Variable stroke widths proportional and sans serifs
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.FamilyFont.FF_MODERN">
-            <summary>
-            Constant stroke width both with and without serifs
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.FamilyFont.FF_SCRIPT">
-            <summary>
-            Font made to look like handwriting
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.FamilyFont.FF_DECORATIVE">
-            <summary>
-            Novelty fonts. That are more decorative e.g. Old English
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.Pitch.DEFAULT_PITCH">
-            <summary>
-            Implementation dependent
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.Pitch.FIXED_PITCH">
-            <summary>
-            All chars occupy same width
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.Pitch.VARIABLE_PITCH">
-            <summary>
-            Variable pitch proportional to the glyphs
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.EMF.MapMode">
-            <summary>
-            Defines maping of Page Space or Logical Units (LU) into device space. 
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.MapMode.MM_TEXT">
-            <summary>
-            LU mapped to one device pixel. positive X = Right. positive Y = down
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.MapMode.MM_LOMETRIC">
-            <summary>
-            LU = 0.1mm  positive X = Right. positive Y = up
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.MapMode.MM_HIMETRIC">
-            <summary>
-            LU = 0.01mm  positive X = Right. positive Y = up
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.MapMode.MM_LOENGLISH">
-            <summary>
-            LU = 0.01 inch positive X = Right. positive Y = up
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.MapMode.MM_HIENGLISH">
-            <summary>
-            LU = 0.001 inch positive X = Right. positive Y = up
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.MapMode.MM_TWIPS">
-            <summary>
-            LU = 1/20 printer point AKA 1/1440 inch or a ('twip'). Positive X = Right, positive Y = up
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.MapMode.MM_ISOTROPIC">
-            <summary>
-            EMR_SETWINDOWEXTEX and EMR_SETVIEWPORTEXTEX specify the units and orientation of axises.
-            Equally scaled(isotropic) abstract axises
-            X and Y must be adjusted so that they remain the same size. 
-            When window extent is set the viewport must be adjusted to stay isotropic
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.MapMode.MM_ANISOTROPIC">
-            <summary>
-            EMR_SETWINDOWEXTEX and EMR_SETVIEWPORTEXTEX specify the units, orientation and scaling of axises.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.EMF.EMR_EXTTEXTOUTW.FontPointSize">
-            <summary>
-            Minimum spacing is 0x01 which should be correct at fontsize 2
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.EMF.EMR_EXTTEXTOUTW.AdjustReferenceToCenterText(System.Int32,System.Int32)">
-            <summary>
-            Calculate centering for text
-            </summary>
-            <param name="totalWidth">Total width (x value endpoint in emf world)</param>
-            <param name="minWidth">Total width (x value endpoint in emf world)</param>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.EMR_HEADER.Bounds">
-            <summary>
-             Bounds in logical units (LU) (LU is equivalent to pixels if MapMode defined by EMR_SETMAPMODE is MM_Text.)
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.EMR_HEADER.Frame">
-            <summary>
-            Frame in 0.1 mm units
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.EMR_SELECTOBJECT.ihObject">
-            <summary>
-            Index of a graphics object either in the EMF object table or stock object 
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.EMF.EMR_STRETCHDIBITS.RecalculateImage(System.Boolean,System.Boolean)">
-            <summary>
-            Please Note: Assumes world origin has been reset.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.Records.EmfPlusRecord.Size">
-            <summary>
-            Defines size of entire record
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.Records.EmfPlusRecord.DataSize">
-            <summary>
-            Size without the Invariant part of given record
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.RectLObject.Left">
-            <summary>
-            x-coordinate of upper-left corner
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.RectLObject.Top">
-            <summary>
-            y-coordinate of upper-left corner
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.RectLObject.Right">
-            <summary>
-            x-coordinate of lower right corner
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.EMF.RectLObject.Bottom">
-            <summary>
-            y-coordinate of lower right corner
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.Drawing.eBevelPresetType">
             <summary>
             A preset bevel that can be applied to a shape.
@@ -17122,7 +16676,7 @@
         </member>
         <member name="F:OfficeOpenXml.Drawing.eDrawingType.Drawing">
             <summary>
-            An unspecified drawing
+            A unspecified drawing
             </summary>
         </member>
         <member name="F:OfficeOpenXml.Drawing.eDrawingType.Shape">
@@ -17153,11 +16707,6 @@
         <member name="F:OfficeOpenXml.Drawing.eDrawingType.GroupShape">
             <summary>
             A drawing grouping other drawings together.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.eDrawingType.OleObject">
-            <summary>
-            An Ole Object drawing
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Drawing.eEditAs">
@@ -17964,49 +17513,6 @@
             Any sigma fill.
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.Drawing.Vml.ExcelPositionBase">
-            <summary>
-            Base class for ExcelPosition.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.Column">
-            <summary>
-            The column
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.Row">
-            <summary>
-            The row
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.ColumnOff">
-            <summary>
-            Column Offset in EMU
-            ss
-            EMU units   1cm         =   1/360000 
-                        1US inch    =   1/914400
-                        1pixel      =   1/9525
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.RowOff">
-            <summary>
-            Row Offset in EMU
-            
-            EMU units   1cm         =   1/360000 
-                        1US inch    =   1/914400
-                        1pixel      =   1/9525
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.Load">
-            <summary>
-            Load xml data
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelPositionBase.UpdateXml">
-            <summary>
-            Update xml data
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingBase">
             <summary>
             Drawing object used for comments
@@ -18034,7 +17540,7 @@
         </member>
         <member name="M:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingBase.GetStyle(System.String,System.String,System.String@)">
             <summary>
-            Gets a style from the semi-colo separated list with the specific key
+            Gets a style from the semi-colo separated list with the specifik key
             </summary>
             <param name="style">The list</param>
             <param name="key">The key to search for</param>
@@ -18451,118 +17957,28 @@
         </member>
         <member name="T:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition">
             <summary>
-            The position of a VML drawing. Used for comments and Digital Signature Lines
+            The position of a VML drawing. Used for comments
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.Row">
+            <summary>
+            Row. Zero based
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.RowOffset">
             <summary>
             Row offset in pixels. Zero based
-            Row Offset in EMU
-            
-            EMU units   1cm         =   1/360000 
-                        1US inch    =   1/914400
-                        1pixel      =   1/9525
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.Column">
+            <summary>
+            Column. Zero based
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.ColumnOffset">
             <summary>
             Column offset. Zero based
-            Column Offset in EMU
-            
-            EMU units   1cm         =   1/360000 
-                        1US inch    =   1/914400
-                        1pixel      =   1/9525
             </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.Load">
-            <summary>
-            Load xml data
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingPosition.UpdateXml">
-            <summary>
-            Update xml data
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine">
-            <summary>
-            Drawing object used for SignatureLines and SignatureLineStamps
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.SetupID">
-            <summary>
-            Id of signature line
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.Signer">
-            <summary>
-            The suggested signer's name.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.Title">
-            <summary>
-            The suggested signers role or title e.g Developer.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.Email">
-            <summary>
-            Suggested signers email.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.SigningInstructions">
-            <summary>
-            Instructions to the suggested signer.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.ShowSignDate">
-            <summary>
-            Allow signer to add comments such as commitmenttype and a "purpose" string
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.AllowComments">
-            <summary>
-            Determines if signature allows comments such as commitment type and purpose
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.IsStamp">
-            <summary>
-            True if digital signature is stamp type. False by default
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.From">
-            <summary>
-            From position
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.To">
-            <summary>
-            To position
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.EMU_PER_PIXEL">
-            <summary>
-            The ratio between EMU and Pixels
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.EMU_PER_POINT">
-            <summary>
-            The ratio between EMU and Points
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.SetSize(System.Int32,System.Int32)">
-            <summary>
-            Set size in pixels
-            Note that resizing columns / rows after using this function will effect the size of the drawing
-            </summary>
-            <param name="PixelWidth">Width in pixels</param>
-            <param name="PixelHeight">Height in pixels</param>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.Vml.ExcelVmlDrawingSignatureLine.SetSize(System.Int32)">
-            <summary>
-            Set size in Percent.
-            Note that resizing columns / rows after using this function will effect the size of the drawing
-            </summary>
-            <param name="Percent"></param>
         </member>
         <member name="T:OfficeOpenXml.Drawing.Vml.ExcelVmlMeasurementUnit">
             <summary>
@@ -22006,24 +21422,19 @@
             Options for how to link a picture
             </summary>
         </member>
-        <member name="F:OfficeOpenXml.Drawing.PictureLocation.None">
-            <summary>
-            The picture location is not set.
-            </summary>
-        </member>
         <member name="F:OfficeOpenXml.Drawing.PictureLocation.Embed">
             <summary>
-            Copy and Embed the image within the workbook.
+            Copy and Embed the image within the workbook
             </summary>
         </member>
         <member name="F:OfficeOpenXml.Drawing.PictureLocation.Link">
             <summary>
-            Collect the image from the link.
+            Collect the image from the link
             </summary>
         </member>
         <member name="F:OfficeOpenXml.Drawing.PictureLocation.LinkAndEmbed">
             <summary>
-            Copy and Embed the image and add a link.
+            Copy and Embed the image and add a link
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Drawing.ExcelChartAsType">
@@ -22522,12 +21933,6 @@
         <member name="P:OfficeOpenXml.Drawing.ExcelDrawingAsType.Control">
             <summary>
             Helps to cast drawings to controls. Use the properties of this class to cast to the various specific control types.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelDrawingAsType.OleObject">
-            <summary>
-            Helps to cast drawings to an Ole object. If the drawing is not an Ole object null will be returned.
             </summary>
             <returns></returns>
         </member>
@@ -23327,8 +22732,8 @@
             </summary>
             <param name="Name"></param>
             <param name="ChartType">Type of chart</param>
-            <param name="PivotTableSource">The pivot table source for a pivot chart</param>
-            <param name="DrawingType">The top element drawing type. Default is OneCellAnchor for Pictures and TwoCellAnchor from Charts and Shapes</param>
+            <param name="PivotTableSource">The pivottable source for a pivotchart</param>
+            <param name="DrawingType">The top element drawingtype. Default is OneCellAnchor for Pictures and TwoCellAnchor from Charts and Shapes</param>
             <returns>The chart</returns>
         </member>
         <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddChart(System.String,OfficeOpenXml.Drawing.Chart.eChartType)">
@@ -23676,6 +23081,25 @@
             <param name="Hyperlink">The Picture Hyperlink</param>
             <returns>A picture object</returns>
         </member>
+        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddPicture(System.String,System.IO.Stream,System.Nullable{OfficeOpenXml.Drawing.ePictureType})">
+            <summary>
+            Adds a picture to the worksheet
+            </summary>
+            <param name="Name"></param>
+            <param name="PictureStream">An stream image.</param>
+            <param name="PictureType">The type of image.  A null value means that EPPlus will identify the type of image automatically.</param>
+            <returns>A picture object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddPicture(System.String,System.IO.Stream,System.Nullable{OfficeOpenXml.Drawing.ePictureType},System.Uri)">
+            <summary>
+            Adds a picture to the worksheet
+            </summary>
+            <param name="Name"></param>
+            <param name="pictureStream">An stream image.</param>
+            <param name="pictureType">The type of image. A null value means that EPPlus will identify the type of image automatically.</param>
+            <param name="Hyperlink">Picture Hyperlink</param>
+            <returns>A picture object</returns>
+        </member>
         <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddPictureAsync(System.String,System.IO.FileInfo,OfficeOpenXml.Drawing.PictureLocation)">
             <summary>
             Adds a picture to the worksheet
@@ -23728,6 +23152,25 @@
             </summary>
             <param name="Name"></param>
             <param name="PictureStream">An stream image.</param>        
+            <param name="Hyperlink">The Picture Hyperlink</param>
+            <returns>A picture object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddPictureAsync(System.String,System.IO.Stream,System.Nullable{OfficeOpenXml.Drawing.ePictureType})">
+            <summary>
+            Adds a picture to the worksheet
+            </summary>
+            <param name="Name"></param>
+            <param name="PictureStream">An stream image.</param>
+            <param name="PictureType">The type of image. A null value means that EPPlus will identify the type of image automatically.</param>
+            <returns>A picture object</returns>
+        </member>
+        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddPictureAsync(System.String,System.IO.Stream,System.Nullable{OfficeOpenXml.Drawing.ePictureType},System.Uri)">
+            <summary>
+            Adds a picture to the worksheet
+            </summary>
+            <param name="Name"></param>
+            <param name="pictureStream">An stream image.</param>
+            <param name="pictureType">The type of image. A null value means that EPPlus will identify the type of image automatically.</param>
             <param name="Hyperlink">The Picture Hyperlink</param>
             <returns>A picture object</returns>
         </member>
@@ -23875,70 +23318,6 @@
             </summary>
             <param name="Name">The name of the scroll bar control</param>
             <returns>The scroll bar form control</returns>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddOleObject(System.String,System.String,System.Action{OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters})">
-            <summary>
-            Embed an OLE Object using a Stream. Can only Embed objects using a stream.
-            </summary>
-            <param name="name">Name of the drawing.</param>
-            <param name="olePath">Path to the file.</param>
-            <param name="optionalParameters">Object containing additional parameters.</param>
-            <returns>A new drawing of type ExcelOleObject.</returns>
-            <exception cref="T:System.ArgumentException">Can Throw exception if Name exists or if OleStream or IconStream are invalid streams.</exception>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddOleObject(System.String,System.String,OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters)">
-            <summary>
-            Embed an OLE Object using a Stream. Can only Embed objects using a stream.
-            </summary>
-            <param name="name">Name of the drawing.</param>
-            <param name="olePath">Path to the file.</param>
-            <param name="optionalParameters">Object containing additional parameters.</param>
-            <returns>A new drawing of type ExcelOleObject.</returns>
-            <exception cref="T:System.ArgumentException">Can Throw exception if Name exists or if OleStream or IconStream are invalid streams.</exception>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddOleObject(System.String,System.IO.FileInfo,System.Action{OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters})">
-            <summary>
-            Embed an OLE Object using a Stream. Can only Embed objects using a stream.
-            </summary>
-            <param name="name">Name of the drawing.</param>
-            <param name="oleInfo">FileInfo containing the file.</param>
-            <param name="optionalParameters">Object containing additional parameters.</param>
-            <returns>A new drawing of type ExcelOleObject.</returns>
-            <exception cref="T:System.ArgumentException">Can Throw exception if Name exists or if OleStream or IconStream are invalid streams.</exception>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddOleObject(System.String,System.IO.FileInfo,OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters)">
-            <summary>
-            Embed an OLE Object using a Stream. Can only Embed objects using a stream.
-            </summary>
-            <param name="name">Name of the drawing.</param>
-            <param name="oleInfo">FileInfo containing the file.</param>
-            <param name="optionalParameters">Object containing additional parameters.</param>
-            <returns>A new drawing of type ExcelOleObject.</returns>
-            <exception cref="T:System.ArgumentException">Can Throw exception if Name exists or if OleStream or IconStream are invalid streams.</exception>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddOleObject(System.String,System.IO.Stream,System.String,System.Action{OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters})">
-            <summary>
-            Embed an OLE Object using a Stream. Can only Embed objects using a stream.
-            </summary>
-            <param name="name">Name of the drawing.</param>
-            <param name="oleStream">Stream containing the file.</param>
-            <param name="fileName">The name of the file.</param>
-            <param name="optionalParameters">Object containing additional parameters.</param>
-            <returns>A new drawing of type ExcelOleObject.</returns>
-            <exception cref="T:System.ArgumentException">Can Throw exception if Name exists or if OleStream or IconStream are invalid streams.</exception>
-            <exception cref="T:System.ArgumentException">Can Throw exception if ExcelOleObjectParameters.LinkToFile is true when using a stream for OLE Object.</exception>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.AddOleObject(System.String,System.IO.Stream,System.String,OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters)">
-            <summary>
-            Embed an OLE Object using a Stream. Can only Embed objects using a stream.
-            </summary>
-            <param name="name">Name of the drawing.</param>
-            <param name="oleStream">Stream containing the file.</param>
-            <param name="fileName">The name of the file.</param>
-            <param name="optionalParameters">Object containing additional parameters.</param>
-            <returns>A new drawing of type ExcelOleObject.</returns>
-            <exception cref="T:System.ArgumentException">Can Throw exception if Name exists or if OleStream or IconStream are invalid streams.</exception>
-            <exception cref="T:System.ArgumentException">Can Throw exception if ExcelOleObjectParameters.LinkToFile is true when using a stream for OLE Object.</exception>
         </member>
         <member name="M:OfficeOpenXml.Drawing.ExcelDrawings.Remove(System.Int32)">
             <summary>
@@ -24134,6 +23513,26 @@
             <param name="imageBytes">The image as a byte array</param>
             <param name="pictureType">The type of image loaded in the stream</param>
         </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelImage.HasImage">
+            <summary>
+            If this object contains an image.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelImage.Type">
+            <summary>
+            The type of image.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelImage.ImageBytes">
+            <summary>
+            The image as a byte array.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelImage.Bounds">
+            <summary>
+            The image bounds and resolution
+            </summary>
+        </member>
         <member name="M:OfficeOpenXml.Drawing.ExcelImage.SetImage(System.String)">
             <summary>
             Sets a new image. 
@@ -24185,31 +23584,6 @@
             Sets a new image. 
             </summary>
             <param name="imageFile">The image file.</param>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.ExcelImageReadOnly">
-            <summary>
-            Represents an read only image 
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelImageReadOnly.HasImage">
-            <summary>
-            If this object contains an image.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelImageReadOnly.Type">
-            <summary>
-            The type of image.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelImageReadOnly.ImageBytes">
-            <summary>
-            The image as a byte array.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelImageReadOnly.Bounds">
-            <summary>
-            The image bounds and resolution
-            </summary>
         </member>
         <member name="T:OfficeOpenXml.Drawing.ExcelImageInfo">
             <summary>
@@ -24307,6 +23681,34 @@
         <member name="T:OfficeOpenXml.Drawing.ExcelPosition">
             <summary>
             Position of the a drawing.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelPosition.Column">
+            <summary>
+            The column
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelPosition.Row">
+            <summary>
+            The row
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelPosition.ColumnOff">
+            <summary>
+            Column Offset in EMU
+            ss
+            EMU units   1cm         =   1/360000 
+                        1US inch    =   1/914400
+                        1pixel      =   1/9525
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.Drawing.ExcelPosition.RowOff">
+            <summary>
+            Row Offset in EMU
+            
+            EMU units   1cm         =   1/360000 
+                        1US inch    =   1/914400
+                        1pixel      =   1/9525
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Drawing.ExcelPosition.Load">
@@ -24432,25 +23834,6 @@
         <member name="P:OfficeOpenXml.Drawing.ExcelShapeBase.TextBody">
             <summary>
             Access to text body properties.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelShapeBase.GetAdjustmentPointsNames">
-            <summary>
-            Get a list of available adjustment point names.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelShapeBase.SetAdjustmentPoint(System.String,System.Int32)">
-            <summary>
-            Adjust the named point with value.
-            </summary>
-            <param name="name">The name of the adjustment point. Use GetShapeGuideNames for a list of possible shape guides to adjust.</param>
-            <param name="value">The value to set for the shape guide. Value is different from shape to shape. Some shapes clamp the value and some are free.</param>
-            <exception cref="T:System.Exception"></exception>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelShapeBase.RemoveAdjustmentPoints">
-            <summary>
-            Remove all the shapes adjustments.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.Drawing.ExcelSlicerAsType">
@@ -24620,278 +24003,6 @@
             <summary>
             Text body settings
             </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.OleObject.ExcelOleObject">
-            <summary>
-            Class for handling OLE Objects.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.DisplayAsIcon">
-            <summary>
-            True: File is displayed as Icon.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.IsExternalLink">
-            <summary>
-            True: File is linked. False: File is embedded.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.ExternalLink">
-            <summary>
-            If the Ole object is linked, this property contains the external link object.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.ProgId">
-            <summary>
-            The progid for the ole object.
-            </summary>x
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.Image">
-            <summary>
-            The icon bitmap used to display the ole object. 
-            Must be a .bmp or .emf image.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.DrawingType">
-            <summary>
-            Returns the drawing type of this object.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.#ctor(OfficeOpenXml.Drawing.ExcelDrawings,System.Xml.XmlNode,OfficeOpenXml.Drawing.OleObject.OleObjectInternal,OfficeOpenXml.Drawing.ExcelGroupShape)">
-            <summary>
-            Constructor for loading existing Ole Object.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.#ctor(OfficeOpenXml.Drawing.ExcelDrawings,System.Xml.XmlNode,System.String,System.String,OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters,OfficeOpenXml.Drawing.ExcelGroupShape)">
-            <summary>
-            Constructor for when the file is a string.
-            </summary>
-            <param name="drawings"></param>
-            <param name="node"></param>
-            <param name="name"></param>
-            <param name="olePath"></param>
-            <param name="parameters"></param>
-            <param name="parent"></param>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.#ctor(OfficeOpenXml.Drawing.ExcelDrawings,System.Xml.XmlNode,System.String,System.IO.FileInfo,OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters,OfficeOpenXml.Drawing.ExcelGroupShape)">
-            <summary>
-            Constructor for when the file is a FileInfo
-            </summary>
-            <param name="drawings"></param>
-            <param name="node"></param>
-            <param name="name"></param>
-            <param name="oleInfo"></param>
-            <param name="parameters"></param>
-            <param name="parent"></param>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.#ctor(OfficeOpenXml.Drawing.ExcelDrawings,System.Xml.XmlNode,System.String,System.IO.Stream,OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters,OfficeOpenXml.Drawing.ExcelGroupShape)">
-            <summary>
-            Constructor for when the file is a Stream.
-            </summary>
-            <param name="drawings"></param>
-            <param name="node"></param>
-            <param name="name"></param>
-            <param name="oleStream"></param>
-            <param name="parameters"></param>
-            <param name="parent"></param>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.GetEmbeddedObjectBytes">
-            <summary>
-            Get the byte array of the embedded OLE object.
-            </summary>
-            <returns>The byte array of embedded OLE object.</returns>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.CreateLinkToEmbeddedPackage">
-            <summary>
-            Creates a link to the embedded Ole Package. Used for accessing contents in embedded xlsx files.
-            </summary>
-            <exception cref="T:System.InvalidOperationException"></exception>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.GetEmbeddedPackage">
-            <summary>
-            Get the workbook of the embedded xlsx object.
-            </summary>
-            <returns></returns>
-            <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.SetEmbeddedPackage(OfficeOpenXml.ExcelPackage)">
-            <summary>
-            Overwrites the current package with the new package in Ole Object.
-            </summary>
-            <param name="package">The new package.</param>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.OleObject.ExcelOleObject.ExportOleObjectData(System.String)">
-            <summary>
-            Internal Method for debugging purposes. Exports the contents of the data streams inside a compound document containing an OLE Object.
-            </summary>
-            <param name="exportPath"></param>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters">
-            <summary>
-            Object containing additional parameters for OLE Objects.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters.LinkToFile">
-            <summary>
-            True: File will be linked. False: File will be embedded.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters.DisplayAsIcon">
-            <summary>
-            Set to display the object as in icon.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters.ProgId">
-            <summary>
-            Use to set custom progId.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.OleObject.ExcelOleObjectParameters.Icon">
-            <summary>
-            The icon for the object.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.eSignatureLineType">
-            <summary>
-            Signature line types.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.eSignatureLineType.Stamp">
-            <summary>
-            Signature line stamp which contains a SignatureImage as the signature.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Drawing.eSignatureLineType.SignatureLine">
-            <summary>
-            Signature line which can contain either text or an image as the signature.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.ExcelSignatureLine">
-            <summary>
-            Signature line which can contain either text or an image as the signature.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelSignatureLine.SignatureText">
-            <summary>
-            The Signature itself.
-            Cannot be set if IsStamp is true.
-            Note that setting SignatureText will erase SignatureImage and vice-versa.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelSignatureLine.SignWithText(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String)">
-            <summary>
-            Sign with text
-            </summary>
-            <param name="signatureText">Cannot be null or empty</param>
-            <param name="certificate"></param>
-            <returns></returns>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.ExcelSignatureLineStamp">
-            <summary>
-            Signature line stamp which contains a SignatureImage as the signature.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelSignatureLineStamp.SignatureLineType">
-            <summary>
-            The type of signatureline
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelSignatureLineStamp.SignatureImage">
-            <summary>
-            The Signature itself.
-            Note that setting SignatureImage will erase SignatureText and vice-versa
-            Must be .bmp format.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelSignatureLineStamp.DigitalSignature">
-            <summary>
-            The digital signature this signatureline is linked to one.
-            Must be set via Sign methods.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelSignatureLineStamp.SignWithImage(System.Security.Cryptography.X509Certificates.X509Certificate2,OfficeOpenXml.Drawing.ExcelImage)">
-            <summary>
-            Sign the signatureline with a new digital signature.
-            The image must be .bmp format
-            </summary>
-            <param name="image">Must be in .bmp format</param>
-            <param name="certificate">Certificate for creating the digital signature</param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.ExcelSignatureLineStamp.Sign(System.Security.Cryptography.X509Certificates.X509Certificate2)">
-            <summary>
-            </summary>
-            <param name="certificate"></param>
-            <returns></returns>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.ExcelSignatureLineStamp.AsSignatureLine">
-            <summary>
-            Return this as signatureline
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Drawing.SignatureLineCollection">
-            <summary>
-            Collection of signaturelines
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Drawing.SignatureLineCollection.Item(System.Int32)">
-            <summary>
-            Index operator, returns by 0-based index
-            </summary>
-            <param name="index"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.GetSignatureLineStamps">
-            <summary>
-            Get all signaturelines of stamp type
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.GetSignatureLines">
-            <summary>
-            Get all signaturelines of line type
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.GetSignatureLineById(System.Guid)">
-            <summary>
-            Get a signatureline by its id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.Add(OfficeOpenXml.Drawing.ExcelSignatureLineStamp)">
-            <summary>
-            Add a signatureline to the collection.
-            </summary>
-            <param name="signatureLine"></param>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.Remove(OfficeOpenXml.Drawing.ExcelSignatureLineStamp)">
-            <summary>
-            Remove a signatureline from the collection.
-            </summary>
-            <param name="sline">Signature line to remove.</param>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.Clear">
-            <summary>
-            Clear the signature list.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.GetEnumerator">
-            <summary>
-            Get enumerator
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.Add">
-            <summary>
-            Add an empty signatureLine to the worksheet
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Drawing.SignatureLineCollection.AddStamp">
-            <summary>
-            Add an empty signatureLine Stamp to the worksheet
-            </summary>
-            <returns></returns>
         </member>
         <member name="T:OfficeOpenXml.Drawing.Slicer.ExcelPivotTableSlicer">
             <summary>
@@ -26749,7 +25860,7 @@
             Settings specific for linear gradiant fills
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Drawing.Style.Fill.ExcelDrawingGradientFillLinearSettings.Angle">
+        <member name="P:OfficeOpenXml.Drawing.Style.Fill.ExcelDrawingGradientFillLinearSettings.Angel">
             <summary>
             The direction of color change for the gradient.To define this angle, let its value
             be x measured clockwise.Then( -sin x, cos x) is a vector parallel to the line of constant color in the gradient fill.
@@ -28446,6 +27557,28 @@
             Used for some Lookupfunctions to indicate that function arguments should
             not be compiled before the function is called.
             </summary>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.Excel.Functions.ExcelFunction.ValidateArguments(System.Collections.Generic.IEnumerable{OfficeOpenXml.FormulaParsing.Excel.Functions.FunctionArgument},System.Int32,OfficeOpenXml.eErrorType)">
+            <summary>
+            This functions validates that the supplied <paramref name="arguments"/> contains at least
+            (the value of) <paramref name="minLength"/> elements. If one of the arguments is an
+            <see cref="T:OfficeOpenXml.FormulaParsing.IRangeInfo">Excel range</see> the number of cells in
+            that range will be counted as well.
+            </summary>
+            <param name="arguments"></param>
+            <param name="minLength"></param>
+            <param name="errorTypeToThrow">The <see cref="T:OfficeOpenXml.eErrorType"/> of the <see cref="T:OfficeOpenXml.FormulaParsing.Exceptions.ExcelErrorValueException"/> that will be thrown if <paramref name="minLength"/> is not met.</param>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.Excel.Functions.ExcelFunction.ValidateArguments(System.Collections.Generic.IEnumerable{OfficeOpenXml.FormulaParsing.Excel.Functions.FunctionArgument},System.Int32)">
+            <summary>
+            This functions validates that the supplied <paramref name="arguments"/> contains at least
+            (the value of) <paramref name="minLength"/> elements. If one of the arguments is an
+            <see cref="T:OfficeOpenXml.FormulaParsing.IRangeInfo">Excel range</see> the number of cells in
+            that range will be counted as well.
+            </summary>
+            <param name="arguments"></param>
+            <param name="minLength"></param>
+            <exception cref="T:System.ArgumentException"></exception>
         </member>
         <member name="M:OfficeOpenXml.FormulaParsing.Excel.Functions.ExcelFunction.ArgToAddress(System.Collections.Generic.IList{OfficeOpenXml.FormulaParsing.Excel.Functions.FunctionArgument},System.Int32)">
             <summary>
@@ -30334,9 +29467,9 @@
         </member>
         <member name="P:OfficeOpenXml.FormulaParsing.ExcelCalculationOption.CacheExpressions">
             <summary>
-            Expressions in the formula calculation will be cached, to be reduced. 
+            Expressions in the formula calculation will be cached, to be resused. 
             This increases speed, if having multiple formulas using the same expressions. 
-            Caching increases memory consumption on calculate.
+            Canching increases memory consumtion on calculate.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.FormulaParsing.ExcelCalculationOption.PrecisionAndRoundingStrategy">
@@ -30346,14 +29479,8 @@
         </member>
         <member name="P:OfficeOpenXml.FormulaParsing.ExcelCalculationOption.FollowDependencyChain">
             <summary>
-            If true, EPPlus will calculate the cells in order calculating any dependent cells. Default.
+            If true, EPPlus will calculate the cells in order calculating any dependent cells.
             If false, EPPlus will calculate the cells without calculating dependent cells.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.ExcelCalculationOption.AlwaysRefreshImageFunction">
-            <summary>
-            If true, EPPlus will download the images in the IMAGE function even if they exists in the package. The same URL will only be downloaded once.
-            If false(default), EPPlus will only download images that doesn't exist in the package.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.ExcelDataProvider">
@@ -30904,46 +30031,39 @@
             <param name="wsIx">Worksheet index</param>
             <returns></returns>
         </member>
-        <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult">
+        <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType">
             <summary>
-            Address compile result
+            Result type
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.#ctor(System.Object,OfficeOpenXml.FormulaParsing.FormulaExpressions.DataType,OfficeOpenXml.FormulaParsing.LexicalAnalysis.FormulaRangeAddress)">
+        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.Normal">
             <summary>
-            Address result
-            </summary>
-            <param name="result"></param>
-            <param name="dataType"></param>
-            <param name="address"></param>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.#ctor(System.Object,OfficeOpenXml.FormulaParsing.FormulaExpressions.DataType)">
-            <summary>
-            Address result without address
-            </summary>
-            <param name="result"></param>
-            <param name="dataType"></param>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.#ctor(OfficeOpenXml.eErrorType)">
-            <summary>
-            
-            </summary>
-            <param name="error"></param>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.#ctor(OfficeOpenXml.ExcelErrorValue)">
-            <summary>
-            Address compile result
-            </summary>
-            <param name="errorValue"></param>
-        </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.Address">
-            <summary>
-            Address
+            A normal compile result containing a value.
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.ResultType">
+        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.RangeAddress">
             <summary>
-            ResultType
+            A compile result referencing a range address. This will allow the result to be used with the colon operator.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.DynamicArray">
+            <summary>
+            The result is a dynamic array formula.
+            </summary>
+        </member>
+        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.DynamicArray_AlwaysSetCellAsDynamic">
+            <summary>
+            The result is a dynamic array formula. Even if the result is nested in another function that the cell should be marked as dynamic.
+            </summary>
+        </member>
+        <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultBase">
+            <summary>
+            CompileResultBase
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultBase.ResultType">
+            <summary>
+            Result type
             </summary>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResult">
@@ -31067,55 +30187,49 @@
             Result type
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultBase">
+        <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult">
             <summary>
-            CompileResultBase
+            Address compile result
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultBase.ResultType">
+        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.#ctor(System.Object,OfficeOpenXml.FormulaParsing.FormulaExpressions.DataType,OfficeOpenXml.FormulaParsing.LexicalAnalysis.FormulaRangeAddress)">
             <summary>
-            Result type
+            Address result
+            </summary>
+            <param name="result"></param>
+            <param name="dataType"></param>
+            <param name="address"></param>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.#ctor(System.Object,OfficeOpenXml.FormulaParsing.FormulaExpressions.DataType)">
+            <summary>
+            Address result without address
+            </summary>
+            <param name="result"></param>
+            <param name="dataType"></param>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.#ctor(OfficeOpenXml.eErrorType)">
+            <summary>
+            
+            </summary>
+            <param name="error"></param>
+        </member>
+        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.#ctor(OfficeOpenXml.ExcelErrorValue)">
+            <summary>
+            Address compile result
+            </summary>
+            <param name="errorValue"></param>
+        </member>
+        <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.Address">
+            <summary>
+            Address
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType">
+        <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.AddressCompileResult.ResultType">
             <summary>
-            Result type
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.Normal">
-            <summary>
-            A normal compile result containing a value.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.RangeAddress">
-            <summary>
-            A compile result referencing a range address. This will allow the result to be used with the colon operator.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.DynamicArray">
-            <summary>
-            The result is a dynamic array formula.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.DynamicArray_AlwaysSetCellAsDynamic">
-            <summary>
-            The result is a dynamic array formula. Even if the result is nested in another function that the cell should be marked as dynamic.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.LocalImage">
-            <summary>
-            A compile result containing a local image or a reference to a local image
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResultType.WebImage">
-            <summary>
-            A compile result containing a web image or a reference to a web image
+            ResultType
             </summary>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.DynamicArrayCompileResult">
-            <summary>
-            Indicates that the result the function should be created as a dynamic array result.
-            </summary>
             <summary>
             Indicates that the result the function should be created as a dynamic array result.
             </summary>
@@ -31159,43 +30273,6 @@
         <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.DynamicArrayCompileResult.ResultType">
             <summary>
             The result is a dynamic array.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResults.LocalImageCompileResult">
-            <summary>
-            Local image compile result
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResults.LocalImageCompileResult.#ctor(System.Object,OfficeOpenXml.FormulaParsing.LexicalAnalysis.FormulaRangeAddress)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="result"></param>
-            <param name="address"></param>
-        </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResults.LocalImageCompileResult.ResultType">
-            <summary>
-            The result is a local image
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResults.WebImageCompileResult">
-            <summary>
-            Local image compile result
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResults.WebImageCompileResult.#ctor(System.Object)">
-            <summary>
-            Web image compile result
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResults.WebImageCompileResult.#ctor(System.Object,OfficeOpenXml.FormulaParsing.ParsingContext)">
-            <summary>
-            Web image compile result
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.FormulaExpressions.CompileResults.WebImageCompileResult.ResultType">
-            <summary>
-            The result is a web image
             </summary>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.DataType">
@@ -31256,16 +30333,6 @@
         <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.DataType.Variable">
             <summary>
             Variable data type
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.DataType.LocalImage">
-            <summary>
-            Local image data type
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.FormulaParsing.FormulaExpressions.DataType.WebImage">
-            <summary>
-            Web image data type
             </summary>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.FormulaExpressions.EnumerableExpression">
@@ -31695,7 +30762,7 @@
         </member>
         <member name="M:OfficeOpenXml.FormulaParsing.IRangeInfo.GetValue(System.Int32,System.Int32)">
             <summary>
-            Get the value from a cell               
+            Get the value from a cell
             </summary>
             <param name="row">The Row</param>
             <param name="col">The Column</param>
@@ -31734,15 +30801,8 @@
         </member>
         <member name="P:OfficeOpenXml.FormulaParsing.IRangeInfo.Dimension">
             <summary>
-            The worksheet dimension if the range refers to an worksheet address, otherwise the size of the array.
+            The worksheet dimension if the range referres to an worksheet address, otherwise the size of the array.
             </summary>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.IRangeInfo.GetAddressDimensionAdjusted(System.Int32)">
-            <summary>
-            Get the address adjusted inside the dimension of the worksheet.
-            </summary>
-            <param name="index">The index of the address.</param>
-            <returns>The address adjusted within the dimension of the worksheet.</returns>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.IAddressInfo">
             <summary>
@@ -31756,7 +30816,7 @@
         </member>
         <member name="P:OfficeOpenXml.FormulaParsing.IAddressInfo.Addresses">
             <summary>
-            If the address contains comma separated addresses, this array contains the individual addresses.
+            If the address contains commaseparated addresses, this array contains the individual addresses.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.FormulaParsing.LexicalAnalysis.SharedFormula.TokenAddresses">
@@ -32549,12 +31609,6 @@
             In some functions EPPlus will round double values to 15 significant figures before the value is handled. This is an option for Excel compatibility.
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.FormulaParsing.ParsingConfiguration.AlwaysRefreshImageFunction">
-            <summary>
-            If true, EPPlus will download the images in the IMAGE function even if they exists in the package. The same URL will only be downloaded once.
-            If false(default), EPPlus will only download images that don't exist in the package.
-            </summary>
-        </member>
         <member name="P:OfficeOpenXml.FormulaParsing.ParsingConfiguration.Logger">
             <summary>
             The <see cref="T:OfficeOpenXml.FormulaParsing.Logging.IFormulaParserLogger"/> of the parser
@@ -32746,7 +31800,7 @@
         </member>
         <member name="M:OfficeOpenXml.FormulaParsing.Ranges.EpplusExcelExternalRangeInfo.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,OfficeOpenXml.FormulaParsing.ParsingContext)">
             <summary>
-            The constructor 
+            The constructor
             </summary>
             <param name="externalReferenceIx">Index of the external workbook</param>
             <param name="worksheetIx">The external worksheet index/id</param>
@@ -32881,13 +31935,6 @@
             <param name="rowOffset"></param>
             <param name="colOffset"></param>
             <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.Ranges.EpplusExcelExternalRangeInfo.GetAddressDimensionAdjusted(System.Int32)">
-            <summary>
-            Get the address adjusted within the dimension of the worksheet.
-            </summary>
-            <param name="index">The address index.</param>
-            <returns>The adjusted address.</returns>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.Ranges.ExternalCellInfo">
             <summary>
@@ -33131,13 +32178,6 @@
             <summary>
             Reset
             </summary>
-        </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.Ranges.InMemoryRange.GetAddressDimensionAdjusted(System.Int32)">
-            <summary>
-            Get the address adjusted inside the dimension of the worksheet. Not applicable on InMemoryRange's, as no addresses us used.
-            </summary>
-            <param name="index">Not applicable on InMemoryRange's.</param>
-            <returns>The address.</returns>
         </member>
         <member name="T:OfficeOpenXml.FormulaParsing.Ranges.NameInfo">
             <summary>
@@ -33471,13 +32511,6 @@
             <param name="colOffset"></param>
             <returns></returns>
         </member>
-        <member name="M:OfficeOpenXml.FormulaParsing.Ranges.RangeInfo.GetAddressDimensionAdjusted(System.Int32)">
-            <summary>
-            Get the address adjusted inside the dimension of the worksheet.
-            </summary>
-            <param name="index">The index of the address.</param>
-            <returns>The address adjusted within the dimension of the worksheet.</returns>
-        </member>
         <member name="T:OfficeOpenXml.FormulaParsing.Utilities.ArgumentInfo`1">
             <summary>
             Represent a function argument to validate
@@ -33637,7 +32670,7 @@
             <summary>
             Read the package from the OLE document and decrypt it using the supplied password
             </summary>
-            <param name="stream">The memory ms. </param>
+            <param name="stream">The memory stream. </param>
             <param name="encryption">The encryption object from the Package</param>
             <returns></returns>
         </member>
@@ -33818,26 +32851,6 @@
         <member name="T:OfficeOpenXml.Encryption.EncryptionVerifier">
             <summary>
             Encryption verifier inside the EncryptionInfo stream
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Encryption.EPPlusDecryptionInfo">
-            <summary>
-            Decryption information passed to the sensitivity label handler
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Encryption.EPPlusDecryptionInfo.PackageStream">
-            <summary>
-            The package stream
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Encryption.EPPlusDecryptionInfo.ProtectionInformation">
-            <summary>
-            Protection information passed to the sensitivity label handler
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Encryption.EPPlusDecryptionInfo.ActiveLabelId">
-            <summary>
-            If a new sensibility label has been set, this property contains the id of the new label.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.eShiftTypeDelete">
@@ -34022,8 +33035,8 @@
         </member>
         <member name="T:OfficeOpenXml.LicenseContext">
             <summary>
-            Obsolete: Specified the license EPPlus is used in versions prior to EPPlus 8.
-            License type must be specified in order to use the library
+            Specifies with license EPPlus is used under.
+            Licensetype must be specified in order to use the library
             <seealso cref="P:OfficeOpenXml.ExcelPackage.LicenseContext"/>
             </summary>
         </member>
@@ -34036,212 +33049,6 @@
         <member name="F:OfficeOpenXml.LicenseContext.Commercial">
             <summary>
             You have a commercial license purchased at https://epplussoftware.com/licenseoverview
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.EPPlusCommercialLicenseType">
-            <summary>
-            The type of commercial license
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusCommercialLicenseType.Subscription">
-            <summary>
-            A subscription license.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusCommercialLicenseType.Perpetual">
-            <summary>
-            A perpetual license.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusCommercialLicenseType.Package">
-            <summary>
-            A perpetual license package.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusCommercialLicenseType.Custom">
-            <summary>
-            A custom license, for example an enterprise or site license.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusCommercialLicenseType.PayAsYouGo">
-            <summary>
-            A pay-as-you go license. This license can no longer be purchased.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusCommercialLicenseType.Trial">
-            <summary>
-            This license is granted for trial purposes, normaly for 32 days.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusCommercialLicenseType.TemporaryKey">
-            <summary>
-            This license has been temporary extended to complete the renewal process.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.EPPlusLicense">
-            <summary>
-            Represents a class to set the license 
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicense.LicenseKey">
-            <summary>
-            The license key used for a commercial license.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicense.LegalName">
-            <summary>
-            The name used for a commercial organization
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicense.Source">
-            <summary>
-            The source where the license was set.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicense.LicenseType">
-            <summary>
-            The type of license used.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicense.LicenseInfo">
-            <summary>
-            License information from the license key. If no license key has been set, this property contains null.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicense.ExtendUnderRenewal">
-            <summary>
-            If your subscription has expired past the <see cref="P:OfficeOpenXml.EPPlusLicenseInfo.LicenseValidTo"/> date, you can set this flag to get a 15 additional days to renew the license.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.EPPlusLicense.SetNonCommercialPersonal(System.String)">
-            <summary>
-            Use this license if you use EPPlus for personal noncommercial usage.
-            Using this option will tag all created document with the Polyform Noncommercial license.
-            See https://polyformproject.org/licenses/noncommercial/1.0.0/        
-            </summary>
-            <param name="fullName">Your name. This name will go into the Office Properties</param>
-        </member>
-        <member name="M:OfficeOpenXml.EPPlusLicense.SetNonCommercialOrganization(System.String)">
-            <summary>
-            Use this option if you use EPPlus within a noncommercial organization.
-            Using this option will tag all created document with the Polyform Noncommercial license. 
-            <see href="https://polyformproject.org/licenses/noncommercial/1.0.0/"/>
-            </summary>
-            <param name="organizationName">The noncommercial organizations name</param>
-        </member>
-        <member name="M:OfficeOpenXml.EPPlusLicense.SetCommercial(System.String)">
-            <summary>
-            If you use EPPlus within a commercial organization or for commercial purposes.
-            This requires a license for EPPlus that can be purchased at https://epplussoftware.com
-            </summary>
-            <param name="licenseKey">The license key you received with your license.</param>
-            <seealso href="https://epplussoftware.com/en/Home/GettingStartedLicenseKey"/>
-        </member>
-        <member name="M:OfficeOpenXml.EPPlusLicense.RemoveActiveLicense">
-            <summary>
-            Removes the active license.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.EPPlusLicenseInfo">
-            <summary>
-            License information about a commercial license.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicenseInfo.LicenseNumber">
-            <summary>
-            The license number
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicenseInfo.LicenseType">
-            <summary>
-            The type of license
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicenseInfo.LicenseValidFrom">
-            <summary>
-            The license valid from date.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicenseInfo.LicenseValidTo">
-            <summary>
-            The license valid to date.
-            For subscription licenses, this date will be set to 30 days after the license periods expire date to allow the license to be renewed.
-            For perpetual licenses, you will not be able to update to major/minor versions of EPPlus released after this date. 
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicenseInfo.NumberOfLicensedDevelopers">
-            <summary>
-            The number of developers covered by this license.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.EPPlusLicenseInfo.Status">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.EPPlusLicenseSource">
-            <summary>
-            The source method how a license is set.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseSource.Code">
-            <summary>
-            The license is set via the methods in <see cref="T:OfficeOpenXml.EPPlusLicense"/>
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseSource.EnvironmentVariable">
-            <summary>
-            The license is set via an user or process environment variable.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseSource.ConfigFile">
-            <summary>
-            The license is set via the application configuration file
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.EPPlusLicenseStatus">
-            <summary>
-            Status of a commercial license
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseStatus.Valid">
-            <summary>
-            The license key is valid for this version.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseStatus.InvalidLicenseKey">
-            <summary>
-            The license key is invalid.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseStatus.Expired">
-            <summary>
-            The subscription license has expired.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseStatus.NotValidForThisVersion">
-            <summary>
-            The perpetual license is valid, but requires a renewal for this version.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.EPPlusLicenseType">
-            <summary>
-            The type of license used.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseType.Commercial">
-            <summary>
-            If you use EPPlus within a commercial organization or for commercial purposes.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseType.NonCommercialPersonal">
-            <summary>
-            Use this license if you use EPPlus for personal noncommercial usage.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.EPPlusLicenseType.NonCommercialOrganization">
-            <summary>
-            Use this license if you use EPPlus representing a noncommercial organization.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.eWorkSheetHidden">
@@ -35213,12 +34020,6 @@
             Default.
             </summary>
         </member>
-        <member name="F:OfficeOpenXml.EncryptionVersion.ProtectedBySensibilityLabel">
-            <summary>
-            The workbook is protected by a sensitiviy label.
-            For EPPlus to work with this type of encryption you need to set a <see cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler"/> that handels the decryption/encryption using the Microsoft MIPS API.
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.ExcelEncryption">
              <summary>
              How and if the workbook is encrypted
@@ -35401,6 +34202,13 @@
             <param name="pictureType">The image format of the picture stream</param>
             <param name="Alignment">Alignment. The image object will be inserted at the end of the Text.</param>
         </member>
+        <member name="M:OfficeOpenXml.ExcelHeaderFooterText.InsertPicture(System.Drawing.Image,OfficeOpenXml.PictureAlignment)">
+            <summary>
+            Inserts a picture at the end of the text in the header or footer
+            </summary>
+            <param name="Picture">The image object containing the Picture</param>
+            <param name="Alignment">Alignment. The image object will be inserted at the end of the Text.</param>
+        </member>
         <member name="T:OfficeOpenXml.ExcelHeaderFooter">
             <summary>
             Represents the Header and Footer on an Excel Worksheet
@@ -35544,6 +34352,13 @@
             </summary>
             <param name="uriString">The URI</param>
         </member>
+        <member name="M:OfficeOpenXml.ExcelHyperLink.#ctor(System.String,System.Boolean)">
+            <summary>
+            A new hyperlink with the specified URI. This syntax is obsolete
+            </summary>
+            <param name="uriString">The URI</param>
+            <param name="dontEscape"></param>
+        </member>
         <member name="M:OfficeOpenXml.ExcelHyperLink.#ctor(System.String,System.UriKind)">
             <summary>
             A new hyperlink with the specified URI and kind
@@ -35553,7 +34368,7 @@
         </member>
         <member name="M:OfficeOpenXml.ExcelHyperLink.#ctor(System.String,System.String)">
             <summary>
-            Sheet internal reference.
+            Sheet internal reference
             </summary>
             <param name="referenceAddress">The address or defined name</param>
             <param name="display">Displayed text</param>
@@ -36157,28 +34972,10 @@
         </member>
         <member name="P:OfficeOpenXml.ExcelPackage.LicenseContext">
             <summary>
-            This property is obsolete in EPPlus 8, and will be removed in coming versions. 
-            Please use the <see cref="P:OfficeOpenXml.ExcelPackage.License"/> property to configure the license.
-            <see href="https://epplussoftware.com/developers/licensenotsetexception" />
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelPackage.License">
-            <summary>
-            <para>
-            Used to set the license EPPlus uses.
-            </para>
-            <para>
-            For use within a commercial organization. Requires a license key which can be purchased at <see href="https://epplussoftware.com" />.<br/>
-            <see cref="M:OfficeOpenXml.EPPlusLicense.SetCommercial(System.String)"/>
-            </para>
-            <para>
-            For use within a non-commercial organization. The document will be tagged with the Polyform Noncommercial License.<br/>
-            <see cref="M:OfficeOpenXml.EPPlusLicense.SetNonCommercialOrganization(System.String)"/>
-            </para>
-            <para>
-            For personal non-commercial use. <br/>
-            <see cref="M:OfficeOpenXml.EPPlusLicense.SetNonCommercialPersonal(System.String)"/>
-            </para>
+            To use the EPPlus library in debug mode a Licensetype must be specified.
+            Use LicenseContext.NonCommercial if you use EPPlus in an non commercial context.
+            Use LicenseContext.Commercial if you have purchased an license to use EPPlus
+            See https://epplussoftware.com/developers/licenseexception
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelPackage.Workbook">
@@ -36389,12 +35186,6 @@
             <param name="output"></param>
             <param name="Password"></param>
         </member>
-        <member name="P:OfficeOpenXml.ExcelPackage.SensibilityLabels">
-            <summary>
-            Sensibility labels meta data.
-            <seealso cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler"/>
-            </summary>
-        </member>
         <member name="M:OfficeOpenXml.ExcelPackage.LoadAsync(System.IO.FileInfo,System.Threading.CancellationToken)">
             <summary>
             Loads the specified package data from a stream.
@@ -36540,12 +35331,6 @@
             This parameter overrides the Encryption.Password.</param>
             <param name="cancellationToken">The cancellation token</param>
         </member>
-        <member name="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler">
-            <summary>
-            If you want your workbooks to be marked with sensibility lables, you can add a handler for authentication, encryption and decryption using the Microsoft Information Protection SDK.
-            For more information
-            </summary>
-        </member>
         <member name="M:OfficeOpenXml.ExcelPackage.GetAsByteArrayAsync(System.Threading.CancellationToken)">
             <summary>
             Saves and returns the Excel files as a bytearray.
@@ -36616,11 +35401,6 @@
             <summary>
             Any auto- or table- filters created will be applied on save.
             In the case you want to handle this manually, set this property to false.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelPackageSettings.ImageFunctionService">
-            <summary>
-            This service is used by the IMAGE function to download images over https
             </summary>
         </member>
         <member name="T:OfficeOpenXml.eOrientation">
@@ -37395,11 +36175,6 @@
             Returns the formatted value.
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.ExcelRangeBase.Picture">
-            <summary>
-            Used to add/remove cell pictures in the range
-            </summary>
-        </member>
         <member name="M:OfficeOpenXml.ExcelRangeBase.AutoFitColumns">
             <summary>
             Set the column width from the content of the range. Columns outside of the worksheets dimension are ignored.
@@ -37487,11 +36262,6 @@
         <member name="P:OfficeOpenXml.ExcelRangeBase.AutoFilter">
             <summary>
             Set an autofilter for the range
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelRangeBase.IsEmpty(System.Boolean,System.Boolean,System.Boolean)">
-            <summary>
-            Returns true if the range is empty.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelRangeBase.IsRichText">
@@ -37670,32 +36440,6 @@
             </summary>
             <param name="Destination">The start cell where the range will be copied.</param>
             <param name="excelRangeCopyOptionFlags">Cell properties that will not be copied.</param>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelRangeBase.CopyFill(OfficeOpenXml.ExcelRangeBase)">
-            <summary>
-            Copies the range of cells to another range of cells. The desination ranges rows and columns needs to be a multiple of the source's ranges rows and columns.
-            </summary>
-            <param name="Destination">The range of cells to copy into.</param>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelRangeBase.CopyFill(OfficeOpenXml.ExcelRangeBase,OfficeOpenXml.ExcelRangeCopyOptionFlags[])">
-            <summary>
-            Copies the range of cells to another range of cells. The desination ranges rows and columns needs to be a multiple of the source's ranges rows and columns.
-            </summary>
-            <param name="Destination">The range of cells to copy into.</param>
-            <param name="excelRangeCopyOptionFlags">Cell properties that will not be copied. Fill property will be set.</param>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelRangeBase.CopyTranspose(OfficeOpenXml.ExcelRangeBase)">
-            <summary>
-            Copies the range of cells to another range of cells transposed.
-            </summary>
-            <param name="Destination">The range of cells to copy into.</param>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelRangeBase.CopyTranspose(OfficeOpenXml.ExcelRangeBase,OfficeOpenXml.ExcelRangeCopyOptionFlags[])">
-            <summary>
-            Copies the range of cells to another range of cells transposed.
-            </summary>
-            <param name="Destination">The range of cells to copy into.</param>
-            <param name="excelRangeCopyOptionFlags">Cell properties that will not be copied. Transpose property will be set.</param>
         </member>
         <member name="M:OfficeOpenXml.ExcelRangeBase.CopyStyles(OfficeOpenXml.ExcelRangeBase)">
             <summary>
@@ -38950,14 +37694,6 @@
             <param name="MinimumWidth">Minimum column width</param>
             <param name="MaximumWidth">Maximum column width</param>
         </member>
-        <member name="M:OfficeOpenXml.ExcelRangeColumn.GetColumn(System.Int32,System.Boolean)">
-            <summary>
-            Gets the column.
-            </summary>
-            <param name="col"></param>
-            <param name="ignoreFromCol"></param>
-            <returns></returns>
-        </member>
         <member name="P:OfficeOpenXml.ExcelRangeColumn.Range">
             <summary>
             Reference to the cell range of the column(s)
@@ -38984,12 +37720,6 @@
             Reset the enumerator
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.ExcelRangeColumn.DeleteAll(System.Predicate{OfficeOpenXml.ExcelColumn})">
-            <summary>
-            Delete all columns that match the predicate
-            </summary>
-            <param name="match"></param>
-        </member>
         <member name="M:OfficeOpenXml.ExcelRangeColumn.Dispose">
             <summary>
             Disposes this object
@@ -38997,7 +37727,7 @@
         </member>
         <member name="T:OfficeOpenXml.ExcelRangeCopyOptionFlags">
             <summary>
-            Copy options enum. Specify the flags that you want to exclude from the copy or if you want to transpose the output.
+            Flag enum, specify all flags that you want to exclude from the copy.
             </summary>
         </member>
         <member name="F:OfficeOpenXml.ExcelRangeCopyOptionFlags.ExcludeFormulas">
@@ -39053,37 +37783,6 @@
         <member name="F:OfficeOpenXml.ExcelRangeCopyOptionFlags.ExcludeDrawings">
             <summary>
             Exclude drawings from being copied
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ExcelRangeCopyOptionFlags.ExcludeTables">
-            <summary>
-            Exclude any table within the range. 
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ExcelRangeCopyOptionFlags.ExcludePivotTables">
-            <summary>
-            Exclude any pivot table within the range. 
-            EPPlus will only copy pivot tables within the same workbooks.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ExcelRangeCopyOptionFlags.ExcludeHiddenCells">
-            <summary>
-            Exclude hidden cells in the range.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ExcelRangeCopyOptionFlags.Fill">
-            <summary>
-            Fill range with repeated data. The desination ranges rows and columns needs to be a multiple of the source's ranges rows and columns.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ExcelRangeCopyOptionFlags.ExcludeLocalCellPictures">
-            <summary>
-            Exclude and local cell pictures within the range.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ExcelRangeCopyOptionFlags.ExcludeWebPictures">
-            <summary>
-            Exclude any web pictures (i.e. added via the IMAGE function) within the range.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.IExcelRow">
@@ -39254,7 +37953,6 @@
             Iterate to the next row
             </summary>
             <returns>False if no more row exists</returns>
-            Returns true if finds next row to move to. False if there is none.
         </member>
         <member name="M:OfficeOpenXml.ExcelRangeRow.Reset">
             <summary>
@@ -39297,15 +37995,14 @@
             <param name="level">Expand all rows with a <see cref="P:OfficeOpenXml.ExcelRangeRow.OutlineLevel"/> Equal or Greater than this number.</param>
             <param name="collapseChildren">Collapse all children with a greater <see cref="P:OfficeOpenXml.ExcelRangeRow.OutlineLevel"/> than <paramref name="level"/></param>
         </member>
-        <member name="M:OfficeOpenXml.ExcelRangeRow.DeleteAll(System.Predicate{OfficeOpenXml.ExcelRow})">
-            <summary>
-            Delete all rows that match the predicate
-            </summary>
-            <param name="match"></param>
-        </member>
         <member name="T:OfficeOpenXml.ExcelRow">
             <summary>
             Represents an individual row in the spreadsheet.
+            </summary>
+        </member>
+        <member name="P:OfficeOpenXml.ExcelRow.RowID">
+            <summary>
+            Internal RowID.
             </summary>
         </member>
         <member name="M:OfficeOpenXml.ExcelRow.#ctor(OfficeOpenXml.ExcelWorksheet,System.Int32)">
@@ -40256,17 +38953,6 @@
             All measurements of texts will be multiplied with this value. Default is 1.
             </summary>
         </member>
-        <member name="F:OfficeOpenXml.ExcelTextSettings.textLengthThreshold">
-            <summary>
-            A percentage of the widest text. Since charaters in different fonts have different widths we use this threshold remove characters from the longer string for comparing to the current text.
-            This is so we can skip obvious shorter strings and save time on calculating it's actual width.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ExcelTextSettings.AutofitRows">
-            <summary>
-            The ammount of rows to check for when autofitting, starts from top. A value set to 0 or lower means checking all rows in the column.
-            </summary>
-        </member>
         <member name="P:OfficeOpenXml.ExcelTextSettings.GenericTextMeasurer">
             <summary>
             Returns an instance of the internal generic text measurer
@@ -40382,11 +39068,6 @@
             Use Workbook.CreateVBAProject to create a new VBA-Project
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.ExcelWorkbook.DigitalSignatures">
-            <summary>
-            A collection of digital signatures for the workbook
-            </summary>
-        </member>
         <member name="M:OfficeOpenXml.ExcelWorkbook.RemoveVBAProject">
             <summary>
             Remove the from the file VBA project.
@@ -40422,11 +39103,6 @@
         <member name="P:OfficeOpenXml.ExcelWorkbook.PersonsUri">
             <summary>
             URI to the person elements inside the package
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelWorkbook.SignatureOriginUri">
-            <summary>
-            Uri to the digital signatures in the package
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelWorkbook.Part">
@@ -40717,6 +39393,12 @@
             </summary>
             
         </member>
+        <member name="P:OfficeOpenXml.ExcelWorksheet.AutoFilterAddress">
+            <summary>
+            The auto filter address. 
+            null means no auto filter.
+            </summary>
+        </member>
         <member name="P:OfficeOpenXml.ExcelWorksheet.AutoFilter">
             <summary>
             Autofilter settings
@@ -40789,7 +39471,7 @@
         </member>
         <member name="P:OfficeOpenXml.ExcelWorksheet.TabColor">
             <summary>
-            Color of the sheet tab. To remove color, set TabColor to Color.Empty.
+            Color of the sheet tab
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelWorksheet.CodeModule">
@@ -40807,11 +39489,6 @@
         <member name="P:OfficeOpenXml.ExcelWorksheet.VmlDrawings">
             <summary>
             Vml drawings. underlaying object for comments
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.ExcelWorksheet.SignatureLines">
-            <summary>
-            Collection of signatureLines
             </summary>
         </member>
         <member name="P:OfficeOpenXml.ExcelWorksheet.Comments">
@@ -40995,6 +39672,14 @@
             </summary>
             <param name="rowFrom">The start row</param>
             <param name="rows">Number of rows to delete</param>
+        </member>
+        <member name="M:OfficeOpenXml.ExcelWorksheet.DeleteRow(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Deletes the specified rows from the worksheet.
+            </summary>
+            <param name="rowFrom">The number of the start row to be deleted</param>
+            <param name="rows">Number of rows to delete</param>
+            <param name="shiftOtherRowsUp">Not used. Rows are always shifted</param>
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheet.DeleteColumn(System.Int32)">
             <summary>
@@ -41387,13 +40072,6 @@
             Creates the XML document representing a new empty worksheet
             </summary>
             <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.ExcelWorksheets.DeleteAll(System.Predicate{OfficeOpenXml.ExcelWorksheet})">
-            <summary>
-            Deletes all worksheets that matches the Predicate from the collection of worksheets
-            </summary>
-            <param name="match"></param>
-            <exception cref="T:System.ArgumentException"></exception>
         </member>
         <member name="M:OfficeOpenXml.ExcelWorksheets.Delete(System.Int32)">
             <summary>
@@ -43184,11 +41862,6 @@
             If true conditionalFormattings will be rendered
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Export.HtmlExport.HtmlExportSettings.CheckboxesEnabled">
-            <summary>
-            If true checkboxes are enabled
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.Export.HtmlExport.HtmlPictureSettings">
             <summary>
             Setting for rendering of picture drawings
@@ -43304,15 +41977,6 @@
             Copy the values from another settings object.
             </summary>
             <param name="copy">The object to copy.</param>
-        </member>
-        <member name="M:OfficeOpenXml.Export.HtmlExport.StyleCache.GetOrCreateId(System.String,System.Int32@)">
-            <summary>
-            Returns true if key already existed
-            Returns false if key could not be found and had to be created.
-            </summary>
-            <param name="key"></param>
-            <param name="id"></param>
-            <returns></returns>
         </member>
         <member name="M:OfficeOpenXml.Export.HtmlExport.StyleCollectors.FillXml.GetColor(OfficeOpenXml.Style.XmlAccess.ExcelColorXml,OfficeOpenXml.Drawing.Theme.ExcelTheme)">
             <summary>
@@ -45626,9 +44290,10 @@
             Spill error from a dynamic array formula.
             </summary>
         </member>
-        <member name="F:OfficeOpenXml.eErrorType.Busy">
+        <member name="T:OfficeOpenXml.ExcelRichDataErrorValue">
             <summary>
-            Busy error, waiting for a remote call
+            Represents Excel Errors 
+            
             </summary>
         </member>
         <member name="T:OfficeOpenXml.ExcelErrorValue">
@@ -45684,11 +44349,6 @@
             </summary>
         </member>
         <member name="F:OfficeOpenXml.ExcelErrorValue.Values.Spill">
-            <summary>
-            A constant for the Spill error in Excel
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.ExcelErrorValue.Values.Busy">
             <summary>
             A constant for the Spill error in Excel
             </summary>
@@ -45764,6 +44424,12 @@
             <param name="v2">Right side</param>
             <returns>Return the error value in V1</returns>
         </member>
+        <member name="M:OfficeOpenXml.ExcelErrorValue.GetHashCode">
+            <summary>
+            Calculates a hash code for the object
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:OfficeOpenXml.ExcelErrorValue.Equals(System.Object)">
             <summary>
             Checks if the object is equals to another
@@ -45771,56 +44437,21 @@
             <param name="obj">The object to compare</param>
             <returns>True if equals</returns>
         </member>
-        <member name="M:OfficeOpenXml.ExcelErrorValue.GetHashCode">
+        <member name="T:OfficeOpenXml.IRangeID">
             <summary>
-            Serves as the default hash function
-            </summary>
-            <returns>A hash code for the current object</returns>
-        </member>
-        <member name="T:OfficeOpenXml.ExcelRichDataErrorValue">
-            <summary>
-            Represents spill errors 
+            Id from a cell, column or row.
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.ExcelSpillErrorValue">
+        <member name="P:OfficeOpenXml.IRangeID.RangeID">
             <summary>
-            Represents a #SPILL! error
+            This is the id for a cell, row or column.
+            The id is a composit of the SheetID, the row number and the column number.
+            Bit 1-14 SheetID, Bit 15-28 Column number (0 if entire column), Bit 29- Row number (0 if entire row).
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.ExcelSpillErrorValue.#ctor(System.Int32,System.Int32)">
+        <member name="T:OfficeOpenXml.LicenseException">
             <summary>
-            Constructor
-            </summary>
-            <param name="rowOffset"></param>
-            <param name="colOffset"></param>
-        </member>
-        <member name="T:OfficeOpenXml.LicenseNotSetException">
-            <summary>
-            An exception thrown when the <see cref="P:OfficeOpenXml.ExcelPackage.License"/> hasn't been set.
-            To set the license, use <seealso cref="M:OfficeOpenXml.EPPlusLicense.SetCommercial(System.String)"/>, <seealso cref="M:OfficeOpenXml.EPPlusLicense.SetNonCommercialOrganization(System.String)"/> or <seealso cref="M:OfficeOpenXml.EPPlusLicense.SetNonCommercialPersonal(System.String)"/>
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.LicenseContextPropertyObsoleteException">
-            <summary>
-            An exception thrown when trying to set the obsolete property LicenseContext is set. <br/>
-            Please use the <see cref="P:OfficeOpenXml.ExcelPackage.License"/> instead. <br/>
-            To set the license, use <seealso cref="M:OfficeOpenXml.EPPlusLicense.SetCommercial(System.String)"/>, <seealso cref="M:OfficeOpenXml.EPPlusLicense.SetNonCommercialOrganization(System.String)"/> or <seealso cref="M:OfficeOpenXml.EPPlusLicense.SetNonCommercialPersonal(System.String)"/><br/>
-            For more information see <seealso href ="http://epplussoftware.com/developers/licensenotsetexception"/>
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.InvalidLicenseKeyException">
-            <summary>
-            An exception thrown when the license key cannot be validated.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.LicenseNotValidException">
-            <summary>
-            An exception thrown when the license has expired for the version used.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.LicenseInformationException">
-            <summary>
-            An exception thrown when the license has expired for the version used.
+            An exception thrown when the license context of EPPlus hasn't been set.
             </summary>
         </member>
         <member name="T:OfficeOpenXml.LoadFunctions.IExcelNumberFormatProvider">
@@ -46057,46 +44688,6 @@
             <summary>
             Scans a type for properties decorated with the <see cref="T:OfficeOpenXml.Attributes.EpplusNestedTableColumnAttribute"/>
             and returns a list with all types reflected by these properties including the outer type.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Metadata.ExcelCellMetadataBlock">
-            <summary>
-            Corresponds to a bk-element in the cellMetadata section of the metadata.xml file.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Metadata.ExcelCellMetadataRecord">
-            <summary>
-            Corresponds to a rc-element in the valueMetadata section of the metadata.xml file.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Metadata.ExcelCellMetadataRecord.TypeId">
-            <summary>
-            Corresponds to the t-attribute of the bk element
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Metadata.ExcelCellMetadataRecord.ValueId">
-            <summary>
-            Corresponds to the v-attribute of the bk element
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Metadata.ExcelValueMetadataBlock">
-            <summary>
-            Corresponds to a bk-element in the valueMetadata section of the metadata.xml file.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Metadata.ExcelValueMetadataRecord">
-            <summary>
-            Corresponds to a rc-element in the valueMetadata section of the metadata.xml file.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Metadata.ExcelValueMetadataRecord.TypeId">
-            <summary>
-            Corresponds to the t-attribute of the bk element
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Metadata.ExcelValueMetadataRecord.ValueId">
-            <summary>
-            Corresponds to the v-attribute of the bk element
             </summary>
         </member>
         <member name="T:OfficeOpenXml.NumberFormatToTextArgs">
@@ -63300,118 +61891,6 @@
             <param name="columnOffset">Offset of the cell's column within the range (zero-based)</param>
             <returns></returns>
         </member>
-        <member name="M:OfficeOpenXml.RichData.IndexRelations.IndexedCollection`1.GetIncomingPointers(System.Int32)">
-            <summary>
-            Returns Id:s of all instances of other entities that points to this record
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.IndexRelations.IndexedCollection`1.GetOutgoingPointers(System.Int32)">
-            <summary>
-            Returns Id:s of all instances of other entities that this record points to
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="T:OfficeOpenXml.RichData.IndexRelations.IndexedSubsetCollection`1">
-            <summary>
-            A filter on an <see cref="T:OfficeOpenXml.RichData.IndexRelations.IndexedCollection`1"/>. Only values that will are added via this wrapper will be returned.
-            </summary>
-            <typeparam name="T"></typeparam>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.IndexRelations.IndexEndpoint.DeleteMe(OfficeOpenXml.RichData.IndexRelations.RelationDeletions)">
-            <summary>
-            Deletes an entity and its relations.
-            </summary>
-            <param name="relDeletions">Should not be set when called from outside the IndexRelation classes</param>
-        </member>
-        <member name="T:OfficeOpenXml.RichData.RichDataReference">
-            <summary>
-            Represents a rich value in the cell store
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichDataReference.VmId">
-            <summary>
-            Rich data Id (internal for EPPlus)
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichDataReference.ReferenceType">
-            <summary>
-            Identifies what type of rich data being referenced
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.RichDataReference.ToString">
-            <summary>
-            Returns a string that reprsents the current object
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:OfficeOpenXml.RichData.RichDataReferenceTypes">
-            <summary>
-            Specifies the type of rich data
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.RichDataReferenceTypes.Preserved">
-            <summary>
-            Not identified by EPPlus, just preserved
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.RichDataReferenceTypes.LocalImage">
-            <summary>
-            Local image (in cell picture)
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.RichDataReferenceTypes.WebImage">
-            <summary>
-            Web image (added via the IMAGE function or a complex data type connected to an external service).
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.RichData.RichDataReferenceValueError">
-            <summary>
-            Represents a rich value in the cell store
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.RichDataReferenceValueError.#ctor(System.UInt32,OfficeOpenXml.RichData.RichDataReferenceTypes)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="vmId">Value metadata id</param>
-            <param name="refType">Rich Data Reference Type</param>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichDataReferenceValueError.VmId">
-            <summary>
-            Rich data Id (internal for EPPlus)
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichDataReferenceValueError.ReferenceType">
-            <summary>
-            Identifies what type of rich data being referenced
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.RichDataStore.GetRichValue(System.UInt32)">
-            <summary>
-            Gets a rich value by its value metadata index
-            </summary>
-            <param name="vmId">Id of the requested <see cref="T:OfficeOpenXml.Metadata.ExcelValueMetadataBlock"/></param>
-            <returns>An <see cref="T:OfficeOpenXml.RichData.RichValues.ExcelRichValue"/> instance corresponding to <paramref name="vmId"/></returns>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.RichDataStore.UpdateRichData(System.Int32,System.Int32,OfficeOpenXml.RichData.RichValues.ExcelRichValue,System.UInt32@)">
-            <summary>
-            Overwrites an existing rich data
-            </summary>
-            <param name="row">Row where rich data should be updated</param>
-            <param name="col">Column where rich data should be updated</param>
-            <param name="richValue">The new rich data that will replace the existing</param>
-            <param name="vmId">Value metadata id</param>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.RichDataStore.DeleteRichData(System.Int32,System.Int32)">
-            <summary>
-            Removes rich data from a cell, including removal of the vm-attribute in the worksheet cells.
-            </summary>
-            <param name="row">Row of the removed rich data</param>
-            <param name="col">Column of the removed rich data</param>
-        </member>
         <member name="F:OfficeOpenXml.RichData.RichValueFallbackType.Boolean">
             <summary>
             Indicates that the fallback value is a Boolean.
@@ -63460,283 +61939,6 @@
         <member name="F:OfficeOpenXml.RichData.RichValueKeyFlags.ExcludeFromCalcComparison">
             <summary>
             True indicates that we exclude this key value pair (KVP) when comparing rich values.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.RichValues.ExcelRichValue.DeleteMe(OfficeOpenXml.RichData.IndexRelations.RelationDeletions)">
-            <summary>
-            Deletes an entity and its relations
-            </summary>
-            <param name="relDeletions">Should be null when calling from classes outside the IndexRelation structure</param>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichValues.WebImages.WebImageRichValue.Text">
-            <summary>
-            String representation of the alt text associated with the image.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichValues.WebImages.WebImageRichValue.ComputedImage">
-            <summary>
-            Boolean value that when true indicates the image can be generated on demand.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichValues.WebImages.WebImageRichValue.ImageSizing">
-            <summary>
-            Integer value that indicates the dimension modes of the image. There are 4 supported values: 0, 1, 2, 3.
-            At 0, image fits to the cell and maintains its aspect ratio.
-            At 1, image fits to the cell and ignore its aspect ratio.
-            At 2, image maintains its original size and MAY exceed the cell boundary.
-            At 3, image size is customized by "ImageHeight" and "ImageWidth".
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichValues.WebImages.WebImageRichValue.ImageHeight">
-            <summary>
-            Real number representation of the image height in pixels. This property SHOULD only be present when "ImageSizing" is set to 3.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichValues.WebImages.WebImageRichValue.ImageWidth">
-            <summary>
-            Real number representation of the image width in pixels. This property SHOULD only be present when "ImageSizing" is set to 3
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.RichValues.WebImages.WebImageRichValue.CalcOrigin">
-            <summary>
-            Integer value that indicates how the rich value was created.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames">
-            <summary>
-            See section 2.3.6.3 Special Keys and Key Flags in [MS-XLSX] - v20240416
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Attribution">
-            <summary>
-            This key MUST reference a supporting property bag
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.CanonicalPropertyNames">
-            <summary>
-            This key MUST reference a supporting property bag that contains key value pairs (KVP) of strings. 
-            The supporting property bag key in each pair contains a key that is localized. The corresponding 
-            value contains a string representation of the key that is not locale-specific.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.ClassificationId">
-            <summary>
-            This key references a string value used to apply a Windows Information Protection (WIP) policy.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.CRID">
-            <summary>
-            Some rich value types MAY put limitations on what type this key MUST reference. See individual 
-            rich value type descriptions (under section 2.3.6.1) for any limitations. If this key is a part 
-            of a rich value with an unknown rich value type (for more information see section 2.3.6.1.3.8), 
-            this rich value MUST be preserved.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Display">
-            <summary>
-            This key MUST reference a supporting property bag that contains information that can be used to 
-            determine how the rich value is displayed.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Flags">
-            <summary>
-            This key MUST reference a supporting property bag that contains key value pairs (KVP) containing 
-            rich value keys and supporting property bags containing associated rich value key flags, which 
-            define behavior for the associated rich value key value pair (KVP).
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Format">
-            <summary>
-            This key MUST reference a supporting property bag that is a list of indices to a CT_RichStyle 
-            (section 2.6.170). The supporting property bag key of the key value pair (KVP) in the supporting 
-            property bag determines which rich value key the CT_RichStyle is associated with.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Icon">
-            <summary>
-            This key contains a value that describes the icon that can be used in render.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Provider">
-            <summary>
-            This key MUST reference a supporting property bag that contains information about the service provider.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Self">
-            <summary>
-            This key SHOULD NOT exist in the file and will be removed when the file is saved. When a supporting 
-            property bag references this rich value key, it indicates the supporting property bag references the 
-            rich value itself, and not a key value pair (KVP) of the rich value.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.SubLabel">
-            <summary>
-            This key MUST reference a supporting property bag that contains key value pairs (KVP) containing rich 
-            value keys and supporting property bags containing strings, which define the label that can be used 
-            to describe the associated rich value key value pair (KVP).
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.ViewInfo">
-            <summary>
-            This key MUST reference a supporting property bag that contains information that MAY be used to customize 
-            rich value visualizations.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Order">
-            <summary>
-            This supporting property bag key is associated with a supporting property bag array of strings that 
-            SHOULD be comprised of rich value keys in the associated rich value and can be used to display the 
-            rich value key value pairs (KVP) in a different order.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.RichData.Structures.Constants.SpecialKeyNames.Prefixes.RvRel">
-            <summary>
-            A rich value key with this prefix MUST reference a CT_RichValueRelRelationship (section 2.6.241).
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.RichData.Structures.Errors.ErrorBaseStructure">
-            <summary>
-            See MS-XLSX (Extension) 2.3.6.1.3 Error Types for details
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.Structures.ExcelRichValueStructure.GetRelationIndexes">
-            <summary>
-            Returns a list of indexes that refers to Keys
-            that are representing a relation (key starts with _rvRel:
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.RichData.Structures.ExcelRichValueStructure.GetRelationIndexByName(System.String,System.Collections.Generic.List{OfficeOpenXml.RichData.Structures.ExcelRichValueStructureKey})">
-            <summary>
-            Returns the 0-based index of a key that is a Rich Value relation and its property Name is equal to <paramref name="name"/>.
-            </summary>
-            <param name="name"></param>
-            <param name="keys"></param>
-            <returns>index of the found key or null if no such key exists</returns>
-        </member>
-        <member name="P:OfficeOpenXml.RichData.WebImages.WebImagesSupportingRichData.Blip">
-            <summary>
-            BLIP (Binary Large Image or Picture). Uri to the local picture in the worksheet
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel">
-            <summary>
-            Represents a sensitivity label that can be applied to a package.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Id">
-            <summary>
-            The sensitivity label id. Guid.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Name">
-            <summary>
-            The name of the sensibility label. If no <see cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler"/> is set this property will always be empty.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Description">
-            <summary>
-            The description of the sensibility label. If no <see cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler"/> is set this property will always be empty.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Enabled">
-            <summary>
-            If the sensibility label is enabled. Only one sensibility label can be enabled in the list.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Removed">
-            <summary>
-            If the sensibility label is removed. If the sensibility label is removed <see cref="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Enabled"/> should be set to false.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.SiteId">
-            <summary>
-            The Azure AD site id. Guid.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Method">
-            <summary>
-            The method. 
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.ContentBits">
-            <summary>
-            Content bits.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Color">
-            <summary>
-            The color of the label.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Tooltip">
-            <summary>
-            The description of the sensibility label for the end user.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Parent">
-            <summary>
-            The parent label, if any.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabel.Update(System.String,System.String,System.String,System.String,OfficeOpenXml.Interfaces.SensitivityLabels.IExcelSensibilityLabel)">
-            <summary>
-            Update properties from the handler
-            </summary>
-            <param name="name">The name of the label</param>
-            <param name="tooltip">The tooltip for the label</param>
-            <param name="description">The desription</param>
-            <param name="color">The RGB color in hex</param>
-            <param name="parent">The id of the parent of the label.</param>
-        </member>
-        <member name="T:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabelCollection">
-            <summary>
-            A collection of sensibility labels applied to a workbook.
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabelCollection.SetActiveLabelById(System.String)">
-            <summary>
-            Changes the active sensibility label. This will overwrite the active sensibility label and any settings derived from it, if the <see cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler"/> is used.
-            </summary>
-            <param name="id">The id for the sensibility label without heading and traling brackets.</param>
-        </member>
-        <member name="M:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabelCollection.SetActiveLabelById(System.String,System.String,OfficeOpenXml.Interfaces.SensitivityLabels.eMethod,System.Boolean)">
-            <summary>
-            Changes the active sensibility label. This will overwrite the active sensibility label and any settings derived from it, if the <see cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler"/> is used.
-            </summary>
-            <param name="id">The id for the sensibility label without heading and traling brackets.</param>
-            <param name="siteId">The site id for the tenent. This id is used if no <see cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler" /> is set.</param>
-            <param name="method">Sets the method property. This property is used if no <see cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler" /> is set.</param>
-            <param name="clearLabels">If true, will not clear the <see cref="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabelCollection.Labels"/> collection. If false, will set the active sensibility label(if any) to Readonly=true and Enabled=false</param>
-        </member>
-        <member name="M:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabelCollection.SetActiveLabelByName(System.String)">
-            <summary>
-            Changes the active sensibility label. This will overwrite the active sensibility label and any settings derived from it.
-            </summary>
-            <param name="name"></param>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabelCollection.Labels">
-            <summary>
-            Contains sensitivity labels for the package. 
-            Only the last sensitivity will be applied on save.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabelCollection.ProtectionInformation">
-            <summary>
-            Property used by the <see cref="P:OfficeOpenXml.ExcelPackage.SensibilityLabelHandler"/> to store information about the sensibility label. 
-            The information is passed when calling the DecryptPackageAsync and ApplyLabelAndSavePackageAsync methods.
-            <seealso cref="M:OfficeOpenXml.Interfaces.SensitivityLabels.ISensitivityLabelHandler.DecryptPackageAsync(System.IO.MemoryStream,System.String)"/>
-            <seealso cref="M:OfficeOpenXml.Interfaces.SensitivityLabels.ISensitivityLabelHandler.ApplyLabelAndSavePackageAsync(OfficeOpenXml.Interfaces.SensitivityLabels.IPackageInfo,System.String)"/>
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.SensitivityLabels.ExcelSensibilityLabelCollection.ActiveLabelId">
-            <summary>
-            The latest set sensitivity label.
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.SensitivityLabels.MissingSensibilityHandlerException">
-            <summary>
-            Thown if no sensibility handler is set, and a package is encrypted with a protected sensibility label.
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Sorting.Internal.RangeWorksheetData.#ctor(OfficeOpenXml.ExcelRangeBase)">
@@ -65238,11 +63440,6 @@
             Cell protection properties used when the worksheet is protected.d
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyle.Checkbox">
-            <summary>
-            If the cells applying this format should have a checkbox if the value of the cell is a boolean.
-            </summary>
-        </member>
         <member name="P:OfficeOpenXml.Style.Dxf.ExcelDxfStyle.HasValue">
             <summary>
             If the object has any properties set
@@ -66238,51 +64435,6 @@
             System background color
             </summary>
         </member>
-        <member name="T:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt">
-            <summary>
-            Get the color index by name.
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt.Black">
-            <summary>
-            Black
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt.White">
-            <summary>
-            White
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt.Red">
-            <summary>
-            Red
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt.Green">
-            <summary>
-            Green
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt.Blue">
-            <summary>
-            Blue
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt.Yellow">
-            <summary>
-            Yellow
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt.Magenta">
-            <summary>
-            Magenta
-            </summary>
-        </member>
-        <member name="F:OfficeOpenXml.Style.ExcelIndexedColorNamedNumFt.Cyan">
-            <summary>
-            Cyan
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.Style.ExcelReadingOrder">
             <summary>
             The reading order
@@ -66428,20 +64580,18 @@
             A diagonal from the top left to bottom right of the cell
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle,System.Boolean)">
+        <member name="M:OfficeOpenXml.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle)">
             <summary>
             Set the border style around the range.
             </summary>
             <param name="Style">The border style</param>
-            <param name="overrideNeigbourCellBorder">Set to true to override the border of adjacent cells.</param>
         </member>
-        <member name="M:OfficeOpenXml.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle,System.Drawing.Color,System.Boolean)">
+        <member name="M:OfficeOpenXml.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle,System.Drawing.Color)">
             <summary>
             Set the border style around the range.
             </summary>
             <param name="Style">The border style</param>
             <param name="Color">The color of the border</param>
-            <param name="overrideNeigbourCellBorder">Set to true to override the border of adjacent cells.</param>
         </member>
         <member name="T:OfficeOpenXml.Style.ExcelBorderItem">
             <summary>
@@ -66837,12 +64987,6 @@
         <member name="P:OfficeOpenXml.Style.ExcelStyle.QuotePrefix">
             <summary>
             If true the cell has a quote prefix, which indicates the value of the cell is text.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Style.ExcelStyle.Checkbox">
-            <summary>
-            Adds an in-cell checkbox to the cell to represents a boolean value.
-            The cell value must be a boolean value or null for the check box to be shown.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Style.ExcelStyle.XfId">
@@ -67967,11 +66111,6 @@
             Indentation
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Style.XmlAccess.ExcelXfs.Checkbox">
-            <summary>
-            If the cell is a checkbox, representing a boolean value.
-            </summary>
-        </member>
         <member name="T:OfficeOpenXml.Style.XmlAccess.StyleXmlHelper">
             <summary>
             Xml helper class for cell style classes
@@ -69056,13 +67195,6 @@
             Collection of the columns in the table
             </summary>
         </member>
-        <member name="P:OfficeOpenXml.Table.ExcelTable.DataRows">
-            <summary>
-            Collection of the tables's data rows (header- and total row not included). This property can be used for easier access to the tables data.
-            <seealso cref="T:OfficeOpenXml.Table.ExcelTableRowCollection"/>
-            <seealso cref="T:OfficeOpenXml.Table.ExcelTableRow"/>
-            </summary>
-        </member>
         <member name="P:OfficeOpenXml.Table.ExcelTable.TableStyle">
             <summary>
             The table style. If this property is custom, the style from the StyleName propery is used.
@@ -69247,20 +67379,6 @@
             </example>
             <param name="configuration">An action with parameters for sorting</param>
         </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTable.Copy(OfficeOpenXml.ExcelRangeBase,System.String)">
-            <summary>
-            Copies the table to the top left cell of the provided range.
-            </summary>
-            <param name="range">The range</param>
-            <param name="newTableName">The name new table name.</param>
-            <exception cref="T:System.ArgumentException">If a table with the name already exists in the workbook.</exception>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTable.Copy(OfficeOpenXml.ExcelRangeBase)">
-            <summary>
-            Copies the table to the top left cell of the provided range.
-            </summary>
-            <param name="range">The range</param>
-        </member>
         <member name="T:OfficeOpenXml.Table.ExcelTableCollection">
             <summary>
             A collection of table objects
@@ -69388,7 +67506,7 @@
         <member name="P:OfficeOpenXml.Table.ExcelTableColumn.CalculatedColumnFormula">
             <summary>
             Sets a calculated column Formula.
-            Be careful with this property since it is not validated. 
+            Be carefull with this property since it is not validated. 
             <example>
             tbl.Columns[9].CalculatedColumnFormula = string.Format("SUM(MyDataTable[[#This Row],[{0}]])",tbl.Columns[9].Name);  //Reference within the current row
             tbl.Columns[9].CalculatedColumnFormula = string.Format("MyDataTable[[#Headers],[{0}]]",tbl.Columns[9].Name);  //Reference to a column header
@@ -69482,192 +67600,6 @@
             </summary>
             <summary>
             Style applied on the total row range of a table. 
-            </summary>
-        </member>
-        <member name="T:OfficeOpenXml.Table.ExcelTableRow">
-            <summary>
-            Represents a row in an <see cref="T:OfficeOpenXml.Table.ExcelTable"/>
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.#ctor(OfficeOpenXml.Table.ExcelTable,System.Int32)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="table">The <see cref="T:OfficeOpenXml.Table.ExcelTable"/> that the row belongs to</param>
-            <param name="rowIx">0 based index of the table row</param>
-        </member>
-        <member name="P:OfficeOpenXml.Table.ExcelTableRow.ColumnCount">
-            <summary>
-            Number of columns
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Table.ExcelTableRow.IsHidden">
-            <summary>
-            Returns true if the entire row is hidden
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Table.ExcelTableRow.IsDeleted">
-            <summary>
-            Indicates if this row has been deleted.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Table.ExcelTableRow.IsEmpty">
-            <summary>
-            Returns true if every cell in the row has null values
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Table.ExcelTableRow.RowRange">
-            <summary>
-            An <see cref="T:OfficeOpenXml.ExcelRangeBase"/> representing the row from first to last cell
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.GetFormula(System.String)">
-            <summary>
-            Returns formula by column name.
-            </summary>
-            <param name="columnName"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.GetFormula(System.Int32)">
-            <summary>
-            Returns formula by 0-based column index
-            </summary>
-            <param name="offsetIndex"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.GetValue``1(System.String)">
-            <summary>
-            Returns cell value by column name
-            </summary>
-            <typeparam name="T">Cell value type</typeparam>
-            <param name="columnName"></param>
-            <exception cref="T:System.InvalidOperationException">If the row has previously been deleted.</exception>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.GetValue(System.String)">
-            <summary>
-            Returns cell value by column name
-            </summary>
-            <param name="columnName"></param>
-            <exception cref="T:System.InvalidOperationException">If the row has previously been deleted.</exception>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.GetValue``1(System.Int32)">
-            <summary>
-            Returns cell value by column index
-            </summary>
-            <typeparam name="T">Cell value type</typeparam>
-            <param name="offsetIndex">0-based column index</param>
-            <exception cref="T:System.InvalidOperationException">If the row has previously been deleted.</exception>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.GetValue(System.Int32)">
-            <summary>
-            Returns cell value by column index
-            </summary>
-            <param name="offsetIndex">0-based column index</param>
-            <exception cref="T:System.InvalidOperationException">If the row has previously been deleted.</exception>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.SetValue(System.String,System.Object)">
-            <summary>
-            Set a cell value by column name
-            </summary>
-            <param name="columnName">The table column name</param>
-            <param name="value">The table cell value</param>
-            <exception cref="T:System.InvalidOperationException">If the row has previously been deleted.</exception>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.SetValue(System.Int32,System.Object)">
-            <summary>
-            Set a cell value by column index
-            </summary>
-            <param name="offsetIndex">0-based column index</param>
-            <param name="value">The table cell value</param>
-            <exception cref="T:System.InvalidOperationException">If the row has previously been deleted.</exception>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.SetValues(System.Object[])">
-            <summary>
-            Set all the cell values of the table row by providing an array of <see cref="T:System.Object"/>
-            </summary>
-            <param name="values"></param>
-            <exception cref="T:System.ArgumentNullException">Will be thrown if <paramref name="values"/> is null</exception>
-            <exception cref="T:System.ArgumentException">Will be thrown if <paramref name="values"/> is an empty array</exception>
-            <exception cref="T:System.ArgumentOutOfRangeException">Will be thrown if number of items in <paramref name="values"/> exceeds number of columns in the table.</exception>
-            <exception cref="T:System.InvalidOperationException">If the row has previously been deleted.</exception>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.Delete">
-            <summary>
-            Removes this row from the table
-            </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRow.Clear">
-            <summary>
-            Clear all cell values in the row's range.
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="T:OfficeOpenXml.Table.ExcelTableRowCollection">
-            <summary>
-            A collection of <see cref="T:OfficeOpenXml.Table.ExcelTableRow"/>s.
-            </summary>
-        </member>
-        <member name="P:OfficeOpenXml.Table.ExcelTableRowCollection.Item(System.Int32)">
-            <summary>
-            Returns a table row
-            </summary>
-            <param name="ix">0-based index</param>
-            <returns>The <see cref="T:OfficeOpenXml.Table.ExcelTableRow"/> that corresponds to the <paramref name="ix"/></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRowCollection.AddNewRow(System.Boolean)">
-            <summary>
-            Add a new empty row at the bottom the table.
-            </summary>
-            <param name="copyStyles">Indicates whether styles should be copied to the new row. Default is true.</param>
-            <returns>The added <see cref="T:OfficeOpenXml.Table.ExcelTableRow"/></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRowCollection.AddNewRows(System.Int32,System.Boolean)">
-            <summary>
-            Add a number of new empty rows at the bottom the table.
-            </summary>
-            <param name="nRows">Number of rows to add</param>
-            <param name="copyStyles">Indicates whether styles should be copied to the new row. Default is true.</param>
-            <returns>The added rows</returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRowCollection.InsertNewRow(System.Int32,System.Boolean)">
-            <summary>
-            Inserts a new empty row at the specified position.
-            </summary>
-            <param name="position">0-based position where the new row should be added</param>
-            <param name="copyStyles">Indicates whether styles should be copied to the new row. Default is true.</param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRowCollection.InsertNewRows(System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Inserts one or more new empty rows at the specified position.
-            </summary>
-            <param name="position">0-based position where the new rows should be added</param>
-            <param name="nRows">Number of new rows to insert</param>
-            <param name="copyStyles">Indicates whether styles should be copied to the new row. Default is true.</param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRowCollection.DeleteRows(System.Int32,System.Int32)">
-            <summary>
-            Deletes the specified number of rows at the given position in the table
-            </summary>
-            <param name="position">0-based position of the deletion</param>
-            <param name="numberOfRows">Number of rows to delete</param>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRowCollection.GetEnumerator">
-            <summary>
-            Returns an iterator
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Table.ExcelTableRowCollection.Clear">
-            <summary>
-            Clears/deletes all data in the table's rows.
             </summary>
         </member>
         <member name="M:OfficeOpenXml.Table.PivotTable.Calculation.Filters.PivotTableFilterMatcher.IsHiddenByPageField(OfficeOpenXml.Table.PivotTable.ExcelPivotTable,EPPlusTest.Table.PivotTable.PivotTableCacheRecords,System.Int32)">
@@ -70984,7 +68916,7 @@
             <summary>
             The source data range when the pivottable has a worksheet datasource. 
             The number of columns in the range must be intact if this property is changed.
-            The range must be in the same workbook as the pivot table.
+            The range must be in the same workbook as the pivottable.
             </summary>
         </member>
         <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotCacheDefinition.SaveData">
@@ -71403,6 +69335,11 @@
             Whether to show row stripe formatting for the pivot table.
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.TableStyle">
+            <summary>
+            The table style. If this property is Custom, the style from the StyleName propery is used.
+            </summary>
+        </member>
         <member name="P:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.PivotTableStyle">
             <summary>
             The pivot table style. If this property is Custom, the style from the StyleName propery is used.
@@ -71418,23 +69355,6 @@
             <summary>
             A collection of Conditional Formatting's to apply to the pivot table.
             </summary>
-        </member>
-        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.Copy(OfficeOpenXml.ExcelRange,System.String)">
-            <summary>
-            Copies the pivot table to another range. The range must be within the same workbook.
-            </summary>
-            <param name="destinationRange">The destination range.</param>
-            <param name="name">The name of the new pivot table.</param>
-            <returns></returns>
-            <exception cref="T:System.ArgumentException"></exception>
-        </member>
-        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.Copy(OfficeOpenXml.ExcelRange)">
-            <summary>
-            Copies the pivot table to another range. The range must be within the same workbook.
-            </summary>
-            <param name="destinationRange">The destination range.</param>
-            <returns>The new copy of the <see cref="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTable" /></returns>
-            <exception cref="T:System.ArgumentException"></exception>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTableCacheField">
             <summary>
@@ -71620,14 +69540,6 @@
             Also see <seealso cref="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTable.Calculate(System.Boolean)"/> and <seealso cref="M:OfficeOpenXml.ExcelWorkbook.CalculateAllPivotTables(System.Boolean)"/>
             </summary>
             <param name="refresh">If the cache should be refreshed.</param>
-        </member>
-        <member name="M:OfficeOpenXml.Table.PivotTable.ExcelPivotTableCollection.GetByAddress(OfficeOpenXml.ExcelRange)">
-            <summary>
-            Returns the first pivot table within the range.
-            If no pivot table intersects with the range, null is returned.
-            </summary>
-            <param name="range">The range containing the pivot table</param>
-            <returns>The first pivot table in the range</returns>
         </member>
         <member name="T:OfficeOpenXml.Table.PivotTable.ExcelPivotTableDataField">
             <summary>
@@ -73825,15 +71737,6 @@
             Value of the argument
             </summary>
         </member>
-        <member name="M:OfficeOpenXml.Utils.ImageUtil.PixelToPointConversion(System.Double,System.Double,System.Single)">
-            <summary>
-            Converts from pixels to points at a specified DPI (usually 72)
-            </summary>
-            <param name="pixelValue"></param>
-            <param name="standard_DPI"></param>
-            <param name="resolution">Horizontal or Vertical Resolution</param>
-            <returns></returns>
-        </member>
         <member name="T:OfficeOpenXml.Utils.MemorySettings">
             <summary>
             Memmory settings for RecyclableMemoryStream handling
@@ -73892,12 +71795,6 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="argument">The argument to validate</param>
-            <returns></returns>
-        </member>
-        <member name="M:OfficeOpenXml.Utils.SecurityUtil.CreateSecureGuid">
-            <summary>
-            Create a cryptographically strong guid
-            </summary>
             <returns></returns>
         </member>
         <member name="T:OfficeOpenXml.Utils.SqRefUtility">
@@ -73990,8 +71887,8 @@
         <member name="M:OfficeOpenXml.Utils.XmlReaderHelper.ReadUntil(System.Xml.XmlReader,System.Xml.XmlNodeType,System.String[])">
             <summary>
             Read file until a tag in tagName is found or EOF.
-            This requires more careful consideration than when specifying depth.
-            As it will exit on end nodes and continue directly to end of file if nothing is found.
+            This requires more careful consideration than when specifing depth.
+            As it will exit on endnodes and continue directly to end of file if nothing is found.
             </summary>
             <param name="xr">Handle to xml to read data from</param>
             <param name="nodeType">The node</param>
@@ -74529,6 +72426,13 @@
             Sets ReferenceRecordID to 0x2F
             </summary>
         </member>
+        <member name="P:OfficeOpenXml.VBA.ExcelVbaReferenceControl.LibIdExternal">
+            <summary>
+            LibIdExternal 
+            For more info check MS-OVBA 2.1.1.8 LibidReference and 2.3.4.2.2 PROJECTREFERENCES
+            This corresponds to LibIdExtended in the documentation.
+            </summary>
+        </member>
         <member name="P:OfficeOpenXml.VBA.ExcelVbaReferenceControl.LibIdExtended">
             <summary>
             LibIdExtended 
@@ -74847,21 +72751,6 @@
         <member name="F:RichValueDataType.SupportingPropertyBag">
             <summary>
             Indicates that the value is a Supporting Property Bag.
-            </summary>
-        </member>
-        <member name="F:RichValueDataType.SupportingPropertyBagArray">
-            <summary>
-            Indicates that the value is a Supporting Property Bag Array.
-            </summary>
-        </member>
-        <member name="F:RichValueDataType.Preserve">
-            <summary>
-            Just preserve the value
-            </summary>
-        </member>
-        <member name="F:RichValueDataType.Remove">
-            <summary>
-            If this value exists, remove the key/value pair
             </summary>
         </member>
         <member name="T:EPPlusTest.Utils.RollingBuffer">

@@ -315,6 +315,7 @@ namespace GUI
         private void btn_caidat_Click(object sender, EventArgs e)
         {
             tabQuanLy.SelectedIndex = 5;
+            LoadParkingAreaData();
         }
 
 
@@ -1127,7 +1128,31 @@ namespace GUI
 
         private void button50_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                    sfd.FileName = $"ThongKeDichVu_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
+                    if (sfd.ShowDialog() != DialogResult.OK)
+                    {
+                        return;
+                    }
 
+                    if (BLL.BLL_Service.ServiceBLL.ExportServicesToExcelWithChart(sfd.FileName, out string message))
+                    {
+                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void checkBox_DV1_CheckedChanged(object sender, EventArgs e)
@@ -1168,6 +1193,154 @@ namespace GUI
 
             //combo_DV1.Visible = false;
             //combo_DV2.Visible = false;
+        }
+
+        private void button56_Click_1(object sender, EventArgs e)
+        {
+            GUI.QuanLyPhuongTien.QuanLyPhuonTien quanLyPhuonTienForm = new GUI.QuanLyPhuongTien.QuanLyPhuonTien();
+            quanLyPhuonTienForm.Owner = this;
+            quanLyPhuonTienForm.ShowDialog();
+        }
+
+        private void button53_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có dòng nào được chọn không
+                if (guna2DataGridView7.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một bãi đỗ xe để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Lấy areaId từ dòng được chọn
+                string areaId = guna2DataGridView7.SelectedRows[0].Cells["AREAID"].Value.ToString();
+
+                // Xác nhận sửa
+                DialogResult confirm = MessageBox.Show($"Bạn có chắc chắn muốn sửa thông tin bãi đỗ xe {areaId} không?",
+                                                      "Xác nhận sửa",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+                if (confirm == DialogResult.No)
+                {
+                    return;
+                }
+
+                // Mở form sửa thông tin
+                using (var suaForm = new GUI.QuanLyPhuongTien.Suaphuongtien(areaId))
+                {
+                    if (suaForm.ShowDialog() == DialogResult.OK)
+                    {
+                        // Nếu form đóng với DialogResult.OK, cập nhật lại dữ liệu
+                        RefreshParkingAreaData();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            try
+            {
+                // Kiểm tra xem có dòng nào được chọn không
+                if (guna2DataGridView7.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một khu vực đỗ xe để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Lấy areaId từ dòng được chọn
+                string areaId = guna2DataGridView7.SelectedRows[0].Cells["AREAID"].Value.ToString();
+
+                // Xác nhận xóa
+                DialogResult confirm = MessageBox.Show($"Bạn có chắc chắn muốn xóa khu vực đỗ xe {areaId} không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.No)
+                {
+                    return;
+                }
+
+                // Gọi phương thức xóa từ BLL
+                if (ParkingAreaBLL.DeleteParkingArea(areaId, out string message))
+                {
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); // Sử dụng message từ stored procedure
+                    RefreshParkingAreaData(); // Làm mới dữ liệu
+                }
+                else
+                {
+                    MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); // Hiển thị lý do thất bại từ stored procedure
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button52_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có dòng nào được chọn không
+                if (guna2DataGridView7.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một khu vực đỗ xe để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Lấy areaId từ dòng được chọn
+                string areaId = guna2DataGridView7.SelectedRows[0].Cells["AREAID"].Value.ToString();
+
+                // Xác nhận xóa
+                DialogResult confirm = MessageBox.Show($"Bạn có chắc chắn muốn xóa khu vực đỗ xe {areaId} không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.No)
+                {
+                    return;
+                }
+
+                // Gọi phương thức xóa từ BLL
+                if (ParkingAreaBLL.DeleteParkingArea(areaId, out string message))
+                {
+                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information); // Sử dụng message từ stored procedure
+                    RefreshParkingAreaData(); // Làm mới dữ liệu
+                }
+                else
+                {
+                    MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); // Hiển thị lý do thất bại từ stored procedure
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button57_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog())
+                {
+                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                    sfd.FileName = $"ThongKeBaiDoXe_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
+                    if (sfd.ShowDialog() != DialogResult.OK)
+                    {
+                        return;
+                    }
+
+                    if (ParkingAreaBLL.ExportParkingAreasToExcelWithChart(sfd.FileName, out string message))
+                    {
+                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

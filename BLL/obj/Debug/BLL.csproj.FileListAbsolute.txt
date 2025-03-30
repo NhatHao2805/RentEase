@@ -322,3 +322,4 @@ D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\obj\Debug\BLL.csproj.CoreCompileInp
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\obj\Debug\BLL.csproj.Up2Date
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\obj\Debug\BLL.dll
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\obj\Debug\BLL.pdb
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\BLL\bin\Debug\EPPlus.System.Drawing.dll

@@ -7,6 +7,7 @@ using DAL;
 using System.IO;
 using OfficeOpenXml.Drawing.Chart;
 using OfficeOpenXml;
+using System.Xml;
 
 
 namespace BLL.Quanlyphuongtien
@@ -91,7 +92,6 @@ namespace BLL.Quanlyphuongtien
                 message = "Vui lòng nhập đầy đủ thông tin!";
                 return false;
             }
-
             return ParkingAreaAccess.UpdateParkingArea(areaId, buildingId, address, type, capacity, out message);
         }
         public static string GenerateNewBuildingId()
@@ -199,6 +199,14 @@ namespace BLL.Quanlyphuongtien
                     worksheet.Cells[1, 4].Value = "Loại Bãi Đỗ Xe";
                     worksheet.Cells[1, 5].Value = "Sức Chứa";
 
+                    // Định dạng tiêu đề
+                    using (var range = worksheet.Cells[1, 1, 1, 5])
+                    {
+                        range.Style.Font.Bold = true;
+                        range.Style.Fill.PatternType = OfficeOpenXml.Style.ExcelFillStyle.Solid;
+                        range.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
+                    }
+
                     // Thêm dữ liệu
                     int row = 2;
                     foreach (DataRow dataRow in dt.Rows)
@@ -211,15 +219,54 @@ namespace BLL.Quanlyphuongtien
                         row++;
                     }
 
-                    // Tạo biểu đồ cột
-                    var chart = worksheet.Drawings.AddOfPieChart("Biểu đồ sức chứa", eOfPieChartType.PieOfPie);
-                    chart.Title.Text = "Sức chứa theo bãi đỗ xe";
-                    chart.SetPosition(1, 0, 6, 0); // Vị trí của biểu đồ
-                    chart.SetSize(800, 400); // Kích thước biểu đồ
+                    // Auto-fit columns
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                    // Tạo biểu đồ Pie of Pie
+                    var pieChart = worksheet.Drawings.AddOfPieChart("Biểu đồ sức chứa", eOfPieChartType.PieOfPie) as ExcelOfPieChart;
+                    pieChart.Title.Text = "Sức chứa theo bãi đỗ xe";
+                    pieChart.SetPosition(1, 0, 6, 0);
+                    pieChart.SetSize(800, 400);
 
                     // Thêm dữ liệu vào biểu đồ
-                    var series = chart.Series.Add(worksheet.Cells[2, 5, row - 1, 5], worksheet.Cells[2, 1, row - 1, 1]);
+
+                    var series = pieChart.Series.Add(worksheet.Cells[2, 5, row - 1, 5], worksheet.Cells[2, 1, row - 1, 1]) as ExcelPieChartSerie;
                     series.Header = "Sức chứa";
+
+                    // Thiết lập nhãn dữ liệu
+                    series.DataLabel.ShowCategory = true;
+                    series.DataLabel.ShowPercent = true;
+                    series.DataLabel.ShowLeaderLines = true;
+                    series.DataLabel.Separator = "; ";
+                    series.DataLabel.Position = eLabelPosition.BestFit;
+
+                    // Thêm định dạng phần trăm bằng XML
+                    var xdoc = pieChart.ChartXml;
+                    var nsuri = xdoc.DocumentElement.NamespaceURI;
+                    var nsm = new XmlNamespaceManager(xdoc.NameTable);
+                    nsm.AddNamespace("c", nsuri);
+
+                    // Tạo nút numFmt
+                    var numFmtNode = xdoc.CreateElement("c:numFmt", nsuri);
+
+                    var formatCodeAtt = xdoc.CreateAttribute("formatCode", nsuri);
+                    formatCodeAtt.Value = "0.00%"; // Format phần trăm với 2 số thập phân
+                    numFmtNode.Attributes.Append(formatCodeAtt);
+
+                    var sourceLinkedAtt = xdoc.CreateAttribute("sourceLinked", nsuri);
+                    sourceLinkedAtt.Value = "0";
+                    numFmtNode.Attributes.Append(sourceLinkedAtt);
+
+                    // Tìm nút dLbls để thêm nút numFmt
+                    var dLblsNode = xdoc.SelectSingleNode("c:chartSpace/c:chart/c:plotArea/c:ofPieChart/c:ser/c:dLbls", nsm);
+                    if (dLblsNode != null)
+                    {
+                        dLblsNode.AppendChild(numFmtNode);
+                    }
+
+                    // Thêm chú thích (Legend)
+                    pieChart.Legend.Add();
+                    pieChart.Legend.Position = eLegendPosition.Right;
 
                     // Lưu file
                     package.Save();
@@ -235,7 +282,6 @@ namespace BLL.Quanlyphuongtien
             }
         }
     }
-
 
 
 }

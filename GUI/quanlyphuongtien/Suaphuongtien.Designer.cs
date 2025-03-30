@@ -49,7 +49,7 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(85, 18);
             this.guna2HtmlLabel1.TabIndex = 36;
             this.guna2HtmlLabel1.Text = "ID Bãi Đậu Xe";
-            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
+      
             // 
             // guna2ComboBox1
             // 
@@ -65,7 +65,7 @@
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox1.TabIndex = 37;
-            this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+
             // 
             // guna2HtmlLabel2
             // 
@@ -75,7 +75,7 @@
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(72, 18);
             this.guna2HtmlLabel2.TabIndex = 38;
             this.guna2HtmlLabel2.Text = "ID Tòa Nhà";
-            this.guna2HtmlLabel2.Click += new System.EventHandler(this.guna2HtmlLabel2_Click);
+  
             // 
             // guna2ComboBox3
             // 
@@ -91,7 +91,7 @@
             this.guna2ComboBox3.Name = "guna2ComboBox3";
             this.guna2ComboBox3.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox3.TabIndex = 40;
-            this.guna2ComboBox3.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox3_SelectedIndexChanged);
+
             // 
             // guna2HtmlLabel3
             // 
@@ -101,7 +101,7 @@
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(45, 18);
             this.guna2HtmlLabel3.TabIndex = 41;
             this.guna2HtmlLabel3.Text = "Địa Chỉ";
-            this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
+
             // 
             // guna2HtmlLabel4
             // 
@@ -111,7 +111,7 @@
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(98, 18);
             this.guna2HtmlLabel4.TabIndex = 42;
             this.guna2HtmlLabel4.Text = "Loại Bãi Đậu Xe";
-            this.guna2HtmlLabel4.Click += new System.EventHandler(this.guna2HtmlLabel4_Click);
+  
             // 
             // guna2HtmlLabel5
             // 
@@ -121,7 +121,7 @@
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(60, 18);
             this.guna2HtmlLabel5.TabIndex = 43;
             this.guna2HtmlLabel5.Text = "Sức Chứa";
-            this.guna2HtmlLabel5.Click += new System.EventHandler(this.guna2HtmlLabel5_Click);
+
             // 
             // guna2ComboBox2
             // 
@@ -137,7 +137,7 @@
             this.guna2ComboBox2.Name = "guna2ComboBox2";
             this.guna2ComboBox2.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox2.TabIndex = 44;
-            this.guna2ComboBox2.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox2_SelectedIndexChanged);
+
             // 
             // guna2ComboBox4
             // 
@@ -153,7 +153,7 @@
             this.guna2ComboBox4.Name = "guna2ComboBox4";
             this.guna2ComboBox4.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox4.TabIndex = 45;
-            this.guna2ComboBox4.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox4_SelectedIndexChanged);
+
             // 
             // guna2ComboBox5
             // 
@@ -169,7 +169,7 @@
             this.guna2ComboBox5.Name = "guna2ComboBox5";
             this.guna2ComboBox5.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox5.TabIndex = 46;
-            this.guna2ComboBox5.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox5_SelectedIndexChanged);
+
             // 
             // buttonDangNhap1
             // 
