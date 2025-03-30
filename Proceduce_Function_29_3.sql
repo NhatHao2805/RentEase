@@ -1,6 +1,5 @@
 DELIMITER //
 
-    DELIMITER //
     CREATE PROCEDURE GetServiceUsage(IN p_sortOption VARCHAR(10))
     BEGIN
         SET @row_num = 0;
@@ -35,7 +34,7 @@ DELIMITER //
         EXECUTE stmt;
         DEALLOCATE PREPARE stmt;
     END //
-    DELIMITER ;
+
 
 
 CREATE PROCEDURE INSERT_SERVICE_USAGE(

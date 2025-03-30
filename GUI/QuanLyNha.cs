@@ -59,7 +59,8 @@ namespace GUI
             dgv_QLCSVC.Columns[1].Width = 90;
             dgv_QLCSVC.Columns[2].Width = 90;
             dgv_QLCSVC.Columns[3].Width = 150;
-            dgv_QLCSVC.Columns[4].Width = 250;
+            dgv_QLCSVC.Columns[4].
+                Width = 250;
             dgv_QLCSVC.Columns[5].Width = 80;
             dgv_QLCSVC.ScrollBars = ScrollBars.Both;
         }
