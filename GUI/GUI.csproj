@@ -36,7 +36,6 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
-<<<<<<< HEAD
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -53,15 +52,12 @@
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.2.4.0\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
-=======
->>>>>>> 572a66413a6f4d52b78dc413a41691ee64e8ee90
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-<<<<<<< HEAD
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -80,9 +76,6 @@
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
-=======
-    <Reference Include="System.Management" />
->>>>>>> 572a66413a6f4d52b78dc413a41691ee64e8ee90
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -249,15 +242,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-<<<<<<< HEAD
     <EmbeddedResource Include="quanlyphuongtien\QuanLyPhuonTien.resx">
       <DependentUpon>QuanLyPhuonTien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quanlyphuongtien\Suaphuongtien.resx">
       <DependentUpon>Suaphuongtien.cs</DependentUpon>
     </EmbeddedResource>
-=======
->>>>>>> 572a66413a6f4d52b78dc413a41691ee64e8ee90
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -292,50 +282,10 @@
     <None Include="Resources\img_Login %282%29.jpg" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <None Include="Resources\icon_2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_0.png" />
-=======
-    <None Include="Resources\Cong.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-plus-240.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-filter-90.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-account-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-room-90.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-contract-96.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-service-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-cash-96.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-mortgage-96.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-setting-100 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-edit-100.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-tag-96.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-delete-90.png" />
->>>>>>> 572a66413a6f4d52b78dc413a41691ee64e8ee90
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
