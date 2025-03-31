@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DTO;
+
+namespace DAL
+{
+    public class RentalHistoryAccess
+    {
+        public static DataTable LoadRentalHistoryByUser(string username)
+        {
+            DataTable dt = new DataTable();
+
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                using (MySqlCommand cmd = new MySqlCommand("load_RentalHistory", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@p_username", username);
+
+                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    {
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+
+            return dt;
+        }
+    }
+}
