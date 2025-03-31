@@ -272,40 +272,41 @@ INSERT INTO PET (PETID, TENANTID, TYPE) VALUES
 ('TC009', 'T009', 'Chim'),
 ('TC010', 'T010', 'Cá');
 
--- 23 TEMPORARY_RESIDENCE
-INSERT INTO TEMPORARY_RESIDENCE (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL, PERMANENTADDRESS, REGISTEDADDRESS, STARTDATE, NOTES, EXPIRY_DATE, REGISTRATION_FILE_PATH) VALUES
-('T001', 'Lê Văn', 'Cường', '1990-07-25', 'Nam', '0911222333', 'tenant1@gmail.com', '123 Đường Lê Duẩn, Q1, TP.HCM', '123 Đường Lê Lợi, Q1, TP.HCM', '2024-01-15', 'Tạm trú công tác', '2025-01-14', '/temp_res/t001.pdf'),
-('T002', 'Phạm Thị', 'Dung', '1995-03-12', 'Nữ', '0988777666', 'tenant2@gmail.com', '456 Đường Nguyễn Trãi, Q5, TP.HCM', '456 Đường Nguyễn Huệ, Q1, TP.HCM', '2024-02-10', 'Tạm trú học tập', '2024-08-09', '/temp_res/t002.pdf'),
-('T003', 'Hoàng Văn', 'Em', '1988-11-05', 'Nam', '0909123456', 'tenant3@gmail.com', '789 Đường Cách Mạng Tháng 8, Q3, TP.HCM', '789 Đường Pasteur, Q3, TP.HCM', '2024-03-05', 'Tạm trú công tác', '2025-03-04', '/temp_res/t003.pdf'),
-('T004', 'Nguyễn Thị', 'Giang', '1992-09-18', 'Nữ', '0912345678', 'tenant4@gmail.com', '321 Đường 3/2, Q10, TP.HCM', '321 Đường CMT8, Q10, TP.HCM', '2024-04-20', 'Tạm trú học tập', '2024-10-19', '/temp_res/t004.pdf'),
-('T005', 'Trần Văn', 'Hải', '1985-04-30', 'Nam', '0987654321', 'tenant5@gmail.com', '654 Đường Lý Thường Kiệt, Q.Tân Bình, TP.HCM', '654 Đường 3/2, Q11, TP.HCM', '2024-05-15', 'Tạm trú công tác', '2025-05-14', '/temp_res/t005.pdf'),
-('T006', 'Vũ Thị', 'Lan', '1993-12-15', 'Nữ', '0909876543', 'tenant6@gmail.com', '987 Đường Lê Văn Sỹ, Q.Phú Nhuận, TP.HCM', '987 Đường Lý Thường Kiệt, Q.Tân Bình, TP.HCM', '2024-06-10', 'Tạm trú học tập', '2024-12-09', '/temp_res/t006.pdf'),
-('T007', 'Phan Văn', 'Minh', '1987-06-22', 'Nam', '0912456789', 'tenant7@gmail.com', '147 Đường Nguyễn Trãi, Q5, TP.HCM', '147 Đường Lê Văn Sỹ, Q.Phú Nhuận, TP.HCM', '2024-07-05', 'Tạm trú công tác', '2025-07-04', '/temp_res/t007.pdf'),
-('T008', 'Lý Thị', 'Nga', '1991-02-14', 'Nữ', '0988999888', 'tenant8@gmail.com', '258 Đường Bà Hạt, Q10, TP.HCM', '258 Đường Nguyễn Trãi, Q5, TP.HCM', '2024-08-20', 'Tạm trú học tập', '2025-02-19', '/temp_res/t008.pdf'),
-('T009', 'Đặng Văn', 'Phong', '1983-08-10', 'Nam', '0911222444', 'tenant9@gmail.com', '369 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM', '369 Đường Bà Hạt, Q10, TP.HCM', '2024-09-15', 'Tạm trú công tác', '2025-09-14', '/temp_res/t009.pdf'),
-('T010', 'Bùi Thị', 'Quỳnh', '1994-05-28', 'Nữ', '0909111222', 'tenant10@gmail.com', '753 Đường Nguyễn Văn Cừ, Q5, TP.HCM', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM', '2024-10-10', 'Tạm trú học tập', '2025-04-09', '/temp_res/t010.pdf');
--- 24 TENANTHISTORY
-INSERT INTO TENANTHISTORY (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL, ADDRESS, STARTDATE, NOTES) VALUES
-('T001', 'Lê Văn', 'Cường', '1990-07-25', 'Nam', '0911222333', 'tenant1@gmail.com', '123 Đường Lê Lợi, Q1, TP.HCM', '2024-01-15', 'Người thuê tốt'),
-('T002', 'Phạm Thị', 'Dung', '1995-03-12', 'Nữ', '0988777666', 'tenant2@gmail.com', '456 Đường Nguyễn Huệ, Q1, TP.HCM', '2024-02-10', 'Thanh toán đúng hạn'),
-('T003', 'Hoàng Văn', 'Em', '1988-11-05', 'Nam', '0909123456', 'tenant3@gmail.com', '789 Đường Pasteur, Q3, TP.HCM', '2024-03-05', 'Giữ phòng sạch sẽ'),
-('T004', 'Nguyễn Thị', 'Giang', '1992-09-18', 'Nữ', '0912345678', 'tenant4@gmail.com', '321 Đường CMT8, Q10, TP.HCM', '2024-04-20', 'Thường xuyên sử dụng dịch vụ'),
-('T005', 'Trần Văn', 'Hải', '1985-04-30', 'Nam', '0987654321', 'tenant5@gmail.com', '654 Đường 3/2, Q11, TP.HCM', '2024-05-15', 'Có thú cưng'),
-('T006', 'Vũ Thị', 'Lan', '1993-12-15', 'Nữ', '0909876543', 'tenant6@gmail.com', '987 Đường Lý Thường Kiệt, Q.Tân Bình, TP.HCM', '2024-06-10', 'Ít khi ở nhà'),
-('T007', 'Phan Văn', 'Minh', '1987-06-22', 'Nam', '0912456789', 'tenant7@gmail.com', '147 Đường Lê Văn Sỹ, Q.Phú Nhuận, TP.HCM', '2024-07-05', 'Thân thiện'),
-('T008', 'Lý Thị', 'Nga', '1991-02-14', 'Nữ', '0988999888', 'tenant8@gmail.com', '258 Đường Nguyễn Trãi, Q5, TP.HCM', '2024-08-20', 'Hay có khách'),
-('T009', 'Đặng Văn', 'Phong', '1983-08-10', 'Nam', '0911222444', 'tenant9@gmail.com', '369 Đường Bà Hạt, Q10, TP.HCM', '2024-09-15', 'Đúng giờ'),
-('T010', 'Bùi Thị', 'Quỳnh', '1994-05-28', 'Nữ', '0909111222', 'tenant10@gmail.com', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM', '2024-10-10', 'Mới chuyển đến');
+-- 23 TEMPORARY_REGISTRATION (đã đổi tên từ TEMPORARY_RESIDENCE)
+INSERT INTO TEMPORARY_REGISTRATION (REGISTRATIONID, TENANTID, ROOMID, REGISTRATION_DATE, EXPIRATION_DATE, STATUS, CREATE_DATE, UPDATE_DATE) VALUES
+('DK001', 'T001', 'R001', '2024-01-15', '2025-01-14', 'Đã duyệt', '2024-01-10', '2024-01-10'),
+('DK002', 'T002', 'R003', '2024-02-10', '2024-08-09', 'Đã duyệt', '2024-02-05', '2024-02-05'),
+('DK003', 'T003', 'R004', '2024-03-05', '2025-03-04', 'Đã duyệt', '2024-03-01', '2024-03-01'),
+('DK004', 'T004', 'R006', '2024-04-20', '2024-10-19', 'Đã duyệt', '2024-04-15', '2024-04-15'),
+('DK005', 'T005', 'R008', '2024-05-15', '2025-05-14', 'Đã duyệt', '2024-05-10', '2024-05-10'),
+('DK006', 'T006', 'R010', '2024-06-10', '2024-12-09', 'Đang chờ', '2024-06-05', '2024-06-05'),
+('DK007', 'T007', 'R002', '2024-07-05', '2025-07-04', 'Đã duyệt', '2024-07-01', '2024-07-01'),
+('DK008', 'T008', 'R005', '2024-08-20', '2025-02-19', 'Đã duyệt', '2024-08-15', '2024-08-15'),
+('DK009', 'T009', 'R007', '2024-09-15', '2025-09-14', 'Đã duyệt', '2024-09-10', '2024-09-10'),
+('DK010', 'T010', 'R009', '2024-10-10', '2025-04-09', 'Đang chờ', '2024-10-05', '2024-10-05');
 
--- 25 RENTALHISTORY
-INSERT INTO RENTALHISTORY (ROOMID, OLDTENANTID, ADDRESS, TYPE, CONVENIENT, AREA, PRICE, STATUS, FIRSTNAME, LASTNAME, GENDER, PHONENUMBER, STARTDATE, ENDDATE, REASON_FOR_LEAVING) VALUES
-('R001', 'T000', '123 Đường Lê Lợi, Q1, TP.HCM', 'Studio', 'Điều hòa, Wifi, Tủ lạnh', 25.5, 5000000, 'Đã trả phòng', 'Nguyễn Văn', 'A', 'Nam', '0911111111', '2023-01-15', '2024-01-14', 'Chuyển công tác'),
-('R002', 'T000', '123 Đường Lê Lợi, Q1, TP.HCM', '1 Phòng ngủ', 'Điều hòa, Wifi, Máy giặt', 35.0, 7000000, 'Đã trả phòng', 'Trần Thị', 'B', 'Nữ', '0922222222', '2023-02-10', '2024-02-09', 'Mua nhà riêng'),
-('R003', 'T000', '456 Đường Nguyễn Huệ, Q1, TP.HCM', '2 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 45.5, 9000000, 'Đã trả phòng', 'Lê Văn', 'C', 'Nam', '0933333333', '2023-03-05', '2024-03-04', 'Về quê'),
-('R004', 'T000', '789 Đường Pasteur, Q3, TP.HCM', 'Studio', 'Điều hòa, Wifi', 22.0, 4500000, 'Đã trả phòng', 'Phạm Thị', 'D', 'Nữ', '0944444444', '2023-04-20', '2024-04-19', 'Đi nước ngoài'),
-('R005', 'T000', '321 Đường CMT8, Q10, TP.HCM', '1 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh', 30.0, 6000000, 'Đã trả phòng', 'Hoàng Văn', 'E', 'Nam', '0955555555', '2023-05-15', '2024-05-14', 'Chuyển chỗ ở'),
-('R006', 'T000', '654 Đường 3/2, Q11, TP.HCM', '3 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh, Máy giặt, Bếp', 60.0, 12000000, 'Đã trả phòng', 'Nguyễn Thị', 'F', 'Nữ', '0966666666', '2023-06-10', '2024-06-09', 'Kết hôn'),
-('R007', 'T000', '987 Đường Lý Thường Kiệt, Q.Tân Bình, TP.HCM', 'Studio', 'Điều hòa, Wifi', 20.0, 4000000, 'Đã trả phòng', 'Trần Văn', 'G', 'Nam', '0977777777', '2023-07-05', '2024-07-04', 'Chuyển công tác'),
-('R008', 'T000', '147 Đường Lê Văn Sỹ, Q.Phú Nhuận, TP.HCM', '2 Phòng ngủ', 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 42.0, 8500000, 'Đã trả phòng', 'Vũ Thị', 'H', 'Nữ', '0988888888', '2023-08-20', '2024-08-19', 'Mua nhà riêng'),
-('R009', 'T000', '258 Đường Nguyễn Trãi, Q5, TP.HCM', '1 Phòng ngủ', 'Điều hòa, Wifi', 28.0, 5500000, 'Đã trả phòng', 'Phan Văn', 'I', 'Nam', '0999999999', '2023-09-15', '2024-09-14', 'Về quê'),
-('R010', 'T000', '369 Đường Bà Hạt, Q10, TP.HCM', 'Studio', 'Điều hòa, Wifi, Tủ lạnh', 24.0, 4800000, 'Đã trả phòng', 'Phan Văn', 'I', 'Nam', '0999999999', '2023-09-15', '2024-09-14', 'Về quê');
+-- 24 TENANT_HISTORY (đã đổi tên từ TENANTHISTORY)
+INSERT INTO TENANT_HISTORY (HISTORYID, TENANTID, ROOMID, STARTDATE, ENDDATE, NOTES) VALUES
+('LS001', 'T001', 'R001', '2024-01-15', NULL, 'Người thuê tốt'),
+('LS002', 'T002', 'R003', '2024-02-10', NULL, 'Thanh toán đúng hạn'),
+('LS003', 'T003', 'R004', '2024-03-05', NULL, 'Giữ phòng sạch sẽ'),
+('LS004', 'T004', 'R006', '2024-04-20', NULL, 'Thường xuyên sử dụng dịch vụ'),
+('LS005', 'T005', 'R008', '2024-05-15', NULL, 'Có thú cưng'),
+('LS006', 'T006', 'R010', '2024-06-10', NULL, 'Ít khi ở nhà'),
+('LS007', 'T007', 'R002', '2024-07-05', NULL, 'Thân thiện'),
+('LS008', 'T008', 'R005', '2024-08-20', NULL, 'Hay có khách'),
+('LS009', 'T009', 'R007', '2024-09-15', NULL, 'Đúng giờ'),
+('LS010', 'T010', 'R009', '2024-10-10', NULL, 'Mới chuyển đến');
+
+-- 25 RENTAL_HISTORY (đã đổi tên từ RENTALHISTORY)
+INSERT INTO RENTAL_HISTORY (CONTRACTID, ROOMID, TENANTID, STARTDATE, ENDDATE, REASON_FOR_LEAVING) VALUES
+('CT011', 'R001', 'T001', '2023-01-15', '2024-01-14', 'Chuyển công tác'),
+('CT012', 'R002', 'T002', '2023-02-10', '2024-02-09', 'Mua nhà riêng'),
+('CT013', 'R003', 'T003', '2023-03-05', '2024-03-04', 'Về quê'),
+('CT014', 'R004', 'T004', '2023-04-20', '2024-04-19', 'Đi nước ngoài'),
+('CT015', 'R005', 'T005', '2023-05-15', '2024-05-14', 'Chuyển chỗ ở'),
+('CT016', 'R006', 'T006', '2023-06-10', '2024-06-09', 'Kết hôn'),
+('CT017', 'R007', 'T007', '2023-07-05', '2024-07-04', 'Chuyển công tác'),
+('CT018', 'R008', 'T008', '2023-08-20', '2024-08-19', 'Mua nhà riêng'),
+('CT019', 'R009', 'T009', '2023-09-15', '2024-09-14', 'Về quê'),
+('CT020', 'R010', 'T010', '2023-10-10', '2024-10-09', 'Chuyển công tác');
