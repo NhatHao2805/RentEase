@@ -130,7 +130,14 @@ namespace GUI
                     LichThanhToan.Text,
                     TienDatCoc.Text,
                     GhiChu.Text);
-                    MessageBox.Show(result);
+                    if(result == "Please fill all the fields")
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                        return;
+                    }
+                    else { 
+                            MessageBox.Show(result);
+                    }
                     this.Close();
                     break;
                 case 1:
@@ -140,7 +147,16 @@ namespace GUI
                     LichThanhToan.Text,
                     TienDatCoc.Text,
                     GhiChu.Text);
-                    MessageBox.Show(result1);
+                    if (result1 == "Please fill all the fields")
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(result1);
+                    }
+                    this.Close();
 
 
                     break;

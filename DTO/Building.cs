@@ -9,6 +9,7 @@ namespace DTO
     class Building
     {
         public string BuildingId { get; set; }
+        public string BuildingKey { get; set; }
         public string Username { get; set; }
         public string Address { get; set; }
         public int NumOfFloors { get; set; }

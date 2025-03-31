@@ -73,7 +73,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets.cs" />
     <Compile Include="Building.cs" />
+    <Compile Include="dto_service\Contract_Service.cs" />
+    <Compile Include="dto_service\KhachHangDTO.cs" />
+    <Compile Include="dto_service\ServiceUsageDTO.cs" />
+    <Compile Include="dto_service\UserServiceDTO.cs" />
+    <Compile Include="honhathao\Tenant.cs" />
+    <Compile Include="quanlyphuongtien\ParkingArea.cs" />
+    <Compile Include="quanlyphuongtien\Payment.cs" />
+    <Compile Include="RentalHistory.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="User.cs" />
     <Compile Include="WaterElectricity.cs" />

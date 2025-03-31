@@ -31,5 +31,10 @@ namespace BLL
         {
             return ContractAccess.update_Contract(contractid,enddate,paymentschedule,deposit,note);
         }
+
+        public static string ContractBLL_delete_Contract(string contractid)
+        {
+            return ContractAccess.delete_Contract(contractid);
+        }
     }
 }
