@@ -12,18 +12,17 @@ INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBE
 ('reception10', 'Lý Thị Mai', 'reception@123', 'reception10@rentease.com', '1991-02-14', 'Nữ', '0987654321', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM');
 
 -- 2 BUILDING
-INSERT INTO BUILDING (BUILDINGID, USERNAME, ADDRESS, NUMOFFLOORS, NUMOFROOMS) VALUES
-('B001', 'ad', '123 Đường Lê Lợi, Q1, TP.HCM', 5, 20),
-('B002', 'manager02', '456 Đường Nguyễn Huệ, Q1, TP.HCM', 3, 12),
-('B003', 'owner03', '789 Đường Pasteur, Q3, TP.HCM', 7, 30),
-('B004', 'staff04', '321 Đường CMT8, Q10, TP.HCM', 4, 15),
-('B005', 'supervisor05', '654 Đường 3/2, Q11, TP.HCM', 6, 25),
-('B006', 'operator06', '987 Đường Lý Thường Kiệt, Q.Tân Bình, TP.HCM', 2, 8),
-('B007', 'director07', '147 Đường Lê Văn Sỹ, Q.Phú Nhuận, TP.HCM', 8, 35),
-('B008', 'accountant08', '258 Đường Nguyễn Trãi, Q5, TP.HCM', 3, 10),
-('B009', 'technician09', '369 Đường Bà Hạt, Q10, TP.HCM', 5, 18),
-('B010', 'reception10', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM', 4, 16);
-select * from room;
+INSERT INTO BUILDING (BUILDINGID, BUILDING_KEY, USERNAME, ADDRESS, NUMOFFLOORS, NUMOFROOMS) VALUES
+('B001', 'BLD001', 'ad', '123 Đường Lê Lợi, Q1, TP.HCM', 5, 20),
+('B002', 'BLD002', 'manager02', '456 Đường Nguyễn Huệ, Q1, TP.HCM', 3, 12),
+('B003', 'BLD003', 'owner03', '789 Đường Pasteur, Q3, TP.HCM', 7, 30),
+('B004', 'BLD004', 'staff04', '321 Đường CMT8, Q10, TP.HCM', 4, 15),
+('B005', 'BLD005', 'supervisor05', '654 Đường 3/2, Q11, TP.HCM', 6, 25),
+('B006', 'BLD006', 'operator06', '987 Đường Lý Thường Kiệt, Q.Tân Bình, TP.HCM', 2, 8),
+('B007', 'BLD007', 'director07', '147 Đường Lê Văn Sỹ, Q.Phú Nhuận, TP.HCM', 8, 35),
+('B008', 'BLD008', 'accountant08', '258 Đường Nguyễn Trãi, Q5, TP.HCM', 3, 10),
+('B009', 'BLD009', 'technician09', '369 Đường Bà Hạt, Q10, TP.HCM', 5, 18),
+('B010', 'BLD010', 'reception10', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM', 4, 16);
 -- 3 ROOM
 INSERT INTO ROOM (ROOMID, BUILDINGID, TYPE, FLOOR, CONVENIENT, AREA, PRICE, STATUS) VALUES
 ('R001', 'B001', 'Studio', 1, 'Điều hòa, Wifi, Tủ lạnh', 25.5, 5000000, 'Đang ở; Sắp hết hạn hợp đồng'),

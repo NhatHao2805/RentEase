@@ -113,6 +113,7 @@ CREATE TABLE FEEDBACK (
 /*==============================================================*/
 CREATE TABLE BUILDING (
     BUILDINGID              VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
+    BUILDING_KEY			VARCHAR(10),
     USERNAME             	VARCHAR(20) NOT NULL COMMENT 'Tên người dùng',
     ADDRESS                 VARCHAR(100) COMMENT 'Địa chỉ',
     NUMOFFLOORS             INT COMMENT 'Số lượng tầng',
@@ -244,9 +245,9 @@ CREATE TABLE RELATIONSHIP (
 /* Table: RENTALHISTORY                                         */
 /*==============================================================*/
 CREATE TABLE RENTAL_HISTORY (
-    CONTRACTID              VARCHAR(10) NOT NULL COMMENT 'ID nhà',
-    ROOMID          		VARCHAR(10) NOT NULL COMMENT 'ID người thuê cũ',
-    TENANTID            	 VARCHAR(100) NOT NULL COMMENT 'Tên nhà',
+    CONTRACTID              VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
+    ROOMID          		VARCHAR(10) NOT NULL COMMENT 'ID phòng',
+    TENANTID            	 VARCHAR(100) NOT NULL COMMENT 'ID khách thuê',
     STARTDATE            	DATETIME COMMENT 'Ngày bắt đầu',
     ENDDATE              	DATETIME COMMENT 'Ngày kết thúc',
     REASON_FOR_LEAVING   	VARCHAR(200) COMMENT 'Lý do rời đi',
@@ -283,11 +284,11 @@ CREATE TABLE USE_SERVICE (
 /* Table: TENANTHISTORY                                         */
 /*==============================================================*/
 CREATE TABLE TENANT_HISTORY (
-	HISTORYID			VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
+	HISTORYID			VARCHAR(10) NOT NULL COMMENT 'ID lịch sử thuê',
     TENANTID            VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
-    ROOMID              VARCHAR(100) COMMENT 'Địa chỉ',
+    ROOMID              VARCHAR(100) COMMENT 'ID phòng',
     STARTDATE            DATETIME COMMENT 'Ngày bắt đầu',
-    ENDDATE				DATETIME COMMENT 'Ngày bắt đầu',
+    ENDDATE				DATETIME COMMENT 'Ngày kết thúc',
     NOTES                VARCHAR(200) COMMENT 'Ghi chú',
     PRIMARY KEY (HISTORYID)
 );
