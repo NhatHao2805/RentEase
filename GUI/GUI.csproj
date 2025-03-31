@@ -45,6 +45,10 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.2.4.0\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
@@ -90,23 +94,84 @@
     <Compile Include="Custom\Custom.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ExcelExporter.cs" />
+    <Compile Include="Form_AddAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AddAssets.Designer.cs">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_AddContract.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_AddContract.Designer.cs">
       <DependentUpon>Form_AddContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_SignUp.cs">
+    <Compile Include="Form_AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_SignUp.Designer.cs">
+    <Compile Include="Form_AddRoom.Designer.cs">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AssetsDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AssetsDetail.Designer.cs">
+      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_PaymentHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_PaymentHistory.Designer.cs">
+      <DependentUpon>Form_PaymentHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_RentalHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RentalHistory.Designer.cs">
+      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Form_SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form_SignUp.Designer.cs">
       <DependentUpon>Form_SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Login.cs">
+    <Compile Include="Login\Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Login.Designer.cs">
+    <Compile Include="Login\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_UpdateAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_UpdateAssets.Designer.cs">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_UpdateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_UpdateRoom.Designer.cs">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\DeleteService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\DeleteService.Designer.cs">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\InsertService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\InsertService.Designer.cs">
+      <DependentUpon>InsertService.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNha.cs">
       <SubType>Form</SubType>
@@ -116,14 +181,53 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="quanlyphuongtien\QuanLyPhuonTien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\QuanLyPhuonTien.Designer.cs">
+      <DependentUpon>QuanLyPhuonTien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Suaphuongtien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Suaphuongtien.Designer.cs">
+      <DependentUpon>Suaphuongtien.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form_AddAssets.resx">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_AddContract.resx">
       <DependentUpon>Form_AddContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_SignUp.resx">
+    <EmbeddedResource Include="Form_AddRoom.resx">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AssetsDetail.resx">
+      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_RentalHistory.resx">
+      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Form_SignUp.resx">
       <DependentUpon>Form_SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Login.resx">
+    <EmbeddedResource Include="Login\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_UpdateAssets.resx">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_UpdateRoom.resx">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\DeleteService.resx">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\InsertService.resx">
+      <DependentUpon>InsertService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNha.resx">
       <DependentUpon>QuanLyNha.cs</DependentUpon>
@@ -138,6 +242,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="quanlyphuongtien\QuanLyPhuonTien.resx">
+      <DependentUpon>QuanLyPhuonTien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Suaphuongtien.resx">
+      <DependentUpon>Suaphuongtien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -199,19 +309,37 @@
     <None Include="Resources\icons8-parking-lot-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-filter-90.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-activity-history-100.png" />
+    <None Include="Resources\office-building.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-invoice-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-activity-history-100.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-registration-100.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-tenant-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contract-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trash-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-90.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

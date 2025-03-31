@@ -3,23 +3,33 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using BLL;
+using Guna.UI2.WinForms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI
 {
     public partial class Form_AddContract: Form
     {
-        HouseBLL houseBLL;
         AccountBLL accountBLL;
-
-        public Form_AddContract()
+        private string username;
+        private int control;
+        private string contractId;
+        //private string row;
+        private DataGridViewRow row;   
+        public Form_AddContract(string username, int control, DataGridViewRow row)
         {
-            InitializeComponent();
+            this.username = username; 
+            this.row = row;
+            this.control = control;
+            InitializeComponent();        
             LoadInfo();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -40,40 +50,120 @@ namespace GUI
 
         private void LoadInfo()
         {
-            houseBLL = new HouseBLL();
-            accountBLL = new AccountBLL();
-            List<string> a = houseBLL.HouseBLL_Load_HouseAddress();
-            foreach (string address in a)
+           
+            guna2DateTimePicker1.Enabled = false;
+            switch (control)
             {
-                guna2ComboBox1.Items.Add(address);
-            }
-            a = accountBLL.AccountBLL_Load_TenantName();
-            foreach (string name in a)
-            {
-                guna2ComboBox2.Items.Add(name);
-            }
-        }
-        private void guna2ComboBox1_TextChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine("hi");
-            guna2TextBox1.Text = houseBLL.HouseBLL_TakePrice(guna2ComboBox1.Text);
-        }
+                case 0:
+                    accountBLL = new AccountBLL();
+                    List<string> a = RoomBLL.RoomBLL_Load_RoomAddress(username);
+                    foreach (string address in a)
+                    {
+                        DiaChiToaNha.Items.Add(address);
+                    }
+                    a = accountBLL.AccountBLL_Load_TenantName();
+                    foreach (string name in a)
+                    {
+                        TenKhachHang.Items.Add(name);
+                    }
+                    break;
+                case 1:
+                    guna2DateTimePicker2.Enabled = false;
 
-        private void Form_AddContract_Load(object sender, EventArgs e)
-        {
 
+                    string info = ContractBLL.ContractBLL_alter_Contract(row.Cells["CONTRACTID"].Value.ToString());
+                    Console.WriteLine(info);
+                    string[] infos = info.Split('|');
+                    contractId = infos[0];
+                    DiaChiToaNha.Items.Add(infos[0]);
+                    DiaChiToaNha.SelectedIndex = 0;
+
+                    SoPhong.Items.Add(infos[1]);
+                    SoPhong.SelectedIndex = 0;
+
+                    TenKhachHang.Items.Add(infos[2]);
+                    TenKhachHang.SelectedIndex = 0;
+
+                    guna2DateTimePicker1.Value = DateTime.Parse(infos[3]);
+                    guna2DateTimePicker2.Value = DateTime.Parse(infos[4]);
+                    guna2DateTimePicker3.Value = DateTime.Parse(infos[5]);
+
+                    LichThanhToan.Items.Clear();
+                    LichThanhToan.Items.Add(infos[7]);
+                    LichThanhToan.SelectedIndex = 0;
+
+                    TienDatCoc.Text = infos[8];
+                    GhiChu.Text = infos[9];
+
+                    break;
+            }
+                
         }
 
         private void guna2ComboBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("value");
-            guna2TextBox1.Text = houseBLL.HouseBLL_TakePrice(guna2ComboBox1.Text);
+            SoPhong.Items.Clear();
+            List<string> a = RoomBLL.RoomBLL_Load_RoomInBuilding(DiaChiToaNha.Text);
+            foreach (string id in a)
+            {
+                SoPhong.Items.Add(id);
+            }
         }
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void guna2ComboBox4_SelectedValueChanged(object sender, EventArgs e)
         {
-            Console.WriteLine("index");
-            guna2TextBox1.Text = houseBLL.HouseBLL_TakePrice(guna2ComboBox1.Text);
+            GiaThue.Text = RoomBLL.RoomBLL_TakePrice(SoPhong.Text);
         }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            switch (control)
+            {
+                case 0:
+                    string result = ContractBLL.ContractBLL_add_Contract(
+                    DiaChiToaNha.Text,
+                    SoPhong.Text,
+                    TenKhachHang.Text,
+                    guna2DateTimePicker1.Value.ToString("yyyy-MM-dd"),
+                    guna2DateTimePicker2.Value.ToString("yyyy-MM-dd"),
+                    guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
+                    LichThanhToan.Text,
+                    TienDatCoc.Text,
+                    GhiChu.Text);
+                    if(result == "Please fill all the fields")
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                        return;
+                    }
+                    else { 
+                            MessageBox.Show(result);
+                    }
+                    this.Close();
+                    break;
+                case 1:
+                    string result1 = ContractBLL.ContractBLL_update_Contract(
+                    contractId,
+                    guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
+                    LichThanhToan.Text,
+                    TienDatCoc.Text,
+                    GhiChu.Text);
+                    if (result1 == "Please fill all the fields")
+                    {
+                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(result1);
+                    }
+                    this.Close();
+
+
+                    break;
+
+            }
+        }
+
+       
     }
 }

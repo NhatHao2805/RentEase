@@ -17,7 +17,6 @@ namespace DAL
             {
                 connection = new MySqlConnection(connectString);
                 connection.Open();
-                Console.WriteLine("Connected to MySQL successfully!");
             }
             catch (Exception e)
             {
