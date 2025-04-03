@@ -11,7 +11,7 @@ namespace DAL
 {
     public class RentalHistoryAccess
     {
-        public static DataTable LoadRentalHistoryByUser(string username)
+        public static DataTable LoadRentalHistory(string username, string buildingid)
         {
             DataTable dt = new DataTable();
 
@@ -21,6 +21,7 @@ namespace DAL
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@p_username", username);
+                    cmd.Parameters.AddWithValue("@p_buildingid", buildingid);
 
                     using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
                     {

@@ -1,4 +1,6 @@
 drop database if exists rentease;
+
+
 CREATE DATABASE rentease DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE rentease;
 

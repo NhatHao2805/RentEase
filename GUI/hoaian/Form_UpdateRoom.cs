@@ -35,12 +35,6 @@ namespace GUI
                 roomid_cb.Items.Add(row["ROOMID"].ToString());
             }
 
-            buildingid_cb.Items.Clear();
-            foreach (DataRow row in RoomBLL.LoadBuildingID(_username).Rows)
-            {
-                buildingid_cb.Items.Add(row["BUILDINGID"].ToString());
-            }
-
             floor_cb.Items.Clear();
 
             for(int i = 0; i <= RoomBLL.LoadFloorByBuildingID(infor.BuildingId); i++)
@@ -55,7 +49,6 @@ namespace GUI
 
             // Hiển thị thông tin phòng lên các control
             roomid_cb.SelectedItem = infor.RoomId;
-            buildingid_cb.SelectedItem = infor.BuildingId;
             type_cb.SelectedItem = infor.Type;
             floor_cb.SelectedItem = Convert.ToInt32(infor.Floor);
             area_tb.Text = infor.Area;
@@ -100,14 +93,13 @@ namespace GUI
 
             // Disable các field không được phép sửa
             roomid_cb.Enabled = false;
-            buildingid_cb.Enabled = false;
             floor_cb.Enabled = false;
         }
 
         private void Update_btn_Click(object sender, EventArgs e)
         {
             room.RoomId = infor.RoomId;
-            room.BuildingId = buildingid_cb.Text;
+            room.BuildingId = infor.BuildingId;
             room.Type = type_cb.Text;
             room.Floor = floor_cb.Text;
             room.Convenient = convenient_tb.Text;
@@ -193,41 +185,6 @@ namespace GUI
             SapHetHan_chbox.Checked = false;
 
             room.Status = "";
-        }
-
-        private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DangNoTien_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DaHetHan_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -103,7 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountAccess.cs" />
-    <Compile Include="AssetAccess.cs" />
     <Compile Include="dal_service\DeleteTenantService.cs" />
     <Compile Include="dal_service\DichVuDAL.cs" />
     <Compile Include="dal_service\ElectricWaterServiceDAL.cs" />
@@ -113,6 +112,9 @@
     <Compile Include="dal_service\UpdatePriceDAL.cs" />
     <Compile Include="dal_service\UserServiceDAL.cs" />
     <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="hoaian\AssetAccess.cs" />
+    <Compile Include="hoaian\RentalHistoryAccess.cs" />
+    <Compile Include="hoaian\RoomAccess.cs" />
     <Compile Include="honhathao\BuildingAccess.cs" />
     <Compile Include="honhathao\ContractAccess.cs" />
     <Compile Include="honhathao\RegistrationAccess.cs" />
@@ -122,8 +124,6 @@
     <Compile Include="quanlyphuongtien\ParkingAreaAccess.cs" />
     <Compile Include="quanlyphuongtien\PaymentAccess.cs" />
     <Compile Include="quanlyphuongtien\SettingAccess.cs" />
-    <Compile Include="RentalHistoryAccess.cs" />
-    <Compile Include="RoomAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

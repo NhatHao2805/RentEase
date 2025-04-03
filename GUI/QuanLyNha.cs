@@ -17,16 +17,10 @@ using System.Web.UI;
 using System.Windows.Forms;
 using GUI.honhathao;
 using BLL.honhathao;
-using BLL;
-using BLL.BLL_Service;
-using BLL.Quanlyphuongtien;
-using DTO;
 using DTO.honhathao;
-using GUI.GUI_Service;
 using GUI.QuanLyPhuongTien;
 using BLL.bll_service;
 using DTO.dto_service;
-
 
 namespace GUI
 {
@@ -120,32 +114,6 @@ namespace GUI
             dgv_DKLT.Columns[5].Width = 200;
             dgv_DKLT.ScrollBars = ScrollBars.Both;
         }
-        private void load_Assets()
-        {
-            dgv_QLCSVC.DataSource = AssetBLL.AssetsBLL_load_Assets(form1.taikhoan.Username);
-            dgv_QLCSVC.Columns[0].Width = 90;
-            dgv_QLCSVC.Columns[1].Width = 90;
-            dgv_QLCSVC.Columns[2].Width = 90;
-            dgv_QLCSVC.Columns[3].Width = 150;
-            dgv_QLCSVC.Columns[4].
-                Width = 250;
-            dgv_QLCSVC.Columns[5].Width = 80;
-            dgv_QLCSVC.ScrollBars = ScrollBars.Both;
-        }
-
-        private void load_QLP()
-        {
-            dgv_QLP.DataSource = RoomBLL.RoomBLL_load_Room(form1.taikhoan.Username);
-            dgv_QLP.Columns[0].Width = 90;
-            dgv_QLP.Columns[1].Width = 90;
-            dgv_QLP.Columns[2].Width = 150;
-            dgv_QLP.Columns[3].Width = 250;
-            dgv_QLP.Columns[4].Width = 80;
-            dgv_QLP.Columns[5].Width = 80;
-            dgv_QLP.Columns[6].Width = 80;
-            dgv_QLP.Columns[7].Width = 250;
-            dgv_QLP.ScrollBars = ScrollBars.Both;
-        }
 
         private void load_Contract(int control, string name)
         {
@@ -164,6 +132,47 @@ namespace GUI
             dgv_QLHD.Columns[11].Width = 200;
             dgv_QLHD.ScrollBars = ScrollBars.Both;
         }
+
+        private void load_Assets() // 4/3/2025 Hoài An: thêm điều kiện kiểm tra listbuildingid
+        {
+            if (listBuildingID.SelectedItem == null)
+            {
+                dgv_QLCSVC.DataSource = AssetBLL.LoadAssets(form1.taikhoan.Username, null);
+            }
+            else
+            {
+                dgv_QLCSVC.DataSource = AssetBLL.LoadAssets(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            }
+            dgv_QLCSVC.Columns[0].Width = 90;
+            dgv_QLCSVC.Columns[1].Width = 90;
+            dgv_QLCSVC.Columns[2].Width = 150;
+            dgv_QLCSVC.Columns[3].Width = 100;
+            dgv_QLCSVC.Columns[4].Width = 150;
+            dgv_QLCSVC.Columns[5].Width = 80;
+            dgv_QLCSVC.ScrollBars = ScrollBars.Both;
+        }
+
+        private void load_QLP() // 4/3/2025 Hoài An: thêm điều kiện kiểm tra listbuildingid
+        {
+            if (listBuildingID.SelectedItem == null)
+            {
+                dgv_QLP.DataSource = RoomBLL.LoadRoom(form1.taikhoan.Username, null);
+            }
+            else
+            {
+                dgv_QLP.DataSource = RoomBLL.LoadRoom(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            }
+            dgv_QLP.Columns[0].Width = 90;
+            dgv_QLP.Columns[1].Width = 90;
+            dgv_QLP.Columns[2].Width = 150;
+            dgv_QLP.Columns[3].Width = 250;
+            dgv_QLP.Columns[4].Width = 80;
+            dgv_QLP.Columns[5].Width = 80;
+            dgv_QLP.Columns[6].Width = 80;
+            dgv_QLP.Columns[7].Width = 250;
+            dgv_QLP.ScrollBars = ScrollBars.Both;
+        }
+
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -516,6 +525,79 @@ namespace GUI
             f.ShowDialog();
             loadTenant(null);
         }
+        private void FilterAssets(string priceSort, string nameSort)
+        {
+            try
+            {
+                // Lấy dữ liệu đã lọc
+                DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.SelectedItem.ToString());
+
+                // Cập nhật DataGridView
+                dgv_QLCSVC.DataSource = null; // Xóa dữ liệu cũ trước
+                dgv_QLCSVC.DataSource = filteredData;
+
+                dgv_QLCSVC.Columns["RoomID"].DisplayIndex = 0;
+                dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
+                dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
+                dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
+                dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
+                dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
+                //load_Assets();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void button25_Click(object sender, EventArgs e)
+        {
+            Form_AddAssets addAsset = new Form_AddAssets(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            if (addAsset.ShowDialog() == DialogResult.OK)
+            {
+                // Nếu thêm thành công thì load lại dữ liệu
+                load_Assets();
+            }
+        }
+        private void button24_Click(object sender, EventArgs e)
+        {
+            Form_AssetsDetail assetsDetail = new Form_AssetsDetail(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            assetsDetail.Show();
+        }
+        private void FilterRoomByStatus()
+        {
+            //try
+            //{
+            //    // Tạo danh sách trạng thái được chọn
+            //    List<string> selectedStatuses = new List<string>();
+
+            //    if (DangO_chbox.Checked) selectedStatuses.Add(DangO_chbox.Text);
+            //    if (DangTrong_chbox.Checked) selectedStatuses.Add(DangTrong_chbox.Text);
+            //    if (DangKT_chbox.Checked) selectedStatuses.Add(DangKT_chbox.Text);
+            //    if (DangCoc_chbox.Checked) selectedStatuses.Add(DangCoc_chbox.Text);
+            //    if (SapHetHan_chbox.Checked) selectedStatuses.Add(SapHetHan_chbox.Text);
+            //    if (DaQuaHan_chbox.Checked) selectedStatuses.Add(DaQuaHan_chbox.Text);
+            //    if (DangNoTien_chbox.Checked) selectedStatuses.Add(DangNoTien_chbox.Text);
+
+            //    // Chuyển danh sách thành chuỗi phân cách bằng dấu ;
+            //    string statusFilter = string.Join("; ", selectedStatuses);
+
+
+            //    // Lấy dữ liệu đã lọc
+            //    DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+
+            //    // Cập nhật DataGridView
+            //    dgv_QLP.DataSource = null; // Xóa dữ liệu cũ trước
+            //    dgv_QLP.DataSource = filteredData;
+
+            //    ConfigureDataGridView();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
+            //                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
         private void button34_Click(object sender, EventArgs e)
         {
             try
@@ -589,7 +671,70 @@ namespace GUI
             loadInfo();
 
         }
+        //private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (DangO_chbox.Checked && DangTrong_chbox.Checked)
+        //    {
+        //        MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        DangO_chbox.Checked = false;
+        //    }
+        //    FilterRoomByStatus();
+        //}
 
+        //private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (DangTrong_chbox.Checked && DangO_chbox.Checked)
+        //    {
+        //        MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        DangTrong_chbox.Checked = false;
+        //    }
+        //    FilterRoomByStatus();
+        //}
+
+        //private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (DangKT_chbox.Checked && DangCoc_chbox.Checked)
+        //    {
+        //        MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        DangKT_chbox.Checked = false;
+        //    }
+        //    FilterRoomByStatus();
+        //}
+
+        //private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (DangCoc_chbox.Checked && (DangO_chbox.Checked || DangKT_chbox.Checked))
+        //    {
+        //        MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang ở' hoặc 'Đang báo kết thúc'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        DangCoc_chbox.Checked = false;
+        //    }
+        //    FilterRoomByStatus();
+        //}
+
+        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SapHetHan_chbox.Checked && DaQuaHan_chbox.Checked)
+            {
+                MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SapHetHan_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
+        }
+
+        private void DaQuaHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DaQuaHan_chbox.Checked && SapHetHan_chbox.Checked)
+            {
+                MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DaQuaHan_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
+        }
+
+        private void DangNoTien_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            FilterRoomByStatus();
+        }
         private List<CheckBox> sortOptions = new List<CheckBox>();
 
         public string filet_Service = "Default";
@@ -688,7 +833,7 @@ namespace GUI
 
         private void addRoom_btn_Click(object sender, EventArgs e)
         {
-            Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username);
+            Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username,listBuildingID.Text);
             if (addRoom.ShowDialog() == DialogResult.OK)
             {
                 load_QLP();
@@ -727,7 +872,7 @@ namespace GUI
 
         private void RentalHistory_btn_Click(object sender, EventArgs e)
         {
-            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username);
+            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username,listBuildingID.Text);
             rentalHistory.Show();
         }
 
@@ -773,17 +918,17 @@ namespace GUI
             }
         }
 
-        private void addAsset_btn_Click(object sender, EventArgs e)
-        {
-            Form_AddAssets addAssets = new Form_AddAssets();
-            this.Hide();
-        }
+        //private void addAsset_btn_Click(object sender, EventArgs e)
+        //{
+        //    Form_AddAssets addAssets = new Form_AddAssets();
+        //    this.Hide();
+        //}
 
-        private void updateAssets_btn_Click(object sender, EventArgs e)
-        {
-            Form_UpdateAssets updateAssets = new Form_UpdateAssets();
-            this.Hide();
-        }
+        //private void updateAssets_btn_Click(object sender, EventArgs e)
+        //{
+        //    Form_UpdateAssets updateAssets = new Form_UpdateAssets();
+        //    this.Hide();
+        //}
 
         private void deleteAssets_btn_Click(object sender, EventArgs e)
         {
@@ -807,12 +952,16 @@ namespace GUI
                 }
             }
         }
-
-        private void assetsDetail_btn_Click(object sender, EventArgs e)
+        private void button33_Click(object sender, EventArgs e)
         {
-            Form_AssetsDetail assetsDetail = new Form_AssetsDetail(form1.taikhoan.Username);
-            this.Hide();
+            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            rentalHistory.Show();
         }
+        //private void assetsDetail_btn_Click(object sender, EventArgs e)
+        //{
+        //    Form_AssetsDetail assetsDetail = new Form_AssetsDetail(form1.taikhoan.Username);
+        //    this.Hide();
+        //}
 
         private void paymentHistoryAssets_btn_Click(object sender, EventArgs e)
         {
@@ -830,97 +979,6 @@ namespace GUI
             {
                 MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-        private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangO_chbox1.Checked && DangTrong_chbox1.Checked)
-            {
-                MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangO_chbox1.Checked = false;
-            }
-            FilterRoomByStatus();
-        }
-
-        private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangTrong_chbox1.Checked && DangO_chbox1.Checked)
-            {
-                MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangTrong_chbox1.Checked = false;
-            }
-            FilterRoomByStatus();
-        }
-
-        private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangKT_chbox1.Checked && DangCoc_chbox.Checked)
-            {
-                MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangKT_chbox1.Checked = false;
-            }
-            FilterRoomByStatus();
-        }
-
-        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangCoc_chbox.Checked && (DangO_chbox1.Checked || DangKT_chbox1.Checked))
-            {
-                MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang ở' hoặc 'Đang báo kết thúc'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangCoc_chbox.Checked = false;
-            }
-            FilterRoomByStatus();
-        }
-
-        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SapHetHan_chbox.Checked && DaQuaHan_chbox.Checked)
-            {
-                MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                SapHetHan_chbox.Checked = false;
-            }
-            FilterRoomByStatus();
-        }
-
-        private void DaQuaHan_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DaQuaHan_chbox.Checked && SapHetHan_chbox.Checked)
-            {
-                MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DaQuaHan_chbox.Checked = false;
-            }
-            FilterRoomByStatus();
-        }
-
-        private void DangNoTien_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            FilterRoomByStatus();
-        }
-        private void FilterRoomByStatus()
-        {
-            try
-            {
-                List<string> selectedStatuses = new List<string>();
-
-                if (DangO_chbox1.Checked) selectedStatuses.Add(DangO_chbox1.Text);
-                if (DangTrong_chbox1.Checked) selectedStatuses.Add(DangTrong_chbox1.Text);
-                if (DangKT_chbox1.Checked) selectedStatuses.Add(DangKT_chbox1.Text);
-                if (DangCoc_chbox.Checked) selectedStatuses.Add(DangCoc_chbox.Text);
-                if (SapHetHan_chbox.Checked) selectedStatuses.Add(SapHetHan_chbox.Text);
-                if (DaQuaHan_chbox.Checked) selectedStatuses.Add(DaQuaHan_chbox.Text);
-                if (DangNoTien_chbox.Checked) selectedStatuses.Add(DangNoTien_chbox.Text);
-                string statusFilter = string.Join("; ", selectedStatuses);
-                DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username);
-
-                dgv_QLP.DataSource = null; 
-                dgv_QLP.DataSource = filteredData;
-
-                ConfigureDataGridView();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1004,11 +1062,6 @@ namespace GUI
             }
         }
 
-        private void button33_Click(object sender, EventArgs e)
-        {
-            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username);
-            rentalHistory.Show();
-        }
 
         private void button36_Click(object sender, EventArgs e)
         {
@@ -1022,13 +1075,6 @@ namespace GUI
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
-
-
-
-
-
 
         private UserService serviceUsageBLL = new UserService();
 
@@ -1478,5 +1524,7 @@ namespace GUI
             checkBox_DV4.Visible = false;
             checkBox_DV5.Visible = false;
         }
+
+
     }
 }

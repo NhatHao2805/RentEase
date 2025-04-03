@@ -18,17 +18,19 @@ namespace GUI
         quanlynha form;
         Room room = new Room();
         private string _username;
-        public Form_AddRoom(string username)
+        private string _buildingid;
+        public Form_AddRoom(string username, string buildingid)
         {
             InitializeComponent();
 
             _username = username;
+            _buildingid = buildingid;
         }
 
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            room.BuildingId = buildingid_cb.Text;
+            room.BuildingId = _buildingid;
             room.Type = type_cb.Text;
             room.Floor = floor_cb.Text;
             room.Convenient = convenient_tb.Text;
@@ -62,7 +64,7 @@ namespace GUI
                     MessageBox.Show("Bạn chưa nhập diện tích");
                     return;
                 case "invalid_area_format":
-                    MessageBox.Show("Diện tích phòng không hợp lệ\nPhải là số dương\nVí dụ: 20 hoặc 35.75");
+                    MessageBox.Show("Diện tích phòng không hợp lệ\nVí dụ: 20 hoặc 35.75");
                     area_tb.Text = string.Empty;
                     room.Area = null;
                     return;
@@ -70,7 +72,7 @@ namespace GUI
                     MessageBox.Show("Bạn chưa nhập giá thuê");
                     return;
                 case "invalid_price_format":
-                    MessageBox.Show("Giá phòng không hợp lệ\nPhải là số dương\nVí dụ: 2000000 hoặc 3.500000");
+                    MessageBox.Show("Giá phòng không hợp lệ\nVí dụ: 2000000 hoặc 3.500000");
                     price_tb.Text = string.Empty;
                     room.Price = null;
                     return;
@@ -129,26 +131,17 @@ namespace GUI
         }
         private void Form_AddRoom_Load(object sender, EventArgs e)
         {
-            buildingid_cb.Items.Clear();
+            floor_cb.Items.Clear();
 
-            foreach (DataRow row in RoomBLL.LoadBuildingID(_username).Rows)
+            for (int i = 0; i <= RoomBLL.LoadFloorByBuildingID(_buildingid); i++)
             {
-                buildingid_cb.Items.Add(row["BUILDINGID"].ToString());
+                floor_cb.Items.Add(i);
             }
 
             type_cb.Items.Add("Nhà trọ");
             type_cb.Items.Add("Chung cư 1 phòng ngủ");
             type_cb.Items.Add("Chung cư 2 phòng ngủ");
-        }
 
-        private void buildingid_cb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            floor_cb.Items.Clear();
-
-            for(int i = 0; i <= RoomBLL.LoadFloorByBuildingID(buildingid_cb.SelectedItem.ToString()); i++)
-            {
-                floor_cb.Items.Add(i);
-            }
         }
 
     }

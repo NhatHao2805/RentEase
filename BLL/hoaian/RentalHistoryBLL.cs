@@ -11,9 +11,9 @@ namespace BLL
 {
     public class RentalHistoryBLL
     {
-        public static DataTable LoadRentalHistory(string username)
+        public static DataTable LoadRentalHistory(string username, string buildingid)
         {
-            return RentalHistoryAccess.LoadRentalHistoryByUser(username);
+            return RentalHistoryAccess.LoadRentalHistory(username, buildingid);
         }
     }
 }

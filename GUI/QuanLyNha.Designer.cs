@@ -882,7 +882,6 @@ namespace GUI
             this.DangKT_chbox1.TabIndex = 2;
             this.DangKT_chbox1.Text = "Đang báo kết thúc";
             this.DangKT_chbox1.UseVisualStyleBackColor = true;
-            this.DangKT_chbox1.CheckedChanged += new System.EventHandler(this.DangKT_chbox_CheckedChanged);
             // 
             // DangO_chbox1
             // 
@@ -894,7 +893,6 @@ namespace GUI
             this.DangO_chbox1.TabIndex = 1;
             this.DangO_chbox1.Text = "Đang ở";
             this.DangO_chbox1.UseVisualStyleBackColor = true;
-            this.DangO_chbox1.CheckedChanged += new System.EventHandler(this.DangO_chbox_CheckedChanged);
             // 
             // DaQuaHan_chbox
             // 
@@ -942,7 +940,6 @@ namespace GUI
             this.DangCoc_chbox.TabIndex = 7;
             this.DangCoc_chbox.Text = "Đang cọc giữ chỗ";
             this.DangCoc_chbox.UseVisualStyleBackColor = true;
-            this.DangCoc_chbox.CheckedChanged += new System.EventHandler(this.DangCoc_chbox_CheckedChanged);
             // 
             // DangTrong_chbox1
             // 
@@ -954,7 +951,6 @@ namespace GUI
             this.DangTrong_chbox1.TabIndex = 6;
             this.DangTrong_chbox1.Text = "Đang trống";
             this.DangTrong_chbox1.UseVisualStyleBackColor = true;
-            this.DangTrong_chbox1.CheckedChanged += new System.EventHandler(this.DangTrong_chbox_CheckedChanged);
             // 
             // guna2GradientPanel2
             // 

@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class Form_AddAssets
+    partial class Form_UpdateRoom
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.floor_cb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.convenient_tb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.abc = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.buildingid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.SapHetHan_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DaHetHan_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangO_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangCoc_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangKT_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangNoTien_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.add_btn = new Guna.UI2.WinForms.Guna2Button();
+            this.Update_btn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.DangTrong_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.price_tb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.price_tb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.area_tb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.type_cb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.roomid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
+            // 
+            // floor_cb
+            // 
+            this.floor_cb.BackColor = System.Drawing.Color.Transparent;
+            this.floor_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.floor_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.floor_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.floor_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.floor_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.floor_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.floor_cb.ItemHeight = 30;
+            this.floor_cb.Location = new System.Drawing.Point(195, 71);
+            this.floor_cb.Name = "floor_cb";
+            this.floor_cb.Size = new System.Drawing.Size(357, 36);
+            this.floor_cb.TabIndex = 97;
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(43, 80);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(60, 18);
+            this.guna2HtmlLabel4.TabIndex = 96;
+            this.guna2HtmlLabel4.Text = "Tầng nhà";
             // 
             // convenient_tb
             // 
@@ -62,37 +86,13 @@
             this.convenient_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.convenient_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.convenient_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.convenient_tb.Location = new System.Drawing.Point(207, 102);
+            this.convenient_tb.Location = new System.Drawing.Point(195, 204);
             this.convenient_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.convenient_tb.Name = "convenient_tb";
             this.convenient_tb.PlaceholderText = "";
             this.convenient_tb.SelectedText = "";
             this.convenient_tb.Size = new System.Drawing.Size(357, 36);
             this.convenient_tb.TabIndex = 95;
-            // 
-            // abc
-            // 
-            this.abc.BackColor = System.Drawing.Color.Transparent;
-            this.abc.Location = new System.Drawing.Point(54, 50);
-            this.abc.Name = "abc";
-            this.abc.Size = new System.Drawing.Size(63, 18);
-            this.abc.TabIndex = 94;
-            this.abc.Text = "Mã phòng";
-            // 
-            // buildingid_cb
-            // 
-            this.buildingid_cb.BackColor = System.Drawing.Color.Transparent;
-            this.buildingid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.buildingid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.buildingid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.buildingid_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.buildingid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.buildingid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.buildingid_cb.ItemHeight = 30;
-            this.buildingid_cb.Location = new System.Drawing.Point(207, 41);
-            this.buildingid_cb.Name = "buildingid_cb";
-            this.buildingid_cb.Size = new System.Drawing.Size(357, 36);
-            this.buildingid_cb.TabIndex = 93;
             // 
             // SapHetHan_chbox
             // 
@@ -101,7 +101,7 @@
             this.SapHetHan_chbox.CheckedState.BorderRadius = 0;
             this.SapHetHan_chbox.CheckedState.BorderThickness = 0;
             this.SapHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.SapHetHan_chbox.Location = new System.Drawing.Point(404, 393);
+            this.SapHetHan_chbox.Location = new System.Drawing.Point(392, 489);
             this.SapHetHan_chbox.Name = "SapHetHan_chbox";
             this.SapHetHan_chbox.Size = new System.Drawing.Size(160, 20);
             this.SapHetHan_chbox.TabIndex = 90;
@@ -118,7 +118,7 @@
             this.DaHetHan_chbox.CheckedState.BorderRadius = 0;
             this.DaHetHan_chbox.CheckedState.BorderThickness = 0;
             this.DaHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DaHetHan_chbox.Location = new System.Drawing.Point(207, 393);
+            this.DaHetHan_chbox.Location = new System.Drawing.Point(195, 489);
             this.DaHetHan_chbox.Name = "DaHetHan_chbox";
             this.DaHetHan_chbox.Size = new System.Drawing.Size(152, 20);
             this.DaHetHan_chbox.TabIndex = 91;
@@ -135,7 +135,7 @@
             this.DangO_chbox.CheckedState.BorderRadius = 0;
             this.DangO_chbox.CheckedState.BorderThickness = 0;
             this.DangO_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DangO_chbox.Location = new System.Drawing.Point(207, 297);
+            this.DangO_chbox.Location = new System.Drawing.Point(195, 393);
             this.DangO_chbox.Name = "DangO_chbox";
             this.DangO_chbox.Size = new System.Drawing.Size(72, 20);
             this.DangO_chbox.TabIndex = 86;
@@ -152,7 +152,7 @@
             this.DangCoc_chbox.CheckedState.BorderRadius = 0;
             this.DangCoc_chbox.CheckedState.BorderThickness = 0;
             this.DangCoc_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DangCoc_chbox.Location = new System.Drawing.Point(432, 346);
+            this.DangCoc_chbox.Location = new System.Drawing.Point(420, 442);
             this.DangCoc_chbox.Name = "DangCoc_chbox";
             this.DangCoc_chbox.Size = new System.Drawing.Size(132, 20);
             this.DangCoc_chbox.TabIndex = 89;
@@ -169,7 +169,7 @@
             this.DangKT_chbox.CheckedState.BorderRadius = 0;
             this.DangKT_chbox.CheckedState.BorderThickness = 0;
             this.DangKT_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DangKT_chbox.Location = new System.Drawing.Point(207, 346);
+            this.DangKT_chbox.Location = new System.Drawing.Point(195, 442);
             this.DangKT_chbox.Name = "DangKT_chbox";
             this.DangKT_chbox.Size = new System.Drawing.Size(136, 20);
             this.DangKT_chbox.TabIndex = 88;
@@ -186,7 +186,7 @@
             this.DangNoTien_chbox.CheckedState.BorderRadius = 0;
             this.DangNoTien_chbox.CheckedState.BorderThickness = 0;
             this.DangNoTien_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DangNoTien_chbox.Location = new System.Drawing.Point(461, 297);
+            this.DangNoTien_chbox.Location = new System.Drawing.Point(449, 393);
             this.DangNoTien_chbox.Name = "DangNoTien_chbox";
             this.DangNoTien_chbox.Size = new System.Drawing.Size(103, 20);
             this.DangNoTien_chbox.TabIndex = 92;
@@ -196,24 +196,25 @@
             this.DangNoTien_chbox.UncheckedState.BorderThickness = 0;
             this.DangNoTien_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
-            // add_btn
+            // Update_btn
             // 
-            this.add_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.add_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.add_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.add_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.add_btn.ForeColor = System.Drawing.Color.White;
-            this.add_btn.Location = new System.Drawing.Point(207, 437);
-            this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(180, 45);
-            this.add_btn.TabIndex = 85;
-            this.add_btn.Text = "Tạo";
+            this.Update_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Update_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Update_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Update_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Update_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Update_btn.ForeColor = System.Drawing.Color.White;
+            this.Update_btn.Location = new System.Drawing.Point(195, 533);
+            this.Update_btn.Name = "Update_btn";
+            this.Update_btn.Size = new System.Drawing.Size(180, 45);
+            this.Update_btn.TabIndex = 85;
+            this.Update_btn.Text = "Sửa";
+            this.Update_btn.Click += new System.EventHandler(this.Update_btn_Click);
             // 
             // guna2HtmlLabel10
             // 
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel10.Location = new System.Drawing.Point(54, 299);
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(42, 395);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(63, 18);
             this.guna2HtmlLabel10.TabIndex = 84;
@@ -226,7 +227,7 @@
             this.DangTrong_chbox.CheckedState.BorderRadius = 0;
             this.DangTrong_chbox.CheckedState.BorderThickness = 0;
             this.DangTrong_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DangTrong_chbox.Location = new System.Drawing.Point(325, 297);
+            this.DangTrong_chbox.Location = new System.Drawing.Point(313, 393);
             this.DangTrong_chbox.Name = "DangTrong_chbox";
             this.DangTrong_chbox.Size = new System.Drawing.Size(94, 20);
             this.DangTrong_chbox.TabIndex = 87;
@@ -239,20 +240,38 @@
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(54, 176);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(42, 338);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(37, 18);
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(52, 18);
             this.guna2HtmlLabel8.TabIndex = 83;
-            this.guna2HtmlLabel8.Text = "Giá trị";
+            this.guna2HtmlLabel8.Text = "Giá thuê";
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(42, 276);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(54, 18);
+            this.guna2HtmlLabel6.TabIndex = 82;
+            this.guna2HtmlLabel6.Text = "DIện tích";
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(54, 111);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(42, 213);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(69, 18);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(50, 18);
             this.guna2HtmlLabel2.TabIndex = 81;
-            this.guna2HtmlLabel2.Text = "Tên tài sản";
+            this.guna2HtmlLabel2.Text = "Tiện ích";
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(42, 146);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(59, 18);
+            this.guna2HtmlLabel1.TabIndex = 80;
+            this.guna2HtmlLabel1.Text = "Phân loại";
             // 
             // price_tb
             // 
@@ -265,7 +284,7 @@
             this.price_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.price_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.price_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.price_tb.Location = new System.Drawing.Point(207, 167);
+            this.price_tb.Location = new System.Drawing.Point(195, 329);
             this.price_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.price_tb.Name = "price_tb";
             this.price_tb.PlaceholderText = "";
@@ -273,78 +292,120 @@
             this.price_tb.Size = new System.Drawing.Size(357, 36);
             this.price_tb.TabIndex = 79;
             // 
-            // guna2DateTimePicker1
+            // area_tb
             // 
-            this.guna2DateTimePicker1.Checked = true;
-            this.guna2DateTimePicker1.FillColor = System.Drawing.Color.White;
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(207, 230);
-            this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
-            this.guna2DateTimePicker1.Size = new System.Drawing.Size(357, 36);
-            this.guna2DateTimePicker1.TabIndex = 96;
-            this.guna2DateTimePicker1.Value = new System.DateTime(2025, 3, 29, 3, 52, 29, 826);
+            this.area_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.area_tb.DefaultText = "";
+            this.area_tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.area_tb.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.area_tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.area_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.area_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.area_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.area_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.area_tb.Location = new System.Drawing.Point(195, 267);
+            this.area_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.area_tb.Name = "area_tb";
+            this.area_tb.PlaceholderText = "";
+            this.area_tb.SelectedText = "";
+            this.area_tb.Size = new System.Drawing.Size(357, 36);
+            this.area_tb.TabIndex = 78;
             // 
-            // guna2HtmlLabel1
+            // type_cb
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(54, 239);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(109, 18);
-            this.guna2HtmlLabel1.TabIndex = 97;
-            this.guna2HtmlLabel1.Text = "Thời gian sử dụng";
+            this.type_cb.BackColor = System.Drawing.Color.Transparent;
+            this.type_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.type_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.type_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.type_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.type_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.type_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.type_cb.ItemHeight = 30;
+            this.type_cb.Location = new System.Drawing.Point(195, 137);
+            this.type_cb.Name = "type_cb";
+            this.type_cb.Size = new System.Drawing.Size(357, 36);
+            this.type_cb.TabIndex = 77;
             // 
-            // Form_AddAssets
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(42, 23);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(47, 18);
+            this.guna2HtmlLabel5.TabIndex = 99;
+            this.guna2HtmlLabel5.Text = "Mã nhà";
+            // 
+            // roomid_cb
+            // 
+            this.roomid_cb.BackColor = System.Drawing.Color.Transparent;
+            this.roomid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.roomid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.roomid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.roomid_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.roomid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.roomid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.roomid_cb.ItemHeight = 30;
+            this.roomid_cb.Location = new System.Drawing.Point(195, 12);
+            this.roomid_cb.Name = "roomid_cb";
+            this.roomid_cb.Size = new System.Drawing.Size(357, 36);
+            this.roomid_cb.TabIndex = 98;
+            // 
+            // Form_UpdateRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 510);
-            this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.guna2DateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(595, 599);
+            this.Controls.Add(this.guna2HtmlLabel5);
+            this.Controls.Add(this.roomid_cb);
+            this.Controls.Add(this.floor_cb);
+            this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.convenient_tb);
-            this.Controls.Add(this.abc);
-            this.Controls.Add(this.buildingid_cb);
             this.Controls.Add(this.SapHetHan_chbox);
             this.Controls.Add(this.DaHetHan_chbox);
             this.Controls.Add(this.DangO_chbox);
             this.Controls.Add(this.DangCoc_chbox);
             this.Controls.Add(this.DangKT_chbox);
             this.Controls.Add(this.DangNoTien_chbox);
-            this.Controls.Add(this.add_btn);
+            this.Controls.Add(this.Update_btn);
             this.Controls.Add(this.guna2HtmlLabel10);
             this.Controls.Add(this.DangTrong_chbox);
             this.Controls.Add(this.guna2HtmlLabel8);
+            this.Controls.Add(this.guna2HtmlLabel6);
             this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.price_tb);
-            this.Name = "Form_AddAssets";
-            this.Text = "Form_AddAssets";
+            this.Controls.Add(this.area_tb);
+            this.Controls.Add(this.type_cb);
+            this.Name = "Form_UpdateRoom";
+            this.Text = "Form_FixRoom";
+            this.Load += new System.EventHandler(this.Form_UpdateRoom_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2ComboBox floor_cb;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2TextBox convenient_tb;
-        private Guna.UI2.WinForms.Guna2HtmlLabel abc;
-        private Guna.UI2.WinForms.Guna2ComboBox buildingid_cb;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2CheckBox SapHetHan_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DaHetHan_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangO_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangCoc_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangKT_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangNoTien_chbox;
-        private Guna.UI2.WinForms.Guna2Button add_btn;
+        private Guna.UI2.WinForms.Guna2Button Update_btn;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2CheckBox DangTrong_chbox;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2TextBox price_tb;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2TextBox price_tb;
+        private Guna.UI2.WinForms.Guna2TextBox area_tb;
+        private Guna.UI2.WinForms.Guna2ComboBox type_cb;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2ComboBox roomid_cb;
     }
 }

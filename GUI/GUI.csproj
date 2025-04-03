@@ -95,35 +95,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExcelExporter.cs" />
-    <Compile Include="Form_AddAssets.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_AddAssets.Designer.cs">
-      <DependentUpon>Form_AddAssets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_AddRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_AddRoom.Designer.cs">
-      <DependentUpon>Form_AddRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_AssetsDetail.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_AssetsDetail.Designer.cs">
-      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_PaymentHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_PaymentHistory.Designer.cs">
       <DependentUpon>Form_PaymentHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_RentalHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_RentalHistory.Designer.cs">
-      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="gui_service\AddService.cs">
       <SubType>Form</SubType>
@@ -142,6 +118,42 @@
     </Compile>
     <Compile Include="gui_service\InsertService.Designer.cs">
       <DependentUpon>InsertService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_AddAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_AddAssets.Designer.cs">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_AddRoom.Designer.cs">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_AssetsDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_AssetsDetail.Designer.cs">
+      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_RentalHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_RentalHistory.Designer.cs">
+      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateAssets.Designer.cs">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateRoom.Designer.cs">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="honhathao\Form_AddBuilding.cs">
       <SubType>Form</SubType>
@@ -180,18 +192,6 @@
     <Compile Include="Login\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_UpdateAssets.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_UpdateAssets.Designer.cs">
-      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_UpdateRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_UpdateRoom.Designer.cs">
-      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
-    </Compile>
     <Compile Include="QuanLyNha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,18 +212,6 @@
     <Compile Include="quanlyphuongtien\Suaphuongtien.Designer.cs">
       <DependentUpon>Suaphuongtien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form_AddAssets.resx">
-      <DependentUpon>Form_AddAssets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_AddRoom.resx">
-      <DependentUpon>Form_AddRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_AssetsDetail.resx">
-      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_RentalHistory.resx">
-      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="gui_service\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +220,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui_service\InsertService.resx">
       <DependentUpon>InsertService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_AddRoom.resx">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_AssetsDetail.resx">
+      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_RentalHistory.resx">
+      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_UpdateAssets.resx">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="honhathao\Form_AddBuilding.resx">
       <DependentUpon>Form_AddBuilding.cs</DependentUpon>
@@ -250,12 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_UpdateAssets.resx">
-      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_UpdateRoom.resx">
-      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNha.resx">
       <DependentUpon>QuanLyNha.cs</DependentUpon>

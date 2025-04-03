@@ -65,6 +65,7 @@
             this.close_btn.Size = new System.Drawing.Size(132, 31);
             this.close_btn.TabIndex = 67;
             this.close_btn.Text = "Đóng";
+            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
             // dgv_AssetsDetail
             // 

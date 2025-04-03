@@ -9,12 +9,15 @@ namespace GUI
 {
     public partial class Form_RentalHistory : Form
     {
-        private string username;
+        private string _username;
+        private string _buildingid;
 
-        public Form_RentalHistory(string username)
+
+        public Form_RentalHistory(string username, string buildingid)
         {
             InitializeComponent();
-            this.username = username;
+            _username = username;
+            _buildingid = buildingid;
             LoadRentalHistoryData();
             ConfigureDataGridView();
         }
@@ -23,7 +26,7 @@ namespace GUI
         {
             try
             {
-                DataTable dt = RentalHistoryBLL.LoadRentalHistory(username);
+                DataTable dt = RentalHistoryBLL.LoadRentalHistory(_username, _buildingid);
                 dgv_RentalHistory.DataSource = dt;
             }
             catch (Exception ex)
@@ -36,7 +39,7 @@ namespace GUI
         private void ConfigureDataGridView()
         {
             // Thiết lập cơ bản
-            dgv_RentalHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None; // Tắt tự động điều chỉnh kích thước
+            dgv_RentalHistory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dgv_RentalHistory.AllowUserToAddRows = false;
             dgv_RentalHistory.ReadOnly = true;
             dgv_RentalHistory.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -54,38 +57,44 @@ namespace GUI
             if (dgv_RentalHistory.Columns.Count > 0)
             {
                 // Đặt tên cột tiếng Việt
+                dgv_RentalHistory.Columns["RENTAL_HISTORY_ID"].HeaderText = "Mã Lịch sử";
+                dgv_RentalHistory.Columns["CONTRACTID"].HeaderText = "Mã Hợp đồng";
                 dgv_RentalHistory.Columns["ROOMID"].HeaderText = "Mã Phòng";
-                dgv_RentalHistory.Columns["OLDTENANTID"].HeaderText = "Mã KH";
-                dgv_RentalHistory.Columns["ADDRESS"].HeaderText = "Địa chỉ";
-                dgv_RentalHistory.Columns["TYPE"].HeaderText = "Loại";
-                dgv_RentalHistory.Columns["CONVENIENT"].HeaderText = "Tiện ích";
-                dgv_RentalHistory.Columns["AREA"].HeaderText = "Diện tích";
-                dgv_RentalHistory.Columns["PRICE"].HeaderText = "Giá thuê";
-                dgv_RentalHistory.Columns["STATUS"].HeaderText = "Trạng thái";
+                dgv_RentalHistory.Columns["TENANTID"].HeaderText = "Mã KH";
                 dgv_RentalHistory.Columns["FIRSTNAME"].HeaderText = "Tên";
                 dgv_RentalHistory.Columns["LASTNAME"].HeaderText = "Họ";
                 dgv_RentalHistory.Columns["GENDER"].HeaderText = "Giới tính";
                 dgv_RentalHistory.Columns["PHONENUMBER"].HeaderText = "Điện thoại";
+                dgv_RentalHistory.Columns["TYPE"].HeaderText = "Loại phòng";
+                dgv_RentalHistory.Columns["CONVENIENT"].HeaderText = "Tiện ích";
+                dgv_RentalHistory.Columns["AREA"].HeaderText = "Diện tích (m²)";
+                dgv_RentalHistory.Columns["PRICE"].HeaderText = "Giá thuê";
+                dgv_RentalHistory.Columns["STATUS"].HeaderText = "Trạng thái";
                 dgv_RentalHistory.Columns["STARTDATE"].HeaderText = "Bắt đầu";
                 dgv_RentalHistory.Columns["ENDDATE"].HeaderText = "Kết thúc";
                 dgv_RentalHistory.Columns["REASON_FOR_LEAVING"].HeaderText = "Lý do rời đi";
+                dgv_RentalHistory.Columns["BUILDINGID"].HeaderText = "Mã Tòa nhà";
+                dgv_RentalHistory.Columns["BUILDING_ADDRESS"].HeaderText = "Địa chỉ tòa nhà";
 
                 // Đặt độ rộng cột
+                dgv_RentalHistory.Columns["RENTAL_HISTORY_ID"].Width = 100;
+                dgv_RentalHistory.Columns["CONTRACTID"].Width = 100;
                 dgv_RentalHistory.Columns["ROOMID"].Width = 80;
-                dgv_RentalHistory.Columns["OLDTENANTID"].Width = 80;
-                dgv_RentalHistory.Columns["ADDRESS"].Width = 180;
-                dgv_RentalHistory.Columns["TYPE"].Width = 80;
-                dgv_RentalHistory.Columns["CONVENIENT"].Width = 150;
-                dgv_RentalHistory.Columns["AREA"].Width = 80;
-                dgv_RentalHistory.Columns["PRICE"].Width = 100;
-                dgv_RentalHistory.Columns["STATUS"].Width = 100;
+                dgv_RentalHistory.Columns["TENANTID"].Width = 80;
                 dgv_RentalHistory.Columns["FIRSTNAME"].Width = 100;
                 dgv_RentalHistory.Columns["LASTNAME"].Width = 100;
                 dgv_RentalHistory.Columns["GENDER"].Width = 70;
                 dgv_RentalHistory.Columns["PHONENUMBER"].Width = 100;
+                dgv_RentalHistory.Columns["TYPE"].Width = 100;
+                dgv_RentalHistory.Columns["CONVENIENT"].Width = 150;
+                dgv_RentalHistory.Columns["AREA"].Width = 90;
+                dgv_RentalHistory.Columns["PRICE"].Width = 100;
+                dgv_RentalHistory.Columns["STATUS"].Width = 100;
                 dgv_RentalHistory.Columns["STARTDATE"].Width = 90;
                 dgv_RentalHistory.Columns["ENDDATE"].Width = 90;
                 dgv_RentalHistory.Columns["REASON_FOR_LEAVING"].Width = 150;
+                dgv_RentalHistory.Columns["BUILDINGID"].Width = 100;
+                dgv_RentalHistory.Columns["BUILDING_ADDRESS"].Width = 200;
 
                 // Định dạng dữ liệu
                 dgv_RentalHistory.Columns["STARTDATE"].DefaultCellStyle.Format = "dd/MM/yyyy";
@@ -100,10 +109,13 @@ namespace GUI
                 // Cho phép text wrap cho các cột dài
                 dgv_RentalHistory.Columns["CONVENIENT"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dgv_RentalHistory.Columns["REASON_FOR_LEAVING"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                dgv_RentalHistory.Columns["BUILDING_ADDRESS"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+                // Tự động điều chỉnh chiều cao hàng
                 dgv_RentalHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
 
-            // Bật tính năng cuộn ngang nếu cần
+            // Bật tính năng cuộn ngang và dọc
             dgv_RentalHistory.ScrollBars = ScrollBars.Both;
         }
 
@@ -112,34 +124,12 @@ namespace GUI
             this.Close();
         }
 
-        private void btn_Export_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Code xuất Excel ở đây
-                MessageBox.Show("Xuất dữ liệu thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi xuất dữ liệu: " + ex.Message,
-                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btn_Refresh_Click(object sender, EventArgs e)
-        {
-            LoadRentalHistoryData();
-        }
-
         private void ExcelExporter_btn_Click(object sender, EventArgs e)
         {
-            // If the current DataGridView is dgv_QLP (Quản lý phòng)
             if (dgv_RentalHistory.Visible)
             {
                 ExcelExporter.ExportToExcel(dgv_RentalHistory, "Danh sách lịch sử thuê của căn nhà");
             }
-            // If the current DataGridView is dgv_QLHD (Quản lý hợp đồng)
             else
             {
                 MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",

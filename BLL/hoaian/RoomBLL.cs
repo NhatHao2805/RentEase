@@ -10,10 +10,6 @@ namespace BLL
 {
     public class RoomBLL
     {
-        public static DataTable RoomBLL_load_Room(string Username)
-        {
-            return RoomAccess.LoadRoomByUser(Username);
-        }
 
         public static List<string> RoomBLL_Load_RoomAddress(string Username)
         {
@@ -23,12 +19,20 @@ namespace BLL
         {
             return RoomAccess.RoomAccess_Load_RoomInBuilding(Address);
         }
-
         public static string RoomBLL_TakePrice(string roomid)
         {
             return RoomAccess.RoomAccess_TakePrice(roomid);
         }
+        public static DataTable RoomBLL_load_Room(string Username)
+        {
+            return RoomAccess.LoadRoomByUser(Username);
+        }
+
         //1
+        public static DataTable LoadRoom(string username, string buildingid)
+        {
+            return RoomAccess.LoadRoom(username, buildingid);
+        }
 
         public string CheckLogic(Room room)
         {
@@ -171,20 +175,16 @@ namespace BLL
         {
             return RoomAccess.DeleteRoom(roomId);
         }
-        public static DataTable FilterRoomByStatus(string status, string UserName)
+        public static DataTable FilterRoomByStatus(string status, string userName, string buildingid)
         {
             if (string.IsNullOrEmpty(status))
             {
-                return RoomBLL_load_Room(UserName);
+                return LoadRoom(userName, buildingid);
             }
 
-            return RoomAccess.FilterRoomByStatus(status, UserName);
+            return RoomAccess.FilterRoomByStatus(status, userName, buildingid);
         }
 
-        public static DataTable LoadBuildingID(string username)
-        {
-            return RoomAccess.LoadBuildingID(username);
-        }
         public static int LoadFloorByBuildingID(string buildingID)
         {
             return RoomAccess.LoadFloorByBuildingID(buildingID);
