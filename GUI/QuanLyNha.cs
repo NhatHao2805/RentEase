@@ -1447,5 +1447,35 @@ namespace GUI
         {
 
         }
+
+        private void checkBox41_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox40_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox38_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox39_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox37_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
