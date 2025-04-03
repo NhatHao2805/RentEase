@@ -1349,19 +1349,26 @@ namespace GUI
 
         private void checkBox_DV5_CheckedChanged(object sender, EventArgs e)
         {
-
-
             checkBox_DV1.Checked = false;
             checkBox_DV2.Checked = false;
             checkBox_DV3.Checked = false;
             checkBox_DV4.Checked = false;
+        }
+        private ElectricWaterServiceBLL figureBLL = new ElectricWaterServiceBLL();
 
-
-            //combo_DV1.Visible = false;
-            //combo_DV2.Visible = false;
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            dgvServiceInfo.DataSource = null;
+            List<ElectricWaterServiceDTO> figures = figureBLL.GetAllElectricWaterData(listBuildingID.Text);
+            dgvServiceInfo.DataSource = figures;
+            checkBox_DV1.Visible = false;
+            checkBox_DV2.Visible = false;
+            checkBox_DV3.Visible = false;
+            checkBox_DV4.Visible = false;
+            checkBox_DV5.Visible = false;
         }
 
-        private void button56_Click_1(object sender, EventArgs e)
+        private void button56_Click(object sender, EventArgs e)
         {
             GUI.QuanLyPhuongTien.QuanLyPhuonTien quanLyPhuonTienForm = new QuanLyPhuonTien(listBuildingID.Text);
             quanLyPhuonTienForm.Owner = this;
@@ -1512,19 +1519,5 @@ namespace GUI
             f.ShowDialog();
             load_Building_By_User();
         }
-        private ElectricWaterServiceBLL figureBLL = new ElectricWaterServiceBLL();
-        private void button13_Click_1(object sender, EventArgs e)
-        {
-            dgvServiceInfo.DataSource = null;
-            List<ElectricWaterServiceDTO> figures = figureBLL.GetAllElectricWaterData(listBuildingID.Text);
-            dgvServiceInfo.DataSource = figures;
-            checkBox_DV1.Visible = false;
-            checkBox_DV2.Visible = false;
-            checkBox_DV3.Visible = false;
-            checkBox_DV4.Visible = false;
-            checkBox_DV5.Visible = false;
-        }
-
-
     }
 }
