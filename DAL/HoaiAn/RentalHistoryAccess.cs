@@ -15,19 +15,26 @@ namespace DAL
         {
             DataTable dt = new DataTable();
 
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            try
             {
-                using (MySqlCommand cmd = new MySqlCommand("load_RentalHistory", conn))
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@p_username", username);
-                    cmd.Parameters.AddWithValue("@p_buildingid", buildingid);
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    using (MySqlCommand cmd = new MySqlCommand("load_RentalHistory", conn))
                     {
-                        adapter.Fill(dt);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@p_username", username);
+                        cmd.Parameters.AddWithValue("@p_buildingid", buildingid);
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dt);
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
 
             return dt;

@@ -30,8 +30,7 @@
         {
             this.panel3 = new System.Windows.Forms.Panel();
             this.exitButton = new Guna.UI2.WinForms.Guna2Button();
-            this.DiaChiToaNha = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.TenKhachHang = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ListTenantID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2DateTimePicker3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -39,8 +38,6 @@
             this.LichThanhToan = new Guna.UI2.WinForms.Guna2ComboBox();
             this.TienDatCoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.GhiChu = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -51,6 +48,7 @@
             this.saveButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SoPhong = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,36 +79,20 @@
             this.exitButton.TabIndex = 20;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
-            // DiaChiToaNha
+            // ListTenantID
             // 
-            this.DiaChiToaNha.BackColor = System.Drawing.Color.Transparent;
-            this.DiaChiToaNha.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.DiaChiToaNha.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DiaChiToaNha.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DiaChiToaNha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.DiaChiToaNha.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.DiaChiToaNha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.DiaChiToaNha.ItemHeight = 30;
-            this.DiaChiToaNha.Location = new System.Drawing.Point(224, 60);
-            this.DiaChiToaNha.Name = "DiaChiToaNha";
-            this.DiaChiToaNha.Size = new System.Drawing.Size(357, 36);
-            this.DiaChiToaNha.TabIndex = 23;
-            this.DiaChiToaNha.SelectedValueChanged += new System.EventHandler(this.guna2ComboBox1_SelectedValueChanged);
-            // 
-            // TenKhachHang
-            // 
-            this.TenKhachHang.BackColor = System.Drawing.Color.Transparent;
-            this.TenKhachHang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.TenKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TenKhachHang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TenKhachHang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TenKhachHang.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.TenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.TenKhachHang.ItemHeight = 30;
-            this.TenKhachHang.Location = new System.Drawing.Point(224, 164);
-            this.TenKhachHang.Name = "TenKhachHang";
-            this.TenKhachHang.Size = new System.Drawing.Size(357, 36);
-            this.TenKhachHang.TabIndex = 24;
+            this.ListTenantID.BackColor = System.Drawing.Color.Transparent;
+            this.ListTenantID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ListTenantID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ListTenantID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ListTenantID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ListTenantID.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.ListTenantID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.ListTenantID.ItemHeight = 30;
+            this.ListTenantID.Location = new System.Drawing.Point(224, 157);
+            this.ListTenantID.Name = "ListTenantID";
+            this.ListTenantID.Size = new System.Drawing.Size(357, 36);
+            this.ListTenantID.TabIndex = 24;
             // 
             // guna2DateTimePicker1
             // 
@@ -230,24 +212,6 @@
             this.GhiChu.Size = new System.Drawing.Size(357, 36);
             this.GhiChu.TabIndex = 32;
             // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(40, 69);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(101, 18);
-            this.guna2HtmlLabel1.TabIndex = 34;
-            this.guna2HtmlLabel1.Text = "Địa Chỉ Tòa Nhà";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(40, 173);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(103, 18);
-            this.guna2HtmlLabel2.TabIndex = 35;
-            this.guna2HtmlLabel2.Text = "Tên Khách Hàng";
-            // 
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
@@ -329,7 +293,7 @@
             // guna2HtmlLabel9
             // 
             this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(40, 121);
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(40, 119);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(61, 18);
             this.guna2HtmlLabel9.TabIndex = 46;
@@ -345,17 +309,27 @@
             this.SoPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.SoPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.SoPhong.ItemHeight = 30;
-            this.SoPhong.Location = new System.Drawing.Point(224, 112);
+            this.SoPhong.Location = new System.Drawing.Point(224, 110);
             this.SoPhong.Name = "SoPhong";
             this.SoPhong.Size = new System.Drawing.Size(357, 36);
             this.SoPhong.TabIndex = 45;
             this.SoPhong.SelectedValueChanged += new System.EventHandler(this.guna2ComboBox4_SelectedValueChanged);
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(40, 170);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(74, 18);
+            this.guna2HtmlLabel1.TabIndex = 48;
+            this.guna2HtmlLabel1.Text = "Khách Thuê";
             // 
             // Form_AddContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 651);
+            this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2HtmlLabel9);
             this.Controls.Add(this.SoPhong);
             this.Controls.Add(this.saveButton);
@@ -366,8 +340,6 @@
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2HtmlLabel2);
-            this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.GhiChu);
             this.Controls.Add(this.TienDatCoc);
             this.Controls.Add(this.LichThanhToan);
@@ -375,8 +347,7 @@
             this.Controls.Add(this.guna2DateTimePicker3);
             this.Controls.Add(this.guna2DateTimePicker2);
             this.Controls.Add(this.guna2DateTimePicker1);
-            this.Controls.Add(this.TenKhachHang);
-            this.Controls.Add(this.DiaChiToaNha);
+            this.Controls.Add(this.ListTenantID);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AddContract";
@@ -391,8 +362,7 @@
 
         private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2Button exitButton;
-        private Guna.UI2.WinForms.Guna2ComboBox DiaChiToaNha;
-        private Guna.UI2.WinForms.Guna2ComboBox TenKhachHang;
+        private Guna.UI2.WinForms.Guna2ComboBox ListTenantID;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
@@ -400,8 +370,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox LichThanhToan;
         private Guna.UI2.WinForms.Guna2TextBox TienDatCoc;
         private Guna.UI2.WinForms.Guna2TextBox GhiChu;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
@@ -412,5 +380,6 @@
         private Guna.UI2.WinForms.Guna2Button saveButton;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2ComboBox SoPhong;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

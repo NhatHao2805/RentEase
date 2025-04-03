@@ -282,19 +282,19 @@ INSERT INTO TEMPORARY_REGISTRATION (REGISTRATIONID, TENANTID, ROOMID, REGISTRATI
 ('DK008', 'T008', 'R005', '2024-08-20', '2025-02-19', 'Đã duyệt', '2024-08-15', '2024-08-15'),
 ('DK009', 'T009', 'R007', '2024-09-15', '2025-09-14', 'Đã duyệt', '2024-09-10', '2024-09-10'),
 ('DK010', 'T010', 'R009', '2024-10-10', '2025-04-09', 'Đang chờ', '2024-10-05', '2024-10-05');
-
--- 24 TENANT_HISTORY (đã đổi tên từ TENANTHISTORY)
-INSERT INTO TENANT_HISTORY (HISTORYID, TENANTID, ROOMID, STARTDATE, ENDDATE, NOTES) VALUES
-('LS001', 'T001', 'R001', '2024-01-15', NULL, 'Người thuê tốt'),
-('LS002', 'T002', 'R003', '2024-02-10', NULL, 'Thanh toán đúng hạn'),
-('LS003', 'T003', 'R004', '2024-03-05', NULL, 'Giữ phòng sạch sẽ'),
-('LS004', 'T004', 'R006', '2024-04-20', NULL, 'Thường xuyên sử dụng dịch vụ'),
-('LS005', 'T005', 'R008', '2024-05-15', NULL, 'Có thú cưng'),
-('LS006', 'T006', 'R010', '2024-06-10', NULL, 'Ít khi ở nhà'),
-('LS007', 'T007', 'R002', '2024-07-05', NULL, 'Thân thiện'),
-('LS008', 'T008', 'R005', '2024-08-20', NULL, 'Hay có khách'),
-('LS009', 'T009', 'R007', '2024-09-15', NULL, 'Đúng giờ'),
-('LS010', 'T010', 'R009', '2024-10-10', NULL, 'Mới chuyển đến');
+ 
+-- 24 TENANT_HISTORY (đã cập nhật theo cấu trúc mới)
+INSERT INTO TENANT_HISTORY (HISTORYID, CONTRACTID, TENANTID, ROOMID, STARTDATE, ENDDATE, NOTES) VALUES
+('LS001', 'CT001', 'T001', 'R001', '2024-01-15', NULL, 'Người thuê tốt, thanh toán đúng hạn'),
+('LS002', 'CT002', 'T002', 'R003', '2024-02-10', NULL, 'Thường xuyên sử dụng dịch vụ bổ sung'),
+('LS003', 'CT003', 'T003', 'R004', '2024-03-05', NULL, 'Giữ phòng sạch sẽ, ít khiếu nại'),
+('LS004', 'CT004', 'T004', 'R006', '2024-04-20', NULL, 'Có thú cưng nhưng được quản lý tốt'),
+('LS005', 'CT005', 'T005', 'R008', '2024-05-15', NULL, 'Thân thiện với hàng xóm'),
+('LS006', 'CT006', 'T006', 'R010', '2024-06-10', NULL, 'Ít khi ở nhà, chủ yếu đi công tác'),
+('LS007', 'CT007', 'T007', 'R002', '2024-07-05', NULL, 'Thường xuyên có khách thăm'),
+('LS008', 'CT008', 'T008', 'R005', '2024-08-20', NULL, 'Đúng giờ trong thanh toán'),
+('LS009', 'CT009', 'T009', 'R007', '2024-09-15', NULL, 'Yêu cầu bảo trì thường xuyên'),
+('LS010', 'CT010', 'T010', 'R009', '2024-10-10', NULL, 'Mới chuyển đến, chưa có đánh giá');
 
 -- 25 RENTAL_HISTORY (đã đổi tên từ RENTALHISTORY)
 INSERT INTO RENTAL_HISTORY (CONTRACTID, ROOMID, TENANTID, STARTDATE, ENDDATE, REASON_FOR_LEAVING) VALUES

@@ -9,7 +9,36 @@ namespace DAL.honhathao
 {
     public class TenantAccess
     {
-        public static DataTable load_Tenant()
+        
+        public static List<string> Load_TenantID()
+        {
+            List<string> name = new List<string>();
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return name;
+                using (MySqlCommand command = new MySqlCommand("Select TENANTID from tenant", conn))
+                {
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                name.Add(reader.GetString(0));
+                            }
+                        }
+                        else
+                        {
+                            return name;
+                        }
+                    }
+                }
+            }
+            return name;
+
+        }
+        public static DataTable load_Tenant(string username,string name)
         {
             DataTable output = new DataTable();
 
@@ -20,7 +49,15 @@ namespace DAL.honhathao
                     using (MySqlCommand command = new MySqlCommand("load_Tenant", conn))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-
+                        command.Parameters.AddWithValue("@p_username", username);
+                        if (name != null)
+                        {
+                            command.Parameters.AddWithValue("p_lastname", name);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("p_lastname", DBNull.Value);
+                        }
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
 
@@ -51,7 +88,7 @@ namespace DAL.honhathao
             }
             return output;
         }
-        public static String add_Tenant(string FirstName,string LastName,string Birthday, string Gender ,string PhoneNumber ,string Email )
+        public static String add_Tenant(string username, string FirstName,string LastName,string Birthday, string Gender ,string PhoneNumber ,string Email )
         {
             try
             {
@@ -60,6 +97,7 @@ namespace DAL.honhathao
                     using (MySqlCommand command = new MySqlCommand("add_Tenant", conn))
                     {
                         command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@p_username", username);
                         command.Parameters.AddWithValue("@p_FirstName", FirstName);
                         command.Parameters.AddWithValue("@p_LastName", LastName);
                         command.Parameters.AddWithValue("@p_Birthday", Birthday);

@@ -95,41 +95,77 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExcelExporter.cs" />
-    <Compile Include="HoaiAn\Form_AddAssets.cs">
+    <Compile Include="gui_service\AddService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoaiAn\Form_AddAssets.Designer.cs">
+    <Compile Include="gui_service\AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\DeleteService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\DeleteService.Designer.cs">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\InsertService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\InsertService.Designer.cs">
+      <DependentUpon>InsertService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_AddAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_AddAssets.Designer.cs">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_AddContract.cs">
+    <Compile Include="hoaian\Form_AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_AddContract.Designer.cs">
-      <DependentUpon>Form_AddContract.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HoaiAn\Form_AddRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HoaiAn\Form_AddRoom.Designer.cs">
+    <Compile Include="hoaian\Form_AddRoom.Designer.cs">
       <DependentUpon>Form_AddRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaiAn\Form_AssetsDetail.cs">
+    <Compile Include="hoaian\Form_AssetsDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoaiAn\Form_AssetsDetail.Designer.cs">
+    <Compile Include="hoaian\Form_AssetsDetail.Designer.cs">
       <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaiAn\Form_RentalHistory.cs">
+    <Compile Include="hoaian\Form_RentalHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoaiAn\Form_RentalHistory.Designer.cs">
+    <Compile Include="hoaian\Form_RentalHistory.Designer.cs">
       <DependentUpon>Form_RentalHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="HoaiAn\Form_UpdateAssets.cs">
+    <Compile Include="hoaian\Form_UpdateAssets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HoaiAn\Form_UpdateAssets.Designer.cs">
+    <Compile Include="hoaian\Form_UpdateAssets.Designer.cs">
       <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateRoom.Designer.cs">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_AddBuilding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_AddBuilding.Designer.cs">
+      <DependentUpon>Form_AddBuilding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_AddContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_AddContract.Designer.cs">
+      <DependentUpon>Form_AddContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_Registration.Designer.cs">
+      <DependentUpon>Form_Registration.cs</DependentUpon>
     </Compile>
     <Compile Include="honhathao\Form_Tenant.cs">
       <SubType>Form</SubType>
@@ -149,30 +185,6 @@
     </Compile>
     <Compile Include="Login\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HoaiAn\Form_UpdateRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HoaiAn\Form_UpdateRoom.Designer.cs">
-      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gui_service\AddService.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gui_service\AddService.Designer.cs">
-      <DependentUpon>AddService.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gui_service\DeleteService.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gui_service\DeleteService.Designer.cs">
-      <DependentUpon>DeleteService.cs</DependentUpon>
-    </Compile>
-    <Compile Include="gui_service\InsertService.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gui_service\InsertService.Designer.cs">
-      <DependentUpon>InsertService.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyNha.cs">
       <SubType>Form</SubType>
@@ -194,23 +206,41 @@
     <Compile Include="quanlyphuongtien\Suaphuongtien.Designer.cs">
       <DependentUpon>Suaphuongtien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="HoaiAn\Form_AddAssets.resx">
+    <EmbeddedResource Include="gui_service\AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\DeleteService.resx">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\InsertService.resx">
+      <DependentUpon>InsertService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_AddContract.resx">
-      <DependentUpon>Form_AddContract.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HoaiAn\Form_AddRoom.resx">
+    <EmbeddedResource Include="hoaian\Form_AddRoom.resx">
       <DependentUpon>Form_AddRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaiAn\Form_AssetsDetail.resx">
+    <EmbeddedResource Include="hoaian\Form_AssetsDetail.resx">
       <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaiAn\Form_RentalHistory.resx">
+    <EmbeddedResource Include="hoaian\Form_RentalHistory.resx">
       <DependentUpon>Form_RentalHistory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HoaiAn\Form_UpdateAssets.resx">
+    <EmbeddedResource Include="hoaian\Form_UpdateAssets.resx">
       <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_AddBuilding.resx">
+      <DependentUpon>Form_AddBuilding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_AddContract.resx">
+      <DependentUpon>Form_AddContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_Registration.resx">
+      <DependentUpon>Form_Registration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="honhathao\Form_Tenant.resx">
       <DependentUpon>Form_Tenant.cs</DependentUpon>
@@ -220,18 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HoaiAn\Form_UpdateRoom.resx">
-      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui_service\AddService.resx">
-      <DependentUpon>AddService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui_service\DeleteService.resx">
-      <DependentUpon>DeleteService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui_service\InsertService.resx">
-      <DependentUpon>InsertService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyNha.resx">
       <DependentUpon>QuanLyNha.cs</DependentUpon>
@@ -344,6 +362,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-filter-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-activity-history-100-ư.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-detail-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-notification.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-icons8-notification-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sign-up-100 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-document-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sign-up-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-online-payment.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-service.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-list.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-100-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

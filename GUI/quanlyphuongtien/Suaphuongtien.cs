@@ -16,16 +16,14 @@ namespace GUI.QuanLyPhuongTien
         private string areaId;
 
         // Constructor mặc định
-        public Suaphuongtien()
-        {
-            InitializeComponent();
-        }
+        public string buildingID_ = "";
 
         // Constructor nhận tham số areaId
-        public Suaphuongtien(string areaId)
+        public Suaphuongtien(string areaId, string buildingID)
         {
             InitializeComponent();
             this.areaId = areaId;
+            buildingID_ = buildingID;
         }
 
         private void Suaphuongtien_Load(object sender, EventArgs e)
@@ -39,7 +37,7 @@ namespace GUI.QuanLyPhuongTien
                 }
 
                 // Lấy thông tin bãi đỗ xe
-                DataTable allParkingAreas = ParkingAreaBLL.GetAllParkingAreas();
+                DataTable allParkingAreas = ParkingAreaBLL.GetAllParkingAreas(buildingID_);
                 DataRow[] rows = allParkingAreas.Select($"AREAID = '{areaId}'");
 
                 if (rows.Length == 0)
@@ -58,10 +56,7 @@ namespace GUI.QuanLyPhuongTien
 
                 // Tải danh sách tòa nhà
                 DataTable buildings = ParkingAreaBLL.GetAllBuildings();
-                guna2ComboBox3.DataSource = buildings;
-                guna2ComboBox3.DisplayMember = "BUILDINGID";
-                guna2ComboBox3.ValueMember = "BUILDINGID";
-                guna2ComboBox3.SelectedValue = currentData["BUILDINGID"].ToString();
+
 
                 // Tải danh sách địa chỉ
                 string[] locations = {
@@ -133,13 +128,13 @@ namespace GUI.QuanLyPhuongTien
             {
                 // Lấy giá trị từ các controls
                 string currentAreaId = guna2ComboBox1.SelectedItem.ToString();
-                string buildingId = guna2ComboBox3.SelectedValue.ToString();
+
                 string address = guna2ComboBox2.SelectedItem.ToString();
                 string type = guna2ComboBox4.SelectedItem.ToString();
                 int capacity = Convert.ToInt32(guna2ComboBox5.SelectedItem.ToString());
 
                 // Gọi BLL để cập nhật
-                if (ParkingAreaBLL.UpdateParkingArea(currentAreaId, buildingId, address, type, capacity, out string message))
+                if (ParkingAreaBLL.UpdateParkingArea(currentAreaId, buildingID_, address, type, capacity, out string message))
                 {
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.DialogResult = DialogResult.OK;

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -73,17 +73,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HoaiAn\Assets.cs" />
-    <Compile Include="Building.cs" />
     <Compile Include="dto_service\Contract_Service.cs" />
+    <Compile Include="dto_service\ElectricWaterServiceDTO.cs" />
     <Compile Include="dto_service\KhachHangDTO.cs" />
     <Compile Include="dto_service\ServiceUsageDTO.cs" />
     <Compile Include="dto_service\UserServiceDTO.cs" />
+    <Compile Include="hoaian\Assets.cs" />
+    <Compile Include="hoaian\RentalHistory.cs" />
+    <Compile Include="hoaian\Room.cs" />
+    <Compile Include="honhathao\Building.cs" />
+    <Compile Include="honhathao\Registration.cs" />
     <Compile Include="honhathao\Tenant.cs" />
     <Compile Include="quanlyphuongtien\ParkingArea.cs" />
     <Compile Include="quanlyphuongtien\Payment.cs" />
-    <Compile Include="HoaiAn\RentalHistory.cs" />
-    <Compile Include="HoaiAn\Room.cs" />
     <Compile Include="User.cs" />
     <Compile Include="WaterElectricity.cs" />
     <Compile Include="Contract.cs" />

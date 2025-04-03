@@ -15,7 +15,7 @@ namespace DAL.DAL_Service
 {
     public class UserServiceDAL
     {
-        public List<UserServiceDTO> GetServiceUsage(String filter)
+        public List<UserServiceDTO> GetServiceUsage(String filter,string buildingID)
         {
             List<UserServiceDTO> list = new List<UserServiceDTO>();
 
@@ -36,6 +36,7 @@ namespace DAL.DAL_Service
                             cmd.CommandType = CommandType.StoredProcedure;
                             // Thêm tham số orderBy
                             cmd.Parameters.AddWithValue("@p_sortOption", orderby);
+                            cmd.Parameters.AddWithValue("@p_buildingID", buildingID);
 
                             using (MySqlDataReader reader = cmd.ExecuteReader())
                             {

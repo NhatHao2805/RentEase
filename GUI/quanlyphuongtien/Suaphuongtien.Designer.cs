@@ -30,8 +30,6 @@
         {
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ComboBox3 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -49,7 +47,6 @@
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(85, 18);
             this.guna2HtmlLabel1.TabIndex = 36;
             this.guna2HtmlLabel1.Text = "ID Bãi Đậu Xe";
-      
             // 
             // guna2ComboBox1
             // 
@@ -65,33 +62,6 @@
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox1.TabIndex = 37;
-
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(147, 205);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(72, 18);
-            this.guna2HtmlLabel2.TabIndex = 38;
-            this.guna2HtmlLabel2.Text = "ID Tòa Nhà";
-  
-            // 
-            // guna2ComboBox3
-            // 
-            this.guna2ComboBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox3.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox3.ItemHeight = 30;
-            this.guna2ComboBox3.Location = new System.Drawing.Point(283, 187);
-            this.guna2ComboBox3.Name = "guna2ComboBox3";
-            this.guna2ComboBox3.Size = new System.Drawing.Size(357, 36);
-            this.guna2ComboBox3.TabIndex = 40;
-
             // 
             // guna2HtmlLabel3
             // 
@@ -101,7 +71,6 @@
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(45, 18);
             this.guna2HtmlLabel3.TabIndex = 41;
             this.guna2HtmlLabel3.Text = "Địa Chỉ";
-
             // 
             // guna2HtmlLabel4
             // 
@@ -111,7 +80,6 @@
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(98, 18);
             this.guna2HtmlLabel4.TabIndex = 42;
             this.guna2HtmlLabel4.Text = "Loại Bãi Đậu Xe";
-  
             // 
             // guna2HtmlLabel5
             // 
@@ -121,7 +89,6 @@
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(60, 18);
             this.guna2HtmlLabel5.TabIndex = 43;
             this.guna2HtmlLabel5.Text = "Sức Chứa";
-
             // 
             // guna2ComboBox2
             // 
@@ -137,7 +104,6 @@
             this.guna2ComboBox2.Name = "guna2ComboBox2";
             this.guna2ComboBox2.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox2.TabIndex = 44;
-
             // 
             // guna2ComboBox4
             // 
@@ -153,7 +119,6 @@
             this.guna2ComboBox4.Name = "guna2ComboBox4";
             this.guna2ComboBox4.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox4.TabIndex = 45;
-
             // 
             // guna2ComboBox5
             // 
@@ -169,7 +134,6 @@
             this.guna2ComboBox5.Name = "guna2ComboBox5";
             this.guna2ComboBox5.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox5.TabIndex = 46;
-
             // 
             // buttonDangNhap1
             // 
@@ -196,8 +160,6 @@
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2ComboBox3);
-            this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.guna2ComboBox1);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Name = "Suaphuongtien";
@@ -212,8 +174,6 @@
 
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;

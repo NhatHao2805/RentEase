@@ -10,6 +10,7 @@ namespace BLL
 {
     public class RoomBLL
     {
+
         public static List<string> RoomBLL_Load_RoomAddress(string Username)
         {
             return RoomAccess.RoomAccess_Load_RoomAddress(Username);
@@ -21,6 +22,10 @@ namespace BLL
         public static string RoomBLL_TakePrice(string roomid)
         {
             return RoomAccess.RoomAccess_TakePrice(roomid);
+        }
+        public static DataTable RoomBLL_load_Room(string Username)
+        {
+            return RoomAccess.LoadRoomByUser(Username);
         }
 
         //1
