@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -95,10 +95,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExcelExporter.cs" />
-    <Compile Include="Form_AddAssets.cs">
+    <Compile Include="HoaiAn\Form_AddAssets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_AddAssets.Designer.cs">
+    <Compile Include="HoaiAn\Form_AddAssets.Designer.cs">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_AddContract.cs">
@@ -107,30 +107,37 @@
     <Compile Include="Form_AddContract.Designer.cs">
       <DependentUpon>Form_AddContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_AddRoom.cs">
+    <Compile Include="HoaiAn\Form_AddRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_AddRoom.Designer.cs">
+    <Compile Include="HoaiAn\Form_AddRoom.Designer.cs">
       <DependentUpon>Form_AddRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_AssetsDetail.cs">
+    <Compile Include="HoaiAn\Form_AssetsDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_AssetsDetail.Designer.cs">
+    <Compile Include="HoaiAn\Form_AssetsDetail.Designer.cs">
       <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_PaymentHistory.cs">
+    <Compile Include="HoaiAn\Form_RentalHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_PaymentHistory.Designer.cs">
-      <DependentUpon>Form_PaymentHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_RentalHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_RentalHistory.Designer.cs">
+    <Compile Include="HoaiAn\Form_RentalHistory.Designer.cs">
       <DependentUpon>Form_RentalHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaiAn\Form_UpdateAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaiAn\Form_UpdateAssets.Designer.cs">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_Tenant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_Tenant.Designer.cs">
+      <DependentUpon>Form_Tenant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\RandomKey.cs" />
     <Compile Include="Login\Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,16 +150,10 @@
     <Compile Include="Login\Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_UpdateAssets.cs">
+    <Compile Include="HoaiAn\Form_UpdateRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_UpdateAssets.Designer.cs">
-      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_UpdateRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_UpdateRoom.Designer.cs">
+    <Compile Include="HoaiAn\Form_UpdateRoom.Designer.cs">
       <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="gui_service\AddService.cs">
@@ -193,20 +194,26 @@
     <Compile Include="quanlyphuongtien\Suaphuongtien.Designer.cs">
       <DependentUpon>Suaphuongtien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form_AddAssets.resx">
+    <EmbeddedResource Include="HoaiAn\Form_AddAssets.resx">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_AddContract.resx">
       <DependentUpon>Form_AddContract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_AddRoom.resx">
+    <EmbeddedResource Include="HoaiAn\Form_AddRoom.resx">
       <DependentUpon>Form_AddRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_AssetsDetail.resx">
+    <EmbeddedResource Include="HoaiAn\Form_AssetsDetail.resx">
       <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_RentalHistory.resx">
+    <EmbeddedResource Include="HoaiAn\Form_RentalHistory.resx">
       <DependentUpon>Form_RentalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaiAn\Form_UpdateAssets.resx">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_Tenant.resx">
+      <DependentUpon>Form_Tenant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Form_SignUp.resx">
       <DependentUpon>Form_SignUp.cs</DependentUpon>
@@ -214,10 +221,7 @@
     <EmbeddedResource Include="Login\Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_UpdateAssets.resx">
-      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_UpdateRoom.resx">
+    <EmbeddedResource Include="HoaiAn\Form_UpdateRoom.resx">
       <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui_service\AddService.resx">
@@ -286,6 +290,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-homeQL-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-room-90 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contract-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cash-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-service-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mortgage-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-lot-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-building.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-invoice-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-activity-history-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-registration-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tenant-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contract-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trash-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-90.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

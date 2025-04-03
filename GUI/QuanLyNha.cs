@@ -1,8 +1,11 @@
 ﻿using BLL;
 using BLL.BLL_Service;
+using BLL.honhathao;
 using BLL.Quanlyphuongtien;
 using DTO;
+using DTO.honhathao;
 using GUI.GUI_Service;
+using GUI.honhathao;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -36,6 +39,7 @@ namespace GUI
         private Size size_component_quanlytaichinh_1 = new Size(10, 10);
         private Point location_component_quanlytaichinh = new Point(12, 86);
         private Point location_component_quanlytaichinh_1 = new Point(30,30);
+        DataTable data = null;
 
         public quanlynha(Form_Login form1)
         {
@@ -50,23 +54,90 @@ namespace GUI
             load_QLP();
             loar_Contract();
             load_Assets();
+            load_Building_By_User();
         }
 
-        private void load_Assets()
+        private void load_Building_By_User()
         {
-            dgv_QLCSVC.DataSource = AssetBLL.AssetsBLL_load_Assets(form1.taikhoan.Username);
+            if(data != null)
+            {
+                data.Clear();
+                listBuildingID.Items.Clear();
+            }
+            data = BuildingBLL.BuildingBLL_load_Building_By_User(form1.taikhoan.Username);
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                listBuildingID.Items.Add(data.Rows[i][0].ToString());
+            }
+            listBuildingID.SelectedIndex = 0;
+            buildingKey.Text = data.Rows[0][1].ToString();
+
+        }
+        private void listBuildingID_SelectedValueChanged(object sender, EventArgs e)
+        {
+            buildingKey.Text = data.Rows[listBuildingID.SelectedIndex][1].ToString();
+        }
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            string new_key = RandomKey.RandomString(10);//Tạo key cho building mới
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thay đổi key không?", "Xác nhận thay đổi", buttons);
+            if (result == DialogResult.Yes)
+            {
+                BuildingBLL.BuildingBLL_change_building_key(data.Rows[listBuildingID.SelectedIndex][0].ToString(), new_key);
+                buildingKey.Text = new_key;
+            }
+            load_Building_By_User();
+        }
+        private void loadTenant()
+        {
+            DataTable data = TenantBLL.TenantBLL_load_Tenant();
+            data.Columns[0].ColumnName = "Mã khách hàng";
+            data.Columns[1].ColumnName = "Họ";
+            data.Columns[2].ColumnName = "Tên";
+            data.Columns[3].ColumnName = "Ngày sinh";
+            data.Columns[4].ColumnName = "Giới Tính";
+            data.Columns[5].ColumnName = "SĐT";
+            data.Columns[6].ColumnName = "Email";
+            dgv_Tenant.DataSource = data;
+            dgv_Tenant.Columns[0].Width = 90;
+            dgv_Tenant.Columns[1].Width = 150;
+            dgv_Tenant.Columns[2].Width = 100;
+            dgv_Tenant.Columns[3].Width = 80;
+            dgv_Tenant.Columns[4].Width = 100;
+            dgv_Tenant.Columns[5].Width = 200;
+            dgv_Tenant.Columns[6].Width = 300;
+            dgv_Tenant.ScrollBars = ScrollBars.Both;
+        }
+        private void load_Assets() // 4/3/2025 Hoài An: thêm điều kiện kiểm tra listbuildingid
+        {
+            if (listBuildingID.SelectedItem == null)
+            {
+                dgv_QLCSVC.DataSource = AssetBLL.LoadAssets(form1.taikhoan.Username, null);
+            }
+            else
+            {
+                dgv_QLCSVC.DataSource = AssetBLL.LoadAssets(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            }
             dgv_QLCSVC.Columns[0].Width = 90;
             dgv_QLCSVC.Columns[1].Width = 90;
-            dgv_QLCSVC.Columns[2].Width = 90;
-            dgv_QLCSVC.Columns[3].Width = 150;
-            dgv_QLCSVC.Columns[4].Width = 250;
+            dgv_QLCSVC.Columns[2].Width = 150;
+            dgv_QLCSVC.Columns[3].Width = 100;
+            dgv_QLCSVC.Columns[4].Width = 150;
             dgv_QLCSVC.Columns[5].Width = 80;
             dgv_QLCSVC.ScrollBars = ScrollBars.Both;
         }
 
-        private void load_QLP()
+        private void load_QLP() // 4/3/2025 Hoài An: thêm điều kiện kiểm tra listbuildingid
         {
-            dgv_QLP.DataSource = RoomBLL.RoomBLL_load_Room(form1.taikhoan.Username);
+            if (listBuildingID.SelectedItem == null)
+            {
+                dgv_QLP.DataSource = RoomBLL.LoadRoom(form1.taikhoan.Username, null);
+            }
+            else
+            {
+                dgv_QLP.DataSource = RoomBLL.LoadRoom(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            }
             dgv_QLP.Columns[0].Width = 90;
             dgv_QLP.Columns[1].Width = 90;
             dgv_QLP.Columns[2].Width = 150;
@@ -113,8 +184,8 @@ namespace GUI
             tabQuanLy.Location = tabQL;
             tabQuanLy.Size = size_tabQL;
 
-            tabHopDong.Location = tabHD;
-            tabHopDong.Size = size_tabHD;
+            dklt4.Location = tabHD;
+            dklt4.Size = size_tabHD;
         }
 
 
@@ -154,7 +225,52 @@ namespace GUI
                 }
             }
         }
-
+        private void button30_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow data = null;
+            Form_Tenant f = new Form_Tenant(data, 0);
+            f.ShowDialog();
+            loadTenant();
+        }
+        private void button34_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int row = dgv_Tenant.CurrentCell.RowIndex;
+                DataGridViewRow data = dgv_Tenant.Rows[row];
+                Form_Tenant f = new Form_Tenant(data, 1);
+                f.ShowDialog();
+                loadTenant();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Vui lòng chọn khách hàng cần sửa", "Thông báo",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void button31_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Xác nhận xóa", buttons);
+            if (result == DialogResult.Yes)
+            {
+                TenantBLL.TenantBLL_del_Tenant(dgv_Tenant.SelectedRows[0].Cells[0].Value.ToString());
+                MessageBox.Show("Xóa thành công");
+                loadTenant();
+            }
+        }
+        private void button37_Click(object sender, EventArgs e)
+        {
+            if (dgv_Tenant.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_Tenant, "Danh sách Khách Thuê");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
 
         private void extendBtnPanel1_MouseDown(object sender, MouseEventArgs e)
@@ -169,17 +285,6 @@ namespace GUI
         }
 
 
-        private void extendBtnPanel1_Click(object sender, EventArgs e)
-        {
-            if(extendBtnPanel1.Text == "Xem Thêm")
-            {
-                extendBtnPanel1.Text = "Ẩn bớt";
-            }
-            else
-            {
-                extendBtnPanel1.Text = "Xem Thêm";
-            }
-        }
 
 
         public void setPosition_hoaDon_thuChi(Panel p1, Panel p2)
@@ -326,81 +431,81 @@ namespace GUI
 
         private void hd1_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 0;
+            dklt4.SelectedIndex = 0;
         }
         private void hd2_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 0;
+            dklt4.SelectedIndex = 0;
 
         }
         private void hd3_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 0;
+            dklt4.SelectedIndex = 0;
 
         }
         private void hd4_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 0;
+            dklt4.SelectedIndex = 0;
 
         }
         private void lstn1_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 1;
+            dklt4.SelectedIndex = 1;
 
         }
         private void lstn2_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 1;
+            dklt4.SelectedIndex = 1;
 
         }
         private void lstn3_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 1;
+            dklt4.SelectedIndex = 1;
 
         }
         private void lstn4_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 1;
+            dklt4.SelectedIndex = 1;
 
         }
         private void ttkt1_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 2;
+            dklt4.SelectedIndex = 2;
 
         }
         private void ttkt2_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 2;
+            dklt4.SelectedIndex = 2;
 
         }
         private void ttkt3_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 2;
+            dklt4.SelectedIndex = 2;
 
         }
         private void ttkt4_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 2;
+            dklt4.SelectedIndex = 2;
 
         }
         private void dklt1_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 3;
+            dklt4.SelectedIndex = 3;
 
         }
         private void dklt2_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 3;
+            dklt4.SelectedIndex = 3;
 
         }
         private void dklt3_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 3;
+            dklt4.SelectedIndex = 3;
 
         }
         private void dklt4_Click(object sender, EventArgs e)
         {
-            tabHopDong.SelectedIndex = 3;
+            dklt4.SelectedIndex = 3;
 
         }
         //-------------------------------------------------------------------------------------
@@ -459,96 +564,9 @@ namespace GUI
             }
         }
 
-        private void addRoom_btn_Click(object sender, EventArgs e)
-        {
-            Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username);
-            if (addRoom.ShowDialog() == DialogResult.OK)
-            {
-                // Nếu thêmthành công thì load lại dữ liệu
-                load_QLP();
-            }
-        }
+  
 
-        private void delete_btn_Click(object sender, EventArgs e)
-        {
-            if (dgv_QLP.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn phòng cần xóa", "Thông báo",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            string roomId = dgv_QLP.SelectedRows[0].Cells["RoomID"].Value.ToString();
-
-            if (MessageBox.Show($"Bạn có chắc muốn xóa phòng {roomId}?",
-                              "Xác nhận xóa",
-                              MessageBoxButtons.YesNo,
-                              MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                var (success, message) = RoomBLL.DeleteRoom(roomId);
-
-                MessageBox.Show(message,
-                              success ? "Thành công" : "Lỗi",
-                              MessageBoxButtons.OK,
-                              success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
-
-                if (success)
-                {
-                    load_QLP(); // Load lại dữ liệu sau khi xóa thành công
-                }
-            }
-        }
-
-        private void RentalHistory_btn_Click(object sender, EventArgs e)
-        {
-            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username);
-            rentalHistory.Show();
-        }
-
-        private void ExcelExporterQLP_btn_Click(object sender, EventArgs e)
-        {
-            if (dgv_QLP.Visible)
-            {
-                ExcelExporter.ExportToExcel(dgv_QLP, "Danh sách phòng");
-            }
-            else
-            {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
-                               MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void updateRoom_btn_Click(object sender, EventArgs e)
-        {
-            if (dgv_QLP.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn phòng cần sửa");
-                return;
-            }
-
-            // Lấy dữ liệu từ hàng được chọn
-            DataGridViewRow selectedRow = dgv_QLP.SelectedRows[0];
-
-            Room selectedRoom = new Room
-            {
-                RoomId = selectedRow.Cells["RoomID"].Value.ToString(),
-                BuildingId = selectedRow.Cells["BuildingID"].Value.ToString(),
-                Type = selectedRow.Cells["Type"].Value?.ToString(),
-                Floor = selectedRow.Cells["Floor"].Value?.ToString(),
-                Convenient = selectedRow.Cells["Convenient"].Value?.ToString(),
-                Area = selectedRow.Cells["Area"].Value?.ToString(),
-                Price = selectedRow.Cells["Price"].Value?.ToString(),
-                Status = selectedRow.Cells["Status"].Value?.ToString()
-            };
-
-            // Mở form sửa với dữ liệu đã chọn
-            Form_UpdateRoom updateRoom = new Form_UpdateRoom(form1.taikhoan.Username, selectedRoom);
-            if (updateRoom.ShowDialog() == DialogResult.OK)
-            {
-                // Nếu cập nhật thành công thì load lại dữ liệu
-                load_QLP();
-            }
-        }
 
 
         //Hoài An Chỉnh lại bên tên bên phần giao diện (lỗi do sai tên nút)
@@ -616,6 +634,8 @@ namespace GUI
         {
             FilterRoomByStatus();
         }
+
+        // 4/3/2025 HoaiAn: thêm listbuildingid
         private void FilterRoomByStatus()
         {
             try
@@ -636,7 +656,7 @@ namespace GUI
 
 
                 // Lấy dữ liệu đã lọc
-                DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username);
+                DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username, listBuildingID.SelectedItem.ToString()); 
 
                 // Cập nhật DataGridView
                 dgv_QLP.DataSource = null; // Xóa dữ liệu cũ trước
@@ -676,9 +696,10 @@ namespace GUI
             dgv_QLP.ScrollBars = ScrollBars.Both;
         }
 
+        // 4/3/2025 HoaiAn: thêm listbuildingid
         private void button35_Click(object sender, EventArgs e)
         {
-            Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username);
+            Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
             if (addRoom.ShowDialog() == DialogResult.OK)
             {
                 // Nếu thêm thành công thì load lại dữ liệu
@@ -749,9 +770,10 @@ namespace GUI
             }
         }
 
+        //4/3/2025 Hoài An: thêm listbuildingid
         private void button33_Click(object sender, EventArgs e)
         {
-            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username);
+            Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
             rentalHistory.Show();
         }
 
@@ -1323,12 +1345,28 @@ namespace GUI
             }
         }
 
+        private void dgv_QLHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-        //HoaiAn-Asset
+        }
 
+        private void tabPage8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel14_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        //Assets
+        
+        //4/3/2025 Hoài An: thêm listbuildingid
         private void button25_Click(object sender, EventArgs e)
         {
-            Form_AddAssets addAsset = new Form_AddAssets(form1.taikhoan.Username);
+            Form_AddAssets addAsset = new Form_AddAssets(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
             if (addAsset.ShowDialog() == DialogResult.OK)
             {
                 // Nếu thêm thành công thì load lại dữ liệu
@@ -1358,14 +1396,13 @@ namespace GUI
             };
 
             // Mở form sửa với dữ liệu đã chọn
-            Form_UpdateAssets updateAssets = new Form_UpdateAssets(form1.taikhoan.Username, selectedAsset);
+            Form_UpdateAssets updateAssets = new Form_UpdateAssets(form1.taikhoan.Username, selectedAsset, listBuildingID.SelectedItem.ToString());
             if (updateAssets.ShowDialog() == DialogResult.OK)
             {
                 // Nếu cập nhật thành công thì load lại dữ liệu
-                load_QLP();
+                load_Assets();
             }
         }
-
 
         private void button21_Click(object sender, EventArgs e)
         {
@@ -1396,16 +1433,11 @@ namespace GUI
                 }
             }
         }
-
+        // 4/3/2025 Hoài An: thêm listbuildingid
         private void button24_Click(object sender, EventArgs e)
         {
-            Form_AssetsDetail assetsDetail = new Form_AssetsDetail(form1.taikhoan.Username);
-        }
-
-        private void button23_Click(object sender, EventArgs e)
-        {
-            Form_PaymentHistory paymentHistory = new Form_PaymentHistory();
-            this.Hide();
+            Form_AssetsDetail assetsDetail = new Form_AssetsDetail(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            assetsDetail.Show();
         }
 
         private void button26_Click(object sender, EventArgs e)
@@ -1421,6 +1453,72 @@ namespace GUI
             }
         }
 
-        
+        private void checkBox23_CheckedChanged(object sender, EventArgs e) // Checkbox "Giá tăng dần"
+        {
+            if (checkBox23.Checked)
+            {
+                checkBox22.Checked = false;
+                checkBox19.Checked = false;
+                FilterAssets("ASC", null);
+            }
+            else
+            {
+                FilterAssets(null, null);
+            }
+        }
+
+        private void checkBox22_CheckedChanged(object sender, EventArgs e) // Checkbox "Giá giảm dần"
+        {
+            if (checkBox22.Checked)
+            {
+                checkBox23.Checked = false;
+                checkBox19.Checked = false;
+                FilterAssets("DESC", null);
+            }
+            else
+            {
+                FilterAssets(null, null);
+            }
+        }
+
+        private void checkBox19_CheckedChanged(object sender, EventArgs e) // Checkbox "Tìm theo tên"
+        {
+            if (checkBox19.Checked)
+            {
+                checkBox23.Checked = false;
+                checkBox22.Checked = false;
+                FilterAssets(null, textBox1.Text.Trim());
+            }
+            else
+            {
+                FilterAssets(null, null);
+            }
+        }
+        // 4/3/2025 HoaiAn: thêm listbuildingid
+        private void FilterAssets(string priceSort, string nameSort)
+        {
+            try
+            {
+                // Lấy dữ liệu đã lọc
+                DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.SelectedItem.ToString());
+
+                // Cập nhật DataGridView
+                dgv_QLCSVC.DataSource = null; // Xóa dữ liệu cũ trước
+                dgv_QLCSVC.DataSource = filteredData;
+
+                dgv_QLCSVC.Columns["RoomID"].DisplayIndex = 0;
+                dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
+                dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
+                dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
+                dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
+                dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
+                //load_Assets();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

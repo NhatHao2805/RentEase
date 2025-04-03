@@ -6,6 +6,7 @@ USE rentease;
 /* Table: TENANT                                                */
 /*==============================================================*/
 CREATE TABLE TENANT (
+	USERNAME			 VARCHAR(20) NOT NULL COMMENT 'ID chủ nhà',
     TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     FIRSTNAME            VARCHAR(50) COMMENT 'Tên',
     LASTNAME             VARCHAR(50) COMMENT 'Họ',
@@ -242,7 +243,7 @@ CREATE TABLE RELATIONSHIP (
 );
 
 /*==============================================================*/
-/* Table: RENTALHISTORY                                         */
+/* Table: RENTAL_HISTORY                                         */
 /*==============================================================*/
 CREATE TABLE RENTAL_HISTORY (
     CONTRACTID              VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
@@ -363,6 +364,10 @@ ADD CONSTRAINT FK_CONTRACT_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENAN
 -- Bảng ROOM
 ALTER TABLE ROOM
 ADD CONSTRAINT FK_ROOM_BUILDING FOREIGN KEY (BUILDINGID) REFERENCES BUILDING(BUILDINGID) ON DELETE CASCADE;
+
+-- Bảng TENANT
+ALTER TABLE TENANT
+ADD CONSTRAINT FK_TENANT_USER FOREIGN KEY (USERNAME) REFERENCES USER(USERNAME) ON DELETE CASCADE;
 
 -- Bảng ASSETS
 ALTER TABLE ASSETS

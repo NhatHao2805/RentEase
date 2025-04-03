@@ -74,7 +74,7 @@ namespace GUI
             taikhoan.Gender = gt_cb.Text;
             taikhoan.Email  = email_tb.Text;
             taikhoan.Address = diachi_tb.Text;
-            taikhoan.Birth = ns_datetimepicker.Value.ToString("yyyy-MM-dd");
+            taikhoan.Birth = ns_datetimepicker.Value.ToString("dd-MM-yyyy");
             taikhoan.PhoneNumber = sdt_tb.Text;
             taikhoan.FullName = name_tb.Text;
 

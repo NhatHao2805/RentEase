@@ -1,34 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase Source\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\rentease source\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\rentease-nhathao\\rentease-nhathao\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\rentease source\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\rentease-nhathao\\rentease-nhathao\\gui\\form_assetsdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_assetsdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\bll\\assetbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\assetbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\dal\\assetaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\assetaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\dal\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\bll\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 317,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,93 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form_AssetsDetail.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\GUI\\Form_AssetsDetail.cs",
-              "RelativeDocumentMoniker": "GUI\\Form_AssetsDetail.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\GUI\\Form_AssetsDetail.cs",
-              "RelativeToolTip": "GUI\\Form_AssetsDetail.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "QuanLyNha.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase Source\\GUI\\QuanLyNha.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase Source\\GUI\\QuanLyNha.cs [Design]",
+              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:54:42.775Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AssetAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\DAL\\AssetAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\AssetAccess.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\DAL\\AssetAccess.cs",
-              "RelativeToolTip": "DAL\\AssetAccess.cs",
-              "ViewState": "AgIAAKYAAAAAAAAAAAAqwL4AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T05:03:58.725Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AssetBLL.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\BLL\\AssetBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\AssetBLL.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\BLL\\AssetBLL.cs",
-              "RelativeToolTip": "BLL\\AssetBLL.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAAFYAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T05:02:11.003Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RoomBLL.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\BLL\\RoomBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\RoomBLL.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\BLL\\RoomBLL.cs",
-              "RelativeToolTip": "BLL\\RoomBLL.cs",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAAAGoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T19:29:30.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoomAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\DAL\\RoomAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\RoomAccess.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\DAL\\RoomAccess.cs",
-              "RelativeToolTip": "DAL\\RoomAccess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T19:31:08.947Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T12:32:47.882Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase Source\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\GUI\\QuanLyNha.cs*",
-              "RelativeToolTip": "GUI\\QuanLyNha.cs*",
-              "ViewState": "AgIAAGMFAAAAAAAAAAAWwHkFAAAMAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase Source\\GUI\\QuanLyNha.cs",
+              "RelativeToolTip": "GUI\\QuanLyNha.cs",
+              "ViewState": "AgIAAPECAAAAAAAAAAAWwAcDAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-28T19:24:14.859Z",
+              "WhenOpened": "2025-04-03T11:50:54.439Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\GUI\\QuanLyNha.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\RentEase-NhatHao\\RentEase-NhatHao\\GUI\\QuanLyNha.cs [Design]*",
-              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T11:27:54.691Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

@@ -13,8 +13,8 @@ INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBE
 -- 2 BUILDING
 INSERT INTO BUILDING (BUILDINGID, BUILDING_KEY, USERNAME, ADDRESS, NUMOFFLOORS, NUMOFROOMS) VALUES
 ('B001', 'BLD001', 'ad', '123 Đường Lê Lợi, Q1, TP.HCM', 5, 20),
-('B002', 'BLD002', 'manager02', '456 Đường Nguyễn Huệ, Q1, TP.HCM', 3, 12),
-('B003', 'BLD003', 'owner03', '789 Đường Pasteur, Q3, TP.HCM', 7, 30),
+('B002', 'BLD002', 'ad', '456 Đường Nguyễn Huệ, Q1, TP.HCM', 3, 12),
+('B003', 'BLD003', 'ad', '789 Đường Pasteur, Q3, TP.HCM', 7, 30),
 ('B004', 'BLD004', 'staff04', '321 Đường CMT8, Q10, TP.HCM', 4, 15),
 ('B005', 'BLD005', 'supervisor05', '654 Đường 3/2, Q11, TP.HCM', 6, 25),
 ('B006', 'BLD006', 'operator06', '987 Đường Lý Thường Kiệt, Q.Tân Bình, TP.HCM', 2, 8),
@@ -36,17 +36,17 @@ INSERT INTO ROOM (ROOMID, BUILDINGID, TYPE, FLOOR, CONVENIENT, AREA, PRICE, STAT
 ('R010', 'B009', 'Studio', 1, 'Điều hòa, Wifi, Tủ lạnh', 24.0, 4800000, 'Đang ở');
 
 -- 4 TENANT
-INSERT INTO TENANT (TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL) VALUES
-('T001', 'Lê Văn', 'Cường', '1990-07-25', 'Nam', '0911222333', 'tenant1@gmail.com'),
-('T002', 'Phạm Thị', 'Dung', '1995-03-12', 'Nữ', '0988777666', 'tenant2@gmail.com'),
-('T003', 'Hoàng Văn', 'Em', '1988-11-05', 'Nam', '0909123456', 'tenant3@gmail.com'),
-('T004', 'Nguyễn Thị', 'Giang', '1992-09-18', 'Nữ', '0912345678', 'tenant4@gmail.com'),
-('T005', 'Trần Văn', 'Hải', '1985-04-30', 'Nam', '0987654321', 'tenant5@gmail.com'),
-('T006', 'Vũ Thị', 'Lan', '1993-12-15', 'Nữ', '0909876543', 'tenant6@gmail.com'),
-('T007', 'Phan Văn', 'Minh', '1987-06-22', 'Nam', '0912456789', 'tenant7@gmail.com'),
-('T008', 'Lý Thị', 'Nga', '1991-02-14', 'Nữ', '0988999888', 'tenant8@gmail.com'),
-('T009', 'Đặng Văn', 'Phong', '1983-08-10', 'Nam', '0911222444', 'tenant9@gmail.com'),
-('T010', 'Bùi Thị', 'Quỳnh', '1994-05-28', 'Nữ', '0909111222', 'tenant10@gmail.com');
+INSERT INTO TENANT (USERNAME, TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL) VALUES
+('ad', 'T001', 'Lê Văn', 'Cường', '1990-07-25', 'Nam', '0911222333', 'tenant1@gmail.com'),
+('ad', 'T002', 'Phạm Thị', 'Dung', '1995-03-12', 'Nữ', '0988777666', 'tenant2@gmail.com'),
+('ad', 'T003', 'Hoàng Văn', 'Em', '1988-11-05', 'Nam', '0909123456', 'tenant3@gmail.com'),
+('staff04', 'T004', 'Nguyễn Thị', 'Giang', '1992-09-18', 'Nữ', '0912345678', 'tenant4@gmail.com'),
+('staff04', 'T005', 'Trần Văn', 'Hải', '1985-04-30', 'Nam', '0987654321', 'tenant5@gmail.com'),
+('operator06', 'T006', 'Vũ Thị', 'Lan', '1993-12-15', 'Nữ', '0909876543', 'tenant6@gmail.com'),
+('operator06', 'T007', 'Phan Văn', 'Minh', '1987-06-22', 'Nam', '0912456789', 'tenant7@gmail.com'),
+('accountant08', 'T008', 'Lý Thị', 'Nga', '1991-02-14', 'Nữ', '0988999888', 'tenant8@gmail.com'),
+('technician09', 'T009', 'Đặng Văn', 'Phong', '1983-08-10', 'Nam', '0911222444', 'tenant9@gmail.com'),
+('reception10', 'T010', 'Bùi Thị', 'Quỳnh', '1994-05-28', 'Nữ', '0909111222', 'tenant10@gmail.com');
 
 -- 5 CONTRACT
 INSERT INTO CONTRACT (CONTRACTID, ROOMID, TENANTID, CREATEDATE, STARTDATE, ENDDATE, MONTHLYRENT, PAYMENTSCHEDULE, DEPOSIT, STATUS, NOTES, AUTO_RENEW, TERMINATION_REASON, CONTRACT_FILE_PATH) VALUES
