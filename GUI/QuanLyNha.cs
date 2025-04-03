@@ -614,37 +614,37 @@ namespace GUI
         //Hoài An Chỉnh lại bên tên bên phần giao diện (lỗi do sai tên nút)
         private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangO_chbox.Checked && DangTrong_chbox.Checked)
+            if (DangO_chbox1.Checked && DangTrong_chbox1.Checked)
             {
                 MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangO_chbox.Checked = false;
+                DangO_chbox1.Checked = false;
             }
             FilterRoomByStatus();
         }
 
         private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangTrong_chbox.Checked && DangO_chbox.Checked)
+            if (DangTrong_chbox1.Checked && DangO_chbox1.Checked)
             {
                 MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangTrong_chbox.Checked = false;
+                DangTrong_chbox1.Checked = false;
             }
             FilterRoomByStatus();
         }
 
         private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangKT_chbox.Checked && DangCoc_chbox.Checked)
+            if (DangKT_chbox1.Checked && DangCoc_chbox.Checked)
             {
                 MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangKT_chbox.Checked = false;
+                DangKT_chbox1.Checked = false;
             }
             FilterRoomByStatus();
         }
 
         private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangCoc_chbox.Checked && (DangO_chbox.Checked || DangKT_chbox.Checked))
+            if (DangCoc_chbox.Checked && (DangO_chbox1.Checked || DangKT_chbox1.Checked))
             {
                 MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang ở' hoặc 'Đang báo kết thúc'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DangCoc_chbox.Checked = false;
@@ -683,9 +683,9 @@ namespace GUI
                 // Tạo danh sách trạng thái được chọn
                 List<string> selectedStatuses = new List<string>();
 
-                if (DangO_chbox.Checked) selectedStatuses.Add(DangO_chbox.Text);
-                if (DangTrong_chbox.Checked) selectedStatuses.Add(DangTrong_chbox.Text);
-                if (DangKT_chbox.Checked) selectedStatuses.Add(DangKT_chbox.Text);
+                if (DangO_chbox1.Checked) selectedStatuses.Add(DangO_chbox1.Text);
+                if (DangTrong_chbox1.Checked) selectedStatuses.Add(DangTrong_chbox1.Text);
+                if (DangKT_chbox1.Checked) selectedStatuses.Add(DangKT_chbox1.Text);
                 if (DangCoc_chbox.Checked) selectedStatuses.Add(DangCoc_chbox.Text);
                 if (SapHetHan_chbox.Checked) selectedStatuses.Add(SapHetHan_chbox.Text);
                 if (DaQuaHan_chbox.Checked) selectedStatuses.Add(DaQuaHan_chbox.Text);
@@ -738,12 +738,7 @@ namespace GUI
 
         private void button35_Click(object sender, EventArgs e)
         {
-            Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username);
-            if (addRoom.ShowDialog() == DialogResult.OK)
-            {
-                // Nếu thêm thành công thì load lại dữ liệu
-                load_QLP();
-            }
+
         }
 
         private void button32_Click(object sender, EventArgs e)
@@ -1394,6 +1389,61 @@ namespace GUI
         }
 
         private void guna2CustomGradientPanel14_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvServiceInfo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabPage10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel21_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkBox14_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox14_Enter(object sender, EventArgs e)
         {
 
         }

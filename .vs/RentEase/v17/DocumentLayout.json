@@ -1,34 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\",
+  "WorkspaceRootPath": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\hoc\\cn phan mem\\d\u1EF1 \u00E1n\\rentease-temp\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\hoc\\cn phan mem\\d\u1EF1 \u00E1n\\rentease\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\dal\\accountaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\accountaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|d:\\hoc\\cn phan mem\\d\u1EF1 \u00E1n\\rentease-temp\\dal\\assetaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\assetaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\dal\\contractaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\dal\\contractaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\contractaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\dal\\assetaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\assetaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 140,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,95 +53,103 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QuanLyNha.cs [Design]",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\QuanLyNha.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\QuanLyNha.cs [Design]",
+              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-30T12:13:50.867Z",
+              "EditorCaption": " [Design]"
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AssetAccess.cs",
-              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\DAL\\AssetAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\AssetAccess.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\DAL\\AssetAccess.cs",
-              "RelativeToolTip": "DAL\\AssetAccess.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAArwB4AAAAbAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AccountAccess.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\DAL\\AccountAccess.cs",
+              "RelativeDocumentMoniker": "DAL\\AccountAccess.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\DAL\\AccountAccess.cs",
+              "RelativeToolTip": "DAL\\AccountAccess.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAewBAAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-31T05:30:53.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T15:16:33.695Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
+              "Title": "AssetAccess.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\DAL\\AssetAccess.cs",
+              "RelativeDocumentMoniker": "DAL\\AssetAccess.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\DAL\\AssetAccess.cs",
+              "RelativeToolTip": "DAL\\AssetAccess.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAArwB4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T05:30:53.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Form_AddContract.cs",
-              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\GUI\\Form_AddContract.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\Form_AddContract.cs",
               "RelativeDocumentMoniker": "GUI\\Form_AddContract.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\GUI\\Form_AddContract.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\Form_AddContract.cs",
               "RelativeToolTip": "GUI\\Form_AddContract.cs",
               "ViewState": "AgIAAIgAAAAAAAAAAAAIwJwAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:39:08.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T12:39:08.71Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "ContractBLL.cs",
-              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\BLL\\ContractBLL.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\BLL\\ContractBLL.cs",
               "RelativeDocumentMoniker": "BLL\\ContractBLL.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\BLL\\ContractBLL.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\BLL\\ContractBLL.cs",
               "RelativeToolTip": "BLL\\ContractBLL.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBQAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAzwBQAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T12:21:14.834Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Form_AddContract.cs [Design]",
-              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\GUI\\Form_AddContract.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\Form_AddContract.cs",
               "RelativeDocumentMoniker": "GUI\\Form_AddContract.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\GUI\\Form_AddContract.cs [Design]",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\Form_AddContract.cs [Design]",
               "RelativeToolTip": "GUI\\Form_AddContract.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:39:06.026Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-03-30T12:39:06.026Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\GUI\\QuanLyNha.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.cs",
-              "ViewState": "AgIAAGgFAAAAAAAAAIAwwHQFAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAJoFAAAAAAAAAAAnwKcFAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:21:36.563Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-30T12:21:36.563Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "ContractAccess.cs",
-              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\DAL\\ContractAccess.cs",
+              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\DAL\\ContractAccess.cs",
               "RelativeDocumentMoniker": "DAL\\ContractAccess.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\DAL\\ContractAccess.cs",
+              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\DAL\\ContractAccess.cs",
               "RelativeToolTip": "DAL\\ContractAccess.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAIwEkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T12:19:04.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\GUI\\QuanLyNha.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase-temp\\GUI\\QuanLyNha.cs [Design]",
-              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:13:50.867Z",
-              "EditorCaption": " [Design]"
             }
           ]
         },
