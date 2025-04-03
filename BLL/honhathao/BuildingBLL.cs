@@ -10,6 +10,10 @@ namespace BLL.honhathao
 {
     public class BuildingBLL
     {
+        public static string BuildingBLL_add_building( string buildingKey, string username, string address)
+        {
+            return BuildingAccess.add_building( buildingKey, username, address);
+        }
         public static DataTable BuildingBLL_load_Building_By_User(string usern)
         {
             return BuildingAccess.load_building_by_user(usern);

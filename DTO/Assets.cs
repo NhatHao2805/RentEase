@@ -11,7 +11,7 @@ namespace DTO
         public string AssetId { get; set; }
         public string RoomId { get; set; }
         public string AssetName { get; set; }
-        public string Price { get; set; }
+        public float Price { get; set; }
         public string Status { get; set; }
         public string UseDate { get; set; }
     }

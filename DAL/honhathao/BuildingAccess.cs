@@ -9,6 +9,28 @@ namespace DAL.honhathao
 {
     public class BuildingAccess
     {
+        public static string add_building(string buildingKey, string username, string address)
+        {
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    using (MySqlCommand command = new MySqlCommand("add_building", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@p_BUILDING_KEY", buildingKey);
+                        command.Parameters.AddWithValue("@p_USERNAME", username);
+                        command.Parameters.AddWithValue("@p_ADDRESS", address);
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return "Fail";
+            }
+            return "Success";
+        }
         public static DataTable load_building_by_user(string usern)
         {
             DataTable output = new DataTable();

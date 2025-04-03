@@ -7,17 +7,20 @@ namespace DAL
 {
     public class ParkingAreaAccess
     {
-        public static DataTable GetAllParkingAreas()
+        public static DataTable GetAllParkingAreas(string buildingID)
         {
             DataTable dt = new DataTable();
             using (MySqlConnection conn = MySqlConnectionData.Connect())
             {
                 if (conn == null) return dt;
 
-                using (MySqlCommand command = new MySqlCommand("SELECT * FROM PARKINGAREA", conn))
+                // Sử dụng tham số trong câu lệnh SQL
+                using (MySqlCommand command = new MySqlCommand("SELECT * FROM PARKINGAREA WHERE BuildingID = @BuildingID", conn))
                 {
                     try
                     {
+                        command.Parameters.AddWithValue("@BuildingID", buildingID);
+
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                         {
                             adapter.Fill(dt);
@@ -31,6 +34,8 @@ namespace DAL
             }
             return dt;
         }
+    
+        
         // Thêm vào file DAL/QuanLyphuongtien/ParkingAreaAccess.cs
         public static DataTable GetAllBuildings()
         {

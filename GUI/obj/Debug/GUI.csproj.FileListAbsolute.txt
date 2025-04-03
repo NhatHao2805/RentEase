@@ -505,159 +505,163 @@ D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\obj\Debug\GUI.csproj.CoreCompileIn
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\obj\Debug\GUI.exe
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\obj\Debug\GUI.pdb
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_AddAssets.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_AddContract.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_AddRoom.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_RentalHistory.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_SignUp.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_Login.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.quanlynha.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.exe
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.pdb
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\GUI.exe.config
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\GUI.exe
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\GUI.pdb
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\BLL.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\DTO.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Guna.UI2.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\MySqlConnector.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Buffers.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Memory.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\EPPlus.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\DAL.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\EPPlus.Interfaces.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\EPPlus.System.Drawing.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\MySql.Data.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Google.Protobuf.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\ZstdSharp.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.IO.Pipelines.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\BLL.pdb
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\BLL.dll.config
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\DTO.pdb
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\DTO.dll.config
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\MySqlConnector.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Buffers.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Memory.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\EPPlus.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\DAL.pdb
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\DAL.dll.config
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\MySql.Data.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Google.Protobuf.pdb
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\Google.Protobuf.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\System.IO.Pipelines.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\ACER\Downloads\RentEase-Phats\RentEase-Phats\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\GUI.exe.config
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\GUI.exe
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\GUI.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\BLL.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\DTO.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Guna.UI2.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\MySqlConnector.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Buffers.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Memory.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Numerics.Vectors.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\EPPlus.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\DAL.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\EPPlus.Interfaces.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\EPPlus.System.Drawing.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\MySql.Data.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Protobuf.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\ZstdSharp.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.IO.Pipelines.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\BLL.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\BLL.dll.config
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\DTO.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\DTO.dll.config
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\MySqlConnector.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Buffers.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Memory.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Numerics.Vectors.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\EPPlus.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\DAL.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\DAL.dll.config
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\MySql.Data.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Protobuf.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Protobuf.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\System.IO.Pipelines.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_AddAssets.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_AddContract.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_AddRoom.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_RentalHistory.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_SignUp.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_Login.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.quanlynha.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Properties.Resources.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.exe
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\GUI.exe.config
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\GUI.exe
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\BLL.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Guna.UI2.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\EPPlus.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\BLL.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\BLL.dll.config
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\EPPlus.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_AddAssets.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_AddRoom.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_RentalHistory.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_AddContract.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_SignUp.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_Login.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.quanlynha.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.exe
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\GUI.exe.config
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\GUI.exe
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\GUI.pdb
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\BLL.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\DTO.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Guna.UI2.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\MySqlConnector.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Buffers.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Memory.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\EPPlus.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\DAL.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\EPPlus.Interfaces.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\EPPlus.System.Drawing.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\MySql.Data.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Google.Protobuf.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\ZstdSharp.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.IO.Pipelines.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\BLL.pdb
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\BLL.dll.config
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\DTO.pdb
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\DTO.dll.config
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\MySqlConnector.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Buffers.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Memory.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\EPPlus.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\DAL.pdb
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\DAL.dll.config
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\MySql.Data.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Google.Protobuf.pdb
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\Google.Protobuf.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\System.IO.Pipelines.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_AddAssets.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_AddContract.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_AddRoom.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_RentalHistory.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_SignUp.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_Login.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.quanlynha.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.csproj.Up2Date
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.exe
-C:\Users\ACER\OneDrive\Máy tính\31-3\GUI\obj\Debug\GUI.pdb

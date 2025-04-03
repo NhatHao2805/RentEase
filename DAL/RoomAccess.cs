@@ -48,7 +48,7 @@ namespace DAL
                 using (MySqlCommand command = new MySqlCommand("" +
                     "Select ROOMID from room r " +
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
-                    "where b.ADDRESS = @addr", conn))
+                    "where b.BUILDINGID = @addr", conn))
                 {
                     command.Parameters.AddWithValue("@addr", addressBuilding);
                     using (MySqlDataReader reader = command.ExecuteReader())

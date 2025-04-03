@@ -1,5 +1,295 @@
 DELIMITER //
 
+CREATE PROCEDURE update_registration(
+	IN p_registration_id VARCHAR(20),
+    IN p_status VARCHAR(20)
+    
+)
+BEGIN
+    UPDATE temporary_registration t
+    SET t.`STATUS` = p_status        
+    WHERE t.REGISTRATIONID = p_registration_id;
+END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createBuildingID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(building.BUILDINGID), 'B000') INTO max_id FROM building;
+    SET number_part = CAST(SUBSTRING(max_id, 2) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('DK', LPAD(number_part, 3, '0'));
+    RETURN new_id;
+END//
+CREATE PROCEDURE add_building(
+	IN p_BUILDING_KEY VARCHAR(20),
+	IN p_USERNAME VARCHAR(20),
+   IN p_ADDRESS VARCHAR(200)
+)
+BEGIN
+	DECLARE newid VARCHAR(20);
+	SET newid = createBuildingID();
+	
+	
+	INSERT INTO Building (
+        BUILDINGID,
+        BUILDING_KEY,
+        USERNAME,
+        ADDRESS
+    )
+    VALUES (
+        newid,
+        p_BUILDING_KEY,
+        p_USERNAME,
+        p_ADDRESS
+    );
+END//
+CREATE PROCEDURE del_registration(
+    IN p_registration_id VARCHAR(50)
+)
+BEGIN 
+	DELETE FROM temporary_registration 
+	WHERE REGISTRATIONID = p_registration_id;
+END//
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Contract_filter`(
+    IN p_buildingID VARCHAR(50),
+    IN control VARCHAR(2),
+    IN p_lastname VARCHAR(20)
+)
+BEGIN
+
+    SELECT 
+        c.CONTRACTID,
+        c.ROOMID,
+        c.TENANTID,
+        t.FIRSTNAME,
+        t.LASTNAME,
+        c.CREATEDATE,
+        c.STARTDATE,
+        c.ENDDATE,
+        c.MONTHLYRENT, 
+        c.PAYMENTSCHEDULE,
+        c.DEPOSIT,
+        c.NOTES
+    FROM contract c
+    JOIN room r ON r.ROOMID = c.ROOMID
+    JOIN building b ON r.BUILDINGID = b.BUILDINGID
+    JOIN user u ON u.USERNAME = b.USERNAME
+    JOIN tenant t ON t.TENANTID = c.TENANTID
+    WHERE b.BUILDINGID = p_buildingID
+    AND (
+      (control = '1' AND DATEDIFF(c.ENDDATE, CURDATE()) BETWEEN 0 AND 30)
+   OR (control = '2' AND c.ENDDATE < CURDATE()) 
+   OR (control = '3' AND c.STARTDATE <= CURDATE() AND c.ENDDATE >= CURDATE()) 
+   OR (control NOT IN ('1', '2', '3')) 
+    )
+	 AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
+END//
+
+CREATE PROCEDURE add_Tenant(
+		IN p_username VARCHAR(20),
+    IN p_FirstName NVARCHAR(100),
+    IN p_LastName NVARCHAR(100),
+    IN p_Birthday DATE,
+    IN p_Gender VARCHAR(10),
+    IN p_PhoneNumber VARCHAR(20),
+    IN p_Email VARCHAR(100)
+)
+BEGIN
+	DECLARE newid VARCHAR(20);
+	SET newid = createTenantID();
+    INSERT INTO Tenant (
+    		tenant.USERNAME,
+        TENANTID,
+        FIRSTNAME,
+        LASTNAME,
+        BIRTHDAY,
+        GENDER,
+        PHONENUMBER,
+        EMAIL
+    ) VALUES (
+    		p_username,
+    		newid,
+        p_FirstName,
+        p_LastName,
+        p_Birthday,
+        p_Gender,
+        p_PhoneNumber,
+        p_Email
+    );
+END //
+
+CREATE PROCEDURE load_registration(
+    IN p_building_id VARCHAR(50),
+    IN p_lastname VARCHAR(20)
+)
+BEGIN 
+	SELECT tr.REGISTRATIONID,tr.ROOMID,tr.TENANTID,t.FIRSTNAME,t.LASTNAME,tr.REGISTRATION_DATE,tr.EXPIRATION_DATE,tr.`STATUS` FROM temporary_registration tr
+	JOIN room r ON r.ROOMID = tr.ROOMID
+	JOIN tenant t ON t.TENANTID = tr.TENANTID
+	WHERE r.BUILDINGID = p_building_id
+	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
+END//
+
+CREATE PROCEDURE load_Tenant(
+	IN p_username VARCHAR(20),
+   IN p_lastname VARCHAR(20)
+)
+BEGIN 
+    SELECT t.* FROM tenant t
+	 JOIN user u ON u.USERNAME = t.USERNAME 
+	 WHERE u.USERNAME = p_username
+	 AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Contract`(IN p_buildingID VARCHAR(50))
+BEGIN
+   SELECT 
+      c.CONTRACTID,
+      c.ROOMID,
+      c.TENANTID,
+      t.FIRSTNAME,
+      t.LASTNAME,
+      c.CREATEDATE,
+      c.STARTDATE,
+      c.ENDDATE,
+      c.MONTHLYRENT, 
+      c.PAYMENTSCHEDULE,
+      c.DEPOSIT,
+      c.NOTES
+   FROM contract c
+   JOIN room r ON r.ROOMID = c.ROOMID
+   JOIN building b ON r.BUILDINGID = b.BUILDINGID
+   JOIN user u ON u.USERNAME = b.USERNAME
+   JOIN tenant t ON t.TENANTID = c.TENANTID
+   WHERE b.BUILDINGID = p_buildingID;
+END//
+
+CREATE PROCEDURE add_Registration(
+    IN p_tenant_id VARCHAR(50),
+    IN p_room_id VARCHAR(50),
+    IN p_registration_date DATETIME,
+    IN p_expiration_date DATETIME,
+    IN p_status VARCHAR(50)
+)
+BEGIN
+   DECLARE v_registration_id VARCHAR(50);
+	
+	SET v_registration_id = createRegisterID();
+
+    INSERT INTO temporary_registration (
+        REGISTRATIONID,
+        TENANTID,
+        ROOMID,
+        REGISTRATION_DATE,
+        EXPIRATION_DATE,
+        STATUS
+    ) VALUES (
+        v_registration_id,
+        p_tenant_id,
+        p_room_id,
+        p_registration_date,
+        p_expiration_date,
+        p_status
+    );
+
+END //
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createRegisterID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(temporary_registration.REGISTRATIONID), 'DK000') INTO max_id FROM temporary_registration;
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('DK', LPAD(number_part, 3, '0'));
+    RETURN new_id;
+END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createTenantHistorytID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(tenant_history.HISTORYID), 'LS0000') INTO max_id FROM tenant_history;
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('LS', LPAD(number_part, 4, '0'));
+    RETURN new_id;
+END//
+
+CREATE PROCEDURE load_lstn(
+	IN p_buildingID VARCHAR(50)
+)
+BEGIN 
+	SELECT th.* FROM tenant_history th
+	JOIN room r ON r.ROOMID = th.ROOMID
+	JOIN building b ON b.BUILDINGID = r.BUILDINGID
+	WHERE b.BUILDINGID = p_buildingID;
+END//
+
+CREATE PROCEDURE add_Contract(
+    IN p_building_id VARCHAR(50),
+    IN p_id_room VARCHAR(50),
+    IN p_tenantid VARCHAR(50),
+    IN p_createddate DATETIME,
+    IN p_startdate DATETIME,
+    IN p_enddate DATETIME,
+    IN p_paymentschedule VARCHAR(50),
+    IN p_deposit FLOAT,
+    IN p_note VARCHAR(200)
+)
+BEGIN
+    DECLARE v_contractid VARCHAR(50);
+    DECLARE v_monthrent FLOAT;
+    
+
+    SET v_contractid = createContractID();
+
+    SELECT r.PRICE INTO v_monthrent
+    FROM room r 
+    JOIN building b ON b.BUILDINGID = r.BUILDINGID 
+    WHERE b.BUILDINGID = p_building_id
+    LIMIT 1;
+  
+    INSERT INTO contract (
+        CONTRACTID, 
+        ROOMID, 
+        TENANTID, 
+        CREATEDATE, 
+        STARTDATE, 
+        ENDDATE, 
+        MONTHLYRENT, 
+        PAYMENTSCHEDULE, 
+        DEPOSIT, 
+        NOTES
+    ) VALUES (
+        v_contractid,
+        p_id_room,
+        p_tenantid,
+        p_createddate,
+        p_startdate,
+        p_enddate,
+        v_monthrent,
+        p_paymentschedule,
+        p_deposit,
+        p_note
+    );
+
+    SELECT CONCAT('Contract ', v_contractid, ' created successfully') AS result;
+END//
+
+
 CREATE PROCEDURE change_building_key(
     IN p_building_id VARCHAR(20),
     IN p_building_key VARCHAR(20)
@@ -56,10 +346,7 @@ BEGIN
          EMAIL = p_Email
      WHERE TENANTID = p_TenantID;
 END //
-CREATE PROCEDURE load_Tenant()
-BEGIN 
-    SELECT * FROM tenant;
-END//
+
 
 CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createTenantID`()
 RETURNS VARCHAR(20) 
@@ -75,35 +362,7 @@ BEGIN
     RETURN new_id;
 END//
 
-CREATE PROCEDURE add_Tenant(
-    IN p_FirstName NVARCHAR(100),
-    IN p_LastName NVARCHAR(100),
-    IN p_Birthday DATE,
-    IN p_Gender VARCHAR(10),
-    IN p_PhoneNumber VARCHAR(20),
-    IN p_Email VARCHAR(100)
-)
-BEGIN
-	DECLARE newid VARCHAR(20);
-	SET newid = createTenantID();
-    INSERT INTO Tenant (
-        TENANTID,
-        FIRSTNAME,
-        LASTNAME,
-        BIRTHDAY,
-        GENDER,
-        PHONENUMBER,
-        EMAIL
-    ) VALUES (
-    		newid,
-        p_FirstName,
-        p_LastName,
-        p_Birthday,
-        p_Gender,
-        p_PhoneNumber,
-        p_Email
-    );
-END //
+
 
 CREATE PROCEDURE GetServiceUsage()
 BEGIN
@@ -531,72 +790,6 @@ BEGIN
    WHERE c.CONTRACTID = contract_id;
 END//
 
-CREATE PROCEDURE add_Contract(
-    IN p_address_room VARCHAR(50),
-    IN p_id_room VARCHAR(50),
-    IN p_fullname_user VARCHAR(50),
-    IN p_createddate DATETIME,
-    IN p_startdate DATETIME,
-    IN p_enddate DATETIME,
-    IN p_paymentschedule VARCHAR(50),
-    IN p_deposit FLOAT,
-    IN p_note VARCHAR(200)
-)
-BEGIN
-    DECLARE v_contractid VARCHAR(50);
-
-    DECLARE v_tenantid VARCHAR(50);
-    DECLARE v_first_name VARCHAR(50);
-    DECLARE v_last_name VARCHAR(50);
-    DECLARE v_monthrent FLOAT;
-    
-
-    SET v_contractid = createContractID();
-
-    SELECT r.PRICE INTO v_monthrent
-    FROM room r 
-    JOIN building b ON b.BUILDINGID = r.BUILDINGID 
-    WHERE b.ADDRESS = p_address_room
-    LIMIT 1;
-  
-	SET v_first_name = Trim(REGEXP_REPLACE(p_fullname_user, '[^ ]+$', ''));
-   SET v_last_name = REVERSE(SUBSTRING(REVERSE(p_fullname_user), 1, LOCATE(' ', REVERSE(p_fullname_user)) - 1));
-	
-	
-	SELECT TENANTID INTO v_tenantid
-	FROM tenant 
-	WHERE FIRSTNAME = v_first_name
-	AND LASTNAME = v_last_name
-	LIMIT 1;
-
-    INSERT INTO contract (
-        CONTRACTID, 
-        ROOMID, 
-        TENANTID, 
-        CREATEDATE, 
-        STARTDATE, 
-        ENDDATE, 
-        MONTHLYRENT, 
-        PAYMENTSCHEDULE, 
-        DEPOSIT, 
-        NOTES
-    ) VALUES (
-        v_contractid,
-        p_id_room,
-        v_tenantid,
-        p_createddate,
-        p_startdate,
-        p_enddate,
-        v_monthrent,
-        p_paymentschedule,
-        p_deposit,
-        p_note
-    );
-
-    SELECT CONCAT('Contract ', v_contractid, ' created successfully') AS result;
-END//
-
-
 CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `check_account`(
     `usern` VARCHAR(50)
 ) RETURNS INT
@@ -690,29 +883,7 @@ BEGIN
 END//
 
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Contract`(IN p_username VARCHAR(50))
-BEGIN
-   SELECT 
-      c.CONTRACTID,
-      c.ROOMID,
-      c.TENANTID,
-      c.CREATEDATE,
-      c.STARTDATE,
-      c.ENDDATE,
-      c.MONTHLYRENT, 
-      c.PAYMENTSCHEDULE,
-      c.DEPOSIT,
-      c.STATUS,
-      c.NOTES,
-      c.AUTO_RENEW,
-      c.TERMINATION_REASON,
-      c.CONTRACT_FILE_PATH
-   FROM contract c
-   JOIN room r ON r.ROOMID = c.ROOMID
-   JOIN building b ON r.BUILDINGID = b.BUILDINGID
-   JOIN user u ON u.USERNAME = b.USERNAME
-   WHERE u.USERNAME = p_username;
-END//
+
 
 CREATE PROCEDURE del_Contract(
     IN contract_id VARCHAR(20)

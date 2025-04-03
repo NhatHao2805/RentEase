@@ -16,11 +16,13 @@ namespace GUI.honhathao
     {
         private DataGridViewRow data;
         private int control;
-        public Form_Tenant(DataGridViewRow data,int control)
+        private string username;
+        public Form_Tenant(DataGridViewRow data,int control,string username)
         {
             InitializeComponent();
             this.data = data;
             this.control = control;
+            this.username = username;
             loadinfo();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -52,6 +54,7 @@ namespace GUI.honhathao
             {
                 case 0:
                     string result = TenantBLL.TenantBLL_add_Tenant(
+                        username,
                         hodem.Text,
                         ten.Text,
                         ngaysinh.Value.ToString("yyyy-MM-dd"),
@@ -81,6 +84,11 @@ namespace GUI.honhathao
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -6,8 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
-using System.Globalization;
-using System.Runtime.Remoting.Messaging;
 
 namespace DAL
 {
@@ -52,105 +50,6 @@ namespace DAL
             return output;
         }
 
-        public static DataTable LoadBuildingID(string username)
-        {
-            DataTable dt = new DataTable();
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
-            {
-                using (MySqlCommand command = new MySqlCommand("load_buildingid", conn))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@p_username", username);
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-                    {
-                        adapter.Fill(dt);
-                    }
-                }
-            }
-            return dt;
-        }
-
-        public static DataTable LoadRoomID(string username)
-        {
-            DataTable dt = new DataTable();
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
-            {
-                using (MySqlCommand command = new MySqlCommand("load_roomid", conn))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@p_buildingid", username);
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-                    {
-                        adapter.Fill(dt);
-                    }
-                }
-            }
-            return dt;
-        }
-
-        public static string addAsset(Assets assets)
-        {
-            try
-            {
-                using (MySqlConnection conn = MySqlConnectionData.Connect())
-                {
-                    if (conn == null) return "Database connection failed!";
-
-                    using (MySqlCommand command = new MySqlCommand("proc_addAsset", conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@p_roomid", assets.RoomId);
-                        command.Parameters.AddWithValue("@p_assetname", assets.AssetName);
-                        command.Parameters.AddWithValue("@p_price", assets.Price);
-                        command.Parameters.AddWithValue("@p_usedate", assets.UseDate);
-                        command.Parameters.AddWithValue("@p_status", assets.Status);
-
-                        command.ExecuteNonQuery();
-                        return "Add Successfully";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error in AddAsset: " + ex.Message);
-                return "Error: " + ex.Message;
-            }
-        }
-
-        public static string updateAsset(Assets assets)
-        {
-            try
-            {
-                using (MySqlConnection conn = MySqlConnectionData.Connect())
-                {
-                    if (conn == null) return "Database connection failed!";
-
-                    using (MySqlCommand command = new MySqlCommand("proc_updateAsset", conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@p_roomid", assets.RoomId);
-                        command.Parameters.AddWithValue("@p_assetid", assets.AssetId);
-                        command.Parameters.AddWithValue("@p_assetname", assets.AssetName);
-                        command.Parameters.AddWithValue("@p_price", assets.Price);
-                        command.Parameters.AddWithValue("@p_usedate", assets.UseDate);
-                        command.Parameters.AddWithValue("@p_status", assets.Status);
-
-                        command.ExecuteNonQuery();
-                        return "Update Successfully";
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error in UpdateAsset: " + ex.Message);
-                return "Error: " + ex.Message;
-            }
-        }
-
         public static (bool success, string message) DeleteAssets(string assetid)
         {
             using (MySqlConnection conn = MySqlConnectionData.Connect())
@@ -161,7 +60,7 @@ namespace DAL
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@p_assetid", assetid);
+                        cmd.Parameters.AddWithValue("@p_roomid", assetid);
                         cmd.Parameters.Add("@p_result", MySqlDbType.Int32).Direction = ParameterDirection.Output;
                         cmd.Parameters.Add("@p_message", MySqlDbType.VarChar, 255).Direction = ParameterDirection.Output;
 
@@ -178,25 +77,6 @@ namespace DAL
                     return (false, $"Database error: {ex.Message}");
                 }
             }
-        }
-
-        public static DataTable LoadAssetDetail(string assetid)
-        {
-            DataTable dt = new DataTable();
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
-            {
-                using (MySqlCommand command = new MySqlCommand("sp_AssetDetails", conn))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@p_assetid", assetid);
-
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-                    {
-                        adapter.Fill(dt);
-                    }
-                }
-            }
-            return dt;
         }
     }
 }
