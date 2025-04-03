@@ -63,7 +63,6 @@ D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.xml
 D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.IO.Pipelines.xml
 D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.xml
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form1.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.quanlynha.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Properties.Resources.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
@@ -73,7 +72,6 @@ D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.pdb
 D:\RentEaseTDT\RentEase\GUI\bin\Debug\GUI.exe.config
 D:\RentEaseTDT\RentEase\GUI\bin\Debug\GUI.pdb
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.CreateContract.resources
 D:\RentEase\GUI\bin\Debug\GUI.exe.config
 D:\RentEase\GUI\bin\Debug\GUI.exe
 D:\RentEase\GUI\bin\Debug\GUI.pdb
@@ -134,10 +132,7 @@ D:\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\RentEase\GUI\obj\Debug\GUI.exe
 D:\RentEase\GUI\obj\Debug\GUI.pdb
 D:\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
 D:\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.SignLiving.resources
 D:\RentEase\GUI\obj\Debug\GUI.SignLiving.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Guna.UI2.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -665,3 +660,26 @@ C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\GUI\obj\Debug\GUI.honh
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\EPPlus.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\EPPlus.Interfaces.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\EPPlus.System.Drawing.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\EPPlus.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_AddAssets.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_AddRoom.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_RentalHistory.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_AddContract.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_SignUp.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_Login.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources

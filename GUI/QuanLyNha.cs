@@ -1466,8 +1466,22 @@ namespace GUI
             f.ShowDialog();
             load_Building_By_User();
         }
+
+        // NhutHuy
         private ElectricWaterServiceBLL figureBLL = new ElectricWaterServiceBLL();
-        private void button13_Click_1(object sender, EventArgs e)
+        //private void button13_Click_1(object sender, EventArgs e)
+        //{
+        //    dgvServiceInfo.DataSource = null;
+        //    List<ElectricWaterServiceDTO> figures = figureBLL.GetAllElectricWaterData(listBuildingID.Text);
+        //    dgvServiceInfo.DataSource = figures;
+        //    checkBox_DV1.Visible = false;
+        //    checkBox_DV2.Visible = false;
+        //    checkBox_DV3.Visible = false;
+        //    checkBox_DV4.Visible = false;
+        //    checkBox_DV5.Visible = false;
+        //}
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
             dgvServiceInfo.DataSource = null;
             List<ElectricWaterServiceDTO> figures = figureBLL.GetAllElectricWaterData(listBuildingID.Text);
@@ -1477,6 +1491,54 @@ namespace GUI
             checkBox_DV3.Visible = false;
             checkBox_DV4.Visible = false;
             checkBox_DV5.Visible = false;
+        }
+        // The An
+        // Bãi đậu xe
+        private void button56_Click(object sender, EventArgs e)
+        {
+            GUI.QuanLyPhuongTien.QuanLyPhuonTien quanLyPhuonTienForm = new GUI.QuanLyPhuongTien.QuanLyPhuonTien(listBuildingID.Text);
+            quanLyPhuonTienForm.Owner = this;
+            quanLyPhuonTienForm.ShowDialog();
+        }
+        // Chinh
+        private void button53_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                // Kiểm tra xem có dòng nào được chọn không
+                if (guna2DataGridView7.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Vui lòng chọn một bãi đỗ xe để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Lấy areaId từ dòng được chọn
+                string areaId = guna2DataGridView7.SelectedRows[0].Cells["AREAID"].Value.ToString();
+
+                // Xác nhận sửa
+                DialogResult confirm = MessageBox.Show($"Bạn có chắc chắn muốn sửa thông tin bãi đỗ xe {areaId} không?",
+                                                      "Xác nhận sửa",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Question);
+                if (confirm == DialogResult.No)
+                {
+                    return;
+                }
+
+                // Mở form sửa thông tin
+                using (var suaForm = new GUI.QuanLyPhuongTien.Suaphuongtien(areaId, listBuildingID.Text))
+                {
+                    if (suaForm.ShowDialog() == DialogResult.OK)
+                    {
+                        // Nếu form đóng với DialogResult.OK, cập nhật lại dữ liệu
+                        RefreshParkingAreaData();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

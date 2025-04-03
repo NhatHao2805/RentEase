@@ -391,3 +391,12 @@ C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\BLL\obj\Debug\BLL.cspr
 C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\BLL\obj\Debug\BLL.dll
 C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\BLL\obj\Debug\BLL.pdb
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\EPPlus.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\EPPlus.Interfaces.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\EPPlus.System.Drawing.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.ComponentModel.Annotations.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Security.Cryptography.Xml.dll
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\EPPlus.xml
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\RentEaseTDT\RentEase\BLL\bin\Debug\System.Security.Cryptography.Xml.xml

@@ -364,26 +364,83 @@ END//
 
 
 
-CREATE PROCEDURE GetServiceUsage()
+CREATE PROCEDURE GetServiceUsage(
+    IN P_BUILDINGID VARCHAR(10),
+    IN P_SORTOPTION VARCHAR(10) 
+)
 BEGIN
-    -- Khai báo biến STT toàn cục
     SET @row_num = 0;
 
-    -- Lấy danh sách dịch vụ đã sử dụng
-    SELECT 
-        (@row_num := @row_num + 1) AS STT,  -- Số thứ tự tự động tăng
-        R.ROOMID, 
-        CONCAT(T.FIRSTNAME, ' ', T.LASTNAME) AS TENANTNAME,  -- Ghép họ và tên
-        S.SERVICENAME, 
-        S.UNITPRICE,
-        US.START_DATE,
-        US.END_DATE
-    FROM USE_SERVICE US
-    JOIN TENANT T ON US.TENANTID = T.TENANTID
-    JOIN SERVICE S ON US.SERVICEID = S.SERVICEID
-    JOIN CONTRACT C ON C.TENANTID = T.TENANTID
-    JOIN ROOM R ON C.ROOMID = R.ROOMID;
-    
+    -- Xác định điều kiện sắp xếp dựa trên tham số
+    SET @orderClause = CASE 
+        WHEN P_SORTOPTION = 'TenTang' THEN 'TENANTNAME ASC'
+        WHEN P_SORTOPTION = 'GiaTang' THEN 'UNITPRICE ASC'
+        WHEN P_SORTOPTION = 'GiaGiam' THEN 'UNITPRICE DESC'
+        WHEN P_SORTOPTION = 'NgayMoi' THEN 'START_DATE DESC'
+        WHEN P_SORTOPTION = 'NgayCu' THEN 'START_DATE ASC'
+        ELSE 'ROOMID ASC'
+    END;
+
+    -- Xây dựng câu lệnh SQL động với điều kiện WHERE
+    SET @sql = CONCAT('
+        SELECT 
+            (@row_num := @row_num + 1) AS STT,
+            R.ROOMID, 
+            CONCAT(T.FIRSTNAME, '' '', T.LASTNAME) AS TENANTNAME,
+            S.SERVICENAME, 
+            S.UNITPRICE,
+            US.START_DATE,
+            US.END_DATE
+        FROM USE_SERVICE US
+        JOIN TENANT T ON US.TENANTID = T.TENANTID
+        JOIN SERVICE S ON US.SERVICEID = S.SERVICEID
+        JOIN CONTRACT C ON C.TENANTID = T.TENANTID
+        JOIN ROOM R ON C.ROOMID = R.ROOMID
+        JOIN BUILDING B ON R.BUILDINGID = B.BUILDINGID 
+        WHERE R.BUILDINGID = ?
+        ORDER BY ', @orderClause);
+
+    PREPARE stmt FROM @sql;
+    EXECUTE stmt USING P_BUILDINGID;
+    DEALLOCATE PREPARE stmt;
+
+END //
+
+
+CREATE PROCEDURE GetRoomsByTenantAndBuilding(
+    IN p_tenantID VARCHAR(50),
+    IN p_buildingID VARCHAR(50)
+)
+BEGIN
+    SELECT p.ROOMID 
+    FROM contract c 
+    JOIN room p ON c.ROOMID = p.ROOMID 
+    WHERE c.TENANTID = p_tenantID 
+    AND p.BUILDINGID = p_buildingID;
+END //
+
+
+CREATE PROCEDURE GetTenantsByBuilding(
+    IN p_buildingID VARCHAR(50)
+)
+BEGIN
+    SELECT T.TenantID, T.FIRSTNAME, T.LASTNAME 
+    FROM Tenant T
+    JOIN CONTRACT C ON T.TenantID = C.TenantID
+    JOIN ROOM R ON C.RoomID = R.RoomID
+    WHERE R.BUILDINGID = p_buildingID;
+END //
+
+
+
+CREATE PROCEDURE GetAllElectricWaterData(
+    IN p_buildingID VARCHAR(50)
+)
+BEGIN
+    SELECT * FROM water_electricity we 
+    JOIN CONTRACT C ON we.TenantID = C.TenantID
+    JOIN ROOM R ON C.RoomID = R.RoomID
+    WHERE R.BUILDINGID = p_buildingID;
 END //
 
 
