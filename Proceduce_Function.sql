@@ -1,5 +1,86 @@
 DELIMITER //
 
+CREATE DEFINER=`root`@`localhost` FUNCTION `createAssetID`() RETURNS varchar(10) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
+    DETERMINISTIC
+BEGIN
+    DECLARE new_id VARCHAR(10);
+    DECLARE max_num INT;
+    DECLARE next_num INT;
+    
+    -- Tìm số lớn nhất hiện có trong database
+    SELECT IFNULL(MAX(CAST(SUBSTRING(ASSETID, 3) AS UNSIGNED)), 0) INTO max_num
+    FROM ASSETS
+    WHERE ASSETID REGEXP '^TS[0-9]+$';
+    
+    -- Tăng số lên 1
+    SET next_num = max_num + 1;
+    
+    -- Tạo ID mới với định dạng TS + số (4 chữ số, thêm 0 ở đầu nếu cần)
+    SET new_id = CONCAT('TS', LPAD(next_num, 4, '0'));
+    
+    RETURN new_id;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addAsset`(
+    IN p_roomid VARCHAR(10),
+    IN p_assetname VARCHAR(50),
+    IN p_price FLOAT,
+    IN p_status VARCHAR(50),
+    IN p_usedate DATE
+)
+BEGIN
+    DECLARE new_asset_id VARCHAR(10);
+    
+    -- Tạo ID tài sản mới (giả sử có hàm createAssetID tương tự như createRoomID)
+    SET new_asset_id = createAssetID();
+    
+    -- Thêm tài sản vào bảng ASSETS
+    INSERT INTO ASSETS (ASSETID, ROOMID, ASSETNAME, PRICE, STATUS, USE_DATE)
+    VALUES (new_asset_id, p_roomid, p_assetname, p_price, p_status, p_usedate);
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateAsset`(
+    IN p_assetid VARCHAR(10),
+    IN p_roomid VARCHAR(10),
+    IN p_assetname VARCHAR(50),
+    IN p_price FLOAT,
+    IN p_status VARCHAR(50),
+    IN p_usedate DATE
+)
+BEGIN
+    UPDATE ASSETS 
+    SET 
+        ROOMID = p_roomid,
+        ASSETNAME = p_assetname,
+        PRICE = p_price,
+        STATUS = p_status,
+        USE_DATE = p_usedate
+    WHERE 
+        ASSETID = p_assetid;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_DeleteAssets`(
+    IN p_assetid VARCHAR(10),
+    OUT p_result INT,
+    OUT p_message VARCHAR(255))
+BEGIN
+    DECLARE asset_exists INT;
+    
+    -- Kiểm tra xem tài sản có tồn tại không
+    SELECT COUNT(*) INTO asset_exists FROM ASSETS WHERE ASSETID = p_assetid;
+    
+    IF asset_exists = 0 THEN
+        SET p_result = 0;
+        SET p_message = 'Tài sản không tồn tại';
+    ELSE
+        -- Xóa tài sản (các bản ghi liên quan trong MAINTENANCE và REPAIR_REQUEST sẽ tự động xóa nhờ ON DELETE CASCADE)
+        DELETE FROM ASSETS WHERE ASSETID = p_assetid;
+        
+        SET p_result = 1;
+        SET p_message = CONCAT('Đã xóa tài sản ', p_assetid, ' thành công');
+    END IF;
+END//
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_FilterAssets`(
     IN p_username VARCHAR(20),
     IN p_sort_order VARCHAR(10), -- NULL, 'ASC' hoặc 'DESC'
@@ -70,12 +151,12 @@ BEGIN
 	END IF;
 END//
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `load_RentalHistory`(
+CREATE PROCEDURE `load_RentalHistory`(
     IN p_username VARCHAR(50),
     IN p_buildingid VARCHAR(20))
 BEGIN
     SELECT 
-        rh.CONTRACTID AS RENTAL_HISTORY_ID,
+        c.CONTRACTID AS RENTAL_HISTORY_ID,
         c.CONTRACTID,
         r.ROOMID,
         t.TENANTID,
@@ -88,15 +169,13 @@ BEGIN
         r.AREA,
         r.PRICE,
         r.STATUS,
-        rh.STARTDATE,
-        rh.ENDDATE,
-        rh.REASON_FOR_LEAVING,
+        c.STARTDATE,
+        c.ENDDATE,
+        'Đã kết thúc' AS REASON_FOR_LEAVING,
         r.BUILDINGID,
         b.ADDRESS AS BUILDING_ADDRESS
     FROM 
-        RENTAL_HISTORY rh
-    JOIN 
-        CONTRACT c ON rh.CONTRACTID = c.CONTRACTID
+        CONTRACT c
     JOIN 
         TENANT t ON c.TENANTID = t.TENANTID
     JOIN 
@@ -105,10 +184,11 @@ BEGIN
         BUILDING b ON r.BUILDINGID = b.BUILDINGID
     WHERE 
         b.USERNAME = p_username
-        AND  r.BUILDINGID = p_buildingid
+        AND r.BUILDINGID = p_buildingid
+        AND c.ENDDATE < CURDATE() -- Chỉ lấy các hợp đồng đã kết thúc
     ORDER BY 
-        rh.ENDDATE DESC;
-END//
+        c.ENDDATE DESC;
+END// 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `load_Assets`(
     IN p_username VARCHAR(50),
@@ -524,21 +604,12 @@ BEGIN
     DECLARE number_part INT;
     DECLARE new_id VARCHAR(20);
     
-    SELECT IFNULL(MAX(tenant_history.HISTORYID), 'LS0000') INTO max_id FROM tenant_history;
+    SELECT IFNULL(MAX(tenant_history.HISTORYID), 'LS000') INTO max_id FROM tenant_history;
     SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
-    SET new_id = CONCAT('LS', LPAD(number_part, 4, '0'));
+    SET new_id = CONCAT('LS', LPAD(number_part, 3, '0'));
     RETURN new_id;
 END//
 
-CREATE PROCEDURE load_lstn(
-	IN p_buildingID VARCHAR(50)
-)
-BEGIN 
-	SELECT th.* FROM tenant_history th
-	JOIN room r ON r.ROOMID = th.ROOMID
-	JOIN building b ON b.BUILDINGID = r.BUILDINGID
-	WHERE b.BUILDINGID = p_buildingID;
-END//
 
 CREATE PROCEDURE add_Contract(
     IN p_building_id VARCHAR(50),
@@ -1343,25 +1414,10 @@ BEGIN
     END IF;
 END//
 
-CREATE PROCEDURE `sp_DeleteAssets`(
-    IN p_assetid VARCHAR(10),
-    OUT p_result INT
-)
-BEGIN
-    -- Xóa tài sản (các bản ghi liên quan trong MAINTENANCE và REPAIR_REQUEST sẽ tự động xóa nhờ ON DELETE CASCADE)
-    DELETE FROM ASSETS WHERE ASSETID = p_assetid;
-    
-    -- Kiểm tra số dòng bị ảnh hưởng
-    IF ROW_COUNT() > 0 THEN
-        SET p_result = 1; -- Thành công
-    ELSE
-        SET p_result = 0; -- Không có tài sản nào bị xóa
-    END IF;
-END//
-
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `filter_room`(
     IN p_username VARCHAR(50),
+    IN p_buildingid VARCHAR(20),
     IN p_status_list VARCHAR(1000)
 )
 BEGIN
@@ -1385,7 +1441,7 @@ BEGIN
         SELECT r.*
         FROM ROOM r
         JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
-        WHERE b.USERNAME = p_username
+        WHERE b.USERNAME = p_username and r.buildingid = p_buildingid
         AND (
             SELECT COUNT(*) 
             FROM temp_statuses ts 

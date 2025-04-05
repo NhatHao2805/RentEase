@@ -113,6 +113,38 @@ namespace DAL
             }
             return listRoom;
         }
+
+        public static List<string> RoomAccess_Load_RoomInBuilding_2(string buildingid)
+        {
+            List<string> listRoom = new List<string>();
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return listRoom;
+
+                using (MySqlCommand command = new MySqlCommand("" +
+                    "Select ROOMID from room r " +
+                    "join building b on b.BUILDINGID = r.BUILDINGID " +
+                    "where b.BUILDINGID = @addr", conn))
+                {
+                    command.Parameters.AddWithValue("@addr", buildingid);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                listRoom.Add(reader.GetString(0));
+                            }
+                        }
+                        else
+                        {
+                            return listRoom;
+                        }
+                    }
+                }
+            }
+            return listRoom;
+        }
         public static List<string> RoomAccess_Load_RoomAddress(string username)
         {
             List<string> address = new List<string>();

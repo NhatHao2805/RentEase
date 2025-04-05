@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO.dto_service
 {
-    public class ElectricWaterServiceDTO
+    public class W_E
     {
         public string FigureID { get; set; }
+        public string UNITPRICEID { get; set; }
         public string TenantID { get; set; }
         public int OldFigure { get; set; }
         public int NewFigure { get; set; }

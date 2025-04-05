@@ -161,7 +161,6 @@ namespace GUI.QuanLyPhuongTien
 
         }
 
-
         private void guna2ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
 

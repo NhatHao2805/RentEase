@@ -10,18 +10,6 @@ INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBE
 ('accountant08', 'Hoàng Thị Hương', 'account@123', 'account8@rentease.com', '1987-04-18', 'Nữ', '0909876543', '258 Đường Nguyễn Trãi, Q5, TP.HCM'),
 ('technician09', 'Phan Văn Long', 'tech@123', 'tech9@rentease.com', '1983-06-22', 'Nam', '0912456789', '369 Đường Bà Hạt, Q10, TP.HCM'),
 ('reception10', 'Lý Thị Mai', 'reception@123', 'reception10@rentease.com', '1991-02-14', 'Nữ', '0987654321', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM');
-INSERT INTO TENANT (USERNAME, TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL) VALUES
-('ad', 'T001', 'Lê Văn', 'Cường', '1990-07-25', 'Nam', '0911222333', 'tenant1@gmail.com'),
-('ad', 'T002', 'Phạm Thị', 'Dung', '1995-03-12', 'Nữ', '0988777666', 'tenant2@gmail.com'),
-('ad', 'T003', 'Hoàng Văn', 'Em', '1988-11-05', 'Nam', '0909123456', 'tenant3@gmail.com'),
-('staff04', 'T004', 'Nguyễn Thị', 'Giang', '1992-09-18', 'Nữ', '0912345678', 'tenant4@gmail.com'),
-('staff04', 'T005', 'Trần Văn', 'Hải', '1985-04-30', 'Nam', '0987654321', 'tenant5@gmail.com'),
-('operator06', 'T006', 'Vũ Thị', 'Lan', '1993-12-15', 'Nữ', '0909876543', 'tenant6@gmail.com'),
-('operator06', 'T007', 'Phan Văn', 'Minh', '1987-06-22', 'Nam', '0912456789', 'tenant7@gmail.com'),
-('accountant08', 'T008', 'Lý Thị', 'Nga', '1991-02-14', 'Nữ', '0988999888', 'tenant8@gmail.com'),
-('technician09', 'T009', 'Đặng Văn', 'Phong', '1983-08-10', 'Nam', '0911222444', 'tenant9@gmail.com'),
-('reception10', 'T010', 'Bùi Thị', 'Quỳnh', '1994-05-28', 'Nữ', '0909111222', 'tenant10@gmail.com');
-
 -- 2 BUILDING
 INSERT INTO BUILDING (BUILDINGID, BUILDING_KEY, USERNAME, ADDRESS, NUMOFFLOORS, NUMOFROOMS) VALUES
 ('B001', 'BLD001', 'ad', '123 Đường Lê Lợi, Q1, TP.HCM', 5, 20),
@@ -48,6 +36,17 @@ INSERT INTO ROOM (ROOMID, BUILDINGID, TYPE, FLOOR, CONVENIENT, AREA, PRICE, STAT
 ('R010', 'B009', 'Studio', 1, 'Điều hòa, Wifi, Tủ lạnh', 24.0, 4800000, 'Đang ở');
 
 -- 4 TENANT
+INSERT INTO TENANT (USERNAME, TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL) VALUES
+('ad', 'T001', 'Lê Văn', 'Cường', '1990-07-25', 'Nam', '0911222333', 'tenant1@gmail.com'),
+('ad', 'T002', 'Phạm Thị', 'Dung', '1995-03-12', 'Nữ', '0988777666', 'tenant2@gmail.com'),
+('ad', 'T003', 'Hoàng Văn', 'Em', '1988-11-05', 'Nam', '0909123456', 'tenant3@gmail.com'),
+('staff04', 'T004', 'Nguyễn Thị', 'Giang', '1992-09-18', 'Nữ', '0912345678', 'tenant4@gmail.com'),
+('staff04', 'T005', 'Trần Văn', 'Hải', '1985-04-30', 'Nam', '0987654321', 'tenant5@gmail.com'),
+('operator06', 'T006', 'Vũ Thị', 'Lan', '1993-12-15', 'Nữ', '0909876543', 'tenant6@gmail.com'),
+('operator06', 'T007', 'Phan Văn', 'Minh', '1987-06-22', 'Nam', '0912456789', 'tenant7@gmail.com'),
+('accountant08', 'T008', 'Lý Thị', 'Nga', '1991-02-14', 'Nữ', '0988999888', 'tenant8@gmail.com'),
+('technician09', 'T009', 'Đặng Văn', 'Phong', '1983-08-10', 'Nam', '0911222444', 'tenant9@gmail.com'),
+('reception10', 'T010', 'Bùi Thị', 'Quỳnh', '1994-05-28', 'Nữ', '0909111222', 'tenant10@gmail.com');
 
 -- 5 CONTRACT
 INSERT INTO CONTRACT (CONTRACTID, ROOMID, TENANTID, CREATEDATE, STARTDATE, ENDDATE, MONTHLYRENT, PAYMENTSCHEDULE, DEPOSIT, STATUS, NOTES, AUTO_RENEW, TERMINATION_REASON, CONTRACT_FILE_PATH) VALUES
@@ -101,18 +100,14 @@ INSERT INTO BILL (BILLID, TENANTID, TOTAL, START_DATE, END_DATE, NOTIFICATION_SE
 ('HD009', 'T004', 13500000, '2024-05-20', '2024-06-19', TRUE, 0),
 ('HD010', 'T005', 9350000, '2024-06-15', '2024-07-14', FALSE, 0);
 
--- 9 BILL_DETAIL
-INSERT INTO BILLDETAIL (BILLID, SERVICEID, AMOUNT) VALUES
-('HD001', 'SV001', 500000),
-('HD001', 'SV003', 1000000),
-('HD001', 'SV006', 300000),
-('HD002', 'SV002', 300000),
-('HD002', 'SV004', 500000),
-('HD003', 'SV003', 1000000),
-('HD003', 'SV007', 200000),
-('HD004', 'SV005', 1500000),
-('HD004', 'SV009', 800000),
-('HD005', 'SV001', 500000);
+-- 9 BILL_DETAIL (updated structure)
+INSERT INTO BILLDETAIL (BILLID, ID, AMOUNT) VALUES
+('HD001', 'CS001', 500000),
+('HD001', 'SV002', 1000000),
+('HD001', 'CS003', 300000),
+('HD002', 'SV004', 300000),
+('HD002', 'SV001', 500000),
+('HD003', 'CS003', 1000000);
 
 -- 10 PAYMENT
 INSERT INTO PAYMENT (PAYMENTID, BILLID, METHOD, TOTAL, PAYMENTTIME) VALUES
@@ -154,18 +149,23 @@ INSERT INTO PARKINGAREA (AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY) VALUES
 ('PA010', 'B007', 'Tầng hầm B1', 'Xe máy', 45);
 
 
--- 14 WATER_ELECTRICIY
-INSERT INTO WATER_ELECTRICITY (FIGUREID, TENANTID, OLDFIGURE, NEWFIGURE, UNIT, START_DATE, END_DATE, RECORD_DATE, TYPE) VALUES
-('CS001', 'T001', 100, 150, 'kWh', '2024-01-15', '2024-02-14', '2024-02-14', 'ELECTRICITY'),
-('CS002', 'T001', 50, 70, 'm3', '2024-01-15', '2024-02-14', '2024-02-14', 'WATER'),
-('CS003', 'T002', 120, 180, 'kWh', '2024-02-10', '2024-03-09', '2024-03-09', 'ELECTRICITY'),
-('CS004', 'T002', 60, 85, 'm3', '2024-02-10', '2024-03-09', '2024-03-09', 'WATER'),
-('CS005', 'T003', 80, 120, 'kWh', '2024-03-05', '2024-04-04', '2024-04-04', 'ELECTRICITY'),
-('CS006', 'T003', 40, 55, 'm3', '2024-03-05', '2024-04-04', '2024-04-04', 'WATER'),
-('CS007', 'T004', 150, 220, 'kWh', '2024-04-20', '2024-05-19', '2024-05-19', 'ELECTRICITY'),
-('CS008', 'T004', 70, 100, 'm3', '2024-04-20', '2024-05-19', '2024-05-19', 'WATER'),
-('CS009', 'T005', 90, 140, 'kWh', '2024-05-15', '2024-06-14', '2024-06-14', 'ELECTRICITY'),
-('CS010', 'T005', 45, 65, 'm3', '2024-05-15', '2024-06-14', '2024-06-14', 'WATER');
+-- 13 WATER_ELEC_UNITPRICE (new table)
+INSERT INTO WATER_ELEC_UNITPRICE (UNITPRICEID, TYPE, UNITPRICE) VALUES
+('UP001', 'ELECTRICITY', 3500),  -- 3,500 VND/kWh
+('UP002', 'WATER', 10000);       -- 10,000 VND/m3
+
+-- 14 WATER_ELECTRICITY (updated structure)
+INSERT INTO WATER_ELECTRICITY (FIGUREID, UNITPRICEID, TENANTID, OLDFIGURE, NEWFIGURE, UNIT, START_DATE, END_DATE, RECORD_DATE, TYPE) VALUES
+('CS001', 'UP001', 'T001', 100, 150, 'kWh', '2024-01-15', '2024-02-14', '2024-02-14', 'ELECTRICITY'),
+('CS002', 'UP002', 'T001', 50, 70, 'm3', '2024-01-15', '2024-02-14', '2024-02-14', 'WATER'),
+('CS003', 'UP001', 'T002', 120, 180, 'kWh', '2024-02-10', '2024-03-09', '2024-03-09', 'ELECTRICITY'),
+('CS004', 'UP002', 'T002', 60, 85, 'm3', '2024-02-10', '2024-03-09', '2024-03-09', 'WATER'),
+('CS005', 'UP001', 'T003', 80, 120, 'kWh', '2024-03-05', '2024-04-04', '2024-04-04', 'ELECTRICITY'),
+('CS006', 'UP002', 'T003', 40, 55, 'm3', '2024-03-05', '2024-04-04', '2024-04-04', 'WATER'),
+('CS007', 'UP001', 'T004', 150, 220, 'kWh', '2024-04-20', '2024-05-19', '2024-05-19', 'ELECTRICITY'),
+('CS008', 'UP002', 'T004', 70, 100, 'm3', '2024-04-20', '2024-05-19', '2024-05-19', 'WATER'),
+('CS009', 'UP001', 'T005', 90, 140, 'kWh', '2024-05-15', '2024-06-14', '2024-06-14', 'ELECTRICITY'),
+('CS010', 'UP002', 'T005', 45, 65, 'm3', '2024-05-15', '2024-06-14', '2024-06-14', 'WATER');
 
 -- 15 ASSETS
 INSERT INTO ASSETS (ASSETID, ROOMID, ASSETNAME, PRICE, STATUS, USE_DATE) VALUES
@@ -283,19 +283,19 @@ INSERT INTO TEMPORARY_REGISTRATION (REGISTRATIONID, TENANTID, ROOMID, REGISTRATI
 ('DK008', 'T008', 'R005', '2024-08-20', '2025-02-19', 'Đã duyệt', '2024-08-15', '2024-08-15'),
 ('DK009', 'T009', 'R007', '2024-09-15', '2025-09-14', 'Đã duyệt', '2024-09-10', '2024-09-10'),
 ('DK010', 'T010', 'R009', '2024-10-10', '2025-04-09', 'Đang chờ', '2024-10-05', '2024-10-05');
-
--- 24 TENANT_HISTORY (đã đổi tên từ TENANTHISTORY)
-INSERT INTO TENANT_HISTORY (HISTORYID, TENANTID, ROOMID, STARTDATE, ENDDATE, NOTES) VALUES
-('LS001', 'T001', 'R001', '2024-01-15', NULL, 'Người thuê tốt'),
-('LS002', 'T002', 'R003', '2024-02-10', NULL, 'Thanh toán đúng hạn'),
-('LS003', 'T003', 'R004', '2024-03-05', NULL, 'Giữ phòng sạch sẽ'),
-('LS004', 'T004', 'R006', '2024-04-20', NULL, 'Thường xuyên sử dụng dịch vụ'),
-('LS005', 'T005', 'R008', '2024-05-15', NULL, 'Có thú cưng'),
-('LS006', 'T006', 'R010', '2024-06-10', NULL, 'Ít khi ở nhà'),
-('LS007', 'T007', 'R002', '2024-07-05', NULL, 'Thân thiện'),
-('LS008', 'T008', 'R005', '2024-08-20', NULL, 'Hay có khách'),
-('LS009', 'T009', 'R007', '2024-09-15', NULL, 'Đúng giờ'),
-('LS010', 'T010', 'R009', '2024-10-10', NULL, 'Mới chuyển đến');
+ 
+-- 24 TENANT_HISTORY (đã cập nhật theo cấu trúc mới)
+INSERT INTO TENANT_HISTORY (HISTORYID, CONTRACTID, TENANTID, ROOMID, STARTDATE, ENDDATE, NOTES) VALUES
+('LS001', 'CT001', 'T001', 'R001', '2024-01-15', NULL, 'Người thuê tốt, thanh toán đúng hạn'),
+('LS002', 'CT002', 'T002', 'R003', '2024-02-10', NULL, 'Thường xuyên sử dụng dịch vụ bổ sung'),
+('LS003', 'CT003', 'T003', 'R004', '2024-03-05', NULL, 'Giữ phòng sạch sẽ, ít khiếu nại'),
+('LS004', 'CT004', 'T004', 'R006', '2024-04-20', NULL, 'Có thú cưng nhưng được quản lý tốt'),
+('LS005', 'CT005', 'T005', 'R008', '2024-05-15', NULL, 'Thân thiện với hàng xóm'),
+('LS006', 'CT006', 'T006', 'R010', '2024-06-10', NULL, 'Ít khi ở nhà, chủ yếu đi công tác'),
+('LS007', 'CT007', 'T007', 'R002', '2024-07-05', NULL, 'Thường xuyên có khách thăm'),
+('LS008', 'CT008', 'T008', 'R005', '2024-08-20', NULL, 'Đúng giờ trong thanh toán'),
+('LS009', 'CT009', 'T009', 'R007', '2024-09-15', NULL, 'Yêu cầu bảo trì thường xuyên'),
+('LS010', 'CT010', 'T010', 'R009', '2024-10-10', NULL, 'Mới chuyển đến, chưa có đánh giá');
 
 -- 25 RENTAL_HISTORY (đã đổi tên từ RENTALHISTORY)
 INSERT INTO RENTAL_HISTORY (CONTRACTID, ROOMID, TENANTID, STARTDATE, ENDDATE, REASON_FOR_LEAVING) VALUES
@@ -309,3 +309,21 @@ INSERT INTO RENTAL_HISTORY (CONTRACTID, ROOMID, TENANTID, STARTDATE, ENDDATE, RE
 ('CT018', 'R008', 'T008', '2023-08-20', '2024-08-19', 'Mua nhà riêng'),
 ('CT019', 'R009', 'T009', '2023-09-15', '2024-09-14', 'Về quê'),
 ('CT020', 'R010', 'T010', '2023-10-10', '2024-10-09', 'Chuyển công tác');
+
+-- 26 PARKING (đã cập nhật cấu trúc)
+INSERT INTO PARKING (PARKINGID, AREAID, VEHICLEID, STATUS) VALUES
+('PK001', 'PA001', 'XE001', 'Đang sử dụng'),
+('PK002', 'PA001', 'XE002', 'Đang sử dụng'),
+('PK003', 'PA002', 'XE003', 'Đang sử dụng'),
+('PK004', 'PA002', 'XE004', 'Đang sử dụng'),
+('PK005', 'PA003', 'XE005', 'Đang sử dụng'),
+('PK006', 'PA004', 'XE006', 'Đang sử dụng'),
+('PK007', 'PA005', 'XE007', 'Đang sử dụng'),
+('PK008', 'PA006', 'XE008', 'Đang sử dụng'),
+('PK009', 'PA007', 'XE009', 'Đang sử dụng'),
+('PK010', 'PA008', 'XE010', 'Đang sử dụng');
+
+-- 27 VEHICLE_UNITPRICE
+INSERT INTO VEHICLE_UNITPRICE (VEHICLE_UNITPRICE_ID, UNITPRICE) VALUES
+('VUP001', 500000),  -- Giá gửi xe máy
+('VUP002', 1500000);

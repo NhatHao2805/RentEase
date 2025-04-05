@@ -9,7 +9,6 @@ namespace DAL.honhathao
 {
     public class TenantAccess
     {
-        
         public static List<string> Load_TenantID()
         {
             List<string> name = new List<string>();

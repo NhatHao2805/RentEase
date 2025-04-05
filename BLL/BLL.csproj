@@ -99,7 +99,9 @@
   <ItemGroup>
     <Compile Include="AccountBLL.cs" />
     <Compile Include="bll_service\DeleteDichVuBLL.cs" />
-    <Compile Include="bll_service\ElectricWaterServiceBLL.cs" />
+    <Compile Include="honhathao\PaymentBLL.cs" />
+    <Compile Include="honhathao\Payment.cs" />
+    <Compile Include="honhathao\W_E_BLL.cs" />
     <Compile Include="bll_service\InsertServiceBLL.cs" />
     <Compile Include="bll_service\KhachHangBLL.cs" />
     <Compile Include="bll_service\ServiceBLL.cs" />
@@ -109,6 +111,8 @@
     <Compile Include="hoaian\RentalHistoryBLL.cs" />
     <Compile Include="hoaian\RoomBLL.cs" />
     <Compile Include="honhathao\BuildingBLL.cs" />
+    <Compile Include="honhathao\BillBLL.cs" />
+    <Compile Include="honhathao\BillDetailBLL.cs" />
     <Compile Include="honhathao\ContractBLL.cs" />
     <Compile Include="honhathao\RegistrationBLL.cs" />
     <Compile Include="honhathao\TenantBLL.cs" />

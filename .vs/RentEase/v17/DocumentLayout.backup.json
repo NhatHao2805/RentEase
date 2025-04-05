@@ -1,127 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\",
+  "WorkspaceRootPath": "C:\\Users\\ACER\\Downloads\\RentEase-HoaiAn (1)\\RentEase-HoaiAn\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\onedrive\\m\u00E1y t\u00EDnh\\cnpm\\rentease\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-hoaian (1)\\rentease-hoaian\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-HoaiAn (1)\\RentEase-HoaiAn\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\bll\\hoaian\\assetbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\hoaian\\assetbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\dal\\hoaian\\assetaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\hoaian\\assetaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\quanlynha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\bll\\hoaian\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\hoaian\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\dal\\hoaian\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\hoaian\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 119,
+      "VerticalTabListWidth": 211,
       "DocumentGroups": [
         {
           "DockedWidth": 140,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AssetBLL.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\BLL\\hoaian\\AssetBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\hoaian\\AssetBLL.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\BLL\\hoaian\\AssetBLL.cs",
-              "RelativeToolTip": "BLL\\hoaian\\AssetBLL.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T16:43:34.49Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "QuanLyNha.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.Designer.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLyNha.Designer.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.Designer.cs",
-              "RelativeToolTip": "GUI\\QuanLyNha.Designer.cs",
-              "ViewState": "AgIAAG4DAAAAAAAAAAAgwHQDAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T16:43:06.079Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AssetAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\hoaian\\AssetAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\hoaian\\AssetAccess.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\hoaian\\AssetAccess.cs",
-              "RelativeToolTip": "DAL\\hoaian\\AssetAccess.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAkwJUAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T16:23:53.959Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RoomAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\hoaian\\RoomAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\hoaian\\RoomAccess.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\hoaian\\RoomAccess.cs",
-              "RelativeToolTip": "DAL\\hoaian\\RoomAccess.cs",
-              "ViewState": "AgIAAJQAAAAAAAAAAAAqwJIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T16:22:46.38Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RoomBLL.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\BLL\\hoaian\\RoomBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\hoaian\\RoomBLL.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\BLL\\hoaian\\RoomBLL.cs",
-              "RelativeToolTip": "BLL\\hoaian\\RoomBLL.cs",
-              "ViewState": "AgIAAKIAAAAAAAAAAAAgwLEAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T16:21:40.572Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-HoaiAn (1)\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs [Design]",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-HoaiAn (1)\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs [Design]",
               "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T08:47:20.77Z",
+              "WhenOpened": "2025-04-03T19:42:03.43Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-HoaiAn (1)\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-HoaiAn (1)\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.cs",
-              "ViewState": "AgIAAOIFAAAAAAAAAADwv/AFAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGMBAAAAAAAAAAAAABABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-30T12:21:36.563Z",
               "EditorCaption": ""

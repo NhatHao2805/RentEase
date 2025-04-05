@@ -1,29 +1,12 @@
 drop database if exists rentease;
-
-
 CREATE DATABASE rentease DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE rentease;
-
-/*==============================================================*/
-/* Table: USER                                               */
-/*==============================================================*/
-CREATE TABLE USER (
-    USERNAME             VARCHAR(20) NOT NULL COMMENT 'Tên người dùng',
-    FULLNAME             VARCHAR(50) COMMENT 'Họ và tên',
-    PASSWORD             VARCHAR(20) COMMENT 'Mật khẩu',
-    EMAIL                VARCHAR(50) COMMENT 'Email',
-    BIRTH                DATE COMMENT 'Ngày sinh',
-    GENDER               VARCHAR(10) COMMENT 'Giới tính',
-    PHONENUMBER          VARCHAR(20) COMMENT 'Số điện thoại',
-    ADDRESS              VARCHAR(100) COMMENT 'Địa chỉ',
-    PRIMARY KEY (USERNAME)
-);
 
 /*==============================================================*/
 /* Table: TENANT                                                */
 /*==============================================================*/
 CREATE TABLE TENANT (
-	USERNAME			 VARCHAR(10) NOT NULL COMMENT 'ID chủ nhà',
+	USERNAME			 VARCHAR(20) NOT NULL COMMENT 'ID chủ nhà',
     TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     FIRSTNAME            VARCHAR(50) COMMENT 'Tên',
     LASTNAME             VARCHAR(50) COMMENT 'Họ',
@@ -63,9 +46,8 @@ CREATE TABLE SERVICE (
 /*==============================================================*/
 CREATE TABLE BILLDETAIL (
 	BILLID               	VARCHAR(10) NOT NULL COMMENT 'ID hóa đơn',
-    SERVICEID               VARCHAR(10) NOT NULL COMMENT 'ID dịch vụ',
-    AMOUNT           		FLOAT NOT NULL COMMENT 'Thành tiền',
-    PRIMARY KEY (BILLID, SERVICEID)
+    ID                		VARCHAR(10) NOT NULL COMMENT 'ID dịch vụ/chỉ số điện/nước',
+    AMOUNT           		FLOAT NOT NULL COMMENT 'Thành tiền'
 );
 
 /*==============================================================*/
@@ -191,7 +173,20 @@ CREATE TABLE REPAIR_REQUEST (
     PRIMARY KEY (REQUESTID)
 );
 
-
+/*==============================================================*/
+/* Table: USER                                               */
+/*==============================================================*/
+CREATE TABLE USER (
+    USERNAME             VARCHAR(20) NOT NULL COMMENT 'Tên người dùng',
+    FULLNAME             VARCHAR(50) COMMENT 'Họ và tên',
+    PASSWORD             VARCHAR(20) COMMENT 'Mật khẩu',
+    EMAIL                VARCHAR(50) COMMENT 'Email',
+    BIRTH                DATE COMMENT 'Ngày sinh',
+    GENDER               VARCHAR(10) COMMENT 'Giới tính',
+    PHONENUMBER          VARCHAR(20) COMMENT 'Số điện thoại',
+    ADDRESS              VARCHAR(100) COMMENT 'Địa chỉ',
+    PRIMARY KEY (USERNAME)
+);
 
 /*==============================================================*/
 /* Table: PARKINGMANAGEMENT                                     */
@@ -212,6 +207,7 @@ CREATE TABLE PARKING (
     PARKINGID            		VARCHAR(10) NOT NULL COMMENT 'ID chỗ đậu xe',
     AREAID						VARCHAR(10) NOT NULL COMMENT 'ID bãi đậu xe',
     VEHICLEID              		VARCHAR(10) COMMENT 'ID xe',
+    STATUS						VARCHAR(20) COMMENT 'Tình trạng',
     PRIMARY KEY (PARKINGID)
 );
 
@@ -247,7 +243,7 @@ CREATE TABLE RELATIONSHIP (
 );
 
 /*==============================================================*/
-/* Table: RENTALHISTORY                                         */
+/* Table: RENTAL_HISTORY                                         */
 /*==============================================================*/
 CREATE TABLE RENTAL_HISTORY (
     CONTRACTID              VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
@@ -284,12 +280,13 @@ CREATE TABLE USE_SERVICE (
     END_DATE            DATE COMMENT 'Ngày kết thúc sử dụng',
     PRIMARY KEY (TENANTID, SERVICEID)
 );
-
+ 
 /*==============================================================*/
 /* Table: TENANTHISTORY                                         */
 /*==============================================================*/
 CREATE TABLE TENANT_HISTORY (
 	HISTORYID			VARCHAR(10) NOT NULL COMMENT 'ID lịch sử thuê',
+    CONTRACTID			VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
     TENANTID            VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     ROOMID              VARCHAR(100) COMMENT 'ID phòng',
     STARTDATE            DATETIME COMMENT 'Ngày bắt đầu',
@@ -303,11 +300,21 @@ CREATE TABLE TENANT_HISTORY (
 /* Table: VEHICLE                                               */
 /*==============================================================*/
 CREATE TABLE VEHICLE (
-    VEHICLEID            VARCHAR(10) NOT NULL COMMENT 'ID phương tiện',
-    TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
-    TYPE                 VARCHAR(50) COMMENT 'Loại phương tiện',
-    LICENSEPLATE         VARCHAR(20) COMMENT 'Biển số xe',
+    VEHICLEID            	VARCHAR(10) NOT NULL COMMENT 'ID phương tiện',
+    TENANTID             	VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
+    VEHICLE_UNITPRICE_ID	VARCHAR(10) NOT NULL COMMENT 'ID đơn giá phương tiện',
+    TYPE                 	VARCHAR(50) COMMENT 'Loại phương tiện',
+    LICENSEPLATE         	VARCHAR(20) COMMENT 'Biển số xe',
     PRIMARY KEY (VEHICLEID)
+);
+
+/*==============================================================*/
+/* Table: VEHICLE_UNITPRICE                                               */
+/*==============================================================*/
+CREATE TABLE VEHICLE_UNITPRICE (
+    VEHICLE_UNITPRICE_ID            VARCHAR(10) NOT NULL COMMENT 'ID đơn giá phương tiện',
+    UNITPRICE         				FLOAT COMMENT 'Đơn giá',
+    PRIMARY KEY (VEHICLE_UNITPRICE_ID)
 );
 
 /*==============================================================*/
@@ -315,6 +322,7 @@ CREATE TABLE VEHICLE (
 /*==============================================================*/
 CREATE TABLE WATER_ELECTRICITY (
     FIGUREID             VARCHAR(10) NOT NULL COMMENT 'ID chỉ số',
+    UNITPRICEID			 VARCHAR(10) NOT NULL COMMENT 'ID đơn giá',
     TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     OLDFIGURE            FLOAT COMMENT 'Chỉ số cũ',
     NEWFIGURE            FLOAT COMMENT 'Chỉ số mới',
@@ -324,6 +332,16 @@ CREATE TABLE WATER_ELECTRICITY (
     RECORD_DATE          DATE COMMENT 'Ngày ghi chỉ số',
     TYPE                 ENUM('ELECTRICITY', 'WATER') NOT NULL COMMENT 'Loại chỉ số (điện/nước)',
     PRIMARY KEY (FIGUREID)
+);
+
+/*==============================================================*/
+/* Table: WATER_ELEC_UNITPRICE                                      */
+/*==============================================================*/
+CREATE TABLE WATER_ELEC_UNITPRICE (
+    UNITPRICEID          VARCHAR(10) NOT NULL COMMENT 'ID đơn giá',
+    TYPE			 	 VARCHAR(10) COMMENT 'Phân loại điện/nước',
+    UNITPRICE            FLOAT COMMENT 'Đơn giá',
+    PRIMARY KEY (UNITPRICEID)
 );
 
 /*==============================================================*/
@@ -346,11 +364,6 @@ CREATE TABLE CONTRACT_NOTIFICATION (
 ALTER TABLE BILL
 ADD CONSTRAINT FK_BILL_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID) ON DELETE CASCADE;
 
--- Bảng BILLDETAIL
-ALTER TABLE BILLDETAIL
-ADD CONSTRAINT FK_BILLDETAIL_BILL FOREIGN KEY (BILLID) REFERENCES BILL(BILLID) ON DELETE CASCADE,
-ADD CONSTRAINT FK_BILLDETAIL_SERVICE FOREIGN KEY (SERVICEID) REFERENCES SERVICE(SERVICEID) ON DELETE CASCADE;
-
 -- Bảng PAYMENT
 ALTER TABLE PAYMENT
 ADD CONSTRAINT FK_PAYMENT_BILL FOREIGN KEY (BILLID) REFERENCES BILL(BILLID) ON DELETE CASCADE;
@@ -370,8 +383,8 @@ ALTER TABLE ROOM
 ADD CONSTRAINT FK_ROOM_BUILDING FOREIGN KEY (BUILDINGID) REFERENCES BUILDING(BUILDINGID) ON DELETE CASCADE;
 
 -- Bảng TENANT
--- ALTER TABLE tenant
--- ADD CONSTRAINT FK_TENANT_USER FOREIGN KEY (USERNAME) REFERENCES USER(USERNAME) ON DELETE CASCADE;
+ALTER TABLE TENANT
+ADD CONSTRAINT FK_TENANT_USER FOREIGN KEY (USERNAME) REFERENCES USER(USERNAME) ON DELETE CASCADE;
 
 -- Bảng ASSETS
 ALTER TABLE ASSETS
@@ -403,18 +416,19 @@ ALTER TABLE RELATIONSHIP
 ADD CONSTRAINT FK_RELATIONSHIP_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID) ON DELETE CASCADE,
 ADD CONSTRAINT FK_RELATIONSHIP_RELATIVES FOREIGN KEY (RELATIVEID) REFERENCES RELATIVES(RELATIVEID) ON DELETE CASCADE;
 
--- Bảng RENTAL_HISTORY (đã sửa tên từ RENTALHISTORY)
+-- Bảng RENTAL_HISTORY
 ALTER TABLE RENTAL_HISTORY
 ADD CONSTRAINT FK_RENTAL_HISTORY_ROOM FOREIGN KEY (ROOMID) REFERENCES ROOM(ROOMID) ON DELETE CASCADE,
 ADD CONSTRAINT FK_RENTAL_HISTORY_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID) ON DELETE CASCADE;
 
--- Bảng TEMPORARY_REGISTRATION (đã sửa tên từ TEMPORARY_RESIDENCE)
+-- Bảng TEMPORARY_REGISTRATION
 ALTER TABLE TEMPORARY_REGISTRATION
 ADD CONSTRAINT FK_TEMPORARY_REGISTRATION_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID) ON DELETE CASCADE,
 ADD CONSTRAINT FK_TEMPORARY_REGISTRATION_ROOM FOREIGN KEY (ROOMID) REFERENCES ROOM(ROOMID) ON DELETE CASCADE;
 
--- Bảng TENANT_HISTORY (đã sửa tên từ TENANTHISTORY)
+-- Bảng TENANT_HISTORY
 ALTER TABLE TENANT_HISTORY
+ADD CONSTRAINT FK_TENANT_HISTORY_CONTRACT FOREIGN KEY (CONTRACTID) REFERENCES CONTRACT(CONTRACTID) ON DELETE CASCADE,
 ADD CONSTRAINT FK_TENANT_HISTORY_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID) ON DELETE CASCADE,
 ADD CONSTRAINT FK_TENANT_HISTORY_ROOM FOREIGN KEY (ROOMID) REFERENCES ROOM(ROOMID) ON DELETE CASCADE;
 
@@ -423,16 +437,17 @@ ALTER TABLE VEHICLE
 ADD CONSTRAINT FK_VEHICLE_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID) ON DELETE CASCADE;
 
 -- Bảng PARKING
--- ALTER TABLE PARKING
--- ADD CONSTRAINT FK_PARKING_VEHICLE FOREIGN KEY (VEHICLEID) REFERENCES VEHICLE(VEHICLEID) ON DELETE CASCADE,
--- ADD CONSTRAINT FK_PARKING_PARKINGAREA FOREIGN KEY (AREAID) REFERENCES PARKINGAREA(AREAID) ON DELETE CASCADE;
+ALTER TABLE PARKING
+ADD CONSTRAINT FK_PARKING_VEHICLE FOREIGN KEY (VEHICLEID) REFERENCES VEHICLE(VEHICLEID) ON DELETE CASCADE,
+ADD CONSTRAINT FK_PARKING_PARKINGAREA FOREIGN KEY (AREAID) REFERENCES PARKINGAREA(AREAID) ON DELETE CASCADE;
 
 -- Bảng PARKINGAREA
--- ALTER TABLE PARKINGAREA
--- ADD CONSTRAINT FK_PARKINGAREA_BUILDING FOREIGN KEY (BUILDINGID) REFERENCES BUILDING(BUILDINGID) ON DELETE CASCADE;
+ALTER TABLE PARKINGAREA
+ADD CONSTRAINT FK_PARKINGAREA_BUILDING FOREIGN KEY (BUILDINGID) REFERENCES BUILDING(BUILDINGID) ON DELETE CASCADE;
 
 -- Bảng WATER_ELECTRICITY
 ALTER TABLE WATER_ELECTRICITY
+ADD CONSTRAINT FK_WATER_ELECTRICITY_UNITPRICE FOREIGN KEY (UNITPRICEID) REFERENCES WATER_ELEC_UNITPRICE(UNITPRICEID) ON DELETE CASCADE,
 ADD CONSTRAINT FK_WATER_ELECTRICITY_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID) ON DELETE CASCADE;
 
 -- Bảng USE_SERVICE
