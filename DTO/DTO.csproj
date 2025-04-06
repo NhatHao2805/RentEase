@@ -74,7 +74,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dto_service\Contract_Service.cs" />
-    <Compile Include="dto_service\ElectricWaterServiceDTO.cs" />
+    <Compile Include="honhathao\Payment.cs" />
+    <Compile Include="honhathao\W_E.cs" />
     <Compile Include="dto_service\KhachHangDTO.cs" />
     <Compile Include="dto_service\ServiceUsageDTO.cs" />
     <Compile Include="dto_service\UserServiceDTO.cs" />
@@ -82,6 +83,9 @@
     <Compile Include="hoaian\RentalHistory.cs" />
     <Compile Include="hoaian\Room.cs" />
     <Compile Include="honhathao\Building.cs" />
+    <Compile Include="honhathao\bill.cs" />
+    <Compile Include="honhathao\billDetail.cs" />
+    <Compile Include="honhathao\Tenant_History.cs" />
     <Compile Include="honhathao\Registration.cs" />
     <Compile Include="honhathao\Tenant.cs" />
     <Compile Include="quanlyphuongtien\ParkingArea.cs" />

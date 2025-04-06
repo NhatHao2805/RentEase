@@ -19,7 +19,6 @@ using GUI.honhathao;
 using BLL.honhathao;
 using DTO.honhathao;
 using GUI.QuanLyPhuongTien;
-using BLL.bll_service;
 using DTO.dto_service;
 
 namespace GUI
@@ -56,8 +55,10 @@ namespace GUI
             load_Contract(0, null);
             load_Assets();
             loadTenant(null);
-            loadTenantHistory();
+            addTenantHistory();//New NhatHao
+            loadTenantHistory(null);
             loadRegistration(null);
+            loadBill(null);//New NhatHao
         }
 
         private void clearAllDataGridView()
@@ -90,9 +91,9 @@ namespace GUI
             dgv_Tenant.Columns[6].Width = 300;
             dgv_Tenant.ScrollBars = ScrollBars.Both;
         }
-        private void loadTenantHistory()
+        private void loadTenantHistory(string name)
         {
-            DataTable data = TenantHistoryBLL.TenantHistoryBLL_load_Tenant(listBuildingID.Text);
+            DataTable data = TenantHistoryBLL.TenantHistoryBLL_load_Tenant(listBuildingID.Text,name);
             dgv_LSTN.DataSource = data;
             dgv_LSTN.Columns[0].Width = 90;
             dgv_LSTN.Columns[1].Width = 150;
@@ -133,7 +134,7 @@ namespace GUI
             dgv_QLHD.ScrollBars = ScrollBars.Both;
         }
 
-        private void load_Assets() // 4/3/2025 Hoài An: thêm điều kiện kiểm tra listbuildingid
+        private void load_Assets() 
         {
             if (listBuildingID.SelectedItem == null)
             {
@@ -152,7 +153,7 @@ namespace GUI
             dgv_QLCSVC.ScrollBars = ScrollBars.Both;
         }
 
-        private void load_QLP() // 4/3/2025 Hoài An: thêm điều kiện kiểm tra listbuildingid
+        private void load_QLP() 
         {
             if (listBuildingID.SelectedItem == null)
             {
@@ -197,6 +198,9 @@ namespace GUI
 
             dklt4.Location = tabHD;
             dklt4.Size = size_tabHD;
+
+            tabControl1.Location = tabHD;
+            tabControl1.Size = size_tabHD;
         }
 
         private void load_Building_By_User()
@@ -230,6 +234,130 @@ namespace GUI
         }
 
 
+        //-----------------------------------------------------------------------
+        //Code mới
+
+
+
+        //Code sửa từ function đã có
+
+
+        //Code xóa
+
+
+        //-----------------------------------------------------------------------
+        private void button11_Click(object sender, EventArgs e)
+        {
+            DataTable tmp = TenantHistoryBLL.TenantHistoryBLL_count_TenantHistory(listBuildingID.Text);
+            Console.WriteLine(tmp.Rows.Count);
+            if (tmp != null)
+            {
+                for (int i = 0; i < tmp.Rows.Count; i++)
+                {
+                    TenantHistoryBLL.TenantHistoryBLL_auto_AddTenantHistory(
+                        tmp.Rows[i][0].ToString(),
+                        tmp.Rows[i][2].ToString(),
+                        tmp.Rows[i][1].ToString(),
+                        tmp.Rows[i][4].ToString(),
+                        tmp.Rows[i][5].ToString());
+                }
+            }
+        }
+
+        private void addTenantHistory()
+        {
+            DataTable tmp = TenantHistoryBLL.TenantHistoryBLL_count_TenantHistory(listBuildingID.Text);
+            Console.WriteLine(tmp.Rows.Count);
+            if (tmp != null)
+            {
+                for (int i = 0; i < tmp.Rows.Count; i++)
+                {
+                    TenantHistoryBLL.TenantHistoryBLL_auto_AddTenantHistory(
+                        tmp.Rows[i][0].ToString(),
+                        tmp.Rows[i][2].ToString(),
+                        tmp.Rows[i][1].ToString(),
+                        tmp.Rows[i][4].ToString(),
+                        tmp.Rows[i][5].ToString());
+                }
+            }
+        }
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            
+            Form_TenantHistory f = new Form_TenantHistory(dgv_LSTN.Rows[dgv_LSTN.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            f.ShowDialog();
+            loadTenantHistory(null);
+        }
+        private void guna2GradientButton3_Click(object sender, EventArgs e)
+        {
+            Form_LoadAll form_LoadAll = new Form_LoadAll();
+            form_LoadAll.ShowDialog();
+        }
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            loadTenantHistory(guna2TextBox2.Text);
+        }
+        private void loadBill(string name)
+        {
+            DataTable data = BillBLL.BillBLL_load_Bill(form1.taikhoan.Username, name,listBuildingID.Text);
+            dgv_thanhtoan.DataSource = data;
+            dgv_thanhtoan.ScrollBars = ScrollBars.Both;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Form_BillDetail form_BillDetail = new Form_BillDetail(dgv_thanhtoan.Rows[dgv_thanhtoan.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            form_BillDetail.ShowDialog();
+        }
+
+        private void guna2GradientButton9_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void guna2GradientButton8_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+        }
+        private void guna2GradientButton11_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+
+        }
+
+        private void guna2GradientButton10_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 1;
+
+        }
+        private void guna2GradientButton1_Click_1(object sender, EventArgs e)
+        {
+            Form_W_E form_W_E = new Form_W_E(form1.taikhoan.Username,listBuildingID.Text);
+            form_W_E.ShowDialog();
+            loadBill(null);
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            string result = BillBLL.BillBLL_Del_Bill(
+                dgv_thanhtoan.Rows[dgv_thanhtoan.CurrentCell.RowIndex].Cells[0].Value.ToString());
+            MessageBox.Show(result);
+            loadBill(null);
+        }
+        private void button18_Click(object sender, EventArgs e)
+        {
+            Form_Payment form_Payment = new Form_Payment(listBuildingID.Text);
+            form_Payment.ShowDialog();
+            loadInfo();
+        }
+
+        
+        private void listBuildingID_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            clearAllDataGridView();
+            buildingKey.Text = data.Rows[listBuildingID.SelectedIndex][1].ToString();
+            loadInfo();
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (panel1_extendedEnabled)
@@ -529,11 +657,9 @@ namespace GUI
         {
             try
             {
-                // Lấy dữ liệu đã lọc
                 DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.SelectedItem.ToString());
 
-                // Cập nhật DataGridView
-                dgv_QLCSVC.DataSource = null; // Xóa dữ liệu cũ trước
+                dgv_QLCSVC.DataSource = null; 
                 dgv_QLCSVC.DataSource = filteredData;
 
                 dgv_QLCSVC.Columns["RoomID"].DisplayIndex = 0;
@@ -568,7 +694,6 @@ namespace GUI
                 return;
             }
 
-            // Lấy dữ liệu từ hàng được chọn
             DataGridViewRow selectedRow = dgv_QLCSVC.SelectedRows[0];
 
             Assets selectedAsset = new Assets
@@ -580,12 +705,9 @@ namespace GUI
                 UseDate = selectedRow.Cells["Use_Date"].Value?.ToString(),
                 Status = selectedRow.Cells["Status"].Value?.ToString()
             };
-
-            // Mở form sửa với dữ liệu đã chọn
             Form_UpdateAssets updateAssets = new Form_UpdateAssets(form1.taikhoan.Username, selectedAsset, listBuildingID.SelectedItem.ToString());
             if (updateAssets.ShowDialog() == DialogResult.OK)
             {
-                // Nếu cập nhật thành công thì load lại dữ liệu
                 load_Assets();
             }
         }
@@ -743,14 +865,7 @@ namespace GUI
             }
         }
 
-        private void listBuildingID_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-
-            clearAllDataGridView();
-            buildingKey.Text = data.Rows[listBuildingID.SelectedIndex][1].ToString();
-            loadInfo();
-
-        }
+       
 
 
         private void FilterRoomByStatus()
@@ -1109,28 +1224,28 @@ namespace GUI
 
 
 
-            guna2DataGridView2.DataSource = dt;
+            dgv_thanhtoan.DataSource = dt;
 
-            guna2DataGridView2.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(0, 120, 215); 
-            guna2DataGridView2.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView2.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            guna2DataGridView2.ColumnHeadersHeight = 40;
+            dgv_thanhtoan.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(0, 120, 215); 
+            dgv_thanhtoan.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgv_thanhtoan.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv_thanhtoan.ColumnHeadersHeight = 40;
 
-            if (guna2DataGridView2.Columns.Count > 0)
+            if (dgv_thanhtoan.Columns.Count > 0)
             {
-                guna2DataGridView2.Columns[0].HeaderText = "Mã thanh toán";
-                guna2DataGridView2.Columns[1].HeaderText = "Mã hóa đơn";
-                guna2DataGridView2.Columns[2].HeaderText = "Phương thức";
-                guna2DataGridView2.Columns[3].HeaderText = "Số tiền";
-                guna2DataGridView2.Columns[4].HeaderText = "Thời gian";
-                guna2DataGridView2.Columns[3].DefaultCellStyle.Format = "N0";
+                dgv_thanhtoan.Columns[0].HeaderText = "Mã thanh toán";
+                dgv_thanhtoan.Columns[1].HeaderText = "Mã hóa đơn";
+                dgv_thanhtoan.Columns[2].HeaderText = "Phương thức";
+                dgv_thanhtoan.Columns[3].HeaderText = "Số tiền";
+                dgv_thanhtoan.Columns[4].HeaderText = "Thời gian";
+                dgv_thanhtoan.Columns[3].DefaultCellStyle.Format = "N0";
 
 
             }
 
-            guna2DataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_thanhtoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            guna2DataGridView2.Refresh();
+            dgv_thanhtoan.Refresh();
         }
         private void LoadParkingAreaData(string buildingID)
         {
@@ -1336,19 +1451,9 @@ namespace GUI
             checkBox_DV3.Checked = false;
             checkBox_DV4.Checked = false;
         }
-        private ElectricWaterServiceBLL figureBLL = new ElectricWaterServiceBLL();
+        private W_E_BLL figureBLL = new W_E_BLL();
 
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-            dgvServiceInfo.DataSource = null;
-            List<ElectricWaterServiceDTO> figures = figureBLL.GetAllElectricWaterData(listBuildingID.Text);
-            dgvServiceInfo.DataSource = figures;
-            checkBox_DV1.Visible = false;
-            checkBox_DV2.Visible = false;
-            checkBox_DV3.Visible = false;
-            checkBox_DV4.Visible = false;
-            checkBox_DV5.Visible = false;
-        }
+        
 
         private void button56_Click(object sender, EventArgs e)
         {
@@ -1501,5 +1606,7 @@ namespace GUI
             f.ShowDialog();
             load_Building_By_User();
         }
+
+        
     }
 }

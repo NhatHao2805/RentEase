@@ -604,21 +604,12 @@ BEGIN
     DECLARE number_part INT;
     DECLARE new_id VARCHAR(20);
     
-    SELECT IFNULL(MAX(tenant_history.HISTORYID), 'LS0000') INTO max_id FROM tenant_history;
+    SELECT IFNULL(MAX(tenant_history.HISTORYID), 'LS000') INTO max_id FROM tenant_history;
     SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
-    SET new_id = CONCAT('LS', LPAD(number_part, 4, '0'));
+    SET new_id = CONCAT('LS', LPAD(number_part, 3, '0'));
     RETURN new_id;
 END//
 
-CREATE PROCEDURE load_lstn(
-	IN p_buildingID VARCHAR(50)
-)
-BEGIN 
-	SELECT th.* FROM tenant_history th
-	JOIN room r ON r.ROOMID = th.ROOMID
-	JOIN building b ON b.BUILDINGID = r.BUILDINGID
-	WHERE b.BUILDINGID = p_buildingID;
-END//
 
 CREATE PROCEDURE add_Contract(
     IN p_building_id VARCHAR(50),

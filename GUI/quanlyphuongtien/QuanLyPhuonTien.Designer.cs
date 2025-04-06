@@ -68,7 +68,7 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(111, 300);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(111, 201);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(45, 18);
             this.guna2HtmlLabel2.TabIndex = 37;
@@ -84,7 +84,7 @@
             this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(245, 282);
+            this.guna2ComboBox2.Location = new System.Drawing.Point(245, 183);
             this.guna2ComboBox2.Name = "guna2ComboBox2";
             this.guna2ComboBox2.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox2.TabIndex = 38;
@@ -93,7 +93,7 @@
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(85, 398);
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(85, 299);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(98, 18);
             this.guna2HtmlLabel4.TabIndex = 41;
@@ -109,7 +109,7 @@
             this.guna2ComboBox4.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox4.ItemHeight = 30;
-            this.guna2ComboBox4.Location = new System.Drawing.Point(245, 380);
+            this.guna2ComboBox4.Location = new System.Drawing.Point(245, 281);
             this.guna2ComboBox4.Name = "guna2ComboBox4";
             this.guna2ComboBox4.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox4.TabIndex = 42;
@@ -118,7 +118,7 @@
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(98, 509);
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(98, 410);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(60, 18);
             this.guna2HtmlLabel5.TabIndex = 43;
@@ -130,7 +130,7 @@
             this.buttonDangNhap1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(151)))), ((int)(((byte)(218)))));
             this.buttonDangNhap1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.buttonDangNhap1.ForeColor = System.Drawing.Color.White;
-            this.buttonDangNhap1.Location = new System.Drawing.Point(261, 570);
+            this.buttonDangNhap1.Location = new System.Drawing.Point(261, 471);
             this.buttonDangNhap1.Name = "buttonDangNhap1";
             this.buttonDangNhap1.Size = new System.Drawing.Size(250, 40);
             this.buttonDangNhap1.TabIndex = 45;
@@ -147,7 +147,7 @@
             this.guna2ComboBox5.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2ComboBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.guna2ComboBox5.ItemHeight = 30;
-            this.guna2ComboBox5.Location = new System.Drawing.Point(245, 491);
+            this.guna2ComboBox5.Location = new System.Drawing.Point(245, 392);
             this.guna2ComboBox5.Name = "guna2ComboBox5";
             this.guna2ComboBox5.Size = new System.Drawing.Size(357, 36);
             this.guna2ComboBox5.TabIndex = 47;
@@ -157,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 764);
+            this.ClientSize = new System.Drawing.Size(718, 570);
             this.Controls.Add(this.guna2ComboBox5);
             this.Controls.Add(this.buttonDangNhap1);
             this.Controls.Add(this.guna2HtmlLabel5);

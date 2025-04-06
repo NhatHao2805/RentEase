@@ -106,16 +106,13 @@ namespace GUI
                 dgv_RentalHistory.Columns["AREA"].DefaultCellStyle.Format = "N2";
                 dgv_RentalHistory.Columns["AREA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
-                // Cho phép text wrap cho các cột dài
                 dgv_RentalHistory.Columns["CONVENIENT"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dgv_RentalHistory.Columns["REASON_FOR_LEAVING"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
                 dgv_RentalHistory.Columns["BUILDING_ADDRESS"].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
 
-                // Tự động điều chỉnh chiều cao hàng
                 dgv_RentalHistory.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             }
 
-            // Bật tính năng cuộn ngang và dọc
             dgv_RentalHistory.ScrollBars = ScrollBars.Both;
         }
 

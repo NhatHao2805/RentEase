@@ -105,7 +105,8 @@
     <Compile Include="AccountAccess.cs" />
     <Compile Include="dal_service\DeleteTenantService.cs" />
     <Compile Include="dal_service\DichVuDAL.cs" />
-    <Compile Include="dal_service\ElectricWaterServiceDAL.cs" />
+    <Compile Include="honhathao\PaymentAccess.cs" />
+    <Compile Include="honhathao\W_E_Access.cs" />
     <Compile Include="dal_service\InsertServiceDAL.cs" />
     <Compile Include="dal_service\KhachHangAccess.cs" />
     <Compile Include="dal_service\ServiceUsageDAL.cs" />
@@ -116,6 +117,8 @@
     <Compile Include="hoaian\RentalHistoryAccess.cs" />
     <Compile Include="hoaian\RoomAccess.cs" />
     <Compile Include="honhathao\BuildingAccess.cs" />
+    <Compile Include="honhathao\BillAccess.cs" />
+    <Compile Include="honhathao\BillDetailAccess.cs" />
     <Compile Include="honhathao\ContractAccess.cs" />
     <Compile Include="honhathao\RegistrationAccess.cs" />
     <Compile Include="honhathao\TenantAccess.cs" />
