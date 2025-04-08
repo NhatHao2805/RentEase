@@ -90,6 +90,48 @@ namespace GUI
             Form_SignUp dk = new Form_SignUp();
             dk.Show();
         }
+
+        private void Form_Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DangKy(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DangKy_Dichuot(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            label.ForeColor = Color.SeaGreen; 
+        }
+
+        private void Dangky_Bochuot(object sender, EventArgs e)
+        {
+            Label label = sender as Label;
+            label.ForeColor = Color.FromArgb(0, 88, 225);
+        }
+
+        private void hienMK_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void hienMK_Popup_1(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

@@ -166,3 +166,137 @@ D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInp
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.dll
 D:\RentEaseTDT\RentEase-NhatHao\RentEase\DTO\obj\Debug\DTO.pdb
+<<<<<<< Updated upstream
+=======
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\obj\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DTO\obj\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\DTO.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\MySqlConnector.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Memory.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\MySqlConnector.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Memory.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\obj\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DTO\obj\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\obj\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DTO\obj\Debug\DTO.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\DTO.dll.config
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\DTO.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\DTO.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\MySqlConnector.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Buffers.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Memory.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Numerics.Vectors.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\MySqlConnector.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Buffers.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Memory.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Numerics.Vectors.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\GLWpfControl.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\LottieSharp.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\OpenTK.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.SceneGraph.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.Skottie.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.Views.Desktop.Common.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.Views.WPF.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\GLWpfControl.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\OpenTK.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\OpenTK.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.SceneGraph.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.Skottie.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.Views.Desktop.Common.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\SkiaSharp.Views.WPF.pdb
+>>>>>>> Stashed changes

@@ -164,6 +164,28 @@ namespace GUI
             }
         }
 
+<<<<<<< Updated upstream:GUI/Form_AddContract.cs
        
+=======
+        private void SoPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form_AddContract_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LichThanhToan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> Stashed changes:GUI/honhathao/Form_AddContract.cs
     }
 }

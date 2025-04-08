@@ -126,5 +126,20 @@ namespace GUI
         {
            
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CustomGradientPanel28_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form_SignUp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
