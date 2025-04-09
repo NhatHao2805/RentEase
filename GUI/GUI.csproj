@@ -263,6 +263,7 @@
     <Content Include="honhathao\languages\initialLanguage.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-service-50.png" />
     <None Include="Resources\icons8-parking-100.png" />
     <None Include="Resources\icons8-vehicle-50.png" />
     <None Include="Resources\icons8-view-96.png" />

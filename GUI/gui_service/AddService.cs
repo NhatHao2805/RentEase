@@ -183,5 +183,10 @@ namespace GUI.GUI_Service
         {
 
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
