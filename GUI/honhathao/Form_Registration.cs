@@ -138,5 +138,10 @@ namespace GUI.honhathao
                     break;
             }
         }
+
+        private void TrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

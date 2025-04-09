@@ -1157,3 +1157,4 @@ D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\ListLangu
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\SourceAFIS.dll
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\SourceAFIS.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.ContractTemplateForm.resources

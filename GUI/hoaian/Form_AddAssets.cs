@@ -88,5 +88,10 @@ namespace GUI
             status_cb.Items.Add("Đang sửa chữa");
             status_cb.Items.Add("Đang thay thế");
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

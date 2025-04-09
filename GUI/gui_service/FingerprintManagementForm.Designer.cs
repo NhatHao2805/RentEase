@@ -31,13 +31,11 @@ namespace GUI.gui_service
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.dgvFingerprints = new System.Windows.Forms.DataGridView();
             this.panelEnroll = new System.Windows.Forms.Panel();
             this.lblImageStatus = new System.Windows.Forms.Label();
             this.btnUpdateImage = new Guna.UI2.WinForms.Guna2Button();
             this.btnSelectImage = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBoxFingerprint = new System.Windows.Forms.PictureBox();
             this.btnTestFingerprint = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdatePermission = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -49,6 +47,10 @@ namespace GUI.gui_service
             this.cboTenants = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelRegister = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBoxFingerprint = new System.Windows.Forms.PictureBox();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFingerprints)).BeginInit();
             this.panelEnroll.SuspendLayout();
@@ -57,46 +59,28 @@ namespace GUI.gui_service
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1333, 62);
+            this.panel1.Size = new System.Drawing.Size(1333, 65);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(16, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 29);
+            this.label1.Size = new System.Drawing.Size(242, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "QUẢN LÝ VÂN TAY";
-            // 
-            // btnBack
-            // 
-            this.btnBack.BorderRadius = 5;
-            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBack.FillColor = System.Drawing.Color.White;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.btnBack.Location = new System.Drawing.Point(1224, 11);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(93, 37);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "Quay lại";
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dgvFingerprints
             // 
@@ -106,14 +90,14 @@ namespace GUI.gui_service
             this.dgvFingerprints.BackgroundColor = System.Drawing.Color.White;
             this.dgvFingerprints.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFingerprints.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFingerprints.Location = new System.Drawing.Point(16, 98);
+            this.dgvFingerprints.Location = new System.Drawing.Point(21, 112);
             this.dgvFingerprints.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFingerprints.MultiSelect = false;
             this.dgvFingerprints.Name = "dgvFingerprints";
             this.dgvFingerprints.ReadOnly = true;
             this.dgvFingerprints.RowHeadersWidth = 51;
             this.dgvFingerprints.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFingerprints.Size = new System.Drawing.Size(867, 564);
+            this.dgvFingerprints.Size = new System.Drawing.Size(867, 663);
             this.dgvFingerprints.TabIndex = 1;
             this.dgvFingerprints.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFingerprints_CellContentClick);
             this.dgvFingerprints.SelectionChanged += new System.EventHandler(this.dgvFingerprints_SelectionChanged);
@@ -122,6 +106,8 @@ namespace GUI.gui_service
             // 
             this.panelEnroll.BackColor = System.Drawing.Color.White;
             this.panelEnroll.Controls.Add(this.lblImageStatus);
+            this.panelEnroll.Controls.Add(this.guna2Button2);
+            this.panelEnroll.Controls.Add(this.guna2Button1);
             this.panelEnroll.Controls.Add(this.btnUpdateImage);
             this.panelEnroll.Controls.Add(this.btnSelectImage);
             this.panelEnroll.Controls.Add(this.pictureBoxFingerprint);
@@ -160,7 +146,7 @@ namespace GUI.gui_service
             this.btnUpdateImage.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdateImage.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUpdateImage.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdateImage.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnUpdateImage.FillColor = System.Drawing.Color.CadetBlue;
             this.btnUpdateImage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnUpdateImage.ForeColor = System.Drawing.Color.White;
             this.btnUpdateImage.Location = new System.Drawing.Point(208, 433);
@@ -189,29 +175,25 @@ namespace GUI.gui_service
             this.btnSelectImage.Text = "Chọn ảnh";
             this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
             // 
-            // pictureBoxFingerprint
-            // 
-            this.pictureBoxFingerprint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxFingerprint.Location = new System.Drawing.Point(23, 329);
-            this.pictureBoxFingerprint.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxFingerprint.Name = "pictureBoxFingerprint";
-            this.pictureBoxFingerprint.Size = new System.Drawing.Size(365, 73);
-            this.pictureBoxFingerprint.TabIndex = 11;
-            this.pictureBoxFingerprint.TabStop = false;
-            // 
             // btnTestFingerprint
             // 
+            this.btnTestFingerprint.BackColor = System.Drawing.Color.Transparent;
+            this.btnTestFingerprint.BorderColor = System.Drawing.Color.Silver;
             this.btnTestFingerprint.BorderRadius = 5;
+            this.btnTestFingerprint.BorderThickness = 1;
             this.btnTestFingerprint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnTestFingerprint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTestFingerprint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTestFingerprint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTestFingerprint.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnTestFingerprint.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnTestFingerprint.FillColor = System.Drawing.Color.Maroon;
+            this.btnTestFingerprint.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTestFingerprint.ForeColor = System.Drawing.Color.White;
             this.btnTestFingerprint.Location = new System.Drawing.Point(23, 585);
             this.btnTestFingerprint.Margin = new System.Windows.Forms.Padding(4);
             this.btnTestFingerprint.Name = "btnTestFingerprint";
+            this.btnTestFingerprint.ShadowDecoration.BorderRadius = 10;
+            this.btnTestFingerprint.ShadowDecoration.Enabled = true;
+            this.btnTestFingerprint.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.btnTestFingerprint.Size = new System.Drawing.Size(365, 55);
             this.btnTestFingerprint.TabIndex = 9;
             this.btnTestFingerprint.Text = "Kiểm tra vân tay";
@@ -219,17 +201,23 @@ namespace GUI.gui_service
             // 
             // btnUpdatePermission
             // 
+            this.btnUpdatePermission.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdatePermission.BorderColor = System.Drawing.Color.Silver;
             this.btnUpdatePermission.BorderRadius = 5;
+            this.btnUpdatePermission.BorderThickness = 1;
             this.btnUpdatePermission.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdatePermission.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnUpdatePermission.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnUpdatePermission.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUpdatePermission.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.btnUpdatePermission.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnUpdatePermission.FillColor = System.Drawing.Color.MediumTurquoise;
+            this.btnUpdatePermission.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdatePermission.ForeColor = System.Drawing.Color.White;
             this.btnUpdatePermission.Location = new System.Drawing.Point(208, 485);
             this.btnUpdatePermission.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdatePermission.Name = "btnUpdatePermission";
+            this.btnUpdatePermission.ShadowDecoration.BorderRadius = 10;
+            this.btnUpdatePermission.ShadowDecoration.Enabled = true;
+            this.btnUpdatePermission.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.btnUpdatePermission.Size = new System.Drawing.Size(180, 55);
             this.btnUpdatePermission.TabIndex = 8;
             this.btnUpdatePermission.Text = "Cập nhật quyền";
@@ -237,17 +225,23 @@ namespace GUI.gui_service
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BorderColor = System.Drawing.Color.Silver;
             this.btnDelete.BorderRadius = 5;
+            this.btnDelete.BorderThickness = 1;
             this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelete.FillColor = System.Drawing.Color.Red;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelete.FillColor = System.Drawing.Color.DeepPink;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(23, 485);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.ShadowDecoration.BorderRadius = 10;
+            this.btnDelete.ShadowDecoration.Enabled = true;
+            this.btnDelete.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.btnDelete.Size = new System.Drawing.Size(177, 55);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Xóa vân tay";
@@ -255,17 +249,23 @@ namespace GUI.gui_service
             // 
             // btnEnroll
             // 
+            this.btnEnroll.BackColor = System.Drawing.Color.Transparent;
+            this.btnEnroll.BorderColor = System.Drawing.Color.Silver;
             this.btnEnroll.BorderRadius = 5;
+            this.btnEnroll.BorderThickness = 1;
             this.btnEnroll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEnroll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEnroll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEnroll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEnroll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnEnroll.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEnroll.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(166)))), ((int)(((byte)(17)))));
+            this.btnEnroll.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnroll.ForeColor = System.Drawing.Color.White;
             this.btnEnroll.Location = new System.Drawing.Point(23, 110);
             this.btnEnroll.Margin = new System.Windows.Forms.Padding(4);
             this.btnEnroll.Name = "btnEnroll";
+            this.btnEnroll.ShadowDecoration.BorderRadius = 10;
+            this.btnEnroll.ShadowDecoration.Enabled = true;
+            this.btnEnroll.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.btnEnroll.Size = new System.Drawing.Size(365, 44);
             this.btnEnroll.TabIndex = 6;
             this.btnEnroll.Text = "Đăng ký vân tay mới";
@@ -346,18 +346,103 @@ namespace GUI.gui_service
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 74);
+            this.label2.Location = new System.Drawing.Point(13, 83);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(202, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "DANH SÁCH VÂN TAY";
             // 
+            // pictureBoxFingerprint
+            // 
+            this.pictureBoxFingerprint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxFingerprint.Location = new System.Drawing.Point(23, 329);
+            this.pictureBoxFingerprint.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxFingerprint.Name = "pictureBoxFingerprint";
+            this.pictureBoxFingerprint.Size = new System.Drawing.Size(365, 73);
+            this.pictureBoxFingerprint.TabIndex = 11;
+            this.pictureBoxFingerprint.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderColor = System.Drawing.Color.Silver;
+            this.btnBack.BorderRadius = 5;
+            this.btnBack.BorderThickness = 1;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.White;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnBack.Image = global::GUI.Properties.Resources.icons8_back_50;
+            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBack.Location = new System.Drawing.Point(1216, 7);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.BorderRadius = 10;
+            this.btnBack.ShadowDecoration.Enabled = true;
+            this.btnBack.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.btnBack.Size = new System.Drawing.Size(113, 45);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "Quay lại";
+            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderColor = System.Drawing.Color.Silver;
+            this.guna2Button1.BorderRadius = 5;
+            this.guna2Button1.BorderThickness = 1;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.MediumTurquoise;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(23, 433);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button1.ShadowDecoration.Enabled = true;
+            this.guna2Button1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2Button1.Size = new System.Drawing.Size(177, 44);
+            this.guna2Button1.TabIndex = 12;
+            this.guna2Button1.Text = "Chọn ảnh";
+            this.guna2Button1.Click += new System.EventHandler(this.btnSelectImage_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderColor = System.Drawing.Color.Silver;
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.CadetBlue;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(208, 433);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button2.ShadowDecoration.Enabled = true;
+            this.guna2Button2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2Button2.Size = new System.Drawing.Size(180, 44);
+            this.guna2Button2.TabIndex = 13;
+            this.guna2Button2.Text = "Cập nhật ảnh";
+            this.guna2Button2.Click += new System.EventHandler(this.btnUpdateImage_Click);
+            // 
             // FingerprintManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(1333, 800);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panelEnroll);
@@ -402,5 +487,7 @@ namespace GUI.gui_service
         private Guna.UI2.WinForms.Guna2Button btnUpdateImage;
         private System.Windows.Forms.Label lblImageStatus;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

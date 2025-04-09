@@ -57,6 +57,7 @@
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(40, 36);
             this.exitButton.TabIndex = 20;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click_1);
             // 
             // Form_AddPayment
             // 

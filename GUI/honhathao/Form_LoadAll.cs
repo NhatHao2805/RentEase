@@ -57,5 +57,10 @@ namespace GUI.honhathao
         {
             loadInfo(guna2TextBox1.Text);
         }
+
+        private void exitButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

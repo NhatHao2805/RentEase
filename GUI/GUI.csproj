@@ -263,6 +263,15 @@
     <Content Include="honhathao\languages\initialLanguage.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Phu-My-Hung-Tower.jpg" />
+    <None Include="Resources\icons8-ophthalmology-50.png" />
+    <None Include="Resources\LogoApp.jpg" />
+    <None Include="Resources\icons8-pay-50.png" />
+    <None Include="Resources\icons8-water-50.png" />
+    <None Include="Resources\icons8-filing-cabinet-50.png" />
+    <None Include="Resources\icons8-back-50.png" />
+    <None Include="Resources\icons8-vehicle-50-3.png" />
+    <None Include="Resources\icons8-vehicle-50-2.png" />
     <None Include="Resources\icons8-service-50.png" />
     <None Include="Resources\icons8-parking-100.png" />
     <None Include="Resources\icons8-vehicle-50.png" />
@@ -271,6 +280,9 @@
     <None Include="Resources\icons8-evaluate-64.png" />
     <None Include="Resources\icons8-view-80.png" />
     <None Include="Resources\icons8-remind-100.png" />
+    <EmbeddedResource Include="ContractTemplateForm .resx">
+      <DependentUpon>ContractTemplateForm .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui_service\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
     </EmbeddedResource>

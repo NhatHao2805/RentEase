@@ -26,5 +26,10 @@ namespace GUI.gui_service
             dgv_AllService.Columns["TenDichVu"].HeaderText = "Tên dịch vụ";
             dgv_AllService.Columns["GiaDichVu"].HeaderText = "Đơn giá";
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

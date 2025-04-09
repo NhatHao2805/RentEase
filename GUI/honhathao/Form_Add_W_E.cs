@@ -88,5 +88,15 @@ namespace GUI.honhathao
             tenantID = row[0].ToString();
             guna2TextBox1.Text = sb.ToString();
         }
+
+        private void exitButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

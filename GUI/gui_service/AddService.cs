@@ -40,13 +40,9 @@ namespace GUI.GUI_Service
 
         private void TenantName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TenantName.SelectedValue != null)
-            {
-                string selectedTenantID = TenantName.SelectedValue.ToString();
-                Room.DataSource = phongBLL.GetPhongByTenantID(selectedTenantID, buildingID);
-            }
+
         }
-   
+
 
         public void LoadComboBoxData()
         {
@@ -148,16 +144,6 @@ namespace GUI.GUI_Service
 
         }
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Service_Label_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Delete_Click(object sender, EventArgs e)
         {
             string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
@@ -186,7 +172,7 @@ namespace GUI.GUI_Service
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
     }
 }
