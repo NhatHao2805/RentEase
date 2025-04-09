@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dto_service\Contract_Service.cs" />
+    <Compile Include="hoaian\Vehicle.cs" />
     <Compile Include="honhathao\Payment.cs" />
     <Compile Include="honhathao\W_E.cs" />
     <Compile Include="dto_service\KhachHangDTO.cs" />
@@ -88,7 +89,7 @@
     <Compile Include="honhathao\Tenant_History.cs" />
     <Compile Include="honhathao\Registration.cs" />
     <Compile Include="honhathao\Tenant.cs" />
-    <Compile Include="quanlyphuongtien\ParkingArea.cs" />
+    <Compile Include="hoaian\ParkingArea.cs" />
     <Compile Include="quanlyphuongtien\Payment.cs" />
     <Compile Include="User.cs" />
     <Compile Include="WaterElectricity.cs" />

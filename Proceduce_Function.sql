@@ -21,23 +21,23 @@ BEGIN
     RETURN new_id;
 END//
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addAsset`(
-    IN p_roomid VARCHAR(10),
-    IN p_assetname VARCHAR(50),
-    IN p_price FLOAT,
-    IN p_status VARCHAR(50),
-    IN p_usedate DATE
-)
-BEGIN
-    DECLARE new_asset_id VARCHAR(10);
-    
-    -- Tạo ID tài sản mới (giả sử có hàm createAssetID tương tự như createRoomID)
-    SET new_asset_id = createAssetID();
-    
-    -- Thêm tài sản vào bảng ASSETS
-    INSERT INTO ASSETS (ASSETID, ROOMID, ASSETNAME, PRICE, STATUS, USE_DATE)
-    VALUES (new_asset_id, p_roomid, p_assetname, p_price, p_status, p_usedate);
-END//
+-- CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addAsset`(
+--     IN p_roomid VARCHAR(10),
+--     IN p_assetname VARCHAR(50),
+--     IN p_price FLOAT,
+--     IN p_status VARCHAR(50),
+--     IN p_usedate DATE
+-- )
+-- BEGIN
+--     DECLARE new_asset_id VARCHAR(10);
+--     
+--     -- Tạo ID tài sản mới (giả sử có hàm createAssetID tương tự như createRoomID)
+--     SET new_asset_id = createAssetID();
+--     
+--     -- Thêm tài sản vào bảng ASSETS
+--     INSERT INTO ASSETS (ASSETID, ROOMID, ASSETNAME, PRICE, STATUS, USE_DATE)
+--     VALUES (new_asset_id, p_roomid, p_assetname, p_price, p_status, p_usedate);
+-- END//
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateAsset`(
     IN p_assetid VARCHAR(10),
@@ -195,8 +195,8 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `load_Assets`(
     IN p_buildingid VARCHAR(20))
 BEGIN
     SELECT 
-        a.ASSETID,
         a.ROOMID,
+        a.ASSETID,
         a.ASSETNAME,
         a.PRICE,
         a.STATUS,
@@ -961,103 +961,103 @@ BEGIN
 END //
 
 -- Thủ tục để khởi tạo dữ liệu form
-CREATE PROCEDURE sp_InitParkingAreaForm(
-    OUT p_new_area_id VARCHAR(10)
-)
-BEGIN
-    -- Tạo ID mới
-    SET p_new_area_id = fn_GenerateNewParkingAreaId();
-END //
+-- CREATE PROCEDURE sp_InitParkingAreaForm(
+--     OUT p_new_area_id VARCHAR(10)
+-- )
+-- BEGIN
+--     -- Tạo ID mới
+--     SET p_new_area_id = fn_GenerateNewParkingAreaId();
+-- END //
 
 -- Thủ tục để cập nhật bãi đậu xe
-CREATE PROCEDURE sp_UpdateParkingArea(
-    IN p_areaId VARCHAR(10),
-    IN p_buildingId VARCHAR(10),
-    IN p_address VARCHAR(100),
-    IN p_type VARCHAR(50),
-    IN p_capacity INT,
-    OUT p_message VARCHAR(255),
-    OUT p_success BOOLEAN
-)
-BEGIN
-    -- Mặc định thành công
-    SET p_success = TRUE;
-    SET p_message = 'Cập nhật bãi đậu xe thành công!';
-    
-    -- Kiểm tra dữ liệu đầu vào
-    IF p_areaId IS NULL OR p_areaId = '' THEN
-        SET p_success = FALSE;
-        SET p_message = 'ID bãi đậu xe không được để trống!';
-    ELSEIF p_buildingId IS NULL OR p_buildingId = '' THEN
-        SET p_success = FALSE;
-        SET p_message = 'ID tòa nhà không được để trống!';
-    ELSEIF p_address IS NULL OR p_address = '' THEN
-        SET p_success = FALSE;
-        SET p_message = 'Địa chỉ không được để trống!';
-    ELSEIF p_type IS NULL OR p_type = '' THEN
-        SET p_success = FALSE;
-        SET p_message = 'Loại bãi đậu xe không được để trống!';
-    ELSEIF p_type != 'Xe máy' AND p_type != 'Ô tô' THEN
-        SET p_success = FALSE;
-        SET p_message = 'Loại bãi đậu xe không hợp lệ. Chỉ chấp nhận "Xe máy" hoặc "Ô tô"!';
-    ELSEIF p_capacity IS NULL OR p_capacity <= 0 THEN
-        SET p_success = FALSE;
-        SET p_message = 'Sức chứa phải là số nguyên dương!';
-    ELSE
-        -- Kiểm tra bãi đậu xe có tồn tại không
-        IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaId) THEN
-            SET p_success = FALSE;
-            SET p_message = 'ID bãi đậu xe không tồn tại!';
-        ELSE
-            -- Kiểm tra tòa nhà có tồn tại không
-            IF NOT EXISTS (SELECT 1 FROM BUILDING WHERE BUILDINGID = p_buildingId) THEN
-                SET p_success = FALSE;
-                SET p_message = 'ID tòa nhà không tồn tại!';
-            ELSE
-                -- Thực hiện cập nhật dữ liệu
-                UPDATE PARKINGAREA
-                SET BUILDINGID = p_buildingId, 
-                    ADDRESS = p_address, 
-                    TYPE = p_type, 
-                    CAPACITY = p_capacity
-                WHERE AREAID = p_areaId;
-            END IF;
-        END IF;
-    END IF;
-END //
+-- CREATE PROCEDURE sp_UpdateParkingArea(
+--     IN p_areaId VARCHAR(10),
+--     IN p_buildingId VARCHAR(10),
+--     IN p_address VARCHAR(100),
+--     IN p_type VARCHAR(50),
+--     IN p_capacity INT,
+--     OUT p_message VARCHAR(255),
+--     OUT p_success BOOLEAN
+-- )
+-- BEGIN
+--     -- Mặc định thành công
+--     SET p_success = TRUE;
+--     SET p_message = 'Cập nhật bãi đậu xe thành công!';
+--     
+--     -- Kiểm tra dữ liệu đầu vào
+--     IF p_areaId IS NULL OR p_areaId = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'ID bãi đậu xe không được để trống!';
+--     ELSEIF p_buildingId IS NULL OR p_buildingId = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'ID tòa nhà không được để trống!';
+--     ELSEIF p_address IS NULL OR p_address = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'Địa chỉ không được để trống!';
+--     ELSEIF p_type IS NULL OR p_type = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'Loại bãi đậu xe không được để trống!';
+--     ELSEIF p_type != 'Xe máy' AND p_type != 'Ô tô' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'Loại bãi đậu xe không hợp lệ. Chỉ chấp nhận "Xe máy" hoặc "Ô tô"!';
+--     ELSEIF p_capacity IS NULL OR p_capacity <= 0 THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'Sức chứa phải là số nguyên dương!';
+--     ELSE
+--         -- Kiểm tra bãi đậu xe có tồn tại không
+--         IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaId) THEN
+--             SET p_success = FALSE;
+--             SET p_message = 'ID bãi đậu xe không tồn tại!';
+--         ELSE
+--             -- Kiểm tra tòa nhà có tồn tại không
+--             IF NOT EXISTS (SELECT 1 FROM BUILDING WHERE BUILDINGID = p_buildingId) THEN
+--                 SET p_success = FALSE;
+--                 SET p_message = 'ID tòa nhà không tồn tại!';
+--             ELSE
+--                 -- Thực hiện cập nhật dữ liệu
+--                 UPDATE PARKINGAREA
+--                 SET BUILDINGID = p_buildingId, 
+--                     ADDRESS = p_address, 
+--                     TYPE = p_type, 
+--                     CAPACITY = p_capacity
+--                 WHERE AREAID = p_areaId;
+--             END IF;
+--         END IF;
+--     END IF;
+-- END //
 
 -- Thủ tục để xóa bãi đậu xe
-CREATE PROCEDURE sp_DeleteParkingArea(
-    IN p_areaId VARCHAR(10),
-    OUT p_message VARCHAR(255),
-    OUT p_success BOOLEAN
-)
-BEGIN
-    -- Mặc định thành công
-    SET p_success = TRUE;
-    SET p_message = 'Xóa bãi đậu xe thành công!';
-    
-    -- Kiểm tra dữ liệu đầu vào
-    IF p_areaId IS NULL OR p_areaId = '' THEN
-        SET p_success = FALSE;
-        SET p_message = 'ID bãi đậu xe không được để trống!';
-    ELSE
-        -- Kiểm tra bãi đậu xe có tồn tại không
-        IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaId) THEN
-            SET p_success = FALSE;
-            SET p_message = 'ID bãi đậu xe không tồn tại!';
-        ELSE
-            -- Kiểm tra có xe đang đậu không
-            IF EXISTS (SELECT 1 FROM PARKING WHERE AREAID = p_areaId) THEN
-                SET p_success = FALSE;
-                SET p_message = 'Không thể xóa bãi đậu xe đang có xe!';
-            ELSE
-                -- Thực hiện xóa dữ liệu
-                DELETE FROM PARKINGAREA WHERE AREAID = p_areaId;
-            END IF;
-        END IF;
-    END IF;
-END //
+-- CREATE PROCEDURE sp_DeleteParkingArea(
+--     IN p_areaId VARCHAR(10),
+--     OUT p_message VARCHAR(255),
+--     OUT p_success BOOLEAN
+-- )
+-- BEGIN
+--     -- Mặc định thành công
+--     SET p_success = TRUE;
+--     SET p_message = 'Xóa bãi đậu xe thành công!';
+--     
+--     -- Kiểm tra dữ liệu đầu vào
+--     IF p_areaId IS NULL OR p_areaId = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'ID bãi đậu xe không được để trống!';
+--     ELSE
+--         -- Kiểm tra bãi đậu xe có tồn tại không
+--         IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaId) THEN
+--             SET p_success = FALSE;
+--             SET p_message = 'ID bãi đậu xe không tồn tại!';
+--         ELSE
+--             -- Kiểm tra có xe đang đậu không
+--             IF EXISTS (SELECT 1 FROM PARKING WHERE AREAID = p_areaId) THEN
+--                 SET p_success = FALSE;
+--                 SET p_message = 'Không thể xóa bãi đậu xe đang có xe!';
+--             ELSE
+--                 -- Thực hiện xóa dữ liệu
+--                 DELETE FROM PARKINGAREA WHERE AREAID = p_areaId;
+--             END IF;
+--         END IF;
+--     END IF;
+-- END //
 
 -- Thủ tục để lấy thông tin sức chứa của bãi đậu xe
 CREATE PROCEDURE sp_GetParkingAreaCapacity(

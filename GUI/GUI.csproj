@@ -236,17 +236,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="quanlyphuongtien\QuanLyPhuonTien.cs">
+    <Compile Include="quanlyphuongtien\Form_AddParkingArea.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="quanlyphuongtien\QuanLyPhuonTien.Designer.cs">
-      <DependentUpon>QuanLyPhuonTien.cs</DependentUpon>
+    <Compile Include="quanlyphuongtien\Form_AddParkingArea.Designer.cs">
+      <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
     </Compile>
-    <Compile Include="quanlyphuongtien\Suaphuongtien.cs">
+    <Compile Include="quanlyphuongtien\Form_AddVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="quanlyphuongtien\Suaphuongtien.Designer.cs">
-      <DependentUpon>Suaphuongtien.cs</DependentUpon>
+    <Compile Include="quanlyphuongtien\Form_AddVehicle.Designer.cs">
+      <DependentUpon>Form_AddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateParkingArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateParkingArea.Designer.cs">
+      <DependentUpon>Form_UpdateParkingArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateVehicle.Designer.cs">
+      <DependentUpon>Form_UpdateVehicle.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="gui_service\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
@@ -327,11 +339,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="quanlyphuongtien\QuanLyPhuonTien.resx">
-      <DependentUpon>QuanLyPhuonTien.cs</DependentUpon>
+    <EmbeddedResource Include="quanlyphuongtien\Form_AddParkingArea.resx">
+      <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="quanlyphuongtien\Suaphuongtien.resx">
-      <DependentUpon>Suaphuongtien.cs</DependentUpon>
+    <EmbeddedResource Include="quanlyphuongtien\Form_AddVehicle.resx">
+      <DependentUpon>Form_AddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_UpdateParkingArea.resx">
+      <DependentUpon>Form_UpdateParkingArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_UpdateVehicle.resx">
+      <DependentUpon>Form_UpdateVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -465,5 +483,6 @@
   <ItemGroup>
     <None Include="Resources\icons8-home-100-1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
