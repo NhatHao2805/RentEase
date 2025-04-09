@@ -319,6 +319,7 @@
             this.label6.Size = new System.Drawing.Size(67, 16);
             this.label6.TabIndex = 36;
             this.label6.Text = "Ngày sinh";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // info_account
             // 
@@ -486,7 +487,7 @@
             this.label4.TabIndex = 29;
             this.label4.Text = "Số điện thoại";
             // 
-            // Form_DangKy
+            // Form_SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -497,7 +498,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form_DangKy";
+            this.Name = "Form_SignUp";
             this.Text = "Form1";
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

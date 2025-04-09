@@ -1,0 +1,163 @@
+﻿Title: Sign in
+Username: Username
+Password: Password
+Password2: Confirm Password
+Sign_in: Sign in
+Sign_up: Sign up
+Sign_Up_Title_Form: Sign Up
+User_info: Detail Information
+Account_info: Account Information
+Fullname: Full Name
+Birthday: Date of Birth
+Email: Email
+Gender: Gender
+Numberphone: Phone Number
+Address: Address
+Room_Management: Room Management
+Contract_Management: Contract Management
+Payment_Management: Payment Management
+Service_Management: Service Management
+Facility_Management: Facility Management
+Parking_Management: Parking Management
+room_list_management: Room Management
+text_room_list_management: All Your Room Listings
+edit: Edit
+edit_in: Edit room list
+delete: Delete
+view_rental_history: View Rental History
+export_to_excel: Export to Excel
+occupied: Occupied
+vacant: Vacant
+ending_soon: Ending Soon
+reserved: Reserved
+contract_expiring_soon: Contract Expiring Soon
+contract_expired: Contract Expired
+owing_money: Owing Money
+building_add: Add
+building_change: Change
+taxpayer_information_management: Taxpayer Information Management
+contract_management: Contract Management
+house_tax_history_management: House Tax History Management
+residence_registration_management: Residence Registration Management
+all_contracts: All Contracts
+created_contracts_list: Created Contracts List
+contract_expiration_reminder: Contract Expiration Reminder
+within_term: Within Term
+about_to_expire: About to Expire
+expired: Expired
+edit: Edit
+delete: Delete
+set_contract_template: Set Contract Template
+export_to_excel: Export to Excel
+search: Search
+rental_history_title: Rental History
+rental_history_description: List of tenants' rental history
+view_all_tenants: View all tenants
+evaluation: Evaluation
+tenant_information_title: Tenant Information
+tenant_information_description: List of tenant information
+residence_registration_title: Residence Registration
+residence_registration_description: List of residence registration information
+bill_information_title: All bills
+bill_information_description: All rent bills appear here
+button_diennuoc:Electricity and water
+button_xemchitiet:View details
+button_xemlstt:View payment list
+button_tbdenkhachthue:Notice to tenant
+checkbox_dathu:Collected
+checkbox_chuathu:Not collected
+checkbox_dangno:In debt
+checkbox_dahuy:Cancelled
+checkbox_loctheothang:Select by month
+asset_information_title: All assets
+asset_information_description: List of assets available
+checkbox_tangdan:Ascending value
+checkbox_giamdan:Descending value
+checkbox_theoten:Search by name
+service_management_title: Service Management
+service_management_description: Services used by tenants
+view_service: Price high to low
+filter_highlow: Price high to low
+filter_lowhigh: Price low to high
+filter_recent: Most recent
+filter_oldest: Oldest
+filter_az: Name (A-Z)
+filter_by_month: Filter by month
+action_editdelete: Edit / Delete
+action_registCancel: Register / Cancel
+parking_management_title: Parking Management
+parking_lot_label: Parking Lot
+vehicle_label: Vehicle
+parking_list_title: Parking Lot List
+: Room Table
+roomtable_room_id: Room id
+roomtable_building: Building id
+roomtable_floor: Floor
+roomtable_room_type: Room type
+roomtable_convenient: Amenities
+roomtable_area: Area
+roomtable_price: Price
+roomtable_status: Status
+: Contract Table
+contracttable_contract_id: Contract id
+contracttable_room_id: Room id
+contracttable_tenant_id: Tenant id
+contracttable_first_name: First name
+contracttable_last_name: Last name
+contracttable_create_date: Create date
+contracttable_start_date: Start date
+contracttable_end_date: End date
+contracttable_monthly_rent: Monthly rent
+contracttable_payments: Payment schedule
+contracttable_deposit: Deposit
+contracttable_notes: Notes
+: Rental History Table
+lstntable_historyid: History id
+lstntable_contractid: Contract id
+lstntable_tenantid: Tenant id
+lstntable_firstname: First name
+lstntable_lastname: Last name
+lstntable_startdate: Start date
+lstntable_enddate: End date
+lstntable_note: Note
+: Tenant Table
+tenanttable_tenantid: Tenant id
+tenanttable_firstname: First name
+tenanttable_lastname: Last name
+tenanttable_birthday: Date of birth
+tenanttable_gender: Gender
+tenanttable_numberphone: Phone number
+tenanttable_email: Email
+: Registration Table
+registrationtable_registrationid: Registration id
+registrationtable_roomid: Room id
+registrationtable_tenantid: Tenant id
+registrationtable_firstname: First name
+registrationtable_lastname: Last name
+registrationtable_registrationdate: Registration date
+registrationtable_expirationdate: Expiration date
+registrationtable_status: Status
+: Payment Table
+billtable_billid: Bill id
+billtable_tenantid: Tenant id
+billtable_fisrtname: First name
+billtable_lastname: Last name
+billtable_total: Total amount
+billtable_startdate: Start date
+billtable_enddate: End date
+billtable_coalesce: Debt
+: Service Registration Table
+servicetable_ordernumber: Order number
+servicetable_roomid: Room id
+servicetable_tenantname: Tenant name
+servicetable_servicename: Service name
+servicetable_serviceprice: Service price
+servicetable_startdate: Start date
+servicetable_enddate: End date
+: Facility Assets Table
+assettable_assetid: Asset id
+assettable_roomid: Room id
+assettable_assetname: Asset name
+assettable_price: Price
+assettable_status: Status
+assettable_usedate: Usage date

@@ -21,7 +21,58 @@ namespace GUI
         public Form_SignUp()
         {
             InitializeComponent();
-            
+            loadLanguage();//New NhatHao
+        }
+
+        private void loadLanguage()//New NhatHao
+        {
+            Console.WriteLine(Language.languages.Count);
+            foreach (KeyValuePair<string, string> kvp in Language.languages)
+            {
+                //Console.WriteLine($"Key: {kvp.Key}, Value: {kvp.Value}");
+                switch (kvp.Key)
+                {
+                    
+                    case "Sign_Up_Title_Form":
+                        label1.Text = kvp.Value;
+                        buttonDangKy.Text = kvp.Value;
+                        break;
+                    case "User_info":
+                        info_user.Text = kvp.Value;
+                        break;
+                    case "Fullname":
+                        label2.Text = kvp.Value;
+                        break;
+                    case "Birthday":
+                        label6.Text = kvp.Value;
+                        break;
+                    case "Email":
+                        label3.Text = kvp.Value;
+                        break;
+                    case "Gender":
+                        label7.Text = kvp.Value;
+                        break;
+                    case "Address":
+                        label5.Text = kvp.Value;
+                        break;
+                    case "Numberphone":
+                        label4.Text = kvp.Value;
+                        break;
+                    case "Username":
+                        labelTK_DK.Text = kvp.Value;
+                        break;
+                    case "Password":
+                        labelMK_DK1.Text = kvp.Value;
+                        break;
+                    case "Password2":
+                        labelMK_DK2.Text = kvp.Value;
+                        break;
+                    case "Account_info":
+                        info_account.Text = kvp.Value;
+                        break;
+                    
+                }
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -125,6 +176,11 @@ namespace GUI
         private void gt_cb_SelectedIndexChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

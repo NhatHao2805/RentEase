@@ -10,10 +10,10 @@ namespace BLL.BLL_Service
 {
     public class KhachHangBLL
     {
-        public List<object> GetKhachHangForComboBox()
+        public List<object> GetKhachHangForComboBox(string buildingID)
         {
             var list = new List<object>();
-            foreach (var kh in KhachHangAccess.Load_KhachHang())
+            foreach (var kh in KhachHangAccess.Load_KhachHang(buildingID))
             {
 
                 list.Add(new
@@ -36,9 +36,9 @@ namespace BLL.BLL_Service
             }
             return list;
         }
-        public List<PhongDTO> GetPhongByTenantID(string tenantID)
+        public List<PhongDTO> GetPhongByTenantID(string tenantID, string buildingID)
         {
-            return PhongAccess.GetPhongByTenantID(tenantID);
+            return PhongAccess.GetPhongByTenantID(tenantID, buildingID);
         }
 
     }

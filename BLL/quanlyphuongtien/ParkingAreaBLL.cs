@@ -12,16 +12,20 @@ using System.Xml;
 
 namespace BLL.Quanlyphuongtien
 {
+
     public class ParkingAreaBLL
     {
-        static ParkingAreaBLL()
+        public static string buildingID_ = "";
+        public ParkingAreaBLL(string buildingID)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            buildingID_ = buildingID;
         }
+
         public static event EventHandler ParkingAreaChanged;
-        public static DataTable GetAllParkingAreas()
+        public static DataTable GetAllParkingAreas(string buildingID)
         {
-            return ParkingAreaAccess.GetAllParkingAreas();
+            return ParkingAreaAccess.GetAllParkingAreas(buildingID);
         }
         // Thêm vào file BLL/Quanlyphuongtien/ParkingAreaBLL.cs
         public static DataTable GetAllBuildings()
@@ -121,7 +125,7 @@ namespace BLL.Quanlyphuongtien
             try
             {
                 // Lấy dữ liệu từ DAL
-                DataTable dt = ParkingAreaAccess.GetAllParkingAreas();
+                DataTable dt = ParkingAreaAccess.GetAllParkingAreas(buildingID_);
                 if (dt == null || dt.Rows.Count == 0)
                 {
                     message = "Không có dữ liệu để xuất!";
@@ -173,13 +177,13 @@ namespace BLL.Quanlyphuongtien
         {
             return ParkingAreaAccess.GetParkingAreasByBuildingId(buildingId);
         }
-        public static bool ExportParkingAreasToExcelWithChart(string filePath, out string message)
+        public static bool ExportParkingAreasToExcelWithChart(string filePath, out string message, string buildingID)
         {
             message = "";
             try
             {
                 // Lấy dữ liệu từ DAL
-                DataTable dt = ParkingAreaAccess.GetAllParkingAreas();
+                DataTable dt = ParkingAreaAccess.GetAllParkingAreas(buildingID);
                 if (dt == null || dt.Rows.Count == 0)
                 {
                     message = "Không có dữ liệu để xuất!";

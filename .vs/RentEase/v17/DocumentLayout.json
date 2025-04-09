@@ -1,112 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\",
+  "WorkspaceRootPath": "C:\\Users\\ACER\\Downloads\\RentEase-Huy_6_4\\RentEase_9_4 - Copy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-Huy_6_4\\RentEase_9_4 - Copy\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\onedrive\\m\u00E1y t\u00EDnh\\cnpm\\rentease\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-huy_6_4\\rentease_9_4 - copy\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\dal\\contractaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\contractaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\contractbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 112,
       "DocumentGroups": [
         {
           "DockedWidth": 140,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form_AddContract.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_AddContract.cs",
-              "RelativeDocumentMoniker": "GUI\\Form_AddContract.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_AddContract.cs",
-              "RelativeToolTip": "GUI\\Form_AddContract.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAIwJwAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "QuanLyNha.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-Huy_6_4\\RentEase_9_4 - Copy\\GUI\\QuanLyNha.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-Huy_6_4\\RentEase_9_4 - Copy\\GUI\\QuanLyNha.cs [Design]",
+              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:39:08.71Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ContractBLL.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\BLL\\ContractBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\ContractBLL.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\BLL\\ContractBLL.cs",
-              "RelativeToolTip": "BLL\\ContractBLL.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAQwBQAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:21:14.834Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Form_AddContract.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_AddContract.cs",
-              "RelativeDocumentMoniker": "GUI\\Form_AddContract.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\Form_AddContract.cs [Design]",
-              "RelativeToolTip": "GUI\\Form_AddContract.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:39:06.026Z"
+              "WhenOpened": "2025-04-03T19:42:03.43Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-Huy_6_4\\RentEase_9_4 - Copy\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-Huy_6_4\\RentEase_9_4 - Copy\\GUI\\QuanLyNha.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.cs",
-              "ViewState": "AgIAAFEFAAAAAAAAAAAQwGAFAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAEIIAAAAAAAAAAAAAMwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:21:36.563Z",
+              "WhenOpened": "2025-04-06T07:23:12.669Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ContractAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\ContractAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\ContractAccess.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\DAL\\ContractAccess.cs",
-              "RelativeToolTip": "DAL\\ContractAccess.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAIwEkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:19:04.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs [Design]",
-              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-30T12:13:50.867Z",
-              "EditorCaption": " [Design]"
             }
           ]
         },

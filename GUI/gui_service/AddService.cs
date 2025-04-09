@@ -15,12 +15,14 @@ namespace GUI.GUI_Service
     
     public partial class AddService: Form
     {
-        private quanlynha parentForm;
+        
+        private string buildingID;
 
-        public AddService(quanlynha parent)
+        public AddService(string buildingid)
         {
+            this.buildingID = buildingid;
             InitializeComponent();
-            this.parentForm = parent;
+            
         }
         private KhachHangBLL khachHangBLL = new KhachHangBLL();
         private PhongBLL phongBLL = new PhongBLL();
@@ -41,7 +43,7 @@ namespace GUI.GUI_Service
             if (TenantName.SelectedValue != null)
             {
                 string selectedTenantID = TenantName.SelectedValue.ToString();
-                Room.DataSource = phongBLL.GetPhongByTenantID(selectedTenantID);
+                Room.DataSource = phongBLL.GetPhongByTenantID(selectedTenantID, buildingID);
             }
         }
    
@@ -49,7 +51,7 @@ namespace GUI.GUI_Service
         public void LoadComboBoxData()
         {
             // Load danh sách khách hàng
-            TenantName.DataSource = khachHangBLL.GetKhachHangForComboBox();
+            TenantName.DataSource = khachHangBLL.GetKhachHangForComboBox(buildingID);
             TenantName.DisplayMember = "Name";
             TenantName.ValueMember = "ID";
 
@@ -138,7 +140,7 @@ namespace GUI.GUI_Service
             // Đóng form đăng ký sau khi thành công
             this.Close();
 
-            //parentForm.btn_dichvu_Click(sender,e);
+            //parentForm.btn_dichvu_Click(sender, e);
         }
 
         private void guna2HtmlLabel1_Click_2(object sender, EventArgs e)
@@ -175,6 +177,11 @@ namespace GUI.GUI_Service
 
             this.Close();
             //parentForm.btn_dichvu_Click(sender, e);
+        }
+
+        private void TenantName_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

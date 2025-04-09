@@ -15,9 +15,9 @@ namespace BLL.BLL_Service
     {
         private UserServiceDAL dal = new UserServiceDAL();
 
-        public List<UserServiceDTO> GetServiceUsage(String filter)
+        public List<UserServiceDTO> GetServiceUsage(string filter, string buildingID)
         {
-            return dal.GetServiceUsage(filter);
+            return dal.GetServiceUsage(filter, buildingID);
         }
     }
 

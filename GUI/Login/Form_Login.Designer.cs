@@ -34,10 +34,11 @@ namespace GUI
             this.labelTK_DN = new System.Windows.Forms.Label();
             this.labelMK_DN = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.minimizedButton = new Guna.UI2.WinForms.Guna2Button();
             this.exitButton = new Guna.UI2.WinForms.Guna2Button();
             this.dk_lb = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.textBoxTK_DN = new GUI.Custom.MyGunaTextBox();
             this.textBoxMK_DN = new GUI.Custom.MyGunaTextBox();
             this.buttonDangNhap1 = new GUI.Custom.MyGunaButton();
@@ -61,9 +62,9 @@ namespace GUI
             this.labelTK_DN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTK_DN.Location = new System.Drawing.Point(65, 79);
             this.labelTK_DN.Name = "labelTK_DN";
-            this.labelTK_DN.Size = new System.Drawing.Size(67, 16);
+            this.labelTK_DN.Size = new System.Drawing.Size(102, 16);
             this.labelTK_DN.TabIndex = 12;
-            this.labelTK_DN.Text = "Tài khoản";
+            this.labelTK_DN.Text = "Tên Đăng Nhập";
             // 
             // labelMK_DN
             // 
@@ -87,6 +88,18 @@ namespace GUI
             this.guna2Panel1.Size = new System.Drawing.Size(377, 32);
             this.guna2Panel1.TabIndex = 20;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(10, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Đăng Nhập";
             // 
             // minimizedButton
             // 
@@ -134,17 +147,21 @@ namespace GUI
             this.dk_lb.Text = "Đăng ký";
             this.dk_lb.Click += new System.EventHandler(this.dk_lb_Click);
             // 
-            // label1
+            // guna2ComboBox1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Đăng Nhập";
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(225, 380);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(140, 36);
+            this.guna2ComboBox1.TabIndex = 22;
+            this.guna2ComboBox1.SelectionChangeCommitted += new System.EventHandler(this.guna2ComboBox1_SelectionChangeCommitted);
             // 
             // textBoxTK_DN
             // 
@@ -198,12 +215,13 @@ namespace GUI
             this.buttonDangNhap1.Text = "Đăng nhập";
             this.buttonDangNhap1.Click += new System.EventHandler(this.buttonDangNhap_Click);
             // 
-            // Form_DangNhap
+            // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(377, 428);
+            this.Controls.Add(this.guna2ComboBox1);
             this.Controls.Add(this.dk_lb);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.buttonXemPass);
@@ -213,7 +231,7 @@ namespace GUI
             this.Controls.Add(this.labelMK_DN);
             this.Controls.Add(this.buttonDangNhap1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_DangNhap";
+            this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.guna2Panel1.ResumeLayout(false);
@@ -236,6 +254,7 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2Button minimizedButton;
         private System.Windows.Forms.Label dk_lb;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }
 

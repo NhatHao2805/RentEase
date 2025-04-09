@@ -15,7 +15,7 @@ namespace DAL.DAL_Service
 
     public class KhachHangAccess
     {
-        public static List<KhachHangDTO> Load_KhachHang()
+        public static List<KhachHangDTO> Load_KhachHang(string buildingID)
         {
             List<KhachHangDTO> list = new List<KhachHangDTO>();
 
@@ -23,9 +23,13 @@ namespace DAL.DAL_Service
             {
                 if (conn == null) return list;
 
-                string query = "SELECT TenantID, FIRSTNAME, LASTNAME FROM Tenant";
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlCommand cmd = new MySqlCommand("GetTenantsByBuilding", conn))
                 {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Truyền tham số vào stored procedure
+                    cmd.Parameters.AddWithValue("@p_buildingID", buildingID);
+
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
@@ -41,6 +45,7 @@ namespace DAL.DAL_Service
                 }
             }
             return list;
+
         }
     }
     public class PhongAccess
@@ -70,7 +75,7 @@ namespace DAL.DAL_Service
             }
             return list;
         }
-        public static List<PhongDTO> GetPhongByTenantID(string tenantID)
+        public static List<PhongDTO> GetPhongByTenantID(string tenantID,string buildingID)
         {
             List<PhongDTO> rooms = new List<PhongDTO>();
 
@@ -78,10 +83,13 @@ namespace DAL.DAL_Service
             {
                 if (conn == null) return rooms;
 
-                string query = "SELECT p.ROOMID \r\nFROM contract c \r\nJOIN room p ON c.ROOMID = p.ROOMID \r\nWHERE c.TENANTID = @tenantID;\r\n";
-                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlCommand cmd = new MySqlCommand("GetRoomsByTenantAndBuilding", conn))
                 {
-                    cmd.Parameters.AddWithValue("@tenantID", tenantID);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Truyền tham số vào stored procedure
+                    cmd.Parameters.AddWithValue("@p_tenantID", tenantID);
+                    cmd.Parameters.AddWithValue("@p_buildingID", buildingID);
 
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -93,6 +101,7 @@ namespace DAL.DAL_Service
                 }
             }
             return rooms;
+
         }
 
     }

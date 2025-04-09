@@ -112,7 +112,8 @@ namespace GUI.GUI_Service
             // Đóng form đăng ký sau khi thành công
             this.Close();
 
-            //parentForm.btn_dichvu_Click(sender, e);
+            // load lai du lieu
+            parentForm.btn_dichvu_Click(sender, e);
 
 
         }

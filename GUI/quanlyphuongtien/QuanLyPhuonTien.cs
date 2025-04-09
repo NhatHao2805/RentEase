@@ -16,10 +16,12 @@ namespace GUI.QuanLyPhuongTien
 {
     public partial class QuanLyPhuonTien : Form
     {
-        public QuanLyPhuonTien()
+        public string buildingID_ = "";
+        public QuanLyPhuonTien(string buildingID)
         {
             InitializeComponent();
             LoadData();
+            buildingID_ = buildingID;
         }
 
 
@@ -46,10 +48,7 @@ namespace GUI.QuanLyPhuongTien
                 newRow["BUILDINGID"] = newBuildingId;
                 buildingTable.Rows.InsertAt(newRow, 0);
 
-                guna2ComboBox3.DataSource = buildingTable;
-                guna2ComboBox3.DisplayMember = "BUILDINGID";
-                guna2ComboBox3.ValueMember = "BUILDINGID";
-                guna2ComboBox3.SelectedIndex = 0;
+
 
                 // Tải các thông tin vào ComboBox ID Bãi Đậu - cách đơn giản hơn
                 string newId = ParkingAreaBLL.GenerateNewParkingAreaId();
@@ -58,10 +57,7 @@ namespace GUI.QuanLyPhuongTien
                 guna2ComboBox1.SelectedIndex = 0;
                 guna2ComboBox1.Enabled = false; // Không cho phép thay đổi
 
-                // Load danh sách tòa nhà
-                guna2ComboBox3.DataSource = ParkingAreaBLL.GetAllBuildings();
-                guna2ComboBox3.DisplayMember = "BUILDINGID";
-                guna2ComboBox3.ValueMember = "BUILDINGID";
+
 
                 // Load danh sách địa chỉ
                 string[] locations = {
@@ -103,32 +99,7 @@ namespace GUI.QuanLyPhuongTien
         private void guna2ComboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Kiểm tra xem có item nào được chọn không
-            if (guna2ComboBox3.SelectedValue != null)
-            {
-                // Lấy mã tòa nhà được chọn
-                string selectedBuildingId = guna2ComboBox3.SelectedValue.ToString();
-
-                // Lọc dữ liệu từ DataTable gốc
-                DataTable allData = ParkingAreaBLL.GetAllParkingAreas();
-                string filterExpression = $"BUILDINGID = '{selectedBuildingId}'";
-                DataRow[] filteredRows = allData.Select(filterExpression);
-
-                if (filteredRows.Length > 0)
-                {
-                    DataTable filteredData = allData.Clone(); // Tạo bảng mới với cùng cấu trúc
-                    foreach (DataRow row in filteredRows)
-                    {
-                        filteredData.ImportRow(row);
-                    }
-
-                    // Hiển thị kết quả lên DataGridView của form cha
-                    if (this.Owner is quanlynha ownerForm)
-                    {
-                        // Gọi phương thức LoadParkingAreaData với dữ liệu đã lọc
-                        ownerForm.LoadParkingAreaDataWithFilter(filteredData);
-                    }
-                }
-            }
+         
         }
 
         private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -150,12 +121,12 @@ namespace GUI.QuanLyPhuongTien
         {
             try
             {
-                string buildingId = guna2ComboBox3.SelectedValue.ToString();
+
                 string address = guna2ComboBox2.Text;
                 string type = guna2ComboBox4.SelectedValue.ToString();
                 int capacity = int.Parse(guna2ComboBox5.Text);
 
-                if (ParkingAreaBLL.AddParkingArea(buildingId, address, type, capacity))
+                if (ParkingAreaBLL.AddParkingArea(buildingID_, address, type, capacity))
                 {
                     MessageBox.Show("Thêm bãi đậu xe thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -189,7 +160,6 @@ namespace GUI.QuanLyPhuongTien
         {
 
         }
-
 
         private void guna2ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
