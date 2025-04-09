@@ -2209,5 +2209,10 @@ namespace GUI
         {
             loadLanguage();
         }
+
+        private void guna2CustomGradientPanel23_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

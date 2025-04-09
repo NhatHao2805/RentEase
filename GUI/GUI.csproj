@@ -263,6 +263,13 @@
     <Content Include="honhathao\languages\initialLanguage.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-parking-100.png" />
+    <None Include="Resources\icons8-vehicle-50.png" />
+    <None Include="Resources\icons8-view-96.png" />
+    <None Include="Resources\icons8-lightning-bolt-80.png" />
+    <None Include="Resources\icons8-evaluate-64.png" />
+    <None Include="Resources\icons8-view-80.png" />
+    <None Include="Resources\icons8-remind-100.png" />
     <EmbeddedResource Include="gui_service\AddService.resx">
       <DependentUpon>AddService.cs</DependentUpon>
     </EmbeddedResource>

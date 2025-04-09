@@ -54,3 +54,31 @@ C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DTO\obj\Debu
 C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DTO\obj\Debug\DTO.csproj.Up2Date
 C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DTO\obj\Debug\DTO.dll
 C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DTO\obj\Debug\DTO.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\DTO.dll.config
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\DTO.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\DTO.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\MySqlConnector.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Buffers.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Memory.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Numerics.Vectors.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\MySqlConnector.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Buffers.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Memory.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Numerics.Vectors.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DTO\obj\Debug\DTO.pdb

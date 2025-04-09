@@ -1139,3 +1139,21 @@ C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debu
 C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.IO.Pipelines.xml
 C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.gui_service.FingerprintManagementForm.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\initialLanguage.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\English.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\ListLanguage.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\SourceAFIS.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\SourceAFIS.xml
