@@ -50,7 +50,7 @@ namespace GUI
             area.AreaId = infor.AreaId;
             area.BuildingId = infor.BuildingId;
             area.Address = address_tb.Text;
-            area.Type = type_cb.SelectedIndex.ToString();
+            area.Type = type_cb.SelectedItem.ToString();
             area.Capacity = capacity_tb.Text;
 
             string check = ParkingAreaBLL.UpdateArea(area);

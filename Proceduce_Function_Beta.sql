@@ -490,28 +490,13 @@ BEGIN
     END IF;
 END//
 
-CREATE PROCEDURE load_Vehicle(
-    IN p_areaid VARCHAR(20),
-    IN p_tenantids TEXT
+CREATE PROCEDURE sp_FilterVehicle(
+    IN p_buildingid VARCHAR(20),
+    IN p_vehicle_type VARCHAR(50),
+    IN p_status VARCHAR(50)
 )
 BEGIN
-    -- Tạo bảng tạm để lưu danh sách tenantid
-    CREATE TEMPORARY TABLE IF NOT EXISTS temp_tenantids (
-        tenantid VARCHAR(20)
-    );
-    
-    -- Xóa dữ liệu cũ trong bảng tạm
-    TRUNCATE TABLE temp_tenantids;
-    
-    -- Chèn các tenantid vào bảng tạm
-    IF p_tenantids IS NOT NULL THEN
-        SET @sql = CONCAT('INSERT INTO temp_tenantids VALUES ', p_tenantids);
-        PREPARE stmt FROM @sql;
-        EXECUTE stmt;
-        DEALLOCATE PREPARE stmt;
-    END IF;
-    
-    -- Thực hiện truy vấn chính
+    -- Truy vấn chính với các JOIN cần thiết
     SELECT 
         v.VEHICLEID,
         v.TENANTID,
@@ -523,14 +508,12 @@ BEGIN
         p.PARKINGID,
         p.STATUS
     FROM VEHICLE v
-    JOIN TENANT t ON v.TENANTID = t.TENANTID
-    JOIN VEHICLE_UNITPRICE vup ON v.VEHICLE_UNITPRICE_ID = vup.VEHICLE_UNITPRICE_ID
-    JOIN PARKING p ON v.VEHICLEID = p.VEHICLEID
-    WHERE (p.AREAID = p_areaid OR p_areaid IS NULL)
-    AND (p_tenantids IS NULL OR v.TENANTID IN (SELECT tenantid FROM temp_tenantids));
-    
-    -- Xóa bảng tạm
-    DROP TEMPORARY TABLE IF EXISTS temp_tenantids;
+    INNER JOIN VEHICLE_UNITPRICE vup ON v.VEHICLE_UNITPRICE_ID = vup.VEHICLE_UNITPRICE_ID
+    LEFT JOIN PARKING p ON v.VEHICLEID = p.VEHICLEID
+    LEFT JOIN PARKINGAREA pa ON p.AREAID = pa.AREAID
+    WHERE (p_buildingid IS NULL OR pa.BUILDINGID = p_buildingid)
+    AND (p_vehicle_type IS NULL OR v.TYPE = p_vehicle_type)
+    AND (p_status IS NULL OR p.STATUS = p_status);
 END//
 
 CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createVehicleID`()
@@ -542,16 +525,17 @@ BEGIN
     DECLARE new_id VARCHAR(20);
     
     -- Lấy ID lớn nhất hiện có, nếu không có thì mặc định là 'V001'
-    SELECT IFNULL(MAX(VEHICLEID), 'V001') INTO max_id FROM VEHICLE;
+    SELECT IFNULL(MAX(VEHICLEID), 'V000') INTO max_id FROM VEHICLE;
     
     -- Tách phần số và tăng lên 1
-    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET number_part = CAST(SUBSTRING(max_id, 2) AS UNSIGNED) + 1;
     
-    -- Tạo ID mới với format 'PA' + số tự động tăng không giới hạn chữ số
-    SET new_id = CONCAT('V', number_part);
+    -- Tạo ID mới với format 'V' + số tự động tăng có padding 3 số
+    SET new_id = CONCAT('V', LPAD(number_part, 3, '0'));
     
     RETURN new_id;
 END//
+
 
 CREATE PROCEDURE proc_addVehicle(
     IN p_tenantid VARCHAR(20),
@@ -561,26 +545,86 @@ CREATE PROCEDURE proc_addVehicle(
 )
 BEGIN
     DECLARE new_vehicle_id VARCHAR(20);
+    DECLARE max_id INT;
+    DECLARE error_message VARCHAR(255);
+
+    -- Kiểm tra các tham số đầu vào
+    IF p_tenantid IS NULL OR p_tenantid = '' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: TenantID is required';
+    END IF;
+
+    IF p_vehicle_unitprice_id IS NULL OR p_vehicle_unitprice_id = '' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Vehicle unit price ID is required';
+    END IF;
+
+    IF p_type IS NULL OR p_type = '' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Vehicle type is required';
+    END IF;
+
+    IF p_licenseplate IS NULL OR p_licenseplate = '' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: License plate is required';
+    END IF;
+
+    -- Kiểm tra xem tenant có tồn tại không
+    IF NOT EXISTS (SELECT 1 FROM TENANT WHERE TENANTID = p_tenantid) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Tenant does not exist';
+    END IF;
+
+    -- Kiểm tra xem vehicle_unitprice có tồn tại không
+    IF NOT EXISTS (SELECT 1 FROM VEHICLE_UNITPRICE WHERE VEHICLE_UNITPRICE_ID = p_vehicle_unitprice_id) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: Vehicle unit price does not exist';
+    END IF;
+
+    -- Kiểm tra xem biển số xe đã tồn tại chưa
+    IF EXISTS (SELECT 1 FROM VEHICLE WHERE LICENSEPLATE = p_licenseplate) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Error: License plate already exists';
+    END IF;
+
+    -- Tìm số ID lớn nhất hiện tại
+    SELECT CAST(SUBSTRING(IFNULL(MAX(VEHICLEID), 'V000'), 2) AS UNSIGNED) 
+    INTO max_id 
+    FROM VEHICLE;
     
-    -- Tạo ID mới cho phương tiện
-    SET new_vehicle_id = createVehicleID();
+    -- Tạo ID mới
+    SET new_vehicle_id = CONCAT('V', LPAD(max_id + 1, 3, '0'));
     
-    -- Thêm phương tiện mới
-    INSERT INTO VEHICLE (
-        VEHICLEID,
-        TENANTID,
-        VEHICLE_UNITPRICE_ID,
-        TYPE,
-        LICENSEPLATE
-    ) VALUES (
-        new_vehicle_id,
-        p_tenantid,
-        p_vehicle_unitprice_id,
-        p_type,
-        p_licenseplate
-    );
-    
-    SELECT new_vehicle_id AS NEW_VEHICLE_ID;
+    -- Thêm phương tiện mới với transaction
+    BEGIN
+        DECLARE EXIT HANDLER FOR SQLEXCEPTION
+        BEGIN
+            ROLLBACK;
+            SIGNAL SQLSTATE '45000'
+            SET MESSAGE_TEXT = 'Error: Failed to add new vehicle';
+        END;
+        
+        START TRANSACTION;
+        
+        INSERT INTO VEHICLE (
+            VEHICLEID,
+            TENANTID,
+            VEHICLE_UNITPRICE_ID,
+            TYPE,
+            LICENSEPLATE
+        ) VALUES (
+            new_vehicle_id,
+            p_tenantid,
+            p_vehicle_unitprice_id,
+            p_type,
+            p_licenseplate
+        );
+        
+        COMMIT;
+        
+        -- Trả về ID mới nếu thành công
+        SELECT new_vehicle_id AS NEW_VEHICLE_ID;
+    END;
 END//
 
 CREATE PROCEDURE proc_updateVehicle(
@@ -666,6 +710,5 @@ BEGIN
             p_status IS NULL
         );
 END//
-CALL sp_FilterParkingArea('B001', 'Bãi xe máy/xe đạp', 'EMPTY');
 
 delimiter ;

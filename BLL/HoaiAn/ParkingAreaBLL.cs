@@ -75,13 +75,8 @@ namespace BLL
         }
 
 
-        public static DataTable FilterParkingArea(string username, string buildingid, string type, string status)
+        public static DataTable FilterParkingArea(string buildingid, string type, string status)
         {
-            if (string.IsNullOrEmpty(type) && string.IsNullOrEmpty(status))
-            {
-                return ParkingAreaAccess.LoadArea(username, buildingid);
-            }
-
             return ParkingAreaAccess.FilterParkingArea(buildingid, type, status);
         }
     }

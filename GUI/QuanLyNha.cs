@@ -181,21 +181,8 @@ namespace GUI
         //New HoaiAn 4/8/2025
         private void load_PA()
         {
-            if (listBuildingID.SelectedItem == null)
-            {
-                guna2DataGridView7.DataSource = ParkingAreaBLL.LoadParkingArea(form1.taikhoan.Username, null);
-            }
-            else
-            {
-                guna2DataGridView7.DataSource = ParkingAreaBLL.LoadParkingArea(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-            }
-            guna2DataGridView7.ReadOnly = true;
-            guna2DataGridView7.Columns[0].Width = 90;
-            guna2DataGridView7.Columns[1].Width = 90;
-            guna2DataGridView7.Columns[2].Width = 250;
-            guna2DataGridView7.Columns[3].Width = 150;
-            guna2DataGridView7.Columns[4].Width = 90;
-            guna2DataGridView7.ScrollBars = ScrollBars.Both;
+            guna2DataGridView7.DataSource = ParkingAreaBLL.FilterParkingArea(listBuildingID.SelectedItem.ToString(), null, null);
+            ConfigureParkingArea();
 
         }
 
@@ -204,82 +191,19 @@ namespace GUI
         {
             try
             {
-                // Lấy danh sách tenantIds
-                List<string> tenantIds = TenantBLL.TenantBll_Load_TenantID();
+                // Lấy dữ liệu phương tiện
+                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), null, null);
 
-                // Nếu không có tenant nào, truyền null
-                if (tenantIds == null || tenantIds.Count == 0)
-                {
-                    tenantIds = null;
-                }
-
-                // Lấy areaId từ ComboBox và kiểm tra null
-                string areaId = null;
-                if (guna2ComboBox1.SelectedItem != null)
-                {
-                    areaId = guna2ComboBox1.SelectedItem.ToString();
-                }
-
-                // Load dữ liệu
-                guna2DataGridView1.DataSource = VehicleBLL.LoadVehicle(areaId, tenantIds);
-
-                // Cấu hình DataGridView
-                if (guna2DataGridView1.Columns.Count > 0)
-                {
-                    guna2DataGridView1.ReadOnly = true;
-                    guna2DataGridView1.AllowUserToAddRows = false;
-                    guna2DataGridView1.AllowUserToDeleteRows = false;
-                    guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                    guna2DataGridView1.ScrollBars = ScrollBars.Both;
-
-                    // Đặt tên cột với kiểm tra tồn tại
-                    if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
-                        guna2DataGridView1.Columns["VEHICLEID"].HeaderText = "Mã xe";
-                    if (guna2DataGridView1.Columns.Contains("TENANTID"))
-                        guna2DataGridView1.Columns["TENANTID"].HeaderText = "Mã khách hàng";
-                    if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
-                        guna2DataGridView1.Columns["FIRSTNAME"].HeaderText = "Họ";
-                    if (guna2DataGridView1.Columns.Contains("LASTNAME"))
-                        guna2DataGridView1.Columns["LASTNAME"].HeaderText = "Tên";
-                    if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
-                        guna2DataGridView1.Columns["UNITPRICE"].HeaderText = "Đơn giá";
-                    if (guna2DataGridView1.Columns.Contains("TYPE"))
-                        guna2DataGridView1.Columns["TYPE"].HeaderText = "Loại xe";
-                    if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
-                        guna2DataGridView1.Columns["LICENSEPLATE"].HeaderText = "Biển số";
-                    if (guna2DataGridView1.Columns.Contains("PARKINGID"))
-                        guna2DataGridView1.Columns["PARKINGID"].HeaderText = "Mã chỗ đỗ";
-                    if (guna2DataGridView1.Columns.Contains("STATUS"))
-                        guna2DataGridView1.Columns["STATUS"].HeaderText = "Trạng thái";
-
-                    // Đặt độ rộng cột
-                    if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
-                        guna2DataGridView1.Columns["VEHICLEID"].Width = 90;
-                    if (guna2DataGridView1.Columns.Contains("TENANTID"))
-                        guna2DataGridView1.Columns["TENANTID"].Width = 90;
-                    if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
-                        guna2DataGridView1.Columns["FIRSTNAME"].Width = 100;
-                    if (guna2DataGridView1.Columns.Contains("LASTNAME"))
-                        guna2DataGridView1.Columns["LASTNAME"].Width = 100;
-                    if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
-                        guna2DataGridView1.Columns["UNITPRICE"].Width = 90;
-                    if (guna2DataGridView1.Columns.Contains("TYPE"))
-                        guna2DataGridView1.Columns["TYPE"].Width = 120;
-                    if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
-                        guna2DataGridView1.Columns["LICENSEPLATE"].Width = 100;
-                    if (guna2DataGridView1.Columns.Contains("PARKINGID"))
-                        guna2DataGridView1.Columns["PARKINGID"].Width = 90;
-                    if (guna2DataGridView1.Columns.Contains("STATUS"))
-                        guna2DataGridView1.Columns["STATUS"].Width = 90;
-                }
+                // Gán dữ liệu và cấu hình DataGridView
+                guna2DataGridView1.DataSource = data;
+                ConfigureVehicle();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                guna2DataGridView1.DataSource = null;
             }
         }
-
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -1761,69 +1685,11 @@ namespace GUI
         {
             try
             {
-                DataTable filteredData = ParkingAreaBLL.FilterParkingArea(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString(), type, status);
+                DataTable filteredData = ParkingAreaBLL.FilterParkingArea(listBuildingID.SelectedItem.ToString(), type, status);
 
                 guna2DataGridView7.DataSource = filteredData;
-
-                // Cấu hình DataGridView
-                guna2DataGridView7.ReadOnly = true;
-                guna2DataGridView7.AllowUserToAddRows = false;
-                guna2DataGridView7.AllowUserToDeleteRows = false;
-                guna2DataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                guna2DataGridView7.ScrollBars = ScrollBars.Both;
-
-                // Đặt tên cột và cấu hình chỉ khi có dữ liệu
-                if (guna2DataGridView7.Columns.Count > 0)
-                {
-                    // Kiểm tra và đặt tên cột nếu cột tồn tại
-                    if (guna2DataGridView7.Columns.Contains("AREAID"))
-                        guna2DataGridView7.Columns["AREAID"].HeaderText = "Mã bãi xe";
-                    if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
-                        guna2DataGridView7.Columns["BUILDINGID"].HeaderText = "Mã tòa nhà";
-                    if (guna2DataGridView7.Columns.Contains("ADDRESS"))
-                        guna2DataGridView7.Columns["ADDRESS"].HeaderText = "Địa chỉ";
-                    if (guna2DataGridView7.Columns.Contains("TYPE"))
-                        guna2DataGridView7.Columns["TYPE"].HeaderText = "Loại bãi xe";
-                    if (guna2DataGridView7.Columns.Contains("CAPACITY"))
-                        guna2DataGridView7.Columns["CAPACITY"].HeaderText = "Sức chứa";
-                    if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
-                        guna2DataGridView7.Columns["CURRENT_VEHICLES"].HeaderText = "Số xe hiện tại";
-                    if (guna2DataGridView7.Columns.Contains("STATUS"))
-                        guna2DataGridView7.Columns["STATUS"].HeaderText = "Trạng thái";
-
-                    // Đặt thứ tự hiển thị cột
-                    int displayIndex = 0;
-                    if (guna2DataGridView7.Columns.Contains("AREAID"))
-                        guna2DataGridView7.Columns["AREAID"].DisplayIndex = displayIndex++;
-                    if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
-                        guna2DataGridView7.Columns["BUILDINGID"].DisplayIndex = displayIndex++;
-                    if (guna2DataGridView7.Columns.Contains("ADDRESS"))
-                        guna2DataGridView7.Columns["ADDRESS"].DisplayIndex = displayIndex++;
-                    if (guna2DataGridView7.Columns.Contains("TYPE"))
-                        guna2DataGridView7.Columns["TYPE"].DisplayIndex = displayIndex++;
-                    if (guna2DataGridView7.Columns.Contains("CAPACITY"))
-                        guna2DataGridView7.Columns["CAPACITY"].DisplayIndex = displayIndex++;
-                    if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
-                        guna2DataGridView7.Columns["CURRENT_VEHICLES"].DisplayIndex = displayIndex++;
-                    if (guna2DataGridView7.Columns.Contains("STATUS"))
-                        guna2DataGridView7.Columns["STATUS"].DisplayIndex = displayIndex++;
-
-                    // Đặt độ rộng cột
-                    if (guna2DataGridView7.Columns.Contains("AREAID"))
-                        guna2DataGridView7.Columns["AREAID"].Width = 90;
-                    if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
-                        guna2DataGridView7.Columns["BUILDINGID"].Width = 90;
-                    if (guna2DataGridView7.Columns.Contains("ADDRESS"))
-                        guna2DataGridView7.Columns["ADDRESS"].Width = 250;
-                    if (guna2DataGridView7.Columns.Contains("TYPE"))
-                        guna2DataGridView7.Columns["TYPE"].Width = 150;
-                    if (guna2DataGridView7.Columns.Contains("CAPACITY"))
-                        guna2DataGridView7.Columns["CAPACITY"].Width = 90;
-                    if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
-                        guna2DataGridView7.Columns["CURRENT_VEHICLES"].Width = 90;
-                    if (guna2DataGridView7.Columns.Contains("STATUS"))
-                        guna2DataGridView7.Columns["STATUS"].Width = 90;
-                }
+                ConfigureParkingArea();
+                
             }
             catch (Exception ex)
             {
@@ -1831,6 +1697,71 @@ namespace GUI
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void ConfigureParkingArea()
+        {
+            // Cấu hình DataGridView
+            guna2DataGridView7.ReadOnly = true;
+            guna2DataGridView7.AllowUserToAddRows = false;
+            guna2DataGridView7.AllowUserToDeleteRows = false;
+            guna2DataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            guna2DataGridView7.ScrollBars = ScrollBars.Both;
+
+            // Đặt tên cột và cấu hình chỉ khi có dữ liệu
+            if (guna2DataGridView7.Columns.Count > 0)
+            {
+                // Kiểm tra và đặt tên cột nếu cột tồn tại
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].HeaderText = "Mã bãi xe";
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].HeaderText = "Mã tòa nhà";
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].HeaderText = "Địa chỉ";
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].HeaderText = "Loại bãi xe";
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].HeaderText = "Sức chứa";
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].HeaderText = "Số xe hiện tại";
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].HeaderText = "Trạng thái";
+
+                // Đặt thứ tự hiển thị cột
+                int displayIndex = 0;
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].DisplayIndex = displayIndex++;
+
+                // Đặt độ rộng cột
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].Width = 250;
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].Width = 150;
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].Width = 90;
+            }
+        }
+
+
         private void checkBox10_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox10.Checked)
@@ -1897,14 +1828,6 @@ namespace GUI
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             tabQuanLy.SelectedIndex = 5;
-            foreach (var s in ParkingAreaBLL.LoadAreaID())
-            {
-                guna2ComboBox1.Items.Add(s);
-            }
-            if(guna2ComboBox1 != null)
-            {
-                guna2ComboBox1.SelectedIndex = 0;
-            }
         }
         //New HoaiAn
         private void guna2GradientButton4_Click(object sender, EventArgs e)
@@ -1986,6 +1909,143 @@ namespace GUI
             }
         }
 
-        
+        //New HoaiAn
+        //Lọc
+        private void FilterVehicle()
+        {
+            try
+            {
+
+                // Xác định loại xe
+                string vehicleType = null;
+                if (checkBox10.Checked) vehicleType = "Xe oto";
+                else if (checkBox11.Checked) vehicleType = "Xe máy";
+                else if (checkBox18.Checked) vehicleType = "Xe đạp";
+
+                // Xác định trạng thái
+                string status = null;
+                if (checkBox17.Checked) status = "Đang giữ";
+                else if (checkBox20.Checked) status = "Đã lấy";
+
+                // Load dữ liệu
+                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), vehicleType, status);
+
+                if (data != null && data.Rows.Count > 0)
+                {
+                    guna2DataGridView1.DataSource = data;
+                    ConfigureVehicle();
+                }
+                else
+                {
+                    guna2DataGridView1.DataSource = null;
+                    MessageBox.Show("Không có dữ liệu phương tiện để hiển thị", "Thông báo",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ConfigureVehicle()
+        {
+            // Cấu hình DataGridView
+            if (guna2DataGridView1.Columns.Count > 0)
+            {
+                guna2DataGridView1.ReadOnly = true;
+                guna2DataGridView1.AllowUserToAddRows = false;
+                guna2DataGridView1.AllowUserToDeleteRows = false;
+                guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                guna2DataGridView1.ScrollBars = ScrollBars.Both;
+
+                // Đặt tên cột với kiểm tra tồn tại
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].HeaderText = "Mã xe";
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].HeaderText = "Mã khách hàng";
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].HeaderText = "Họ";
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].HeaderText = "Tên";
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].HeaderText = "Đơn giá";
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].HeaderText = "Loại xe";
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].HeaderText = "Biển số";
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].HeaderText = "Mã chỗ đỗ";
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].HeaderText = "Trạng thái";
+
+                // Đặt độ rộng cột
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].Width = 120;
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].Width = 90;
+            }
+        }
+        //New HoaiAn
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox5.Checked = false;
+            }
+            FilterVehicle();
+        }
+        //New HoaiAn
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked)
+            {
+                checkBox2.Checked = false;
+                checkBox7.Checked = false;
+            }
+            FilterVehicle();
+        }
+        //New HoaiAn
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox7.Checked)
+            {
+                checkBox2.Checked = false;
+                checkBox5.Checked = false;
+            }
+            FilterVehicle();
+        }
+        //New HoaiAn
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked)
+            {
+                checkBox8.Checked = false;
+            }
+            FilterVehicle();
+        }
+        //New HoaiAn
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox8.Checked)
+            {
+                checkBox6.Checked = false;
+            }
+            FilterVehicle();
+        }
     }
 }

@@ -13,40 +13,6 @@ namespace DAL
 {
     public class VehicleAccess
     {
-        public static DataTable LoadVehicle(string areaId, List<string> tenantIds)
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                using (MySqlConnection conn = MySqlConnectionData.Connect())
-                {
-                    using (MySqlCommand command = new MySqlCommand("load_Vehicle", conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-
-                        command.Parameters.AddWithValue("@p_areaid", string.IsNullOrEmpty(areaId) ? null : areaId);
-                        
-                        // Chuyển danh sách tenantIds thành chuỗi SQL
-                        string tenantIdsString = null;
-                        if (tenantIds != null && tenantIds.Count > 0)
-                        {
-                            tenantIdsString = "('" + string.Join("'),('", tenantIds) + "')";
-                        }
-                        command.Parameters.AddWithValue("@p_tenantids", tenantIdsString);
-
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
-                        {
-                            adapter.Fill(dt);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error in LoadVehicle: " + ex.Message);
-            }
-            return dt;
-        }
         public static string addVehicle(Vehicle vehicle)
         {
             try
@@ -207,6 +173,35 @@ namespace DAL
                 Console.WriteLine("Error in GetAllVehicleUnitPrices: " + ex.Message);
             }
             return output;
+        }
+
+        public static DataTable FilterVehicle(string buildingid, string type, string status)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    using (MySqlCommand command = new MySqlCommand("sp_FilterVehicle", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("@p_buildingid", buildingid);
+                        command.Parameters.AddWithValue("@p_type", string.IsNullOrEmpty(type) ? null : type);
+                        command.Parameters.AddWithValue("@p_status", string.IsNullOrEmpty(status) ? null : status);
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in FilterVehicle: " + ex.Message);
+            }
+            return dt;
         }
     }
 }

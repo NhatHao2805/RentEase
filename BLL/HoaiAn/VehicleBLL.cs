@@ -10,15 +10,6 @@ namespace BLL
 {
     public class VehicleBLL
     {
-        public static DataTable LoadVehicle(string areaId, List<string> tenantIds)
-        {
-            string tenantIdsString = null;
-            if (tenantIds != null && tenantIds.Count > 0)
-            {
-                tenantIdsString = "('" + string.Join("'),('", tenantIds) + "')";
-            }
-            return VehicleAccess.LoadVehicle(areaId, tenantIds);
-        }
         public static string CheckLogic(Vehicle vehicle)
         {
             if (string.IsNullOrEmpty(vehicle.TenantID))
@@ -75,14 +66,9 @@ namespace BLL
             return VehicleAccess.GetAllVehicleUnitPrices();
         }
 
-        //public static DataTable FilterVehicle(string username, string priceSort, string nameSort, string buildingid)
-        //{
-        //    if (string.IsNullOrEmpty(priceSort) && string.IsNullOrEmpty(nameSort))
-        //    {
-        //        return VehicleAccess.LoadVehicle(username, buildingid);
-        //    }
-
-        //    return VehicleAccess.FilterVehicle(username, priceSort, nameSort, buildingid);
-        //}
+        public static DataTable FilterVehicle(string buildingid, string type, string status)
+        {
+            return VehicleAccess.FilterVehicle(buildingid, type, status);
+        }
     }
 }
