@@ -19,20 +19,22 @@ namespace GUI
         VehicleBLL vehicleBLL = new VehicleBLL();
         quanlynha form;
         Vehicle vehicle = new Vehicle();
-        public Form_AddVehicle()
+        string _buildingid;
+        public Form_AddVehicle(string buildingid)
         {
             InitializeComponent();
-
+            _buildingid = buildingid;
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
             vehicle.TenantID = tenantid_cb.SelectedItem.ToString();
             vehicle.VehicleUnitPriceID = unitpriceid_tb.Text;
-            vehicle.Type = type_cb.Text;
+            vehicle.Type = type_cb.SelectedItem.ToString();
             vehicle.LicensePlate = licenseplate_tb.Text;
 
-            string check = VehicleBLL.CheckLogic(vehicle);
+
+            string check = VehicleBLL.CheckLogic(vehicle, areaid_cb.SelectedItem.ToString());
 
             switch (check)
             {
@@ -76,58 +78,71 @@ namespace GUI
             }
 
             type_cb.Items.Clear();
-            type_cb.Items.Add("Ô tô");
-            type_cb.Items.Add("Xe máy");
-            type_cb.Items.Add("Xe đạp");
+            foreach (DataRow row in VehicleBLL.GetAllVehicle().Rows)
+            {
+                type_cb.Items.Add(row["TYPE"].ToString());
+            }
 
-            unitprice_tb.Enabled = false;
+            unitpriceid_cb.Items.Clear();
+            foreach (DataRow row in VehicleBLL.GetAllVehicleUnitPrices().Rows)
+            {
+                unitpriceid_cb.Items.Add(row["VEHICLE_UNITPRICE_ID"].ToString());
+            }
+
+            unitpriceid_cb.Enabled = false;
         }
 
         private void type_cb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (type_cb.SelectedItem == null)
+            //areaid_cb.Items.Clear();
+            //foreach (DataRow row in ParkingAreaBLL.GetAreaId(type_cb.SelectedItem.ToString(), _buildingid).Rows)
+            //{
+            //    areaid_cb.Items.Add(row["AREAID"].ToString());
+            //}
+            
+            // Xóa các mục hiện có trong ComboBox
+            areaid_cb.Items.Clear();
+            // Lấy dữ liệu từ phương thức
+            System.Data.DataTable areaData = ParkingAreaBLL.GetAreaId(type_cb.SelectedItem.ToString(), _buildingid);
+
+            // Kiểm tra xem DataTable có dữ liệu không
+            if (areaData != null && areaData.Rows.Count > 0)
             {
-                unitpriceid_tb.Text = string.Empty;
-                unitprice_tb.Text = string.Empty;
-                return;
+                foreach (DataRow row in areaData.Rows)
+                {
+                    areaid_cb.Items.Add(row["AREAID"].ToString());
+                }
             }
+            else
+            {
+                // Thông báo nếu không có dữ liệu
+                MessageBox.Show("Không tìm thấy bãi đậu xe cho loại xe đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            unitpriceid_cb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString()).ToString();
+            if (type_cb.SelectedItem == null) return;
 
             try
             {
-                string selectedType = type_cb.SelectedItem.ToString();
-                Console.WriteLine($"Selected type: {selectedType}");
-                Console.WriteLine($"Selected type length: {selectedType.Length}");
-                Console.WriteLine($"Selected type bytes: {System.Text.Encoding.UTF8.GetBytes(selectedType).Length}");
+                // Lấy DataTable chứa ID đơn giá
+                System.Data.DataTable dt = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString());
 
-                // Kiểm tra dữ liệu trong bảng VEHICLE_UNITPRICE
-                using (System.Data.DataTable allPrices = VehicleBLL.GetAllVehicleUnitPrices())
+                if (dt.Rows.Count > 0)
                 {
-                    Console.WriteLine("All vehicle unit prices:");
-                    foreach (DataRow row in allPrices.Rows)
-                    {
-                        string dbType = row["TYPE"].ToString();
-                        Console.WriteLine($"ID: {row["VEHICLE_UNITPRICE_ID"]}, Type: '{dbType}', Type length: {dbType.Length}, Type bytes: {System.Text.Encoding.UTF8.GetBytes(dbType).Length}, Price: {row["UNITPRICE"]}");
-                        
-                        // So sánh trực tiếp
-                        if (dbType.Equals(selectedType, StringComparison.OrdinalIgnoreCase))
-                        {
-                            Console.WriteLine("Found exact match!");
-                            unitpriceid_tb.Text = row["VEHICLE_UNITPRICE_ID"].ToString();
-                            unitprice_tb.Text = row["UNITPRICE"].ToString();
-                            return;
-                        }
-                    }
-                }
+                    string unitPriceId = dt.Rows[0]["VEHICLE_UNITPRICE_ID"].ToString();
+                    unitpriceid_cb.SelectedItem = unitPriceId;
 
-                MessageBox.Show($"Chưa có đơn giá cho loại phương tiện '{selectedType}'!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                unitpriceid_tb.Text = string.Empty;
-                unitprice_tb.Text = string.Empty;
+                    float price = VehicleBLL.GetVehicleUnitPriceById(unitPriceId);
+                    unitprice_tb.Text = price.ToString();
+                }
+                else
+                {
+                    unitprice_tb.Text = "Không tìm thấy đơn giá";
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi khi tải đơn giá: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                unitpriceid_tb.Text = string.Empty;
-                unitprice_tb.Text = string.Empty;
+                MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
     }

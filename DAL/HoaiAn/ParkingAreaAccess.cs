@@ -43,52 +43,6 @@ namespace DAL
 
         }
 
-        public static DataTable LoadArea(string Username, string buildingid)
-        {
-            DataTable output = new DataTable();
-
-            try
-            {
-                using (MySqlConnection conn = MySqlConnectionData.Connect())
-                {
-                    // Kiểm tra và mở kết nối nếu chưa mở
-                    if (conn.State != ConnectionState.Open)
-                    {
-                        conn.Open();
-                    }
-
-                    using (MySqlCommand command = new MySqlCommand("load_Area", conn))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@p_username", Username);
-                        command.Parameters.AddWithValue("@p_buildingid", buildingid);
-
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                output.Columns.Add(reader.GetName(i), reader.GetFieldType(i));
-                            }
-
-                            while (reader.Read())
-                            {
-                                DataRow row = output.NewRow();
-                                for (int i = 0; i < reader.FieldCount; i++)
-                                {
-                                    row[i] = reader.IsDBNull(i) ? DBNull.Value : reader.GetValue(i);
-                                }
-                                output.Rows.Add(row);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error in LoadArea: " + ex.Message);
-            }
-            return output;
-        }
         public static string addParkingArea(ParkingArea area)
         {
             try
@@ -130,6 +84,7 @@ namespace DAL
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
+                        command.Parameters.AddWithValue("@p_areaid", area.AreaId);
                         command.Parameters.AddWithValue("@p_buildingid", area.BuildingId);
                         command.Parameters.AddWithValue("@p_address", area.Address);
                         command.Parameters.AddWithValue("@p_type", area.Type);
@@ -204,6 +159,60 @@ namespace DAL
                 Console.WriteLine("Error in FilterParkingArea: " + ex.Message);
             }
             return dt;
+        }
+
+        public static DataTable GetAreaId(string type, string buildingid)
+        {
+            DataTable output = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+
+                    // Tạo thủ tục lưu trữ nếu chưa tồn tại
+                    string createProcedure = @"
+                                            DROP PROCEDURE IF EXISTS GetAreaIds;
+                                            CREATE PROCEDURE GetAreaIds(IN p_type VARCHAR(50), IN p_buildingid VARCHAR(20))
+                                            BEGIN
+                                                SELECT pa.*
+                                                FROM PARKINGAREA pa
+                                                WHERE (pa.BUILDINGID = p_buildingid) AND
+                                                    ((pa.TYPE = 'Xe ô tô' AND p_type = 'Xe ô tô') OR
+                                                    (pa.TYPE = 'Xe máy/Xe đạp' AND (p_type = 'Xe máy' OR p_type = 'Xe đạp')) OR
+                                                    (pa.TYPE = 'Hỗn hợp' AND p_type IN ('Xe ô tô', 'Xe máy', 'Xe đạp')));
+                                            END;";
+
+                    using (MySqlCommand createCommand = new MySqlCommand(createProcedure, conn))
+                    {
+                        createCommand.ExecuteNonQuery(); // Thực thi lệnh tạo thủ tục
+                    }
+
+                    // Gọi thủ tục lưu trữ
+                    using (MySqlCommand command = new MySqlCommand("GetAreaIds", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@p_type", type);
+                        command.Parameters.AddWithValue("@p_buildingid", buildingid);
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            adapter.Fill(output); // Điền dữ liệu vào DataTable
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetAreaIdByType: " + ex.Message);
+                return null; // Trả về null nếu có lỗi
+            }
+
+            return output; // Trả về DataTable chứa danh sách AREAID
         }
     }
 }

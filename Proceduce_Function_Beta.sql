@@ -338,41 +338,23 @@ BEGIN
 END//
 
 -- New 8/4/2025
-CREATE PROCEDURE load_Area(
-    IN p_username VARCHAR(50),
-    IN p_buildingid VARCHAR(20))
-BEGIN
-    SELECT 
-        pa.AREAID,
-        pa.BUILDINGID,
-        pa.ADDRESS,
-        pa.TYPE,
-        pa.CAPACITY
-    FROM PARKINGAREA pa
-    JOIN BUILDING b ON pa.BUILDINGID = b.BUILDINGID
-    WHERE b.USERNAME = p_username
-    AND (p_buildingid IS NULL OR pa.BUILDINGID = p_buildingid)
-    ORDER BY pa.AREAID;
-END//
-
 CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createParkingAreaID`()
 RETURNS VARCHAR(20) 
 DETERMINISTIC
 BEGIN
-    DECLARE max_id VARCHAR(20);
-    DECLARE number_part INT;
-    DECLARE new_id VARCHAR(20);
+    DECLARE new_key VARCHAR(10);
+	DECLARE max_key INT;
     
-    -- Lấy ID lớn nhất hiện có, nếu không có thì mặc định là 'PA1'
-    SELECT IFNULL(MAX(AREAID), 'PA1') INTO max_id FROM PARKINGAREA;
-    
-    -- Tách phần số và tăng lên 1
-    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
-    
-    -- Tạo ID mới với format 'PA' + số tự động tăng không giới hạn chữ số
-    SET new_id = CONCAT('PA', number_part);
-    
-    RETURN new_id;
+   -- Lấy giá trị lớn nhất hiện có trong bảng (giả sử bảng có tên là 'your_table' và cột khóa chính là 'id')
+    SELECT COALESCE(MAX(CAST(SUBSTRING(AREAID, 3) AS UNSIGNED)), 0) INTO max_key FROM PARKINGAREA;
+
+    -- Tăng giá trị lên 1
+    SET max_key = max_key + 1;
+
+    -- Tạo khóa mới với định dạng PA + 4 số
+    SET new_key = CONCAT('PA', LPAD(max_key, 4, '0'));
+
+    RETURN new_key;
 END//
 
 CREATE PROCEDURE proc_addParkingArea(
@@ -405,21 +387,20 @@ BEGIN
 END//
 
 CREATE PROCEDURE proc_updateParkingArea(
+	IN p_areaid VARCHAR(20),
     IN p_buildingid VARCHAR(20),
     IN p_address VARCHAR(100),
     IN p_type VARCHAR(50),
     IN p_capacity INT
 )
 BEGIN
-	DECLARE new_areaid VARCHAR(20);
-	SET new_areaid = createParkingAreaID();
     UPDATE PARKINGAREA
     SET 
         BUILDINGID = p_buildingid,
         ADDRESS = p_address,
         TYPE = p_type,
         CAPACITY = p_capacity
-    WHERE AREAID = new_areaid;
+    WHERE AREAID = p_areaid;
     
 END//
 
@@ -492,8 +473,7 @@ END//
 
 CREATE PROCEDURE sp_FilterVehicle(
     IN p_buildingid VARCHAR(20),
-    IN p_vehicle_type VARCHAR(50),
-    IN p_status VARCHAR(50)
+    IN p_vehicle_type VARCHAR(50)
 )
 BEGIN
     -- Truy vấn chính với các JOIN cần thiết
@@ -502,130 +482,79 @@ BEGIN
         v.TENANTID,
         t.FIRSTNAME,
         t.LASTNAME,
+        v.VEHICLE_UNITPRICE_ID,
         vup.UNITPRICE,
         v.TYPE,
         v.LICENSEPLATE,
         p.PARKINGID,
         p.STATUS
     FROM VEHICLE v
+    INNER JOIN TENANT t ON v.TENANTID = t.TENANTID
     INNER JOIN VEHICLE_UNITPRICE vup ON v.VEHICLE_UNITPRICE_ID = vup.VEHICLE_UNITPRICE_ID
-    LEFT JOIN PARKING p ON v.VEHICLEID = p.VEHICLEID
-    LEFT JOIN PARKINGAREA pa ON p.AREAID = pa.AREAID
-    WHERE (p_buildingid IS NULL OR pa.BUILDINGID = p_buildingid)
-    AND (p_vehicle_type IS NULL OR v.TYPE = p_vehicle_type)
-    AND (p_status IS NULL OR p.STATUS = p_status);
-END//
+    INNER JOIN PARKING p ON v.VEHICLEID = p.VEHICLEID
+    INNER JOIN PARKINGAREA pa ON p.AREAID = pa.AREAID
+    WHERE (p_buildingid IS NULL OR pa.BUILDINGID = p_buildingid)  -- Lọc theo mã tòa nhà
+    AND (p_vehicle_type IS NULL OR v.TYPE = p_vehicle_type);  -- Lọc theo loại phương tiện
+END //
 
-CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createVehicleID`()
+CREATE DEFINER=`root`@`localhost` FUNCTION `createVehicleID`()
 RETURNS VARCHAR(20) 
 DETERMINISTIC
 BEGIN
-    DECLARE max_id VARCHAR(20);
-    DECLARE number_part INT;
-    DECLARE new_id VARCHAR(20);
+    DECLARE new_key VARCHAR(10);
+	DECLARE max_key INT;
     
-    -- Lấy ID lớn nhất hiện có, nếu không có thì mặc định là 'V001'
-    SELECT IFNULL(MAX(VEHICLEID), 'V000') INTO max_id FROM VEHICLE;
-    
-    -- Tách phần số và tăng lên 1
-    SET number_part = CAST(SUBSTRING(max_id, 2) AS UNSIGNED) + 1;
-    
-    -- Tạo ID mới với format 'V' + số tự động tăng có padding 3 số
-    SET new_id = CONCAT('V', LPAD(number_part, 3, '0'));
-    
-    RETURN new_id;
-END//
+   -- Lấy giá trị lớn nhất hiện có trong bảng (giả sử bảng có tên là 'your_table' và cột khóa chính là 'id')
+    SELECT COALESCE(MAX(CAST(SUBSTRING(VEHICLEID, 2) AS UNSIGNED)), 0) INTO max_key FROM VEHICLE;
 
+    -- Tăng giá trị lên 1
+    SET max_key = max_key + 1;
+
+    -- Tạo khóa mới với định dạng PA + 4 số
+    SET new_key = CONCAT('V', LPAD(max_key, 4, '0'));
+
+    RETURN new_key;
+END//
 
 CREATE PROCEDURE proc_addVehicle(
     IN p_tenantid VARCHAR(20),
     IN p_vehicle_unitprice_id VARCHAR(20),
     IN p_type VARCHAR(50),
-    IN p_licenseplate VARCHAR(20)
+    IN p_licenseplate VARCHAR(20),
+    IN p_areaid VARCHAR(10)  -- Thay đổi tham số thành AREAID
 )
 BEGIN
-    DECLARE new_vehicle_id VARCHAR(20);
-    DECLARE max_id INT;
-    DECLARE error_message VARCHAR(255);
-
-    -- Kiểm tra các tham số đầu vào
-    IF p_tenantid IS NULL OR p_tenantid = '' THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: TenantID is required';
-    END IF;
-
-    IF p_vehicle_unitprice_id IS NULL OR p_vehicle_unitprice_id = '' THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Vehicle unit price ID is required';
-    END IF;
-
-    IF p_type IS NULL OR p_type = '' THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Vehicle type is required';
-    END IF;
-
-    IF p_licenseplate IS NULL OR p_licenseplate = '' THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: License plate is required';
-    END IF;
-
-    -- Kiểm tra xem tenant có tồn tại không
-    IF NOT EXISTS (SELECT 1 FROM TENANT WHERE TENANTID = p_tenantid) THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Tenant does not exist';
-    END IF;
-
-    -- Kiểm tra xem vehicle_unitprice có tồn tại không
-    IF NOT EXISTS (SELECT 1 FROM VEHICLE_UNITPRICE WHERE VEHICLE_UNITPRICE_ID = p_vehicle_unitprice_id) THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: Vehicle unit price does not exist';
-    END IF;
-
-    -- Kiểm tra xem biển số xe đã tồn tại chưa
-    IF EXISTS (SELECT 1 FROM VEHICLE WHERE LICENSEPLATE = p_licenseplate) THEN
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Error: License plate already exists';
-    END IF;
-
-    -- Tìm số ID lớn nhất hiện tại
-    SELECT CAST(SUBSTRING(IFNULL(MAX(VEHICLEID), 'V000'), 2) AS UNSIGNED) 
-    INTO max_id 
-    FROM VEHICLE;
+    DECLARE p_new_vehicle_id VARCHAR(20);
     
-    -- Tạo ID mới
-    SET new_vehicle_id = CONCAT('V', LPAD(max_id + 1, 3, '0'));
+    -- Tạo ID mới cho phương tiện
+    SET p_new_vehicle_id = createVehicleID();
     
-    -- Thêm phương tiện mới với transaction
-    BEGIN
-        DECLARE EXIT HANDLER FOR SQLEXCEPTION
-        BEGIN
-            ROLLBACK;
-            SIGNAL SQLSTATE '45000'
-            SET MESSAGE_TEXT = 'Error: Failed to add new vehicle';
-        END;
-        
-        START TRANSACTION;
-        
-        INSERT INTO VEHICLE (
-            VEHICLEID,
-            TENANTID,
-            VEHICLE_UNITPRICE_ID,
-            TYPE,
-            LICENSEPLATE
-        ) VALUES (
-            new_vehicle_id,
-            p_tenantid,
-            p_vehicle_unitprice_id,
-            p_type,
-            p_licenseplate
-        );
-        
-        COMMIT;
-        
-        -- Trả về ID mới nếu thành công
-        SELECT new_vehicle_id AS NEW_VEHICLE_ID;
-    END;
-END//
+    -- Kiểm tra xem bãi xe có tồn tại không
+    IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaid) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'No parking area found for the specified area ID';
+    END IF;
+
+    -- Thêm phương tiện mới vào bảng VEHICLE
+    INSERT INTO VEHICLE (
+        VEHICLEID,
+        TENANTID,
+        VEHICLE_UNITPRICE_ID,
+        TYPE,
+        LICENSEPLATE
+    ) VALUES (
+        p_new_vehicle_id,
+        p_tenantid,
+        p_vehicle_unitprice_id,
+        p_type,
+        p_licenseplate
+    );
+
+    -- Cập nhật bảng PARKING để thêm ID phương tiện vào chỗ đậu xe có giá trị NULL
+    UPDATE PARKING
+    SET VEHICLEID = p_new_vehicle_id
+    WHERE AREAID = p_areaid AND VEHICLEID IS NULL
+    LIMIT 1;  -- Chỉ cập nhật một bản ghi đầu tiên có giá trị NULL
+END //
 
 CREATE PROCEDURE proc_updateVehicle(
     IN p_vehicleid VARCHAR(20),
@@ -643,11 +572,12 @@ BEGIN
         LICENSEPLATE = p_licenseplate
     WHERE VEHICLEID = p_vehicleid;
     
-    SELECT ROW_COUNT() AS AFFECTED_ROWS;
 END//
 
 CREATE PROCEDURE sp_DeleteVehicle(
-    IN p_vehicleid VARCHAR(20)
+    IN p_vehicleid VARCHAR(20),
+    OUT p_result INT,
+    OUT p_message VARCHAR(255)
 )
 BEGIN
     DECLARE v_count INT;
@@ -662,9 +592,11 @@ BEGIN
         DELETE FROM VEHICLE
         WHERE VEHICLEID = p_vehicleid;
         
-        SELECT 1 AS RESULT, 'Phương tiện đã được xóa thành công' AS MESSAGE;
+        SET p_result = 1;
+        SET p_message = 'Phương tiện đã được xóa thành công';
     ELSE
-        SELECT 0 AS RESULT, 'Không tìm thấy phương tiện' AS MESSAGE;
+        SET p_result = 0;
+        SET p_message = 'Không tìm thấy phương tiện';
     END IF;
 END//
 
@@ -711,4 +643,39 @@ BEGIN
         );
 END//
 
-delimiter ;
+CREATE FUNCTION generate_parking_id()
+RETURNS VARCHAR(10)
+BEGIN
+    DECLARE new_id VARCHAR(10);
+    DECLARE max_id INT;
+
+    -- Lấy giá trị lớn nhất hiện có trong bảng PARKING
+    SELECT COALESCE(MAX(CAST(SUBSTRING(PARKINGID, 2) AS UNSIGNED)), 0) INTO max_id FROM PARKING;
+
+    -- Tăng giá trị lên 1
+    SET max_id = max_id + 1;
+
+    -- Tạo mã mới với định dạng P + 4 số
+    SET new_id = CONCAT('P', LPAD(max_id, 4, '0'));
+
+    RETURN new_id;
+END //
+
+CREATE TRIGGER after_insert_parkingarea
+AFTER INSERT ON PARKINGAREA
+FOR EACH ROW
+BEGIN
+    DECLARE i INT DEFAULT 0;
+    DECLARE new_parking_id VARCHAR(10);
+
+    WHILE i < NEW.CAPACITY DO
+        SET new_parking_id = generate_parking_id();
+
+        INSERT INTO PARKING (PARKINGID, AREAID, VEHICLEID, STATUS)
+        VALUES (new_parking_id, NEW.AREAID, NULL, 'Đang sử dụng');
+
+        SET i = i + 1;
+    END WHILE;
+END //
+
+DELIMITER ;

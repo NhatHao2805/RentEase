@@ -13,7 +13,7 @@ namespace DAL
 {
     public class VehicleAccess
     {
-        public static string addVehicle(Vehicle vehicle)
+        public static string addVehicle(Vehicle vehicle, string areaid)
         {
             try
             {
@@ -29,6 +29,7 @@ namespace DAL
                         command.Parameters.AddWithValue("@p_vehicle_unitprice_id", vehicle.VehicleUnitPriceID);
                         command.Parameters.AddWithValue("@p_type", vehicle.Type);
                         command.Parameters.AddWithValue("@p_licenseplate", vehicle.LicensePlate);
+                        command.Parameters.AddWithValue("@p_areaid", areaid);
 
                         command.ExecuteNonQuery();
                         return "Add Successfully";
@@ -54,6 +55,7 @@ namespace DAL
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
+                        command.Parameters.AddWithValue("@p_vehicleid", vehicle.VehicleID);
                         command.Parameters.AddWithValue("@p_tenantid", vehicle.TenantID);
                         command.Parameters.AddWithValue("@p_vehicle_unitprice_id", vehicle.VehicleUnitPriceID);
                         command.Parameters.AddWithValue("@p_type", vehicle.Type);
@@ -175,7 +177,135 @@ namespace DAL
             return output;
         }
 
-        public static DataTable FilterVehicle(string buildingid, string type, string status)
+        public static DataTable GetVehicleUnitPriceById(string unitprice_id)
+        {
+            DataTable output = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+
+                    using (MySqlCommand command = new MySqlCommand("SELECT * FROM VEHICLE_UNITPRICE WHERE VEHICLE_UNITPRICE_ID=@p_unitprice", conn))
+                    {
+                        command.Parameters.AddWithValue("p_unitprice", unitprice_id);
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                output.Columns.Add(reader.GetName(i), reader.GetFieldType(i));
+                            }
+
+                            while (reader.Read())
+                            {
+                                DataRow row = output.NewRow();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[i] = reader.IsDBNull(i) ? DBNull.Value : reader.GetValue(i);
+                                }
+                                output.Rows.Add(row);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetAllVehicleUnitPrices: " + ex.Message);
+            }
+            return output;
+        }
+
+        public static DataTable GetAllVehicle()
+        {
+            DataTable output = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+
+                    using (MySqlCommand command = new MySqlCommand("SELECT * FROM VEHICLE_UNITPRICE", conn))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                output.Columns.Add(reader.GetName(i), reader.GetFieldType(i));
+                            }
+
+                            while (reader.Read())
+                            {
+                                DataRow row = output.NewRow();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[i] = reader.IsDBNull(i) ? DBNull.Value : reader.GetValue(i);
+                                }
+                                output.Rows.Add(row);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetAllVehicleUnitPrices: " + ex.Message);
+            }
+            return output;
+        }
+
+        public static DataTable GetVehicleUnitPriceIdByType(string type)
+        {
+            DataTable output = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+
+                    using (MySqlCommand command = new MySqlCommand("SELECT * FROM VEHICLE_UNITPRICE WHERE TYPE=@p_type", conn))
+                    {
+                        command.Parameters.AddWithValue("p_type", type);
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                output.Columns.Add(reader.GetName(i), reader.GetFieldType(i));
+                            }
+
+                            while (reader.Read())
+                            {
+                                DataRow row = output.NewRow();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[i] = reader.IsDBNull(i) ? DBNull.Value : reader.GetValue(i);
+                                }
+                                output.Rows.Add(row);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetAllVehicleUnitPrices: " + ex.Message);
+            }
+            return output;
+        }
+
+        public static DataTable FilterVehicle(string buildingid, string type)
         {
             DataTable dt = new DataTable();
             try
@@ -187,8 +317,7 @@ namespace DAL
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@p_buildingid", buildingid);
-                        command.Parameters.AddWithValue("@p_type", string.IsNullOrEmpty(type) ? null : type);
-                        command.Parameters.AddWithValue("@p_status", string.IsNullOrEmpty(status) ? null : status);
+                        command.Parameters.AddWithValue("@p_vehicle_type", string.IsNullOrEmpty(type) ? null : type);
 
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
                         {

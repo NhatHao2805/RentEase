@@ -15,10 +15,6 @@ namespace BLL
         {
             return  ParkingAreaAccess.LoadAreaID();
         }
-        public static DataTable LoadParkingArea(string Username, string buildingid)
-        {
-            return ParkingAreaAccess.LoadArea(Username, buildingid);
-        }
         public static string CheckLogic(ParkingArea area)
         {
             if (string.IsNullOrEmpty(area.Address))
@@ -74,7 +70,10 @@ namespace BLL
             return ParkingAreaAccess.DeleteParkingArea(areaId);
         }
 
-
+        public static DataTable GetAreaId(string type, string buildingid)
+        {
+            return ParkingAreaAccess.GetAreaId(type, buildingid);
+        }
         public static DataTable FilterParkingArea(string buildingid, string type, string status)
         {
             return ParkingAreaAccess.FilterParkingArea(buildingid, type, status);

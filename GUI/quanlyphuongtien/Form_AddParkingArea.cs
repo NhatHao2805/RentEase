@@ -70,9 +70,9 @@ namespace GUI
         private void Form_AddParkingArea_Load(object sender, EventArgs e)
         {
             type_cb.Items.Clear();
-            type_cb.Items.Add("Bãi xe oto");
-            type_cb.Items.Add("Bãi xe máy/xe đạp");
-            type_cb.Items.Add("Bãi xe hỗn hợp");
+            type_cb.Items.Add("Xe ô tô");
+            type_cb.Items.Add("Xe máy/Xe đạp");
+            type_cb.Items.Add("Hỗn hợp");
         }
     }
 }

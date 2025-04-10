@@ -143,30 +143,30 @@ INSERT INTO PAYMENT (PAYMENTID, BILLID, METHOD, TOTAL, PAYMENTTIME) VALUES
 ('TT010', 'HD010', 'Tiền mặt', 9350000, UNIX_TIMESTAMP('2024-06-20'));
 
 -- 13 VEHICLE
-INSERT INTO VEHICLE (VEHICLEID, TENANTID, TYPE, LICENSEPLATE) VALUES
-('XE001', 'T001', 'Xe máy', '51A-12345'),
-('XE002', 'T002', 'Xe máy', '51B-54321'),
-('XE003', 'T003', 'Xe ô tô', '51C-67890'),
-('XE004', 'T004', 'Xe ô tô', '51D-09876'),
-('XE005', 'T005', 'Xe máy', '51E-11223'),
-('XE006', 'T006', 'Xe máy', '51F-33445'),
-('XE007', 'T007', 'Xe ô tô', '51G-55667'),
-('XE008', 'T008', 'Xe máy', '51H-77889'),
-('XE009', 'T009', 'Xe máy', '51K-99001'),
-('XE010', 'T010', 'Xe ô tô', '51L-22334');
+INSERT INTO VEHICLE (VEHICLEID, TENANTID, VEHICLE_UNITPRICE_ID, TYPE, LICENSEPLATE) VALUES
+('V0001', 'T001', 'VUP002', 'Xe máy', '51A-12345'),
+('V0002', 'T002', 'VUP002', 'Xe máy', '51B-54321'),
+('V0003', 'T003', 'VUP001', 'Xe ô tô', '51C-67890'),
+('V0004', 'T004', 'VUP001', 'Xe ô tô', '51D-09876'),
+('V0005', 'T005', 'VUP002', 'Xe máy', '51E-11223'),
+('V0006', 'T006', 'VUP002', 'Xe máy', '51F-33445'),
+('V0007', 'T007', 'VUP001', 'Xe ô tô', '51G-55667'),
+('V0008', 'T008', 'VUP002', 'Xe máy', '51H-77889'),
+('V0009', 'T009', 'VUP002', 'Xe máy', '51K-99001'),
+('V0010', 'T010', 'VUP001', 'Xe ô tô', '51L-22334');
 
 -- 14 PARKINGAREA
 INSERT INTO PARKINGAREA (AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY) VALUES
-('PA001', 'B001', 'Tầng hầm B1', 'Xe máy', 50),
-('PA002', 'B001', 'Tầng hầm B2', 'Ô tô', 20),
-('PA003', 'B002', 'Khu vực sau tòa nhà', 'Xe máy', 30),
-('PA004', 'B003', 'Tầng hầm B1', 'Xe máy', 40),
-('PA005', 'B003', 'Tầng hầm B2', 'Ô tô', 15),
-('PA006', 'B004', 'Khu vực trước tòa nhà', 'Xe máy', 25),
-('PA007', 'B005', 'Tầng hầm B1', 'Xe máy', 35),
-('PA008', 'B005', 'Tầng hầm B2', 'Ô tô', 10),
-('PA009', 'B006', 'Khu vực bên hông', 'Xe máy', 20),
-('PA010', 'B007', 'Tầng hầm B1', 'Xe máy', 45);
+('PA0001', 'B001', 'Tầng hầm B1', 'Xe máy/Xe đạp', 50),
+('PA0002', 'B001', 'Tầng hầm B2', 'Xe ô tô', 20),
+('PA0003', 'B002', 'Khu vực sau tòa nhà', 'Xe máy/Xe đạp', 30),
+('PA0004', 'B003', 'Tầng hầm B1', 'Hỗn hợp', 40),
+('PA0005', 'B003', 'Tầng hầm B2', 'Xe ô tô', 15),
+('PA0006', 'B004', 'Khu vực trước tòa nhà', 'Hỗn hợp', 25),
+('PA0007', 'B005', 'Tầng hầm B1', 'Xe máy/Xe đạp', 35),
+('PA0008', 'B005', 'Tầng hầm B2', 'Hỗn hợp', 10),
+('PA0009', 'B006', 'Khu vực bên hông', 'Xe máy/Xe đạp', 20),
+('PA0010', 'B007', 'Tầng hầm B1', 'Xe máy/Xe đạp', 45);
 
 
 -- 15 ASSETS
@@ -273,6 +273,9 @@ INSERT INTO PET (PETID, TENANTID, TYPE) VALUES
 ('TC009', 'T009', 'Chim'),
 ('TC010', 'T010', 'Cá');
 
+select * from PARKING;
+select * from VEHICLE where VEHICLEID = 'V0001';
+call sp_FilterVehicle('B003', 'V0013');
 -- 23 TEMPORARY_REGISTRATION
 INSERT INTO TEMPORARY_REGISTRATION (REGISTRATIONID, TENANTID, ROOMID, REGISTRATION_DATE, EXPIRATION_DATE, STATUS, CREATE_DATE, UPDATE_DATE) VALUES
 ('DK001', 'T001', 'R001', '2024-01-15', '2025-01-14', 'Đã duyệt', '2024-01-10', '2024-01-10'),
@@ -314,19 +317,20 @@ INSERT INTO RENTAL_HISTORY (CONTRACTID, ROOMID, TENANTID, STARTDATE, ENDDATE, RE
 
 -- 26 PARKING
 INSERT INTO PARKING (PARKINGID, AREAID, VEHICLEID, STATUS) VALUES
-('PK001', 'PA001', 'XE001', 'Đang sử dụng'),
-('PK002', 'PA001', 'XE002', 'Đang sử dụng'),
-('PK003', 'PA002', 'XE003', 'Đang sử dụng'),
-('PK004', 'PA002', 'XE004', 'Đang sử dụng'),
-('PK005', 'PA003', 'XE005', 'Đang sử dụng'),
-('PK006', 'PA004', 'XE006', 'Đang sử dụng'),
-('PK007', 'PA005', 'XE007', 'Đang sử dụng'),
-('PK008', 'PA006', 'XE008', 'Đang sử dụng'),
-('PK009', 'PA007', 'XE009', 'Đang sử dụng'),
-('PK010', 'PA008', 'XE010', 'Đang sử dụng');
+('PK001', 'PA0001', 'V0001', 'Đang sử dụng'),
+('PK002', 'PA0001', 'V0002', 'Đang sử dụng'),
+('PK003', 'PA0002', 'V0003', 'Đang sử dụng'),
+('PK004', 'PA0002', 'V0004', 'Đang sử dụng'),
+('PK005', 'PA0003', 'V0005', 'Đang sử dụng'),
+('PK006', 'PA0004', 'V0006', 'Đang sử dụng'),
+('PK007', 'PA0005', 'V0007', 'Đang sử dụng'),
+('PK008', 'PA0006', 'V0008', 'Đang sử dụng'),
+('PK009', 'PA0007', 'V0009', 'Đang sử dụng'),
+('PK010', 'PA0008', 'V0010', 'Đang sử dụng');
 
 -- 27 VEHICLE_UNITPRICE
 INSERT INTO VEHICLE_UNITPRICE (VEHICLE_UNITPRICE_ID, UNITPRICE, TYPE) VALUES
-('VUP001', 500000, 'Ô tô'),
+('VUP001', 500000, 'Xe ô tô'),
 ('VUP002', 100000, 'Xe máy'),
 ('VUP003', 50000, 'Xe đạp');
+-- select * from parking where areaid = 'PA0001';

@@ -10,7 +10,7 @@ namespace BLL
 {
     public class VehicleBLL
     {
-        public static string CheckLogic(Vehicle vehicle)
+        public static string CheckLogic(Vehicle vehicle, string areaid)
         {
             if (string.IsNullOrEmpty(vehicle.TenantID))
             {
@@ -27,7 +27,7 @@ namespace BLL
                 return "required_licenseplate";
             }
 
-            return VehicleAccess.addVehicle(vehicle);
+            return VehicleAccess.addVehicle(vehicle, areaid);
         }
 
         public static string UpdateVehicle(Vehicle vehicle)
@@ -65,10 +65,27 @@ namespace BLL
         {
             return VehicleAccess.GetAllVehicleUnitPrices();
         }
-
-        public static DataTable FilterVehicle(string buildingid, string type, string status)
+        public static float GetVehicleUnitPriceById(string unitprice_id)
         {
-            return VehicleAccess.FilterVehicle(buildingid, type, status);
+            DataTable dt = VehicleAccess.GetVehicleUnitPriceById(unitprice_id);
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToSingle(dt.Rows[0]["UNITPRICE"]);
+            }
+            return 0;
+        }
+        public static DataTable GetAllVehicle()
+        {
+            return VehicleAccess.GetAllVehicle();
+        }
+        public static DataTable GetVehicleUnitPriceIdByType(string type)
+        {
+            return VehicleAccess.GetVehicleUnitPriceIdByType(type);
+        }
+
+        public static DataTable FilterVehicle(string buildingid, string type)
+        {
+            return VehicleAccess.FilterVehicle(buildingid, type);
         }
     }
 }

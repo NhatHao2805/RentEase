@@ -55,7 +55,7 @@
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(180, 45);
             this.add_btn.TabIndex = 105;
-            this.add_btn.Text = "Thêm";
+            this.add_btn.Text = "Xác nhận";
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // guna2HtmlLabel10

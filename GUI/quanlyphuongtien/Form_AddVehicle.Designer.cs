@@ -39,10 +39,12 @@
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.licenseplate_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.unitpriceid_tb = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tenantid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.unitpriceid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.areaid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SuspendLayout();
             // 
             // unitprice_tb
@@ -56,7 +58,7 @@
             this.unitprice_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.unitprice_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.unitprice_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.unitprice_tb.Location = new System.Drawing.Point(198, 232);
+            this.unitprice_tb.Location = new System.Drawing.Point(198, 296);
             this.unitprice_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.unitprice_tb.Name = "unitprice_tb";
             this.unitprice_tb.PlaceholderText = "";
@@ -67,7 +69,7 @@
             // abc
             // 
             this.abc.BackColor = System.Drawing.Color.Transparent;
-            this.abc.Location = new System.Drawing.Point(76, 106);
+            this.abc.Location = new System.Drawing.Point(76, 102);
             this.abc.Name = "abc";
             this.abc.Size = new System.Drawing.Size(59, 18);
             this.abc.TabIndex = 107;
@@ -83,7 +85,7 @@
             this.type_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.type_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.type_cb.ItemHeight = 30;
-            this.type_cb.Location = new System.Drawing.Point(198, 97);
+            this.type_cb.Location = new System.Drawing.Point(198, 93);
             this.type_cb.Name = "type_cb";
             this.type_cb.Size = new System.Drawing.Size(286, 36);
             this.type_cb.TabIndex = 106;
@@ -97,7 +99,7 @@
             this.add_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.add_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.add_btn.ForeColor = System.Drawing.Color.White;
-            this.add_btn.Location = new System.Drawing.Point(251, 379);
+            this.add_btn.Location = new System.Drawing.Point(251, 443);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(180, 45);
             this.add_btn.TabIndex = 105;
@@ -107,7 +109,7 @@
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(76, 313);
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(76, 377);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(65, 18);
             this.guna2HtmlLabel8.TabIndex = 103;
@@ -116,7 +118,7 @@
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(76, 241);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(76, 305);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(86, 18);
             this.guna2HtmlLabel2.TabIndex = 102;
@@ -133,7 +135,7 @@
             this.licenseplate_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.licenseplate_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.licenseplate_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.licenseplate_tb.Location = new System.Drawing.Point(198, 304);
+            this.licenseplate_tb.Location = new System.Drawing.Point(198, 368);
             this.licenseplate_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.licenseplate_tb.Name = "licenseplate_tb";
             this.licenseplate_tb.PlaceholderText = "";
@@ -141,38 +143,10 @@
             this.licenseplate_tb.Size = new System.Drawing.Size(286, 36);
             this.licenseplate_tb.TabIndex = 101;
             // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(76, 40);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(89, 18);
-            this.guna2HtmlLabel3.TabIndex = 114;
-            this.guna2HtmlLabel3.Text = "Mã khách thuê";
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(198, 163);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(286, 36);
-            this.guna2TextBox1.TabIndex = 119;
-            // 
             // unitpriceid_tb
             // 
             this.unitpriceid_tb.BackColor = System.Drawing.Color.Transparent;
-            this.unitpriceid_tb.Location = new System.Drawing.Point(76, 172);
+            this.unitpriceid_tb.Location = new System.Drawing.Point(76, 236);
             this.unitpriceid_tb.Name = "unitpriceid_tb";
             this.unitpriceid_tb.Size = new System.Drawing.Size(70, 18);
             this.unitpriceid_tb.TabIndex = 118;
@@ -188,20 +162,70 @@
             this.tenantid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tenantid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.tenantid_cb.ItemHeight = 30;
-            this.tenantid_cb.Location = new System.Drawing.Point(198, 31);
+            this.tenantid_cb.Location = new System.Drawing.Point(198, 25);
             this.tenantid_cb.Name = "tenantid_cb";
             this.tenantid_cb.Size = new System.Drawing.Size(286, 36);
             this.tenantid_cb.TabIndex = 120;
+            // 
+            // unitpriceid_cb
+            // 
+            this.unitpriceid_cb.BackColor = System.Drawing.Color.Transparent;
+            this.unitpriceid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.unitpriceid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unitpriceid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.unitpriceid_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.unitpriceid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.unitpriceid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.unitpriceid_cb.ItemHeight = 30;
+            this.unitpriceid_cb.Location = new System.Drawing.Point(198, 227);
+            this.unitpriceid_cb.Name = "unitpriceid_cb";
+            this.unitpriceid_cb.Size = new System.Drawing.Size(286, 36);
+            this.unitpriceid_cb.TabIndex = 121;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(76, 34);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(89, 18);
+            this.guna2HtmlLabel1.TabIndex = 122;
+            this.guna2HtmlLabel1.Text = "Mã khách thuê";
+            // 
+            // areaid_cb
+            // 
+            this.areaid_cb.BackColor = System.Drawing.Color.Transparent;
+            this.areaid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.areaid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.areaid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.areaid_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.areaid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.areaid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.areaid_cb.ItemHeight = 30;
+            this.areaid_cb.Location = new System.Drawing.Point(198, 162);
+            this.areaid_cb.Name = "areaid_cb";
+            this.areaid_cb.Size = new System.Drawing.Size(286, 36);
+            this.areaid_cb.TabIndex = 125;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(76, 171);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(61, 18);
+            this.guna2HtmlLabel3.TabIndex = 124;
+            this.guna2HtmlLabel3.Text = "Mã bãi xe";
             // 
             // Form_AddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 464);
-            this.Controls.Add(this.tenantid_cb);
-            this.Controls.Add(this.guna2TextBox1);
-            this.Controls.Add(this.unitpriceid_tb);
+            this.ClientSize = new System.Drawing.Size(604, 531);
+            this.Controls.Add(this.areaid_cb);
             this.Controls.Add(this.guna2HtmlLabel3);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.unitpriceid_cb);
+            this.Controls.Add(this.tenantid_cb);
+            this.Controls.Add(this.unitpriceid_tb);
             this.Controls.Add(this.unitprice_tb);
             this.Controls.Add(this.abc);
             this.Controls.Add(this.type_cb);
@@ -229,9 +253,11 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox licenseplate_tb;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel unitpriceid_tb;
         private Guna.UI2.WinForms.Guna2ComboBox tenantid_cb;
+        private Guna.UI2.WinForms.Guna2ComboBox unitpriceid_cb;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2ComboBox areaid_cb;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
     }
 }

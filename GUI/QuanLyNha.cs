@@ -181,9 +181,28 @@ namespace GUI
         //New HoaiAn 4/8/2025
         private void load_PA()
         {
-            guna2DataGridView7.DataSource = ParkingAreaBLL.FilterParkingArea(listBuildingID.SelectedItem.ToString(), null, null);
-            ConfigureParkingArea();
+            try
+            {
+                if (listBuildingID.SelectedItem == null)
+                {
+                    MessageBox.Show("Vui lòng chọn tòa nhà", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                // Lấy trạng thái lọc hiện tại
+                string type = checkBox10.Checked ? "Xe ô tô" :
+                             (checkBox11.Checked ? "Xe máy/Xe đạp" :
+                             (checkBox18.Checked ? "Hỗn hợp" : null));
+                string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
+
+                // Tải dữ liệu với bộ lọc hiện tại
+                guna2DataGridView7.DataSource = ParkingAreaBLL.FilterParkingArea(listBuildingID.SelectedItem.ToString(), type, status);
+                ConfigureParkingArea();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //New HoaiAn 4/8/2025
@@ -191,10 +210,8 @@ namespace GUI
         {
             try
             {
-                // Lấy dữ liệu phương tiện
-                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), null, null);
+                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), null);
 
-                // Gán dữ liệu và cấu hình DataGridView
                 guna2DataGridView1.DataSource = data;
                 ConfigureVehicle();
             }
@@ -1697,7 +1714,7 @@ namespace GUI
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        //New HoaiAn
         private void ConfigureParkingArea()
         {
             // Cấu hình DataGridView
@@ -1761,7 +1778,7 @@ namespace GUI
             }
         }
 
-
+        //New HoaiAn
         private void checkBox10_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox10.Checked)
@@ -1769,11 +1786,11 @@ namespace GUI
                 checkBox11.Checked = false;
                 checkBox18.Checked = false;
             }
-            string type = checkBox10.Checked ? "Bãi xe oto" : null;
+            string type = checkBox10.Checked ? "Xe ô tô" : null;
             string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
             FilterParkingArea(type, status);
         }
-
+        //New HoaiAn
         private void checkBox11_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox11.Checked)
@@ -1781,11 +1798,11 @@ namespace GUI
                 checkBox10.Checked = false;
                 checkBox18.Checked = false;
             }
-            string type = checkBox11.Checked ? "Bãi xe máy/xe đạp" : null;
+            string type = checkBox11.Checked ? "Xe máy/Xe đạp" : null;
             string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
             FilterParkingArea(type, status);
         }
-
+        //New HoaiAn
         private void checkBox18_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox18.Checked)
@@ -1793,11 +1810,11 @@ namespace GUI
                 checkBox10.Checked = false;
                 checkBox11.Checked = false;
             }
-            string type = checkBox18.Checked ? "Bãi xe hỗn hợp" : null;
+            string type = checkBox18.Checked ? "Hỗn hợp" : null;
             string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
             FilterParkingArea(type, status);
         }
-
+        //New HoaiAn
         private void checkBox17_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox17.Checked)
@@ -1805,12 +1822,12 @@ namespace GUI
                 checkBox20.Checked = false;
             }
             string status = checkBox17.Checked ? "EMPTY" : null;
-            string type = checkBox10.Checked ? "Bãi xe oto" :
-                        (checkBox11.Checked ? "Bãi xe máy/xe đạp" :
-                        (checkBox18.Checked ? "Bãi xe hỗn hợp" : null));
+            string type = checkBox10.Checked ? "Xe ô tô" :
+                        (checkBox11.Checked ? "Xe máy/Xe đạp" :
+                        (checkBox18.Checked ? "Hỗn hợp" : null));
             FilterParkingArea(type, status);
         }
-
+        //New HoaiAn
         private void checkBox20_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox20.Checked)
@@ -1818,9 +1835,9 @@ namespace GUI
                 checkBox17.Checked = false;
             }
             string status = checkBox20.Checked ? "FULL" : null;
-            string type = checkBox10.Checked ? "Bãi xe oto" :
-                        (checkBox11.Checked ? "Bãi xe máy/xe đạp" :
-                        (checkBox18.Checked ? "Bãi xe hỗn hợp" : null));
+            string type = checkBox10.Checked ? "Xe ô tô" :
+                        (checkBox11.Checked ? "Xe máy/Xe đạp" :
+                        (checkBox18.Checked ? "Hỗn hợp" : null));
             FilterParkingArea(type, status);
         }
         //New HoaiAn
@@ -1830,9 +1847,10 @@ namespace GUI
             tabQuanLy.SelectedIndex = 5;
         }
         //New HoaiAn
+        //Thêm
         private void guna2GradientButton4_Click(object sender, EventArgs e)
         {
-            Form_AddVehicle addVehicle = new Form_AddVehicle();
+            Form_AddVehicle addVehicle = new Form_AddVehicle(listBuildingID.SelectedItem.ToString());
             if (addVehicle.ShowDialog() == DialogResult.OK)
             {
                 load_Vehicle();
@@ -1853,7 +1871,7 @@ namespace GUI
             {
                 VehicleID = selectedRow.Cells["VehicleID"].Value?.ToString(),
                 TenantID = selectedRow.Cells["TenantID"].Value?.ToString(),
-                VehicleUnitPriceID = selectedRow.Cells["Vehicle_Unit_Price_ID"].Value?.ToString(),
+                VehicleUnitPriceID = selectedRow.Cells["VEHICLE_UNITPRICE_ID"].Value?.ToString(),
                 Type = selectedRow.Cells["Type"].Value?.ToString(),
                 LicensePlate = selectedRow.Cells["LicensePlate"].Value?.ToString()
             };
@@ -1911,36 +1929,14 @@ namespace GUI
 
         //New HoaiAn
         //Lọc
-        private void FilterVehicle()
+        private void FilterVehicle(string type)
         {
             try
             {
-
-                // Xác định loại xe
-                string vehicleType = null;
-                if (checkBox10.Checked) vehicleType = "Xe oto";
-                else if (checkBox11.Checked) vehicleType = "Xe máy";
-                else if (checkBox18.Checked) vehicleType = "Xe đạp";
-
-                // Xác định trạng thái
-                string status = null;
-                if (checkBox17.Checked) status = "Đang giữ";
-                else if (checkBox20.Checked) status = "Đã lấy";
-
                 // Load dữ liệu
-                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), vehicleType, status);
-
-                if (data != null && data.Rows.Count > 0)
-                {
-                    guna2DataGridView1.DataSource = data;
-                    ConfigureVehicle();
-                }
-                else
-                {
-                    guna2DataGridView1.DataSource = null;
-                    MessageBox.Show("Không có dữ liệu phương tiện để hiển thị", "Thông báo",
-                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), type);
+                guna2DataGridView1.DataSource = data;
+                ConfigureVehicle();
             }
             catch (Exception ex)
             {
@@ -1968,6 +1964,8 @@ namespace GUI
                     guna2DataGridView1.Columns["FIRSTNAME"].HeaderText = "Họ";
                 if (guna2DataGridView1.Columns.Contains("LASTNAME"))
                     guna2DataGridView1.Columns["LASTNAME"].HeaderText = "Tên";
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].HeaderText = "Mã đơn giá";
                 if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
                     guna2DataGridView1.Columns["UNITPRICE"].HeaderText = "Đơn giá";
                 if (guna2DataGridView1.Columns.Contains("TYPE"))
@@ -1979,6 +1977,28 @@ namespace GUI
                 if (guna2DataGridView1.Columns.Contains("STATUS"))
                     guna2DataGridView1.Columns["STATUS"].HeaderText = "Trạng thái";
 
+                int displayIndex = 0;
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].DisplayIndex = displayIndex++;
+
                 // Đặt độ rộng cột
                 if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
                     guna2DataGridView1.Columns["VEHICLEID"].Width = 90;
@@ -1988,6 +2008,8 @@ namespace GUI
                     guna2DataGridView1.Columns["FIRSTNAME"].Width = 100;
                 if (guna2DataGridView1.Columns.Contains("LASTNAME"))
                     guna2DataGridView1.Columns["LASTNAME"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].Width = 90;
                 if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
                     guna2DataGridView1.Columns["UNITPRICE"].Width = 90;
                 if (guna2DataGridView1.Columns.Contains("TYPE"))
@@ -2006,8 +2028,12 @@ namespace GUI
             if (checkBox2.Checked)
             {
                 checkBox5.Checked = false;
+                checkBox7.Checked = false;
+                FilterVehicle("Xe ô tô");
+                return;
             }
-            FilterVehicle();
+            FilterVehicle(null);
+            
         }
         //New HoaiAn
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
@@ -2016,8 +2042,11 @@ namespace GUI
             {
                 checkBox2.Checked = false;
                 checkBox7.Checked = false;
+                FilterVehicle("Xe máy");
+                return;
             }
-            FilterVehicle();
+            FilterVehicle(null);
+            
         }
         //New HoaiAn
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
@@ -2026,26 +2055,12 @@ namespace GUI
             {
                 checkBox2.Checked = false;
                 checkBox5.Checked = false;
+                FilterVehicle("Xe đạp");
+                return;
             }
-            FilterVehicle();
-        }
-        //New HoaiAn
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox6.Checked)
-            {
-                checkBox8.Checked = false;
-            }
-            FilterVehicle();
-        }
-        //New HoaiAn
-        private void checkBox8_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox8.Checked)
-            {
-                checkBox6.Checked = false;
-            }
-            FilterVehicle();
+            FilterVehicle(null);
+
+            
         }
     }
 }

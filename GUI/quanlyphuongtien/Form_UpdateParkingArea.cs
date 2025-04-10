@@ -19,29 +19,26 @@ namespace GUI
         ParkingArea area = new ParkingArea();
         private string _username;
         private ParkingArea infor;
-        public Form_UpdateParkingArea(string username, ParkingArea selectedAsset)
+        public Form_UpdateParkingArea(string username, ParkingArea selectedArea)
         {
             InitializeComponent();
 
             _username = username;
-            infor = selectedAsset;
+            infor = selectedArea;
         }
 
         private void Form_UpdateParkingArea_Load_1(object sender, EventArgs e)
         {
             type_cb.Items.Clear();
-            type_cb.Items.Add("Bãi xe oto");
-            type_cb.Items.Add("Bãi xe máy/xe đạp");
-            type_cb.Items.Add("Bãi xe hỗn hợp");
+            type_cb.Items.Add("Xe ô tô");
+            type_cb.Items.Add("Xe máy/Xe đạp");
+            type_cb.Items.Add("Hỗn hợp");
 
-            // Hiển thị thông tin phòng lên các control
             areaid_tb.Text = infor.AreaId;
             address_tb.Text = infor.Address;
             type_cb.SelectedItem = infor.Type;
             capacity_tb.Text = infor.Capacity;
 
-
-            // Disable các field không được phép sửa
             areaid_tb.Enabled = false;
         }
 

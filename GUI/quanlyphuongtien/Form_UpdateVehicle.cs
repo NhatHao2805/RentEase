@@ -28,12 +28,13 @@ namespace GUI
 
         private void add_btn_Click(object sender, EventArgs e)
         {
+            vehicle.VehicleID = infor.VehicleID;
             vehicle.TenantID = tenantid_cb.SelectedItem.ToString();
             vehicle.VehicleUnitPriceID = unitpriceid_tb.Text;
             vehicle.Type = type_cb.Text;
             vehicle.LicensePlate = licenseplate_tb.Text;
 
-            string check = VehicleBLL.CheckLogic(vehicle);
+            string check = VehicleBLL.UpdateVehicle(vehicle);
 
             switch (check)
             {
@@ -56,8 +57,8 @@ namespace GUI
                 case "Database connection failed!":
                     MessageBox.Show("Kết nối thất bại");
                     return;
-                case "Add Successfully":
-                    MessageBox.Show("Thêm phương tiện thành công!");
+                case "Update Successfully":
+                    MessageBox.Show("Sửa phương tiện thành công!");
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                     return;
@@ -70,20 +71,63 @@ namespace GUI
 
         private void Form_UpdateVehicle_Load(object sender, EventArgs e)
         {
+            vehicleid_tb.Text = infor.VehicleID;
+            licenseplate_tb.Text = infor.LicensePlate;
+
             tenantid_cb.Items.Clear();
             foreach (string tenantid in TenantBLL.TenantBll_Load_TenantID())
             {
                 tenantid_cb.Items.Add(tenantid);
             }
+            tenantid_cb.SelectedItem = infor.TenantID;
 
             type_cb.Items.Clear();
-            type_cb.Items.Add("Ô tô");
-            type_cb.Items.Add("Xe máy");
-            type_cb.Items.Add("Xe đạp");
-            vehicleid_tb.Text = vehicle.VehicleID;
+            foreach (DataRow row in VehicleBLL.GetAllVehicle().Rows)
+            {
+                type_cb.Items.Add(row["TYPE"].ToString());
+            }
+            type_cb.SelectedItem= infor.Type;
+
+            
+            unitpriceid_cb.Items.Clear();
+            foreach (DataRow row in VehicleBLL.GetAllVehicleUnitPrices().Rows)
+            {
+                unitpriceid_cb.Items.Add(row["VEHICLE_UNITPRICE_ID"].ToString());
+            }
+            unitpriceid_cb.SelectedItem = infor.VehicleUnitPriceID;
 
             vehicleid_tb.Enabled = false;
-            unitprice_tb.Enabled = false;
+            unitpriceid_cb.Enabled = false;
+            licenseplate_tb.Enabled = false;
+        }
+
+        private void type_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            unitpriceid_cb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString()).ToString();
+            if (type_cb.SelectedItem == null) return;
+
+            try
+            {
+                // Lấy DataTable chứa ID đơn giá
+                System.Data.DataTable dt = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString());
+
+                if (dt.Rows.Count > 0)
+                {
+                    string unitPriceId = dt.Rows[0]["VEHICLE_UNITPRICE_ID"].ToString();
+                    unitpriceid_cb.SelectedItem = unitPriceId;
+
+                    float price = VehicleBLL.GetVehicleUnitPriceById(unitPriceId);
+                    unitprice_tb.Text = price.ToString();
+                }
+                else
+                {
+                    unitprice_tb.Text = "Không tìm thấy đơn giá";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
         }
     }
 }

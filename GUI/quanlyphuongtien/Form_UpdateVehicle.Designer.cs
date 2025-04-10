@@ -31,7 +31,6 @@
             this.vehicleid_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tenantid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.unitpriceid_tb = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.unitprice_tb = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,6 +40,7 @@
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.licenseplate_tb = new Guna.UI2.WinForms.Guna2TextBox();
+            this.unitpriceid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // vehicleid_tb
@@ -85,25 +85,6 @@
             this.tenantid_cb.Name = "tenantid_cb";
             this.tenantid_cb.Size = new System.Drawing.Size(286, 36);
             this.tenantid_cb.TabIndex = 148;
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(210, 230);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(286, 36);
-            this.guna2TextBox1.TabIndex = 147;
             // 
             // unitpriceid_tb
             // 
@@ -165,6 +146,7 @@
             this.type_cb.Name = "type_cb";
             this.type_cb.Size = new System.Drawing.Size(286, 36);
             this.type_cb.TabIndex = 142;
+            this.type_cb.SelectedIndexChanged += new System.EventHandler(this.type_cb_SelectedIndexChanged);
             // 
             // add_btn
             // 
@@ -218,13 +200,28 @@
             this.licenseplate_tb.Size = new System.Drawing.Size(286, 36);
             this.licenseplate_tb.TabIndex = 138;
             // 
+            // unitpriceid_cb
+            // 
+            this.unitpriceid_cb.BackColor = System.Drawing.Color.Transparent;
+            this.unitpriceid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.unitpriceid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unitpriceid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.unitpriceid_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.unitpriceid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.unitpriceid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.unitpriceid_cb.ItemHeight = 30;
+            this.unitpriceid_cb.Location = new System.Drawing.Point(210, 230);
+            this.unitpriceid_cb.Name = "unitpriceid_cb";
+            this.unitpriceid_cb.Size = new System.Drawing.Size(286, 36);
+            this.unitpriceid_cb.TabIndex = 149;
+            // 
             // Form_UpdateVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(613, 552);
+            this.Controls.Add(this.unitpriceid_cb);
             this.Controls.Add(this.tenantid_cb);
-            this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.unitpriceid_tb);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.unitprice_tb);
@@ -248,7 +245,6 @@
         private Guna.UI2.WinForms.Guna2TextBox vehicleid_tb;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ComboBox tenantid_cb;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel unitpriceid_tb;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2TextBox unitprice_tb;
@@ -258,5 +254,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox licenseplate_tb;
+        private Guna.UI2.WinForms.Guna2ComboBox unitpriceid_cb;
     }
 }
