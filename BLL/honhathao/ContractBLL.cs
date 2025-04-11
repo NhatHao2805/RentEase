@@ -27,11 +27,18 @@ namespace BLL
             {
                 return "Please fill all the fields";
             }
-
+            if (int.TryParse(Deposite, out int result) == false)
+            {
+                return "wrongDeposite";
+            }
             return ContractAccess.add_Contract(buildingid, RoomId, Tenantid, CreateDate, StartDate, EndDate, PaymenSchedule, Deposite, Note);
         }
         public static string ContractBLL_update_Contract(string contractid, string enddate, string paymentschedule, string deposit, string note)
         {
+            if(int.TryParse(deposit, out int result) == false)
+            {
+                return "wrongDeposite";
+            }
             return ContractAccess.update_Contract(contractid,enddate,paymentschedule,deposit,note);
         }
 

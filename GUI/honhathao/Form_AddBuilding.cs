@@ -49,5 +49,10 @@ namespace GUI.honhathao
             this.Close();
 
         }
+
+        private void exitButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

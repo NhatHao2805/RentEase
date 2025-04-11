@@ -23,6 +23,27 @@ namespace BLL.honhathao
         }
         public static string RegistrationBLL_add_Registration(string p_tenant_id, string RoomId, string registration_date, string expiration_date, string status)
         {
+            if(DateTime.TryParse(registration_date, out DateTime parsedDate))
+            {
+                registration_date = parsedDate.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                return "Invalid registration date format.";
+            }
+            if (DateTime.TryParse(expiration_date, out parsedDate))
+            {
+                expiration_date = parsedDate.ToString("yyyy-MM-dd");
+            }
+            else
+            {
+                return "Invalid expiration date format.";
+            }
+            if(registration_date.CompareTo(expiration_date) > 0)
+            {
+                return "Registration date cannot be after expiration date.";
+            }
+
             return RegistrationAccess.add_Registration(p_tenant_id, RoomId, registration_date, expiration_date, status);
         }
     }

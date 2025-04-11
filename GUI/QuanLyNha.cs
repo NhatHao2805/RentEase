@@ -1,6 +1,5 @@
 ﻿using BLL;
 using BLL.BLL_Service;
-using BLL.Quanlyphuongtien;
 using DTO;
 using GUI.GUI_Service;
 using Guna.UI2.WinForms;
@@ -18,8 +17,11 @@ using System.Windows.Forms;
 using GUI.honhathao;
 using BLL.honhathao;
 using DTO.honhathao;
-using GUI.QuanLyPhuongTien;
 using DTO.dto_service;
+using BLL.bll_service;
+using DTO.DTO_Service;
+using GUI.gui_service;
+using System.Security.Policy;
 
 namespace GUI
 {
@@ -52,13 +54,19 @@ namespace GUI
         private void loadInfo()
         {
             load_QLP();
+            load_PA();
             load_Contract(0, null);
             load_Assets();
             loadTenant(null);
-            addTenantHistory();//New NhatHao
+            addTenantHistory();
             loadTenantHistory(null);
             loadRegistration(null);
-            loadBill(null);//New NhatHao
+            loadBill(null);
+
+            LoadDichVu(); 
+            loadInitLanguage();
+            loadLanguage();
+            load_Vehicle();
         }
 
         private void clearAllDataGridView()
@@ -69,18 +77,14 @@ namespace GUI
             dgv_Tenant.DataSource = null;
             dgv_LSTN.DataSource = null;
             dgv_DKLT.DataSource = null;
+            load_Vehicle();
+            load_PA();
         }
         private void loadTenant(string name)
         {
             DataTable data = TenantBLL.TenantBLL_load_Tenant(form1.taikhoan.Username, name);
             data.Columns.RemoveAt(0);
-            data.Columns[0].ColumnName = "Mã khách hàng";
-            data.Columns[1].ColumnName = "Họ";
-            data.Columns[2].ColumnName = "Tên";
-            data.Columns[3].ColumnName = "Ngày sinh";
-            data.Columns[4].ColumnName = "Giới Tính";
-            data.Columns[5].ColumnName = "SĐT";
-            data.Columns[6].ColumnName = "Email";
+
             dgv_Tenant.DataSource = data;
             dgv_Tenant.Columns[0].Width = 90;
             dgv_Tenant.Columns[1].Width = 150;
@@ -173,7 +177,73 @@ namespace GUI
             dgv_QLP.Columns[7].Width = 250;
             dgv_QLP.ScrollBars = ScrollBars.Both;
         }
+        private void load_PA()
+        {
+            try
+            {
+                if (listBuildingID.SelectedItem == null)
+                {
+                    MessageBox.Show("Vui lòng chọn tòa nhà", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                string type = checkBox10.Checked ? "Xe ô tô" :
+                             (checkBox11.Checked ? "Xe máy/Xe đạp" :
+                             (checkBox18.Checked ? "Hỗn hợp" : null));
+                string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
+
+                guna2DataGridView7.DataSource = ParkingAreaBLL.FilterParkingArea(listBuildingID.SelectedItem.ToString(), type, status);
+                ConfigureParkingArea();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void load_Vehicle()
+        {
+            try
+            {
+                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), null);
+
+                guna2DataGridView1.DataSource = data;
+                ConfigureVehicle();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                guna2DataGridView1.DataSource = null;
+            }
+        }
+        public void LoadDichVu()
+        {
+
+            var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
+
+            if (data == null || data.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!");
+            }
+            dgvServiceInfo.DataSource = data;
+
+            checkBox_DV1.Visible = true;
+            checkBox_DV2.Visible = true;
+            checkBox_DV3.Visible = true;
+            checkBox_DV4.Visible = true;
+            checkBox_DV5.Visible = true;
+
+            sortOptions.Add(checkBox_DV1);
+            sortOptions.Add(checkBox_DV2);
+            sortOptions.Add(checkBox_DV3);
+            sortOptions.Add(checkBox_DV4);
+            sortOptions.Add(checkBox_DV5);
+
+            foreach (var chk in sortOptions)
+            {
+                chk.CheckedChanged += CheckBox_CheckedChanged;
+            }
+        }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -186,11 +256,15 @@ namespace GUI
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
 
-        private void panel3_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(Handle, 0x112, 0xf012, 0);
-        }
+        //-----------------------------------------------------------------------
+        //Code mới
+
+        //Code sửa từ function đã có
+
+        //Code xóa
+
+        //-----------------------------------------------------------------------
+
         private void setStartPositon()
         {
             tabQuanLy.Location = tabQL;
@@ -234,18 +308,95 @@ namespace GUI
         }
 
 
-        //-----------------------------------------------------------------------
-        //Code mới
+       
+
+        public GetAllServiceBLL getAllServiceBLL = new GetAllServiceBLL();
+        private void btn_xemdichvu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<DichVuDTO> listDichVu = new List<DichVuDTO>();
+                listDichVu = getAllServiceBLL.GetAllDichVu();
+
+                SeeAllService seeForm = new SeeAllService(listDichVu);
+                seeForm.ShowDialog(); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể lấy danh sách dịch vụ: " + ex.Message);
+            }
+
+        }
+
+        private void guna2GradientButton12_Click(object sender, EventArgs e)
+        {
+            EmailBLL bll = new EmailBLL();
+
+            string danhSachTo = bll.LayChuoiEmailNguoiNhan(listBuildingID.Text);
+            string[] danhSachEmail = danhSachTo.Split(',');
 
 
 
-        //Code sửa từ function đã có
+            bool emailSentSuccessfully = true;  
+
+            foreach (var emailRecipient in danhSachEmail)
+            {
+                string recipientEmail = emailRecipient.Trim();
 
 
-        //Code xóa
+
+                EmailDTO email = new EmailDTO
+                {
+                    From = "nhuthuyhk9@gmail.com",
+                    Password = "gdjq astk ezog zdjz",
+                    To = recipientEmail,
+                    Subject = "Gửi từ phần mềm quản lí nhà Rentease",
+                    Body = "Xin chào, hợp đồng của bạn sắp hết hạn. Đây là email tự động."
+                };
+
+                bool result = bll.GuiEmail(email);
+
+                if (!result)
+                {
+                    emailSentSuccessfully = false;
+                    break; 
+                }
+            }
+
+            if (emailSentSuccessfully)
+            {
+                MessageBox.Show("Gửi email thành công!");
+            }
+            else
+            {
+                MessageBox.Show("Gửi email thất bại.");
+            }
+        }
+        private void btn_vantay_Click(object sender, EventArgs e)
+        {
+            FingerprintManagementForm fingerprintForm = new FingerprintManagementForm(
+                form1.taikhoan.Username,
+                listBuildingID.SelectedItem.ToString()
+            );
+            fingerprintForm.ShowDialog();
+        }
 
 
-        //-----------------------------------------------------------------------
+        private void guna2GradientButton1_Click_1(object sender, EventArgs e)
+        {
+            Form_W_E form_W_E = new Form_W_E(form1.taikhoan.Username, listBuildingID.Text);
+            form_W_E.ShowDialog();
+            string result = BillBLL.BillBLL_calculate_bill();
+            loadBill(null);
+        }
+
+        public void btn_dichvu_Click(object sender, EventArgs e)
+        {
+            tabQuanLy.SelectedIndex = 4;
+        }
+
+
+        
         private void button11_Click(object sender, EventArgs e)
         {
             DataTable tmp = TenantHistoryBLL.TenantHistoryBLL_count_TenantHistory(listBuildingID.Text);
@@ -330,12 +481,7 @@ namespace GUI
             tabControl1.SelectedIndex = 1;
 
         }
-        private void guna2GradientButton1_Click_1(object sender, EventArgs e)
-        {
-            Form_W_E form_W_E = new Form_W_E(form1.taikhoan.Username,listBuildingID.Text);
-            form_W_E.ShowDialog();
-            loadBill(null);
-        }
+        
 
         private void button20_Click(object sender, EventArgs e)
         {
@@ -668,7 +814,7 @@ namespace GUI
                 dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
                 dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
                 dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
-                //load_Assets();
+                load_Assets();
             }
             catch (Exception ex)
             {
@@ -872,7 +1018,6 @@ namespace GUI
         {
             try
             {
-                // Tạo danh sách trạng thái được chọn
                 List<string> selectedStatuses = new List<string>();
 
                 if (DangO_chbox1.Checked) selectedStatuses.Add(DangO_chbox1.Text);
@@ -883,15 +1028,13 @@ namespace GUI
                 if (DaQuaHan_chbox.Checked) selectedStatuses.Add(DaQuaHan_chbox.Text);
                 if (DangNoTien_chbox.Checked) selectedStatuses.Add(DangNoTien_chbox.Text);
 
-                // Chuyển danh sách thành chuỗi phân cách bằng dấu ;
                 string statusFilter = string.Join("; ", selectedStatuses);
 
 
-                // Lấy dữ liệu đã lọc
                 DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
 
-                // Cập nhật DataGridView
-                dgv_QLP.DataSource = null; // Xóa dữ liệu cũ trước
+
+                dgv_QLP.DataSource = null; 
                 dgv_QLP.DataSource = filteredData;
 
                 ConfigureDataGridView();
@@ -969,36 +1112,7 @@ namespace GUI
         private List<CheckBox> sortOptions = new List<CheckBox>();
 
         public string filet_Service = "Default";
-        public void btn_dichvu_Click(object sender, EventArgs e)
-        {
-            tabQuanLy.SelectedIndex = 4;
-
-            var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
-
-            if (data == null || data.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu!");
-            }
-            dgvServiceInfo.DataSource = data;
-
-            checkBox_DV1.Visible = true;
-            checkBox_DV2.Visible = true;
-            checkBox_DV3.Visible = true;
-            checkBox_DV4.Visible = true;
-            checkBox_DV5.Visible = true;
-
-            sortOptions.Add(checkBox_DV1);
-            sortOptions.Add(checkBox_DV2);
-            sortOptions.Add(checkBox_DV3);
-            sortOptions.Add(checkBox_DV4);
-            sortOptions.Add(checkBox_DV5);
-
-            foreach (var chk in sortOptions)
-            {
-                chk.CheckedChanged += CheckBox_CheckedChanged;
-            }
-
-        }
+       
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox current = (CheckBox)sender;
@@ -1058,10 +1172,9 @@ namespace GUI
         private void btn_caidat_Click(object sender, EventArgs e)
         {
             tabQuanLy.SelectedIndex = 5;
-            LoadParkingAreaData(listBuildingID.Text);
+            //LoadParkingAreaData(listBuildingID.Text);
         }
 
-        //Room
         private void button35_Click(object sender, EventArgs e)
         {
             Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
@@ -1175,10 +1288,7 @@ namespace GUI
 
         private UserService serviceUsageBLL = new UserService();
 
-        public void RefreshParkingAreaData()
-        {
-            LoadParkingAreaData(listBuildingID.Text);
-        }
+  
         public void LoadParkingAreaDataWithFilter(DataTable filteredData)
         {
             try
@@ -1215,166 +1325,6 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void LoadSettingsData()
-        {
-            DataTable dt = BLL.PaymentBLL.GetAllPayments();
-
-
-
-
-            dgv_thanhtoan.DataSource = dt;
-
-            dgv_thanhtoan.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(0, 120, 215); 
-            dgv_thanhtoan.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            dgv_thanhtoan.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            dgv_thanhtoan.ColumnHeadersHeight = 40;
-
-            if (dgv_thanhtoan.Columns.Count > 0)
-            {
-                dgv_thanhtoan.Columns[0].HeaderText = "Mã thanh toán";
-                dgv_thanhtoan.Columns[1].HeaderText = "Mã hóa đơn";
-                dgv_thanhtoan.Columns[2].HeaderText = "Phương thức";
-                dgv_thanhtoan.Columns[3].HeaderText = "Số tiền";
-                dgv_thanhtoan.Columns[4].HeaderText = "Thời gian";
-                dgv_thanhtoan.Columns[3].DefaultCellStyle.Format = "N0";
-
-
-            }
-
-            dgv_thanhtoan.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgv_thanhtoan.Refresh();
-        }
-        private void LoadParkingAreaData(string buildingID)
-        {
-            try
-            {
-                guna2DataGridView7.DataSource = ParkingAreaBLL.GetAllParkingAreas(buildingID);
-
-                guna2DataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-                guna2DataGridView7.EnableHeadersVisualStyles = false;
-
-                guna2DataGridView7.ColumnHeadersHeight = 40;
-
-
-                guna2DataGridView7.ReadOnly = true;
-                guna2DataGridView7.AllowUserToAddRows = false;
-                guna2DataGridView7.AllowUserToDeleteRows = false;
-                guna2DataGridView7.AllowUserToOrderColumns = false;
-                guna2DataGridView7.AllowUserToResizeRows = false;
-                guna2DataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
-                if (guna2DataGridView7.Columns.Count > 0)
-                {
-                    guna2DataGridView7.Columns["AREAID"].HeaderText = "ID Bãi Đỗ Xe";
-                    guna2DataGridView7.Columns["BUILDINGID"].HeaderText = "ID Tòa Nhà";
-                    guna2DataGridView7.Columns["ADDRESS"].HeaderText = "Địa Chỉ";
-                    guna2DataGridView7.Columns["TYPE"].HeaderText = "Loại Bãi Đỗ Xe";
-                    guna2DataGridView7.Columns["CAPACITY"].HeaderText = "Sức Chứa";
-
-                    guna2DataGridView7.Columns["AREAID"].Width = 100;
-                    guna2DataGridView7.Columns["BUILDINGID"].Width = 100;
-                    guna2DataGridView7.Columns["ADDRESS"].Width = 200;
-                    guna2DataGridView7.Columns["TYPE"].Width = 150;
-                    guna2DataGridView7.Columns["CAPACITY"].Width = 100;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void button52_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (guna2DataGridView7.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Vui lòng chọn một khu vực đỗ xe để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                string areaId = guna2DataGridView7.SelectedRows[0].Cells["AREAID"].Value.ToString();
-
-                DialogResult confirm = MessageBox.Show($"Bạn có chắc chắn muốn xóa khu vực đỗ xe {areaId} không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (confirm == DialogResult.No)
-                {
-                    return;
-                }
-
-                if (ParkingAreaBLL.DeleteParkingArea(areaId, out string message))
-                {
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshParkingAreaData();
-                }
-                else
-                {
-                    MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button57_Click(object sender, EventArgs e)
-        {
-            try
-            {
-               
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.Filter = "CSV Files (*.csv)|*.csv";
-                    sfd.FileName = $"DanhSachBaiDoXe_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
-                    if (sfd.ShowDialog() != DialogResult.OK)
-                    {
-                        return; 
-                    }
-
-                    if (ParkingAreaBLL.ExportParkingAreasToCsv(sfd.FileName, out string message))
-                    {
-                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void button13_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
-                    sfd.FileName = $"ThongKeBaiDoXe_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
-                    if (sfd.ShowDialog() != DialogResult.OK)
-                    {
-                        return;
-                    }
-
-                    if (ParkingAreaBLL.ExportParkingAreasToExcelWithChart(sfd.FileName, out string message , listBuildingID.Text))
-                    {
-                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1453,112 +1403,6 @@ namespace GUI
         }
         private W_E_BLL figureBLL = new W_E_BLL();
 
-        
-
-        private void button56_Click(object sender, EventArgs e)
-        {
-            GUI.QuanLyPhuongTien.QuanLyPhuonTien quanLyPhuonTienForm = new QuanLyPhuonTien(listBuildingID.Text);
-            quanLyPhuonTienForm.Owner = this;
-            quanLyPhuonTienForm.ShowDialog();
-        }
-
-        private void button53_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                if (guna2DataGridView7.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Vui lòng chọn một bãi đỗ xe để sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                string areaId = guna2DataGridView7.SelectedRows[0].Cells["AREAID"].Value.ToString();
-
-                DialogResult confirm = MessageBox.Show($"Bạn có chắc chắn muốn sửa thông tin bãi đỗ xe {areaId} không?",
-                                                      "Xác nhận sửa",
-                                                      MessageBoxButtons.YesNo,
-                                                      MessageBoxIcon.Question);
-                if (confirm == DialogResult.No)
-                {
-                    return;
-                }
-
-                using (var suaForm = new GUI.QuanLyPhuongTien.Suaphuongtien(areaId, listBuildingID.Text))
-                {
-                    if (suaForm.ShowDialog() == DialogResult.OK)
-                    {
-                        RefreshParkingAreaData();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button52_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                if (guna2DataGridView7.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Vui lòng chọn một khu vực đỗ xe để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                string areaId = guna2DataGridView7.SelectedRows[0].Cells["AREAID"].Value.ToString();
-
-                DialogResult confirm = MessageBox.Show($"Bạn có chắc chắn muốn xóa khu vực đỗ xe {areaId} không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (confirm == DialogResult.No)
-                {
-                    return;
-                }
-
-                if (ParkingAreaBLL.DeleteParkingArea(areaId, out string message))
-                {
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    RefreshParkingAreaData();
-                }
-                else
-                {
-                    MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error); 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button57_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
-                    sfd.FileName = $"ThongKeBaiDoXe_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
-                    if (sfd.ShowDialog() != DialogResult.OK)
-                    {
-                        return;
-                    }
-
-                    if (ParkingAreaBLL.ExportParkingAreasToExcelWithChart(sfd.FileName, out string message, listBuildingID.Text))
-                    {
-                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         private void button41_Click(object sender, EventArgs e)
         {
@@ -1606,7 +1450,919 @@ namespace GUI
             f.ShowDialog();
             load_Building_By_User();
         }
+        private void button56_Click(object sender, EventArgs e)
+        {
+            Form_AddParkingArea addParkingArea = new Form_AddParkingArea(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+            if (addParkingArea.ShowDialog() == DialogResult.OK)
+            {
+                load_PA();
+            }
+        }
+        private void button53_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView7.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn bãi đậu xe cần sửa");
+                return;
+            }
+            DataGridViewRow selectedRow = guna2DataGridView7.SelectedRows[0];
 
-        
+            ParkingArea selectedArea = new ParkingArea
+            {
+                AreaId = selectedRow.Cells["AreaId"].Value?.ToString(),
+                BuildingId = selectedRow.Cells["BuildingID"].Value?.ToString(),
+                Address = selectedRow.Cells["Address"].Value?.ToString(),
+                Type = selectedRow.Cells["Type"].Value?.ToString(),
+                Capacity = selectedRow.Cells["Capacity"].Value?.ToString()
+            };
+            Form_UpdateParkingArea updateArea = new Form_UpdateParkingArea(form1.taikhoan.Username, selectedArea);
+            if (updateArea.ShowDialog() == DialogResult.OK)
+            {
+                load_PA();
+            }
+        }
+        private void button52_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView7.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn bãi giữ xe cần xóa", "Thông báo",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string areaId = guna2DataGridView7.SelectedRows[0].Cells["AreaId"].Value.ToString();
+
+            if (MessageBox.Show($"Bạn có chắc muốn xóa bãi giữ xe {areaId}?",
+                              "Xác nhận xóa",
+                              MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var (success, message) = ParkingAreaBLL.DeleteArea(areaId);
+
+                MessageBox.Show(message,
+                              success ? "Thành công" : "Lỗi",
+                              MessageBoxButtons.OK,
+                              success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+
+                if (success)
+                {
+                    load_PA();
+                }
+            }
+        }
+        private void button57_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView7.Visible)
+            {
+                ExcelExporter.ExportToExcel(guna2DataGridView7, "Danh sách bãi giữ xe");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void FilterParkingArea(string type, string status)
+        {
+            try
+            {
+                DataTable filteredData = ParkingAreaBLL.FilterParkingArea(listBuildingID.SelectedItem.ToString(), type, status);
+
+                guna2DataGridView7.DataSource = filteredData;
+                ConfigureParkingArea();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ConfigureParkingArea()
+        {
+            guna2DataGridView7.ReadOnly = true;
+            guna2DataGridView7.AllowUserToAddRows = false;
+            guna2DataGridView7.AllowUserToDeleteRows = false;
+            guna2DataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            guna2DataGridView7.ScrollBars = ScrollBars.Both;
+
+            if (guna2DataGridView7.Columns.Count > 0)
+            {
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].HeaderText = "Mã bãi xe";
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].HeaderText = "Mã tòa nhà";
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].HeaderText = "Địa chỉ";
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].HeaderText = "Loại bãi xe";
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].HeaderText = "Sức chứa";
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].HeaderText = "Số xe hiện tại";
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].HeaderText = "Trạng thái";
+
+                int displayIndex = 0;
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].DisplayIndex = displayIndex++;
+
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].Width = 250;
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].Width = 150;
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].Width = 90;
+            }
+        }
+
+        private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox10.Checked)
+            {
+                checkBox11.Checked = false;
+                checkBox18.Checked = false;
+            }
+            string type = checkBox10.Checked ? "Xe ô tô" : null;
+            string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
+            FilterParkingArea(type, status);
+        }
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox11.Checked)
+            {
+                checkBox10.Checked = false;
+                checkBox18.Checked = false;
+            }
+            string type = checkBox11.Checked ? "Xe máy/Xe đạp" : null;
+            string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
+            FilterParkingArea(type, status);
+        }
+        private void checkBox18_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void checkBox17_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox17.Checked)
+            {
+                checkBox20.Checked = false;
+            }
+            string status = checkBox17.Checked ? "EMPTY" : null;
+            string type = checkBox10.Checked ? "Xe ô tô" :
+                        (checkBox11.Checked ? "Xe máy/Xe đạp" :
+                        (checkBox18.Checked ? "Hỗn hợp" : null));
+            FilterParkingArea(type, status);
+        }
+        private void checkBox20_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox20.Checked)
+            {
+                checkBox17.Checked = false;
+            }
+            string status = checkBox20.Checked ? "FULL" : null;
+            string type = checkBox10.Checked ? "Xe ô tô" :
+                        (checkBox11.Checked ? "Xe máy/Xe đạp" :
+                        (checkBox18.Checked ? "Hỗn hợp" : null));
+            FilterParkingArea(type, status);
+        }
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            tabQuanLy.SelectedIndex = 5;
+        }
+        private void guna2GradientButton4_Click(object sender, EventArgs e)
+        {
+            Form_AddVehicle addVehicle = new Form_AddVehicle(listBuildingID.SelectedItem.ToString());
+            if (addVehicle.ShowDialog() == DialogResult.OK)
+            {
+                load_Vehicle();
+            }
+        }
+        private void guna2GradientButton5_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phương tiện cần sửa");
+                return;
+            }
+            DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
+
+            Vehicle selectedVehicle = new Vehicle
+            {
+                VehicleID = selectedRow.Cells["VehicleID"].Value?.ToString(),
+                TenantID = selectedRow.Cells["TenantID"].Value?.ToString(),
+                VehicleUnitPriceID = selectedRow.Cells["VEHICLE_UNITPRICE_ID"].Value?.ToString(),
+                Type = selectedRow.Cells["Type"].Value?.ToString(),
+                LicensePlate = selectedRow.Cells["LicensePlate"].Value?.ToString()
+            };
+            Form_UpdateVehicle updateVehicle = new Form_UpdateVehicle(selectedVehicle);
+            if (updateVehicle.ShowDialog() == DialogResult.OK)
+            {
+                load_Vehicle();
+            }
+        }
+        private void guna2GradientButton6_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn phương tiện cần xóa", "Thông báo",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string vehicleId = guna2DataGridView1.SelectedRows[0].Cells["VehicleId"].Value.ToString();
+
+            if (MessageBox.Show($"Bạn có chắc muốn xóa phương tiện {vehicleId}?",
+                              "Xác nhận xóa",
+                              MessageBoxButtons.YesNo,
+                              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                var (success, message) = VehicleBLL.DeleteVehicle(vehicleId);
+
+                MessageBox.Show(message,
+                              success ? "Thành công" : "Lỗi",
+                              MessageBoxButtons.OK,
+                              success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+
+                if (success)
+                {
+                    load_Vehicle();
+                }
+            }
+        }
+        private void guna2GradientButton7_Click(object sender, EventArgs e)
+        {
+            if (guna2DataGridView1.Visible)
+            {
+                ExcelExporter.ExportToExcel(guna2DataGridView1, "Danh sách phương tiện");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void FilterVehicle(string type)
+        {
+            try
+            {
+                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), type);
+                guna2DataGridView1.DataSource = data;
+                ConfigureVehicle();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void ConfigureVehicle()
+        {
+            if (guna2DataGridView1.Columns.Count > 0)
+            {
+                guna2DataGridView1.ReadOnly = true;
+                guna2DataGridView1.AllowUserToAddRows = false;
+                guna2DataGridView1.AllowUserToDeleteRows = false;
+                guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                guna2DataGridView1.ScrollBars = ScrollBars.Both;
+
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].HeaderText = "Mã xe";
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].HeaderText = "Mã khách hàng";
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].HeaderText = "Họ";
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].HeaderText = "Tên";
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].HeaderText = "Mã đơn giá";
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].HeaderText = "Đơn giá";
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].HeaderText = "Loại xe";
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].HeaderText = "Biển số";
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].HeaderText = "Mã chỗ đỗ";
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].HeaderText = "Trạng thái";
+
+                int displayIndex = 0;
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].DisplayIndex = displayIndex++;
+
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].Width = 120;
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].Width = 90;
+            }
+        }
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox5.Checked = false;
+                checkBox7.Checked = false;
+                FilterVehicle("Xe ô tô");
+                return;
+            }
+            FilterVehicle(null);
+
+        }
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked)
+            {
+                checkBox2.Checked = false;
+                checkBox7.Checked = false;
+                FilterVehicle("Xe máy");
+                return;
+            }
+            FilterVehicle(null);
+
+        }
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox7.Checked)
+            {
+                checkBox2.Checked = false;
+                checkBox5.Checked = false;
+                FilterVehicle("Xe đạp");
+                return;
+            }
+            FilterVehicle(null);
+
+
+        }
+
+        private void loadInitLanguage()
+        {
+            string l = Language.GetCurrentLanguage();
+            string[] listLanguage_string = Language.getListLanguage();
+            listLanguage.Items.Add(l);
+            foreach (string item in listLanguage_string)
+            {
+                if (item != l)
+                {
+                    listLanguage.Items.Add(item);
+                }
+            }
+            listLanguage.SelectedItem = l;
+        }
+        private void loadLanguage()
+        {
+
+            string selectedLanguage = listLanguage.SelectedItem.ToString();
+            Language.SetCurrentLanguage(selectedLanguage);
+            foreach (KeyValuePair<string, string> kvp in Language.languages)
+            {
+               
+                switch (kvp.Key)
+                {
+                    case "Room_Management":
+                        btn_phong.Text = kvp.Value;
+                        break;
+                    case "Contract_Management":
+                        btn_hopdong.Text = kvp.Value;
+                        break;
+                    case "Payment_Management":
+                        btn_taichinh.Text = kvp.Value;
+                        break;
+                    case "Service_Management":
+                        btn_dichvu.Text = kvp.Value;
+                        break;
+                    case "Facility_Management":
+                        btn_csvc.Text = kvp.Value;
+                        break;
+                    case "Parking_Management":
+                        guna2Button1.Text = kvp.Value;
+                        break;
+                    case "room_list_management":
+                        label14.Text = kvp.Value;
+                        break;
+                    case "text_room_list_management":
+                        label7.Text = kvp.Value;
+                        break;
+                    case "edit":
+                        button34.Text = kvp.Value;
+                        button16.Text = kvp.Value;
+                        button32.Text = kvp.Value;
+                        button40.Text = kvp.Value;
+                        button22.Text = kvp.Value;
+                        guna2GradientButton5.Text = kvp.Value;
+                        button53.Text = kvp.Value; 
+                        break;
+
+                    case "delete":
+                        button11.Text = kvp.Value;
+                        button31.Text = kvp.Value;
+                        button15.Text = kvp.Value; 
+                        button29.Text = kvp.Value;
+                        guna2GradientButton6.Text = kvp.Value;
+                        button52.Text = kvp.Value;
+                        button21.Text = kvp.Value;
+                        button20.Text = kvp.Value;
+                        button39.Text = kvp.Value;
+                        break;
+                    case "view_rental_history":
+                        button33.Text = kvp.Value;
+                        break;
+                    case "export_to_excel":
+                        button36.Text = kvp.Value;
+                        button26.Text = kvp.Value; 
+                        button8.Text = kvp.Value;
+                        guna2GradientButton7.Text = kvp.Value;
+                        button9.Text = kvp.Value;
+                        button41.Text = kvp.Value;
+                        button17.Text = kvp.Value;
+                        button37.Text = kvp.Value;
+                        button50.Text = kvp.Value;
+                        button57.Text = kvp.Value;
+                        break;
+                    case "occupied":
+                        DangO_chbox1.Text = kvp.Value;
+                        break;
+                    case "vacant":
+                        DangTrong_chbox1.Text = kvp.Value;
+                        break;
+                    case "reserved":
+                        DangCoc_chbox.Text = kvp.Value;
+                        break;
+                    case "ending_soon":
+                        DangKT_chbox1.Text = kvp.Value;
+                        break;
+                    case "contract_expiring_soon":
+                        SapHetHan_chbox.Text = kvp.Value;
+                        break;
+                    case "contract_expired":
+                        DaQuaHan_chbox.Text = kvp.Value;
+                        break;
+                    case "owing_money":
+                        DangNoTien_chbox.Text = kvp.Value;
+                        break;
+                    case "building_add":
+                        guna2Button3.Text = kvp.Value;
+                        break;
+                    case "building_change":
+                        guna2Button2.Text = kvp.Value;
+                        break;
+
+                    case "taxpayer_information_management":
+                        ttkt1.Text = kvp.Value;
+                        ttkt2.Text = kvp.Value;
+                        ttkt3.Text = kvp.Value;
+                        ttkt4.Text = kvp.Value;
+                        break;
+                    case "contract_management":
+                        hd1.Text = kvp.Value;
+                        hd2.Text = kvp.Value;
+                        hd3.Text = kvp.Value;
+                        hd4.Text = kvp.Value;
+                        break;
+                    case "house_tax_history_management":
+                        lstn1.Text = kvp.Value;
+                        lstn2.Text = kvp.Value;
+                        lstn3.Text = kvp.Value;
+                        lstn4.Text = kvp.Value;
+                        break;
+                    case "residence_registration_management":
+                        dklt1.Text = kvp.Value;
+                        dklt2.Text = kvp.Value;
+                        dklt3.Text = kvp.Value;
+                        dklt4.Text = kvp.Value;
+                        break;
+                    case "all_contracts":
+                        label8.Text = kvp.Value;
+                        break;
+                    case "created_contracts_list":
+                        label6.Text = kvp.Value;
+                        break;
+                    case "contract_expiration_reminder":
+                        guna2GradientButton12.Text = kvp.Value;
+                        break;
+                    case "within_term":
+                        checkBox1.Text = kvp.Value;
+                        break;
+                    case "about_to_expire":
+                        checkBox4.Text = kvp.Value;
+                        break;
+                    case "expired":
+                        checkBox3.Text = kvp.Value;
+                        break;
+                    case "set_contract_template":
+                        button42.Text = kvp.Value;
+                        break;
+                    case "search":
+                        button_tk_contract.Text = kvp.Value;
+                        guna2Button4.Text = kvp.Value;
+                        timkiem_ttenant.Text = kvp.Value;
+                        button_tk_dklt.Text = kvp.Value;
+                        break;
+                    case "rental_history_title":
+                        label10.Text = kvp.Value;
+                        break;
+                    case "rental_history_description":
+                        label9.Text = kvp.Value;
+                        break;
+                    case "view_all_tenants":
+                        guna2GradientButton3.Text = kvp.Value;
+                        break;
+                    case "evaluation":
+                        guna2GradientButton2.Text = kvp.Value;
+                        break;
+                    case "tenant_information_title":
+                        label12.Text = kvp.Value;
+                        break;
+                    case "tenant_information_description":
+                        label11.Text = kvp.Value;
+                        break;
+                    case "residence_registration_title":
+                        label15.Text = kvp.Value;
+                        break;
+                    case "residence_registration_description":
+                        label13.Text = kvp.Value;
+                        break;
+
+                    case "bill_information_title":
+                        label17.Text = kvp.Value;
+                        break;
+                    case "bill_information_description":
+                        label16.Text = kvp.Value;
+                        break;
+                    case "button_diennuoc":
+                        guna2GradientButton1.Text = kvp.Value;
+                        break;
+                    case "button_xemchitiet":
+                        button10.Text = kvp.Value;
+                        button24.Text = kvp.Value;
+
+                        break;
+                    case "button_xemlstt":
+                        button18.Text = kvp.Value;
+                        break;
+                    case "button_tbdenkhachthue":
+                        button43.Text = kvp.Value;
+                        break;
+                    case "checkbox_dathu":
+                        checkBox16.Text = kvp.Value;
+                        break;
+                    case "checkbox_chuathu":
+                        checkBox15.Text = kvp.Value;
+                        break;
+                    case "checkbox_dangno":
+                        checkBox13.Text = kvp.Value;
+                        break;
+                    case "checkbox_dahuy":
+                        checkBox14.Text = kvp.Value;
+                        break;
+                    case "checkbox_loctheothang":
+                        checkBox12.Text = kvp.Value;
+                        break;
+
+                    case "asset_information_title":
+                        label19.Text = kvp.Value;
+                        break;
+                    case "asset_information_description":
+                        label18.Text = kvp.Value;
+                        break;
+                    case "checkbox_tangdan":
+                        checkBox22.Text = kvp.Value;
+                        break;
+                    case "checkbox_giamdan":
+                        checkBox23.Text = kvp.Value;
+                        break;
+                    case "checkbox_theoten":
+                        guna2HtmlLabel2.Text = kvp.Value;
+                        guna2HtmlLabel3.Text = kvp.Value;
+                        guna2HtmlLabel4.Text = kvp.Value;
+                        guna2HtmlLabel1.Text = kvp.Value;
+                        checkBox19.Text = kvp.Value;
+                        break;
+                    case "service_management_title":
+                        label21.Text = kvp.Value;
+                        break;
+                    case "service_management_description":
+                        label20.Text = kvp.Value;
+                        break;
+                    case "view_service":
+                        btn_xemdichvu.Text = kvp.Value;
+                        break;
+                    case "filter_highlow":
+                        checkBox_DV1.Text = kvp.Value;
+                        break;
+                    case "filter_lowhigh":
+                        checkBox_DV2.Text = kvp.Value;
+                        break;
+
+                    case "filter_recent":
+                        checkBox_DV3.Text = kvp.Value;
+                        break;
+                    case "filter_oldest":
+                        checkBox_DV4.Text = kvp.Value;
+                        break;
+                    case "filter_az":
+                        checkBox_DV5.Text = kvp.Value;
+                        break;
+                    case "filter_by_month":
+                        checkBox9.Text = kvp.Value;
+                        break;
+                    case "action_editdelete":
+                        button45.Text = kvp.Value;
+                        break;
+                    case "action_registCancel":
+                        button49.Text = kvp.Value;
+                        break;
+
+                    case "parking_management_title":
+                        label25.Text = kvp.Value;
+                        label23.Text = kvp.Value;
+                        break;
+                    case "parking_list_title":
+                        label22.Text = kvp.Value;
+                        label24.Text = kvp.Value;
+
+                        break;
+                    case "parking_lot_label":
+                        guna2GradientButton9.Text = kvp.Value;
+                        guna2GradientButton11.Text = kvp.Value;
+                        break;
+                    case "vehicle_label":
+                        guna2GradientButton8.Text = kvp.Value;
+                        guna2GradientButton10.Text = kvp.Value;
+                        break;
+
+                    case "roomtable_room_id":
+                        dgv_QLP.Columns["RoomID"].HeaderText = kvp.Value;
+                        break;
+                    case "roomtable_building":
+                        dgv_QLP.Columns["BuildingID"].HeaderText = kvp.Value;
+                        break;
+                    case "roomtable_floor":
+                        dgv_QLP.Columns["Floor"].HeaderText = kvp.Value;
+                        break;
+                    case "roomtable_room_type":
+                        dgv_QLP.Columns["Type"].HeaderText = kvp.Value;
+                        break;
+                    case "roomtable_convenient":
+                        dgv_QLP.Columns["Convenient"].HeaderText = kvp.Value;
+                        break;
+                    case "roomtable_area":
+                        dgv_QLP.Columns["Area"].HeaderText = kvp.Value;
+                        break;
+                    case "roomtable_price":
+                        dgv_QLP.Columns["Price"].HeaderText = kvp.Value;
+                        break;
+                    case "roomtable_status":
+                        dgv_QLP.Columns["Status"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_contract_id":
+                        dgv_QLHD.Columns["CONTRACTID"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_room_id":
+                        dgv_QLHD.Columns["ROOMID"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_tenant_id":
+                        dgv_QLHD.Columns["TENANTID"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_first_name":
+                        dgv_QLHD.Columns["FIRSTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_last_name":
+                        dgv_QLHD.Columns["LASTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_create_date":
+                        dgv_QLHD.Columns["CREATEDATE"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_start_date":
+                        dgv_QLHD.Columns["STARTDATE"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_end_date":
+                        dgv_QLHD.Columns["ENDDATE"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_monthly_rent":
+                        dgv_QLHD.Columns["MONTHLYRENT"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_payments":
+                        dgv_QLHD.Columns["PAYMENTSCHEDULE"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_deposit":
+                        dgv_QLHD.Columns["DEPOSIT"].HeaderText = kvp.Value;
+                        break;
+                    case "contracttable_notes":
+                        dgv_QLHD.Columns["NOTES"].HeaderText = kvp.Value;
+                        break;
+
+                    case "lstntable_historyid":
+                        dgv_LSTN.Columns["HISTORYID"].HeaderText = kvp.Value;
+                        break;
+                    case "lstntable_contractid":
+                        dgv_LSTN.Columns["CONTRACTID"].HeaderText = kvp.Value;
+                        break;
+                    case "lstntable_tenantid":
+                        dgv_LSTN.Columns["TENANTID"].HeaderText = kvp.Value;
+                        break;
+                    case "lstntable_firstname":
+                        dgv_LSTN.Columns["FIRSTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "lstntable_lastname":
+                        dgv_LSTN.Columns["LASTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "lstntable_startdate":
+                        dgv_LSTN.Columns["STARTDATE"].HeaderText = kvp.Value;
+                        break;
+                    case "lstntable_enddate":
+                        dgv_LSTN.Columns["ENDDATE"].HeaderText = kvp.Value;
+                        break;
+                    case "lstntable_note":
+                        dgv_LSTN.Columns["NOTES"].HeaderText = kvp.Value;
+                        break;
+
+                    case "tenanttable_tenantid":
+                        dgv_Tenant.Columns["TENANTID"].HeaderText = kvp.Value;
+                        break;
+                    case "tenanttable_firstname":
+                        dgv_Tenant.Columns["FIRSTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "tenanttable_lastname":
+                        dgv_Tenant.Columns["LASTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "tenanttable_birthday":
+                        dgv_Tenant.Columns["BIRTHDAY"].HeaderText = kvp.Value;
+                        break;
+                    case "tenanttable_gender":
+                        dgv_Tenant.Columns["GENDER"].HeaderText = kvp.Value;
+                        break;
+                    case "tenanttable_numberphone":
+                        dgv_Tenant.Columns["PHONENUMBER"].HeaderText = kvp.Value;
+                        break;
+                    case "tenanttable_email":
+                        dgv_Tenant.Columns["EMAIL"].HeaderText = kvp.Value;
+                        break;
+
+                    case "registrationtable_registrationid":
+                        dgv_DKLT.Columns["REGISTRATIONID"].HeaderText = kvp.Value;
+                        break;
+                    case "registrationtable_roomid":
+                        dgv_DKLT.Columns["ROOMID"].HeaderText = kvp.Value;
+                        break;
+                    case "registrationtable_tenantid":
+                         dgv_DKLT.Columns["TENANTID"].HeaderText = kvp.Value;
+                        break;
+                    case "registrationtable_firstname":
+                         dgv_DKLT.Columns["FIRSTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "registrationtable_lastname":
+                         dgv_DKLT.Columns["LASTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "registrationtable_registrationdate":
+                         dgv_DKLT.Columns["REGISTRATION_DATE"].HeaderText = kvp.Value;
+                        break;
+                    case "registrationtable_expirationdate":
+                         dgv_DKLT.Columns["EXPIRATION_DATE"].HeaderText = kvp.Value;
+                        break;
+                    case "registrationtable_status":
+                         dgv_DKLT.Columns["STATUS"].HeaderText = kvp.Value;
+                        break;
+                    case "billtable_billid":
+                        dgv_thanhtoan.Columns["BILLID"].HeaderText = kvp.Value;
+                        break;
+                    case "billtable_tenantid":
+                        dgv_thanhtoan.Columns["TENANTID"].HeaderText = kvp.Value;
+                        break;
+                    case "billtable_fisrtname":
+                        dgv_thanhtoan.Columns["FIRSTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "billtable_lastname":
+                        dgv_thanhtoan.Columns["LASTNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "billtable_total":
+                        dgv_thanhtoan.Columns["TOTAL"].HeaderText = kvp.Value;
+                        break;
+                    case "billtable_startdate":
+                        dgv_thanhtoan.Columns["START_DATE"].HeaderText = kvp.Value;
+                        break;
+                    case "billtable_enddate":
+                        dgv_thanhtoan.Columns["END_DATE"].HeaderText = kvp.Value;
+                        break;
+                    case "billtable_coalesce":
+                        dgv_thanhtoan.Columns["TOTALS"].HeaderText = kvp.Value;
+                        break;
+
+                    case "servicetable_ordernumber":
+                        dgvServiceInfo.Columns["STT"].HeaderText = kvp.Value;
+                        break;
+                    case "servicetable_roomid":
+                        dgvServiceInfo.Columns["RoomID"].HeaderText = kvp.Value;
+                        break;
+                    case "servicetable_tenantname":
+                        dgvServiceInfo.Columns["TenantName"].HeaderText = kvp.Value;
+                        break;
+                    case "servicetable_servicename":
+                        dgvServiceInfo.Columns["ServiceName"].HeaderText = kvp.Value;
+                        break;
+                    case "servicetable_serviceprice":
+                        dgvServiceInfo.Columns["ServicePrice"].HeaderText = kvp.Value;
+
+                        break;
+                    case "servicetable_startdate":
+                        dgvServiceInfo.Columns["StartedDay"].HeaderText = kvp.Value;
+                        break;
+                    case "servicetable_enddate":
+                        dgvServiceInfo.Columns["EndDay"].HeaderText = kvp.Value;
+                        break;
+
+                    case "assettable_assetid":
+                        dgv_QLCSVC.Columns["ASSETID"].HeaderText = kvp.Value;
+                        break;
+                    case "assettable_roomid":
+                        dgv_QLCSVC.Columns["ROOMID"].HeaderText = kvp.Value;
+                        break;
+                    case "assettable_assetname":
+                        dgv_QLCSVC.Columns["ASSETNAME"].HeaderText = kvp.Value;
+                        break;
+                    case "assettable_price":
+                        dgv_QLCSVC.Columns["PRICE"].HeaderText = kvp.Value;
+                        break;
+                    case "assettable_status":
+                        dgv_QLCSVC.Columns["STATUS"].HeaderText = kvp.Value;
+                        break;
+                    case "assettable_usedate":
+                        dgv_QLCSVC.Columns["USE_DATE"].HeaderText = kvp.Value;
+                        break;
+                }
+            }
+        }
+
+
+
+        private void listLanguage_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            loadLanguage();
+        }
+
+        private void guna2CustomGradientPanel23_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

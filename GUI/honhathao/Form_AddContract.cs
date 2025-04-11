@@ -72,7 +72,7 @@ namespace GUI
                     guna2DateTimePicker2.Value = DateTime.Today;
                     guna2DateTimePicker3.Value = DateTime.Today;
                     SoPhong.Items.Clear();
-                    List<string> a = RoomBLL.RoomBLL_Load_RoomInBuilding(buildingid);
+                    List<string> a = RoomBLL.RoomBLL_Load_RoomInBuilding_2(buildingid);
                     foreach (string id in a)
                     {
                         SoPhong.Items.Add(id);
@@ -120,26 +120,40 @@ namespace GUI
             {
                 // buildingid,  RoomId,  Tenantid,  CreateDate,  StartDate,  EndDate,  PaymenSchedule,  Deposite,  Note
                 case 0:
-                    string result = ContractBLL.ContractBLL_add_Contract(
-                    buildingid,
-                    SoPhong.Text,
-                    table_tenant.Rows[ListTenantID.SelectedIndex].Cells[0].Value.ToString(),
-                    guna2DateTimePicker1.Value.ToString("yyyy-MM-dd"),
-                    guna2DateTimePicker2.Value.ToString("yyyy-MM-dd"),
-                    guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
-                    LichThanhToan.Text,
-                    TienDatCoc.Text,
-                    GhiChu.Text);
-                    if(result == "Please fill all the fields")
-                    {
-                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                    if(ListTenantID.SelectedIndex > -1) {
+                        string result = ContractBLL.ContractBLL_add_Contract(
+                        buildingid,
+                        SoPhong.Text,
+                        table_tenant.Rows[ListTenantID.SelectedIndex].Cells[0].Value.ToString(),
+                        guna2DateTimePicker1.Value.ToString("yyyy-MM-dd"),
+                        guna2DateTimePicker2.Value.ToString("yyyy-MM-dd"),
+                        guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
+                        LichThanhToan.Text,
+                        TienDatCoc.Text,
+                        GhiChu.Text);
+                        if (result == "Please fill all the fields")
+                        {
+                            MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                            return;
+                        }
+                        else if (result == "wrongDeposite")
+                        {
+                            MessageBox.Show("Vui Lòng Nhập Đúng Số Tiền!");
+                            return;
+                        }
+                        else
+                        {
+                            MessageBox.Show(result);
+                        }
+                        this.Close();
+                    }
+                    else {
+                        MessageBox.Show("Vui lòng chọn người thuê");
                         return;
                     }
-                    else { 
-                            MessageBox.Show(result);
-                    }
-                    this.Close();
-                    break;
+
+
+                        break;
                 case 1:
                     string result1 = ContractBLL.ContractBLL_update_Contract(
                     table.Rows[row].Cells[0].Value.ToString(),
@@ -151,6 +165,10 @@ namespace GUI
                     {
                         MessageBox.Show("Vui lòng điền đầy đủ thông tin");
                         return;
+                    }else if(result1 == "wrongDeposite")
+                    {
+                        MessageBox.Show("Vui Lòng Nhập Đúng Số Tiền!");
+                        return;
                     }
                     else
                     {
@@ -160,6 +178,11 @@ namespace GUI
                     break;
 
             }
+        }
+
+        private void exitButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

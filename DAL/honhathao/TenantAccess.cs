@@ -110,9 +110,9 @@ namespace DAL.honhathao
         }   
             catch (Exception ex)
             {
-                return "Fail to Add Tenant";
+                return "Fail!";
             }
-            return "Success to Add Tenant";
+            return "Success!";
         }
 
         public static String update_Tenant(string TenantId, string FirstName, string LastName, string Birthday, string Gender, string PhoneNumber, string Email)
@@ -138,9 +138,9 @@ namespace DAL.honhathao
             }
             catch (Exception ex)
             {
-                return "Fail to update Tenant";
+                return "Fail!";
             }
-            return "Success to update Tenant";
+            return "Success!";
         }
 
         public static String del_Tenant(string TenantId)
@@ -163,6 +163,50 @@ namespace DAL.honhathao
                 return "Fail to delete Tenant";
             }
             return "Success to delete Tenant";
+        }
+
+        public static DataTable load_Tenant_by_Roomid(string roomid)
+        {
+            DataTable output = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    using (MySqlCommand command = new MySqlCommand("load_tenant_by_roomid", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@p_room_id", roomid);
+                        
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+
+
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                output.Columns.Add(reader.GetName(i), reader.GetFieldType(i));
+                            }
+
+
+                            while (reader.Read())
+                            {
+                                DataRow row = output.NewRow();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[i] = reader.IsDBNull(i) ? DBNull.Value : reader.GetValue(i);
+                                }
+                                output.Rows.Add(row);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine("Error: " + ex.Message);
+
+            }
+            return output;
         }
     }
 }

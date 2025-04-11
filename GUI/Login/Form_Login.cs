@@ -21,7 +21,9 @@ namespace GUI
         public Form_Login()
         {
             InitializeComponent();
+            loadInfo();//New NhatHao
         }
+        
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -89,6 +91,65 @@ namespace GUI
         {
             Form_SignUp dk = new Form_SignUp();
             dk.Show();
+        }
+        private void loadInfo()//New Nhathao
+        {
+            string l = Language.GetCurrentLanguage();
+            string[] listLanguage = Language.getListLanguage();
+            guna2ComboBox1.Items.Add(l);
+            foreach (string item in listLanguage)
+            {
+                if (item != l)
+                {
+                    guna2ComboBox1.Items.Add(item);
+                }
+            }
+            guna2ComboBox1.SelectedItem = l;
+            loadLanguage();
+        }
+
+        private void loadLanguage()//New NhatHao
+        {
+            string selectedLanguage = guna2ComboBox1.SelectedItem.ToString();
+            Language.SetCurrentLanguage(selectedLanguage);
+
+            foreach (KeyValuePair<string, string> kvp in Language.languages)
+            {
+                switch (kvp.Key)
+                {
+                    case "Title":
+                        label1.Text = kvp.Value;
+                        break;
+                    case "Username":
+                        labelTK_DN.Text = kvp.Value;
+                        break;
+                    case "Password":
+                        labelMK_DN.Text = kvp.Value;
+                        break;
+                    case "Sign_in":
+                        buttonDangNhap1.Text = kvp.Value;
+                        break;
+                    case "Sign_up":
+                        dk_lb.Text = kvp.Value;
+                        break;
+
+                }
+            }
+        }
+        //New NhatHao
+        private void guna2ComboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            loadLanguage();
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hienMk_Popup(object sender, PopupEventArgs e)
+        {
+
         }
     }
     

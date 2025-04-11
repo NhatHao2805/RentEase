@@ -1,0 +1,166 @@
+﻿Title: Đăng nhập
+Username: Tên đăng nhập
+Password: Mật khẩu
+Password2: Mật khẩu xác nhận
+Sign_in: Đăng nhập
+Sign_up: Đăng ký
+Sign_Up_Title_Form:Đăng ký
+User_info:Thông tin chi tiết
+Account_info:Thông tin tài khoản
+Fullname:Họ và tên
+Birthday:Ngày Sinh
+Email:Email
+Gender:Giới tính
+Numberphone:Số điện thoại
+Address:Địa chỉ
+Room_Management: Quản lý phòng
+Contract_Management: Quản lý hợp đồng
+Payment_Management: Quản lý thanh toán
+Service_Management: Quản lý dịch vụ
+Facility_Management: Quản lý cơ sở vật chất
+Parking_Management: Quản lý bãi đỗ xe
+room_list_management: Quản lý danh sách phòng
+text_room_list_management: Tất cả danh sách phòng của bạn
+edit: Chỉnh sửa
+edit_in: Chỉnh sửa danh sách phòng
+delete: Xóa
+view_rental_history: Xem lịch sử thuê phòng
+export_to_excel: Xuất sang Excel
+occupied: Đang ở
+vacant: Đang trống
+ending_soon: Đang báo kết thúc
+reserved: Đang cọc giữ chỗ
+contract_expiring_soon: Sắp hết hạn hợp đồng
+contract_expired: Đã quá hạn hợp đồng
+owing_money: Đang nợ tiền
+building_add: Thêm
+building_change: Đổi
+taxpayer_information_management: Quản Lý Thông Tin Khách Thuế
+contract_management: Quản Lý Hợp Đồng
+house_tax_history_management: Quản Lý Lịch Sử Thuế Nhà
+residence_registration_management: Quản Lý Đăng Ký Lưu Trú
+all_contracts: Tất cả Hợp đồng
+created_contracts_list: Danh sách hợp đồng được tạo
+contract_expiration_reminder: Nhắc nhở sắp hết hợp đồng
+within_term: Trong thời hạn
+about_to_expire: Sắp hết hạn
+expired: Đã quá hạn
+set_contract_template: Thiết lập mẫu hợp đồng
+search: Tìm kiếm
+rental_history_title: Lịch sử thuê nhà
+rental_history_description: Danh sách lịch sử thuê nhà của khách thuê
+view_all_tenants: Xem toàn bộ khách thuê
+evaluation: Đánh giá
+tenant_information_title: Thông tin khách thuê
+tenant_information_description: Danh sách thông tin khách thuê
+residence_registration_title: Đăng ký lưu trú
+residence_registration_description: Danh sách thông tin đăng ký lưu trú
+bill_information_title: Tất cả hóa đơn
+bill_information_description: Tất cả hóa đơn thu tiền nhà xuất hiện ở đây
+button_diennuoc:Điện nước
+button_xemchitiet:Xem chi tiết
+button_xemlstt:Xem danh sách thanh toán
+button_tbdenkhachthue:Thông báo đến khách thuê
+checkbox_dathu:Đã thu
+checkbox_chuathu:Chưa thu
+checkbox_dangno:Đang nợ
+checkbox_dahuy:Đã hủy
+checkbox_loctheothang:Chọn theo tháng
+asset_information_title: Tất cả tài sản
+asset_information_description: Danh sách tài sản đang có
+checkbox_tangdan:Giá trị tăng dần
+checkbox_giamdan:Giá trị giảm dần
+checkbox_theoten:Tìm kiếm theo tên
+service_management_title: Quản lý Dịch vụ
+service_management_description: Các dịch vụ khách thuê sử dụng
+view_service: Xem dịch vụ
+filter_highlow: Giá cao-thấp
+filter_lowhigh: Giá thấp-cao
+filter_recent: Ngày gần đây
+filter_oldest: Ngày xa nhất
+filter_az: Tên tăng dần
+filter_by_month: Lọc theo tháng
+action_editdelete: Sửa / Xóa
+action_registCancel: Đăng ký / Hủy
+parking_management_title: Quản lý Bãi đậu xe
+parking_lot_label: Bãi đỗ xe
+vehicle_label: Phương tiện
+parking_list_title: Danh sách bãi đậu xe
+: Bảng của phòng
+roomtable_room_id: Mã phòng
+roomtable_building: Mã tòa nhà
+roomtable_floor: Tầng
+roomtable_room_type: Loại phòng
+roomtable_convenient: Tiện ích
+roomtable_area: Diện tích
+roomtable_price: Giá thuê
+roomtable_status: Trạng thái
+: Bảng của Hợp đồng
+contracttable_contract_id: Mã hợp đồng
+contracttable_room_id: Mã phòng
+contracttable_tenant_id: Mã khách thuê
+contracttable_first_name: Họ
+contracttable_last_name: Tên
+contracttable_create_date: Ngày tạo
+contracttable_start_date: Ngày bắt đầu
+contracttable_end_date: Ngày kết thúc
+contracttable_monthly_rent: Tiền thuê hàng tháng
+contracttable_payments: Phương thức thanh toán
+contracttable_deposit: Tiền đặt cọc
+contracttable_notes: Ghi chú
+: Bảng Lịch sửa thuê nhà của khách
+lstntable_historyid: Mã lịch sử
+lstntable_contractid: Mã hợp đồng
+lstntable_tenantid: Mã khách hàng
+lstntable_firstname: Họ
+lstntable_lastname: Tên
+lstntable_startdate: Ngày bắt đầu
+lstntable_enddate: Ngày kết thúc
+lstntable_note: Ghi chú
+: Bảng khách thuê
+tenanttable_tenantid: Mã khách hàng
+tenanttable_firstname: Họ
+tenanttable_lastname: Tên
+tenanttable_birthday: Ngày sinh
+tenanttable_gender: Giới tính
+tenanttable_numberphone: SĐT
+tenanttable_email: Email
+: Bảng Lưu trú của khách
+registrationtable_registrationid: Mã lưu trú
+registrationtable_roomid: Mã phòng
+registrationtable_tenantid: Mã khách hàng
+registrationtable_firstname: Họ
+registrationtable_lastname: Tên
+registrationtable_registrationdate: Ngày đăng ký
+registrationtable_expirationdate: Ngày hết hạn
+registrationtable_status: Trạng thái
+: Bảng thanh toán
+billtable_billid: Mã hóa đơn
+billtable_tenantid: Mã khách thuê
+billtable_fisrtname: Họ
+billtable_lastname: Tên
+billtable_total: Tổng tiền
+billtable_startdate: Ngày bắt đầu
+billtable_enddate: Ngày bắt đầu
+billtable_coalesce: Nợ
+: Bảng đăng ký dịch vụ
+servicetable_ordernumber: STT
+servicetable_roomid: Mã phòng
+servicetable_tenantname: Tên khách thuê 
+servicetable_servicename: Tên dịch vụ
+servicetable_serviceprice: Giá dịch vụ
+servicetable_startdate: Ngày bắt đầu
+servicetable_enddate: Ngày kết thúc
+: Bảng cơ sở vật chất
+assettable_assetid: Mã tài sản
+assettable_roomid: Mã phòng
+assettable_assetname: Tên tài sản
+assettable_price: Giá
+assettable_status: Trạng thái
+assettable_usedate: Ngày đưa vào sử dụng
+
+
+
+
+
+

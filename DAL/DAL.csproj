@@ -105,17 +105,23 @@
     <Compile Include="AccountAccess.cs" />
     <Compile Include="dal_service\DeleteTenantService.cs" />
     <Compile Include="dal_service\DichVuDAL.cs" />
-    <Compile Include="honhathao\PaymentAccess.cs" />
-    <Compile Include="honhathao\W_E_Access.cs" />
+    <Compile Include="dal_service\EmailDAL.cs" />
+    <Compile Include="dal_service\FingerprintAccess.cs" />
+    <Compile Include="dal_service\GetAllServiceDAL.cs" />
     <Compile Include="dal_service\InsertServiceDAL.cs" />
     <Compile Include="dal_service\KhachHangAccess.cs" />
     <Compile Include="dal_service\ServiceUsageDAL.cs" />
     <Compile Include="dal_service\UpdatePriceDAL.cs" />
     <Compile Include="dal_service\UserServiceDAL.cs" />
-    <Compile Include="DatabaseAccess.cs" />
     <Compile Include="hoaian\AssetAccess.cs" />
+    <Compile Include="hoaian\ParkingAreaAccess.cs" />
     <Compile Include="hoaian\RentalHistoryAccess.cs" />
     <Compile Include="hoaian\RoomAccess.cs" />
+    <Compile Include="hoaian\VehicleAccess.cs" />
+    <Compile Include="honhathao\TenantServiceAccess.cs" />
+    <Compile Include="honhathao\PaymentAccess.cs" />
+    <Compile Include="honhathao\W_E_Access.cs" />
+    <Compile Include="DatabaseAccess.cs" />
     <Compile Include="honhathao\BuildingAccess.cs" />
     <Compile Include="honhathao\BillAccess.cs" />
     <Compile Include="honhathao\BillDetailAccess.cs" />
@@ -124,9 +130,6 @@
     <Compile Include="honhathao\TenantAccess.cs" />
     <Compile Include="honhathao\TenantHistoryAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="quanlyphuongtien\ParkingAreaAccess.cs" />
-    <Compile Include="quanlyphuongtien\PaymentAccess.cs" />
-    <Compile Include="quanlyphuongtien\SettingAccess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

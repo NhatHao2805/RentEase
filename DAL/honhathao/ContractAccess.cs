@@ -130,8 +130,8 @@ namespace DAL
 
         public static String add_Contract(string buildingid, string RoomId, string Tenantid, string CreateDate, string StartDate, string EndDate, string PaymenSchedule, string Deposite, string Note)
         {
-            //try
-            //{
+            try
+            {
                 using (MySqlConnection conn = MySqlConnectionData.Connect())
                 {
                     using (MySqlCommand command = new MySqlCommand("add_Contract", conn))
@@ -150,12 +150,12 @@ namespace DAL
                     }
                 }
 
-        //}
-            //catch (Exception ex)
-            //{
-            //    return "Fail to Add Contract";
-            //}
-            return "Success to Add Contract";
+            }
+            catch (Exception ex)
+            {
+                return "Thêm thất bại";
+            }
+            return "Thêm thành công!";
         }
         //alter_Contract
         public static string update_Contract(string contractid,string enddate,string paymentschedule, string deposit, string note)
@@ -179,9 +179,9 @@ namespace DAL
         }
             catch (Exception ex)
             {
-                return "Fail to update Contract";
+                return "Cập nhật thất bại";
             }
-            return "Success to update Contract";
+            return "Cập nhật thành công!";
 
         }
 
@@ -201,9 +201,9 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                return "Fail to delete Contract";
+                return "Xóa thất bại";
             }
-            return "Success to delete Contract";
+            return "Xóa thành công!";
 
         }
     }
