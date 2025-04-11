@@ -22,6 +22,7 @@ using BLL.bll_service;
 using DTO.DTO_Service;
 using GUI.gui_service;
 using System.Security.Policy;
+using System.Globalization;
 
 namespace GUI
 {
@@ -218,6 +219,7 @@ namespace GUI
         }
         public void LoadDichVu()
         {
+           
 
             var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
@@ -392,7 +394,13 @@ namespace GUI
 
         public void btn_dichvu_Click(object sender, EventArgs e)
         {
+            // Sau khi set DataSource cho DataGridView
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "N0";  // Định dạng số có dấu phẩy
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
+            // Thêm "VND" vào sau giá tiền
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "#,##0 VND";
             tabQuanLy.SelectedIndex = 4;
+            LoadDichVu();
         }
 
 

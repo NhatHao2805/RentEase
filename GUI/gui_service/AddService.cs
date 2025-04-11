@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI;
+using DTO.DTO_Service;
 namespace GUI.GUI_Service
 {
     
@@ -28,6 +29,7 @@ namespace GUI.GUI_Service
         private PhongBLL phongBLL = new PhongBLL();
         private DichVuBLL dichVuBLL = new DichVuBLL();
 
+
         public void AddService_Load(object sender, EventArgs e)
         {
           
@@ -40,7 +42,34 @@ namespace GUI.GUI_Service
 
         private void TenantName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                // Lấy ID của khách hàng được chọn
+                if (TenantName.SelectedValue != null)
+                {
+                    // Lấy ID khách hàng từ SelectedValue vì đã set ValueMember = "ID"
+                    string tenantID = TenantName.SelectedValue.ToString();
 
+                    // Tạo instance của PhongBLL nếu chưa có
+                    if (phongBLL == null)
+                        phongBLL = new PhongBLL();
+
+                    // Lấy danh sách phòng của khách hàng
+                    List<PhongDTO> rooms = phongBLL.GetPhongByTenantID(tenantID, buildingID);
+
+                    // Hiển thị danh sách phòng vào ComboBox
+                    Room.DataSource = rooms;
+                    Room.DisplayMember = "ID"; // Hiển thị ID phòng
+                    Room.ValueMember = "ID";   // Giá trị là ID phòng
+
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thông tin phòng: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -53,7 +82,7 @@ namespace GUI.GUI_Service
 
 
             TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
-     
+
             Room.DisplayMember = "ID";  // Đảm bảo đúng tên thuộc tính trong DTO
             Room.ValueMember = "ID";
 
