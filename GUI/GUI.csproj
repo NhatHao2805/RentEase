@@ -275,6 +275,11 @@
     <Content Include="honhathao\languages\initialLanguage.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-sign-up-50.png" />
+    <None Include="Resources\5603109.jpg" />
+    <None Include="Resources\freepik__adjust__57921.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\icons8-fingerprint-64.png" />
     <EmbeddedResource Include="quanlyphuongtien\Form_AddParkingArea.resx">
       <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
     </EmbeddedResource>
