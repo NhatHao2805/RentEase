@@ -18,7 +18,7 @@ namespace GUI.GUI_Service
     {
         
         private string buildingID;
-
+        private quanlynha parentForm;
         public AddService(string buildingid)
         {
             this.buildingID = buildingid;
@@ -156,6 +156,7 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                parentForm.btn_dichvu_Click(sender, e);
             }
             else
             {
@@ -165,7 +166,7 @@ namespace GUI.GUI_Service
             // Đóng form đăng ký sau khi thành công
             this.Close();
 
-            //parentForm.btn_dichvu_Click(sender, e);
+          
         }
 
         private void guna2HtmlLabel1_Click_2(object sender, EventArgs e)
@@ -184,6 +185,7 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                parentForm.btn_dichvu_Click(sender, e);
             }
             else
             {
@@ -191,7 +193,7 @@ namespace GUI.GUI_Service
             }
 
             this.Close();
-            //parentForm.btn_dichvu_Click(sender, e);
+           
         }
 
         private void TenantName_SelectedIndexChanged_1(object sender, EventArgs e)

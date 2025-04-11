@@ -51,6 +51,7 @@ namespace GUI.GUI_Service
                     if (del.XoaDichVu(id))
                     {
                         MessageBox.Show("Xóa dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        parentForm.btn_dichvu_Click(sender, e);
                     }
                     else
                     {
@@ -65,7 +66,7 @@ namespace GUI.GUI_Service
             // Đóng form đăng ký sau khi thành công
             this.Close();
 
-            //parentForm.btn_dichvu_Click(sender, e);
+           
 
         }
 
@@ -103,6 +104,8 @@ namespace GUI.GUI_Service
             if (isUpdated)
             {
                 MessageBox.Show("Cập nhật giá thành công!");
+                // load lai du lieu
+                parentForm.btn_dichvu_Click(sender, e);
             }
             else
             {
@@ -112,8 +115,7 @@ namespace GUI.GUI_Service
             // Đóng form đăng ký sau khi thành công
             this.Close();
 
-            // load lai du lieu
-            parentForm.btn_dichvu_Click(sender, e);
+           
 
 
         }
@@ -130,6 +132,11 @@ namespace GUI.GUI_Service
         }
 
         private void serviceComboBoX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel12_Paint(object sender, PaintEventArgs e)
         {
 
         }
