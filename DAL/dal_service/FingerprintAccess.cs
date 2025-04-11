@@ -309,6 +309,82 @@ namespace DAL
         }
 
 
+        // Thêm khu vực mới
+        public static bool AddArea(string buildingID, string areaName, string description)
+        {
+            try
+            {
+                MySqlConnection conn = MySqlConnectionData.Connect();
+                MySqlCommand cmd = new MySqlCommand("AddArea", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Generate ID with format AR + random number
+                string areaID = "AR" + new Random().Next(100000, 999999).ToString();
+
+                cmd.Parameters.AddWithValue("@p_areaid", areaID);
+                cmd.Parameters.AddWithValue("@p_buildingid", buildingID);
+                cmd.Parameters.AddWithValue("@p_areaname", areaName);
+                cmd.Parameters.AddWithValue("@p_description", description ?? "");
+
+                int result = cmd.ExecuteNonQuery();
+                conn.Close();
+
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error adding area: {ex.Message}");
+                return false;
+            }
+        }
+
+        // Cập nhật thông tin khu vực
+        public static bool UpdateArea(string areaID, string areaName, string description)
+        {
+            try
+            {
+                MySqlConnection conn = MySqlConnectionData.Connect();
+                MySqlCommand cmd = new MySqlCommand("UpdateArea", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@p_areaid", areaID);
+                cmd.Parameters.AddWithValue("@p_areaname", areaName);
+                cmd.Parameters.AddWithValue("@p_description", description ?? "");
+
+                int result = cmd.ExecuteNonQuery();
+                conn.Close();
+
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error updating area: {ex.Message}");
+                return false;
+            }
+        }
+
+        // Xóa khu vực
+        public static bool DeleteArea(string areaID)
+        {
+            try
+            {
+                MySqlConnection conn = MySqlConnectionData.Connect();
+                MySqlCommand cmd = new MySqlCommand("DeleteArea", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@p_areaid", areaID);
+
+                int result = cmd.ExecuteNonQuery();
+                conn.Close();
+
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting area: {ex.Message}");
+                return false;
+            }
+        }
 
     }
 }

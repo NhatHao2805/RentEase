@@ -1,5 +1,140 @@
 DELIMITER //
 
+/*==============================================================*/
+/* Nhut Huy 11/4                                    */
+/*==============================================================*/
+CREATE PROCEDURE sp_GetAllDichVu ()
+BEGIN
+    SELECT ServiceID, ServiceName, UnitPrice FROM SERVICE;
+END//
+
+CREATE PROCEDURE GetExpiringEmails(IN p_buildingID VARCHAR(10))
+BEGIN
+    SELECT 
+        t.EMAIL
+    FROM contract c
+    JOIN tenant t ON c.TENANTID = t.TENANTID
+    JOIN room r ON c.ROOMID = r.ROOMID
+    WHERE 
+        DATEDIFF(c.ENDDATE, CURDATE()) BETWEEN 0 AND 4
+        AND r.BUILDINGID = p_buildingID;
+END//
+
+CREATE PROCEDURE GetFingerprints(IN p_username VARCHAR(20))
+BEGIN
+    SELECT f.FINGERID, f.USERNAME, f.TENANTID, t.FIRSTNAME, t.LASTNAME, 
+           f.AREAPERMISSION, f.ENROLLMENT_DATE, f.IMAGE_NAME
+    FROM FINGERPRINTS f 
+    JOIN TENANT t ON f.TENANTID = t.TENANTID 
+    WHERE f.USERNAME = p_username;
+END //
+
+
+
+CREATE PROCEDURE AddFingerprint(
+    IN p_fingerid VARCHAR(10),
+    IN p_username VARCHAR(20),
+    IN p_tenantid VARCHAR(10),
+    IN p_areapermission VARCHAR(200),
+    IN p_fingerprint_image LONGBLOB,
+    IN p_image_name VARCHAR(100)
+)
+BEGIN
+    INSERT INTO FINGERPRINTS (
+        FINGERID, 
+        USERNAME, 
+        TENANTID, 
+        AREAPERMISSION, 
+        ENROLLMENT_DATE, 
+        FINGERPRINT_IMAGE,
+        IMAGE_NAME
+    ) 
+    VALUES (
+        p_fingerid,
+        p_username,
+        p_tenantid,
+        p_areapermission,
+        NOW(),
+        p_fingerprint_image,
+        p_image_name
+    );
+END //
+
+
+-- Xóa vân tay
+
+CREATE PROCEDURE DeleteFingerprint(IN p_fingerid VARCHAR(10))
+BEGIN
+    DELETE FROM FINGERPRINTS 
+    WHERE FINGERID = p_fingerid;
+END //
+
+
+-- Cập nhật quyền truy cập
+
+CREATE PROCEDURE UpdateAreaPermission(
+    IN p_fingerid VARCHAR(10), 
+    IN p_areapermission VARCHAR(200)
+)
+BEGIN
+    UPDATE FINGERPRINTS 
+    SET AREAPERMISSION = p_areapermission
+    WHERE FINGERID = p_fingerid;
+END //
+
+
+-- Cập nhật ảnh vân tay
+
+CREATE PROCEDURE UpdateFingerprintImage(
+    IN p_fingerid VARCHAR(10),
+    IN p_fingerprint_image LONGBLOB,
+    IN p_image_name VARCHAR(100)
+)
+BEGIN
+    UPDATE FINGERPRINTS 
+    SET FINGERPRINT_IMAGE = p_fingerprint_image,
+        IMAGE_NAME = p_image_name
+    WHERE FINGERID = p_fingerid;
+END //
+
+
+
+CREATE PROCEDURE GetFingerprintImage(IN p_fingerid VARCHAR(10))
+BEGIN
+    SELECT FINGERPRINT_IMAGE 
+    FROM FINGERPRINTS 
+    WHERE FINGERID = p_fingerid;
+END //
+
+
+DROP PROCEDURE IF EXISTS GetTenantsByUsername //
+CREATE PROCEDURE GetTenantsByUsername(IN p_username VARCHAR(20), IN p_buildingid VARCHAR(10))
+BEGIN
+    -- Đơn giản hóa truy vấn để xem có vấn đề gì
+    SELECT t.TENANTID, t.FIRSTNAME, t.LASTNAME, t.PHONENUMBER, c.ROOMID, r.BUILDINGID
+    FROM TENANT t
+    LEFT JOIN CONTRACT c ON t.TENANTID = c.TENANTID
+    LEFT JOIN ROOM r ON c.ROOMID = r.ROOMID
+    WHERE r.BUILDINGID = p_buildingid;
+END //
+
+CREATE PROCEDURE GetAccessAreas(IN p_buildingid VARCHAR(10))
+BEGIN
+    SELECT AREAID, TYPE AS AreaName, 'Khu vực đỗ xe' AS Description
+    FROM PARKINGAREA
+    WHERE BUILDINGID = p_buildingid
+    UNION
+    SELECT CONCAT('FLOOR_', FLOOR) AS AreaID, CONCAT('Tầng ', FLOOR) AS AreaName, 'Khu vực tầng' AS Description
+    FROM ROOM
+    WHERE BUILDINGID = p_buildingid
+    GROUP BY FLOOR
+    UNION
+    SELECT 'COMMON' AS AreaID, 'Khu vực chung' AS AreaName, 'Khu vực sinh hoạt chung' AS Description;
+END //
+/*==============================================================*/
+/*                                 */
+/*==============================================================*/
+
 CREATE DEFINER=`root`@`localhost` FUNCTION `createAssetID`() RETURNS varchar(10) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
     DETERMINISTIC
 BEGIN

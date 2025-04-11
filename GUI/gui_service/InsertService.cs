@@ -16,6 +16,14 @@ namespace GUI.GUI_Service
         public InsertService()
         {
             InitializeComponent();
+
+            // Nhut Huy Neeeeeeeeeeeeeeeeeeeeeeeewwww 11/4
+            // Cài đặt validation cho TextBox Cost
+            Cost.KeyPress += txtCost_KeyPress;
+
+            // Cài đặt validation cho TextBox ServiceName
+            ServiceName.KeyPress += txtServiceName_KeyPress;
+            //////////////////////////////////////////////////
         }
 
         //Insert
@@ -56,5 +64,44 @@ namespace GUI.GUI_Service
         {
             this.Close();
         }
+
+        private void guna2GradientPanel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /// Nhut Huy Neeeeeeeeeeeeeeeeeeeeeeeewwww 11/4
+        private void txtCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2TextBox txt = (Guna.UI2.WinForms.Guna2TextBox)sender;
+
+            // Cho phép phím điều khiển (backspace, delete, etc.)
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Cho phép số
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            // Cho phép dấu thập phân với 2 điều kiện:
+            // 1. Chưa có dấu thập phân
+            // 2. Không phải ký tự đầu tiên
+            if ((e.KeyChar == '.' || e.KeyChar == ',') &&
+                !txt.Text.Contains('.') && !txt.Text.Contains(',') &&
+                txt.Text.Length > 0)
+                return;
+
+            // Chặn tất cả các ký tự khác
+            e.Handled = true;
+        }
+        private void txtServiceName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Chỉ cho phép nhập chữ cái và khoảng trắng
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        //////////////////////////////////////////////////////////
     }
 }
