@@ -421,8 +421,6 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_UpdateRoo
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\bin\Debug\GUI.exe.config
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\bin\Debug\GUI.exe
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\bin\Debug\GUI.pdb
@@ -1158,3 +1156,23 @@ D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\Vietnames
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\SourceAFIS.dll
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\SourceAFIS.xml
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.ContractTemplateForm.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\honhathao\languages\initialLanguage.txt
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\honhathao\languages\English.txt
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\honhathao\languages\ListLanguage.txt
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\SourceAFIS.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\SourceAFIS.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_AddParkingArea.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_AddVehicle.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_UpdateParkingArea.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_UpdateVehicle.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.ContractTemplateForm.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.gui_service.FingerprintManagementForm.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
