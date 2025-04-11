@@ -30,14 +30,17 @@ namespace GUI
         {
             vehicle.VehicleID = infor.VehicleID;
             vehicle.TenantID = tenantid_cb.SelectedItem.ToString();
-            vehicle.VehicleUnitPriceID = unitpriceid_tb.Text;
+            vehicle.VehicleUnitPriceID = unitpriceid_cb.Text;
             vehicle.Type = type_cb.Text;
             vehicle.LicensePlate = licenseplate_tb.Text;
 
-            string check = VehicleBLL.UpdateVehicle(vehicle);
+            string check = VehicleBLL.UpdateVehicle(vehicle, unitprice_tb.Text);
 
             switch (check)
             {
+                case "required_vehicleid":
+                    MessageBox.Show("Bạn chưa nhập mã xe");
+                    return;
                 case "required_tenantid":
                     MessageBox.Show("Bạn chưa chọn mã khách thuê");
                     return;
@@ -53,6 +56,9 @@ namespace GUI
                 case "invalid_unitprice_format":
                     MessageBox.Show("Đơn giá không hợp lệ");
                     unitprice_tb.Text = string.Empty;
+                    return;
+                case "required_licenseplate":
+                    MessageBox.Show("Bạn chưa nhập biển số xe");
                     return;
                 case "Database connection failed!":
                     MessageBox.Show("Kết nối thất bại");

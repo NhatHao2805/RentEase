@@ -275,7 +275,7 @@ namespace DAL
                         conn.Open();
                     }
 
-                    using (MySqlCommand command = new MySqlCommand("SELECT * FROM VEHICLE_UNITPRICE WHERE TYPE=@p_type", conn))
+                    using (MySqlCommand command = new MySqlCommand("SELECT VEHICLE_UNITPRICE_ID FROM VEHICLE_UNITPRICE WHERE TYPE=@p_type", conn))
                     {
                         command.Parameters.AddWithValue("p_type", type);
                         using (MySqlDataReader reader = command.ExecuteReader())

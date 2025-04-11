@@ -17,6 +17,7 @@ namespace GUI.honhathao
         private DataGridViewRow data;
         private int control;
         private string username;
+        private bool exit = false;
         public Form_Tenant(DataGridViewRow data,int control,string username)
         {
             InitializeComponent();
@@ -46,6 +47,16 @@ namespace GUI.honhathao
                 sdt.Text = data.Cells[5].Value.ToString();
                 email.Text = data.Cells[6].Value.ToString();
             }
+            else
+            {
+                
+                hodem.Text = " ";
+                ten.Text = " ";
+                ngaysinh.Value = DateTime.Now;
+                gioitinh.SelectedIndex = 0;
+                sdt.Text = " ";
+                email.Text = " ";
+            }
         }
 
         private void luu_Click(object sender, EventArgs e)
@@ -62,8 +73,15 @@ namespace GUI.honhathao
                         sdt.Text,
                         email.Text
                     );
-                    MessageBox.Show(result, "Information", MessageBoxButtons.OK);
-                    this.Close();
+                    if(result == "Thêm thành công")
+                    {
+                        MessageBox.Show(result, "Information", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(result, "Error", MessageBoxButtons.OK);
+                    }
                     break;
                 case 1:
                     string result1 = TenantBLL.TenantBLL_update_Tenant(
@@ -75,8 +93,16 @@ namespace GUI.honhathao
                         sdt.Text,
                         email.Text
                     );
-                    MessageBox.Show(result1, "Information", MessageBoxButtons.OK);
-                    this.Close();
+                    if (result1 == "Thêm thành công")
+                    {
+                        MessageBox.Show(result1, "Information", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show(result1, "Error", MessageBoxButtons.OK);
+                    }
+                    
                     break;
             }
         }
@@ -89,6 +115,127 @@ namespace GUI.honhathao
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void hodem_Leave(object sender, EventArgs e)
+        {
+            
+            if (!exit)
+            {
+                var temp = TenantBLL.TenantBLL_hodem(hodem.Text);
+                if (temp.Item1 == false)
+                {
+                    if (temp.Item2 != "Success")
+                    {
+                        MessageBox.Show(temp.Item2, "Error", MessageBoxButtons.OK);
+                        //hodem.Focus();
+                    }
+                }
+                if (string.IsNullOrEmpty(hodem.Text))
+                {
+                    hodem.Text = " ";
+                }
+            }
+        }
+
+        private void hodem_Enter(object sender, EventArgs e)
+        {
+            if(hodem.Text == " ")
+                hodem.Text = "";
+        }
+
+        private void ten_Leave(object sender, EventArgs e)
+        {
+            
+            if (!exit)
+            {
+                var temp = TenantBLL.TenantBLL_hoten(ten.Text);
+                if (temp.Item1 == false)
+                {
+                    if (temp.Item2 != "Success")
+                    {
+                        MessageBox.Show(temp.Item2, "Error", MessageBoxButtons.OK);
+                        //ten.Focus();
+                    }
+                }
+                if (string.IsNullOrEmpty(ten.Text))
+                {
+                    ten.Text = " ";
+                }
+            }
+        }
+
+        private void ten_Enter(object sender, EventArgs e)
+        {
+            if(ten.Text == " ")
+            ten.Text = "";
+        }
+
+        private void sdt_Leave(object sender, EventArgs e)
+        {
+           
+            if (!exit)
+            {
+                var temp = TenantBLL.TenantBLL_sdt(sdt.Text);
+                if (temp.Item1 == false)
+                {
+                    if (temp.Item2 != "Success")
+                    {
+                        MessageBox.Show(temp.Item2, "Error", MessageBoxButtons.OK);
+                        //sdt.Focus();
+                    }
+                }
+                if (string.IsNullOrEmpty(sdt.Text))
+                {
+                    sdt.Text = " ";
+                }
+            }
+        }
+
+        private void sdt_Enter(object sender, EventArgs e)
+        {
+            if(sdt.Text == " ")
+            sdt.Text = "";
+        }
+
+        private void email_Leave(object sender, EventArgs e)
+        {
+            if (!exit)
+            {
+                var temp = TenantBLL.TenantBLL_email(email.Text);
+                if (temp.Item1 == false)
+                {
+                    if (temp.Item2 != "Success")
+                    {
+                        MessageBox.Show(temp.Item2, "Error", MessageBoxButtons.OK);
+                        //email.Focus();
+                    }
+
+                }
+                if (string.IsNullOrEmpty(email.Text))
+                {
+                    email.Text = " ";
+                }
+            }
+        }
+
+        private void email_Enter(object sender, EventArgs e)
+        {
+            if(email.Text == " ")
+            email.Text = "";
+        }
+
+        private void exitButton_MouseEnter(object sender, EventArgs e)
+        {
+            
+            Console.WriteLine(exit);
+            exit = true;
+        }
+
+        private void exitButton_MouseLeave(object sender, EventArgs e)
+        {
+            Console.WriteLine(exit);
+            exit = false;
         }
     }
 }

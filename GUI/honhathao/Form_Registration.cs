@@ -22,6 +22,7 @@ namespace GUI.honhathao
         private DataGridView tenant;
         public Form_Registration(int row, string buildingid, int control,DataGridView table, DataGridView tenant)
         {
+            //1, listBuildingID.Text, 0, dgv_DKLT, dgv_Tenant
             InitializeComponent();
             this.row = row;
             this.control = control;
@@ -40,11 +41,14 @@ namespace GUI.honhathao
                     {
                         TenKhachHang.Items.Add(tenant.Rows[i].Cells[0].Value.ToString() + ": " + tenant.Rows[i].Cells[1].Value.ToString() + " " + tenant.Rows[i].Cells[2].Value.ToString());                     
                     }
-                    List<string> a = RoomBLL.RoomBLL_Load_RoomInBuilding(buildingid);
+                    List<string> a = RoomBLL.RoomBLL_Load_RoomInBuilding_2(buildingid);
                     foreach (string id in a)
                     {
                         SoPhong.Items.Add(id);
                     }
+                    TenKhachHang.SelectedIndex = 0;
+                    SoPhong.SelectedIndex = 0;
+                    TrangThai.SelectedIndex = 0;
                     break;
                 case 1:
                     TenKhachHang.Items.Clear();
@@ -110,14 +114,11 @@ namespace GUI.honhathao
                         ngayDk.Value.ToString("yyyy-MM-dd"),
                         ngayHethan.Value.ToString("yyyy-MM-dd"),
                         TrangThai.Text);
-                    if (result == "Success")
+                    
+                    MessageBox.Show(result);
+                    if(result == "Success")
                     {
-                        MessageBox.Show("Thêm thành công");
                         this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm thất bại");
                     }
                     break;
                 case 1:
@@ -136,6 +137,11 @@ namespace GUI.honhathao
                     }
                     break;
             }
+        }
+
+        private void TrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -63,7 +63,6 @@ D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Compression.LZ4.xml
 D:\RentEaseTDT\RentEase\GUI\bin\Debug\System.IO.Pipelines.xml
 D:\RentEaseTDT\RentEase\GUI\bin\Debug\K4os.Hash.xxHash.xml
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form1.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.quanlynha.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Properties.Resources.resources
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
@@ -73,7 +72,6 @@ D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.pdb
 D:\RentEaseTDT\RentEase\GUI\bin\Debug\GUI.exe.config
 D:\RentEaseTDT\RentEase\GUI\bin\Debug\GUI.pdb
 D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.CreateContract.resources
 D:\RentEase\GUI\bin\Debug\GUI.exe.config
 D:\RentEase\GUI\bin\Debug\GUI.exe
 D:\RentEase\GUI\bin\Debug\GUI.pdb
@@ -134,10 +132,7 @@ D:\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
 D:\RentEase\GUI\obj\Debug\GUI.exe
 D:\RentEase\GUI\obj\Debug\GUI.pdb
 D:\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.ContractForm.resources
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
 D:\RentEase\GUI\obj\Debug\GUI.TenantForm.resources
-D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.SignLiving.resources
 D:\RentEase\GUI\obj\Debug\GUI.SignLiving.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Guna.UI2.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -426,8 +421,6 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_UpdateRoo
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
-C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\bin\Debug\GUI.exe.config
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\bin\Debug\GUI.exe
 D:\HOC\CN PHAN MEM\Dự án\RentEase-temp\GUI\bin\Debug\GUI.pdb
@@ -738,8 +731,6 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Fo
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Form_Login.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.quanlynha.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
@@ -832,92 +823,374 @@ C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\GUI\obj\Debug\GUI.ho
 C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
 C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
 C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\GUI.exe.config
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\GUI.exe
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\GUI.pdb
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\BLL.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\DTO.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Guna.UI2.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\MySqlConnector.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Buffers.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Memory.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\EPPlus.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\DAL.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\EPPlus.Interfaces.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\EPPlus.System.Drawing.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\MySql.Data.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Google.Protobuf.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\ZstdSharp.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\BouncyCastle.Cryptography.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.IO.Pipelines.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\BLL.pdb
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\BLL.dll.config
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\DTO.pdb
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\DTO.dll.config
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\MySqlConnector.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Buffers.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Memory.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\EPPlus.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\DAL.pdb
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\DAL.dll.config
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\MySql.Data.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Google.Protobuf.pdb
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\Google.Protobuf.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\BouncyCastle.Cryptography.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\System.IO.Pipelines.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_AddAssets.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_AddRoom.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_RentalHistory.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_AddContract.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_SignUp.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_Login.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.quanlynha.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Properties.Resources.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.csproj.Up2Date
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.exe
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.pdb
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_UpdateParkingArea.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_AddParkingArea.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_AddVehicle.resources
-C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\HoaiAn\GUI\obj\Debug\GUI.Form_UpdateVehicle.resources
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\EPPlus.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\EPPlus.Interfaces.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\EPPlus.System.Drawing.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\EPPlus.xml
+D:\RentEaseTDT\RentEase\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_AddAssets.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_AddRoom.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_RentalHistory.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_AddContract.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_SignUp.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.Form_Login.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
+D:\RentEaseTDT\RentEase\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\GUI.exe.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\GUI.exe
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\BLL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Guna.UI2.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\EPPlus.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\BLL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\BLL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\EPPlus.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_AddAssets.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_AddRoom.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_RentalHistory.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_AddContract.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_SignUp.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Form_Login.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.quanlynha.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.exe
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\obj\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Text.Json.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.ValueTuple.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Text.Json.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.ValueTuple.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\GUI\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\GUI.exe.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\GUI.exe
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\BLL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Guna.UI2.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\EPPlus.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\BLL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\BLL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\EPPlus.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_AddAssets.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_AddRoom.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_RentalHistory.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_AddContract.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_SignUp.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Form_Login.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.quanlynha.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.exe
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\obj\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\honhathao\languages\English.txt
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\honhathao\languages\initialLanguage.txt
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\GUI\bin\Debug\honhathao\languages\ListLanguage.txt
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.GUI_Service.AddService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.GUI_Service.DeleteService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.gui_service.FingerprintManagementForm.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_AddAssets.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_AddRoom.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_AssetsDetail.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_RentalHistory.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_UpdateAssets.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_UpdateRoom.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_AddContract.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_SignUp.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Form_Login.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.quanlynha.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.exe
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\honhathao\languages\initialLanguage.txt
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\honhathao\languages\English.txt
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\honhathao\languages\ListLanguage.txt
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\GUI.exe.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\GUI.exe
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\GUI.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\BLL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Guna.UI2.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\SourceAFIS.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\EPPlus.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\BLL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\BLL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\SourceAFIS.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\EPPlus.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\GUI\obj\Debug\GUI.csproj.Up2Date
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.gui_service.FingerprintManagementForm.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddBuilding.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Registration.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Tenant.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\initialLanguage.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\English.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\ListLanguage.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\SourceAFIS.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\SourceAFIS.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.ContractTemplateForm.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\honhathao\languages\initialLanguage.txt
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\honhathao\languages\English.txt
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\honhathao\languages\ListLanguage.txt
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\SourceAFIS.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\bin\Debug\SourceAFIS.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_AddParkingArea.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_AddVehicle.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_UpdateParkingArea.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.Form_UpdateVehicle.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.ContractTemplateForm.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.gui_service.FingerprintManagementForm.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\honhathao\languages\initialLanguage.txt
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\honhathao\languages\English.txt
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\honhathao\languages\ListLanguage.txt
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\SourceAFIS.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\SourceAFIS.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Form_AddParkingArea.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Form_AddVehicle.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Form_UpdateParkingArea.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Form_UpdateVehicle.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.ContractTemplateForm.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.gui_service.FingerprintManagementForm.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.gui_service.SeeAllService.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_AddPayment.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Payment.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_Add_W_E.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_BillDetail.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources

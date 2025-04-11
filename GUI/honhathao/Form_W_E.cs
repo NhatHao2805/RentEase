@@ -42,8 +42,9 @@ namespace GUI.honhathao
 
         private void button38_Click(object sender, EventArgs e)
         {
-            Form_Add_W_E form = new Form_Add_W_E(dgv_we.Rows[dgv_we.CurrentCell.RowIndex].Cells[0].Value.ToString(),buildingid);
+            Form_Add_W_E form = new Form_Add_W_E(buildingid);
             form.ShowDialog();
+            dgv_we.DataSource = null;
             loadInfo();
         }
 
@@ -52,15 +53,6 @@ namespace GUI.honhathao
 
             DataTable data = W_E_BLL.W_E_BLL_load_W_E(usern, buildingid);
             dgv_we.DataSource = data;
-        }
-
-        private void button39_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine(dgv_we.Rows[dgv_we.CurrentCell.RowIndex].Cells[2].Value.ToString());
-            Console.WriteLine(dgv_we.Rows[dgv_we.CurrentCell.RowIndex].Cells[6].Value.ToString());
-            Console.WriteLine(dgv_we.Rows[dgv_we.CurrentCell.RowIndex].Cells[7].Value.ToString());
-            MessageBox.Show(W_E_BLL.W_E_BLL_Del_W_E(dgv_we.Rows[dgv_we.CurrentCell.RowIndex].Cells[2].Value.ToString(), dgv_we.Rows[dgv_we.CurrentCell.RowIndex].Cells[6].Value.ToString(), dgv_we.Rows[dgv_we.CurrentCell.RowIndex].Cells[7].Value.ToString()));
-            loadInfo();
         }
     }
 }

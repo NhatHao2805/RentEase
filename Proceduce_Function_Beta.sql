@@ -241,7 +241,7 @@ CREATE PROCEDURE load_bill(
 	IN p_buildingid VARCHAR(20)
 )
 BEGIN
-   SELECT b.BILLID,b.TENANTID,t.FIRSTNAME,t.LASTNAME,b.TOTAL,b.START_DATE,b.END_DATE,COALESCE(p.TOTAL,0) FROM bill b
+   SELECT b.BILLID,b.TENANTID,t.FIRSTNAME,t.LASTNAME,b.TOTAL,b.START_DATE,b.END_DATE,COALESCE(p.TOTAL,0) AS 'TOTALS' FROM bill b
    JOIN tenant t ON t.TENANTID = b.TENANTID
    LEFT JOIN payment p ON p.BILLID = b.BILLID
    JOIN contract c ON c.TENANTID = t.TENANTID
@@ -471,6 +471,7 @@ BEGIN
     END IF;
 END//
 
+
 CREATE PROCEDURE sp_FilterVehicle(
     IN p_buildingid VARCHAR(20),
     IN p_vehicle_type VARCHAR(50)
@@ -626,8 +627,8 @@ BEGIN
             pa.CAPACITY,
             COUNT(p.VEHICLEID) as CURRENT_VEHICLES,
             CASE 
-                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'FULL'
-                ELSE 'EMPTY'
+                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'Đã đầy'
+                ELSE 'Còn trống'
             END as STATUS
         FROM PARKINGAREA pa
         LEFT JOIN PARKING p ON pa.AREAID = p.AREAID

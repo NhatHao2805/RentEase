@@ -1,138 +1,55 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\RentEase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\clone\\hoaian\\dal\\hoaian\\vehicleaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\hoaian\\vehicleaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\clone\\hoaian\\gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\clone\\hoaian\\dal\\hoaian\\parkingareaaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\hoaian\\parkingareaaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\clone\\hoaian\\gui\\quanlyphuongtien\\form_addvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_addvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\clone\\hoaian\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\RentEase\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\clone\\hoaian\\bll\\hoaian\\vehiclebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\hoaian\\vehiclebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\asus\\onedrive\\m\u00E1y t\u00EDnh\\new folder\\clone\\rentease\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 1,
-      "VerticalTabListWidth": 211,
+      "Orientation": 0,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
-          "DockedHeight": 317,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 140,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ParkingAreaAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\DAL\\hoaian\\ParkingAreaAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\hoaian\\ParkingAreaAccess.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\DAL\\hoaian\\ParkingAreaAccess.cs",
-              "RelativeToolTip": "DAL\\hoaian\\ParkingAreaAccess.cs",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAuwMMAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T16:33:33.347Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "VehicleAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\DAL\\hoaian\\VehicleAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\hoaian\\VehicleAccess.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\DAL\\hoaian\\VehicleAccess.cs",
-              "RelativeToolTip": "DAL\\hoaian\\VehicleAccess.cs",
-              "ViewState": "AgIAACoBAAAAAAAAAADwvx8AAABCAAAAAAAAAA==",
+              "Title": "QuanLyNha.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\RentEase\\GUI\\QuanLyNha.cs",
+              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\RentEase\\GUI\\QuanLyNha.cs [Design]",
+              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T14:54:11.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T19:42:03.43Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form_UpdateVehicle.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\GUI\\quanlyphuongtien\\Form_UpdateVehicle.cs",
-              "RelativeDocumentMoniker": "GUI\\quanlyphuongtien\\Form_UpdateVehicle.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\GUI\\quanlyphuongtien\\Form_UpdateVehicle.cs",
-              "RelativeToolTip": "GUI\\quanlyphuongtien\\Form_UpdateVehicle.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABYAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T10:50:11.325Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form_AddVehicle.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\GUI\\quanlyphuongtien\\Form_AddVehicle.cs",
-              "RelativeDocumentMoniker": "GUI\\quanlyphuongtien\\Form_AddVehicle.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\GUI\\quanlyphuongtien\\Form_AddVehicle.cs",
-              "RelativeToolTip": "GUI\\quanlyphuongtien\\Form_AddVehicle.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAqwGcAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T10:50:08.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VehicleBLL.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\BLL\\hoaian\\VehicleBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\hoaian\\VehicleBLL.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\BLL\\hoaian\\VehicleBLL.cs",
-              "RelativeToolTip": "BLL\\hoaian\\VehicleBLL.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAjwAwAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T10:49:58.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\GUI\\QuanLyNha.cs",
+              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.cs",
-              "ViewState": "AgIAADQHAAAAAAAAAAAvwDwHAABjAAAAAAAAAA==",
+              "ViewState": "AgIAAG0GAAAAAAAAAAA4wE8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T19:54:53.427Z",
+              "WhenOpened": "2025-04-11T06:05:26.667Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\GUI\\QuanLyNha.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ASUS\\OneDrive\\M\u00E1y t\u00EDnh\\New folder\\Clone\\HoaiAn\\GUI\\QuanLyNha.cs [Design]",
-              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T19:54:51.341Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             }
           ]
         }

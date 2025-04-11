@@ -1,4 +1,4 @@
--- 1 USER
+ -- 1 USER
 INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBER, ADDRESS) VALUES
 ('ad', 'Nguyễn Văn An', 'ad', 'admin1@rentease.com', '1980-05-15', 'Nam', '0912345678', '123 Đường Lê Lợi, Q1, TP.HCM'),
 ('manager02', 'Trần Thị Bình', 'manager@123', 'manager2@rentease.com', '1985-08-20', 'Nữ', '0987654321', '456 Đường Nguyễn Huệ, Q1, TP.HCM'),
@@ -272,10 +272,6 @@ INSERT INTO PET (PETID, TENANTID, TYPE) VALUES
 ('TC008', 'T008', 'Mèo'),
 ('TC009', 'T009', 'Chim'),
 ('TC010', 'T010', 'Cá');
-
-select * from PARKING;
-select * from VEHICLE where VEHICLEID = 'V0001';
-call sp_FilterVehicle('B003', 'V0013');
 -- 23 TEMPORARY_REGISTRATION
 INSERT INTO TEMPORARY_REGISTRATION (REGISTRATIONID, TENANTID, ROOMID, REGISTRATION_DATE, EXPIRATION_DATE, STATUS, CREATE_DATE, UPDATE_DATE) VALUES
 ('DK001', 'T001', 'R001', '2024-01-15', '2025-01-14', 'Đã duyệt', '2024-01-10', '2024-01-10'),
@@ -333,4 +329,3 @@ INSERT INTO VEHICLE_UNITPRICE (VEHICLE_UNITPRICE_ID, UNITPRICE, TYPE) VALUES
 ('VUP001', 500000, 'Xe ô tô'),
 ('VUP002', 100000, 'Xe máy'),
 ('VUP003', 50000, 'Xe đạp');
--- select * from parking where areaid = 'PA0001';

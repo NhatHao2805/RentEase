@@ -123,5 +123,15 @@ namespace GUI.GUI_Service
         {
             updateCost_btn.Enabled = true;
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void serviceComboBoX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
