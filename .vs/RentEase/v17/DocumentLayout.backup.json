@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlyphuongtien\\form_addvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\hoc\\cn phan mem\\d\u1EF1 \u00E1n\\rentease\\gui\\quanlyphuongtien\\form_addvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_addvehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlyphuongtien\\form_updateparkingarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_updateparkingarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlyphuongtien\\form_updateparkingarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_updateparkingarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlyphuongtien\\form_addparkingarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -19,16 +31,8 @@
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_addparkingarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\hoc\\cn phan mem\\d\u1EF1 \u00E1n\\rentease\\gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlyphuongtien\\form_updateparkingarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_updateparkingarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlyphuongtien\\form_updatevehicle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\honhathao\\form_tenanthistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_tenanthistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -53,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\honhathao\\form_registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\honhathao\\form_tenanthistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_tenanthistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\gui\\honhathao\\form_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -150,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "QuanLyNha.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
@@ -162,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "FingerprintManagementForm.cs",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\gui_service\\FingerprintManagementForm.cs",
               "RelativeDocumentMoniker": "GUI\\gui_service\\FingerprintManagementForm.cs",
@@ -191,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Form_UpdateParkingArea.cs",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\quanlyphuongtien\\Form_UpdateParkingArea.cs",
               "RelativeDocumentMoniker": "GUI\\quanlyphuongtien\\Form_UpdateParkingArea.cs",
@@ -204,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "Form_UpdateVehicle.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\quanlyphuongtien\\Form_UpdateVehicle.cs",
               "RelativeDocumentMoniker": "GUI\\quanlyphuongtien\\Form_UpdateVehicle.cs",
@@ -229,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form_AddParkingArea.cs",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\quanlyphuongtien\\Form_AddParkingArea.cs",
               "RelativeDocumentMoniker": "GUI\\quanlyphuongtien\\Form_AddParkingArea.cs",
@@ -242,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Form_AddParkingArea.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\quanlyphuongtien\\Form_AddParkingArea.cs",
               "RelativeDocumentMoniker": "GUI\\quanlyphuongtien\\Form_AddParkingArea.cs",
@@ -254,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Form_UpdateParkingArea.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\quanlyphuongtien\\Form_UpdateParkingArea.cs",
               "RelativeDocumentMoniker": "GUI\\quanlyphuongtien\\Form_UpdateParkingArea.cs",
@@ -278,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Form_Registration.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\honhathao\\Form_Registration.cs",
               "RelativeDocumentMoniker": "GUI\\honhathao\\Form_Registration.cs",
@@ -289,14 +289,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 7,
               "Title": "Form_TenantHistory.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\honhathao\\Form_TenantHistory.cs",
               "RelativeDocumentMoniker": "GUI\\honhathao\\Form_TenantHistory.cs",
               "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\honhathao\\Form_TenantHistory.cs [Design]",
               "RelativeToolTip": "GUI\\honhathao\\Form_TenantHistory.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T18:09:11.78Z"
+              "WhenOpened": "2025-04-11T18:09:11.78Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -311,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Form_Payment.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\honhathao\\Form_Payment.cs",
               "RelativeDocumentMoniker": "GUI\\honhathao\\Form_Payment.cs",
@@ -333,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Form_AddContract.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\honhathao\\Form_AddContract.cs",
               "RelativeDocumentMoniker": "GUI\\honhathao\\Form_AddContract.cs",
@@ -458,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AddService.cs [Design]",
               "DocumentMoniker": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\gui_service\\AddService.cs",
               "RelativeDocumentMoniker": "GUI\\gui_service\\AddService.cs",
