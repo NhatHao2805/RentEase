@@ -113,6 +113,7 @@
             this.guna2GradientPanel12.Name = "guna2GradientPanel12";
             this.guna2GradientPanel12.Size = new System.Drawing.Size(554, 70);
             this.guna2GradientPanel12.TabIndex = 138;
+            this.guna2GradientPanel12.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel12_Paint);
             // 
             // exitButton
             // 
@@ -161,9 +162,9 @@
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(95, 39);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(166, 20);
+            this.label22.Size = new System.Drawing.Size(124, 20);
             this.label22.TabIndex = 122;
-            this.label22.Text = "Chèn dịch vụ trong bảng";
+            this.label22.Text = "Thêm dịch vụ mới";
             // 
             // label23
             // 
@@ -171,9 +172,9 @@
             this.label23.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
             this.label23.Location = new System.Drawing.Point(93, 9);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(154, 29);
+            this.label23.Size = new System.Drawing.Size(160, 29);
             this.label23.TabIndex = 123;
-            this.label23.Text = "Chèn dịch vụ";
+            this.label23.Text = "Thêm dịch vụ";
             // 
             // guna2GradientPanel1
             // 
@@ -268,7 +269,7 @@
             this.guna2Button1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.guna2Button1.Size = new System.Drawing.Size(172, 50);
             this.guna2Button1.TabIndex = 137;
-            this.guna2Button1.Text = "Chèn dịch vụ";
+            this.guna2Button1.Text = "Lưu";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // InsertService

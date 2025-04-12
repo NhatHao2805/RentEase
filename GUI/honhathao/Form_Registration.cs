@@ -1,5 +1,6 @@
 ﻿using BLL;
 using BLL.honhathao;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.honhathao
 {
@@ -31,6 +33,44 @@ namespace GUI.honhathao
             this.tenant = tenant;
             loadInfo();
         }
+
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "registration.title":
+                        label23.Text = a.Value;
+                        break;
+                    case "registration.subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "registration.customer_name":
+                        guna2HtmlLabel10.Text = a.Value;
+                        break;
+                    case "registration.room_code":
+                        guna2HtmlLabel9.Text = a.Value;
+                        break;
+                    case "registration.start_date":
+                        guna2HtmlLabel8.Text = a.Value;
+                        break;
+                    case "registration.end_date":
+                        guna2HtmlLabel6.Text = a.Value;
+                        break;
+                    case "registration.status":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "registration.save_button":
+                        luu.Text = a.Value;
+                        break;
+
+
+                }
+            }
+        }
+
+
 
         private void loadInfo()
         {
@@ -85,6 +125,7 @@ namespace GUI.honhathao
                     break;
             }
             
+            loadLanguage();
         }
 
 

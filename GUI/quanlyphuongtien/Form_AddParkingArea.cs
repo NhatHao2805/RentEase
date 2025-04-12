@@ -6,8 +6,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace GUI
@@ -25,8 +28,40 @@ namespace GUI
 
             _username = username;
             _buildingid = buildingid;
+            loadLanguage();
         }
 
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                { 
+                    case "parking.add_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "parking.add_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "parking.address":
+                        guna2HtmlLabel6.Text = a.Value;
+                        break;
+                    case "parking.type":
+                        guna2HtmlLabel3.Text = a.Value;
+                        break;
+                    case "parking.capacity":
+                        guna2HtmlLabel1.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        add_btn.Text = a.Value;
+                        break;
+                }
+            }
+        }
+
+
+//parking.update_title: Update Parking
+//parking.update_subtitle: Update parking in table
         private void add_btn_Click_1(object sender, EventArgs e)
         {
             area.BuildingId = _buildingid;
@@ -73,6 +108,16 @@ namespace GUI
             type_cb.Items.Add("Xe ô tô");
             type_cb.Items.Add("Xe máy/Xe đạp");
             type_cb.Items.Add("Hỗn hợp");
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

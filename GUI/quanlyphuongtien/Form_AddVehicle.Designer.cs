@@ -30,25 +30,50 @@
         {
             this.components = new System.ComponentModel.Container();
             this.unitprice_tb = new Guna.UI2.WinForms.Guna2TextBox();
-            this.abc = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.type_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.add_btn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.licenseplate_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.unitpriceid_tb = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.tenantid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.unitpriceid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.unitpriceid_tb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.areaid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2CustomGradientPanel18 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel8 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.add_btn = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel12 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
+            this.guna2GradientPanel1.SuspendLayout();
+            this.guna2GradientPanel5.SuspendLayout();
+            this.guna2GradientPanel4.SuspendLayout();
+            this.guna2GradientPanel6.SuspendLayout();
+            this.guna2GradientPanel8.SuspendLayout();
+            this.guna2GradientPanel3.SuspendLayout();
+            this.guna2GradientPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // unitprice_tb
             // 
+            this.unitprice_tb.BackColor = System.Drawing.Color.Transparent;
+            this.unitprice_tb.BorderRadius = 10;
             this.unitprice_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.unitprice_tb.DefaultText = "";
             this.unitprice_tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -58,26 +83,21 @@
             this.unitprice_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.unitprice_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.unitprice_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.unitprice_tb.Location = new System.Drawing.Point(198, 296);
+            this.unitprice_tb.Location = new System.Drawing.Point(170, 11);
             this.unitprice_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.unitprice_tb.Name = "unitprice_tb";
             this.unitprice_tb.PlaceholderText = "";
             this.unitprice_tb.SelectedText = "";
-            this.unitprice_tb.Size = new System.Drawing.Size(286, 36);
+            this.unitprice_tb.ShadowDecoration.BorderRadius = 10;
+            this.unitprice_tb.ShadowDecoration.Enabled = true;
+            this.unitprice_tb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.unitprice_tb.Size = new System.Drawing.Size(337, 36);
             this.unitprice_tb.TabIndex = 108;
-            // 
-            // abc
-            // 
-            this.abc.BackColor = System.Drawing.Color.Transparent;
-            this.abc.Location = new System.Drawing.Point(76, 102);
-            this.abc.Name = "abc";
-            this.abc.Size = new System.Drawing.Size(59, 18);
-            this.abc.TabIndex = 107;
-            this.abc.Text = "Phân loại";
             // 
             // type_cb
             // 
             this.type_cb.BackColor = System.Drawing.Color.Transparent;
+            this.type_cb.BorderRadius = 10;
             this.type_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.type_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.type_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -85,47 +105,19 @@
             this.type_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.type_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.type_cb.ItemHeight = 30;
-            this.type_cb.Location = new System.Drawing.Point(198, 93);
+            this.type_cb.Location = new System.Drawing.Point(170, 11);
             this.type_cb.Name = "type_cb";
-            this.type_cb.Size = new System.Drawing.Size(286, 36);
+            this.type_cb.ShadowDecoration.BorderRadius = 10;
+            this.type_cb.ShadowDecoration.Enabled = true;
+            this.type_cb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.type_cb.Size = new System.Drawing.Size(377, 36);
             this.type_cb.TabIndex = 106;
             this.type_cb.SelectedIndexChanged += new System.EventHandler(this.type_cb_SelectedIndexChanged);
             // 
-            // add_btn
-            // 
-            this.add_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.add_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.add_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.add_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.add_btn.ForeColor = System.Drawing.Color.White;
-            this.add_btn.Location = new System.Drawing.Point(251, 443);
-            this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(180, 45);
-            this.add_btn.TabIndex = 105;
-            this.add_btn.Text = "Thêm";
-            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
-            // 
-            // guna2HtmlLabel8
-            // 
-            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(76, 377);
-            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(65, 18);
-            this.guna2HtmlLabel8.TabIndex = 103;
-            this.guna2HtmlLabel8.Text = "Biển số xe";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(76, 305);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(86, 18);
-            this.guna2HtmlLabel2.TabIndex = 102;
-            this.guna2HtmlLabel2.Text = "Đơn giá/tháng";
-            // 
             // licenseplate_tb
             // 
+            this.licenseplate_tb.BackColor = System.Drawing.Color.Transparent;
+            this.licenseplate_tb.BorderRadius = 10;
             this.licenseplate_tb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.licenseplate_tb.DefaultText = "";
             this.licenseplate_tb.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -135,26 +127,21 @@
             this.licenseplate_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.licenseplate_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.licenseplate_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.licenseplate_tb.Location = new System.Drawing.Point(198, 368);
+            this.licenseplate_tb.Location = new System.Drawing.Point(170, 11);
             this.licenseplate_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.licenseplate_tb.Name = "licenseplate_tb";
             this.licenseplate_tb.PlaceholderText = "";
             this.licenseplate_tb.SelectedText = "";
-            this.licenseplate_tb.Size = new System.Drawing.Size(286, 36);
+            this.licenseplate_tb.ShadowDecoration.BorderRadius = 10;
+            this.licenseplate_tb.ShadowDecoration.Enabled = true;
+            this.licenseplate_tb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.licenseplate_tb.Size = new System.Drawing.Size(337, 36);
             this.licenseplate_tb.TabIndex = 101;
-            // 
-            // unitpriceid_tb
-            // 
-            this.unitpriceid_tb.BackColor = System.Drawing.Color.Transparent;
-            this.unitpriceid_tb.Location = new System.Drawing.Point(76, 236);
-            this.unitpriceid_tb.Name = "unitpriceid_tb";
-            this.unitpriceid_tb.Size = new System.Drawing.Size(70, 18);
-            this.unitpriceid_tb.TabIndex = 118;
-            this.unitpriceid_tb.Text = "Mã đơn giá";
             // 
             // tenantid_cb
             // 
             this.tenantid_cb.BackColor = System.Drawing.Color.Transparent;
+            this.tenantid_cb.BorderRadius = 10;
             this.tenantid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.tenantid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tenantid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -162,38 +149,37 @@
             this.tenantid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.tenantid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.tenantid_cb.ItemHeight = 30;
-            this.tenantid_cb.Location = new System.Drawing.Point(198, 25);
+            this.tenantid_cb.Location = new System.Drawing.Point(170, 11);
             this.tenantid_cb.Name = "tenantid_cb";
-            this.tenantid_cb.Size = new System.Drawing.Size(286, 36);
+            this.tenantid_cb.ShadowDecoration.BorderRadius = 10;
+            this.tenantid_cb.ShadowDecoration.Enabled = true;
+            this.tenantid_cb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.tenantid_cb.Size = new System.Drawing.Size(377, 36);
             this.tenantid_cb.TabIndex = 120;
             // 
-            // unitpriceid_cb
+            // unitpriceid_tb
             // 
-            this.unitpriceid_cb.BackColor = System.Drawing.Color.Transparent;
-            this.unitpriceid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.unitpriceid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.unitpriceid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.unitpriceid_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.unitpriceid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.unitpriceid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.unitpriceid_cb.ItemHeight = 30;
-            this.unitpriceid_cb.Location = new System.Drawing.Point(198, 227);
-            this.unitpriceid_cb.Name = "unitpriceid_cb";
-            this.unitpriceid_cb.Size = new System.Drawing.Size(286, 36);
-            this.unitpriceid_cb.TabIndex = 121;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(76, 34);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(89, 18);
-            this.guna2HtmlLabel1.TabIndex = 122;
-            this.guna2HtmlLabel1.Text = "Mã khách thuê";
+            this.unitpriceid_tb.BackColor = System.Drawing.Color.Transparent;
+            this.unitpriceid_tb.BorderRadius = 10;
+            this.unitpriceid_tb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.unitpriceid_tb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unitpriceid_tb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.unitpriceid_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.unitpriceid_tb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.unitpriceid_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.unitpriceid_tb.ItemHeight = 30;
+            this.unitpriceid_tb.Location = new System.Drawing.Point(111, 11);
+            this.unitpriceid_tb.Name = "unitpriceid_tb";
+            this.unitpriceid_tb.ShadowDecoration.BorderRadius = 10;
+            this.unitpriceid_tb.ShadowDecoration.Enabled = true;
+            this.unitpriceid_tb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.unitpriceid_tb.Size = new System.Drawing.Size(155, 36);
+            this.unitpriceid_tb.TabIndex = 121;
             // 
             // areaid_cb
             // 
             this.areaid_cb.BackColor = System.Drawing.Color.Transparent;
+            this.areaid_cb.BorderRadius = 10;
             this.areaid_cb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.areaid_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.areaid_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -201,63 +187,375 @@
             this.areaid_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.areaid_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.areaid_cb.ItemHeight = 30;
-            this.areaid_cb.Location = new System.Drawing.Point(198, 162);
+            this.areaid_cb.Location = new System.Drawing.Point(106, 11);
             this.areaid_cb.Name = "areaid_cb";
-            this.areaid_cb.Size = new System.Drawing.Size(286, 36);
+            this.areaid_cb.ShadowDecoration.BorderRadius = 10;
+            this.areaid_cb.ShadowDecoration.Enabled = true;
+            this.areaid_cb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.areaid_cb.Size = new System.Drawing.Size(160, 36);
             this.areaid_cb.TabIndex = 125;
             // 
-            // guna2HtmlLabel3
+            // guna2GradientPanel12
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(76, 171);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(61, 18);
-            this.guna2HtmlLabel3.TabIndex = 124;
-            this.guna2HtmlLabel3.Text = "Mã bãi xe";
+            this.guna2GradientPanel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel12.Controls.Add(this.exitButton);
+            this.guna2GradientPanel12.Controls.Add(this.guna2PictureBox5);
+            this.guna2GradientPanel12.Controls.Add(this.guna2CustomGradientPanel18);
+            this.guna2GradientPanel12.Controls.Add(this.label22);
+            this.guna2GradientPanel12.Controls.Add(this.label23);
+            this.guna2GradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel12.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel12.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel12.Name = "guna2GradientPanel12";
+            this.guna2GradientPanel12.Size = new System.Drawing.Size(617, 70);
+            this.guna2GradientPanel12.TabIndex = 139;
+            // 
+            // exitButton
+            // 
+            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
+            this.exitButton.BorderRadius = 1;
+            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
+            this.exitButton.Location = new System.Drawing.Point(584, 3);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(30, 30);
+            this.exitButton.TabIndex = 20;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_vehicle_50_2;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(15, 5);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 132;
+            this.guna2PictureBox5.TabStop = false;
+            // 
+            // guna2CustomGradientPanel18
+            // 
+            this.guna2CustomGradientPanel18.BorderRadius = 2;
+            this.guna2CustomGradientPanel18.FillColor = System.Drawing.Color.PaleGreen;
+            this.guna2CustomGradientPanel18.FillColor2 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel18.FillColor3 = System.Drawing.Color.DarkKhaki;
+            this.guna2CustomGradientPanel18.FillColor4 = System.Drawing.Color.Lime;
+            this.guna2CustomGradientPanel18.Location = new System.Drawing.Point(87, 8);
+            this.guna2CustomGradientPanel18.Name = "guna2CustomGradientPanel18";
+            this.guna2CustomGradientPanel18.Size = new System.Drawing.Size(7, 50);
+            this.guna2CustomGradientPanel18.TabIndex = 125;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(95, 39);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(189, 20);
+            this.label22.TabIndex = 122;
+            this.label22.Text = "Thêm phương tiện vào bảng";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
+            this.label23.Location = new System.Drawing.Point(93, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(211, 29);
+            this.label23.TabIndex = 123;
+            this.label23.Text = "Thêm phương tiện";
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel5);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel4);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel6);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel8);
+            this.guna2GradientPanel1.Controls.Add(this.add_btn);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel2);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Honeydew;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.AliceBlue;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(2, 71);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(613, 487);
+            this.guna2GradientPanel1.TabIndex = 147;
+            // 
+            // guna2GradientPanel5
+            // 
+            this.guna2GradientPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel5.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel5.BorderRadius = 10;
+            this.guna2GradientPanel5.BorderThickness = 1;
+            this.guna2GradientPanel5.Controls.Add(this.guna2HtmlLabel5);
+            this.guna2GradientPanel5.Controls.Add(this.licenseplate_tb);
+            this.guna2GradientPanel5.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel5.Location = new System.Drawing.Point(14, 321);
+            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
+            this.guna2GradientPanel5.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel5.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(580, 60);
+            this.guna2GradientPanel5.TabIndex = 150;
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(85, 25);
+            this.guna2HtmlLabel5.TabIndex = 141;
+            this.guna2HtmlLabel5.Text = "Biển số xe:";
+            // 
+            // guna2GradientPanel4
+            // 
+            this.guna2GradientPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel4.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel4.BorderRadius = 10;
+            this.guna2GradientPanel4.BorderThickness = 1;
+            this.guna2GradientPanel4.Controls.Add(this.guna2HtmlLabel4);
+            this.guna2GradientPanel4.Controls.Add(this.unitprice_tb);
+            this.guna2GradientPanel4.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel4.Location = new System.Drawing.Point(15, 247);
+            this.guna2GradientPanel4.Name = "guna2GradientPanel4";
+            this.guna2GradientPanel4.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel4.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(580, 60);
+            this.guna2GradientPanel4.TabIndex = 149;
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(119, 25);
+            this.guna2HtmlLabel4.TabIndex = 141;
+            this.guna2HtmlLabel4.Text = "Đơn giá/tháng:";
+            // 
+            // guna2GradientPanel6
+            // 
+            this.guna2GradientPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel6.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel6.BorderRadius = 10;
+            this.guna2GradientPanel6.BorderThickness = 1;
+            this.guna2GradientPanel6.Controls.Add(this.guna2HtmlLabel11);
+            this.guna2GradientPanel6.Controls.Add(this.unitpriceid_tb);
+            this.guna2GradientPanel6.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel6.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel6.Location = new System.Drawing.Point(314, 173);
+            this.guna2GradientPanel6.Name = "guna2GradientPanel6";
+            this.guna2GradientPanel6.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel6.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel6.Size = new System.Drawing.Size(280, 60);
+            this.guna2GradientPanel6.TabIndex = 148;
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(17, 18);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(85, 22);
+            this.guna2HtmlLabel11.TabIndex = 140;
+            this.guna2HtmlLabel11.Text = "Mã đơn giá:";
+            // 
+            // guna2GradientPanel8
+            // 
+            this.guna2GradientPanel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel8.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel8.BorderRadius = 10;
+            this.guna2GradientPanel8.BorderThickness = 1;
+            this.guna2GradientPanel8.Controls.Add(this.guna2HtmlLabel14);
+            this.guna2GradientPanel8.Controls.Add(this.tenantid_cb);
+            this.guna2GradientPanel8.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel8.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel8.Location = new System.Drawing.Point(15, 25);
+            this.guna2GradientPanel8.Name = "guna2GradientPanel8";
+            this.guna2GradientPanel8.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel8.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel8.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel8.Size = new System.Drawing.Size(580, 60);
+            this.guna2GradientPanel8.TabIndex = 147;
+            // 
+            // guna2HtmlLabel14
+            // 
+            this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel14.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
+            this.guna2HtmlLabel14.Size = new System.Drawing.Size(123, 25);
+            this.guna2HtmlLabel14.TabIndex = 1;
+            this.guna2HtmlLabel14.Text = "Mã khách thuê:";
+            // 
+            // add_btn
+            // 
+            this.add_btn.BackColor = System.Drawing.Color.Transparent;
+            this.add_btn.BorderColor = System.Drawing.Color.Transparent;
+            this.add_btn.BorderRadius = 10;
+            this.add_btn.BorderThickness = 1;
+            this.add_btn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.add_btn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.add_btn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.add_btn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.add_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.add_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(230)))), ((int)(((byte)(100)))));
+            this.add_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(158)))), ((int)(((byte)(87)))));
+            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.add_btn.ForeColor = System.Drawing.Color.White;
+            this.add_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.add_btn.Location = new System.Drawing.Point(250, 418);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.ShadowDecoration.BorderRadius = 15;
+            this.add_btn.ShadowDecoration.Depth = 50;
+            this.add_btn.ShadowDecoration.Enabled = true;
+            this.add_btn.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.add_btn.Size = new System.Drawing.Size(120, 50);
+            this.add_btn.TabIndex = 137;
+            this.add_btn.Text = "Thêm";
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
+            // 
+            // guna2GradientPanel3
+            // 
+            this.guna2GradientPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel3.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel3.BorderRadius = 10;
+            this.guna2GradientPanel3.BorderThickness = 1;
+            this.guna2GradientPanel3.Controls.Add(this.guna2HtmlLabel15);
+            this.guna2GradientPanel3.Controls.Add(this.areaid_cb);
+            this.guna2GradientPanel3.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(15, 173);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel3.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(280, 60);
+            this.guna2GradientPanel3.TabIndex = 142;
+            // 
+            // guna2HtmlLabel15
+            // 
+            this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel15.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel15.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
+            this.guna2HtmlLabel15.Size = new System.Drawing.Size(74, 22);
+            this.guna2HtmlLabel15.TabIndex = 140;
+            this.guna2HtmlLabel15.Text = "Mã bãi xe:";
+            // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel2.BorderRadius = 10;
+            this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.guna2HtmlLabel16);
+            this.guna2GradientPanel2.Controls.Add(this.type_cb);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(15, 98);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel2.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(580, 60);
+            this.guna2GradientPanel2.TabIndex = 139;
+            // 
+            // guna2HtmlLabel16
+            // 
+            this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel16.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
+            this.guna2HtmlLabel16.Size = new System.Drawing.Size(78, 25);
+            this.guna2HtmlLabel16.TabIndex = 1;
+            this.guna2HtmlLabel16.Text = "Phân loại:";
+            // 
+            // guna2HtmlLabel12
+            // 
+            this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel12.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel12.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
+            this.guna2HtmlLabel12.Size = new System.Drawing.Size(83, 25);
+            this.guna2HtmlLabel12.TabIndex = 141;
+            this.guna2HtmlLabel12.Text = "Mã bãi xe:";
             // 
             // Form_AddVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 531);
-            this.Controls.Add(this.areaid_cb);
-            this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.unitpriceid_cb);
-            this.Controls.Add(this.tenantid_cb);
-            this.Controls.Add(this.unitpriceid_tb);
-            this.Controls.Add(this.unitprice_tb);
-            this.Controls.Add(this.abc);
-            this.Controls.Add(this.type_cb);
-            this.Controls.Add(this.add_btn);
-            this.Controls.Add(this.guna2HtmlLabel8);
-            this.Controls.Add(this.guna2HtmlLabel2);
-            this.Controls.Add(this.licenseplate_tb);
+            this.ClientSize = new System.Drawing.Size(618, 560);
+            this.Controls.Add(this.guna2GradientPanel1);
+            this.Controls.Add(this.guna2GradientPanel12);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AddVehicle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_AddVehicle";
             this.Load += new System.EventHandler(this.Form_AddVehicle_Load);
+            this.guna2GradientPanel12.ResumeLayout(false);
+            this.guna2GradientPanel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel5.ResumeLayout(false);
+            this.guna2GradientPanel5.PerformLayout();
+            this.guna2GradientPanel4.ResumeLayout(false);
+            this.guna2GradientPanel4.PerformLayout();
+            this.guna2GradientPanel6.ResumeLayout(false);
+            this.guna2GradientPanel6.PerformLayout();
+            this.guna2GradientPanel8.ResumeLayout(false);
+            this.guna2GradientPanel8.PerformLayout();
+            this.guna2GradientPanel3.ResumeLayout(false);
+            this.guna2GradientPanel3.PerformLayout();
+            this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox unitprice_tb;
-        private Guna.UI2.WinForms.Guna2HtmlLabel abc;
         private Guna.UI2.WinForms.Guna2ComboBox type_cb;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2Button add_btn;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox licenseplate_tb;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel unitpriceid_tb;
         private Guna.UI2.WinForms.Guna2ComboBox tenantid_cb;
-        private Guna.UI2.WinForms.Guna2ComboBox unitpriceid_cb;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2ComboBox unitpriceid_tb;
         private Guna.UI2.WinForms.Guna2ComboBox areaid_cb;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel12;
+        private Guna.UI2.WinForms.Guna2Button exitButton;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel18;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel8;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
+        private Guna.UI2.WinForms.Guna2GradientButton add_btn;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel15;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel16;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
     }
 }

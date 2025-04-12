@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -25,7 +27,43 @@ namespace GUI
 
             _username = username;
             _buildingid = buildingid;
+            loadLanguage();
         }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "room_code":
+                        guna2HtmlLabel5.Text = a.Value;
+                        break;
+                    case "asset_name":
+                        guna2HtmlLabel4.Text = a.Value;
+                        break;
+                    case "asset_value":
+                        guna2HtmlLabel3.Text = a.Value;
+                        break;
+                    case "usage_period":
+                        guna2HtmlLabel6.Text = a.Value;
+                        break;
+                    case "status":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        add_btn.Text = a.Value;
+                        break;
+                    case " asset.detail_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "asset.detail_description":
+                        label22.Text = a.Value;
+                        break;
+                }
+            }
+
+        }
+
 
         private void add_btn_Click(object sender, EventArgs e)
         {
@@ -87,6 +125,11 @@ namespace GUI
             status_cb.Items.Add("Cần được sửa chữa/thay thế");
             status_cb.Items.Add("Đang sửa chữa");
             status_cb.Items.Add("Đang thay thế");
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

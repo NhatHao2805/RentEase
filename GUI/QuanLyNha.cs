@@ -22,6 +22,10 @@ using BLL.bll_service;
 using DTO.DTO_Service;
 using GUI.gui_service;
 using System.Security.Policy;
+using System.Globalization;
+using System.Runtime.InteropServices.ComTypes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -65,8 +69,8 @@ namespace GUI
 
             LoadDichVu(); 
             loadInitLanguage();
-            loadLanguage();
             load_Vehicle();
+            loadLanguage();
         }
 
         private void clearAllDataGridView()
@@ -218,6 +222,7 @@ namespace GUI
         }
         public void LoadDichVu()
         {
+           
 
             var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
@@ -392,7 +397,13 @@ namespace GUI
 
         public void btn_dichvu_Click(object sender, EventArgs e)
         {
+            // Sau khi set DataSource cho DataGridView
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "N0";  // Định dạng số có dấu phẩy
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
+            // Thêm "VND" vào sau giá tiền
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "#,##0 VND";
             tabQuanLy.SelectedIndex = 4;
+            LoadDichVu();
         }
 
 
@@ -494,7 +505,8 @@ namespace GUI
         {
             Form_Payment form_Payment = new Form_Payment(listBuildingID.Text);
             form_Payment.ShowDialog();
-            loadInfo();
+            
+            //loadInfo();
         }
 
         
@@ -2343,6 +2355,88 @@ namespace GUI
                         break;
                     case "assettable_usedate":
                         dgv_QLCSVC.Columns["USE_DATE"].HeaderText = kvp.Value;
+                        break;
+
+                    case "parking.table_header.parking_id":
+                        guna2DataGridView7.Columns[0].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.building_id":
+                        guna2DataGridView7.Columns[1].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.address":
+                        guna2DataGridView7.Columns[2].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.type":
+                        guna2DataGridView7.Columns[3].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.capacity":
+                        guna2DataGridView7.Columns[4].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.current_vehicles":
+                        guna2DataGridView7.Columns[5].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.status":
+                        guna2DataGridView7.Columns[6].HeaderText = kvp.Value;
+                        break;
+                    case "parking.type.car":
+                        checkBox10.Text = kvp.Value;
+                        break;
+                    case "parking.type.motor_bike":
+                        checkBox11.Text = kvp.Value;
+                        break;
+                    case "parking.type.mixed":
+                        checkBox18.Text = kvp.Value;
+                        break;
+                    case "parking.type.available":
+                        checkBox17.Text = kvp.Value;
+                        break;
+                    case "parking.type.full":
+                        checkBox20.Text = kvp.Value;
+                        break;
+                    case "vehicle.table_header.vehicle_id":
+                        guna2DataGridView1.Columns[0].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.customer_id":
+                        guna2DataGridView1.Columns[1].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.last_name":
+                        guna2DataGridView1.Columns[2].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.first_name":
+                        guna2DataGridView1.Columns[3].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.price_id":
+                        guna2DataGridView1.Columns[4].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.price":
+                        guna2DataGridView1.Columns[5].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.vehicle_type":
+                        guna2DataGridView1.Columns[6].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.license_plate":
+                        guna2DataGridView1.Columns[7].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.parking_slot_id":
+                        guna2DataGridView1.Columns[8].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.status":
+                        guna2DataGridView1.Columns[9].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.type.car":
+                        checkBox2.Text = kvp.Value;
+                        break;
+                    case "vehicle.type.motor_bike":
+                        checkBox5.Text = kvp.Value;
+                        break;
+                    case "vehicle.type.bicycle":
+                        checkBox7.Text = kvp.Value;
+                        break;
+                    case "btn_vantay":
+                        btn_vantay.Text = kvp.Value;
+                        break;
+                    case "label_lang":
+                        guna2HtmlLabel2.Text = kvp.Value;
                         break;
                 }
             }

@@ -1,8 +1,11 @@
-﻿using BLL.BLL_Service;
+﻿using BLL;
+using BLL.BLL_Service;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +21,43 @@ namespace GUI.GUI_Service
         {
             InitializeComponent();
             this.parentForm = parent;
+            loadLanguage();
         }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "service.delete_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "service.delete_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "service.name":
+                        this.guna2HtmlLabel1.Text = a.Value;
+                        break;
+                    case "service.price":
+                        this.Cost_Label.Text = a.Value;
+                        break;
+                    case "service.delete_button":
+                        deleteService_btn.Text = a.Value;
+                        break;
+                    case "service.adjust_fee_button":
+                        updateCost_btn.Text = a.Value;
+                        break;
+
+                }
+            }
+        }
+//        service.delete_title: Xóa dịch vụ
+//service.delete_subtitle: Xóa dịch vụ trong bảng
+//service.name: Tên dịch vụ
+//service.price: Giá dịch vụ
+//service.delete_button: Xóa
+//service.adjust_fee_button: Điều chỉnh phí
+
         private KhachHangBLL khachHangBLL = new KhachHangBLL();
         private PhongBLL phongBLL = new PhongBLL();
         private DichVuBLL dichVuBLL = new DichVuBLL();
@@ -26,7 +65,7 @@ namespace GUI.GUI_Service
         private void DeleteService_Load(object sender, EventArgs e)
         {
             this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
+            this.Location = new System.Drawing.Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                                       (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             // Load danh sách dịch vụ
             serviceComboBoX.DataSource = dichVuBLL.GetDichVuForComboBox();
@@ -51,6 +90,7 @@ namespace GUI.GUI_Service
                     if (del.XoaDichVu(id))
                     {
                         MessageBox.Show("Xóa dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        parentForm.btn_dichvu_Click(sender, e);
                     }
                     else
                     {
@@ -65,7 +105,7 @@ namespace GUI.GUI_Service
             // Đóng form đăng ký sau khi thành công
             this.Close();
 
-            //parentForm.btn_dichvu_Click(sender, e);
+           
 
         }
 
@@ -103,6 +143,8 @@ namespace GUI.GUI_Service
             if (isUpdated)
             {
                 MessageBox.Show("Cập nhật giá thành công!");
+                // load lai du lieu
+                parentForm.btn_dichvu_Click(sender, e);
             }
             else
             {
@@ -112,8 +154,7 @@ namespace GUI.GUI_Service
             // Đóng form đăng ký sau khi thành công
             this.Close();
 
-            // load lai du lieu
-            parentForm.btn_dichvu_Click(sender, e);
+           
 
 
         }
@@ -130,6 +171,11 @@ namespace GUI.GUI_Service
         }
 
         private void serviceComboBoX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel12_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -1,6 +1,7 @@
 ﻿using BLL;
 using BLL.honhathao;
 using DTO;
+using Guna.UI2.WinForms;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,50 @@ namespace GUI
         {
             InitializeComponent();
             infor = vehicle;
+            loadLanguage();
+        }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "vehicle.update_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "vehicle.update_subtitle":
+
+                        label22.Text = a.Value;
+                        break;
+                    case "vehicle.vehicle_id":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "vehicle.tenant_id":
+                        guna2HtmlLabel14.Text = a.Value;
+                        break;
+                    case "vehicle.type":
+                        guna2HtmlLabel16.Text = a.Value;
+                        break;
+                    case "vehicle.price_id":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    //case "vehicle.parking_id":
+                    //    guna2HtmlLabel7.Text = a.Value;
+                    //    break;
+                    case "vehicle.monthly_fee":
+                        guna2HtmlLabel4.Text = a.Value;
+                        break;
+                    case "vehicle.license_plate":
+                        guna2HtmlLabel5.Text = a.Value;
+                        break;
+
+
+                    case "btn_save":
+                        add_btn.Text = a.Value;
+                        break;
+
+                }
+            }
         }
 
         private void add_btn_Click(object sender, EventArgs e)
@@ -89,21 +134,21 @@ namespace GUI
             type_cb.SelectedItem= infor.Type;
 
             
-            unitpriceid_cb.Items.Clear();
+            unitpriceid_tb.Items.Clear();
             foreach (DataRow row in VehicleBLL.GetAllVehicleUnitPrices().Rows)
             {
-                unitpriceid_cb.Items.Add(row["VEHICLE_UNITPRICE_ID"].ToString());
+                unitpriceid_tb.Items.Add(row["VEHICLE_UNITPRICE_ID"].ToString());
             }
-            unitpriceid_cb.SelectedItem = infor.VehicleUnitPriceID;
+            unitpriceid_tb.SelectedItem = infor.VehicleUnitPriceID;
 
             vehicleid_tb.Enabled = false;
-            unitpriceid_cb.Enabled = false;
+            unitpriceid_tb.Enabled = false;
             licenseplate_tb.Enabled = false;
         }
 
         private void type_cb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            unitpriceid_cb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString()).ToString();
+            unitpriceid_tb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString()).ToString();
             if (type_cb.SelectedItem == null) return;
 
             try
@@ -114,7 +159,7 @@ namespace GUI
                 if (dt.Rows.Count > 0)
                 {
                     string unitPriceId = dt.Rows[0]["VEHICLE_UNITPRICE_ID"].ToString();
-                    unitpriceid_cb.SelectedItem = unitPriceId;
+                    unitpriceid_tb.SelectedItem = unitPriceId;
 
                     float price = VehicleBLL.GetVehicleUnitPriceById(unitPriceId);
                     unitprice_tb.Text = price.ToString();
@@ -128,6 +173,11 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

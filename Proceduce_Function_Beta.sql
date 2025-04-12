@@ -114,7 +114,7 @@ CREATE PROCEDURE load_payment(
 	IN p_lastname VARCHAR(50)
 )
 BEGIN
-   SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL,Date(p.PAYMENTTIME)  FROM payment p 
+   SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL, Date(p.PAYMENTTIME) AS 'PAYMENT_TIME'  FROM payment p 
    JOIN bill bi ON bi.BILLID = p.BILLID
 	JOIN tenant t ON t.TENANTID = bi.TENANTID
    JOIN contract c ON c.TENANTID = t.TENANTID
@@ -127,23 +127,23 @@ BEGIN
 END//
 
 
--- CREATE TRIGGER before_del_Bill
--- BEFORE DELETE ON bill
--- FOR EACH ROW
--- BEGIN
---     DELETE FROM payment  
---     WHERE BILLID = OLD.BILLID;    
--- 	 DELETE FROM billdetail  
---     WHERE BILLID = OLD.BILLID;   
--- END//
+CREATE TRIGGER before_del_Bill
+BEFORE DELETE ON bill
+ FOR EACH ROW
+BEGIN
+    DELETE FROM payment  
+   WHERE BILLID = OLD.BILLID;    
+ DELETE FROM billdetail  
+	 WHERE BILLID = OLD.BILLID;   
+END//
 
--- CREATE TRIGGER before_del_Billdetail
--- BEFORE DELETE ON billdetail
--- FOR EACH ROW
--- BEGIN
---     DELETE FROM water_electricity  
---     WHERE water_electricity.FIGUREID = OLD.ID;       
--- END//
+CREATE TRIGGER before_del_Billdetail
+BEFORE DELETE ON billdetail
+FOR EACH ROW
+BEGIN
+   DELETE FROM water_electricity  
+    WHERE water_electricity.FIGUREID = OLD.ID;       
+END//
 
 CREATE PROCEDURE del_bill(
     IN p_BillID VARCHAR(50)

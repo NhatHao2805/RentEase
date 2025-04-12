@@ -275,6 +275,24 @@
     <Content Include="honhathao\languages\initialLanguage.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_AddRoom.resx">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_AssetsDetail.resx">
+      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_RentalHistory.resx">
+      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_UpdateAssets.resx">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="quanlyphuongtien\Form_AddParkingArea.resx">
       <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,24 +339,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui_service\SeeAllService.resx">
       <DependentUpon>SeeAllService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
-      <DependentUpon>Form_AddAssets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="hoaian\Form_AddRoom.resx">
-      <DependentUpon>Form_AddRoom.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="hoaian\Form_AssetsDetail.resx">
-      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="hoaian\Form_RentalHistory.resx">
-      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="hoaian\Form_UpdateAssets.resx">
-      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
-      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="honhathao\Form_AddPayment.resx">
       <DependentUpon>Form_AddPayment.cs</DependentUpon>

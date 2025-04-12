@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,46 @@ namespace GUI
             _username = username;
             infor = selectedAsset;
             _buildingid = buildingid;
+            loadLanguage();
+        }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "room_code":
+                        guna2HtmlLabel9.Text = a.Value;
+                        break;
+                    case "asset_code":
+                        guna2HtmlLabel11.Text = a.Value;
+                        break;
+                    case "asset_name":
+                        guna2HtmlLabel5.Text = a.Value;
+                        break;
+                    case "asset_value":
+                        guna2HtmlLabel4.Text = a.Value;
+                        break;
+                    case "usage_period":
+                        guna2HtmlLabel6.Text = a.Value;
+                        break;
+                    case "status":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        add_btn.Text = a.Value;
+                        break;
+                    case " asset.update_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "asset.update_subtitle":
+                        label22.Text = a.Value;
+                        break;
+//                        asset.update_title: Cập nhật tài sản
+//asset.update_subtitle: Cập nhật tài sản của bạn
+                }
+            }
+
         }
 
         private void Form_UpdateAssets_Load(object sender, EventArgs e)
@@ -102,5 +143,14 @@ namespace GUI
             }
         }
 
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

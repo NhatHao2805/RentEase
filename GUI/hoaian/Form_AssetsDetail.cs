@@ -1,9 +1,11 @@
 ﻿using BLL;
 using DTO;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -19,8 +21,34 @@ namespace GUI
             _buildingid = buildingid;
             LoadAssetsDetailData();
             ConfigureDataGridView();
+            loadLanguage();
         }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "export_excel":
+                        ExcelExporter_btn.Text = a.Value;
+                        break;
+                    case "btn_dong":
+                        close_btn.Text = a.Value;
+                        break;
+                    case "asset.detail_title":
+                        label23.Text = a.Value;
+                        break;
+                        case "asset.detail_description":
+                        label22.Text = a.Value;
+                        break;
+                }
 
+
+
+            }
+        }
+//        asset.detail_title: Asset Details
+//asset.detail_description: All asset details are shown here
         private void LoadAssetsDetailData()
         {
             try
@@ -107,6 +135,11 @@ namespace GUI
                 MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

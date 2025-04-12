@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,68 @@ namespace GUI
 
             _username = username;
             infor = selectedRoom;
+            loadLanguage();
+        }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "roomtable_building":
+                        guna2HtmlLabel14.Text = a.Value;
+                        break;
+                    case "property_type":
+                        guna2HtmlLabel13.Text = a.Value;
+                        break;
+                    case "classification":
+                        guna2HtmlLabel12.Text = a.Value;
+                        break;
+                    case "amenities":
+                        guna2HtmlLabel11.Text = a.Value;
+                        break;
+                    case "area":
+                        guna2HtmlLabel9.Text = a.Value;
+                        break;
+                    case "rent_price":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "status":
+                        guna2HtmlLabel3.Text = a.Value;
+                        break;
+                    case "status_options.occupied":
+                        DangO_chbox.Text = a.Value;
+                        break;
+                    case "status_options.vacant":
+                        DangTrong_chbox.Text = a.Value;
+                        break;
+                    case "status_options.owing":
+                        DangNoTien_chbox.Text = a.Value;
+                        break;
+                    case "notification.ending":
+                        DangKT_chbox.Text = a.Value;
+                        break;
+                    case "notification.reserved":
+                        DangCoc_chbox.Text = a.Value;
+                        break;
+                    case "contract.expired":
+                        DaHetHan_chbox.Text = a.Value;
+                        break;
+                    case "contract.near_expiry":
+                        SapHetHan_chbox.Text = a.Value;
+                        break;
+
+                    case "room.add_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "room.add_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        Update_btn.Text = a.Value;
+                        break;
+                }
+            }
         }
 
         private void Form_UpdateRoom_Load(object sender, EventArgs e)
@@ -185,6 +248,21 @@ namespace GUI
             SapHetHan_chbox.Checked = false;
 
             room.Status = "";
+        }
+
+        private void floor_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

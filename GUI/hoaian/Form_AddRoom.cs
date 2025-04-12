@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,8 +26,66 @@ namespace GUI
 
             _username = username;
             _buildingid = buildingid;
+            loadLanguage();
         }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "property_type":
+                        guna2HtmlLabel11.Text = a.Value;
+                        break;
+                    case "classification":
+                        guna2HtmlLabel9.Text = a.Value;
+                        break;
+                    case "amenities":
+                        guna2HtmlLabel5.Text = a.Value;
+                        break;
+                    case "area":
+                        guna2HtmlLabel3.Text = a.Value;
+                        break;
+                    case "rent_price":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "status":
+                        guna2HtmlLabel1.Text = a.Value;
+                        break;
+                    case "status_options.occupied":
+                        DangO_chbox.Text = a.Value;
+                        break;
+                    case "status_options.vacant":
+                        DangTrong_chbox.Text = a.Value;
+                        break;
+                    case "status_options.owing":
+                        DangNoTien_chbox.Text = a.Value;
+                        break;
+                    case "notification.ending":
+                        DangKT_chbox.Text = a.Value;
+                        break;
+                    case "notification.reserved":
+                        DangCoc_chbox.Text = a.Value;
+                        break;
+                    case "contract.expired":
+                        DaHetHan_chbox.Text = a.Value;
+                        break;
+                    case "contract.near_expiry":
+                        SapHetHan_chbox.Text = a.Value;
+                        break;
 
+                    case "room.add_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "room.add_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        add_btn.Text = a.Value;
+                        break;
+                }
+            }
+        }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
@@ -144,5 +203,9 @@ namespace GUI
 
         }
 
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

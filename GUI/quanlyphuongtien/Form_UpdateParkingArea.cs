@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,44 @@ namespace GUI
 
             _username = username;
             infor = selectedArea;
+            loadLanguage();
         }
+
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "parking.update_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "parking.update_subtitle":
+                        label22.Text = a.Value;
+                        break;
+
+                    case "parking.id_parking":
+                        guna2HtmlLabel5.Text = a.Value;
+                        break;
+                    case "parking.type":
+                        guna2HtmlLabel6.Text = a.Value;
+                        break;
+                    case "parking.capacity":
+                        guna2HtmlLabel4.Text = a.Value;
+                        break;
+                    case "parking.address":
+                        guna2HtmlLabel3.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        add_btn.Text = a.Value;
+                        break;
+                }
+            }
+        }
+        //parking.id_parking: Mã bãi đậu xe
+
+        //parking.update_title: Update Parking
+        //parking.update_subtitle: Update parking in table
 
         private void Form_UpdateParkingArea_Load_1(object sender, EventArgs e)
         {
@@ -81,6 +119,11 @@ namespace GUI
                     MessageBox.Show($"Lỗi không xác định: {check}");
                     return;
             }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
