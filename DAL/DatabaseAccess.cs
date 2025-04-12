@@ -3,12 +3,12 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using DTO;
 using System.Collections.Generic;
- 
+
 namespace DAL
 {
     public class MySqlConnectionData
     {
-        private static readonly string connectString = "server=127.0.0.1;port=3306;database=rentease;user=root;password=;";
+        private static readonly string connectString = "server=localhost;port=3306;database=rentease;user=root;password=;";
 
         public static MySqlConnection Connect()
         {

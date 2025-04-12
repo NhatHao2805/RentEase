@@ -22,6 +22,10 @@ using BLL.bll_service;
 using DTO.DTO_Service;
 using GUI.gui_service;
 using System.Security.Policy;
+using System.Globalization;
+using System.Runtime.InteropServices.ComTypes;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics;
 
 namespace GUI
 {
@@ -65,8 +69,8 @@ namespace GUI
 
             LoadDichVu(); 
             loadInitLanguage();
-            loadLanguage();
             load_Vehicle();
+            loadLanguage();
         }
 
         private void clearAllDataGridView()
@@ -77,8 +81,8 @@ namespace GUI
             dgv_Tenant.DataSource = null;
             dgv_LSTN.DataSource = null;
             dgv_DKLT.DataSource = null;
-            load_PA();
             load_Vehicle();
+            load_PA();
         }
         private void loadTenant(string name)
         {
@@ -205,12 +209,9 @@ namespace GUI
         {
             try
             {
-                if (listBuildingID.SelectedItem == null)
-                {
-                    MessageBox.Show("Vui lòng chọn tòa nhà", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                guna2DataGridView1.DataSource = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), null);
+                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), null);
+
+                guna2DataGridView1.DataSource = data;
                 ConfigureVehicle();
             }
             catch (Exception ex)
@@ -221,6 +222,7 @@ namespace GUI
         }
         public void LoadDichVu()
         {
+           
 
             var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
@@ -395,7 +397,13 @@ namespace GUI
 
         public void btn_dichvu_Click(object sender, EventArgs e)
         {
+            // Sau khi set DataSource cho DataGridView
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "N0";  // Định dạng số có dấu phẩy
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
+            // Thêm "VND" vào sau giá tiền
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "#,##0 VND";
             tabQuanLy.SelectedIndex = 4;
+            LoadDichVu();
         }
 
 
@@ -497,7 +505,8 @@ namespace GUI
         {
             Form_Payment form_Payment = new Form_Payment(listBuildingID.Text);
             form_Payment.ShowDialog();
-            loadInfo();
+            
+            //loadInfo();
         }
 
         
@@ -1543,18 +1552,59 @@ namespace GUI
         }
         private void ConfigureParkingArea()
         {
+            guna2DataGridView7.ReadOnly = true;
+            guna2DataGridView7.AllowUserToAddRows = false;
+            guna2DataGridView7.AllowUserToDeleteRows = false;
+            guna2DataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            guna2DataGridView7.ScrollBars = ScrollBars.Both;
+
             if (guna2DataGridView7.Columns.Count > 0)
             {
-                guna2DataGridView7.ReadOnly = true;
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].HeaderText = "Mã bãi xe";
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].HeaderText = "Mã tòa nhà";
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].HeaderText = "Địa chỉ";
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].HeaderText = "Loại bãi xe";
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].HeaderText = "Sức chứa";
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].HeaderText = "Số xe hiện tại";
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].HeaderText = "Trạng thái";
 
-                guna2DataGridView7.Columns[0].Width = 50;
-                guna2DataGridView7.Columns[1].Width = 50;
-                guna2DataGridView7.Columns[2].Width = 150;
-                guna2DataGridView7.Columns[3].Width = 70;
-                guna2DataGridView7.Columns[4].Width = 50;
-                guna2DataGridView7.Columns[5].Width = 80;
-                guna2DataGridView7.Columns[6].Width = 80;
-                guna2DataGridView7.ScrollBars = ScrollBars.Both;
+                int displayIndex = 0;
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].DisplayIndex = displayIndex++;
+
+                if (guna2DataGridView7.Columns.Contains("AREAID"))
+                    guna2DataGridView7.Columns["AREAID"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
+                    guna2DataGridView7.Columns["BUILDINGID"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
+                    guna2DataGridView7.Columns["ADDRESS"].Width = 250;
+                if (guna2DataGridView7.Columns.Contains("TYPE"))
+                    guna2DataGridView7.Columns["TYPE"].Width = 150;
+                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
+                    guna2DataGridView7.Columns["CAPACITY"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
+                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].Width = 90;
+                if (guna2DataGridView7.Columns.Contains("STATUS"))
+                    guna2DataGridView7.Columns["STATUS"].Width = 90;
             }
         }
 
@@ -1637,7 +1687,7 @@ namespace GUI
                 Type = selectedRow.Cells["Type"].Value?.ToString(),
                 LicensePlate = selectedRow.Cells["LicensePlate"].Value?.ToString()
             };
-            Form_UpdateVehicle updateVehicle = new Form_UpdateVehicle(selectedVehicle);
+            Form_UpdateVehicle updateVehicle = new Form_UpdateVehicle(selectedVehicle, listBuildingID.SelectedItem.ToString()); //New HoaiAn
             if (updateVehicle.ShowDialog() == DialogResult.OK)
             {
                 load_Vehicle();
@@ -1689,7 +1739,8 @@ namespace GUI
         {
             try
             {
-                guna2DataGridView1.DataSource = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), type);
+                DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), type);
+                guna2DataGridView1.DataSource = data;
                 ConfigureVehicle();
             }
             catch (Exception ex)
@@ -1703,17 +1754,74 @@ namespace GUI
             if (guna2DataGridView1.Columns.Count > 0)
             {
                 guna2DataGridView1.ReadOnly = true;
-                guna2DataGridView1.Columns[0].Width = 70;
-                guna2DataGridView1.Columns[1].Width = 70;
-                guna2DataGridView1.Columns[2].Width = 100;
-                guna2DataGridView1.Columns[3].Width = 90;
-                guna2DataGridView1.Columns[4].Width = 80;
-                guna2DataGridView1.Columns[5].Width = 80;
-                guna2DataGridView1.Columns[6].Width = 40;
-                guna2DataGridView1.Columns[7].Width = 80;
-                guna2DataGridView1.Columns[6].Width = 80;
-                guna2DataGridView1.Columns[7].Width = 80;
+                guna2DataGridView1.AllowUserToAddRows = false;
+                guna2DataGridView1.AllowUserToDeleteRows = false;
+                guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 guna2DataGridView1.ScrollBars = ScrollBars.Both;
+
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].HeaderText = "Mã xe";
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].HeaderText = "Mã khách hàng";
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].HeaderText = "Họ";
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].HeaderText = "Tên";
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].HeaderText = "Mã đơn giá";
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].HeaderText = "Đơn giá";
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].HeaderText = "Loại xe";
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].HeaderText = "Biển số";
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].HeaderText = "Mã chỗ đỗ";
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].HeaderText = "Trạng thái";
+
+                int displayIndex = 0;
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].DisplayIndex = displayIndex++;
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].DisplayIndex = displayIndex++;
+
+                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
+                    guna2DataGridView1.Columns["VEHICLEID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("TENANTID"))
+                    guna2DataGridView1.Columns["TENANTID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
+                    guna2DataGridView1.Columns["FIRSTNAME"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
+                    guna2DataGridView1.Columns["LASTNAME"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
+                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
+                    guna2DataGridView1.Columns["UNITPRICE"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("TYPE"))
+                    guna2DataGridView1.Columns["TYPE"].Width = 120;
+                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
+                    guna2DataGridView1.Columns["LICENSEPLATE"].Width = 100;
+                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
+                    guna2DataGridView1.Columns["PARKINGID"].Width = 90;
+                if (guna2DataGridView1.Columns.Contains("STATUS"))
+                    guna2DataGridView1.Columns["STATUS"].Width = 90;
             }
         }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -1722,9 +1830,10 @@ namespace GUI
             {
                 checkBox5.Checked = false;
                 checkBox7.Checked = false;
+                FilterVehicle("Xe ô tô");
+                return;
             }
-            string type = checkBox2.Checked ? "Xe ô tô" : null;
-            FilterVehicle(type);
+            FilterVehicle(null);
 
         }
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
@@ -1733,9 +1842,10 @@ namespace GUI
             {
                 checkBox2.Checked = false;
                 checkBox7.Checked = false;
+                FilterVehicle("Xe máy");
+                return;
             }
-            string type = checkBox5.Checked ? "Xe máy" : null;
-            FilterVehicle(type);
+            FilterVehicle(null);
 
         }
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
@@ -1744,9 +1854,10 @@ namespace GUI
             {
                 checkBox2.Checked = false;
                 checkBox5.Checked = false;
+                FilterVehicle("Xe đạp");
+                return;
             }
-            string type = checkBox7.Checked ? "Xe đạp" : null;
-            FilterVehicle(type);
+            FilterVehicle(null);
 
 
         }
@@ -2244,6 +2355,88 @@ namespace GUI
                         break;
                     case "assettable_usedate":
                         dgv_QLCSVC.Columns["USE_DATE"].HeaderText = kvp.Value;
+                        break;
+
+                    case "parking.table_header.parking_id":
+                        guna2DataGridView7.Columns[0].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.building_id":
+                        guna2DataGridView7.Columns[1].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.address":
+                        guna2DataGridView7.Columns[2].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.type":
+                        guna2DataGridView7.Columns[3].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.capacity":
+                        guna2DataGridView7.Columns[4].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.current_vehicles":
+                        guna2DataGridView7.Columns[5].HeaderText = kvp.Value;
+                        break;
+                    case "parking.table_header.status":
+                        guna2DataGridView7.Columns[6].HeaderText = kvp.Value;
+                        break;
+                    case "parking.type.car":
+                        checkBox10.Text = kvp.Value;
+                        break;
+                    case "parking.type.motor_bike":
+                        checkBox11.Text = kvp.Value;
+                        break;
+                    case "parking.type.mixed":
+                        checkBox18.Text = kvp.Value;
+                        break;
+                    case "parking.type.available":
+                        checkBox17.Text = kvp.Value;
+                        break;
+                    case "parking.type.full":
+                        checkBox20.Text = kvp.Value;
+                        break;
+                    case "vehicle.table_header.vehicle_id":
+                        guna2DataGridView1.Columns[0].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.customer_id":
+                        guna2DataGridView1.Columns[1].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.last_name":
+                        guna2DataGridView1.Columns[2].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.first_name":
+                        guna2DataGridView1.Columns[3].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.price_id":
+                        guna2DataGridView1.Columns[4].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.price":
+                        guna2DataGridView1.Columns[5].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.vehicle_type":
+                        guna2DataGridView1.Columns[6].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.license_plate":
+                        guna2DataGridView1.Columns[7].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.parking_slot_id":
+                        guna2DataGridView1.Columns[8].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.table_header.status":
+                        guna2DataGridView1.Columns[9].HeaderText = kvp.Value;
+                        break;
+                    case "vehicle.type.car":
+                        checkBox2.Text = kvp.Value;
+                        break;
+                    case "vehicle.type.motor_bike":
+                        checkBox5.Text = kvp.Value;
+                        break;
+                    case "vehicle.type.bicycle":
+                        checkBox7.Text = kvp.Value;
+                        break;
+                    case "btn_vantay":
+                        btn_vantay.Text = kvp.Value;
+                        break;
+                    case "label_lang":
+                        guna2HtmlLabel2.Text = kvp.Value;
                         break;
                 }
             }

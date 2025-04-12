@@ -10,7 +10,7 @@ namespace BLL
 {
     public class VehicleBLL
     {
-        public static string CheckLogic(Vehicle vehicle, string areaid, string unitprice)
+        public static string CheckLogic(Vehicle vehicle, string areaid)
         {
             if (string.IsNullOrEmpty(vehicle.TenantID))
             {
@@ -20,29 +20,6 @@ namespace BLL
             if (string.IsNullOrEmpty(vehicle.Type))
             {
                 return "required_type";
-            }
-
-            if (string.IsNullOrEmpty(areaid))
-            {
-                return "required_areaid";
-            }
-
-            if (string.IsNullOrEmpty(vehicle.VehicleUnitPriceID))
-            {
-                return "required_unitpriceid";
-            }
-
-            if (string.IsNullOrEmpty(unitprice))
-            {
-                return "required_unitprice";
-            }
-
-            else
-            {
-                if (!decimal.TryParse(unitprice, out decimal unitPriceValue) || unitPriceValue <= 0)
-                {
-                    return "invalid_unitprice_format";
-                }
             }
 
             if (string.IsNullOrEmpty(vehicle.LicensePlate))
@@ -53,16 +30,17 @@ namespace BLL
             return VehicleAccess.addVehicle(vehicle, areaid);
         }
 
-        public static string UpdateVehicle(Vehicle vehicle, string unitprice)
+        public static string UpdateVehicle(Vehicle vehicle, string areaid)
         {
-            if (string.IsNullOrEmpty(vehicle.VehicleID))
-            {
-                return "required_vehicleid";
-            }
 
             if (string.IsNullOrEmpty(vehicle.TenantID))
             {
                 return "required_tenantid";
+            }
+
+            if (string.IsNullOrEmpty(areaid))
+            {
+                return "required_areaid";
             }
 
             if (string.IsNullOrEmpty(vehicle.Type))
@@ -70,35 +48,12 @@ namespace BLL
                 return "required_type";
             }
 
-            //if (string.IsNullOrEmpty(areaid))
-            //{
-            //    return "required_areaid";
-            //}
-
-            if (string.IsNullOrEmpty(vehicle.VehicleUnitPriceID))
-            {
-                return "required_unitpriceid";
-            }
-
-            if (string.IsNullOrEmpty(unitprice))
-            {
-                return "required_unitprice";
-            }
-
-            else
-            {
-                if (!decimal.TryParse(unitprice, out decimal unitPriceValue) || unitPriceValue <= 0)
-                {
-                    return "invalid_unitprice_format";
-                }
-            }
-
             if (string.IsNullOrEmpty(vehicle.LicensePlate))
             {
                 return "required_licenseplate";
             }
 
-            return VehicleAccess.updateVehicle(vehicle);
+            return VehicleAccess.updateVehicle(vehicle, areaid);
         }
 
         public static (bool success, string message) DeleteVehicle(string vehicleid)

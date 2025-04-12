@@ -116,7 +116,56 @@ namespace BLL
                 return "Lỗi: " + ex.Message;
             }
         }
+        // Thêm khu vực mới
+        public bool AddArea(string buildingID, string areaName, string description)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(buildingID) || string.IsNullOrEmpty(areaName))
+                    return false;
 
+                return FingerprintAccess.AddArea(buildingID, areaName, description);
+            }
+            catch (Exception ex)
+            {
+                LogError("AddArea", ex.Message);
+                return false;
+            }
+        }
+
+        // Cập nhật thông tin khu vực
+        public bool UpdateArea(string areaID, string areaName, string description)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(areaID) || string.IsNullOrEmpty(areaName))
+                    return false;
+
+                return FingerprintAccess.UpdateArea(areaID, areaName, description);
+            }
+            catch (Exception ex)
+            {
+                LogError("UpdateArea", ex.Message);
+                return false;
+            }
+        }
+
+        // Xóa khu vực
+        public bool DeleteArea(string areaID)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(areaID))
+                    return false;
+
+                return FingerprintAccess.DeleteArea(areaID);
+            }
+            catch (Exception ex)
+            {
+                LogError("DeleteArea", ex.Message);
+                return false;
+            }
+        }
         // Cập nhật ảnh vân tay
         public string UpdateFingerprintImage(string fingerprintID, string newImagePath)
         {

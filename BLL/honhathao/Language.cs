@@ -68,6 +68,16 @@ namespace BLL
             }
             languages = result;
         }
-
+        public static string translate(string key)
+        {
+            if (languages.ContainsKey(key))
+            {
+                return languages[key];
+            }
+            else
+            {
+                return key;
+            }
+        }
     }
 }

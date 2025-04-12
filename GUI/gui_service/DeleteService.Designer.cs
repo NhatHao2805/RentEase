@@ -88,6 +88,7 @@
             this.guna2GradientPanel12.Name = "guna2GradientPanel12";
             this.guna2GradientPanel12.Size = new System.Drawing.Size(554, 70);
             this.guna2GradientPanel12.TabIndex = 137;
+            this.guna2GradientPanel12.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel12_Paint);
             // 
             // exitButton
             // 

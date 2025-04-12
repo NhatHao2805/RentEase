@@ -206,9 +206,9 @@
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(95, 39);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(201, 20);
+            this.label22.Size = new System.Drawing.Size(309, 20);
             this.label22.TabIndex = 122;
-            this.label22.Text = "Đánh giá trải nghiệm của bạn";
+            this.label22.Text = "Tạo hóa đơn thanh thanh toán cho khách hàng";
             // 
             // label23
             // 
@@ -216,9 +216,9 @@
             this.label23.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
             this.label23.Location = new System.Drawing.Point(93, 9);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(194, 29);
+            this.label23.Size = new System.Drawing.Size(216, 29);
             this.label23.TabIndex = 123;
-            this.label23.Text = "Lịch sử thuê nhà";
+            this.label23.Text = "Hóa đơn điện nước";
             // 
             // guna2GradientPanel2
             // 

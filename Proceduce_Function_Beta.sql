@@ -114,7 +114,7 @@ CREATE PROCEDURE load_payment(
 	IN p_lastname VARCHAR(50)
 )
 BEGIN
-   SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL,Date(p.PAYMENTTIME)  FROM payment p 
+   SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL, Date(p.PAYMENTTIME) AS 'PAYMENT_TIME'  FROM payment p 
    JOIN bill bi ON bi.BILLID = p.BILLID
 	JOIN tenant t ON t.TENANTID = bi.TENANTID
    JOIN contract c ON c.TENANTID = t.TENANTID
@@ -127,23 +127,23 @@ BEGIN
 END//
 
 
--- CREATE TRIGGER before_del_Bill
--- BEFORE DELETE ON bill
--- FOR EACH ROW
--- BEGIN
---     DELETE FROM payment  
---     WHERE BILLID = OLD.BILLID;    
--- 	 DELETE FROM billdetail  
---     WHERE BILLID = OLD.BILLID;   
--- END//
+CREATE TRIGGER before_del_Bill
+BEFORE DELETE ON bill
+ FOR EACH ROW
+BEGIN
+    DELETE FROM payment  
+   WHERE BILLID = OLD.BILLID;    
+ DELETE FROM billdetail  
+	 WHERE BILLID = OLD.BILLID;   
+END//
 
--- CREATE TRIGGER before_del_Billdetail
--- BEFORE DELETE ON billdetail
--- FOR EACH ROW
--- BEGIN
---     DELETE FROM water_electricity  
---     WHERE water_electricity.FIGUREID = OLD.ID;       
--- END//
+CREATE TRIGGER before_del_Billdetail
+BEFORE DELETE ON billdetail
+FOR EACH ROW
+BEGIN
+   DELETE FROM water_electricity  
+    WHERE water_electricity.FIGUREID = OLD.ID;       
+END//
 
 CREATE PROCEDURE del_bill(
     IN p_BillID VARCHAR(50)
@@ -471,7 +471,6 @@ BEGIN
     END IF;
 END//
 
-
 CREATE PROCEDURE sp_FilterVehicle(
     IN p_buildingid VARCHAR(20),
     IN p_vehicle_type VARCHAR(50)
@@ -556,13 +555,14 @@ BEGIN
     WHERE AREAID = p_areaid AND VEHICLEID IS NULL
     LIMIT 1;  -- Chỉ cập nhật một bản ghi đầu tiên có giá trị NULL
 END //
-
+-- New 12/4
 CREATE PROCEDURE proc_updateVehicle(
     IN p_vehicleid VARCHAR(20),
     IN p_tenantid VARCHAR(20),
     IN p_vehicle_unitprice_id VARCHAR(20),
     IN p_type VARCHAR(50),
-    IN p_licenseplate VARCHAR(20)
+    IN p_licenseplate VARCHAR(20),
+    IN p_areaid VARCHAR(20)
 )
 BEGIN
     UPDATE VEHICLE
@@ -573,6 +573,12 @@ BEGIN
         LICENSEPLATE = p_licenseplate
     WHERE VEHICLEID = p_vehicleid;
     
+    IF NOT EXISTS (SELECT 1 FROM PARKING WHERE AREAID = p_areaid AND VEHICLEID = p_vehicleid) THEN
+		UPDATE PARKING
+        SET
+			AREAID = p_areaid
+		WHERE VEHICLEID = p_vehicleid;
+	END IF;
 END//
 
 CREATE PROCEDURE sp_DeleteVehicle(
@@ -627,8 +633,8 @@ BEGIN
             pa.CAPACITY,
             COUNT(p.VEHICLEID) as CURRENT_VEHICLES,
             CASE 
-                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'Đã đầy'
-                ELSE 'Còn trống'
+                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'FULL'
+                ELSE 'EMPTY'
             END as STATUS
         FROM PARKINGAREA pa
         LEFT JOIN PARKING p ON pa.AREAID = p.AREAID

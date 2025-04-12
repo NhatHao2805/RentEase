@@ -1,6 +1,7 @@
 ﻿using BLL;
 using BLL.honhathao;
 using DTO;
+using Guna.UI2.WinForms;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -20,29 +21,75 @@ namespace GUI
         quanlynha form;
         Vehicle vehicle = new Vehicle();
         private Vehicle infor;
-        public Form_UpdateVehicle( Vehicle vehicle)
+        private string _buildingid;
+        public Form_UpdateVehicle( Vehicle vehicle, string buildingid)
         {
             InitializeComponent();
             infor = vehicle;
+            _buildingid = buildingid;
+            loadLanguage();
+        }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "vehicle.update_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "vehicle.update_subtitle":
+
+                        label22.Text = a.Value;
+                        break;
+                    case "vehicle.vehicle_id":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "vehicle.tenant_id":
+                        guna2HtmlLabel14.Text = a.Value;
+                        break;
+                    case "vehicle.type":
+                        guna2HtmlLabel16.Text = a.Value;
+                        break;
+                    case "vehicle.price_id":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    //case "vehicle.parking_id":
+                    //    guna2HtmlLabel7.Text = a.Value;
+                    //    break;
+                    case "vehicle.monthly_fee":
+                        guna2HtmlLabel4.Text = a.Value;
+                        break;
+                    case "vehicle.license_plate":
+                        guna2HtmlLabel5.Text = a.Value;
+                        break;
+
+
+                    case "btn_save":
+                        add_btn.Text = a.Value;
+                        break;
+
+                }
+            }
         }
 
         private void add_btn_Click(object sender, EventArgs e)
         {
             vehicle.VehicleID = infor.VehicleID;
             vehicle.TenantID = tenantid_cb.SelectedItem.ToString();
-            vehicle.VehicleUnitPriceID = unitpriceid_cb.Text;
+            vehicle.VehicleUnitPriceID = unitpriceid_tb.Text;
             vehicle.Type = type_cb.Text;
             vehicle.LicensePlate = licenseplate_tb.Text;
 
-            string check = VehicleBLL.UpdateVehicle(vehicle, unitprice_tb.Text);
+            string check = VehicleBLL.UpdateVehicle(vehicle, areaid_cb.Text);
 
             switch (check)
             {
-                case "required_vehicleid":
-                    MessageBox.Show("Bạn chưa nhập mã xe");
-                    return;
                 case "required_tenantid":
                     MessageBox.Show("Bạn chưa chọn mã khách thuê");
+                    return;
+                case "required_areaid":
+                    MessageBox.Show("Bạn chưa chọn mã bãi giữ xe");
                     return;
                 case "required_type":
                     MessageBox.Show("Bạn chưa phân loại xe");
@@ -56,9 +103,6 @@ namespace GUI
                 case "invalid_unitprice_format":
                     MessageBox.Show("Đơn giá không hợp lệ");
                     unitprice_tb.Text = string.Empty;
-                    return;
-                case "required_licenseplate":
-                    MessageBox.Show("Bạn chưa nhập biển số xe");
                     return;
                 case "Database connection failed!":
                     MessageBox.Show("Kết nối thất bại");
@@ -94,22 +138,59 @@ namespace GUI
             }
             type_cb.SelectedItem= infor.Type;
 
-            
-            unitpriceid_cb.Items.Clear();
+            areaid_cb.Items.Clear();
+            // Lấy dữ liệu từ phương thức
+            System.Data.DataTable areaData = ParkingAreaBLL.GetAreaId(type_cb.SelectedItem.ToString(), _buildingid);
+
+            // Kiểm tra xem DataTable có dữ liệu không
+            if (areaData != null && areaData.Rows.Count > 0)
+            {
+                foreach (DataRow row in areaData.Rows)
+                {
+                    areaid_cb.Items.Add(row["AREAID"].ToString());
+                }
+            }
+            else
+            {
+                // Thông báo nếu không có dữ liệu
+                MessageBox.Show("Không tìm thấy bãi đậu xe cho loại xe đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            areaid_cb.SelectedItem = ParkingAreaBLL.GetAreaIdByVehicleId(infor.VehicleID).Rows[0]["AREAID"].ToString();
+
+            unitpriceid_tb.Items.Clear();
             foreach (DataRow row in VehicleBLL.GetAllVehicleUnitPrices().Rows)
             {
-                unitpriceid_cb.Items.Add(row["VEHICLE_UNITPRICE_ID"].ToString());
+                unitpriceid_tb.Items.Add(row["VEHICLE_UNITPRICE_ID"].ToString());
             }
-            unitpriceid_cb.SelectedItem = infor.VehicleUnitPriceID;
+            unitpriceid_tb.SelectedItem = infor.VehicleUnitPriceID;
 
             vehicleid_tb.Enabled = false;
-            unitpriceid_cb.Enabled = false;
+            unitpriceid_tb.Enabled = false;
             licenseplate_tb.Enabled = false;
         }
 
         private void type_cb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            unitpriceid_cb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString()).ToString();
+            areaid_cb.Items.Clear();
+            // Lấy dữ liệu từ phương thức
+            System.Data.DataTable areaData = ParkingAreaBLL.GetAreaId(type_cb.SelectedItem.ToString(), _buildingid);
+
+            // Kiểm tra xem DataTable có dữ liệu không
+            if (areaData != null && areaData.Rows.Count > 0)
+            {
+                foreach (DataRow row in areaData.Rows)
+                {
+                    areaid_cb.Items.Add(row["AREAID"].ToString());
+                }
+            }
+            else
+            {
+                // Thông báo nếu không có dữ liệu
+                MessageBox.Show("Không tìm thấy bãi đậu xe cho loại xe đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            areaid_cb.SelectedItem = ParkingAreaBLL.GetAreaIdByVehicleId(infor.VehicleID).Rows[0]["AREAID"].ToString();
+
+            unitpriceid_tb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString()).ToString();
             if (type_cb.SelectedItem == null) return;
 
             try
@@ -120,7 +201,7 @@ namespace GUI
                 if (dt.Rows.Count > 0)
                 {
                     string unitPriceId = dt.Rows[0]["VEHICLE_UNITPRICE_ID"].ToString();
-                    unitpriceid_cb.SelectedItem = unitPriceId;
+                    unitpriceid_tb.SelectedItem = unitPriceId;
 
                     float price = VehicleBLL.GetVehicleUnitPriceById(unitPriceId);
                     unitprice_tb.Text = price.ToString();
@@ -134,6 +215,11 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

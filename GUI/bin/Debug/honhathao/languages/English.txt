@@ -76,7 +76,7 @@ checkbox_giamdan:Descending value
 checkbox_theoten:Search by name
 service_management_title: Service Management
 service_management_description: Services used by tenants
-view_service: Price high to low
+view_service: View Service
 filter_highlow: Price high to low
 filter_lowhigh: Price low to high
 filter_recent: Most recent
@@ -161,3 +161,218 @@ assettable_assetname: Asset name
 assettable_price: Price
 assettable_status: Status
 assettable_usedate: Usage date
+:Form_AddContract
+contract.add_title: Add Contract
+contract.add_subtitle: Add a new contract to the list
+contract.room_number: Room Number
+contract.tenant_name: Tenant
+contract.creation_date: Creation Date
+contract.start_date: Start Date
+contract.end_date: End Date
+contract.monthly_rent: Monthly Rent
+contract.payment_schedule: Payment Schedule
+contract.deposit: Deposit
+contract.notes: Notes
+:LoadAll
+LoadAll.room_number: Room Number
+LoadAll.tenant: Tenant
+LoadAll.last_name: Last Name
+LoadAll.first_name: First Name
+LoadAll.rating: Rating
+LoadAll.detail_title: View Details
+LoadAll.detail_subtitle: View Payment Details
+LoadAll.placeholder: Search by Name
+LoadAll.button: Search\
+:Form_addTenant
+tenant.title: Tenant
+tenant.subtitle: Register New Tenant
+tenant.last_name: Last Name
+tenant.first_name: First Name
+tenant.dob: Date of Birth
+tenant.gender: Gender
+tenant.phone: Phone Number
+tenant.email: Email
+tenant.save_button: Save
+:Form_addRegistration
+registration.title: Registration
+registration.subtitle: New Registration
+registration.customer_name: Customer Name
+registration.room_code: Room Code
+registration.start_date: Check-in Date
+registration.end_date: Expiry Date
+registration.status: Status
+registration.save_button: Save
+:Form_addWaterElectricity
+invoice.title: Utility Bill
+invoice.subtitle: Create payment invoice for customer
+invoice.utility_prompt: Add Monthly Utilities to Generate Invoice
+utility.table_header.figure: Figure Id
+utility.table_header.unit_price: Unit Price
+utility.table_header.tenant_id: Tenant Id
+utility.table_header.old_figure: Old Figure
+utility.table_header.new_figure: New Figure
+utility.table_header.unit: Unit
+date_headers.start_date: Start Date
+date_headers.end_date: End Date
+date_headers.record_date: Record Date
+date_headers.type: Type
+:Form_addUtilityBill
+utility_bill.title: Add Utility Bill
+utility_bill.subtitle: Add utility bill to list
+utility_bill.room_number: Room number
+utility_bill.tenant_name: Tenant
+utility_bill.old_electric: Old electric meter
+utility_bill.new_electric: New electric meter
+utility_bill.old_water: Old water meter
+utility_bill.new_water: New water meter
+utility_bill.month: Month
+utility_bill.add_button: Add
+:Form_parking
+parking.table_header.parking_id: Parking Id
+parking.table_header.building_id: Building Id
+parking.table_header.address: Address
+parking.table_header.type: Parking Type
+parking.table_header.capacity: Capacity
+parking.table_header.current_vehicles: Current Vehicles
+parking.table_header.status: Status
+parking.type.car: Car Parking
+parking.type.motor_bike: Motorbike/Bike Parking
+parking.type.mixed: Mixed Parking
+parking.type.available: Available Parking
+parking.type.full: Full Parking
+:Form_Vehicle
+vehicle.table_header.vehicle_id: Vehicle Id
+vehicle.table_header.customer_id: Customer Id
+vehicle.table_header.last_name: Last Name
+vehicle.table_header.first_name: First Name
+vehicle.table_header.price_id: Price Id
+vehicle.table_header.price: Price
+vehicle.table_header.vehicle_type: Vehicle Type
+vehicle.table_header.license_plate: License Plate
+vehicle.table_header.parking_slot_id: Parking Slot Id
+vehicle.table_header.status: Status
+vehicle.type.car: Car
+vehicle.type.motorbike: Motorbike
+vehicle.type.bicycle: Bicycle
+btn_vantay: Fingerprint Management
+label_lang: Language
+:Form_Payment
+payment.table_header.payment_id: Payment Id
+payment.table_header.tenant_id: Tenant Id
+payment.table_header.first_name: First Name
+payment.table_header.last_name: Last Name
+payment.table_header.bill_id: Bill Id
+payment.table_header.method: Method
+payment.table_header.total: Total Amount
+payment.table_header.payment_time: Payment Time
+payment_history.title: Payment History
+payment_history.detail_title: Payment Details
+:Form_RegistService
+service_registration.title: Service Registration
+service_registration.subtitle: Add new service to table
+service_registration.customer_name: Customer Name
+service_registration.room_code: Room Number
+service_registration.service_name: Service Name
+service_registration.cancel_button: Cancel Registration
+service_registration.register_button: Register
+:Form_DelService
+service.delete_title: Delete Service
+service.delete_subtitle: Remove service from table
+service.name: Service Name
+service.price: Service Price
+service.delete_button: Delete
+service.adjust_fee_button: Adjust Fee
+:Form_addService
+service.add_title: Add Service
+service.add_subtitle: Add new service
+service.name: Service Name
+service.price: Service Price
+service.save_button: Save
+service.cancel_button: Cancel
+service.list.title: All Services
+service.list.subtitle: All services are displayed here
+:Form_Fingerprint
+fingerprint_management.title: Fingerprint Management
+fingerprint_management.list_title: Fingerprint List
+fingerprint.table_header.fingerprint_id: Fingerprint ID
+fingerprint.table_header.tenant_id: Tenant ID
+fingerprint.table_header.first_name: First Name
+fingerprint.table_header.last_name: Last Name
+fingerprint.table_header.access_right: Access Right
+fingerprint.table_header.registration_date: Registration Date
+fingerprint.table_header.image_name: Image Name
+fingerprint_registration.title: Fingerprint Registration
+fingerprint_registration.select_tenant: Select Tenant
+fingerprint_registration.new_registration: New Fingerprint Registration
+fingerprint_registration.access_area: Access Area Permission
+fingerprint_registration.no_data: No Data Selected
+fingerprint_registration.no_image: No Image Selected
+fingerprint_registration.select_image: Select Image
+fingerprint_registration.update_image: Update Image
+fingerprint_registration.delete_fingerprint: Delete Fingerprint
+fingerprint_registration.update_permission: Update Permission
+fingerprint_registration.verify_fingerprint: Verify Fingerprint
+btn_quaylai: Back
+:Form_addAsset
+asset.add_title: Add Asset
+asset.add_subtitle: Add New Asset
+asset.update_title: Update Asset
+asset.update_subtitle: Update your asset
+room_code: Room Code
+asset_code: Asset Code
+asset_name: Asset Name
+asset_value: Value
+usage_period: Usage Period
+status: Status
+add_button: Add
+btn_dong: Close
+:Form_addRoom
+room.add_title: Add Room
+room.add_subtitle: Add New Room
+property_type: House
+classification: Classification
+amenities: Amenities
+area: Area
+rent_price: Rent Price
+status: Status
+status_options.occupied: Occupied
+status_options.vacant: Vacant
+status_options.owing: Owing Money
+notification.ending: Ending Soon
+notification.reserved: Reserved
+:Form_assetDetail
+asset.detail_title: Asset Details
+asset.detail_description: All asset details are shown here
+contract.expired: Contract Expired
+contract.near_expiry: Contract Near Expiry
+:FormRentalHistory
+rental_history.title: Rental History
+rental_history.description: All rental history details are shown here
+rental_history.history_id: History ID
+rental_history.contract_id: Contract ID
+rental_history.room_id: Room ID
+rental_history.customer_id: Customer ID
+rental_history.first_name: First Name
+rental_history.last_name: Last Name
+:Form_parking
+parking.add_title: Add Parking
+parking.add_subtitle: Add parking to table
+parking.address: Address
+parking.type: Type
+parking.capacity: Capacity
+parking.update_title: Update Parking
+parking.update_subtitle: Update parking in table
+parking.id_parking: Parking ID
+btn_save: Save
+:Form_vehicle
+vehicle.add_title: Add Vehicle
+vehicle.add_subtitle: Add vehicle to table
+vehicle.tenant_id: Tenant ID
+vehicle.type: Type
+vehicle.parking_id: Parking ID
+vehicle.monthly_fee: Monthly Fee
+vehicle.license_plate: License Plate
+vehicle.price_id: Price ID
+vehicle.update_title: Update Vehicle
+vehicle.update_subtitle: Update vehicle to table
+vihicle.vehicle_id: Vehicle ID

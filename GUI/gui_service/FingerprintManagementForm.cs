@@ -8,6 +8,7 @@ using System.Linq;
 using System.Windows.Forms;
 using BLL;
 using DTO;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace GUI.gui_service
 {
@@ -19,6 +20,7 @@ namespace GUI.gui_service
         private string selectedImagePath = null;
         private Dictionary<int, string> areaIdMapping = new Dictionary<int, string>();
 
+        private Dictionary<string, string> areaNameMapping = new Dictionary<string, string>();
         public FingerprintManagementForm(string username, string buildingID)
         {
             InitializeComponent();
@@ -44,6 +46,8 @@ namespace GUI.gui_service
 
                 // Load danh sách vân tay đã đăng ký
                 LoadFingerprintList();
+
+                loadLanguage(); 
             }
             catch (Exception ex)
             {
@@ -52,15 +56,146 @@ namespace GUI.gui_service
             }
         }
 
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "fingerprint_management.title":
+                        label1.Text = a.Value;
+                        break;
+                    case "fingerprint_management.list_title":
+                        label2.Text = a.Value;
+                        break;
+                    case "fingerprint.table_header.fingerprint_id":
+                        dgvFingerprints.Columns[0].HeaderText = a.Value;
+                        break;
+                    case "fingerprint.table_header.tenant_id":
+                        dgvFingerprints.Columns[1].HeaderText = a.Value;
+                        break;
+                    case "fingerprint.table_header.first_name":
+                        dgvFingerprints.Columns[2].HeaderText = a.Value;
+                        break;
+                    case "fingerprint.table_header.last_name":
+                        dgvFingerprints.Columns[3].HeaderText = a.Value;
+                        break;
+                    case "fingerprint.table_header.access_right":
+                        dgvFingerprints.Columns[4].HeaderText = a.Value;
+                        break;
+                    case "fingerprint.table_header.registration_date":
+                        dgvFingerprints.Columns[5].HeaderText = a.Value;
+                        break;
+
+                    case "fingerprint_registration.title":
+                        labelRegister.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.select_tenant":
+                        labelSelectTenant.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.new_registration":
+                        btnEnroll.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.access_area":
+                        labelAreaPermission.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.no_data":
+                        lblSelectedTenant.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.no_image":
+                        lblImageStatus.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.select_image":
+                        guna2Button1.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.update_image":
+                        guna2Button2.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.delete_fingerprint":
+                        btnDelete.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.update_permission":
+                        btnUpdatePermission.Text = a.Value;
+                        break;
+                    case "fingerprint_registration.verify_fingerprint":
+                        btnTestFingerprint.Text = a.Value;
+                        break;
+                    case "btn_quaylai":
+                        btnBack.Text = a.Value;
+                        break;
+
+
+                }
+            }
+        }
+
         private void LoadFingerprintList()
         {
+            //try
+            //{
+
+            //    DataTable fingerprints = fingerprintBLL.GetFingerprintsList(currentUsername);
+            //    // Tạo một DataTable mới để lưu dữ liệu đã được chuyển đổi
+            //    DataTable displayTable = fingerprints.Clone();
+
+            //    // Lấy danh sách khu vực để mapping
+            //    List<AreaPermissionDTO> areas = fingerprintBLL.GetAvailableAreas(currentBuildingID);
+
+            //    dgvFingerprints.DataSource = fingerprints;
+
+            //    // Thiết lập hiển thị các cột
+            //    if (fingerprints != null && fingerprints.Columns.Count > 0)
+            //    {
+            //        dgvFingerprints.Columns["FINGERID"].HeaderText = "Mã vân tay";
+            //        dgvFingerprints.Columns["TENANTID"].HeaderText = "Mã người thuê";
+            //        dgvFingerprints.Columns["FIRSTNAME"].HeaderText = "Tên";
+            //        dgvFingerprints.Columns["LASTNAME"].HeaderText = "Họ";
+            //        dgvFingerprints.Columns["AREAPERMISSION"].HeaderText = "Quyền truy cập";
+            //        dgvFingerprints.Columns["ENROLLMENT_DATE"].HeaderText = "Ngày đăng ký";
+
+            //        // Ẩn một số cột
+            //        dgvFingerprints.Columns["USERNAME"].Visible = false;
+            //        if (fingerprints.Columns.Contains("IMAGE_NAME"))
+            //        {
+            //            dgvFingerprints.Columns["IMAGE_NAME"].HeaderText = "Tên ảnh";
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi khi tải danh sách vân tay: " + ex.Message,
+            //        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
             try
             {
                 DataTable fingerprints = fingerprintBLL.GetFingerprintsList(currentUsername);
+
+                // Lấy danh sách khu vực để mapping
+                List<AreaPermissionDTO> areas = fingerprintBLL.GetAvailableAreas(currentBuildingID);
+                Dictionary<string, string> areaMapping = new Dictionary<string, string>();
+                foreach (var area in areas)
+                {
+                    areaMapping[area.AreaID] = $"{area.AreaName} - {area.Description}";
+                }
+
+                // Chuyển đổi ID khu vực thành tên đầy đủ
+                foreach (DataRow row in fingerprints.Rows)
+                {
+                    string areaIds = row["AREAPERMISSION"].ToString();
+                    if (!string.IsNullOrEmpty(areaIds))
+                    {
+                        List<string> areaNames = areaIds.Split(';')
+                            .Where(id => areaMapping.ContainsKey(id))
+                            .Select(id => $"{id} - {areaMapping[id]}")
+                            .ToList();
+                        row["AREAPERMISSION"] = string.Join("; ", areaNames);
+                    }
+                }
+
                 dgvFingerprints.DataSource = fingerprints;
 
                 // Thiết lập hiển thị các cột
-                if (fingerprints != null && fingerprints.Columns.Count > 0)
+                if (fingerprints.Columns.Count > 0)
                 {
                     dgvFingerprints.Columns["FINGERID"].HeaderText = "Mã vân tay";
                     dgvFingerprints.Columns["TENANTID"].HeaderText = "Mã người thuê";
@@ -69,7 +204,6 @@ namespace GUI.gui_service
                     dgvFingerprints.Columns["AREAPERMISSION"].HeaderText = "Quyền truy cập";
                     dgvFingerprints.Columns["ENROLLMENT_DATE"].HeaderText = "Ngày đăng ký";
 
-                    // Ẩn một số cột
                     dgvFingerprints.Columns["USERNAME"].Visible = false;
                     if (fingerprints.Columns.Contains("IMAGE_NAME"))
                     {
@@ -125,7 +259,7 @@ namespace GUI.gui_service
                     int index = 0;
                     foreach (var area in areas)
                     {
-                        checkedListAreas.Items.Add($"{area.AreaName} - {area.Description}", false);
+                        checkedListAreas.Items.Add($"{area.AreaID} - {area.AreaName} - {area.Description}", false);
                         areaIdMapping.Add(index, area.AreaID);
                         index++;
                     }
@@ -713,5 +847,7 @@ namespace GUI.gui_service
                 Console.WriteLine($"Error loading area permissions: {ex.Message}");
             }
         }
+
+       
     }
 }
