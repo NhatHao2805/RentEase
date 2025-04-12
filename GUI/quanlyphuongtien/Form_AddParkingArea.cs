@@ -74,5 +74,15 @@ namespace GUI
             type_cb.Items.Add("Xe máy/Xe đạp");
             type_cb.Items.Add("Hỗn hợp");
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void exitButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
