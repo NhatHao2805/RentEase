@@ -200,9 +200,12 @@ namespace GUI
                 floor_cb.Items.Add(i);
             }
 
-            type_cb.Items.Add("Nhà trọ");
-            type_cb.Items.Add("Chung cư 1 phòng ngủ");
-            type_cb.Items.Add("Chung cư 2 phòng ngủ");
+            type_cb.Items.Add("Phòng đơn");
+            type_cb.Items.Add("Phòng đôi");
+            type_cb.Items.Add("Phòng thường");
+            type_cb.Items.Add("Phòng cao cấp");
+            type_cb.Items.Add("Studio");
+            type_cb.Items.Add("Phòng nguyên căn");
 
         }
 

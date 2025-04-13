@@ -119,10 +119,9 @@ namespace GUI
             }
 
             type_cb.Items.Clear();
-            foreach (DataRow row in VehicleBLL.GetAllVehicle().Rows)
-            {
-                type_cb.Items.Add(row["TYPE"].ToString());
-            }
+            type_cb.Items.Add("Xe ô tô");
+            type_cb.Items.Add("Xe máy");
+            type_cb.Items.Add("Xe đạp");
 
             unitpriceid_tb.Items.Clear();
             foreach (DataRow row in VehicleBLL.GetAllVehicleUnitPrices().Rows)
