@@ -135,26 +135,26 @@ END //
 /*                                 */
 /*==============================================================*/
 
-CREATE DEFINER=`root`@`localhost` FUNCTION `createAssetID`() RETURNS varchar(10) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
-    DETERMINISTIC
-BEGIN
-    DECLARE new_id VARCHAR(10);
-    DECLARE max_num INT;
-    DECLARE next_num INT;
-    
-    -- Tìm số lớn nhất hiện có trong database
-    SELECT IFNULL(MAX(CAST(SUBSTRING(ASSETID, 3) AS UNSIGNED)), 0) INTO max_num
-    FROM ASSETS
-    WHERE ASSETID REGEXP '^TS[0-9]+$';
-    
-    -- Tăng số lên 1
-    SET next_num = max_num + 1;
-    
-    -- Tạo ID mới với định dạng TS + số (4 chữ số, thêm 0 ở đầu nếu cần)
-    SET new_id = CONCAT('TS', LPAD(next_num, 4, '0'));
-    
-    RETURN new_id;
-END//
+-- CREATE DEFINER=`root`@`localhost` FUNCTION `createAssetID`() RETURNS varchar(10) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
+--     DETERMINISTIC
+-- BEGIN
+--     DECLARE new_id VARCHAR(10);
+--     DECLARE max_num INT;
+--     DECLARE next_num INT;
+--     
+--     -- Tìm số lớn nhất hiện có trong database
+--     SELECT IFNULL(MAX(CAST(SUBSTRING(ASSETID, 3) AS UNSIGNED)), 0) INTO max_num
+--     FROM ASSETS
+--     WHERE ASSETID REGEXP '^TS[0-9]+$';
+--     
+--     -- Tăng số lên 1
+--     SET next_num = max_num + 1;
+--     
+--     -- Tạo ID mới với định dạng TS + số (4 chữ số, thêm 0 ở đầu nếu cần)
+--     SET new_id = CONCAT('TS', LPAD(next_num, 4, '0'));
+--     
+--     RETURN new_id;
+-- END//
 
 -- CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addAsset`(
 --     IN p_roomid VARCHAR(10),

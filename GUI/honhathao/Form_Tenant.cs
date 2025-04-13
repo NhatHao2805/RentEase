@@ -87,12 +87,15 @@ namespace GUI.honhathao
         }
         private void loadinfo()
         {
-            if(data != null)
+            gioitinh.Items.Clear();
+            gioitinh.Items.Add(Language.translate("nam"));
+            gioitinh.Items.Add(Language.translate("nu"));
+            if (data != null)
             {
                 hodem.Text = data.Cells[1].Value.ToString();
                 ten.Text = data.Cells[2].Value.ToString();
                 ngaysinh.Value = DateTime.Parse(data.Cells[3].Value.ToString());
-                gioitinh.Text = data.Cells[4].Value.ToString();
+                gioitinh.Text = Language.translate(data.Cells[4].Value.ToString());
                 sdt.Text = data.Cells[5].Value.ToString();
                 email.Text = data.Cells[6].Value.ToString();
             }
@@ -118,7 +121,7 @@ namespace GUI.honhathao
                         hodem.Text,
                         ten.Text,
                         ngaysinh.Value.ToString("yyyy-MM-dd"),
-                        gioitinh.Text,
+                        Language.reverseTranslate(gioitinh.Text),
                         sdt.Text,
                         email.Text
                     );
@@ -138,7 +141,7 @@ namespace GUI.honhathao
                         hodem.Text,
                         ten.Text,
                         ngaysinh.Value.ToString("yyyy-MM-dd"),
-                        gioitinh.Text,
+                        Language.reverseTranslate(gioitinh.Text),
                         sdt.Text,
                         email.Text
                     );

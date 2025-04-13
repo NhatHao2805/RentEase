@@ -71,9 +71,9 @@ namespace GUI
             assets.AssetName = name_tb.Text;
             assets.Price = price_tb.Text;
             assets.UseDate = useDate_dtp.Value.ToString("yyyy-MM-dd");
-            assets.Status = status_cb.Text;
+            assets.Status = Language.reverseTranslate(status_cb.Text);
 
-            string check = AssetBLL.CheckLogic(assets);
+            string check = AssetBLL.CheckLogic(assets, _buildingid);
 
             switch (check)
             {
@@ -120,11 +120,11 @@ namespace GUI
             }
 
             status_cb.Items.Clear();
-            status_cb.Items.Add("Tốt");
-            status_cb.Items.Add("Hư hỏng nhẹ");
-            status_cb.Items.Add("Cần được sửa chữa/thay thế");
-            status_cb.Items.Add("Đang sửa chữa");
-            status_cb.Items.Add("Đang thay thế");
+            status_cb.Items.Add(Language.translate("tot"));
+            status_cb.Items.Add(Language.translate("huhongnhe"));
+            status_cb.Items.Add(Language.translate("canduocsuachua/thaythe"));
+            status_cb.Items.Add(Language.translate("dangsuachua"));
+            status_cb.Items.Add(Language.translate("dangthaythe"));
         }
 
         private void exitButton_Click(object sender, EventArgs e)

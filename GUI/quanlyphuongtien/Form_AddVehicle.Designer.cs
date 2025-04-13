@@ -36,7 +36,6 @@
             this.licenseplate_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.tenantid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.unitpriceid_tb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.areaid_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.exitButton = new Guna.UI2.WinForms.Guna2Button();
@@ -45,12 +44,13 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.unitpriceid_tb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel8 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.add_btn = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -62,9 +62,9 @@
             this.guna2GradientPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
+            this.guna2GradientPanel6.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
-            this.guna2GradientPanel6.SuspendLayout();
             this.guna2GradientPanel8.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -156,25 +156,6 @@
             this.tenantid_cb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.tenantid_cb.Size = new System.Drawing.Size(377, 36);
             this.tenantid_cb.TabIndex = 120;
-            // 
-            // unitpriceid_tb
-            // 
-            this.unitpriceid_tb.BackColor = System.Drawing.Color.Transparent;
-            this.unitpriceid_tb.BorderRadius = 10;
-            this.unitpriceid_tb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.unitpriceid_tb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.unitpriceid_tb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.unitpriceid_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.unitpriceid_tb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.unitpriceid_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.unitpriceid_tb.ItemHeight = 30;
-            this.unitpriceid_tb.Location = new System.Drawing.Point(111, 11);
-            this.unitpriceid_tb.Name = "unitpriceid_tb";
-            this.unitpriceid_tb.ShadowDecoration.BorderRadius = 10;
-            this.unitpriceid_tb.ShadowDecoration.Enabled = true;
-            this.unitpriceid_tb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.unitpriceid_tb.Size = new System.Drawing.Size(155, 36);
-            this.unitpriceid_tb.TabIndex = 121;
             // 
             // areaid_cb
             // 
@@ -274,9 +255,9 @@
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel6);
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel5);
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel4);
-            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel6);
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel8);
             this.guna2GradientPanel1.Controls.Add(this.add_btn);
             this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel3);
@@ -287,6 +268,53 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(613, 487);
             this.guna2GradientPanel1.TabIndex = 147;
+            // 
+            // guna2GradientPanel6
+            // 
+            this.guna2GradientPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel6.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel6.BorderRadius = 10;
+            this.guna2GradientPanel6.BorderThickness = 1;
+            this.guna2GradientPanel6.Controls.Add(this.guna2HtmlLabel11);
+            this.guna2GradientPanel6.Controls.Add(this.unitpriceid_tb);
+            this.guna2GradientPanel6.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel6.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel6.Location = new System.Drawing.Point(315, 173);
+            this.guna2GradientPanel6.Name = "guna2GradientPanel6";
+            this.guna2GradientPanel6.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel6.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel6.Size = new System.Drawing.Size(280, 60);
+            this.guna2GradientPanel6.TabIndex = 151;
+            // 
+            // guna2HtmlLabel11
+            // 
+            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel11.Location = new System.Drawing.Point(17, 18);
+            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
+            this.guna2HtmlLabel11.Size = new System.Drawing.Size(85, 22);
+            this.guna2HtmlLabel11.TabIndex = 140;
+            this.guna2HtmlLabel11.Text = "Mã đơn giá:";
+            // 
+            // unitpriceid_tb
+            // 
+            this.unitpriceid_tb.BackColor = System.Drawing.Color.Transparent;
+            this.unitpriceid_tb.BorderRadius = 10;
+            this.unitpriceid_tb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.unitpriceid_tb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unitpriceid_tb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.unitpriceid_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.unitpriceid_tb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.unitpriceid_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.unitpriceid_tb.ItemHeight = 30;
+            this.unitpriceid_tb.Location = new System.Drawing.Point(111, 11);
+            this.unitpriceid_tb.Name = "unitpriceid_tb";
+            this.unitpriceid_tb.ShadowDecoration.BorderRadius = 10;
+            this.unitpriceid_tb.ShadowDecoration.Enabled = true;
+            this.unitpriceid_tb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.unitpriceid_tb.Size = new System.Drawing.Size(155, 36);
+            this.unitpriceid_tb.TabIndex = 121;
             // 
             // guna2GradientPanel5
             // 
@@ -343,34 +371,6 @@
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(119, 25);
             this.guna2HtmlLabel4.TabIndex = 141;
             this.guna2HtmlLabel4.Text = "Đơn giá/tháng:";
-            // 
-            // guna2GradientPanel6
-            // 
-            this.guna2GradientPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel6.BorderColor = System.Drawing.Color.Gray;
-            this.guna2GradientPanel6.BorderRadius = 10;
-            this.guna2GradientPanel6.BorderThickness = 1;
-            this.guna2GradientPanel6.Controls.Add(this.guna2HtmlLabel11);
-            this.guna2GradientPanel6.Controls.Add(this.unitpriceid_tb);
-            this.guna2GradientPanel6.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel6.FillColor2 = System.Drawing.Color.GhostWhite;
-            this.guna2GradientPanel6.Location = new System.Drawing.Point(314, 173);
-            this.guna2GradientPanel6.Name = "guna2GradientPanel6";
-            this.guna2GradientPanel6.ShadowDecoration.BorderRadius = 10;
-            this.guna2GradientPanel6.ShadowDecoration.Enabled = true;
-            this.guna2GradientPanel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel6.Size = new System.Drawing.Size(280, 60);
-            this.guna2GradientPanel6.TabIndex = 148;
-            // 
-            // guna2HtmlLabel11
-            // 
-            this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel11.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel11.Location = new System.Drawing.Point(17, 18);
-            this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
-            this.guna2HtmlLabel11.Size = new System.Drawing.Size(85, 22);
-            this.guna2HtmlLabel11.TabIndex = 140;
-            this.guna2HtmlLabel11.Text = "Mã đơn giá:";
             // 
             // guna2GradientPanel8
             // 
@@ -509,12 +509,12 @@
             this.guna2GradientPanel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel6.ResumeLayout(false);
+            this.guna2GradientPanel6.PerformLayout();
             this.guna2GradientPanel5.ResumeLayout(false);
             this.guna2GradientPanel5.PerformLayout();
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel4.PerformLayout();
-            this.guna2GradientPanel6.ResumeLayout(false);
-            this.guna2GradientPanel6.PerformLayout();
             this.guna2GradientPanel8.ResumeLayout(false);
             this.guna2GradientPanel8.PerformLayout();
             this.guna2GradientPanel3.ResumeLayout(false);
@@ -534,7 +534,6 @@
         private Guna.UI2.WinForms.Guna2TextBox licenseplate_tb;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
         private Guna.UI2.WinForms.Guna2ComboBox tenantid_cb;
-        private Guna.UI2.WinForms.Guna2ComboBox unitpriceid_tb;
         private Guna.UI2.WinForms.Guna2ComboBox areaid_cb;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel12;
         private Guna.UI2.WinForms.Guna2Button exitButton;
@@ -545,8 +544,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel8;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel14;
         private Guna.UI2.WinForms.Guna2GradientButton add_btn;
@@ -557,5 +554,8 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel12;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
+        private Guna.UI2.WinForms.Guna2ComboBox unitpriceid_tb;
     }
 }

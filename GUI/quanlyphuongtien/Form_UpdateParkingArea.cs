@@ -68,9 +68,15 @@ namespace GUI
         private void Form_UpdateParkingArea_Load_1(object sender, EventArgs e)
         {
             type_cb.Items.Clear();
-            type_cb.Items.Add("Xe ô tô");
-            type_cb.Items.Add("Xe máy/Xe đạp");
-            type_cb.Items.Add("Hỗn hợp");
+            type_cb.Items.Add(infor.Type);
+            string[] a = { Language.translate("xeoto"), Language.translate("xemay/xedap"), Language.translate("honhop") };
+            foreach (string item in a)
+            {
+                if(!type_cb.Items.Contains(item))
+                {
+                    type_cb.Items.Add(item);
+                }
+            }
 
             areaid_tb.Text = infor.AreaId;
             address_tb.Text = infor.Address;

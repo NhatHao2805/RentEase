@@ -1,4 +1,49 @@
-﻿Title: Đăng nhập
+﻿phongdon: Phòng đơn  
+phongdoi: Phòng đôi  
+phongthuong: Phòng thường  
+phongcaocap: Phòng cao cấp  
+studio: Studio  
+phongnguyencan: Phòng nguyên căn  
+dauthang: Đầu tháng
+cuoithang: Cuối tháng
+dango: Đang ở
+dangbaoketthuc: Đang báo kết thúc
+daquahanhopdong: Đã quá hạn hợp đồng
+dangnotien: Đang nợ tiền
+dangtrong: Đang trống
+dangcocgiucho: Đang cọc giữ chỗ
+saphethanhopdong: Sắp hết hạn hợp đồng
+nam: Nam
+nu: Nữ
+dangcho: Đang chờ
+daduyet: Đã duyệt
+ELECTRICITY: Điện
+WATER: Nước
+tienmat: Tiền mặt
+chuyenkhoan: Chuyển khoản
+thetindung: Thẻ tín dụng
+xemay: Xe máy
+xeoto: Xe ô tô
+xedap: Xe đạp
+xemay/xedap: Xe máy/Xe đạp
+honhop: Hỗn hợp
+tot: Tốt
+huhongnhe: Hư hỏng nhẹ
+canduocsuachua/thaythe: Cần được sửa chữa/Thay thế
+dangsuachua: Đang sửa chữa
+dangthaythe: Đang thay thế
+khonghieuluc: Không hiệu lực
+danghieuluc: Đang hiệu lực
+hoanthanh: Hoàn thành
+chuahoanthanh: Chưa hoàn thành
+daxuly: Đã xử lý
+chuaxuly: Chưa xử lý
+dangxuly: Đang xử lý
+dagiaiquyet: Đã giải quyết
+chuagiaiquyet: Chưa giải quyết
+dangsudung: Đang sử dụng
+chuasudung: Chưa sử dụng
+Title: Đăng nhập
 Username: Tên đăng nhập
 Password: Mật khẩu
 Password2: Mật khẩu xác nhận
@@ -27,12 +72,12 @@ delete: Xóa
 view_rental_history: Xem lịch sử thuê phòng
 export_to_excel: Xuất sang Excel
 occupied: Đang ở
-vacant: Đang trống
-ending_soon: Đang báo kết thúc
-reserved: Đang cọc giữ chỗ
-contract_expiring_soon: Sắp hết hạn hợp đồng
-contract_expired: Đã quá hạn hợp đồng
-owing_money: Đang nợ tiền
+vacant: Đang Trống
+ending_soon: Đang Báo Kết Thúc
+reserved: Đang Cọc Giữ Chỗ
+contract_expiring_soon: Sắp Hết Hạn Hợp Đồng
+contract_expired: Đã Hết Hạn Hợp Đồng
+owing_money: Đang Nợ Tiền
 building_add: Thêm
 building_change: Đổi
 taxpayer_information_management: Quản Lý Thông Tin Khách Thuế
@@ -327,22 +372,22 @@ btn_dong: Đóng
 :Form_addRoom
 room.add_title: Thêm phòng
 room.add_subtitle: Thêm phòng mới
-property_type: Tăng nhà
+property_type: Tầng nhà
 classification: Phân loại
 amenities: Tiện ích
 area: Diện tích
 rent_price: Giá thuê
 status: Trạng thái
 status_options.occupied: Đang ở
-status_options.vacant: Đang trống
-status_options.owing: Đang nợ tiền
-notification.ending: Đang báo kết thúc
-notification.reserved: Đang cọc giữ chỗ
+status_options.vacant: Đang Trống
+status_options.owing: Đang Nợ Tiền
+notification.ending: Đang Báo Kết Thúc
+notification.reserved: Đang Cọc Giữ Chỗ
 :Form_assetDetail
 asset.detail_title: Chi tiết tài sản
 asset.detail_description: Mọi chi tiết về tài sản ở đây
-contract.expired: Đã hết hạn hợp đồng
-contract.near_expiry: Sắp hết hạn hợp đồng
+contract.expired: Đã Hết Hạn Hợp Đồng
+contract.near_expiry: Sắp Hết Hạn Hợp Đồng
 :Form_rentalHistory
 rental_history.history_id: Mã Lịch sử
 rental_history.contract_id: Mã Hợp đồng
@@ -373,3 +418,12 @@ vehicle.parking_id: Mã bãi xe
 vehicle.monthly_fee: Đơn giá/tháng
 vehicle.license_plate: Biển số xe
 vehicle.price_id: Mã đơn giá
+assetdetail.assetid: Mã tài sản  
+assetdetail.assetname: Tên tài sản  
+assetdetail.price: Giá trị  
+assetdetail.asset_status: Trạng thái tài sản  
+assetdetail.use_date: Ngày sử dụng  
+assetdetail.roomid: Mã phòng  
+assetdetail.room_type: Loại phòng
+assetdetail.floor: Tầng  
+assetdetail.buildingid: Mã tòa nhà  

@@ -38,13 +38,13 @@
             this.ngayHethan = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ngayDk = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.luu = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.ngayDk = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.exitButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -110,9 +110,6 @@
             this.TrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.TrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.TrangThai.ItemHeight = 30;
-            this.TrangThai.Items.AddRange(new object[] {
-            "Đang chờ",
-            "Đã duyệt"});
             this.TrangThai.Location = new System.Drawing.Point(170, 11);
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.ShadowDecoration.BorderRadius = 10;
@@ -237,6 +234,31 @@
             this.guna2GradientPanel4.Size = new System.Drawing.Size(525, 60);
             this.guna2GradientPanel4.TabIndex = 143;
             // 
+            // ngayDk
+            // 
+            this.ngayDk.BackColor = System.Drawing.Color.Transparent;
+            this.ngayDk.BorderRadius = 10;
+            this.ngayDk.BorderThickness = 1;
+            this.ngayDk.Checked = true;
+            this.ngayDk.CustomFormat = "dd/MM/yyyy";
+            this.ngayDk.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ngayDk.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.ngayDk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(86)))), ((int)(((byte)(71)))));
+            this.ngayDk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngayDk.Location = new System.Drawing.Point(170, 9);
+            this.ngayDk.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.ngayDk.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.ngayDk.Name = "ngayDk";
+            this.ngayDk.ShadowDecoration.BorderRadius = 10;
+            this.ngayDk.ShadowDecoration.CustomizableEdges.TopLeft = false;
+            this.ngayDk.ShadowDecoration.CustomizableEdges.TopRight = false;
+            this.ngayDk.ShadowDecoration.Enabled = true;
+            this.ngayDk.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.ngayDk.Size = new System.Drawing.Size(317, 36);
+            this.ngayDk.TabIndex = 143;
+            this.ngayDk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ngayDk.Value = new System.DateTime(2025, 4, 13, 11, 51, 0, 0);
+            // 
             // guna2HtmlLabel8
             // 
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
@@ -329,31 +351,6 @@
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(130, 25);
             this.guna2HtmlLabel10.TabIndex = 1;
             this.guna2HtmlLabel10.Text = "Tên khách hàng:";
-            // 
-            // ngayDk
-            // 
-            this.ngayDk.BackColor = System.Drawing.Color.Transparent;
-            this.ngayDk.BorderRadius = 10;
-            this.ngayDk.BorderThickness = 1;
-            this.ngayDk.Checked = true;
-            this.ngayDk.CustomFormat = "dd/MM/yyyy";
-            this.ngayDk.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ngayDk.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.ngayDk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(86)))), ((int)(((byte)(71)))));
-            this.ngayDk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ngayDk.Location = new System.Drawing.Point(170, 9);
-            this.ngayDk.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.ngayDk.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.ngayDk.Name = "ngayDk";
-            this.ngayDk.ShadowDecoration.BorderRadius = 10;
-            this.ngayDk.ShadowDecoration.CustomizableEdges.TopLeft = false;
-            this.ngayDk.ShadowDecoration.CustomizableEdges.TopRight = false;
-            this.ngayDk.ShadowDecoration.Enabled = true;
-            this.ngayDk.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.ngayDk.Size = new System.Drawing.Size(317, 36);
-            this.ngayDk.TabIndex = 143;
-            this.ngayDk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ngayDk.Value = new System.DateTime(2025, 4, 13, 11, 51, 0, 0);
             // 
             // guna2GradientPanel12
             // 

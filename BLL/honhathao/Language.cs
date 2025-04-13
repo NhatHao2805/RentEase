@@ -79,5 +79,16 @@ namespace BLL
                 return key;
             }
         }
+        public static string reverseTranslate(string value)
+        {
+            foreach (var kvp in languages)
+            {
+                if (kvp.Value.Equals(value, StringComparison.OrdinalIgnoreCase))
+                {
+                    return kvp.Key;
+                }
+            }
+            return "-1"; 
+        }
     }
 }

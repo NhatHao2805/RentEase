@@ -40,7 +40,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(800, 36);
+            this.panel3.Size = new System.Drawing.Size(663, 36);
             this.panel3.TabIndex = 24;
             // 
             // exitButton
@@ -53,7 +53,7 @@
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.exitButton.ForeColor = System.Drawing.Color.White;
             this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
-            this.exitButton.Location = new System.Drawing.Point(760, 0);
+            this.exitButton.Location = new System.Drawing.Point(623, 0);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(40, 36);
             this.exitButton.TabIndex = 20;
@@ -63,7 +63,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(663, 507);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_AddPayment";

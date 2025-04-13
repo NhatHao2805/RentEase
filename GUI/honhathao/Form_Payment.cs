@@ -20,13 +20,21 @@ namespace GUI.honhathao
         {
             this.buildingid = buildingid;
             InitializeComponent();
-            loadInfo();
+            loadInfo(null);
         }
 
-        private void loadInfo()
+        private void loadInfo(string texts)
         {
-           DataTable dt = BLL.honhathao.PaymentBLL.PaymentBLL_load_payment(buildingid, null, null);
-           dgv_payment.DataSource = dt;
+           DataTable dt = BLL.honhathao.PaymentBLL.PaymentBLL_load_payment(buildingid, texts, null);
+            dgv_payment.DataSource = dt;
+            foreach (DataGridViewRow row in dgv_payment.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    row.Cells[5].Value = Language.translate(row.Cells[5].Value.ToString());
+                }
+            }
+            dgv_payment.DataSource = dt;
             loadLanguage();
         }
         private void loadLanguage()
@@ -82,16 +90,7 @@ namespace GUI.honhathao
                 }
             }
         }
-//        payment_history.title: Payment History
-//payment_history.detail_title: Payment Details
-        //payment.table_header.payment_id: Mã thanh toán
-        //payment.table_header.tenant_id: Mã khách thuê
-        //payment.table_header.first_name: Tên
-        //payment.table_header.last_name: Họ
-        //payment.table_header.bill_id: Mã hóa đơn
-        //payment.table_header.method: Phương thức
-        //payment.table_header.total: Tổng tiền
-        //payment.table_header.payment_time: Thời gian thanh toán
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -111,6 +110,11 @@ namespace GUI.honhathao
         private void button38_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_tk_contract_Click(object sender, EventArgs e)
+        {
+            loadInfo(guna2TextBox1.Text);
         }
     }
 }

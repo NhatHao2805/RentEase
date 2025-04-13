@@ -211,12 +211,8 @@ BEGIN
    JOIN service s ON s.SERVICEID = bd.ID
    WHERE bd.BILLID = p_billID
 	union
-	SELECT bd.BILLID,bd.ID,
-	CASE 
-        WHEN w.`TYPE` = 'WATER' THEN 'Nước'
-        WHEN w.`TYPE` = 'ELECTRICITY' THEN 'Điện'
-        ELSE w.`TYPE`
-   END,bd.AMOUNT FROM billdetail bd 
+	SELECT bd.BILLID,bd.ID,w.`TYPE`
+   ,bd.AMOUNT FROM billdetail bd 
    JOIN water_electricity w ON w.FIGUREID = bd.ID
 	WHERE bd.BILLID = p_billID;
 END//
@@ -428,6 +424,25 @@ BEGIN
         SET p_message = 'Không tìm thấy bãi đậu xe';
     END IF;
 END//
+-- New 13/4
+CREATE DEFINER=`root`@`localhost` FUNCTION `createAssetID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE new_key VARCHAR(10);
+	DECLARE max_key INT;
+    
+   -- Lấy giá trị lớn nhất hiện có trong bảng (giả sử bảng có tên là 'your_table' và cột khóa chính là 'id')
+    SELECT COALESCE(MAX(CAST(SUBSTRING(ASSETID, 3) AS UNSIGNED)), 0) INTO max_key FROM ASSETS;
+
+    -- Tăng giá trị lên 1
+    SET max_key = max_key + 1;
+
+    -- Tạo khóa mới với định dạng PA + 4 số
+    SET new_key = CONCAT('TS', LPAD(max_key, 4, '0'));
+
+    RETURN new_key;
+END//
 
 CREATE PROCEDURE proc_addAsset(
     IN p_buildingid VARCHAR(20),
@@ -440,35 +455,25 @@ CREATE PROCEDURE proc_addAsset(
 BEGIN
     DECLARE new_asset_id VARCHAR(20);
     
-    -- Kiểm tra xem phòng có thuộc tòa nhà không
-    IF EXISTS (
-        SELECT 1 FROM ROOM r
-        WHERE r.ROOMID = p_roomid
-        AND r.BUILDINGID = p_buildingid
-    ) THEN
-        -- Tạo ID mới cho tài sản
-        SET new_asset_id = createAssetID();
-        
-        -- Thêm tài sản mới
-        INSERT INTO ASSETS (
-            ASSETID,
-            ROOMID,
-            ASSETNAME,
-            PRICE,
-            STATUS,
-            USE_DATE
-        ) VALUES (
-            new_asset_id,
-            p_roomid,
-            p_assetname,
-            p_price,
-            p_status,
-            p_usedate
-        );
-    ELSE
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Phòng không thuộc tòa nhà được chỉ định';
-    END IF;
+	-- Tạo ID mới cho tài sản
+	SET new_asset_id = createAssetID();
+	
+	-- Thêm tài sản mới
+	INSERT INTO ASSETS (
+		ASSETID,
+		ROOMID,
+		ASSETNAME,
+		PRICE,
+		STATUS,
+		USE_DATE
+	) VALUES (
+		new_asset_id,
+		p_roomid,
+		p_assetname,
+		p_price,
+		p_status,
+		p_usedate
+	);
 END//
 
 CREATE PROCEDURE sp_FilterVehicle(
@@ -555,13 +560,14 @@ BEGIN
     WHERE AREAID = p_areaid AND VEHICLEID IS NULL
     LIMIT 1;  -- Chỉ cập nhật một bản ghi đầu tiên có giá trị NULL
 END //
-
+-- New 12/4
 CREATE PROCEDURE proc_updateVehicle(
     IN p_vehicleid VARCHAR(20),
     IN p_tenantid VARCHAR(20),
     IN p_vehicle_unitprice_id VARCHAR(20),
     IN p_type VARCHAR(50),
-    IN p_licenseplate VARCHAR(20)
+    IN p_licenseplate VARCHAR(20),
+    IN p_areaid VARCHAR(20)
 )
 BEGIN
     UPDATE VEHICLE
@@ -572,6 +578,12 @@ BEGIN
         LICENSEPLATE = p_licenseplate
     WHERE VEHICLEID = p_vehicleid;
     
+    IF NOT EXISTS (SELECT 1 FROM PARKING WHERE AREAID = p_areaid AND VEHICLEID = p_vehicleid) THEN
+		UPDATE PARKING
+        SET
+			AREAID = p_areaid
+		WHERE VEHICLEID = p_vehicleid;
+	END IF;
 END//
 
 CREATE PROCEDURE sp_DeleteVehicle(

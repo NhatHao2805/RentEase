@@ -30,12 +30,17 @@ namespace BLL
             return VehicleAccess.addVehicle(vehicle, areaid);
         }
 
-        public static string UpdateVehicle(Vehicle vehicle)
+        public static string UpdateVehicle(Vehicle vehicle, string areaid)
         {
 
             if (string.IsNullOrEmpty(vehicle.TenantID))
             {
                 return "required_tenantid";
+            }
+
+            if (string.IsNullOrEmpty(areaid))
+            {
+                return "required_areaid";
             }
 
             if (string.IsNullOrEmpty(vehicle.Type))
@@ -48,7 +53,7 @@ namespace BLL
                 return "required_licenseplate";
             }
 
-            return VehicleAccess.updateVehicle(vehicle);
+            return VehicleAccess.updateVehicle(vehicle, areaid);
         }
 
         public static (bool success, string message) DeleteVehicle(string vehicleid)

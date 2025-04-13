@@ -71,7 +71,7 @@ namespace GUI
         {
             vehicle.TenantID = tenantid_cb.SelectedItem.ToString();
             vehicle.VehicleUnitPriceID = unitpriceid_tb.Text;
-            vehicle.Type = type_cb.SelectedItem.ToString();
+            vehicle.Type = Language.reverseTranslate(type_cb.SelectedItem.ToString());
             vehicle.LicensePlate = licenseplate_tb.Text;
 
 
@@ -119,11 +119,9 @@ namespace GUI
             }
 
             type_cb.Items.Clear();
-            foreach (DataRow row in VehicleBLL.GetAllVehicle().Rows)
-            {
-                type_cb.Items.Add(row["TYPE"].ToString());
-            }
-
+            type_cb.Items.Add(Language.translate("xeoto"));
+            type_cb.Items.Add(Language.translate("xemay"));
+            type_cb.Items.Add(Language.translate("xedap"));
             unitpriceid_tb.Items.Clear();
             foreach (DataRow row in VehicleBLL.GetAllVehicleUnitPrices().Rows)
             {

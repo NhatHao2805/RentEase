@@ -44,10 +44,14 @@
             this.convenient_tb = new Guna.UI2.WinForms.Guna2TextBox();
             this.floor_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel18 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -59,19 +63,15 @@
             this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel11 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
+            this.guna2GradientPanel7.SuspendLayout();
             this.guna2GradientPanel6.SuspendLayout();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel4.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
-            this.guna2GradientPanel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // price_tb
@@ -144,13 +144,11 @@
             // DangO_chbox
             // 
             this.DangO_chbox.AutoSize = true;
-            this.DangO_chbox.Checked = true;
             this.DangO_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangO_chbox.CheckedState.BorderRadius = 0;
             this.DangO_chbox.CheckedState.BorderThickness = 0;
             this.DangO_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangO_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.DangO_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangO_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.DangO_chbox.Location = new System.Drawing.Point(164, 32);
             this.DangO_chbox.Name = "DangO_chbox";
             this.DangO_chbox.Size = new System.Drawing.Size(73, 21);
@@ -164,12 +162,10 @@
             // DangTrong_chbox
             // 
             this.DangTrong_chbox.AutoSize = true;
-            this.DangTrong_chbox.Checked = true;
             this.DangTrong_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangTrong_chbox.CheckedState.BorderRadius = 0;
             this.DangTrong_chbox.CheckedState.BorderThickness = 0;
             this.DangTrong_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangTrong_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DangTrong_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangTrong_chbox.Location = new System.Drawing.Point(348, 32);
             this.DangTrong_chbox.Name = "DangTrong_chbox";
@@ -184,12 +180,10 @@
             // DangKT_chbox
             // 
             this.DangKT_chbox.AutoSize = true;
-            this.DangKT_chbox.Checked = true;
             this.DangKT_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangKT_chbox.CheckedState.BorderRadius = 0;
             this.DangKT_chbox.CheckedState.BorderThickness = 0;
             this.DangKT_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangKT_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DangKT_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangKT_chbox.Location = new System.Drawing.Point(164, 70);
             this.DangKT_chbox.Name = "DangKT_chbox";
@@ -204,12 +198,10 @@
             // DangCoc_chbox
             // 
             this.DangCoc_chbox.AutoSize = true;
-            this.DangCoc_chbox.Checked = true;
             this.DangCoc_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangCoc_chbox.CheckedState.BorderRadius = 0;
             this.DangCoc_chbox.CheckedState.BorderThickness = 0;
             this.DangCoc_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangCoc_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DangCoc_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangCoc_chbox.Location = new System.Drawing.Point(348, 70);
             this.DangCoc_chbox.Name = "DangCoc_chbox";
@@ -224,12 +216,10 @@
             // SapHetHan_chbox
             // 
             this.SapHetHan_chbox.AutoSize = true;
-            this.SapHetHan_chbox.Checked = true;
             this.SapHetHan_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.SapHetHan_chbox.CheckedState.BorderRadius = 0;
             this.SapHetHan_chbox.CheckedState.BorderThickness = 0;
             this.SapHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.SapHetHan_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.SapHetHan_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SapHetHan_chbox.Location = new System.Drawing.Point(348, 105);
             this.SapHetHan_chbox.Name = "SapHetHan_chbox";
@@ -244,12 +234,10 @@
             // DaHetHan_chbox
             // 
             this.DaHetHan_chbox.AutoSize = true;
-            this.DaHetHan_chbox.Checked = true;
             this.DaHetHan_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DaHetHan_chbox.CheckedState.BorderRadius = 0;
             this.DaHetHan_chbox.CheckedState.BorderThickness = 0;
             this.DaHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DaHetHan_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DaHetHan_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DaHetHan_chbox.Location = new System.Drawing.Point(164, 105);
             this.DaHetHan_chbox.Name = "DaHetHan_chbox";
@@ -264,12 +252,10 @@
             // DangNoTien_chbox
             // 
             this.DangNoTien_chbox.AutoSize = true;
-            this.DangNoTien_chbox.Checked = true;
             this.DangNoTien_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangNoTien_chbox.CheckedState.BorderRadius = 0;
             this.DangNoTien_chbox.CheckedState.BorderThickness = 0;
             this.DangNoTien_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangNoTien_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DangNoTien_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangNoTien_chbox.Location = new System.Drawing.Point(164, 139);
             this.DangNoTien_chbox.Name = "DangNoTien_chbox";
@@ -339,6 +325,35 @@
             this.guna2GradientPanel12.Size = new System.Drawing.Size(554, 70);
             this.guna2GradientPanel12.TabIndex = 141;
             // 
+            // exitButton
+            // 
+            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
+            this.exitButton.BorderRadius = 1;
+            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
+            this.exitButton.Location = new System.Drawing.Point(522, 2);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(30, 30);
+            this.exitButton.TabIndex = 20;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_list1;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(15, 5);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 132;
+            this.guna2PictureBox5.TabStop = false;
+            // 
             // guna2CustomGradientPanel18
             // 
             this.guna2CustomGradientPanel18.BorderRadius = 2;
@@ -387,6 +402,40 @@
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(550, 674);
             this.guna2GradientPanel1.TabIndex = 142;
+            // 
+            // guna2GradientPanel7
+            // 
+            this.guna2GradientPanel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel7.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel7.BorderRadius = 10;
+            this.guna2GradientPanel7.BorderThickness = 1;
+            this.guna2GradientPanel7.Controls.Add(this.guna2HtmlLabel1);
+            this.guna2GradientPanel7.Controls.Add(this.DangCoc_chbox);
+            this.guna2GradientPanel7.Controls.Add(this.SapHetHan_chbox);
+            this.guna2GradientPanel7.Controls.Add(this.DangTrong_chbox);
+            this.guna2GradientPanel7.Controls.Add(this.DaHetHan_chbox);
+            this.guna2GradientPanel7.Controls.Add(this.DangNoTien_chbox);
+            this.guna2GradientPanel7.Controls.Add(this.DangO_chbox);
+            this.guna2GradientPanel7.Controls.Add(this.DangKT_chbox);
+            this.guna2GradientPanel7.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel7.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel7.Location = new System.Drawing.Point(15, 382);
+            this.guna2GradientPanel7.Name = "guna2GradientPanel7";
+            this.guna2GradientPanel7.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel7.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel7.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel7.Size = new System.Drawing.Size(525, 187);
+            this.guna2GradientPanel7.TabIndex = 146;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 82);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(85, 25);
+            this.guna2HtmlLabel1.TabIndex = 141;
+            this.guna2HtmlLabel1.Text = "Trạng thái:";
             // 
             // guna2GradientPanel6
             // 
@@ -555,69 +604,6 @@
             this.guna2HtmlLabel11.TabIndex = 1;
             this.guna2HtmlLabel11.Text = "Tầng nhà:";
             // 
-            // guna2GradientPanel7
-            // 
-            this.guna2GradientPanel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel7.BorderColor = System.Drawing.Color.Gray;
-            this.guna2GradientPanel7.BorderRadius = 10;
-            this.guna2GradientPanel7.BorderThickness = 1;
-            this.guna2GradientPanel7.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2GradientPanel7.Controls.Add(this.DangCoc_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.SapHetHan_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DangTrong_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DaHetHan_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DangNoTien_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DangO_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DangKT_chbox);
-            this.guna2GradientPanel7.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel7.FillColor2 = System.Drawing.Color.GhostWhite;
-            this.guna2GradientPanel7.Location = new System.Drawing.Point(15, 382);
-            this.guna2GradientPanel7.Name = "guna2GradientPanel7";
-            this.guna2GradientPanel7.ShadowDecoration.BorderRadius = 10;
-            this.guna2GradientPanel7.ShadowDecoration.Enabled = true;
-            this.guna2GradientPanel7.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel7.Size = new System.Drawing.Size(525, 187);
-            this.guna2GradientPanel7.TabIndex = 146;
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 82);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(85, 25);
-            this.guna2HtmlLabel1.TabIndex = 141;
-            this.guna2HtmlLabel1.Text = "Trạng thái:";
-            // 
-            // exitButton
-            // 
-            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
-            this.exitButton.BorderRadius = 1;
-            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
-            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
-            this.exitButton.Location = new System.Drawing.Point(522, 2);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(30, 30);
-            this.exitButton.TabIndex = 20;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // guna2PictureBox5
-            // 
-            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_list1;
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(15, 5);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox5.TabIndex = 132;
-            this.guna2PictureBox5.TabStop = false;
-            // 
             // Form_AddRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -632,7 +618,10 @@
             this.Load += new System.EventHandler(this.Form_AddRoom_Load);
             this.guna2GradientPanel12.ResumeLayout(false);
             this.guna2GradientPanel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel7.ResumeLayout(false);
+            this.guna2GradientPanel7.PerformLayout();
             this.guna2GradientPanel6.ResumeLayout(false);
             this.guna2GradientPanel6.PerformLayout();
             this.guna2GradientPanel5.ResumeLayout(false);
@@ -643,9 +632,6 @@
             this.guna2GradientPanel3.PerformLayout();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
-            this.guna2GradientPanel7.ResumeLayout(false);
-            this.guna2GradientPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }

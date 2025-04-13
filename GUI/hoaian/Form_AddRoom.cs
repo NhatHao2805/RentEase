@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -96,12 +97,13 @@ namespace GUI
             room.Price = price_tb.Text;
             room.Area = area_tb.Text;
 
+            
             string status = "";
             foreach (Control control in this.Controls)
             {
                 if (control is CheckBox checkBox && checkBox.Checked)
                 {
-                    status += checkBox.Text + "; ";
+                    status += Language.reverseTranslate(checkBox.Text) + ";"; //New NhatHao
                 }
             }
             room.Status = status.TrimEnd(';', ' ');
@@ -134,6 +136,9 @@ namespace GUI
                     MessageBox.Show("Giá phòng không hợp lệ\nVí dụ: 2000000 hoặc 3.500000");
                     price_tb.Text = string.Empty;
                     room.Price = null;
+                    return;
+                case "required_status":
+                    MessageBox.Show("Bạn chưa chọn trạng thái");
                     return;
                 case "Out range of number room of floor":
                     MessageBox.Show("Vượt quá số phòng của tầng");
@@ -196,10 +201,18 @@ namespace GUI
             {
                 floor_cb.Items.Add(i);
             }
+            string[] a = {Language.translate("roomtype.single"),
+                Language.translate("roomtype.double"),
+                Language.translate("roomtype.standard"),
+                Language.translate("roomtype.premium"),
+                Language.translate("roomtype.studio"),
+                Language.translate("roomtype.entire")};
+            foreach (string item in a)
+            {
+                type_cb.Items.Add(item);
+            }
 
-            type_cb.Items.Add("Nhà trọ");
-            type_cb.Items.Add("Chung cư 1 phòng ngủ");
-            type_cb.Items.Add("Chung cư 2 phòng ngủ");
+
 
         }
 

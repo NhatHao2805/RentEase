@@ -47,7 +47,7 @@ namespace GUI.gui_service
                 // Load danh sách vân tay đã đăng ký
                 LoadFingerprintList();
 
-                loadLanguage(); 
+                loadLanguage();
             }
             catch (Exception ex)
             {
@@ -69,22 +69,26 @@ namespace GUI.gui_service
                         label2.Text = a.Value;
                         break;
                     case "fingerprint.table_header.fingerprint_id":
+                        dgvFingerprints.Columns[1].HeaderText = a.Value;
                         dgvFingerprints.Columns[0].HeaderText = a.Value;
                         break;
                     case "fingerprint.table_header.tenant_id":
-                        dgvFingerprints.Columns[1].HeaderText = a.Value;
-                        break;
-                    case "fingerprint.table_header.first_name":
                         dgvFingerprints.Columns[2].HeaderText = a.Value;
                         break;
-                    case "fingerprint.table_header.last_name":
+                    case "fingerprint.table_header.first_name":
                         dgvFingerprints.Columns[3].HeaderText = a.Value;
                         break;
-                    case "fingerprint.table_header.access_right":
+                    case "fingerprint.table_header.last_name":
                         dgvFingerprints.Columns[4].HeaderText = a.Value;
                         break;
-                    case "fingerprint.table_header.registration_date":
+                    case "fingerprint.table_header.access_right":
                         dgvFingerprints.Columns[5].HeaderText = a.Value;
+                        break;
+                    case "fingerprint.table_header.registration_date":
+                        dgvFingerprints.Columns[6].HeaderText = a.Value;
+                        break;
+                    case "fingerprint.table_header.image_name":
+                        dgvFingerprints.Columns[7].HeaderText = a.Value;
                         break;
 
                     case "fingerprint_registration.title":
@@ -123,7 +127,7 @@ namespace GUI.gui_service
                     case "btn_quaylai":
                         btnBack.Text = a.Value;
                         break;
-
+                        //fingerprint.table_header.image_name: Tên ảnh
 
                 }
             }

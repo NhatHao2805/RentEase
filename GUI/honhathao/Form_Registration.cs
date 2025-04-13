@@ -74,7 +74,10 @@ namespace GUI.honhathao
 
         private void loadInfo()
         {
-            switch(control)
+            TrangThai.Items.Clear();
+            TrangThai.Items.Add(Language.translate("dangcho"));
+            TrangThai.Items.Add(Language.translate("daduyet"));
+            switch (control)
             {
                 case 0:
                     for(int i = 0 ; i < table.Rows.Count - 1; i++)
@@ -108,7 +111,7 @@ namespace GUI.honhathao
                     {
                         //MessageBox.Show("Lỗi");
                     }
-                    string[] tmp = { "Đang chờ", "Đã duyệt" };
+                    string[] tmp = { Language.translate("dangcho"), Language.translate("daduyet") };
                     
                     TrangThai.Items.Clear();
                     TrangThai.Items.Add(table.Rows[row].Cells[7].Value.ToString());
@@ -154,7 +157,7 @@ namespace GUI.honhathao
                         SoPhong.Text,
                         ngayDk.Value.ToString("yyyy-MM-dd"),
                         ngayHethan.Value.ToString("yyyy-MM-dd"),
-                        TrangThai.Text);
+                        Language.reverseTranslate(TrangThai.Text));
                     
                     MessageBox.Show(result);
                     if(result == "Success")
@@ -165,7 +168,7 @@ namespace GUI.honhathao
                 case 1:
                     string result1 = RegistrationBLL.RegistratrionBLL_update_registration(
                         table.Rows[row].Cells[0].Value.ToString(),
-                        TrangThai.Text);
+                        Language.reverseTranslate(TrangThai.Text));
                     if (result1 == "Success")
                     {
                         MessageBox.Show("Cập nhật thành công");

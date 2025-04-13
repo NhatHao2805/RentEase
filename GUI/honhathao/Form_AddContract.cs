@@ -44,6 +44,7 @@ namespace GUI
 
         private void loadLanguage()
         {
+            LichThanhToan.Items.Clear();
             foreach (KeyValuePair<string, string> a in Language.languages)
             {
                 switch (a.Key)
@@ -95,6 +96,14 @@ namespace GUI
 
                         saveButton.Text = a.Value;
                         break;
+                    case "dauthang":
+
+                        LichThanhToan.Items.Add(a.Value);
+                        break;
+                    case "cuoithang":
+
+                        LichThanhToan.Items.Add(a.Value);
+                        break;
                 }
             }
         }
@@ -117,7 +126,7 @@ namespace GUI
 
         private void LoadInfo()
         {
-           
+            
             guna2DateTimePicker1.Enabled = false;
             switch (control)
             {
@@ -136,6 +145,8 @@ namespace GUI
                     {
                         SoPhong.Items.Add(id);
                     }
+                    loadLanguage();
+
                     break;
                 case 1:
                     guna2DateTimePicker2.Enabled = false;
@@ -156,6 +167,16 @@ namespace GUI
 
                     LichThanhToan.Items.Clear();
                     LichThanhToan.Items.Add(table.Rows[row].Cells[9].Value.ToString());
+                    string[] ac = {Language.translate("dauthang"), Language.translate("cuoithang") };
+                    foreach (string id in ac)
+                    {
+                        Console.WriteLine(!LichThanhToan.Items.Contains(id));   
+                        if (!LichThanhToan.Items.Contains(id))
+                        {
+                            LichThanhToan.Items.Add(id);
+
+                        }
+                    }
                     LichThanhToan.SelectedIndex = 0;
                     LichThanhToan.Enabled = false;
 
@@ -165,7 +186,6 @@ namespace GUI
                     break;
             }
                 
-            loadLanguage();
         }
 
 
@@ -188,7 +208,7 @@ namespace GUI
                         guna2DateTimePicker1.Value.ToString("yyyy-MM-dd"),
                         guna2DateTimePicker2.Value.ToString("yyyy-MM-dd"),
                         guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
-                        LichThanhToan.Text,
+                        Language.reverseTranslate(LichThanhToan.Text),
                         TienDatCoc.Text,
                         GhiChu.Text);
                         if (result == "Please fill all the fields")
@@ -218,7 +238,7 @@ namespace GUI
                     string result1 = ContractBLL.ContractBLL_update_Contract(
                     table.Rows[row].Cells[0].Value.ToString(),
                     guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
-                    LichThanhToan.Text,
+                    Language.reverseTranslate(LichThanhToan.Text),
                     TienDatCoc.Text,
                     GhiChu.Text);
                     if (result1 == "Please fill all the fields")

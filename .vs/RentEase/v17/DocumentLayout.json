@@ -1,120 +1,32 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\",
+  "WorkspaceRootPath": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\bll\\honhathao\\language.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\honhathao\\language.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-nhuthuy_12_4\\rentease-nhuthuy\\gui\\honhathao\\languages\\english.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\languages\\english.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-nhuthuy_12_4\\rentease-nhuthuy\\gui\\hoaian\\form_addassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\hoaian\\form_addassets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\gui\\honhathao\\languages\\vietnamese.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\languages\\vietnamese.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\onedrive\\m\u00E1y t\u00EDnh\\cnpm\\rentease\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 193,
+      "VerticalTabListWidth": 150,
       "DocumentGroups": [
         {
           "DockedWidth": 140,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "English.txt",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\honhathao\\languages\\English.txt",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\languages\\English.txt",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\honhathao\\languages\\English.txt",
-              "RelativeToolTip": "GUI\\honhathao\\languages\\English.txt",
-              "ViewState": "AgIAAFgBAAAAAAAAAAAqwG8BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-04-11T17:24:44.518Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Vietnamese.txt",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\honhathao\\languages\\Vietnamese.txt",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\languages\\Vietnamese.txt",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\honhathao\\languages\\Vietnamese.txt",
-              "RelativeToolTip": "GUI\\honhathao\\languages\\Vietnamese.txt",
-              "ViewState": "AgIAAFIBAAAAAAAAAAAowG8BAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-04-11T14:32:28.995Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form_AddAssets.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\hoaian\\Form_AddAssets.cs",
-              "RelativeDocumentMoniker": "GUI\\hoaian\\Form_AddAssets.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\hoaian\\Form_AddAssets.cs",
-              "RelativeToolTip": "GUI\\hoaian\\Form_AddAssets.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T10:39:25.301Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\QuanLyNha.cs [Design]",
+              "ToolTip": "C:\\Users\\ACER\\OneDrive\\M\u00E1y t\u00EDnh\\CNPM\\RentEase\\GUI\\QuanLyNha.cs [Design]",
               "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:39:20.732Z",
+              "WhenOpened": "2025-04-13T17:55:02.791Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Language.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\BLL\\honhathao\\Language.cs",
-              "RelativeDocumentMoniker": "BLL\\honhathao\\Language.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\BLL\\honhathao\\Language.cs",
-              "RelativeToolTip": "BLL\\honhathao\\Language.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAIwCYAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T14:24:56.38Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\QuanLyNha.cs",
-              "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-NhutHuy_12_4\\RentEase-NhutHuy\\GUI\\QuanLyNha.cs",
-              "RelativeToolTip": "GUI\\QuanLyNha.cs",
-              "ViewState": "AgIAAEMCAAAAAAAAAAAewE8CAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T13:07:29.851Z",
-              "EditorCaption": ""
             }
           ]
         },

@@ -78,5 +78,9 @@ namespace BLL
         {
             return ParkingAreaAccess.FilterParkingArea(buildingid, type, status);
         }
+        public static DataTable GetAreaIdByVehicleId(string vehicleid)
+        {
+            return ParkingAreaAccess.GetAreaIdByVehicleId(vehicleid);
+        }
     }
 }

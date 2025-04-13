@@ -105,10 +105,20 @@ namespace GUI
                 floor_cb.Items.Add(i);
             }
 
-            // Load loại phòng
-            type_cb.Items.Add("Nhà trọ");
-            type_cb.Items.Add("Chung cư 1 phòng ngủ");
-            type_cb.Items.Add("Chung cư 2 phòng ngủ");
+            type_cb.Items.Add(infor.Type);
+            string[] a = {Language.translate("roomtype.single"),
+                Language.translate("roomtype.double"),
+                Language.translate("roomtype.standard"),
+                Language.translate("roomtype.premium"),
+                Language.translate("roomtype.studio"),
+                Language.translate("roomtype.entire")};
+            foreach (string item in a)
+            {
+                if (!type_cb.Items.Contains(item))
+                {
+                    type_cb.Items.Add(item);
+                }
+            }
 
             // Hiển thị thông tin phòng lên các control
             roomid_cb.SelectedItem = infor.RoomId;
@@ -169,12 +179,20 @@ namespace GUI
             room.Price = price_tb.Text;
             room.Area = area_tb.Text;
 
+            //string status = (DangO_chbox.Checked ? "Đang ở; " : "")
+            //  + (DangTrong_chbox.Checked ? "Đang trống; " : "")
+            //  + (DangKT_chbox.Checked ? "Đang báo kết thúc; " : "")
+            //  + (DangCoc_chbox.Checked ? "Đang cọc giữ chỗ; " : "")
+            //  + (DaHetHan_chbox.Checked ? "Đã hết hạn hợp đồng; " : "")
+            //  + (SapHetHan_chbox.Checked ? "Sắp hết hạn hợp đồng; " : "")
+            //  + (DangNoTien_chbox.Checked ? "Đang nợ tiền" : "");
+            //room.Status = status.TrimEnd(';', ' ');
             string status = "";
             foreach (Control control in this.Controls)
             {
                 if (control is CheckBox checkBox && checkBox.Checked)
                 {
-                    status += checkBox.Text + "; ";
+                    status += Language.reverseTranslate(checkBox.Text) + ";"; //New NhatHao
                 }
             }
             room.Status = status.TrimEnd(';', ' ');
@@ -198,6 +216,9 @@ namespace GUI
                     MessageBox.Show("Giá phòng không hợp lệ\nVí dụ: 2000000 hoặc 3.500000");
                     price_tb.Text = string.Empty;
                     room.Price = null;
+                    return;
+                case "required_status":
+                    MessageBox.Show("Bạn chưa chọn trạng thái");
                     return;
                 case "Không thể vừa 'Đang ở' vừa 'Đang trống'.":
                     MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.");

@@ -43,7 +43,7 @@ namespace DAL
             }
         }
 
-        public static string updateVehicle(Vehicle vehicle)
+        public static string updateVehicle(Vehicle vehicle, string areaid)
         {
             try
             {
@@ -60,6 +60,7 @@ namespace DAL
                         command.Parameters.AddWithValue("@p_vehicle_unitprice_id", vehicle.VehicleUnitPriceID);
                         command.Parameters.AddWithValue("@p_type", vehicle.Type);
                         command.Parameters.AddWithValue("@p_licenseplate", vehicle.LicensePlate);
+                        command.Parameters.AddWithValue("@p_areaid", areaid);
 
                         command.ExecuteNonQuery();
                         return "Update Successfully";
