@@ -141,7 +141,7 @@ namespace GUI
             dgv_QLHD.Columns[11].Width = 200;
             dgv_QLHD.ScrollBars = ScrollBars.Both;
         }
-
+        // New 13/4
         private void load_Assets() 
         {
             FilterAssets();
@@ -804,6 +804,7 @@ namespace GUI
             f.ShowDialog();
             loadTenant(null);
         }
+        // New 13/4
         private void FilterAssets()
         {
             try
@@ -906,7 +907,7 @@ namespace GUI
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
+        // New 13/4
         private void checkBox23_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox23.Checked)
@@ -916,7 +917,7 @@ namespace GUI
             }
             FilterAssets();
         }
-
+        // New 13/4
         private void checkBox22_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox22.Checked)
@@ -926,7 +927,7 @@ namespace GUI
             }
             FilterAssets();
         }
-
+        // New 13/4
         private void checkBox19_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox19.Checked)
@@ -1006,9 +1007,9 @@ namespace GUI
             }
         }
 
-       
 
 
+        // New 13/4
         private void FilterRoomByStatus()
         {
             try
