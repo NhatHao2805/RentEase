@@ -144,14 +144,7 @@ namespace GUI
 
         private void load_Assets() 
         {
-            if (listBuildingID.SelectedItem == null)
-            {
-                dgv_QLCSVC.DataSource = AssetBLL.LoadAssets(form1.taikhoan.Username, null);
-            }
-            else
-            {
-                dgv_QLCSVC.DataSource = AssetBLL.LoadAssets(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-            }
+            FilterAssets();
             dgv_QLCSVC.Columns[0].Width = 90;
             dgv_QLCSVC.Columns[1].Width = 90;
             dgv_QLCSVC.Columns[2].Width = 150;
@@ -811,11 +804,14 @@ namespace GUI
             f.ShowDialog();
             loadTenant(null);
         }
-        private void FilterAssets(string priceSort, string nameSort)
+        private void FilterAssets()
         {
             try
             {
-                DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.SelectedItem.ToString());
+                string priceSort = checkBox23.Checked ? "ASC" : null
+                                 + (checkBox22.Checked ? "DESC" : null);
+                string nameSort = checkBox19.Checked ? guna2TextBox1.Text : null;
+                DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.Text);
 
                 dgv_QLCSVC.DataSource = null; 
                 dgv_QLCSVC.DataSource = filteredData;
@@ -826,7 +822,6 @@ namespace GUI
                 dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
                 dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
                 dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
-                load_Assets();
             }
             catch (Exception ex)
             {
@@ -918,12 +913,8 @@ namespace GUI
             {
                 checkBox22.Checked = false;
                 checkBox19.Checked = false;
-                FilterAssets("ASC", null);
             }
-            else
-            {
-                FilterAssets(null, null);
-            }
+            FilterAssets();
         }
 
         private void checkBox22_CheckedChanged(object sender, EventArgs e)
@@ -932,12 +923,8 @@ namespace GUI
             {
                 checkBox23.Checked = false;
                 checkBox19.Checked = false;
-                FilterAssets("DESC", null);
             }
-            else
-            {
-                FilterAssets(null, null);
-            }
+            FilterAssets();
         }
 
         private void checkBox19_CheckedChanged(object sender, EventArgs e)
@@ -946,12 +933,8 @@ namespace GUI
             {
                 checkBox23.Checked = false;
                 checkBox22.Checked = false;
-                FilterAssets(null, guna2TextBox1.Text.Trim());
             }
-            else
-            {
-                FilterAssets(null, null);
-            }
+            FilterAssets();
         }
 
 
@@ -1030,20 +1013,17 @@ namespace GUI
         {
             try
             {
-                List<string> selectedStatuses = new List<string>();
-
-                if (DangO_chbox1.Checked) selectedStatuses.Add(DangO_chbox1.Text);
-                if (DangTrong_chbox1.Checked) selectedStatuses.Add(DangTrong_chbox1.Text);
-                if (DangKT_chbox1.Checked) selectedStatuses.Add(DangKT_chbox1.Text);
-                if (DangCoc_chbox.Checked) selectedStatuses.Add(DangCoc_chbox.Text);
-                if (SapHetHan_chbox.Checked) selectedStatuses.Add(SapHetHan_chbox.Text);
-                if (DaQuaHan_chbox.Checked) selectedStatuses.Add(DaQuaHan_chbox.Text);
-                if (DangNoTien_chbox.Checked) selectedStatuses.Add(DangNoTien_chbox.Text);
-
-                string statusFilter = string.Join("; ", selectedStatuses);
+                string status = (DangO_chbox1.Checked ? "Đang ở; " : "")
+                              + (DangTrong_chbox1.Checked ? "Đang trống; " : "")
+                              + (DangKT_chbox1.Checked ? "Đang báo kết thúc; " : "")
+                              + (DangCoc_chbox.Checked ? "Đang cọc giữ chỗ; " : "")
+                              + (DaQuaHan_chbox.Checked ? "Đã hết hạn hợp đồng; " : "")
+                              + (SapHetHan_chbox.Checked ? "Sắp hết hạn hợp đồng; " : "")
+                              + (DangNoTien_chbox.Checked ? "Đang nợ tiền" : "");
+                status = status.TrimEnd(';', ' ');
 
 
-                DataTable filteredData = RoomBLL.FilterRoomByStatus(statusFilter, form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
+                DataTable filteredData = RoomBLL.FilterRoomByStatus(status, form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
 
 
                 dgv_QLP.DataSource = null; 

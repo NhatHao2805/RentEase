@@ -172,42 +172,42 @@ INSERT INTO PARKINGAREA (AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY) VALUES
 
 -- 15 ASSETS
 INSERT INTO ASSETS (ASSETID, ROOMID, ASSETNAME, PRICE, STATUS, USE_DATE) VALUES
-('TS001', 'R001', 'Điều hòa', 8000000, 'Tốt', '2023-12-01'),
-('TS002', 'R001', 'Tủ lạnh', 7000000, 'Tốt', '2023-12-01'),
-('TS003', 'R002', 'Điều hòa', 8000000, 'Tốt', '2023-12-15'),
-('TS004', 'R002', 'Máy giặt', 6000000, 'Tốt', '2023-12-15'),
-('TS005', 'R003', 'Điều hòa', 8000000, 'Tốt', '2024-01-05'),
-('TS006', 'R003', 'Tủ lạnh', 7000000, 'Tốt', '2024-01-05'),
-('TS007', 'R003', 'Máy giặt', 6000000, 'Tốt', '2024-01-05'),
-('TS008', 'R004', 'Điều hòa', 8000000, 'Tốt', '2024-02-01'),
-('TS009', 'R005', 'Điều hòa', 8000000, 'Tốt', '2024-03-01'),
-('TS010', 'R005', 'Tủ lạnh', 7000000, 'Tốt', '2024-03-01');
+('TS0001', 'R001', 'Điều hòa', 8000000, 'Tốt', '2023-12-01'),
+('TS0002', 'R001', 'Tủ lạnh', 7000000, 'Tốt', '2023-12-01'),
+('TS0003', 'R002', 'Điều hòa', 8000000, 'Tốt', '2023-12-15'),
+('TS0004', 'R002', 'Máy giặt', 6000000, 'Tốt', '2023-12-15'),
+('TS0005', 'R003', 'Điều hòa', 8000000, 'Tốt', '2024-01-05'),
+('TS0006', 'R003', 'Tủ lạnh', 7000000, 'Tốt', '2024-01-05'),
+('TS0007', 'R003', 'Máy giặt', 6000000, 'Tốt', '2024-01-05'),
+('TS0008', 'R004', 'Điều hòa', 8000000, 'Tốt', '2024-02-01'),
+('TS0009', 'R005', 'Điều hòa', 8000000, 'Tốt', '2024-03-01'),
+('TS0010', 'R005', 'Tủ lạnh', 7000000, 'Tốt', '2024-03-01');
 
 -- 16 MAINTENANCE
 INSERT INTO MAINTENANCE (MAINTENANCEID, ASSETID, MAINTENANCE_DATE, DESCRIPTION, STATUS) VALUES
-('BT001', 'TS001', '2024-01-15', 'Vệ sinh điều hòa', 'Hoàn thành'),
-('BT002', 'TS002', '2024-01-15', 'Kiểm tra tủ lạnh', 'Hoàn thành'),
-('BT003', 'TS003', '2024-02-20', 'Bảo dưỡng điều hòa', 'Hoàn thành'),
-('BT004', 'TS004', '2024-02-20', 'Kiểm tra máy giặt', 'Hoàn thành'),
-('BT005', 'TS005', '2024-03-10', 'Vệ sinh điều hòa', 'Hoàn thành'),
-('BT006', 'TS006', '2024-03-10', 'Kiểm tra tủ lạnh', 'Hoàn thành'),
-('BT007', 'TS007', '2024-03-10', 'Bảo dưỡng máy giặt', 'Hoàn thành'),
-('BT008', 'TS008', '2024-04-05', 'Vệ sinh điều hòa', 'Hoàn thành'),
-('BT009', 'TS009', '2024-05-12', 'Kiểm tra điều hòa', 'Hoàn thành'),
-('BT010', 'TS010', '2024-05-12', 'Bảo dưỡng tủ lạnh', 'Hoàn thành');
+('BT001', 'TS0001', '2024-01-15', 'Vệ sinh điều hòa', 'Hoàn thành'),
+('BT002', 'TS0002', '2024-01-15', 'Kiểm tra tủ lạnh', 'Hoàn thành'),
+('BT003', 'TS0003', '2024-02-20', 'Bảo dưỡng điều hòa', 'Hoàn thành'),
+('BT004', 'TS0004', '2024-02-20', 'Kiểm tra máy giặt', 'Hoàn thành'),
+('BT005', 'TS0005', '2024-03-10', 'Vệ sinh điều hòa', 'Hoàn thành'),
+('BT006', 'TS0006', '2024-03-10', 'Kiểm tra tủ lạnh', 'Hoàn thành'),
+('BT007', 'TS0007', '2024-03-10', 'Bảo dưỡng máy giặt', 'Hoàn thành'),
+('BT008', 'TS0008', '2024-04-05', 'Vệ sinh điều hòa', 'Hoàn thành'),
+('BT009', 'TS0009', '2024-05-12', 'Kiểm tra điều hòa', 'Hoàn thành'),
+('BT010', 'TS0010', '2024-05-12', 'Bảo dưỡng tủ lạnh', 'Hoàn thành');
 
 -- 17 REPAIR_REQUEST
 INSERT INTO REPAIR_REQUEST (REQUESTID, ASSETID, TENANTID, REQUEST_DATE, DESCRIPTION, STATUS) VALUES
-('YC001', 'TS001', 'T001', '2024-01-20', 'Điều hòa chảy nước', 'Đã xử lý'),
-('YC002', 'TS002', 'T001', '2024-01-25', 'Tủ lạnh không lạnh', 'Đã xử lý'),
-('YC003', 'TS003', 'T002', '2024-02-15', 'Máy giặt không vắt', 'Đã xử lý'),
-('YC004', 'TS004', 'T002', '2024-02-20', 'Điều hòa không mát', 'Đã xử lý'),
-('YC005', 'TS005', 'T003', '2024-03-12', 'Tủ lạnh kêu to', 'Đã xử lý'),
-('YC006', 'TS006', 'T003', '2024-03-15', 'Máy giặt rò rỉ nước', 'Đã xử lý'),
-('YC007', 'TS007', 'T004', '2024-04-25', 'Điều hòa không hoạt động', 'Đã xử lý'),
-('YC008', 'TS008', 'T004', '2024-05-05', 'Tủ lạnh đóng tuyết', 'Đã xử lý'),
-('YC009', 'TS009', 'T005', '2024-05-20', 'Máy giặt không cấp nước', 'Đã xử lý'),
-('YC010', 'TS010', 'T005', '2024-06-10', 'Điều hòa không lạnh', 'Đang xử lý');
+('YC001', 'TS0001', 'T001', '2024-01-20', 'Điều hòa chảy nước', 'Đã xử lý'),
+('YC002', 'TS0002', 'T001', '2024-01-25', 'Tủ lạnh không lạnh', 'Đã xử lý'),
+('YC003', 'TS0003', 'T002', '2024-02-15', 'Máy giặt không vắt', 'Đã xử lý'),
+('YC004', 'TS0004', 'T002', '2024-02-20', 'Điều hòa không mát', 'Đã xử lý'),
+('YC005', 'TS0005', 'T003', '2024-03-12', 'Tủ lạnh kêu to', 'Đã xử lý'),
+('YC006', 'TS0006', 'T003', '2024-03-15', 'Máy giặt rò rỉ nước', 'Đã xử lý'),
+('YC007', 'TS0007', 'T004', '2024-04-25', 'Điều hòa không hoạt động', 'Đã xử lý'),
+('YC008', 'TS0008', 'T004', '2024-05-05', 'Tủ lạnh đóng tuyết', 'Đã xử lý'),
+('YC009', 'TS0009', 'T005', '2024-05-20', 'Máy giặt không cấp nước', 'Đã xử lý'),
+('YC010', 'TS0010', 'T005', '2024-06-10', 'Điều hòa không lạnh', 'Đang xử lý');
 
 -- 18 FINGERPRINTS
 INSERT INTO FINGERPRINTS (FINGERID, USERNAME, TENANTID, AREAPERMISSION, ENROLLMENT_DATE) VALUES

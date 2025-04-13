@@ -73,7 +73,7 @@ namespace GUI
             assets.UseDate = useDate_dtp.Value.ToString("yyyy-MM-dd");
             assets.Status = status_cb.Text;
 
-            string check = AssetBLL.CheckLogic(assets);
+            string check = AssetBLL.CheckLogic(assets, _buildingid);
 
             switch (check)
             {

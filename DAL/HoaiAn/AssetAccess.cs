@@ -86,7 +86,7 @@ namespace DAL
             return dt;
         }
 
-        public static string addAsset(Assets assets)
+        public static string addAsset(Assets assets, string buildingid)
         {
             try
             {
@@ -98,6 +98,7 @@ namespace DAL
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
+                        command.Parameters.AddWithValue("@p_buildingid", buildingid);
                         command.Parameters.AddWithValue("@p_roomid", assets.RoomId);
                         command.Parameters.AddWithValue("@p_assetname", assets.AssetName);
                         command.Parameters.AddWithValue("@p_price", assets.Price);

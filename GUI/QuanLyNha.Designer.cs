@@ -4227,6 +4227,7 @@ namespace GUI
             this.dgv_QLCSVC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_QLCSVC.Location = new System.Drawing.Point(3, 240);
             this.dgv_QLCSVC.Name = "dgv_QLCSVC";
+            this.dgv_QLCSVC.ReadOnly = true;
             this.dgv_QLCSVC.RowHeadersVisible = false;
             this.dgv_QLCSVC.RowHeadersWidth = 51;
             this.dgv_QLCSVC.RowTemplate.Height = 24;
@@ -4245,7 +4246,7 @@ namespace GUI
             this.dgv_QLCSVC.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgv_QLCSVC.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_QLCSVC.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgv_QLCSVC.ThemeStyle.ReadOnly = false;
+            this.dgv_QLCSVC.ThemeStyle.ReadOnly = true;
             this.dgv_QLCSVC.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_QLCSVC.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_QLCSVC.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

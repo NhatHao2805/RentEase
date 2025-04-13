@@ -428,6 +428,25 @@ BEGIN
         SET p_message = 'Không tìm thấy bãi đậu xe';
     END IF;
 END//
+-- New 13/4
+CREATE DEFINER=`root`@`localhost` FUNCTION `createAssetID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE new_key VARCHAR(10);
+	DECLARE max_key INT;
+    
+   -- Lấy giá trị lớn nhất hiện có trong bảng (giả sử bảng có tên là 'your_table' và cột khóa chính là 'id')
+    SELECT COALESCE(MAX(CAST(SUBSTRING(ASSETID, 3) AS UNSIGNED)), 0) INTO max_key FROM ASSETS;
+
+    -- Tăng giá trị lên 1
+    SET max_key = max_key + 1;
+
+    -- Tạo khóa mới với định dạng PA + 4 số
+    SET new_key = CONCAT('TS', LPAD(max_key, 4, '0'));
+
+    RETURN new_key;
+END//
 
 CREATE PROCEDURE proc_addAsset(
     IN p_buildingid VARCHAR(20),
@@ -440,35 +459,25 @@ CREATE PROCEDURE proc_addAsset(
 BEGIN
     DECLARE new_asset_id VARCHAR(20);
     
-    -- Kiểm tra xem phòng có thuộc tòa nhà không
-    IF EXISTS (
-        SELECT 1 FROM ROOM r
-        WHERE r.ROOMID = p_roomid
-        AND r.BUILDINGID = p_buildingid
-    ) THEN
-        -- Tạo ID mới cho tài sản
-        SET new_asset_id = createAssetID();
-        
-        -- Thêm tài sản mới
-        INSERT INTO ASSETS (
-            ASSETID,
-            ROOMID,
-            ASSETNAME,
-            PRICE,
-            STATUS,
-            USE_DATE
-        ) VALUES (
-            new_asset_id,
-            p_roomid,
-            p_assetname,
-            p_price,
-            p_status,
-            p_usedate
-        );
-    ELSE
-        SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Phòng không thuộc tòa nhà được chỉ định';
-    END IF;
+	-- Tạo ID mới cho tài sản
+	SET new_asset_id = createAssetID();
+	
+	-- Thêm tài sản mới
+	INSERT INTO ASSETS (
+		ASSETID,
+		ROOMID,
+		ASSETNAME,
+		PRICE,
+		STATUS,
+		USE_DATE
+	) VALUES (
+		new_asset_id,
+		p_roomid,
+		p_assetname,
+		p_price,
+		p_status,
+		p_usedate
+	);
 END//
 
 CREATE PROCEDURE sp_FilterVehicle(

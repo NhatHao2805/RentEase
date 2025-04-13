@@ -96,16 +96,15 @@ namespace GUI
             room.Price = price_tb.Text;
             room.Area = area_tb.Text;
 
-            string status = "";
-            foreach (Control control in this.Controls)
-            {
-                if (control is CheckBox checkBox && checkBox.Checked)
-                {
-                    status += checkBox.Text + "; ";
-                }
-            }
+            string status = (DangO_chbox.Checked ? "Đang ở; " : "")
+              + (DangTrong_chbox.Checked ? "Đang trống; " : "")
+              + (DangKT_chbox.Checked ? "Đang báo kết thúc; " : "")
+              + (DangCoc_chbox.Checked ? "Đang cọc giữ chỗ; " : "")
+              + (DaHetHan_chbox.Checked ? "Đã hết hạn hợp đồng; " : "")
+              + (SapHetHan_chbox.Checked ? "Sắp hết hạn hợp đồng; " : "")
+              + (DangNoTien_chbox.Checked ? "Đang nợ tiền" : "");
             room.Status = status.TrimEnd(';', ' ');
-            MessageBox.Show(room.Status);
+            
 
             string check = roomBLL.CheckLogic(room);
 
@@ -135,6 +134,9 @@ namespace GUI
                     MessageBox.Show("Giá phòng không hợp lệ\nVí dụ: 2000000 hoặc 3.500000");
                     price_tb.Text = string.Empty;
                     room.Price = null;
+                    return;
+                case "required_status":
+                    MessageBox.Show("Bạn chưa chọn trạng thái");
                     return;
                 case "Out range of number room of floor":
                     MessageBox.Show("Vượt quá số phòng của tầng");

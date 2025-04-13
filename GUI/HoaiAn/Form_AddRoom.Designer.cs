@@ -144,13 +144,11 @@
             // DangO_chbox
             // 
             this.DangO_chbox.AutoSize = true;
-            this.DangO_chbox.Checked = true;
             this.DangO_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangO_chbox.CheckedState.BorderRadius = 0;
             this.DangO_chbox.CheckedState.BorderThickness = 0;
             this.DangO_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangO_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
-            this.DangO_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DangO_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F);
             this.DangO_chbox.Location = new System.Drawing.Point(164, 32);
             this.DangO_chbox.Name = "DangO_chbox";
             this.DangO_chbox.Size = new System.Drawing.Size(73, 21);
@@ -164,12 +162,10 @@
             // DangTrong_chbox
             // 
             this.DangTrong_chbox.AutoSize = true;
-            this.DangTrong_chbox.Checked = true;
             this.DangTrong_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangTrong_chbox.CheckedState.BorderRadius = 0;
             this.DangTrong_chbox.CheckedState.BorderThickness = 0;
             this.DangTrong_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangTrong_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DangTrong_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangTrong_chbox.Location = new System.Drawing.Point(348, 32);
             this.DangTrong_chbox.Name = "DangTrong_chbox";
@@ -184,12 +180,10 @@
             // DangKT_chbox
             // 
             this.DangKT_chbox.AutoSize = true;
-            this.DangKT_chbox.Checked = true;
             this.DangKT_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangKT_chbox.CheckedState.BorderRadius = 0;
             this.DangKT_chbox.CheckedState.BorderThickness = 0;
             this.DangKT_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangKT_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DangKT_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangKT_chbox.Location = new System.Drawing.Point(164, 70);
             this.DangKT_chbox.Name = "DangKT_chbox";
@@ -204,12 +198,10 @@
             // DangCoc_chbox
             // 
             this.DangCoc_chbox.AutoSize = true;
-            this.DangCoc_chbox.Checked = true;
             this.DangCoc_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangCoc_chbox.CheckedState.BorderRadius = 0;
             this.DangCoc_chbox.CheckedState.BorderThickness = 0;
             this.DangCoc_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangCoc_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DangCoc_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangCoc_chbox.Location = new System.Drawing.Point(348, 70);
             this.DangCoc_chbox.Name = "DangCoc_chbox";
@@ -224,12 +216,10 @@
             // SapHetHan_chbox
             // 
             this.SapHetHan_chbox.AutoSize = true;
-            this.SapHetHan_chbox.Checked = true;
             this.SapHetHan_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.SapHetHan_chbox.CheckedState.BorderRadius = 0;
             this.SapHetHan_chbox.CheckedState.BorderThickness = 0;
             this.SapHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.SapHetHan_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.SapHetHan_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SapHetHan_chbox.Location = new System.Drawing.Point(348, 105);
             this.SapHetHan_chbox.Name = "SapHetHan_chbox";
@@ -244,12 +234,10 @@
             // DaHetHan_chbox
             // 
             this.DaHetHan_chbox.AutoSize = true;
-            this.DaHetHan_chbox.Checked = true;
             this.DaHetHan_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DaHetHan_chbox.CheckedState.BorderRadius = 0;
             this.DaHetHan_chbox.CheckedState.BorderThickness = 0;
             this.DaHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DaHetHan_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DaHetHan_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DaHetHan_chbox.Location = new System.Drawing.Point(164, 105);
             this.DaHetHan_chbox.Name = "DaHetHan_chbox";
@@ -264,12 +252,10 @@
             // DangNoTien_chbox
             // 
             this.DangNoTien_chbox.AutoSize = true;
-            this.DangNoTien_chbox.Checked = true;
             this.DangNoTien_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.DangNoTien_chbox.CheckedState.BorderRadius = 0;
             this.DangNoTien_chbox.CheckedState.BorderThickness = 0;
             this.DangNoTien_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangNoTien_chbox.CheckState = System.Windows.Forms.CheckState.Indeterminate;
             this.DangNoTien_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangNoTien_chbox.Location = new System.Drawing.Point(164, 139);
             this.DangNoTien_chbox.Name = "DangNoTien_chbox";

@@ -111,7 +111,7 @@ namespace GUI
             assets.AssetName = assetName_tb.Text;
             assets.Price = price_tb.Text;
             assets.UseDate = useDate_dpk.Value.ToString("yyyy-MM-dd");
-            assets.Status = status_cb.SelectedIndex.ToString();
+            assets.Status = status_cb.SelectedItem.ToString();
 
             string check = AssetBLL.UpdateAsset(assets);
 
@@ -142,12 +142,6 @@ namespace GUI
                     return;
             }
         }
-
-        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void close_btn_Click(object sender, EventArgs e)
         {
             this.Close();

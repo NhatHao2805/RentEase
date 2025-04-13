@@ -79,6 +79,11 @@ namespace BLL
                 }
             }
 
+            if (string.IsNullOrEmpty(room.Status))
+            {
+                return "required_status";
+            }
+
             if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") < room.Status.IndexOf("Đang trống"))
             {
                 return "Không thể vừa 'Đang ở' vừa 'Đang trống'.";
@@ -138,6 +143,11 @@ namespace BLL
                 {
                     return "invalid_price_format";
                 }
+            }
+
+            if (string.IsNullOrEmpty(room.Status))
+            {
+                return "required_status";
             }
 
             if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") < room.Status.IndexOf("Đang trống"))
