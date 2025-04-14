@@ -22,7 +22,7 @@ namespace BLL
                 return "required_address";
             }
 
-            if (string.IsNullOrEmpty(area.Type))
+            if (string.IsNullOrEmpty(area.Type) || area.Type == "-1")
             {
                 return "required_type";
             }

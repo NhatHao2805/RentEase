@@ -211,12 +211,8 @@ BEGIN
    JOIN service s ON s.SERVICEID = bd.ID
    WHERE bd.BILLID = p_billID
 	union
-	SELECT bd.BILLID,bd.ID,
-	CASE 
-        WHEN w.`TYPE` = 'WATER' THEN 'Nước'
-        WHEN w.`TYPE` = 'ELECTRICITY' THEN 'Điện'
-        ELSE w.`TYPE`
-   END,bd.AMOUNT FROM billdetail bd 
+	SELECT bd.BILLID,bd.ID,w.`TYPE`
+   ,bd.AMOUNT FROM billdetail bd 
    JOIN water_electricity w ON w.FIGUREID = bd.ID
 	WHERE bd.BILLID = p_billID;
 END//
@@ -524,7 +520,7 @@ BEGIN
 
     RETURN new_key;
 END//
-
+-- New 14/4
 CREATE PROCEDURE proc_addVehicle(
     IN p_tenantid VARCHAR(20),
     IN p_vehicle_unitprice_id VARCHAR(20),
@@ -534,7 +530,9 @@ CREATE PROCEDURE proc_addVehicle(
 )
 BEGIN
     DECLARE p_new_vehicle_id VARCHAR(20);
-    
+    DECLARE new_parking_id VARCHAR(10);
+    DECLARE i INT DEFAULT 0;
+
     -- Tạo ID mới cho phương tiện
     SET p_new_vehicle_id = createVehicleID();
     
@@ -557,12 +555,10 @@ BEGIN
         p_type,
         p_licenseplate
     );
-
-    -- Cập nhật bảng PARKING để thêm ID phương tiện vào chỗ đậu xe có giá trị NULL
-    UPDATE PARKING
-    SET VEHICLEID = p_new_vehicle_id
-    WHERE AREAID = p_areaid AND VEHICLEID IS NULL
-    LIMIT 1;  -- Chỉ cập nhật một bản ghi đầu tiên có giá trị NULL
+    
+	SET new_parking_id = generate_parking_id();
+	INSERT INTO PARKING (PARKINGID, AREAID, VEHICLEID, STATUS)
+	VALUES (new_parking_id, p_areaid, p_new_vehicle_id, 'dangsudung');
 END //
 -- New 12/4
 CREATE PROCEDURE proc_updateVehicle(
@@ -676,22 +672,22 @@ BEGIN
 
     RETURN new_id;
 END //
+-- New 14/4
+-- CREATE TRIGGER after_insert_parkingarea
+-- AFTER INSERT ON PARKINGAREA
+-- FOR EACH ROW
+-- BEGIN
+--     DECLARE i INT DEFAULT 0;
+--     DECLARE new_parking_id VARCHAR(10);
 
-CREATE TRIGGER after_insert_parkingarea
-AFTER INSERT ON PARKINGAREA
-FOR EACH ROW
-BEGIN
-    DECLARE i INT DEFAULT 0;
-    DECLARE new_parking_id VARCHAR(10);
+--     WHILE i < NEW.CAPACITY DO
+--         SET new_parking_id = generate_parking_id();
 
-    WHILE i < NEW.CAPACITY DO
-        SET new_parking_id = generate_parking_id();
+--         INSERT INTO PARKING (PARKINGID, AREAID, VEHICLEID, STATUS)
+--         VALUES (new_parking_id, NEW.AREAID, NULL, 'Đang sử dụng');
 
-        INSERT INTO PARKING (PARKINGID, AREAID, VEHICLEID, STATUS)
-        VALUES (new_parking_id, NEW.AREAID, NULL, 'Đang sử dụng');
-
-        SET i = i + 1;
-    END WHILE;
-END //
+--         SET i = i + 1;
+--     END WHILE;
+-- END //
 
 DELIMITER ;

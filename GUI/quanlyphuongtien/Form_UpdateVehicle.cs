@@ -76,7 +76,7 @@ namespace GUI
         private void add_btn_Click(object sender, EventArgs e)
         {
             vehicle.VehicleID = infor.VehicleID;
-            vehicle.TenantID = tenantid_cb.SelectedItem.ToString();
+            vehicle.TenantID = tenantid_cb.Text;
             vehicle.VehicleUnitPriceID = unitpriceid_tb.Text;
             vehicle.Type = type_cb.Text;
             vehicle.LicensePlate = licenseplate_tb.Text;
@@ -134,15 +134,13 @@ namespace GUI
             type_cb.Items.Clear();
             foreach (DataRow row in VehicleBLL.GetAllVehicle().Rows)
             {
-                type_cb.Items.Add(row["TYPE"].ToString());
+                type_cb.Items.Add(Language.translate(row["TYPE"].ToString()));
             }
             type_cb.SelectedItem= infor.Type;
 
             areaid_cb.Items.Clear();
-            // Lấy dữ liệu từ phương thức
-            System.Data.DataTable areaData = ParkingAreaBLL.GetAreaId(type_cb.SelectedItem.ToString(), _buildingid);
+            System.Data.DataTable areaData = ParkingAreaBLL.GetAreaId(Language.reverseTranslate(type_cb.Text), _buildingid);
 
-            // Kiểm tra xem DataTable có dữ liệu không
             if (areaData != null && areaData.Rows.Count > 0)
             {
                 foreach (DataRow row in areaData.Rows)
@@ -152,7 +150,6 @@ namespace GUI
             }
             else
             {
-                // Thông báo nếu không có dữ liệu
                 MessageBox.Show("Không tìm thấy bãi đậu xe cho loại xe đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             areaid_cb.SelectedItem = ParkingAreaBLL.GetAreaIdByVehicleId(infor.VehicleID).Rows[0]["AREAID"].ToString();
@@ -172,10 +169,8 @@ namespace GUI
         private void type_cb_SelectedIndexChanged(object sender, EventArgs e)
         {
             areaid_cb.Items.Clear();
-            // Lấy dữ liệu từ phương thức
-            System.Data.DataTable areaData = ParkingAreaBLL.GetAreaId(type_cb.SelectedItem.ToString(), _buildingid);
+            System.Data.DataTable areaData = ParkingAreaBLL.GetAreaId(Language.reverseTranslate(type_cb.Text), _buildingid);
 
-            // Kiểm tra xem DataTable có dữ liệu không
             if (areaData != null && areaData.Rows.Count > 0)
             {
                 foreach (DataRow row in areaData.Rows)
@@ -185,18 +180,16 @@ namespace GUI
             }
             else
             {
-                // Thông báo nếu không có dữ liệu
                 MessageBox.Show("Không tìm thấy bãi đậu xe cho loại xe đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             areaid_cb.SelectedItem = ParkingAreaBLL.GetAreaIdByVehicleId(infor.VehicleID).Rows[0]["AREAID"].ToString();
 
-            unitpriceid_tb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString()).ToString();
+            unitpriceid_tb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(Language.reverseTranslate(type_cb.Text)).ToString();
             if (type_cb.SelectedItem == null) return;
 
             try
             {
-                // Lấy DataTable chứa ID đơn giá
-                System.Data.DataTable dt = VehicleBLL.GetVehicleUnitPriceIdByType(type_cb.SelectedItem.ToString());
+                System.Data.DataTable dt = VehicleBLL.GetVehicleUnitPriceIdByType(Language.reverseTranslate(type_cb.Text));
 
                 if (dt.Rows.Count > 0)
                 {

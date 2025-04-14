@@ -59,18 +59,14 @@ namespace GUI
             }
         }
 
-
-//parking.update_title: Update Parking
-//parking.update_subtitle: Update parking in table
         private void add_btn_Click_1(object sender, EventArgs e)
         {
             area.BuildingId = _buildingid;
             area.Address = address_tb.Text;
-            area.Type = type_cb.Text;
+            area.Type = Language.reverseTranslate(type_cb.Text);
             area.Capacity = capacity_tb.Text;
 
             string check = ParkingAreaBLL.CheckLogic(area);
-
             switch (check)
             {
                 case "required_address":
@@ -105,9 +101,9 @@ namespace GUI
         private void Form_AddParkingArea_Load(object sender, EventArgs e)
         {
             type_cb.Items.Clear();
-            type_cb.Items.Add("Xe ô tô");
-            type_cb.Items.Add("Xe máy/Xe đạp");
-            type_cb.Items.Add("Hỗn hợp");
+            type_cb.Items.Add(Language.translate("xeoto"));
+            type_cb.Items.Add(Language.translate("xemay/xedap"));
+            type_cb.Items.Add(Language.translate("honhop"));
         }
 
         private void exitButton_Click(object sender, EventArgs e)

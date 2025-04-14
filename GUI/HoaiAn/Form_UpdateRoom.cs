@@ -105,10 +105,19 @@ namespace GUI
                 floor_cb.Items.Add(i);
             }
 
-            // Load loại phòng
-            type_cb.Items.Add("Nhà trọ");
-            type_cb.Items.Add("Chung cư 1 phòng ngủ");
-            type_cb.Items.Add("Chung cư 2 phòng ngủ");
+            string[] a = {Language.translate("phongdon"),
+                Language.translate("phongdoi"),
+                Language.translate("phongthuong"),
+                Language.translate("phongcaocap"),
+                Language.translate("studio"),
+                Language.translate("phongnguyencan")};
+            foreach (string item in a)
+            {
+                if (!type_cb.Items.Contains(item))
+                {
+                    type_cb.Items.Add(item);
+                }
+            }
 
             // Hiển thị thông tin phòng lên các control
             roomid_cb.SelectedItem = infor.RoomId;
@@ -126,28 +135,27 @@ namespace GUI
                 foreach (string status in statuses)
                 {
                     string trimmedStatus = status.Trim();
-
-                    switch (trimmedStatus)
+                    switch (Language.reverseTranslate(trimmedStatus))
                     {
-                        case "Sắp hết hạn hợp đồng":
+                        case "saphethanhopdong":
                             SapHetHan_chbox.Checked = true;
                             break;
-                        case "Đang cọc giữ chỗ":
+                        case "dangcocgiucho":
                             DangCoc_chbox.Checked = true;
                             break;
-                        case "Đã hết hạn hợp đồng":
+                        case "dahethanhopdong":
                             DaHetHan_chbox.Checked = true;
                             break;
-                        case "Đang báo kết thúc":
+                        case "dangbaoketthuc":
                             DangKT_chbox.Checked = true;
                             break;
-                        case "Đang nợ tiền":
+                        case "dangnotien":
                             DangNoTien_chbox.Checked = true;
                             break;
-                        case "Đang trống":
+                        case "dangtrong":
                             DangTrong_chbox.Checked = true;
                             break;
-                        case "Đang ở":
+                        case "dango":
                             DangO_chbox.Checked = true;
                             break;
                     }
@@ -169,13 +177,13 @@ namespace GUI
             room.Price = price_tb.Text;
             room.Area = area_tb.Text;
 
-            string status = (DangO_chbox.Checked ? "Đang ở; " : "")
-              + (DangTrong_chbox.Checked ? "Đang trống; " : "")
-              + (DangKT_chbox.Checked ? "Đang báo kết thúc; " : "")
-              + (DangCoc_chbox.Checked ? "Đang cọc giữ chỗ; " : "")
-              + (DaHetHan_chbox.Checked ? "Đã hết hạn hợp đồng; " : "")
-              + (SapHetHan_chbox.Checked ? "Sắp hết hạn hợp đồng; " : "")
-              + (DangNoTien_chbox.Checked ? "Đang nợ tiền" : "");
+            string status = (DangO_chbox.Checked ? Language.reverseTranslate(DangO_chbox.Text) + "; " : "")
+              + (DangTrong_chbox.Checked ? Language.reverseTranslate(DangTrong_chbox.Text) + "; " : "")
+              + (DangKT_chbox.Checked ? Language.reverseTranslate(DangKT_chbox.Text) + "; " : "")
+              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
+              + (DaHetHan_chbox.Checked ? Language.reverseTranslate(DaHetHan_chbox.Text) + "; " : "")
+              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
+              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) : "");
             room.Status = status.TrimEnd(';', ' ');
 
             string check = RoomBLL.UpdateRoom(room);

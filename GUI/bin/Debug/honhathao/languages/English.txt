@@ -1,4 +1,53 @@
-﻿Title: Sign in
+﻿phongdon: Single Room  
+phongdoi: Double Room  
+phongthuong: Standard Room  
+phongcaocap: Premium Room  
+studio: Studio  
+phongnguyencan: Entire Unit  
+dauthang: Beginning of Month
+cuoithang: End of Month
+dango: Occupied
+dangbaoketthuc: Ending soon
+daquahanhopdong: Contract expired
+dangnotien: Owing Money
+dangtrong: Vacant
+dangcocgiucho: Reserved
+saphethanhopdong: Contract Expiring Soon
+nam: Male
+nu: Female
+dangcho: Pending
+daduyet: Approved
+ELECTRICITY: Electricity
+WATER: Water
+tienmat: Cash
+chuyenkhoan: Bank Transfer
+thetindung: Credit Card
+xemay: Motorbike
+xeoto: Car
+xedap: Bicycle
+xemay/xedap: Motorbike/Bicycle
+honhop: Mixed
+tot: Good
+huhongnhe: Minor damage
+canduocsuachua/thaythe: Need repair/replacement
+dangsuachua: Being repaired
+dangthaythe: Being replaced
+khonghieuluc: Unavailable
+danghieuluc: Available
+hoanthanh: Completed
+chuahoanthanh: Not completed
+daxuly: Paid
+chuaxuly: Unpaid
+dangxuly: Processing
+dagiaiquyet: Resolved
+chuagiaiquyet: Unresolved
+dangsudung: In use
+chuasudung: Not in use
+cho: Dog
+meo: Cat
+chim: Bird
+ca: Fish
+Title: Sign in
 Username: Username
 Password: Password
 Password2: Confirm Password
@@ -252,7 +301,7 @@ vehicle.table_header.license_plate: License Plate
 vehicle.table_header.parking_slot_id: Parking Slot Id
 vehicle.table_header.status: Status
 vehicle.type.car: Car
-vehicle.type.motorbike: Motorbike
+vehicle.type.motor_bike: Motorbike
 vehicle.type.bicycle: Bicycle
 btn_vantay: Fingerprint Management
 label_lang: Language
@@ -329,7 +378,7 @@ btn_dong: Close
 :Form_addRoom
 room.add_title: Add Room
 room.add_subtitle: Add New Room
-property_type: House
+property_type: Floor
 classification: Classification
 amenities: Amenities
 area: Area
@@ -376,3 +425,12 @@ vehicle.price_id: Price ID
 vehicle.update_title: Update Vehicle
 vehicle.update_subtitle: Update vehicle to table
 vihicle.vehicle_id: Vehicle ID
+assetdetail.assetid: Asset ID  
+assetdetail.assetname: Asset Name  
+assetdetail.price: Price  
+assetdetail.asset_status: Asset Status  
+assetdetail.use_date: Use Date  
+assetdetail.roomid: Room ID  
+assetdetail.room_type: Room Type
+assetdetail.floor: Floor  
+assetdetail.buildingid: Building ID  

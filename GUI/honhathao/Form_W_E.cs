@@ -5,11 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 namespace GUI.honhathao
 {
@@ -103,6 +105,13 @@ namespace GUI.honhathao
 
             DataTable data = W_E_BLL.W_E_BLL_load_W_E(usern, buildingid);
             dgv_we.DataSource = data;
+            foreach (DataGridViewRow row in dgv_we.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    row.Cells[9].Value = Language.translate(row.Cells[9].Value.ToString());
+                }
+            }
             loadLanguage();
         }
     }

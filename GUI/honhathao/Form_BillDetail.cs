@@ -1,12 +1,15 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace GUI.honhathao
@@ -40,7 +43,15 @@ namespace GUI.honhathao
         private void loadInfo()
         {
             DataTable dataTable = BLL.honhathao.BillDetailBLL.load_BillDetail(billid);
+
             dgv_billdetail.DataSource = dataTable;
+            foreach (DataGridViewRow row in dgv_billdetail.Rows)
+            {
+                if (!row.IsNewRow)
+                {   
+                    row.Cells[2].Value = Language.translate(row.Cells[2].Value.ToString());
+                }
+            }
         }
     }
 }

@@ -77,11 +77,16 @@ namespace GUI
             roomid_cb.SelectedValue = infor.RoomId;
 
             status_cb.Items.Clear();
-            status_cb.Items.Add("Tốt");
-            status_cb.Items.Add("Hư hỏng nhẹ");
-            status_cb.Items.Add("Cần được sửa chữa/thay thế");
-            status_cb.Items.Add("Đang sửa chữa");
-            status_cb.Items.Add("Đang thay thế");
+            status_cb.Items.Add(infor.Status);
+
+            string[] status = { Language.translate("tot"), Language.translate("huhongnhe"), Language.translate("canduocsuachua/thaythe"), Language.translate("dangthaythe"), Language.translate("dangsuthaythe") };
+            foreach (string s in status)
+            {
+                if (!status_cb.Items.Contains(s))
+                {
+                    status_cb.Items.Add(s);
+                }
+            }
 
             // Hiển thị thông tin phòng lên các control
             roomid_cb.SelectedItem = infor.RoomId;
@@ -111,7 +116,7 @@ namespace GUI
             assets.AssetName = assetName_tb.Text;
             assets.Price = price_tb.Text;
             assets.UseDate = useDate_dpk.Value.ToString("yyyy-MM-dd");
-            assets.Status = status_cb.SelectedItem.ToString();
+            assets.Status = Language.reverseTranslate(status_cb.SelectedItem.ToString());
 
             string check = AssetBLL.UpdateAsset(assets);
 

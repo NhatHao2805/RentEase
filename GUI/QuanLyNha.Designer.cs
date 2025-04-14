@@ -4227,7 +4227,6 @@ namespace GUI
             this.dgv_QLCSVC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_QLCSVC.Location = new System.Drawing.Point(3, 240);
             this.dgv_QLCSVC.Name = "dgv_QLCSVC";
-            this.dgv_QLCSVC.ReadOnly = true;
             this.dgv_QLCSVC.RowHeadersVisible = false;
             this.dgv_QLCSVC.RowHeadersWidth = 51;
             this.dgv_QLCSVC.RowTemplate.Height = 24;
@@ -4246,7 +4245,7 @@ namespace GUI
             this.dgv_QLCSVC.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgv_QLCSVC.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgv_QLCSVC.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgv_QLCSVC.ThemeStyle.ReadOnly = true;
+            this.dgv_QLCSVC.ThemeStyle.ReadOnly = false;
             this.dgv_QLCSVC.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_QLCSVC.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_QLCSVC.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -5040,7 +5039,7 @@ namespace GUI
             // 
             this.checkBox11.AutoSize = true;
             this.checkBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox11.Location = new System.Drawing.Point(196, 13);
+            this.checkBox11.Location = new System.Drawing.Point(184, 13);
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(149, 22);
             this.checkBox11.TabIndex = 110;
@@ -5052,7 +5051,7 @@ namespace GUI
             // 
             this.checkBox17.AutoSize = true;
             this.checkBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox17.Location = new System.Drawing.Point(549, 13);
+            this.checkBox17.Location = new System.Drawing.Point(552, 13);
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(137, 22);
             this.checkBox17.TabIndex = 111;
@@ -5064,7 +5063,7 @@ namespace GUI
             // 
             this.checkBox18.AutoSize = true;
             this.checkBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox18.Location = new System.Drawing.Point(397, 13);
+            this.checkBox18.Location = new System.Drawing.Point(386, 13);
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(128, 22);
             this.checkBox18.TabIndex = 112;
@@ -5076,7 +5075,7 @@ namespace GUI
             // 
             this.checkBox20.AutoSize = true;
             this.checkBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.checkBox20.Location = new System.Drawing.Point(704, 13);
+            this.checkBox20.Location = new System.Drawing.Point(707, 13);
             this.checkBox20.Name = "checkBox20";
             this.checkBox20.Size = new System.Drawing.Size(117, 22);
             this.checkBox20.TabIndex = 113;
