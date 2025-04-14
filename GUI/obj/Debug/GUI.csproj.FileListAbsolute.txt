@@ -568,8 +568,6 @@ D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.GUI_Service.DeleteService
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.GUI_Service.InsertService.resources
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.quanlynha.resources
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Properties.Resources.resources
-D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.QuanLyPhuonTien.resources
-D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.QuanLyPhuongTien.Suaphuongtien.resources
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.csproj.Up2Date
@@ -1586,3 +1584,7 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.ho
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_LoadAll.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_TenantHistory.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.Form_W_E.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_AddParkingArea.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_AddVehicle.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_UpdateParkingArea.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_UpdateVehicle.resources
