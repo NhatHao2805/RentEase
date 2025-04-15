@@ -11,13 +11,14 @@ using DTO;
 using BLL;
 using System.Runtime.InteropServices;
 using GUI;
+using GUI.BuildingManagement;
 namespace GUI
 {
     public partial class Form_Login: Form
     {
         public User taikhoan = new User();
         AccountBLL taikhoanBLL = new AccountBLL();
-        quanlynha f2;
+        Form_Building f2;
         public Form_Login()
         {
             InitializeComponent();
@@ -59,7 +60,7 @@ namespace GUI
                     return;
             }
             //Chưa hoàn chỉnh
-            f2 = new quanlynha(this);
+            f2 = new Form_Building(this);
             f2.Show();
             this.Hide();
 

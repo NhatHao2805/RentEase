@@ -88,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuildingManagement\Form_Building.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuildingManagement\Form_Building.Designer.cs">
+      <DependentUpon>Form_Building.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContractTemplateForm .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,12 @@
     <Content Include="honhathao\languages\initialLanguage.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-fingerprint-64.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\5603109.jpg" />
+    <EmbeddedResource Include="BuildingManagement\Form_Building.resx">
+      <DependentUpon>Form_Building.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </EmbeddedResource>

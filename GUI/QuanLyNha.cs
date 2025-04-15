@@ -32,6 +32,7 @@ namespace GUI
     public partial class quanlynha: Form
     {
         Form_Login form1;
+        private int index;
         private int panel1_originalSize = 90;
         private int panel1_extendedSize = 90 + 170;
         private bool panel1_extendedEnabled = true;
@@ -46,11 +47,12 @@ namespace GUI
         private Point location_component_quanlytaichinh_1 = new Point(30,30);
         DataTable data = null;
 
-        public quanlynha(Form_Login form1)
+        public quanlynha(Form_Login form1, int index)
         {
             InitializeComponent();
             setStartPositon();
             this.form1 = form1;
+            this.index = index;
             load_Building_By_User();
             loadInfo();
         }
@@ -330,10 +332,10 @@ namespace GUI
             }
             else
             {
-                listBuildingID.SelectedIndex = 0;
+                listBuildingID.SelectedIndex = index;
                 buildingKey.Text = data.Rows[0][1].ToString();
             }
-           
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -690,4 +690,35 @@ END //
 --     END WHILE;
 -- END //
 
+-- New 15/4
+CREATE PROCEDURE addBuilding(
+	IN p_buildingkey VARCHAR(20),
+	IN p_username VARCHAR(20),
+   IN p_address VARCHAR(200),
+   IN p_numoffloors INT,
+   IN p_numofrooms INT
+)
+BEGIN
+	DECLARE newid VARCHAR(20);
+	SET newid = createBuildingID();
+	
+	
+	INSERT INTO Building (
+        BUILDINGID,
+        BUILDING_KEY,
+        USERNAME,
+        ADDRESS,
+        NUMOFFLOORS,
+        NUMOFROOMS
+    )
+    VALUES (
+        newid,
+        p_buildingkey,
+        p_username,
+        p_address,
+        p_numoffloors,
+        p_numofrooms
+    );
+END//
+
 DELIMITER ;
