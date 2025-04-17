@@ -55,8 +55,6 @@ namespace GUI.BuildingManagement
                     SendMessage(Handle, 0x112, 0xf012, 0);
                 }
             };
-
-            this.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, this.Width, this.Height, 20, 20));
         }
 
         private void LoadBuildingData()

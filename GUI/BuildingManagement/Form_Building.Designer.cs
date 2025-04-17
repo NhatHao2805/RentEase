@@ -108,7 +108,7 @@ namespace GUI.BuildingManagement
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1200, 60);
+            this.guna2Panel1.Size = new System.Drawing.Size(900, 60);
             this.guna2Panel1.TabIndex = 0;
             // 
             // guna2Button2
@@ -121,7 +121,7 @@ namespace GUI.BuildingManagement
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(160)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(1150, 12);
+            this.guna2Button2.Location = new System.Drawing.Point(850, 12);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(40, 36);
             this.guna2Button2.TabIndex = 2;
@@ -138,7 +138,7 @@ namespace GUI.BuildingManagement
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(160)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(1102, 5);
+            this.guna2Button1.Location = new System.Drawing.Point(800, 12);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(40, 36);
             this.guna2Button1.TabIndex = 1;
@@ -223,7 +223,7 @@ namespace GUI.BuildingManagement
             this.panelAddBuilding.Location = new System.Drawing.Point(10, 10);
             this.panelAddBuilding.Name = "panelAddBuilding";
             this.panelAddBuilding.Padding = new System.Windows.Forms.Padding(20);
-            this.panelAddBuilding.Size = new System.Drawing.Size(992, 712);
+            this.panelAddBuilding.Size = new System.Drawing.Size(692, 462);
             this.panelAddBuilding.TabIndex = 0;
             // 
             // lblBuildingKey
@@ -419,7 +419,7 @@ namespace GUI.BuildingManagement
             this.dgvBuildings.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBuildings.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvBuildings.RowTemplate.Height = 35;
-            this.dgvBuildings.Size = new System.Drawing.Size(992, 642);
+            this.dgvBuildings.Size = new System.Drawing.Size(692, 392);
             this.dgvBuildings.TabIndex = 1;
             this.dgvBuildings.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBuildings.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -454,7 +454,7 @@ namespace GUI.BuildingManagement
             this.tabControl.Location = new System.Drawing.Point(0, 60);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1200, 740);
+            this.tabControl.Size = new System.Drawing.Size(900, 490);
             this.tabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.tabControl.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -483,7 +483,7 @@ namespace GUI.BuildingManagement
             this.tabManageBuilding.Location = new System.Drawing.Point(184, 4);
             this.tabManageBuilding.Name = "tabManageBuilding";
             this.tabManageBuilding.Padding = new System.Windows.Forms.Padding(10);
-            this.tabManageBuilding.Size = new System.Drawing.Size(1012, 732);
+            this.tabManageBuilding.Size = new System.Drawing.Size(712, 482);
             this.tabManageBuilding.TabIndex = 0;
             this.tabManageBuilding.Text = "Quản lý tòa nhà";
             // 
@@ -496,7 +496,7 @@ namespace GUI.BuildingManagement
             this.searchPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchPanel.Location = new System.Drawing.Point(10, 10);
             this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(992, 60);
+            this.searchPanel.Size = new System.Drawing.Size(692, 60);
             this.searchPanel.TabIndex = 0;
             // 
             // tabAddBuilding
@@ -506,7 +506,7 @@ namespace GUI.BuildingManagement
             this.tabAddBuilding.Location = new System.Drawing.Point(184, 4);
             this.tabAddBuilding.Name = "tabAddBuilding";
             this.tabAddBuilding.Padding = new System.Windows.Forms.Padding(10);
-            this.tabAddBuilding.Size = new System.Drawing.Size(1012, 732);
+            this.tabAddBuilding.Size = new System.Drawing.Size(712, 482);
             this.tabAddBuilding.TabIndex = 1;
             this.tabAddBuilding.Text = "Thêm tòa nhà";
             // 
@@ -515,10 +515,10 @@ namespace GUI.BuildingManagement
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(900, 550);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.guna2Panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form_Building";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.guna2Panel1.ResumeLayout(false);
