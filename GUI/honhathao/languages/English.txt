@@ -1,4 +1,6 @@
-﻿phongdon: Single Room  
+﻿helo: Hello, How can i help you?
+troli: Assistant
+phongdon: Single Room  
 phongdoi: Double Room  
 phongthuong: Standard Room  
 phongcaocap: Premium Room  
@@ -9,10 +11,10 @@ cuoithang: End of Month
 dango: Occupied
 dangbaoketthuc: Ending soon
 daquahanhopdong: Contract expired
-dangnotien: Owing payment
+dangnotien: Owing Money
 dangtrong: Vacant
 dangcocgiucho: Reserved
-saphethanhopdong: Contract about to expire
+saphethanhopdong: Contract Expiring Soon
 nam: Male
 nu: Female
 dangcho: Pending
@@ -301,7 +303,7 @@ vehicle.table_header.license_plate: License Plate
 vehicle.table_header.parking_slot_id: Parking Slot Id
 vehicle.table_header.status: Status
 vehicle.type.car: Car
-vehicle.type.motorbike: Motorbike
+vehicle.type.motor_bike: Motorbike
 vehicle.type.bicycle: Bicycle
 btn_vantay: Fingerprint Management
 label_lang: Language

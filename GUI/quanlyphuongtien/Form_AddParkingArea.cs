@@ -67,7 +67,6 @@ namespace GUI
             area.Capacity = capacity_tb.Text;
 
             string check = ParkingAreaBLL.CheckLogic(area);
-
             switch (check)
             {
                 case "required_address":

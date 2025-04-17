@@ -182,9 +182,9 @@ namespace DAL
                                                 SELECT pa.*
                                                 FROM PARKINGAREA pa
                                                 WHERE (pa.BUILDINGID = p_buildingid) AND
-                                                    ((pa.TYPE = 'Xe ô tô' AND p_type = 'Xe ô tô') OR
-                                                    (pa.TYPE = 'Xe máy/Xe đạp' AND (p_type = 'Xe máy' OR p_type = 'Xe đạp')) OR
-                                                    (pa.TYPE = 'Hỗn hợp' AND p_type IN ('Xe ô tô', 'Xe máy', 'Xe đạp')));
+                                                    ((pa.TYPE = p_type) OR
+                                                    (pa.TYPE = 'xemay/xedap' AND (p_type = 'xemay' OR p_type = 'xedap')) OR
+                                                    (pa.TYPE = 'honhop' AND p_type IN ('xeoto', 'xemay', 'xedap')));
                                             END;";
 
                     using (MySqlCommand createCommand = new MySqlCommand(createProcedure, conn))

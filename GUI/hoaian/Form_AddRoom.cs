@@ -97,15 +97,13 @@ namespace GUI
             room.Price = price_tb.Text;
             room.Area = area_tb.Text;
 
-            
-            string status = "";
-            foreach (Control control in this.Controls)
-            {
-                if (control is CheckBox checkBox && checkBox.Checked)
-                {
-                    status += Language.reverseTranslate(checkBox.Text) + ";"; //New NhatHao
-                }
-            }
+            string status = (DangO_chbox.Checked ? Language.reverseTranslate(DangO_chbox.Text) + "; " : "")
+              + (DangTrong_chbox.Checked ? Language.reverseTranslate(DangTrong_chbox.Text) + "; " : "")
+              + (DangKT_chbox.Checked ? Language.reverseTranslate(DangKT_chbox.Text) + "; " : "")
+              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
+              + (DaHetHan_chbox.Checked ? Language.reverseTranslate(DaHetHan_chbox.Text) + "; " : "")
+              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
+              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) : "");
             room.Status = status.TrimEnd(';', ' ');
 
             string check = roomBLL.CheckLogic(room);
@@ -143,30 +141,6 @@ namespace GUI
                 case "Out range of number room of floor":
                     MessageBox.Show("Vượt quá số phòng của tầng");
                     return;
-                case "Không thể vừa 'Đang ở' vừa 'Đang trống'.":
-                    MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Đang trống' vừa 'Đang ở'.":
-                    MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang báo kết thúc'.":
-                    MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang báo kết thúc'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.":
-                    MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.":
-                    MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.":
-                    MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồngg'.");
-                    UndoCheckBox();
-                    return;
                 case "Database connection failed!":
                     MessageBox.Show("Kết nối thất bại");
                     return;
@@ -201,12 +175,12 @@ namespace GUI
             {
                 floor_cb.Items.Add(i);
             }
-            string[] a = {Language.translate("roomtype.single"),
-                Language.translate("roomtype.double"),
-                Language.translate("roomtype.standard"),
-                Language.translate("roomtype.premium"),
-                Language.translate("roomtype.studio"),
-                Language.translate("roomtype.entire")};
+            string[] a = {Language.translate("phongdon"),
+                Language.translate("phongdoi"),
+                Language.translate("phongthuong"),
+                Language.translate("phongcaocap"),
+                Language.translate("studio"),
+                Language.translate("phongnguyencan")};
             foreach (string item in a)
             {
                 type_cb.Items.Add(item);
@@ -219,6 +193,54 @@ namespace GUI
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DangO_chbox.Checked)
+            {
+                DangTrong_chbox.Checked = false;
+            }
+        }
+
+        private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DangTrong_chbox.Checked)
+            {
+                DangO_chbox.Checked = false;
+            }
+        }
+
+        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DangCoc_chbox.Checked)
+            {
+                DangKT_chbox.Checked = false;
+            }
+        }
+
+        private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DangKT_chbox.Checked)
+            {
+                DangCoc_chbox.Checked = false;
+            }
+        }
+
+        private void DaHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(DaHetHan_chbox.Checked)
+            {
+                SapHetHan_chbox.Checked = false;
+            }
+        }
+
+        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SapHetHan_chbox.Checked)
+            {
+                DaHetHan_chbox.Checked = false;
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿phongdon: Phòng đơn  
+﻿helo: Xin chào, tôi có thể giúp gì cho bạn?
+troli: Trợ lí
+phongdon: Phòng đơn  
 phongdoi: Phòng đôi  
 phongthuong: Phòng thường  
 phongcaocap: Phòng cao cấp  
@@ -295,7 +297,7 @@ vehicle.table_header.license_plate: Biển số
 vehicle.table_header.parking_slot_id: Mã chỗ đỗ
 vehicle.table_header.status: Trạng thái
 vehicle.type.car: Xe ô tô
-vehicle.type.motorbike: Xe máy
+vehicle.type.motor_bike: Xe máy
 vehicle.type.bicycle: Xe đạp
 btn_vantay: Quản lý vân tay
 label_lang: Ngôn ngữ

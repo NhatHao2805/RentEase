@@ -76,7 +76,7 @@ namespace BLL
             }
             else
             {
-                return key;
+                return "null";
             }
         }
         public static string reverseTranslate(string value)

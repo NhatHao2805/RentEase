@@ -10,7 +10,7 @@ namespace BLL
 {
     public class VehicleBLL
     {
-        public static string CheckLogic(Vehicle vehicle, string areaid)
+        public static string CheckLogic(Vehicle vehicle, string areaid, string unitprice)
         {
             if (string.IsNullOrEmpty(vehicle.TenantID))
             {
@@ -20,6 +20,29 @@ namespace BLL
             if (string.IsNullOrEmpty(vehicle.Type))
             {
                 return "required_type";
+            }
+
+            if (string.IsNullOrEmpty(areaid))
+            {
+                return "required_areaid";
+            }
+
+            if (string.IsNullOrEmpty(vehicle.VehicleUnitPriceID))
+            {
+                return "required_unitpriceid";
+            }
+
+            if (string.IsNullOrEmpty(unitprice))
+            {
+                return "required_unitprice";
+            }
+
+            else
+            {
+                if (!decimal.TryParse(unitprice, out decimal Unitprice) || Unitprice <= 0)
+                {
+                    return "invalid_unitprice_format";
+                }
             }
 
             if (string.IsNullOrEmpty(vehicle.LicensePlate))

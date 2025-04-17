@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL.honhathao;
 using System.Data;
+using DTO;
 namespace BLL.honhathao
 
 {
@@ -22,6 +23,41 @@ namespace BLL.honhathao
         public static void BuildingBLL_change_building_key(string buidingid, string buidlingKey)
         {
             BuildingAccess.change_building_key(buidingid, buidlingKey);
+        }
+
+        public static DataTable LoadBuilding(string username)
+        {
+            return BuildingAccess.LoadBuilding(username);
+        }
+
+        public static string addBuilding(Building building)
+        {
+            if (string.IsNullOrEmpty(building.BuildingKey))
+            {
+                return "required_buildingkey";
+            }
+
+            if (building.BuildingKey.Length > 20)
+            {
+                return "buildingkey_too_long";
+            }
+
+            if (string.IsNullOrEmpty(building.Address))
+            {
+                return "required_address";
+            }
+
+            if (building.NumOfFloors <= 0 || building.NumOfFloors > int.MaxValue)
+            {
+                return "invalid_floors";
+            }
+
+            if (building.NumOfRooms <= 0 || building.NumOfRooms > int.MaxValue)
+            {
+                return "invalid_rooms";
+            }
+
+            return BuildingAccess.addBuilding(building);
         }
     }
 }

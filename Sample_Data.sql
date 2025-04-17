@@ -265,3 +265,4 @@ INSERT INTO VEHICLE_UNITPRICE (VEHICLE_UNITPRICE_ID, UNITPRICE, TYPE) VALUES
 ('VUP001', 500000, 'xeoto'),
 ('VUP002', 100000, 'xemay'),
 ('VUP003', 50000, 'xedap');
+-- select * from parking;

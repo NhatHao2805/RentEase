@@ -26,12 +26,14 @@ using System.Globalization;
 using System.Runtime.InteropServices.ComTypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Diagnostics;
+using GUI.honhathao.languages;
 
 namespace GUI
 {
     public partial class quanlynha: Form
     {
         Form_Login form1;
+        private int index;
         private int panel1_originalSize = 90;
         private int panel1_extendedSize = 90 + 170;
         private bool panel1_extendedEnabled = true;
@@ -46,11 +48,12 @@ namespace GUI
         private Point location_component_quanlytaichinh_1 = new Point(30,30);
         DataTable data = null;
 
-        public quanlynha(Form_Login form1)
+        public quanlynha(Form_Login form1, int index)
         {
             InitializeComponent();
             setStartPositon();
             this.form1 = form1;
+            this.index = index;
             load_Building_By_User();
             loadInfo();
         }
@@ -330,10 +333,10 @@ namespace GUI
             }
             else
             {
-                listBuildingID.SelectedIndex = 0;
+                listBuildingID.SelectedIndex = index;
                 buildingKey.Text = data.Rows[0][1].ToString();
             }
-           
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -832,17 +835,18 @@ namespace GUI
                 load_Contract(0, timkiem_contract.Text);
             }
         }
+        // New HoaiAn 14/4
         private void FilterRoomByStatus()
         {
             try
             {
-                string status = (DangO_chbox1.Checked ? "Đang ở; " : "")
-                              + (DangTrong_chbox1.Checked ? "Đang trống; " : "")
-                              + (DangKT_chbox1.Checked ? "Đang báo kết thúc; " : "")
-                              + (DangCoc_chbox.Checked ? "Đang cọc giữ chỗ; " : "")
-                              + (DaQuaHan_chbox.Checked ? "Đã hết hạn hợp đồng; " : "")
-                              + (SapHetHan_chbox.Checked ? "Sắp hết hạn hợp đồng; " : "")
-                              + (DangNoTien_chbox.Checked ? "Đang nợ tiền" : "");
+                string status = (DangO_chbox1.Checked ? Language.reverseTranslate(DangO_chbox1.Text)+"; " : "")
+                              + (DangTrong_chbox1.Checked ? Language.reverseTranslate(DangTrong_chbox1.Text)+"; " : "")
+                              + (DangKT_chbox1.Checked ? Language.reverseTranslate(DangKT_chbox1.Text)+"; " : "")
+                              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text)+"; " : "")
+                              + (DaQuaHan_chbox.Checked ? Language.reverseTranslate(DaQuaHan_chbox.Text)+"; " : "")
+                              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text)+"; " : "")
+                              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text)+"" : "");
                 status = status.TrimEnd(';', ' ');
 
 
@@ -1089,66 +1093,60 @@ namespace GUI
             }
         }
 
-       
 
 
-        
+
+        // New HoaiAn 14/4
         private void DangO_chbox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangO_chbox1.Checked && DangTrong_chbox1.Checked)
+            if (DangO_chbox1.Checked)
             {
-                MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangO_chbox1.Checked = false;
-            }
-            FilterRoomByStatus();
-        }
-
-        private void DangTrong_chbox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangTrong_chbox1.Checked && DangO_chbox1.Checked)
-            {
-                MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DangTrong_chbox1.Checked = false;
             }
             FilterRoomByStatus();
         }
-
-        private void DangKT_chbox1_CheckedChanged(object sender, EventArgs e)
+        // New HoaiAn 14/4
+        private void DangTrong_chbox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangKT_chbox1.Checked && DangCoc_chbox.Checked)
+            if (DangTrong_chbox1.Checked)
             {
-                MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DangKT_chbox1.Checked = false;
+                DangO_chbox1.Checked = false;
             }
             FilterRoomByStatus();
         }
-
-        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
+        // New HoaiAn 14/4
+        private void DangKT_chbox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangCoc_chbox.Checked && (DangO_chbox1.Checked || DangKT_chbox1.Checked))
+            if (DangKT_chbox1.Checked)
             {
-                MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang ở' hoặc 'Đang báo kết thúc'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DangCoc_chbox.Checked = false;
             }
             FilterRoomByStatus();
         }
-
-        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        // New HoaiAn 14/4
+        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (SapHetHan_chbox.Checked && DaQuaHan_chbox.Checked)
+            if (DangCoc_chbox.Checked)
             {
-                MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                SapHetHan_chbox.Checked = false;
+                DangKT_chbox1.Checked = false;
             }
             FilterRoomByStatus();
         }
-
+        // New HoaiAn 14/4
+        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SapHetHan_chbox.Checked)
+            {
+                DaQuaHan_chbox.Checked = false;
+            }
+            FilterRoomByStatus();
+        }
+        // New HoaiAn 14/4
         private void DaQuaHan_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DaQuaHan_chbox.Checked && SapHetHan_chbox.Checked)
+            if (DaQuaHan_chbox.Checked)
             {
-                MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DaQuaHan_chbox.Checked = false;
+                SapHetHan_chbox.Checked = false;
             }
             FilterRoomByStatus();
         }
@@ -1643,7 +1641,7 @@ namespace GUI
                     guna2DataGridView7.Columns["STATUS"].Width = 90;
             }
         }
-
+        // New HoaiAn 14/4
         private void checkBox10_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox10.Checked)
@@ -1651,10 +1649,11 @@ namespace GUI
                 checkBox11.Checked = false;
                 checkBox18.Checked = false;
             }
-            string type = checkBox10.Checked ? "Xe ô tô" : null;
+            string type = checkBox10.Checked ? "xeoto" : null;
             string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
             FilterParkingArea(type, status);
         }
+        // New HoaiAn 14/4
         private void checkBox11_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox11.Checked)
@@ -1662,14 +1661,23 @@ namespace GUI
                 checkBox10.Checked = false;
                 checkBox18.Checked = false;
             }
-            string type = checkBox11.Checked ? "Xe máy/Xe đạp" : null;
+            string type = checkBox11.Checked ? "xemay/xedap" : null;
             string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
             FilterParkingArea(type, status);
         }
+        // New HoaiAn 14/4
         private void checkBox18_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBox18.Checked)
+            {
+                checkBox10.Checked = false;
+                checkBox11.Checked = false;
+            }
+            string type = checkBox18.Checked ? "honhop" : null;
+            string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
+            FilterParkingArea(type, status);
         }
+        // New HoaiAn 14/4
         private void checkBox17_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox17.Checked)
@@ -1677,11 +1685,12 @@ namespace GUI
                 checkBox20.Checked = false;
             }
             string status = checkBox17.Checked ? "EMPTY" : null;
-            string type = checkBox10.Checked ? "Xe ô tô" :
-                        (checkBox11.Checked ? "Xe máy/Xe đạp" :
-                        (checkBox18.Checked ? "Hỗn hợp" : null));
+            string type = checkBox10.Checked ? "xeoto" :
+                        (checkBox11.Checked ? "xemay/xedap" :
+                        (checkBox18.Checked ? "honhop" : null));
             FilterParkingArea(type, status);
         }
+        // New HoaiAn 14/4
         private void checkBox20_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox20.Checked)
@@ -1689,9 +1698,9 @@ namespace GUI
                 checkBox17.Checked = false;
             }
             string status = checkBox20.Checked ? "FULL" : null;
-            string type = checkBox10.Checked ? "Xe ô tô" :
-                        (checkBox11.Checked ? "Xe máy/Xe đạp" :
-                        (checkBox18.Checked ? "Hỗn hợp" : null));
+            string type = checkBox10.Checked ? "xeoto" :
+                        (checkBox11.Checked ? "xemay/xedap" :
+                        (checkBox18.Checked ? "honhop" : null));
             FilterParkingArea(type, status);
         }
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -1770,11 +1779,15 @@ namespace GUI
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void FilterVehicle(string type)
+        // New HoaiAn 14/4
+        private void FilterVehicle()
         {
             try
             {
+                string type = checkBox2.Checked ? "xeoto" : 
+                              checkBox5.Checked ? "xemay" :
+                             (checkBox7.Checked ? "xedap" : null);
+
                 DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), type);
                 guna2DataGridView1.DataSource = data;
                 ConfigureVehicle();
@@ -1860,42 +1873,35 @@ namespace GUI
                     guna2DataGridView1.Columns["STATUS"].Width = 90;
             }
         }
+        // New HoaiAn 14/4
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox2.Checked)
             {
                 checkBox5.Checked = false;
                 checkBox7.Checked = false;
-                FilterVehicle("Xe ô tô");
-                return;
             }
-            FilterVehicle(null);
-
+            FilterVehicle();
         }
+        // New HoaiAn 14/4
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox5.Checked)
             {
                 checkBox2.Checked = false;
                 checkBox7.Checked = false;
-                FilterVehicle("Xe máy");
-                return;
             }
-            FilterVehicle(null);
-
+            FilterVehicle();
         }
+        // New HoaiAn 14/4
         private void checkBox7_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox7.Checked)
             {
                 checkBox2.Checked = false;
                 checkBox5.Checked = false;
-                FilterVehicle("Xe đạp");
-                return;
             }
-            FilterVehicle(null);
-
-
+            FilterVehicle();
         }
 
         private void loadInitLanguage()
@@ -2497,6 +2503,12 @@ namespace GUI
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            BotChat a = new BotChat(form1.taikhoan.Username);
+            a.Show();
         }
     }
 }

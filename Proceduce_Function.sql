@@ -131,48 +131,6 @@ BEGIN
     UNION
     SELECT 'COMMON' AS AreaID, 'Khu vực chung' AS AreaName, 'Khu vực sinh hoạt chung' AS Description;
 END //
-/*==============================================================*/
-/*                                 */
-/*==============================================================*/
-
--- CREATE DEFINER=`root`@`localhost` FUNCTION `createAssetID`() RETURNS varchar(10) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
---     DETERMINISTIC
--- BEGIN
---     DECLARE new_id VARCHAR(10);
---     DECLARE max_num INT;
---     DECLARE next_num INT;
---     
---     -- Tìm số lớn nhất hiện có trong database
---     SELECT IFNULL(MAX(CAST(SUBSTRING(ASSETID, 3) AS UNSIGNED)), 0) INTO max_num
---     FROM ASSETS
---     WHERE ASSETID REGEXP '^TS[0-9]+$';
---     
---     -- Tăng số lên 1
---     SET next_num = max_num + 1;
---     
---     -- Tạo ID mới với định dạng TS + số (4 chữ số, thêm 0 ở đầu nếu cần)
---     SET new_id = CONCAT('TS', LPAD(next_num, 4, '0'));
---     
---     RETURN new_id;
--- END//
-
--- CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addAsset`(
---     IN p_roomid VARCHAR(10),
---     IN p_assetname VARCHAR(50),
---     IN p_price FLOAT,
---     IN p_status VARCHAR(50),
---     IN p_usedate DATE
--- )
--- BEGIN
---     DECLARE new_asset_id VARCHAR(10);
---     
---     -- Tạo ID tài sản mới (giả sử có hàm createAssetID tương tự như createRoomID)
---     SET new_asset_id = createAssetID();
---     
---     -- Thêm tài sản vào bảng ASSETS
---     INSERT INTO ASSETS (ASSETID, ROOMID, ASSETNAME, PRICE, STATUS, USE_DATE)
---     VALUES (new_asset_id, p_roomid, p_assetname, p_price, p_status, p_usedate);
--- END//
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateAsset`(
     IN p_assetid VARCHAR(10),
@@ -528,19 +486,6 @@ BEGIN
     WHERE t.REGISTRATIONID = p_registration_id;
 END//
 
-CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createBuildingID`()
-RETURNS VARCHAR(20) 
-DETERMINISTIC
-BEGIN
-    DECLARE max_id VARCHAR(20);
-    DECLARE number_part INT;
-    DECLARE new_id VARCHAR(20);
-    
-    SELECT IFNULL(MAX(building.BUILDINGID), 'B000') INTO max_id FROM building;
-    SET number_part = CAST(SUBSTRING(max_id, 2) AS UNSIGNED) + 1;
-    SET new_id = CONCAT('DK', LPAD(number_part, 3, '0'));
-    RETURN new_id;
-END//
 CREATE PROCEDURE add_building(
 	IN p_BUILDING_KEY VARCHAR(20),
 	IN p_USERNAME VARCHAR(20),

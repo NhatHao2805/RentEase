@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class Building
+    public class Building
     {
         public string BuildingId { get; set; }
         public string BuildingKey { get; set; }

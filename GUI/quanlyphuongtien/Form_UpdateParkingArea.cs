@@ -45,13 +45,13 @@ namespace GUI
                     case "parking.id_parking":
                         guna2HtmlLabel5.Text = a.Value;
                         break;
-                    case "parking.type":
+                    case "parking.address":
                         guna2HtmlLabel6.Text = a.Value;
                         break;
-                    case "parking.capacity":
+                    case "parking.type":
                         guna2HtmlLabel4.Text = a.Value;
                         break;
-                    case "parking.address":
+                    case "parking.capacity":
                         guna2HtmlLabel3.Text = a.Value;
                         break;
                     case "btn_save":
@@ -60,10 +60,6 @@ namespace GUI
                 }
             }
         }
-        //parking.id_parking: Mã bãi đậu xe
-
-        //parking.update_title: Update Parking
-        //parking.update_subtitle: Update parking in table
 
         private void Form_UpdateParkingArea_Load_1(object sender, EventArgs e)
         {
@@ -91,7 +87,7 @@ namespace GUI
             area.AreaId = infor.AreaId;
             area.BuildingId = infor.BuildingId;
             area.Address = address_tb.Text;
-            area.Type = type_cb.SelectedItem.ToString();
+            area.Type = type_cb.Text;
             area.Capacity = capacity_tb.Text;
 
             string check = ParkingAreaBLL.UpdateArea(area);
