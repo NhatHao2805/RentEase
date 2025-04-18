@@ -97,13 +97,13 @@ namespace GUI.gui_service
             this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
             this.btnBack.Image = global::GUI.Properties.Resources.icons8_back_50;
             this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBack.Location = new System.Drawing.Point(1216, 7);
+            this.btnBack.Location = new System.Drawing.Point(1186, 7);
             this.btnBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnBack.Name = "btnBack";
             this.btnBack.ShadowDecoration.BorderRadius = 10;
             this.btnBack.ShadowDecoration.Enabled = true;
             this.btnBack.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.btnBack.Size = new System.Drawing.Size(113, 45);
+            this.btnBack.Size = new System.Drawing.Size(143, 45);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Quay lại";
             this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

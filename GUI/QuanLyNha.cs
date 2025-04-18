@@ -2507,11 +2507,6 @@ namespace GUI
 
         }
 
-        private void guna2CustomGradientPanel28_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void tabPage6_Click(object sender, EventArgs e)
         {
 

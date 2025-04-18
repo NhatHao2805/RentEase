@@ -228,6 +228,12 @@
       <DependentUpon>Form_Tenant.cs</DependentUpon>
     </Compile>
     <Compile Include="honhathao\RandomKey.cs" />
+    <Compile Include="Login\loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form1.Designer.cs">
+      <DependentUpon>loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
       <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\loading.resx">
+      <DependentUpon>loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quanlyphuongtien\Form_AddParkingArea.resx">
       <DependentUpon>Form_AddParkingArea.cs</DependentUpon>

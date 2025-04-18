@@ -1588,3 +1588,4 @@ D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_AddParkingArea.resou
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_AddVehicle.resources
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_UpdateParkingArea.resources
 D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_UpdateVehicle.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Login.Loading.resources
