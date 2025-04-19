@@ -1,9 +1,11 @@
 ﻿using BLL;
 using DTO;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace GUI
 {
@@ -20,8 +22,55 @@ namespace GUI
             _buildingid = buildingid;
             LoadRentalHistoryData();
             ConfigureDataGridView();
+            loadLanguage();
         }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "export_excel":
+                        ExcelExporter_btn.Text = a.Value;
+                        break;
+                    case "btn_dong":
+                        close_btn.Text = a.Value;
+                        break;
+                    case "rental_history.title":
+                        label23.Text = a.Value;
+                        break;
+                    case "rental_history.description":
+                        label22.Text = a.Value;
+                        break;
+                    case "rental_history.history_id":
+                        dgv_RentalHistory.Columns[0].HeaderText = a.Value;
+                        break;
+                    case "rental_history.contract_id":
+                        dgv_RentalHistory.Columns[1].HeaderText = a.Value;
+                        break;
+                    case "rental_history.room_id":
+                        dgv_RentalHistory.Columns[2].HeaderText = a.Value;
+                        break;
+                    case "rental_history.customer_id":
+                        dgv_RentalHistory.Columns[3].HeaderText = a.Value;
+                        break;
+                    case "rental_history.first_name":
+                        dgv_RentalHistory.Columns[4].HeaderText = a.Value;
+                        break;
+                    case "rental_history.last_name":
+                        dgv_RentalHistory.Columns[5].HeaderText = a.Value;
+                        break;
+                }
+//                rental_history.history_id: Mã Lịch sử
+//rental_history.contract_id: Mã Hợp đồng
+//rental_history.room_id: Mã Phòng
+//rental_history.customer_id: Mã KH
+//rental_history.first_name: Tên
+//rental_history.last_name: Họ
 
+
+            }
+        }
         private void LoadRentalHistoryData()
         {
             try
@@ -132,6 +181,11 @@ namespace GUI
                 MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

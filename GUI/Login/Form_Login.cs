@@ -141,6 +141,16 @@ namespace GUI
         {
             loadLanguage();
         }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hienMk_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
     
 }

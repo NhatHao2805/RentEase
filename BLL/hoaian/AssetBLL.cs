@@ -10,12 +10,7 @@ namespace BLL
 {
     public class AssetBLL
     {
-        public static DataTable LoadAssets(string Username, string buildingid)
-        {
-            return AssetAccess.LoadAssets(Username, buildingid);
-        }
-
-        public static string CheckLogic(Assets assets)
+        public static string CheckLogic(Assets assets, string buildingid)
         {
             if (string.IsNullOrEmpty(assets.RoomId))
             {
@@ -43,7 +38,7 @@ namespace BLL
                 return "required_status";
             }
 
-            return AssetAccess.addAsset(assets);
+            return AssetAccess.addAsset(assets, buildingid);
         }
 
         public static string UpdateAsset(Assets assets)
@@ -88,7 +83,7 @@ namespace BLL
         {
             if(string.IsNullOrEmpty(priceSort) && string.IsNullOrEmpty(nameSort))
             {
-                return AssetAccess.LoadAssets(username, buildingid);
+                return AssetAccess.FilterAssets(username, null, null, buildingid);
             }
 
             return AssetAccess.FilterAssets(username, priceSort, nameSort, buildingid);

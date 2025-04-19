@@ -171,14 +171,16 @@
     <Compile Include="bll_service\ServiceBLL.cs" />
     <Compile Include="bll_service\ServiceUsageBLL.cs" />
     <Compile Include="bll_service\UserService.cs" />
+    <Compile Include="hoaian\AssetBLL.cs" />
+    <Compile Include="hoaian\ParkingAreaBLL.cs" />
+    <Compile Include="hoaian\RentalHistoryBLL.cs" />
+    <Compile Include="hoaian\RoomBLL.cs" />
+    <Compile Include="hoaian\VehicleBLL.cs" />
     <Compile Include="honhathao\Language.cs" />
     <Compile Include="honhathao\TenantServiceBLL.cs" />
     <Compile Include="honhathao\PaymentBLL.cs" />
     <Compile Include="honhathao\Payment.cs" />
     <Compile Include="honhathao\W_E_BLL.cs" />
-    <Compile Include="hoaian\AssetBLL.cs" />
-    <Compile Include="hoaian\RentalHistoryBLL.cs" />
-    <Compile Include="hoaian\RoomBLL.cs" />
     <Compile Include="honhathao\BuildingBLL.cs" />
     <Compile Include="honhathao\BillBLL.cs" />
     <Compile Include="honhathao\BillDetailBLL.cs" />
@@ -187,8 +189,6 @@
     <Compile Include="honhathao\TenantBLL.cs" />
     <Compile Include="honhathao\TenantHistoryBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="quanlyphuongtien\ParkingAreaBLL.cs" />
-    <Compile Include="quanlyphuongtien\PaymentBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

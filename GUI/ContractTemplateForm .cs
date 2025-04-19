@@ -13,14 +13,22 @@ namespace GUI
     public partial class ContractTemplateForm : Form
     {
         private RichTextBox rtbTemplate;
-        private Button btnSave;
-        private Button btnExportPDF;
-        private Button btnLoad;
         private Button btnExportPDFDirect;
-        private ComboBox cboTemplates;
         private Label lblTitle;
-        private TextBox txtTemplateName;
         private Label lblTemplateName;
+        private LinkLabel linkLabel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel12;
+        private Guna.UI2.WinForms.Guna2Button exitButton;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel18;
+        private Label label22;
+        private Label label23;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private Guna.UI2.WinForms.Guna2GradientButton buttonDangNhap1;
+        private Guna.UI2.WinForms.Guna2TextBox txtTemplateName;
+        private Guna.UI2.WinForms.Guna2ComboBox cboTemplates;
+        private Guna.UI2.WinForms.Guna2GradientButton btnSave;
+        private Guna.UI2.WinForms.Guna2GradientButton btnExportPDF;
         private string templatesPath = Path.Combine(Application.StartupPath, "Templates");
 
         public ContractTemplateForm()
@@ -45,105 +53,307 @@ namespace GUI
         private void InitializeComponent()
         {
             this.rtbTemplate = new System.Windows.Forms.RichTextBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnExportPDF = new System.Windows.Forms.Button();
-            this.btnLoad = new System.Windows.Forms.Button();
-            this.cboTemplates = new System.Windows.Forms.ComboBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.txtTemplateName = new System.Windows.Forms.TextBox();
             this.lblTemplateName = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2CustomGradientPanel18 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.buttonDangNhap1 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.txtTemplateName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cboTemplates = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnExportPDF = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2GradientPanel12.SuspendLayout();
+            this.guna2GradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbTemplate
             // 
-            this.rtbTemplate.Location = new System.Drawing.Point(12, 112);
+            this.rtbTemplate.Location = new System.Drawing.Point(12, 214);
             this.rtbTemplate.Name = "rtbTemplate";
             this.rtbTemplate.Size = new System.Drawing.Size(776, 405);
             this.rtbTemplate.TabIndex = 0;
             this.rtbTemplate.Text = "";
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(556, 533);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(113, 34);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Lưu mẫu";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnExportPDF
-            // 
-            this.btnExportPDF.Location = new System.Drawing.Point(675, 533);
-            this.btnExportPDF.Name = "btnExportPDF";
-            this.btnExportPDF.Size = new System.Drawing.Size(113, 34);
-            this.btnExportPDF.TabIndex = 2;
-            this.btnExportPDF.Text = "Xuất PDF";
-            this.btnExportPDF.UseVisualStyleBackColor = true;
-            this.btnExportPDF.Click += new System.EventHandler(this.btnExportPDF_Click);
-            // 
-            // btnLoad
-            // 
-            this.btnLoad.Location = new System.Drawing.Point(332, 65);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(92, 29);
-            this.btnLoad.TabIndex = 3;
-            this.btnLoad.Text = "Tải mẫu";
-            this.btnLoad.UseVisualStyleBackColor = true;
-            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
-            // 
-            // cboTemplates
-            // 
-            this.cboTemplates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTemplates.FormattingEnabled = true;
-            this.cboTemplates.Location = new System.Drawing.Point(114, 66);
-            this.cboTemplates.Name = "cboTemplates";
-            this.cboTemplates.Size = new System.Drawing.Size(212, 28);
-            this.cboTemplates.TabIndex = 4;
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(292, 9);
+            this.lblTitle.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(310, 91);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(225, 37);
+            this.lblTitle.Size = new System.Drawing.Size(192, 32);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "Mẫu hợp đồng";
-            // 
-            // txtTemplateName
-            // 
-            this.txtTemplateName.Location = new System.Drawing.Point(553, 66);
-            this.txtTemplateName.Name = "txtTemplateName";
-            this.txtTemplateName.Size = new System.Drawing.Size(235, 26);
-            this.txtTemplateName.TabIndex = 6;
             // 
             // lblTemplateName
             // 
             this.lblTemplateName.AutoSize = true;
-            this.lblTemplateName.Location = new System.Drawing.Point(470, 69);
+            this.lblTemplateName.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTemplateName.Location = new System.Drawing.Point(435, 15);
             this.lblTemplateName.Name = "lblTemplateName";
-            this.lblTemplateName.Size = new System.Drawing.Size(77, 20);
+            this.lblTemplateName.Size = new System.Drawing.Size(79, 23);
             this.lblTemplateName.TabIndex = 7;
             this.lblTemplateName.Text = "Tên mẫu:";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(696, 76);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(68, 16);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
+            // 
+            // guna2GradientPanel12
+            // 
+            this.guna2GradientPanel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel12.Controls.Add(this.exitButton);
+            this.guna2GradientPanel12.Controls.Add(this.guna2PictureBox5);
+            this.guna2GradientPanel12.Controls.Add(this.guna2CustomGradientPanel18);
+            this.guna2GradientPanel12.Controls.Add(this.label22);
+            this.guna2GradientPanel12.Controls.Add(this.label23);
+            this.guna2GradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
+            this.guna2GradientPanel12.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel12.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel12.Name = "guna2GradientPanel12";
+            this.guna2GradientPanel12.Size = new System.Drawing.Size(800, 70);
+            this.guna2GradientPanel12.TabIndex = 139;
+            // 
+            // guna2CustomGradientPanel18
+            // 
+            this.guna2CustomGradientPanel18.BorderRadius = 2;
+            this.guna2CustomGradientPanel18.FillColor = System.Drawing.Color.PaleGreen;
+            this.guna2CustomGradientPanel18.FillColor2 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel18.FillColor3 = System.Drawing.Color.DarkKhaki;
+            this.guna2CustomGradientPanel18.FillColor4 = System.Drawing.Color.Lime;
+            this.guna2CustomGradientPanel18.Location = new System.Drawing.Point(87, 8);
+            this.guna2CustomGradientPanel18.Name = "guna2CustomGradientPanel18";
+            this.guna2CustomGradientPanel18.Size = new System.Drawing.Size(7, 50);
+            this.guna2CustomGradientPanel18.TabIndex = 125;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(95, 39);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(171, 20);
+            this.label22.TabIndex = 122;
+            this.label22.Text = "Thêm mẫu hợp đồng mới";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
+            this.label23.Location = new System.Drawing.Point(93, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(182, 29);
+            this.label23.TabIndex = 123;
+            this.label23.Text = "Thêm hợp đồng";
+            // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel2.BorderRadius = 10;
+            this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.txtTemplateName);
+            this.guna2GradientPanel2.Controls.Add(this.cboTemplates);
+            this.guna2GradientPanel2.Controls.Add(this.buttonDangNhap1);
+            this.guna2GradientPanel2.Controls.Add(this.lblTemplateName);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(12, 150);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel2.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(776, 53);
+            this.guna2GradientPanel2.TabIndex = 140;
+            // 
+            // buttonDangNhap1
+            // 
+            this.buttonDangNhap1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDangNhap1.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonDangNhap1.BorderRadius = 10;
+            this.buttonDangNhap1.BorderThickness = 1;
+            this.buttonDangNhap1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonDangNhap1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonDangNhap1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonDangNhap1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonDangNhap1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonDangNhap1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(230)))), ((int)(((byte)(100)))));
+            this.buttonDangNhap1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(158)))), ((int)(((byte)(87)))));
+            this.buttonDangNhap1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDangNhap1.ForeColor = System.Drawing.Color.White;
+            this.buttonDangNhap1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.buttonDangNhap1.Location = new System.Drawing.Point(14, 8);
+            this.buttonDangNhap1.Name = "buttonDangNhap1";
+            this.buttonDangNhap1.ShadowDecoration.BorderRadius = 15;
+            this.buttonDangNhap1.ShadowDecoration.Depth = 50;
+            this.buttonDangNhap1.ShadowDecoration.Enabled = true;
+            this.buttonDangNhap1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.buttonDangNhap1.Size = new System.Drawing.Size(90, 35);
+            this.buttonDangNhap1.TabIndex = 141;
+            this.buttonDangNhap1.Text = "Tải mẫu";
+            // 
+            // txtTemplateName
+            // 
+            this.txtTemplateName.BorderColor = System.Drawing.Color.Gray;
+            this.txtTemplateName.BorderRadius = 10;
+            this.txtTemplateName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTemplateName.DefaultText = "";
+            this.txtTemplateName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTemplateName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTemplateName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTemplateName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTemplateName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTemplateName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTemplateName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTemplateName.Location = new System.Drawing.Point(520, 12);
+            this.txtTemplateName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTemplateName.Name = "txtTemplateName";
+            this.txtTemplateName.PlaceholderText = "";
+            this.txtTemplateName.SelectedText = "";
+            this.txtTemplateName.ShadowDecoration.BorderRadius = 10;
+            this.txtTemplateName.Size = new System.Drawing.Size(244, 30);
+            this.txtTemplateName.TabIndex = 141;
+            this.txtTemplateName.TextChanged += new System.EventHandler(this.txtTemplateName_TextChanged);
+            // 
+            // cboTemplates
+            // 
+            this.cboTemplates.BackColor = System.Drawing.Color.Transparent;
+            this.cboTemplates.BorderRadius = 10;
+            this.cboTemplates.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboTemplates.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTemplates.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTemplates.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboTemplates.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboTemplates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboTemplates.ItemHeight = 30;
+            this.cboTemplates.Location = new System.Drawing.Point(110, 7);
+            this.cboTemplates.Name = "cboTemplates";
+            this.cboTemplates.ShadowDecoration.BorderRadius = 10;
+            this.cboTemplates.ShadowDecoration.Enabled = true;
+            this.cboTemplates.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.cboTemplates.Size = new System.Drawing.Size(272, 36);
+            this.cboTemplates.TabIndex = 142;
+            this.cboTemplates.SelectedIndexChanged += new System.EventHandler(this.cboTemplates_SelectedIndexChanged);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSave.BorderRadius = 10;
+            this.btnSave.BorderThickness = 1;
+            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSave.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(230)))), ((int)(((byte)(100)))));
+            this.btnSave.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(158)))), ((int)(((byte)(87)))));
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnSave.Location = new System.Drawing.Point(532, 631);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.ShadowDecoration.BorderRadius = 15;
+            this.btnSave.ShadowDecoration.Depth = 50;
+            this.btnSave.ShadowDecoration.Enabled = true;
+            this.btnSave.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.btnSave.Size = new System.Drawing.Size(100, 40);
+            this.btnSave.TabIndex = 142;
+            this.btnSave.Text = "Lưu mẫu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnExportPDF
+            // 
+            this.btnExportPDF.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportPDF.BorderColor = System.Drawing.Color.Transparent;
+            this.btnExportPDF.BorderRadius = 10;
+            this.btnExportPDF.BorderThickness = 1;
+            this.btnExportPDF.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportPDF.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportPDF.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportPDF.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportPDF.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportPDF.FillColor = System.Drawing.Color.Maroon;
+            this.btnExportPDF.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportPDF.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportPDF.ForeColor = System.Drawing.Color.White;
+            this.btnExportPDF.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnExportPDF.Location = new System.Drawing.Point(665, 631);
+            this.btnExportPDF.Name = "btnExportPDF";
+            this.btnExportPDF.ShadowDecoration.BorderRadius = 15;
+            this.btnExportPDF.ShadowDecoration.Depth = 50;
+            this.btnExportPDF.ShadowDecoration.Enabled = true;
+            this.btnExportPDF.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.btnExportPDF.Size = new System.Drawing.Size(100, 40);
+            this.btnExportPDF.TabIndex = 143;
+            this.btnExportPDF.Text = "Xuất PDF";
+            this.btnExportPDF.Click += new System.EventHandler(this.btnExportPDF_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
+            this.exitButton.BorderRadius = 1;
+            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
+            this.exitButton.Location = new System.Drawing.Point(769, 2);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(30, 30);
+            this.exitButton.TabIndex = 20;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_list1;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(15, 5);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 132;
+            this.guna2PictureBox5.TabStop = false;
+            // 
             // ContractTemplateForm
             // 
-            this.ClientSize = new System.Drawing.Size(800, 579);
-            this.Controls.Add(this.lblTemplateName);
-            this.Controls.Add(this.txtTemplateName);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.cboTemplates);
-            this.Controls.Add(this.btnLoad);
+            this.BackColor = System.Drawing.Color.Honeydew;
+            this.ClientSize = new System.Drawing.Size(800, 693);
             this.Controls.Add(this.btnExportPDF);
             this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.guna2GradientPanel2);
+            this.Controls.Add(this.guna2GradientPanel12);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.rtbTemplate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ContractTemplateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thiết lập mẫu hợp đồng";
             this.Load += new System.EventHandler(this.ContractTemplateForm_Load);
+            this.guna2GradientPanel12.ResumeLayout(false);
+            this.guna2GradientPanel12.PerformLayout();
+            this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private void ContractTemplateForm_Load(object sender, EventArgs e)
@@ -421,97 +631,7 @@ namespace GUI
 
         private void btnExportPDF_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // If no template name is provided, ask user to save first
-                if (string.IsNullOrWhiteSpace(txtTemplateName.Text))
-                {
-                    MessageBox.Show("Vui lòng lưu mẫu trước khi xuất PDF.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtTemplateName.Focus();
-                    return;
-                }
 
-                // Tạo một file RTF tạm thời
-                string rtfFile = Path.Combine(templatesPath, txtTemplateName.Text + ".rtf");
-
-                // Lưu phiên bản mới nhất của mẫu
-                rtbTemplate.SaveFile(rtfFile, RichTextBoxStreamType.RichText);
-
-                // Tạo đường dẫn file PDF
-                SaveFileDialog saveDialog = new SaveFileDialog();
-                saveDialog.Filter = "PDF Files (*.pdf)|*.pdf";
-                saveDialog.FileName = txtTemplateName.Text + ".pdf";
-
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string pdfFile = saveDialog.FileName;
-
-                    // Phương pháp đơn giản: Sử dụng Word để chuyển đổi RTF sang PDF nếu có
-                    DialogResult result = MessageBox.Show(
-                        "Bạn muốn sử dụng phương thức nào để xuất PDF?\n\n" +
-                        "- Yes: Sử dụng Microsoft Word (nếu đã cài)\n" +
-                        "- No: Sử dụng chức năng In (Print to PDF)",
-                        "Chọn phương thức",
-                        MessageBoxButtons.YesNoCancel,
-                        MessageBoxIcon.Question
-                    );
-
-                    if (result == DialogResult.Yes)
-                    {
-                        // Phương thức 1: Sử dụng Microsoft Word nếu có
-                        try
-                        {
-                            // Tạo đường dẫn tạm thời cho file Word
-                            string tempDocxFile = Path.Combine(Path.GetTempPath(), Path.GetFileNameWithoutExtension(pdfFile) + ".docx");
-
-                            // Tạo đối tượng Word.Application để chuyển đổi RTF sang PDF
-                            Type wordType = Type.GetTypeFromProgID("Word.Application");
-                            if (wordType != null)
-                            {
-                                dynamic wordApp = Activator.CreateInstance(wordType);
-                                wordApp.Visible = false;
-
-                                // Mở file RTF
-                                dynamic doc = wordApp.Documents.Open(rtfFile);
-
-                                // Lưu dưới dạng PDF
-                                object outputFileName = pdfFile;
-                                object fileFormat = 17; // wdFormatPDF
-                                doc.SaveAs2(ref outputFileName, ref fileFormat);
-
-                                // Đóng tài liệu và Word
-                                doc.Close();
-                                wordApp.Quit();
-
-                                // Mở file PDF vừa tạo
-                                MessageBox.Show("Đã xuất PDF thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Process.Start(pdfFile);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Không tìm thấy Microsoft Word trên máy tính. Vui lòng sử dụng phương thức in PDF.",
-                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                UsePrintToPDFMethod(pdfFile);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Lỗi khi sử dụng Microsoft Word: " + ex.Message + "\nChuyển sang phương thức in PDF.",
-                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            UsePrintToPDFMethod(pdfFile);
-                        }
-                    }
-                    else if (result == DialogResult.No)
-                    {
-                        // Phương thức 2: Sử dụng Print to PDF
-                        UsePrintToPDFMethod(pdfFile);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi xuất PDF: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void UsePrintToPDFMethod(string pdfFile)
@@ -918,6 +1038,21 @@ namespace GUI
                     printDoc.Print();
                 }
             }
+        }
+
+        private void txtTemplateName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboTemplates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

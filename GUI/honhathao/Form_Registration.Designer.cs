@@ -28,52 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
             this.TenKhachHang = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SoPhong = new Guna.UI2.WinForms.Guna2ComboBox();
             this.TrangThai = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.ngayDk = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ngayHethan = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.luu = new Guna.UI2.WinForms.Guna2Button();
-            this.panel3.SuspendLayout();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.ngayDk = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.luu = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2CustomGradientPanel18 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel1.SuspendLayout();
+            this.guna2GradientPanel6.SuspendLayout();
+            this.guna2GradientPanel5.SuspendLayout();
+            this.guna2GradientPanel4.SuspendLayout();
+            this.guna2GradientPanel3.SuspendLayout();
+            this.guna2GradientPanel2.SuspendLayout();
+            this.guna2GradientPanel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.panel3.Controls.Add(this.exitButton);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(574, 36);
-            this.panel3.TabIndex = 24;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
-            // 
-            // exitButton
-            // 
-            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
-            this.exitButton.Location = new System.Drawing.Point(534, 0);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(40, 36);
-            this.exitButton.TabIndex = 20;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // TenKhachHang
             // 
             this.TenKhachHang.BackColor = System.Drawing.Color.Transparent;
+            this.TenKhachHang.BorderRadius = 10;
             this.TenKhachHang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.TenKhachHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TenKhachHang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -81,14 +72,18 @@
             this.TenKhachHang.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.TenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.TenKhachHang.ItemHeight = 30;
-            this.TenKhachHang.Location = new System.Drawing.Point(274, 78);
+            this.TenKhachHang.Location = new System.Drawing.Point(170, 11);
             this.TenKhachHang.Name = "TenKhachHang";
-            this.TenKhachHang.Size = new System.Drawing.Size(256, 36);
+            this.TenKhachHang.ShadowDecoration.BorderRadius = 10;
+            this.TenKhachHang.ShadowDecoration.Enabled = true;
+            this.TenKhachHang.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.TenKhachHang.Size = new System.Drawing.Size(320, 36);
             this.TenKhachHang.TabIndex = 25;
             // 
             // SoPhong
             // 
             this.SoPhong.BackColor = System.Drawing.Color.Transparent;
+            this.SoPhong.BorderRadius = 10;
             this.SoPhong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.SoPhong.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SoPhong.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -96,14 +91,18 @@
             this.SoPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.SoPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.SoPhong.ItemHeight = 30;
-            this.SoPhong.Location = new System.Drawing.Point(274, 147);
+            this.SoPhong.Location = new System.Drawing.Point(170, 11);
             this.SoPhong.Name = "SoPhong";
-            this.SoPhong.Size = new System.Drawing.Size(256, 36);
+            this.SoPhong.ShadowDecoration.BorderRadius = 10;
+            this.SoPhong.ShadowDecoration.Enabled = true;
+            this.SoPhong.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.SoPhong.Size = new System.Drawing.Size(320, 36);
             this.SoPhong.TabIndex = 26;
             // 
             // TrangThai
             // 
             this.TrangThai.BackColor = System.Drawing.Color.Transparent;
+            this.TrangThai.BorderRadius = 10;
             this.TrangThai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.TrangThai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -111,140 +110,375 @@
             this.TrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.TrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.TrangThai.ItemHeight = 30;
-            this.TrangThai.Items.AddRange(new object[] {
-            "Đang chờ",
-            "Đã duyệt"});
-            this.TrangThai.Location = new System.Drawing.Point(274, 390);
+            this.TrangThai.Location = new System.Drawing.Point(170, 11);
             this.TrangThai.Name = "TrangThai";
-            this.TrangThai.Size = new System.Drawing.Size(256, 36);
+            this.TrangThai.ShadowDecoration.BorderRadius = 10;
+            this.TrangThai.ShadowDecoration.Enabled = true;
+            this.TrangThai.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.TrangThai.Size = new System.Drawing.Size(320, 36);
             this.TrangThai.TabIndex = 27;
+            this.TrangThai.SelectedIndexChanged += new System.EventHandler(this.TrangThai_SelectedIndexChanged);
             // 
-            // ngayDk
+            // guna2GradientPanel1
             // 
-            this.ngayDk.Checked = true;
-            this.ngayDk.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ngayDk.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.ngayDk.Location = new System.Drawing.Point(274, 223);
-            this.ngayDk.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.ngayDk.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.ngayDk.Name = "ngayDk";
-            this.ngayDk.Size = new System.Drawing.Size(256, 36);
-            this.ngayDk.TabIndex = 28;
-            this.ngayDk.Value = new System.DateTime(2025, 4, 1, 23, 29, 33, 238);
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel6);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel5);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel4);
+            this.guna2GradientPanel1.Controls.Add(this.luu);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel3);
+            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel2);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.Honeydew;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.AliceBlue;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(2, 71);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(550, 450);
+            this.guna2GradientPanel1.TabIndex = 142;
+            // 
+            // guna2GradientPanel6
+            // 
+            this.guna2GradientPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel6.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel6.BorderRadius = 10;
+            this.guna2GradientPanel6.BorderThickness = 1;
+            this.guna2GradientPanel6.Controls.Add(this.guna2HtmlLabel7);
+            this.guna2GradientPanel6.Controls.Add(this.TrangThai);
+            this.guna2GradientPanel6.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel6.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel6.Location = new System.Drawing.Point(15, 305);
+            this.guna2GradientPanel6.Name = "guna2GradientPanel6";
+            this.guna2GradientPanel6.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel6.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel6.Size = new System.Drawing.Size(525, 60);
+            this.guna2GradientPanel6.TabIndex = 145;
+            // 
+            // guna2HtmlLabel7
+            // 
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(85, 25);
+            this.guna2HtmlLabel7.TabIndex = 141;
+            this.guna2HtmlLabel7.Text = "Trạng thái:";
+            // 
+            // guna2GradientPanel5
+            // 
+            this.guna2GradientPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel5.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel5.BorderRadius = 10;
+            this.guna2GradientPanel5.BorderThickness = 1;
+            this.guna2GradientPanel5.Controls.Add(this.ngayHethan);
+            this.guna2GradientPanel5.Controls.Add(this.guna2HtmlLabel6);
+            this.guna2GradientPanel5.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel5.Location = new System.Drawing.Point(15, 230);
+            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
+            this.guna2GradientPanel5.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel5.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(525, 60);
+            this.guna2GradientPanel5.TabIndex = 144;
             // 
             // ngayHethan
             // 
+            this.ngayHethan.BackColor = System.Drawing.Color.Transparent;
+            this.ngayHethan.BorderRadius = 10;
+            this.ngayHethan.BorderThickness = 1;
             this.ngayHethan.Checked = true;
-            this.ngayHethan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ngayHethan.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.ngayHethan.Location = new System.Drawing.Point(274, 303);
+            this.ngayHethan.CustomFormat = "dd/MM/yyyy";
+            this.ngayHethan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ngayHethan.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.ngayHethan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(86)))), ((int)(((byte)(71)))));
+            this.ngayHethan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngayHethan.Location = new System.Drawing.Point(170, 11);
             this.ngayHethan.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.ngayHethan.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.ngayHethan.Name = "ngayHethan";
-            this.ngayHethan.Size = new System.Drawing.Size(256, 36);
-            this.ngayHethan.TabIndex = 29;
-            this.ngayHethan.Value = new System.DateTime(2025, 4, 1, 23, 29, 33, 238);
+            this.ngayHethan.ShadowDecoration.BorderRadius = 10;
+            this.ngayHethan.ShadowDecoration.CustomizableEdges.TopLeft = false;
+            this.ngayHethan.ShadowDecoration.CustomizableEdges.TopRight = false;
+            this.ngayHethan.ShadowDecoration.Enabled = true;
+            this.ngayHethan.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.ngayHethan.Size = new System.Drawing.Size(317, 36);
+            this.ngayHethan.TabIndex = 142;
+            this.ngayHethan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ngayHethan.Value = new System.DateTime(2025, 4, 13, 11, 51, 0, 0);
             // 
-            // guna2HtmlLabel1
+            // guna2HtmlLabel6
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(39, 78);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(99, 18);
-            this.guna2HtmlLabel1.TabIndex = 30;
-            this.guna2HtmlLabel1.Text = "Tên khách hàng";
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(112, 25);
+            this.guna2HtmlLabel6.TabIndex = 141;
+            this.guna2HtmlLabel6.Text = "Ngày hết hạn:";
             // 
-            // guna2HtmlLabel2
+            // guna2GradientPanel4
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(39, 165);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(63, 18);
-            this.guna2HtmlLabel2.TabIndex = 31;
-            this.guna2HtmlLabel2.Text = "Mã phòng";
+            this.guna2GradientPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel4.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel4.BorderRadius = 10;
+            this.guna2GradientPanel4.BorderThickness = 1;
+            this.guna2GradientPanel4.Controls.Add(this.ngayDk);
+            this.guna2GradientPanel4.Controls.Add(this.guna2HtmlLabel8);
+            this.guna2GradientPanel4.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel4.Location = new System.Drawing.Point(15, 158);
+            this.guna2GradientPanel4.Name = "guna2GradientPanel4";
+            this.guna2GradientPanel4.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel4.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(525, 60);
+            this.guna2GradientPanel4.TabIndex = 143;
             // 
-            // guna2HtmlLabel3
+            // ngayDk
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(39, 241);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(98, 18);
-            this.guna2HtmlLabel3.TabIndex = 32;
-            this.guna2HtmlLabel3.Text = "Ngày đăng ký ở";
+            this.ngayDk.BackColor = System.Drawing.Color.Transparent;
+            this.ngayDk.BorderRadius = 10;
+            this.ngayDk.BorderThickness = 1;
+            this.ngayDk.Checked = true;
+            this.ngayDk.CustomFormat = "dd/MM/yyyy";
+            this.ngayDk.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.ngayDk.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.ngayDk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(86)))), ((int)(((byte)(71)))));
+            this.ngayDk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ngayDk.Location = new System.Drawing.Point(170, 9);
+            this.ngayDk.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.ngayDk.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.ngayDk.Name = "ngayDk";
+            this.ngayDk.ShadowDecoration.BorderRadius = 10;
+            this.ngayDk.ShadowDecoration.CustomizableEdges.TopLeft = false;
+            this.ngayDk.ShadowDecoration.CustomizableEdges.TopRight = false;
+            this.ngayDk.ShadowDecoration.Enabled = true;
+            this.ngayDk.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.ngayDk.Size = new System.Drawing.Size(317, 36);
+            this.ngayDk.TabIndex = 143;
+            this.ngayDk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ngayDk.Value = new System.DateTime(2025, 4, 13, 11, 51, 0, 0);
             // 
-            // guna2HtmlLabel4
+            // guna2HtmlLabel8
             // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(39, 321);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(82, 18);
-            this.guna2HtmlLabel4.TabIndex = 33;
-            this.guna2HtmlLabel4.Text = "Ngày hết hạn";
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(39, 390);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(63, 18);
-            this.guna2HtmlLabel5.TabIndex = 34;
-            this.guna2HtmlLabel5.Text = "Trạng thái";
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(130, 25);
+            this.guna2HtmlLabel8.TabIndex = 141;
+            this.guna2HtmlLabel8.Text = "Ngày đăng ký ở:";
             // 
             // luu
             // 
+            this.luu.BackColor = System.Drawing.Color.Transparent;
+            this.luu.BorderColor = System.Drawing.Color.Transparent;
+            this.luu.BorderRadius = 10;
+            this.luu.BorderThickness = 1;
             this.luu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.luu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.luu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.luu.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.luu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.luu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.luu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(230)))), ((int)(((byte)(100)))));
+            this.luu.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(158)))), ((int)(((byte)(87)))));
+            this.luu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.luu.ForeColor = System.Drawing.Color.White;
-            this.luu.Location = new System.Drawing.Point(192, 461);
+            this.luu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.luu.Location = new System.Drawing.Point(226, 380);
             this.luu.Name = "luu";
-            this.luu.Size = new System.Drawing.Size(180, 45);
-            this.luu.TabIndex = 35;
+            this.luu.ShadowDecoration.BorderRadius = 15;
+            this.luu.ShadowDecoration.Depth = 50;
+            this.luu.ShadowDecoration.Enabled = true;
+            this.luu.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.luu.Size = new System.Drawing.Size(120, 50);
+            this.luu.TabIndex = 137;
             this.luu.Text = "Lưu";
             this.luu.Click += new System.EventHandler(this.luu_Click);
+            // 
+            // guna2GradientPanel3
+            // 
+            this.guna2GradientPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel3.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel3.BorderRadius = 10;
+            this.guna2GradientPanel3.BorderThickness = 1;
+            this.guna2GradientPanel3.Controls.Add(this.guna2HtmlLabel9);
+            this.guna2GradientPanel3.Controls.Add(this.SoPhong);
+            this.guna2GradientPanel3.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(15, 86);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel3.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(525, 60);
+            this.guna2GradientPanel3.TabIndex = 142;
+            // 
+            // guna2HtmlLabel9
+            // 
+            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel9.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
+            this.guna2HtmlLabel9.Size = new System.Drawing.Size(87, 25);
+            this.guna2HtmlLabel9.TabIndex = 140;
+            this.guna2HtmlLabel9.Text = "Mã phòng:";
+            // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2GradientPanel2.BorderRadius = 10;
+            this.guna2GradientPanel2.BorderThickness = 1;
+            this.guna2GradientPanel2.Controls.Add(this.guna2HtmlLabel10);
+            this.guna2GradientPanel2.Controls.Add(this.TenKhachHang);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.GhostWhite;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(15, 14);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.ShadowDecoration.BorderRadius = 10;
+            this.guna2GradientPanel2.ShadowDecoration.Enabled = true;
+            this.guna2GradientPanel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(525, 60);
+            this.guna2GradientPanel2.TabIndex = 139;
+            // 
+            // guna2HtmlLabel10
+            // 
+            this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel10.Location = new System.Drawing.Point(19, 18);
+            this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
+            this.guna2HtmlLabel10.Size = new System.Drawing.Size(130, 25);
+            this.guna2HtmlLabel10.TabIndex = 1;
+            this.guna2HtmlLabel10.Text = "Tên khách hàng:";
+            // 
+            // guna2GradientPanel12
+            // 
+            this.guna2GradientPanel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel12.Controls.Add(this.exitButton);
+            this.guna2GradientPanel12.Controls.Add(this.guna2PictureBox5);
+            this.guna2GradientPanel12.Controls.Add(this.guna2CustomGradientPanel18);
+            this.guna2GradientPanel12.Controls.Add(this.label22);
+            this.guna2GradientPanel12.Controls.Add(this.label23);
+            this.guna2GradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
+            this.guna2GradientPanel12.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel12.Location = new System.Drawing.Point(0, 0);
+            this.guna2GradientPanel12.Name = "guna2GradientPanel12";
+            this.guna2GradientPanel12.Size = new System.Drawing.Size(554, 70);
+            this.guna2GradientPanel12.TabIndex = 147;
+            // 
+            // exitButton
+            // 
+            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
+            this.exitButton.BorderRadius = 1;
+            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
+            this.exitButton.Location = new System.Drawing.Point(522, 0);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(30, 30);
+            this.exitButton.TabIndex = 20;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_list3;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(15, 5);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 132;
+            this.guna2PictureBox5.TabStop = false;
+            // 
+            // guna2CustomGradientPanel18
+            // 
+            this.guna2CustomGradientPanel18.BorderRadius = 2;
+            this.guna2CustomGradientPanel18.FillColor = System.Drawing.Color.PaleGreen;
+            this.guna2CustomGradientPanel18.FillColor2 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel18.FillColor3 = System.Drawing.Color.DarkKhaki;
+            this.guna2CustomGradientPanel18.FillColor4 = System.Drawing.Color.Lime;
+            this.guna2CustomGradientPanel18.Location = new System.Drawing.Point(87, 8);
+            this.guna2CustomGradientPanel18.Name = "guna2CustomGradientPanel18";
+            this.guna2CustomGradientPanel18.Size = new System.Drawing.Size(7, 50);
+            this.guna2CustomGradientPanel18.TabIndex = 125;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(95, 39);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(91, 20);
+            this.label22.TabIndex = 122;
+            this.label22.Text = "Đăng ký mới";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
+            this.label23.Location = new System.Drawing.Point(93, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(103, 29);
+            this.label23.TabIndex = 123;
+            this.label23.Text = "Đăng ký";
             // 
             // Form_Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 518);
-            this.Controls.Add(this.luu);
-            this.Controls.Add(this.guna2HtmlLabel5);
-            this.Controls.Add(this.guna2HtmlLabel4);
-            this.Controls.Add(this.guna2HtmlLabel3);
-            this.Controls.Add(this.guna2HtmlLabel2);
-            this.Controls.Add(this.guna2HtmlLabel1);
-            this.Controls.Add(this.ngayHethan);
-            this.Controls.Add(this.ngayDk);
-            this.Controls.Add(this.TrangThai);
-            this.Controls.Add(this.SoPhong);
-            this.Controls.Add(this.TenKhachHang);
-            this.Controls.Add(this.panel3);
+            this.ClientSize = new System.Drawing.Size(554, 525);
+            this.Controls.Add(this.guna2GradientPanel12);
+            this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Registration";
             this.Text = "Form1";
-            this.panel3.ResumeLayout(false);
+            this.guna2GradientPanel1.ResumeLayout(false);
+            this.guna2GradientPanel6.ResumeLayout(false);
+            this.guna2GradientPanel6.PerformLayout();
+            this.guna2GradientPanel5.ResumeLayout(false);
+            this.guna2GradientPanel5.PerformLayout();
+            this.guna2GradientPanel4.ResumeLayout(false);
+            this.guna2GradientPanel4.PerformLayout();
+            this.guna2GradientPanel3.ResumeLayout(false);
+            this.guna2GradientPanel3.PerformLayout();
+            this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
+            this.guna2GradientPanel12.ResumeLayout(false);
+            this.guna2GradientPanel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel3;
-        private Guna.UI2.WinForms.Guna2Button exitButton;
         private Guna.UI2.WinForms.Guna2ComboBox TenKhachHang;
         private Guna.UI2.WinForms.Guna2ComboBox SoPhong;
         private Guna.UI2.WinForms.Guna2ComboBox TrangThai;
-        private Guna.UI2.WinForms.Guna2DateTimePicker ngayDk;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
         private Guna.UI2.WinForms.Guna2DateTimePicker ngayHethan;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2Button luu;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
+        private Guna.UI2.WinForms.Guna2DateTimePicker ngayDk;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
+        private Guna.UI2.WinForms.Guna2GradientButton luu;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel12;
+        private Guna.UI2.WinForms.Guna2Button exitButton;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel18;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
     }
 }

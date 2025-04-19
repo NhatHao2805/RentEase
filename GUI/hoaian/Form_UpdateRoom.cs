@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,68 @@ namespace GUI
 
             _username = username;
             infor = selectedRoom;
+            loadLanguage();
+        }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "roomtable_building":
+                        guna2HtmlLabel14.Text = a.Value;
+                        break;
+                    case "property_type":
+                        guna2HtmlLabel13.Text = a.Value;
+                        break;
+                    case "classification":
+                        guna2HtmlLabel12.Text = a.Value;
+                        break;
+                    case "amenities":
+                        guna2HtmlLabel11.Text = a.Value;
+                        break;
+                    case "area":
+                        guna2HtmlLabel9.Text = a.Value;
+                        break;
+                    case "rent_price":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "status":
+                        guna2HtmlLabel3.Text = a.Value;
+                        break;
+                    case "status_options.occupied":
+                        DangO_chbox.Text = a.Value;
+                        break;
+                    case "status_options.vacant":
+                        DangTrong_chbox.Text = a.Value;
+                        break;
+                    case "status_options.owing":
+                        DangNoTien_chbox.Text = a.Value;
+                        break;
+                    case "notification.ending":
+                        DangKT_chbox.Text = a.Value;
+                        break;
+                    case "notification.reserved":
+                        DangCoc_chbox.Text = a.Value;
+                        break;
+                    case "contract.expired":
+                        DaHetHan_chbox.Text = a.Value;
+                        break;
+                    case "contract.near_expiry":
+                        SapHetHan_chbox.Text = a.Value;
+                        break;
+
+                    case "room.add_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "room.add_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        Update_btn.Text = a.Value;
+                        break;
+                }
+            }
         }
 
         private void Form_UpdateRoom_Load(object sender, EventArgs e)
@@ -42,10 +105,19 @@ namespace GUI
                 floor_cb.Items.Add(i);
             }
 
-            // Load loại phòng
-            type_cb.Items.Add("Nhà trọ");
-            type_cb.Items.Add("Chung cư 1 phòng ngủ");
-            type_cb.Items.Add("Chung cư 2 phòng ngủ");
+            string[] a = {Language.translate("phongdon"),
+                Language.translate("phongdoi"),
+                Language.translate("phongthuong"),
+                Language.translate("phongcaocap"),
+                Language.translate("studio"),
+                Language.translate("phongnguyencan")};
+            foreach (string item in a)
+            {
+                if (!type_cb.Items.Contains(item))
+                {
+                    type_cb.Items.Add(item);
+                }
+            }
 
             // Hiển thị thông tin phòng lên các control
             roomid_cb.SelectedItem = infor.RoomId;
@@ -63,28 +135,27 @@ namespace GUI
                 foreach (string status in statuses)
                 {
                     string trimmedStatus = status.Trim();
-
-                    switch (trimmedStatus)
+                    switch (Language.reverseTranslate(trimmedStatus))
                     {
-                        case "Sắp hết hạn hợp đồng":
+                        case "saphethanhopdong":
                             SapHetHan_chbox.Checked = true;
                             break;
-                        case "Đang cọc giữ chỗ":
+                        case "dangcocgiucho":
                             DangCoc_chbox.Checked = true;
                             break;
-                        case "Đã hết hạn hợp đồng":
+                        case "dahethanhopdong":
                             DaHetHan_chbox.Checked = true;
                             break;
-                        case "Đang báo kết thúc":
+                        case "dangbaoketthuc":
                             DangKT_chbox.Checked = true;
                             break;
-                        case "Đang nợ tiền":
+                        case "dangnotien":
                             DangNoTien_chbox.Checked = true;
                             break;
-                        case "Đang trống":
+                        case "dangtrong":
                             DangTrong_chbox.Checked = true;
                             break;
-                        case "Đang ở":
+                        case "dango":
                             DangO_chbox.Checked = true;
                             break;
                     }
@@ -106,14 +177,13 @@ namespace GUI
             room.Price = price_tb.Text;
             room.Area = area_tb.Text;
 
-            string status = "";
-            foreach (Control control in this.Controls)
-            {
-                if (control is CheckBox checkBox && checkBox.Checked)
-                {
-                    status += checkBox.Text + "; ";
-                }
-            }
+            string status = (DangO_chbox.Checked ? Language.reverseTranslate(DangO_chbox.Text) + "; " : "")
+              + (DangTrong_chbox.Checked ? Language.reverseTranslate(DangTrong_chbox.Text) + "; " : "")
+              + (DangKT_chbox.Checked ? Language.reverseTranslate(DangKT_chbox.Text) + "; " : "")
+              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
+              + (DaHetHan_chbox.Checked ? Language.reverseTranslate(DaHetHan_chbox.Text) + "; " : "")
+              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
+              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) : "");
             room.Status = status.TrimEnd(';', ' ');
 
             string check = RoomBLL.UpdateRoom(room);
@@ -135,6 +205,9 @@ namespace GUI
                     MessageBox.Show("Giá phòng không hợp lệ\nVí dụ: 2000000 hoặc 3.500000");
                     price_tb.Text = string.Empty;
                     room.Price = null;
+                    return;
+                case "required_status":
+                    MessageBox.Show("Bạn chưa chọn trạng thái");
                     return;
                 case "Không thể vừa 'Đang ở' vừa 'Đang trống'.":
                     MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.");
@@ -185,6 +258,21 @@ namespace GUI
             SapHetHan_chbox.Checked = false;
 
             room.Status = "";
+        }
+
+        private void floor_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

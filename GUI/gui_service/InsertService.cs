@@ -1,8 +1,10 @@
-﻿using BLL.BLL_Service;
+﻿using BLL;
+using BLL.BLL_Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,9 +18,48 @@ namespace GUI.GUI_Service
         public InsertService()
         {
             InitializeComponent();
-        }
 
-        //Insert
+            // Nhut Huy Neeeeeeeeeeeeeeeeeeeeeeeewwww 11/4
+            // Cài đặt validation cho TextBox Cost
+            Cost.KeyPress += txtCost_KeyPress;
+
+            // Cài đặt validation cho TextBox ServiceName
+            ServiceName.KeyPress += txtServiceName_KeyPress;
+
+            loadLanguage();
+        }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "service.add_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "service.add_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "service.name":
+                        this.ServiceName_Label.Text = a.Value;
+                        break;
+                    case "service.price":
+                        this.Cost_Label.Text = a.Value;
+                        break;
+                    case "service.save_button":
+                        guna2Button1.Text = a.Value;
+                        break;
+
+                }
+            }
+        }
+//        service.add_title: Thêm dịch vụ
+//service.add_subtitle: Thêm dịch vụ mới
+//service.name: Tên dịch vụ
+//service.price: Giá dịch vụ
+//service.save_button: Lưu
+//service.cancel_button: Đơn
+//Insert
         private InsertServiceBLL serviceBLL = new InsertServiceBLL();
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -51,5 +92,49 @@ namespace GUI.GUI_Service
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                                       (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2GradientPanel12_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /// Nhut Huy Neeeeeeeeeeeeeeeeeeeeeeeewwww 11/4
+        private void txtCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2TextBox txt = (Guna.UI2.WinForms.Guna2TextBox)sender;
+
+            // Cho phép phím điều khiển (backspace, delete, etc.)
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Cho phép số
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            // Cho phép dấu thập phân với 2 điều kiện:
+            // 1. Chưa có dấu thập phân
+            // 2. Không phải ký tự đầu tiên
+            if ((e.KeyChar == '.' || e.KeyChar == ',') &&
+                !txt.Text.Contains('.') && !txt.Text.Contains(',') &&
+                txt.Text.Length > 0)
+                return;
+
+            // Chặn tất cả các ký tự khác
+            e.Handled = true;
+        }
+        private void txtServiceName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Chỉ cho phép nhập chữ cái và khoảng trắng
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        //////////////////////////////////////////////////////////
     }
 }

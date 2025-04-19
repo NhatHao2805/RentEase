@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,46 @@ namespace GUI
             _username = username;
             infor = selectedAsset;
             _buildingid = buildingid;
+            loadLanguage();
+        }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "room_code":
+                        guna2HtmlLabel9.Text = a.Value;
+                        break;
+                    case "asset_code":
+                        guna2HtmlLabel11.Text = a.Value;
+                        break;
+                    case "asset_name":
+                        guna2HtmlLabel5.Text = a.Value;
+                        break;
+                    case "asset_value":
+                        guna2HtmlLabel4.Text = a.Value;
+                        break;
+                    case "usage_period":
+                        guna2HtmlLabel6.Text = a.Value;
+                        break;
+                    case "status":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        add_btn.Text = a.Value;
+                        break;
+                    case " asset.update_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "asset.update_subtitle":
+                        label22.Text = a.Value;
+                        break;
+//                        asset.update_title: Cập nhật tài sản
+//asset.update_subtitle: Cập nhật tài sản của bạn
+                }
+            }
+
         }
 
         private void Form_UpdateAssets_Load(object sender, EventArgs e)
@@ -36,11 +77,16 @@ namespace GUI
             roomid_cb.SelectedValue = infor.RoomId;
 
             status_cb.Items.Clear();
-            status_cb.Items.Add("Tốt");
-            status_cb.Items.Add("Hư hỏng nhẹ");
-            status_cb.Items.Add("Cần được sửa chữa/thay thế");
-            status_cb.Items.Add("Đang sửa chữa");
-            status_cb.Items.Add("Đang thay thế");
+            status_cb.Items.Add(infor.Status);
+
+            string[] status = { Language.translate("tot"), Language.translate("huhongnhe"), Language.translate("canduocsuachua/thaythe"), Language.translate("dangthaythe"), Language.translate("dangsuthaythe") };
+            foreach (string s in status)
+            {
+                if (!status_cb.Items.Contains(s))
+                {
+                    status_cb.Items.Add(s);
+                }
+            }
 
             // Hiển thị thông tin phòng lên các control
             roomid_cb.SelectedItem = infor.RoomId;
@@ -70,7 +116,7 @@ namespace GUI
             assets.AssetName = assetName_tb.Text;
             assets.Price = price_tb.Text;
             assets.UseDate = useDate_dpk.Value.ToString("yyyy-MM-dd");
-            assets.Status = status_cb.SelectedIndex.ToString();
+            assets.Status = Language.reverseTranslate(status_cb.SelectedItem.ToString());
 
             string check = AssetBLL.UpdateAsset(assets);
 
@@ -101,6 +147,9 @@ namespace GUI
                     return;
             }
         }
-
+        private void close_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

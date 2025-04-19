@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using BLL;
@@ -28,7 +30,6 @@ namespace GUI
         private string buildingid;
         private DataGridView table;
         private DataGridView table_tenant;
-        
         public Form_AddContract(string username, int control, int row,string buildingid,DataGridView table, DataGridView table_tenant)
         {
             this.username = username; 
@@ -37,9 +38,76 @@ namespace GUI
             this.buildingid = buildingid;
             this.table = table;
             this.table_tenant = table_tenant;
-            InitializeComponent();        
+            InitializeComponent(); 
             LoadInfo();
         }
+
+        private void loadLanguage()
+        {
+            LichThanhToan.Items.Clear();
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "contract.add_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "contract.add_subtitle":
+
+                        label22.Text = a.Value;
+                        break;
+                    case "contract.room_number":
+
+                        guna2HtmlLabel14.Text = a.Value;
+                        break;
+                    case "contract.tenant_name":
+
+                        guna2HtmlLabel16.Text = a.Value;
+                        break;
+                    case "contract.creation_date":
+
+                        guna2HtmlLabel12.Text = a.Value;
+                        break;
+                    case "contract.start_date":
+
+                        guna2HtmlLabel15.Text = a.Value;
+                        break;
+                    case "contract.end_date":
+
+                        guna2HtmlLabel11.Text = a.Value;
+                        break;
+                    case "contract.monthly_rent":
+
+                        guna2HtmlLabel2.Text = a.Value;
+                        break;
+                    case "contract.payment_schedule":
+                        guna2HtmlLabel17.Text = a.Value;
+
+                        break;
+                    case "contract.deposit":
+
+                        guna2HtmlLabel13.Text = a.Value;
+                        break;
+                    case "contract.notes":
+
+                        guna2HtmlLabel18.Text = a.Value;
+                        break;
+                    case "btn_save":
+
+                        saveButton.Text = a.Value;
+                        break;
+                    case "dauthang":
+
+                        LichThanhToan.Items.Add(a.Value);
+                        break;
+                    case "cuoithang":
+
+                        LichThanhToan.Items.Add(a.Value);
+                        break;
+                }
+            }
+        }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -58,7 +126,7 @@ namespace GUI
 
         private void LoadInfo()
         {
-           
+            
             guna2DateTimePicker1.Enabled = false;
             switch (control)
             {
@@ -77,6 +145,8 @@ namespace GUI
                     {
                         SoPhong.Items.Add(id);
                     }
+                    loadLanguage();
+
                     break;
                 case 1:
                     guna2DateTimePicker2.Enabled = false;
@@ -97,6 +167,16 @@ namespace GUI
 
                     LichThanhToan.Items.Clear();
                     LichThanhToan.Items.Add(table.Rows[row].Cells[9].Value.ToString());
+                    string[] ac = {Language.translate("dauthang"), Language.translate("cuoithang") };
+                    foreach (string id in ac)
+                    {
+                        Console.WriteLine(!LichThanhToan.Items.Contains(id));   
+                        if (!LichThanhToan.Items.Contains(id))
+                        {
+                            LichThanhToan.Items.Add(id);
+
+                        }
+                    }
                     LichThanhToan.SelectedIndex = 0;
                     LichThanhToan.Enabled = false;
 
@@ -128,7 +208,7 @@ namespace GUI
                         guna2DateTimePicker1.Value.ToString("yyyy-MM-dd"),
                         guna2DateTimePicker2.Value.ToString("yyyy-MM-dd"),
                         guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
-                        LichThanhToan.Text,
+                        Language.reverseTranslate(LichThanhToan.Text),
                         TienDatCoc.Text,
                         GhiChu.Text);
                         if (result == "Please fill all the fields")
@@ -158,7 +238,7 @@ namespace GUI
                     string result1 = ContractBLL.ContractBLL_update_Contract(
                     table.Rows[row].Cells[0].Value.ToString(),
                     guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
-                    LichThanhToan.Text,
+                    Language.reverseTranslate(LichThanhToan.Text),
                     TienDatCoc.Text,
                     GhiChu.Text);
                     if (result1 == "Please fill all the fields")
@@ -180,5 +260,9 @@ namespace GUI
             }
         }
 
+        private void exitButton_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

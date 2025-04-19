@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.Login;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,9 +16,17 @@ namespace GUI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
+            //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Bắt đầu ứng dụng với Loading Form
+            //Loading loadingForm = new Loading();
+            //loadingForm.ShowDialog(); // Hiển thị dưới dạng hộp thoại (blocking)
+
+
+
             Application.Run(new Form_Login());
+            //Application.Run(new Loading());
         }
     }
 }

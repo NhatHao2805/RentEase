@@ -1,4 +1,6 @@
-﻿using BLL.honhathao;
+﻿using BLL;
+using BLL.honhathao;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI.honhathao
 {
@@ -24,8 +27,54 @@ namespace GUI.honhathao
             this.data = data;
             this.control = control;
             this.username = username;
+            loadLanguage();
             loadinfo();
         }
+        private void loadLanguage()
+        {
+            foreach(KeyValuePair<string ,string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "tenant.title":
+                        label23.Text = a.Value;
+                        break;
+                    case "tenant.subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "tenant.last_name":
+                        guna2HtmlLabel11.Text = a.Value;
+                        break;
+                    case "tenant.first_name":
+                        guna2HtmlLabel10.Text = a.Value;
+                        break;
+                    case "tenant.dob":
+                        guna2HtmlLabel9.Text = a.Value;
+                        break;
+                    case "tenant.gender":
+                        guna2HtmlLabel8.Text = a.Value;
+                        break;
+                    case "tenant.phone":
+                        guna2HtmlLabel7.Text = a.Value;
+                        break;
+                    case "tenant.email":
+                        guna2HtmlLabel12.Text = a.Value;
+                        break;
+                    case "tenant.save_button":
+                        luu.Text = a.Value;
+                        break;
+                }
+            }
+        }
+        //tenant.title: Người thuê nhà
+        //tenant.subtitle: Đăng ký người thuê nhà mới
+        //tenant.last_name: Họ đệm
+        //tenant.first_name: Tên
+        //tenant.dob: Ngày sinh
+        //tenant.gender: Giới tính
+        //tenant.phone: SĐT
+        //tenant.email: Email
+        //tenant.save_button: Lưu
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
@@ -38,12 +87,15 @@ namespace GUI.honhathao
         }
         private void loadinfo()
         {
-            if(data != null)
+            gioitinh.Items.Clear();
+            gioitinh.Items.Add(Language.translate("nam"));
+            gioitinh.Items.Add(Language.translate("nu"));
+            if (data != null)
             {
                 hodem.Text = data.Cells[1].Value.ToString();
                 ten.Text = data.Cells[2].Value.ToString();
                 ngaysinh.Value = DateTime.Parse(data.Cells[3].Value.ToString());
-                gioitinh.Text = data.Cells[4].Value.ToString();
+                gioitinh.Text = Language.translate(data.Cells[4].Value.ToString());
                 sdt.Text = data.Cells[5].Value.ToString();
                 email.Text = data.Cells[6].Value.ToString();
             }
@@ -69,7 +121,7 @@ namespace GUI.honhathao
                         hodem.Text,
                         ten.Text,
                         ngaysinh.Value.ToString("yyyy-MM-dd"),
-                        gioitinh.Text,
+                        Language.reverseTranslate(gioitinh.Text),
                         sdt.Text,
                         email.Text
                     );
@@ -89,7 +141,7 @@ namespace GUI.honhathao
                         hodem.Text,
                         ten.Text,
                         ngaysinh.Value.ToString("yyyy-MM-dd"),
-                        gioitinh.Text,
+                        Language.reverseTranslate(gioitinh.Text),
                         sdt.Text,
                         email.Text
                     );

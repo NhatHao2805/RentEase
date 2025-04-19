@@ -79,34 +79,9 @@ namespace BLL
                 }
             }
 
-            if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") < room.Status.IndexOf("Đang trống"))
+            if (string.IsNullOrEmpty(room.Status))
             {
-                return "Không thể vừa 'Đang ở' vừa 'Đang trống'.";
-            }
-
-            if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") > room.Status.IndexOf("Đang trống"))
-            {
-                return "Không thể vừa 'Đang trống' vừa 'Đang ở'.";
-            }
-
-            if (room.Status.Contains("Đang cọc giữ chỗ") && room.Status.Contains("Đang báo kết thúc") && room.Status.IndexOf("Đang cọc giữ chỗ") < room.Status.IndexOf("Đang báo kết thúc"))
-            {
-                return "Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang báo kết thúc'.";
-            }
-
-            if (room.Status.Contains("Đang cọc giữ chỗ") && room.Status.Contains("Đang báo kết thúc") && room.Status.IndexOf("Đang cọc giữ chỗ") > room.Status.IndexOf("Đang báo kết thúc"))
-            {
-                return "Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.";
-            }
-
-            if (room.Status.Contains("Đã quá hạn hợp đồng") && room.Status.Contains("Sắp hết hạn hợp đồng") && room.Status.IndexOf("Đã quá hạn hợp đồng") < room.Status.IndexOf("Sắp hết hạn hợp đồng"))
-            {
-                return "Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.";
-            }
-
-            if (room.Status.Contains("Đã quá hạn hợp đồng") && room.Status.Contains("Sắp hết hạn hợp đồng") && room.Status.IndexOf("Đã quá hạn hợp đồng") > room.Status.IndexOf("Sắp hết hạn hợp đồng"))
-            {
-                return "Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.";
+                return "required_status";
             }
 
             string infor = RoomAccess.AddRoom(room);
@@ -138,6 +113,11 @@ namespace BLL
                 {
                     return "invalid_price_format";
                 }
+            }
+
+            if (string.IsNullOrEmpty(room.Status))
+            {
+                return "required_status";
             }
 
             if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") < room.Status.IndexOf("Đang trống"))

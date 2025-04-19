@@ -52,6 +52,9 @@
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.2.4.0\lib\net471\MySqlConnector.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -227,7 +230,19 @@
     <Compile Include="honhathao\Form_Tenant.Designer.cs">
       <DependentUpon>Form_Tenant.cs</DependentUpon>
     </Compile>
+    <Compile Include="honhathao\languages\BotChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\languages\BotChat.Designer.cs">
+      <DependentUpon>BotChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="honhathao\RandomKey.cs" />
+    <Compile Include="Login\loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form1.Designer.cs">
+      <DependentUpon>loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,36 +263,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="quanlyphuongtien\QuanLyPhuonTien.cs">
+    <Compile Include="quanlyphuongtien\Form_AddParkingArea.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="quanlyphuongtien\QuanLyPhuonTien.Designer.cs">
-      <DependentUpon>QuanLyPhuonTien.cs</DependentUpon>
+    <Compile Include="quanlyphuongtien\Form_AddParkingArea.Designer.cs">
+      <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
     </Compile>
-    <Compile Include="quanlyphuongtien\Suaphuongtien.cs">
+    <Compile Include="quanlyphuongtien\Form_AddVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="quanlyphuongtien\Suaphuongtien.Designer.cs">
-      <DependentUpon>Suaphuongtien.cs</DependentUpon>
+    <Compile Include="quanlyphuongtien\Form_AddVehicle.Designer.cs">
+      <DependentUpon>Form_AddVehicle.cs</DependentUpon>
     </Compile>
-    <Content Include="honhathao\languages\initialLanguage.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <EmbeddedResource Include="gui_service\AddService.resx">
-      <DependentUpon>AddService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui_service\DeleteService.resx">
-      <DependentUpon>DeleteService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui_service\FingerprintManagementForm.resx">
-      <DependentUpon>FingerprintManagementForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui_service\InsertService.resx">
-      <DependentUpon>InsertService.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gui_service\SeeAllService.resx">
-      <DependentUpon>SeeAllService.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="quanlyphuongtien\Form_UpdateParkingArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateParkingArea.Designer.cs">
+      <DependentUpon>Form_UpdateParkingArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateVehicle.Designer.cs">
+      <DependentUpon>Form_UpdateVehicle.cs</DependentUpon>
+    </Compile>
+    <None Include="Resources\icons8-fingerprint-64.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\5603109.jpg" />
     <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,6 +307,59 @@
     </EmbeddedResource>
     <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
       <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\languages\BotChat.resx">
+      <DependentUpon>BotChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\loading.resx">
+      <DependentUpon>loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_AddParkingArea.resx">
+      <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_AddVehicle.resx">
+      <DependentUpon>Form_AddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_UpdateParkingArea.resx">
+      <DependentUpon>Form_UpdateParkingArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_UpdateVehicle.resx">
+      <DependentUpon>Form_UpdateVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\Phu-My-Hung-Tower.jpg" />
+    <None Include="Resources\icons8-ophthalmology-50.png" />
+    <None Include="Resources\LogoApp.jpg" />
+    <None Include="Resources\icons8-pay-50.png" />
+    <None Include="Resources\icons8-water-50.png" />
+    <None Include="Resources\icons8-filing-cabinet-50.png" />
+    <None Include="Resources\icons8-back-50.png" />
+    <None Include="Resources\icons8-vehicle-50-3.png" />
+    <None Include="Resources\icons8-vehicle-50-2.png" />
+    <None Include="Resources\icons8-service-50.png" />
+    <None Include="Resources\icons8-parking-100.png" />
+    <None Include="Resources\icons8-vehicle-50.png" />
+    <None Include="Resources\icons8-view-96.png" />
+    <None Include="Resources\icons8-lightning-bolt-80.png" />
+    <None Include="Resources\icons8-evaluate-64.png" />
+    <None Include="Resources\icons8-view-80.png" />
+    <None Include="Resources\icons8-remind-100.png" />
+    <EmbeddedResource Include="ContractTemplateForm .resx">
+      <DependentUpon>ContractTemplateForm .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\DeleteService.resx">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\FingerprintManagementForm.resx">
+      <DependentUpon>FingerprintManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\InsertService.resx">
+      <DependentUpon>InsertService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\SeeAllService.resx">
+      <DependentUpon>SeeAllService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="honhathao\Form_AddPayment.resx">
       <DependentUpon>Form_AddPayment.cs</DependentUpon>
@@ -348,21 +413,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="honhathao\languages\English.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="honhathao\languages\ListLanguage.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="honhathao\languages\Vietnamese.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <EmbeddedResource Include="quanlyphuongtien\QuanLyPhuonTien.resx">
-      <DependentUpon>QuanLyPhuonTien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="quanlyphuongtien\Suaphuongtien.resx">
-      <DependentUpon>Suaphuongtien.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -494,6 +544,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-home-100-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="honhathao\languages\English.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\initialLanguage.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\ListLanguage.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\Vietnamese.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

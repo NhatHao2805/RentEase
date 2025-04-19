@@ -10,6 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI;
+using DTO.DTO_Service;
+using DTO;
+using Microsoft.Win32;
+using System.Web.UI.WebControls;
 namespace GUI.GUI_Service
 {
     
@@ -17,16 +21,55 @@ namespace GUI.GUI_Service
     {
         
         private string buildingID;
-
+        private quanlynha parentForm;
         public AddService(string buildingid)
         {
             this.buildingID = buildingid;
             InitializeComponent();
-            
+            loadLanguage();
         }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "service_registration.title":
+                        label23.Text = a.Value;
+                        break;
+                    case "service_registration.subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "service_registration.customer_name":
+                        this.guna2HtmlLabel1.Text = a.Value;
+                        break;
+                    case "service_registration.room_code":
+                        this.guna2HtmlLabel2.Text = a.Value;
+                        break;
+                    case "service_registration.service_name":
+                        this.guna2HtmlLabel3.Text = a.Value;
+                        break;
+                    case "service_registration.cancel_button":
+                        Delete.Text = a.Value;
+                        break;
+                    case "service_registration.register_button":
+                        AddBtn.Text = a.Value;
+                        break;
+
+                }
+            }
+        }
+//        service_registration.title: Service Registration
+//service_registration.subtitle: Add new service to table
+//service_registration.customer_name: Customer Name
+//service_registration.room_code: Room Number
+//service_registration.service_name: Service Name
+//service_registration.cancel_button: Cancel Registration
+//service_registration.register_button: Register
         private KhachHangBLL khachHangBLL = new KhachHangBLL();
         private PhongBLL phongBLL = new PhongBLL();
         private DichVuBLL dichVuBLL = new DichVuBLL();
+
 
         public void AddService_Load(object sender, EventArgs e)
         {
@@ -40,13 +83,36 @@ namespace GUI.GUI_Service
 
         private void TenantName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (TenantName.SelectedValue != null)
+            try
             {
-                string selectedTenantID = TenantName.SelectedValue.ToString();
-                Room.DataSource = phongBLL.GetPhongByTenantID(selectedTenantID, buildingID);
+                // Lấy ID của khách hàng được chọn
+                if (TenantName.SelectedValue != null)
+                {
+                    // Lấy ID khách hàng từ SelectedValue vì đã set ValueMember = "ID"
+                    string tenantID = TenantName.SelectedValue.ToString();
+
+                    // Tạo instance của PhongBLL nếu chưa có
+                    if (phongBLL == null)
+                        phongBLL = new PhongBLL();
+
+                    // Lấy danh sách phòng của khách hàng
+                    List<PhongDTO> rooms = phongBLL.GetPhongByTenantID(tenantID, buildingID);
+
+                    // Hiển thị danh sách phòng vào ComboBox
+                    Room.DataSource = rooms;
+                    Room.DisplayMember = "ID"; // Hiển thị ID phòng
+                    Room.ValueMember = "ID";   // Giá trị là ID phòng
+
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thông tin phòng: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-   
+
 
         public void LoadComboBoxData()
         {
@@ -57,7 +123,7 @@ namespace GUI.GUI_Service
 
 
             TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
-     
+
             Room.DisplayMember = "ID";  // Đảm bảo đúng tên thuộc tính trong DTO
             Room.ValueMember = "ID";
 
@@ -131,6 +197,7 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                parentForm.btn_dichvu_Click(sender, e);
             }
             else
             {
@@ -140,20 +207,10 @@ namespace GUI.GUI_Service
             // Đóng form đăng ký sau khi thành công
             this.Close();
 
-            //parentForm.btn_dichvu_Click(sender, e);
+          
         }
 
         private void guna2HtmlLabel1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Service_Label_Click(object sender, EventArgs e)
         {
 
         }
@@ -169,6 +226,7 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                parentForm.btn_dichvu_Click(sender, e);
             }
             else
             {
@@ -176,12 +234,17 @@ namespace GUI.GUI_Service
             }
 
             this.Close();
-            //parentForm.btn_dichvu_Click(sender, e);
+           
         }
 
         private void TenantName_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
