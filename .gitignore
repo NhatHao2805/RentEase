@@ -3,7 +3,7 @@
 *serviceAccountKey.json
 *.json.key
 *.p12
-
+rentease.json
 # Visual Studio files
 .vs/
 *.suo
