@@ -929,3 +929,18 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\Merge15_4\DAL\obj\Debug\DAL.c
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\Merge15_4\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\Merge15_4\DAL\obj\Debug\DAL.dll
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\Merge15_4\DAL\obj\Debug\DAL.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Auth.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Core.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Sheets.v4.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Newtonsoft.Json.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Auth.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Auth.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Core.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Core.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Sheets.v4.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Sheets.v4.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Newtonsoft.Json.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\rentease.json

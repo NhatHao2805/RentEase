@@ -2503,5 +2503,38 @@ namespace GUI
         {
 
         }
+
+        // Yeu cau phan anh
+        private void guna2GradientButton13_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy ID tòa nhà hiện tại đang chọn
+                string buildingID = listBuildingID.Text;
+
+                if (string.IsNullOrEmpty(buildingID))
+                {
+                    MessageBox.Show("Vui lòng chọn tòa nhà trước khi xem phản ánh!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Khởi tạo form Quản lý phản ánh với buildingID
+                FeedbackManagementForm feedbackForm = new FeedbackManagementForm(buildingID);
+
+                // Hiển thị form dạng dialog
+                feedbackForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi mở form Quản lý phản ánh: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void guna2CustomGradientPanel28_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="dto_service\Contract_Service.cs" />
     <Compile Include="dto_service\EmailDTO.cs" />
+    <Compile Include="dto_service\FeedbackDTO.cs" />
     <Compile Include="dto_service\FingerprintDTO.cs" />
     <Compile Include="dto_service\KhachHangDTO.cs" />
     <Compile Include="dto_service\ServiceUsageDTO.cs" />

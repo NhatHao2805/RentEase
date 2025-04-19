@@ -164,6 +164,7 @@
     <Compile Include="AccountBLL.cs" />
     <Compile Include="bll_service\DeleteDichVuBLL.cs" />
     <Compile Include="bll_service\EmailBLL.cs" />
+    <Compile Include="bll_service\FeedbackBLL.cs" />
     <Compile Include="bll_service\FingerprintBLL.cs" />
     <Compile Include="bll_service\GetAllServiceBLL.cs" />
     <Compile Include="bll_service\InsertServiceBLL.cs" />

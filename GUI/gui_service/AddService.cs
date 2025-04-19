@@ -21,7 +21,8 @@ namespace GUI.GUI_Service
     {
         
         private string buildingID;
-        private quanlynha parentForm;
+    
+
         public AddService(string buildingid)
         {
             this.buildingID = buildingid;
@@ -197,15 +198,16 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                parentForm.btn_dichvu_Click(sender, e);
+             
+                // Đóng form đăng ký sau khi thành công
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Đăng ký thất bại. Khách hàng đã đăng ký dịch vụ này rồi vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
-            // Đóng form đăng ký sau khi thành công
-            this.Close();
+  
 
           
         }
@@ -226,14 +228,15 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                parentForm.btn_dichvu_Click(sender, e);
+               
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Hủy đăng ký thất bại. Chưa có dịch vụ để hủy, vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            this.Close();
+      
            
         }
 

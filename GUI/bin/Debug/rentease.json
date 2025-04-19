@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "rentease-457003",
+  "private_key_id": "634069fa12c1d24ae620d5ebb56ae83969e3d444",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCytkJfUgvgjcPM\nGHIv4fltfvzzFwksmpOVdQHSyXdLLngAJ7bPaQ/+mq5OQm34RxY5tMcpBXCIM11j\nxEJbruNDCooMxbeXrbun6tF4DcoNVaLWhqX6PWZUsCJsYNGuGOlXKInvQZUysC79\njAsnbcYpyhHDJd4pEKZ4sFFlu2PprBInDRKmc0o1H5yTLphDyzU1fY1gSu3ZbTyk\n1PjEvc6WjTI5Qp2++wl89PryB1a1AHqDPfDQxeKR5TzL02kbM7HA1tOc4vBcUXYu\nZFcYtogh/cAOyADiOoAUUh/yxeWaVgcOWWxnV1VyYRQuippdpJ5R7SXt3TcF4YA4\np40plI8vAgMBAAECggEAA3D7CjbcP7C7Knz2BfIGCZO+bzfsV02KtgAQzuxOPcZh\nTS92l7vgMPjtjlg9IeDMjsPqaeHO7vB+ReOLm5Rcj/ft/Jz6EhOoX21oJzWsxGD3\nx8XEAHOaOttBbnDW2NFl/OWs8kyDAPzfisZdmJ7GiBt6CBX8lzHY4s4SYzEelWtQ\njk6j8Vag1AM7kMAkQvWs6qUkQ81lCSSTrbkTnSjtd8T4ezgxO9HNeWrYPYWrlHcf\ndjFYxax56q4Fo5xTxJ/B49LBG/gUdngwX5UebB+PNbDDokmZ2Tld4QoMOpZZCMHt\nCl+J1FBQklub7gPT1PDzmi6gbRG45Q+XLe9ll72k0QKBgQDs5bZ6KH512tOEPZq8\nIdD1RTGlUyXH0l6bGgZeiQEw53HpRjCtZxerUUGP0Aw8wYSz1k57FUNmNLuqbPno\nlydgK/3Qj3e68VXd7E2WoHQEh9FEAepESipwU+OPLJtq9PPdVmhBsSKMnJlMitPc\nxDN29FBaAv0S418iulZkTjJF3QKBgQDBH2wMH0+sdq8sN51kOe1K0+Kk6yKLWEbb\nf0tJ2xGvzKJVfN+KGmqcZt5+IGBN2pfI18axkd/hjkPgvwIy1UkR+IU/WxKtZSuz\n5HlWVCffcZvI68Dnbm8tsQeqNGaZqT7oVtxvTlEBF3fMLbPuiKYw32RHuCHfaWjB\nzIBRMlwWewKBgQDUBVgHBvz/wAT04yn83QsmqXIgdEVpDPgNOwKeU2JUgaBq1p40\nZANEGipiayK4sb5yMgj1kfdLn0Ci7HvS1o2wPk8g/XZ8QwjF4Xsjp6GOeHwrsMcZ\nrYNEG2CcQKEs3eTwoSgYO1AfpvxxDANIH/WrrkfH98rGv+birwEpLu9BpQKBgQC1\n5gK+6D8DEkasPzXf0S/P6wLukwpWdS9ITv168vwVuYitPJDQY1FHPx0Rby1GJz4P\nzi03004sBPOqHD7V4k6QvqPCqOVOrJwdNHWU+m8T5s300RlA4qOVRckSZ4i78s1t\nyWKW9A0YGiKcDfAMHGlsXvz1EFnXNFGXOCckU2qpQQKBgQCXMXVhA3WE6uQtt1UK\ntE7OYnPd2x0xPoBrk7IQ/q//ukD8nEev4JCyxuH1FOYmxBfllQg9L1Wv2O+8PGUq\nYWwuGr6ClAqk6ZhGj9xr31m5dUM7ZeyaHCiDsVZ2PTMuXY/RAYLfGC46yJm3wh/o\nU/V1RCn86aitRFLHgnPLZ469QQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "sheets-api-service-account@rentease-457003.iam.gserviceaccount.com",
+  "client_id": "104456095363791253456",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sheets-api-service-account%40rentease-457003.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

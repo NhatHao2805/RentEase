@@ -113,6 +113,12 @@
     <Compile Include="gui_service\DeleteService.Designer.cs">
       <DependentUpon>DeleteService.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui_service\FeedbackManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\FeedbackManagementForm.Designer.cs">
+      <DependentUpon>FeedbackManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui_service\FingerprintManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     <None Include="Resources\5603109.jpg" />
     <EmbeddedResource Include="BuildingManagement\Form_Building.resx">
       <DependentUpon>Form_Building.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\FeedbackManagementForm.resx">
+      <DependentUpon>FeedbackManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
