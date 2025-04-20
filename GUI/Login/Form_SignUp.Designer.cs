@@ -42,6 +42,8 @@
             this.ns_datetimepicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.info_account = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.buttonXemPass2 = new Guna.UI2.WinForms.Guna2Button();
+            this.buttonXemPass1 = new Guna.UI2.WinForms.Guna2Button();
             this.textBoxTK_DK = new GUI.Custom.MyGunaTextBox();
             this.buttonDangKy = new GUI.Custom.MyGunaButton();
             this.textBoxMK_DK1 = new GUI.Custom.MyGunaTextBox();
@@ -54,14 +56,12 @@
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel18 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonXemPass1 = new Guna.UI2.WinForms.Guna2Button();
-            this.buttonXemPass2 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.info_account.SuspendLayout();
             this.info_user.SuspendLayout();
             this.guna2GradientPanel12.SuspendLayout();
@@ -284,6 +284,48 @@
             this.info_account.TabIndex = 92;
             this.info_account.Text = "Thông tin tài khoản";
             this.info_account.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // buttonXemPass2
+            // 
+            this.buttonXemPass2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonXemPass2.BorderThickness = 1;
+            this.buttonXemPass2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonXemPass2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonXemPass2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonXemPass2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonXemPass2.FillColor = System.Drawing.Color.White;
+            this.buttonXemPass2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonXemPass2.ForeColor = System.Drawing.Color.White;
+            this.buttonXemPass2.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.buttonXemPass2.Image = ((System.Drawing.Image)(resources.GetObject("buttonXemPass2.Image")));
+            this.buttonXemPass2.ImageSize = new System.Drawing.Size(25, 25);
+            this.buttonXemPass2.Location = new System.Drawing.Point(259, 265);
+            this.buttonXemPass2.Name = "buttonXemPass2";
+            this.buttonXemPass2.Size = new System.Drawing.Size(33, 33);
+            this.buttonXemPass2.TabIndex = 152;
+            this.buttonXemPass2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass2_MouseDown);
+            this.buttonXemPass2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass2_MouseUp);
+            // 
+            // buttonXemPass1
+            // 
+            this.buttonXemPass1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonXemPass1.BorderThickness = 1;
+            this.buttonXemPass1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonXemPass1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonXemPass1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonXemPass1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonXemPass1.FillColor = System.Drawing.Color.White;
+            this.buttonXemPass1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.buttonXemPass1.ForeColor = System.Drawing.Color.White;
+            this.buttonXemPass1.HoverState.FillColor = System.Drawing.Color.Transparent;
+            this.buttonXemPass1.Image = ((System.Drawing.Image)(resources.GetObject("buttonXemPass1.Image")));
+            this.buttonXemPass1.ImageSize = new System.Drawing.Size(25, 25);
+            this.buttonXemPass1.Location = new System.Drawing.Point(259, 192);
+            this.buttonXemPass1.Name = "buttonXemPass1";
+            this.buttonXemPass1.Size = new System.Drawing.Size(33, 33);
+            this.buttonXemPass1.TabIndex = 151;
+            this.buttonXemPass1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass1_MouseDown);
+            this.buttonXemPass1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass1_MouseUp);
             // 
             // textBoxTK_DK
             // 
@@ -532,11 +574,37 @@
             this.guna2GradientPanel12.Controls.Add(this.label1);
             this.guna2GradientPanel12.Controls.Add(this.guna2Button2);
             this.guna2GradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.guna2GradientPanel12.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel12.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(235)))), ((int)(((byte)(220)))));
             this.guna2GradientPanel12.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel12.Name = "guna2GradientPanel12";
             this.guna2GradientPanel12.Size = new System.Drawing.Size(948, 70);
             this.guna2GradientPanel12.TabIndex = 149;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderColor = System.Drawing.Color.Silver;
+            this.btnBack.BorderRadius = 5;
+            this.btnBack.BorderThickness = 1;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.MintCream;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnBack.Image = global::GUI.Properties.Resources.icons8_back_50;
+            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBack.Location = new System.Drawing.Point(825, 1);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.BorderRadius = 10;
+            this.btnBack.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.btnBack.Size = new System.Drawing.Size(120, 30);
+            this.btnBack.TabIndex = 138;
+            this.btnBack.Text = "Quay lại";
+            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // guna2PictureBox1
             // 
@@ -552,10 +620,9 @@
             // guna2CustomGradientPanel18
             // 
             this.guna2CustomGradientPanel18.BorderRadius = 2;
-            this.guna2CustomGradientPanel18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel18.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.guna2CustomGradientPanel18.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2CustomGradientPanel18.FillColor4 = System.Drawing.Color.Blue;
+            this.guna2CustomGradientPanel18.FillColor = System.Drawing.Color.Honeydew;
+            this.guna2CustomGradientPanel18.FillColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2CustomGradientPanel18.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel18.Location = new System.Drawing.Point(75, 10);
             this.guna2CustomGradientPanel18.Name = "guna2CustomGradientPanel18";
             this.guna2CustomGradientPanel18.Size = new System.Drawing.Size(7, 50);
@@ -585,91 +652,22 @@
             // 
             // guna2Button2
             // 
-            this.guna2Button2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Button2.BorderThickness = 1;
+            this.guna2Button2.BorderColor = System.Drawing.Color.Silver;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(235)))), ((int)(((byte)(220)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.guna2Button2.Image = global::GUI.Properties.Resources.icon_0;
-            this.guna2Button2.Location = new System.Drawing.Point(794, 0);
+            this.guna2Button2.Location = new System.Drawing.Point(794, 1);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(10);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(30, 30);
             this.guna2Button2.TabIndex = 133;
             this.guna2Button2.Click += new System.EventHandler(this.minimizedButton_Click);
-            // 
-            // buttonXemPass1
-            // 
-            this.buttonXemPass1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.buttonXemPass1.BorderThickness = 1;
-            this.buttonXemPass1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonXemPass1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonXemPass1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonXemPass1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonXemPass1.FillColor = System.Drawing.Color.White;
-            this.buttonXemPass1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonXemPass1.ForeColor = System.Drawing.Color.White;
-            this.buttonXemPass1.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.buttonXemPass1.Image = ((System.Drawing.Image)(resources.GetObject("buttonXemPass1.Image")));
-            this.buttonXemPass1.ImageSize = new System.Drawing.Size(25, 25);
-            this.buttonXemPass1.Location = new System.Drawing.Point(259, 192);
-            this.buttonXemPass1.Name = "buttonXemPass1";
-            this.buttonXemPass1.Size = new System.Drawing.Size(33, 33);
-            this.buttonXemPass1.TabIndex = 151;
-            this.buttonXemPass1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass1_MouseDown);
-            this.buttonXemPass1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass1_MouseUp);
-            // 
-            // buttonXemPass2
-            // 
-            this.buttonXemPass2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.buttonXemPass2.BorderThickness = 1;
-            this.buttonXemPass2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonXemPass2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonXemPass2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonXemPass2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonXemPass2.FillColor = System.Drawing.Color.White;
-            this.buttonXemPass2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.buttonXemPass2.ForeColor = System.Drawing.Color.White;
-            this.buttonXemPass2.HoverState.FillColor = System.Drawing.Color.Transparent;
-            this.buttonXemPass2.Image = ((System.Drawing.Image)(resources.GetObject("buttonXemPass2.Image")));
-            this.buttonXemPass2.ImageSize = new System.Drawing.Size(25, 25);
-            this.buttonXemPass2.Location = new System.Drawing.Point(259, 265);
-            this.buttonXemPass2.Name = "buttonXemPass2";
-            this.buttonXemPass2.Size = new System.Drawing.Size(33, 33);
-            this.buttonXemPass2.TabIndex = 152;
-            this.buttonXemPass2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass2_MouseDown);
-            this.buttonXemPass2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass2_MouseUp);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BorderColor = System.Drawing.Color.Silver;
-            this.btnBack.BorderRadius = 5;
-            this.btnBack.BorderThickness = 1;
-            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBack.FillColor = System.Drawing.Color.MintCream;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.btnBack.Image = global::GUI.Properties.Resources.icons8_back_50;
-            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBack.Location = new System.Drawing.Point(825, 1);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.ShadowDecoration.BorderRadius = 10;
-            this.btnBack.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.btnBack.Size = new System.Drawing.Size(120, 30);
-            this.btnBack.TabIndex = 138;
-            this.btnBack.Text = "Quay lại";
-            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // Form_SignUp
             // 

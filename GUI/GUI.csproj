@@ -94,6 +94,9 @@
     <Compile Include="ContractTemplateForm .cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Custom\OverlayHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Custom\Custom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -558,6 +561,8 @@
     <Content Include="honhathao\languages\Vietnamese.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-fingerprint-50.png" />
+    <None Include="Resources\icons8-bot.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using BLL;
 using BLL.honhathao;
 using DTO;
+using GUI.Custom;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,7 +96,9 @@ namespace GUI.honhathao
         private void button38_Click(object sender, EventArgs e)
         {
             Form_Add_W_E form = new Form_Add_W_E(buildingid);
-            form.ShowDialog();
+
+            //form.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, form);
             dgv_we.DataSource = null;
             loadInfo();
         }

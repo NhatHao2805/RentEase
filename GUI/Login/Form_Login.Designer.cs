@@ -43,12 +43,12 @@ namespace GUI
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.textBoxTK_DN = new GUI.Custom.MyGunaTextBox();
             this.buttonDangNhap1 = new GUI.Custom.MyGunaButton();
             this.textBoxMK_DN = new GUI.Custom.MyGunaTextBox();
+            this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -163,13 +163,13 @@ namespace GUI
             // 
             // guna2Button2
             // 
-            this.guna2Button2.BorderColor = System.Drawing.Color.Cyan;
+            this.guna2Button2.BorderColor = System.Drawing.Color.PaleTurquoise;
             this.guna2Button2.BorderThickness = 1;
             this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.LightCyan;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -224,30 +224,6 @@ namespace GUI
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox5.TabIndex = 132;
             this.guna2PictureBox5.TabStop = false;
-            // 
-            // hienMk
-            // 
-            this.hienMk.AllowLinksHandling = true;
-            this.hienMk.MaximumSize = new System.Drawing.Size(0, 0);
-            this.hienMk.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.hienMk.ToolTipTitle = "Hiện mật khẩu";
-            this.hienMk.Popup += new System.Windows.Forms.PopupEventHandler(this.hienMk_Popup);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::GUI.Properties.Resources._5603109;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -5);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(531, 555);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 150;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
-            this.guna2AnimateWindow1.TargetForm = this;
             // 
             // textBoxTK_DN
             // 
@@ -316,6 +292,30 @@ namespace GUI
             this.textBoxMK_DN.Size = new System.Drawing.Size(250, 40);
             this.textBoxMK_DN.TabIndex = 17;
             this.textBoxMK_DN.TextOffset = new System.Drawing.Point(5, 5);
+            // 
+            // hienMk
+            // 
+            this.hienMk.AllowLinksHandling = true;
+            this.hienMk.MaximumSize = new System.Drawing.Size(0, 0);
+            this.hienMk.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.hienMk.ToolTipTitle = "Hiện mật khẩu";
+            this.hienMk.Popup += new System.Windows.Forms.PopupEventHandler(this.hienMk_Popup);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::GUI.Properties.Resources._5603109;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -5);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(531, 555);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 150;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+            this.guna2AnimateWindow1.TargetForm = this;
             // 
             // Form_Login
             // 

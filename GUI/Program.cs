@@ -21,7 +21,7 @@ namespace GUI
 
             // Bắt đầu ứng dụng với Loading Form
             //Loading loadingForm = new Loading();
-            //loadingForm.ShowDialog(); // Hiển thị dưới dạng hộp thoại (blocking)
+            //loadingForm.ShowDialog(); 
 
 
 

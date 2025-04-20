@@ -27,6 +27,7 @@ using System.Runtime.InteropServices.ComTypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Diagnostics;
 using GUI.honhathao.languages;
+using GUI.Custom;
 
 namespace GUI
 {
@@ -355,7 +356,8 @@ namespace GUI
                 listDichVu = getAllServiceBLL.GetAllDichVu();
 
                 SeeAllService seeForm = new SeeAllService(listDichVu);
-                seeForm.ShowDialog(); 
+                //seeForm.ShowDialog();
+                OverlayManager.ShowWithOverlay(this, seeForm);
             }
             catch (Exception ex)
             {
@@ -414,14 +416,17 @@ namespace GUI
                 form1.taikhoan.Username,
                 listBuildingID.SelectedItem.ToString()
             );
-            fingerprintForm.ShowDialog();
+            //fingerprintForm.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, fingerprintForm);
         }
 
 
         private void guna2GradientButton1_Click_1(object sender, EventArgs e)
         {
             Form_W_E form_W_E = new Form_W_E(form1.taikhoan.Username, listBuildingID.Text);
-            form_W_E.ShowDialog();
+            //form_W_E.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, form_W_E);
+
             string result = BillBLL.BillBLL_calculate_bill();
             loadBill(null);
         }
@@ -477,20 +482,25 @@ namespace GUI
         {
             
             BotChat b = new BotChat(form1.taikhoan.Username);
-            b.Show();
+            //b.Show();
+            OverlayManager.ShowWithOverlay(this, b);
 
         }
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
             
             Form_TenantHistory f = new Form_TenantHistory(dgv_LSTN.Rows[dgv_LSTN.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            f.ShowDialog();
+            //f.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, f);
+
             loadTenantHistory(null);
         }
         private void guna2GradientButton3_Click(object sender, EventArgs e)
         {
             Form_LoadAll form_LoadAll = new Form_LoadAll();
-            form_LoadAll.ShowDialog();
+            //form_LoadAll.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, form_LoadAll);
+
         }
         private void guna2Button4_Click(object sender, EventArgs e)
         {
@@ -506,7 +516,8 @@ namespace GUI
         private void button10_Click(object sender, EventArgs e)
         {
             Form_BillDetail form_BillDetail = new Form_BillDetail(dgv_thanhtoan.Rows[dgv_thanhtoan.CurrentCell.RowIndex].Cells[0].Value.ToString());
-            form_BillDetail.ShowDialog();
+            //form_BillDetail.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, form_BillDetail);
         }
 
         private void guna2GradientButton9_Click(object sender, EventArgs e)
@@ -541,7 +552,8 @@ namespace GUI
         private void button18_Click(object sender, EventArgs e)
         {
             Form_Payment form_Payment = new Form_Payment(listBuildingID.Text);
-            form_Payment.ShowDialog();
+            //form_Payment.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, form_Payment);
 
         }
 
@@ -800,7 +812,9 @@ namespace GUI
         private void button14_Click(object sender, EventArgs e)
         {
             Form_Registration f = new Form_Registration(1, listBuildingID.Text, 0, dgv_DKLT, dgv_Tenant);
-            f.ShowDialog();
+            //f.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, f);
+
             loadRegistration(null);
         }
         private void timkiem_ttenant_Click(object sender, EventArgs e)
@@ -818,7 +832,9 @@ namespace GUI
                     DataGridViewRow data = dgv_DKLT.Rows[row];
                     Form_Registration f = new Form_Registration(row, listBuildingID.Text, 1, dgv_DKLT, null);
 
-                    f.ShowDialog();
+                    //f.ShowDialog();
+                    OverlayManager.ShowWithOverlay(this, f);
+
                     loadRegistration(null);
                 }
                 else
@@ -925,7 +941,9 @@ namespace GUI
         {
             DataGridViewRow data = null;
             Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username);
-            f.ShowDialog();
+            //f.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, f);
+
             loadTenant(null);
         }
         private void FilterAssets(string priceSort, string nameSort)
@@ -955,7 +973,10 @@ namespace GUI
         private void button25_Click_1(object sender, EventArgs e)
         {
             Form_AddAssets addAsset = new Form_AddAssets(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-            if (addAsset.ShowDialog() == DialogResult.OK)
+
+            OverlayManager.ShowWithOverlay(this, addAsset);
+
+            if (addAsset.DialogResult == DialogResult.OK)
             {
                 load_Assets();
             }
@@ -981,7 +1002,9 @@ namespace GUI
                 Status = selectedRow.Cells["Status"].Value?.ToString()
             };
             Form_UpdateAssets updateAssets = new Form_UpdateAssets(form1.taikhoan.Username, selectedAsset, listBuildingID.SelectedItem.ToString());
-            if (updateAssets.ShowDialog() == DialogResult.OK)
+            
+            OverlayManager.ShowWithOverlay(this, updateAssets);
+            if (updateAssets.DialogResult == DialogResult.OK)
             {
                 load_Assets();
             }
@@ -1013,7 +1036,8 @@ namespace GUI
         private void button24_Click_1(object sender, EventArgs e)
         {
             Form_AssetsDetail assetsDetail = new Form_AssetsDetail(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-            assetsDetail.Show();
+            //assetsDetail.Show();
+            OverlayManager.ShowWithOverlay(this, assetsDetail);
         }
 
         private void button26_Click(object sender, EventArgs e)
@@ -1040,7 +1064,9 @@ namespace GUI
                 int row = dgv_Tenant.CurrentCell.RowIndex;
                 DataGridViewRow data = dgv_Tenant.Rows[row];
                 Form_Tenant f = new Form_Tenant(data, 1, form1.taikhoan.Username);
-                f.ShowDialog();
+                //f.ShowDialog();
+                OverlayManager.ShowWithOverlay(this, f);
+
                 loadTenant(null);
             }
             catch (Exception ex)
@@ -1053,7 +1079,9 @@ namespace GUI
         private void button38_Click(object sender, EventArgs e)
         {
             Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 0, 1, listBuildingID.Text, dgv_QLHD, dgv_Tenant);
-            f.ShowDialog();
+            //f.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, f);
+
             load_Contract(0, timkiem_contract.Text);
         }
 
@@ -1065,7 +1093,9 @@ namespace GUI
                 if (row >= 0)
                 {
                     Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 1, row, listBuildingID.Text, dgv_QLHD, dgv_Tenant);
-                    f.ShowDialog();
+
+                    OverlayManager.ShowWithOverlay(this, f);
+                    //f.ShowDialog();
                     load_Contract(0, timkiem_contract.Text);
                 }
             }
@@ -1229,7 +1259,10 @@ namespace GUI
         private void button35_Click(object sender, EventArgs e)
         {
             Form_AddRoom addRoom = new Form_AddRoom(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-            if (addRoom.ShowDialog() == DialogResult.OK)
+
+            OverlayManager.ShowWithOverlay(this, addRoom);//hiệu ứng mờ
+
+            if (addRoom.DialogResult == DialogResult.OK)
             {
                 load_QLP();
             }
@@ -1257,7 +1290,10 @@ namespace GUI
                 Status = selectedRow.Cells["Status"].Value?.ToString()
             };
             Form_UpdateRoom updateRoom = new Form_UpdateRoom(form1.taikhoan.Username, selectedRoom);
-            if (updateRoom.ShowDialog() == DialogResult.OK)
+
+            OverlayManager.ShowWithOverlay(this, updateRoom); 
+
+            if (updateRoom.DialogResult == DialogResult.OK)
             {
                 load_QLP();
             }
@@ -1296,7 +1332,10 @@ namespace GUI
         private void button33_Click(object sender, EventArgs e)
         {
             Form_RentalHistory rentalHistory = new Form_RentalHistory(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-            rentalHistory.Show();
+
+            OverlayManager.ShowWithOverlay(this, rentalHistory);//thêm hiệu ứng mờ
+
+            //rentalHistory.Show();
         }
 
 
@@ -1400,19 +1439,22 @@ namespace GUI
         private void button49_Click_1(object sender, EventArgs e)
         {
             AddService addServiceForm = new AddService(listBuildingID.Text);
-            addServiceForm.ShowDialog();
+            //addServiceForm.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, addServiceForm);
         }
 
         private void button45_Click_1(object sender, EventArgs e)
         {
             DeleteService delServiceForm = new DeleteService(this);
-            delServiceForm.ShowDialog();
+            //delServiceForm.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, delServiceForm);
         }
 
         private void themDV_btn_Click_1(object sender, EventArgs e)
         {
             InsertService insertServiceForm = new InsertService();
-            insertServiceForm.ShowDialog();
+            //insertServiceForm.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, insertServiceForm);
         }
 
         private void button50_Click(object sender, EventArgs e)
@@ -1498,13 +1540,15 @@ namespace GUI
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             Form_AddBuilding f = new Form_AddBuilding(RandomKey.RandomString(10) , form1.taikhoan.Username);
-            f.ShowDialog();
+            //f.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, f);
             load_Building_By_User();
         }
         private void button56_Click(object sender, EventArgs e)
         {
             Form_AddParkingArea addParkingArea = new Form_AddParkingArea(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-            if (addParkingArea.ShowDialog() == DialogResult.OK)
+            OverlayManager.ShowWithOverlay(this, addParkingArea);//thêm
+            if (addParkingArea.DialogResult == DialogResult.OK)
             {
                 load_PA();
             }
@@ -1527,7 +1571,8 @@ namespace GUI
                 Capacity = selectedRow.Cells["Capacity"].Value?.ToString()
             };
             Form_UpdateParkingArea updateArea = new Form_UpdateParkingArea(form1.taikhoan.Username, selectedArea);
-            if (updateArea.ShowDialog() == DialogResult.OK)
+            OverlayManager.ShowWithOverlay(this, updateArea);//thêm
+            if (updateArea.DialogResult == DialogResult.OK)
             {
                 load_PA();
             }
@@ -1715,7 +1760,8 @@ namespace GUI
         private void guna2GradientButton4_Click(object sender, EventArgs e)
         {
             Form_AddVehicle addVehicle = new Form_AddVehicle(listBuildingID.SelectedItem.ToString());
-            if (addVehicle.ShowDialog() == DialogResult.OK)
+            OverlayManager.ShowWithOverlay(this, addVehicle);
+            if (addVehicle.DialogResult == DialogResult.OK)
             {
                 load_Vehicle();
             }
@@ -1737,12 +1783,13 @@ namespace GUI
                 Type = selectedRow.Cells["Type"].Value?.ToString(),
                 LicensePlate = selectedRow.Cells["LicensePlate"].Value?.ToString()
             };
-            Form_UpdateVehicle updateVehicle = new Form_UpdateVehicle(selectedVehicle, listBuildingID.SelectedItem.ToString()); 
-            if (updateVehicle.ShowDialog() == DialogResult.OK)
+            Form_UpdateVehicle updateVehicle = new Form_UpdateVehicle(selectedVehicle, listBuildingID.SelectedItem.ToString());
+            OverlayManager.ShowWithOverlay(this, updateVehicle);
+            if (updateVehicle.DialogResult == DialogResult.OK)
             {
                 load_Vehicle();
             }
-        }
+        }   
         private void guna2GradientButton6_Click(object sender, EventArgs e)
         {
             if (guna2DataGridView1.SelectedRows.Count == 0)
@@ -2524,6 +2571,24 @@ namespace GUI
 
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button43_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabQuanLy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

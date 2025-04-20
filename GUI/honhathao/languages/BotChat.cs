@@ -120,5 +120,10 @@ namespace GUI.honhathao.languages
         {
             guna2TextBox1.Focus();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

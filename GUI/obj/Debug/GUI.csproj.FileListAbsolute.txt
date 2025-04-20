@@ -1691,3 +1691,6 @@ C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\GUI\bin\Debug\honhathao\l
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\GUI\bin\Debug\honhathao\languages\initialLanguage.txt
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\GUI\bin\Debug\honhathao\languages\ListLanguage.txt
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\GUI\bin\Debug\honhathao\languages\Vietnamese.txt
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Newtonsoft.Json.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Newtonsoft.Json.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.honhathao.languages.BotChat.resources

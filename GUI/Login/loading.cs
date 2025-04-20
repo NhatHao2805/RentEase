@@ -28,7 +28,7 @@ namespace GUI.Login
 
             // Khởi tạo Timer để xử lý hiệu ứng tải
             timer = new Timer();
-            timer.Interval = 60; // Điều chỉnh tốc độ tải
+            timer.Interval = 44; // Điều chỉnh tốc độ tải
             timer.Tick += Timer_Tick;
             timer.Start();
         }
