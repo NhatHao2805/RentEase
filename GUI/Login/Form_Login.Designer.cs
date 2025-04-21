@@ -43,12 +43,12 @@ namespace GUI
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.textBoxTK_DN = new GUI.Custom.MyGunaTextBox();
             this.buttonDangNhap1 = new GUI.Custom.MyGunaButton();
             this.textBoxMK_DN = new GUI.Custom.MyGunaTextBox();
+            this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -225,31 +225,6 @@ namespace GUI
             this.guna2PictureBox5.TabIndex = 132;
             this.guna2PictureBox5.TabStop = false;
             // 
-            // hienMk
-            // 
-            this.hienMk.AllowLinksHandling = true;
-            this.hienMk.MaximumSize = new System.Drawing.Size(0, 0);
-            this.hienMk.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.hienMk.ToolTipTitle = "Hiện mật khẩu";
-            this.hienMk.Popup += new System.Windows.Forms.PopupEventHandler(this.hienMk_Popup);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::GUI.Properties.Resources._5603109;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -5);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(531, 555);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 150;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
-            this.guna2AnimateWindow1.TargetForm = this;
-            // 
             // textBoxTK_DN
             // 
             this.textBoxTK_DN.BackColor = System.Drawing.Color.Transparent;
@@ -262,7 +237,7 @@ namespace GUI
             this.textBoxTK_DN.Location = new System.Drawing.Point(71, 186);
             this.textBoxTK_DN.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBoxTK_DN.Name = "textBoxTK_DN";
-            this.textBoxTK_DN.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.textBoxTK_DN.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
             this.textBoxTK_DN.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.textBoxTK_DN.PlaceholderText = "User name...";
             this.textBoxTK_DN.SelectedText = "";
@@ -271,7 +246,7 @@ namespace GUI
             this.textBoxTK_DN.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.textBoxTK_DN.Size = new System.Drawing.Size(250, 50);
             this.textBoxTK_DN.TabIndex = 16;
-            this.textBoxTK_DN.TextOffset = new System.Drawing.Point(5, 0);
+            this.textBoxTK_DN.TextOffset = new System.Drawing.Point(10, 0);
             // 
             // buttonDangNhap1
             // 
@@ -304,7 +279,7 @@ namespace GUI
             this.textBoxMK_DN.ForeColor = System.Drawing.Color.Black;
             this.textBoxMK_DN.Location = new System.Drawing.Point(71, 266);
             this.textBoxMK_DN.Name = "textBoxMK_DN";
-            this.textBoxMK_DN.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.textBoxMK_DN.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
             this.textBoxMK_DN.PasswordChar = '*';
             this.textBoxMK_DN.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.textBoxMK_DN.PlaceholderText = "Password...";
@@ -314,7 +289,32 @@ namespace GUI
             this.textBoxMK_DN.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.textBoxMK_DN.Size = new System.Drawing.Size(250, 40);
             this.textBoxMK_DN.TabIndex = 17;
-            this.textBoxMK_DN.TextOffset = new System.Drawing.Point(5, 0);
+            this.textBoxMK_DN.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // hienMk
+            // 
+            this.hienMk.AllowLinksHandling = true;
+            this.hienMk.MaximumSize = new System.Drawing.Size(0, 0);
+            this.hienMk.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.hienMk.ToolTipTitle = "Hiện mật khẩu";
+            this.hienMk.Popup += new System.Windows.Forms.PopupEventHandler(this.hienMk_Popup);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::GUI.Properties.Resources._5603109;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -5);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(531, 555);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 150;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+            this.guna2AnimateWindow1.TargetForm = this;
             // 
             // Form_Login
             // 
