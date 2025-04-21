@@ -26,6 +26,7 @@ using System.Globalization;
 using System.Runtime.InteropServices.ComTypes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Diagnostics;
+using GUI.honhathao.languages;
 
 namespace GUI
 {
@@ -2502,6 +2503,12 @@ namespace GUI
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            BotChat a = new BotChat(form1.taikhoan.Username);
+            a.Show();
         }
     }
 }

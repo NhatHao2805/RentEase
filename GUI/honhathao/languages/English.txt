@@ -1,4 +1,6 @@
-﻿phongdon: Single Room  
+﻿helo: Hello, How can i help you?
+troli: Assistant
+phongdon: Single Room  
 phongdoi: Double Room  
 phongthuong: Standard Room  
 phongcaocap: Premium Room  

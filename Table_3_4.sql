@@ -181,7 +181,7 @@ CREATE TABLE REPAIR_REQUEST (
 CREATE TABLE USER (
     USERNAME             VARCHAR(20) NOT NULL COMMENT 'Tên người dùng',
     FULLNAME             VARCHAR(50) COMMENT 'Họ và tên',
-    PASSWORD             VARCHAR(20) COMMENT 'Mật khẩu',
+    PASSWORD             VARCHAR(255) COMMENT 'Mật khẩu',
     EMAIL                VARCHAR(50) COMMENT 'Email',
     BIRTH                DATE COMMENT 'Ngày sinh',
     GENDER               VARCHAR(10) COMMENT 'Giới tính',

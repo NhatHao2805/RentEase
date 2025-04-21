@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
+using BCrypt.Net;
+using System.IO;
 
 namespace DAL
 {
@@ -114,6 +117,34 @@ namespace DAL
             }
             return name;
 
+        }
+
+        public static string UpdatePassword(string email, string password)
+        {
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn == null) return "Database connection failed!";
+
+                    //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt());
+
+                    using (MySqlCommand command = new MySqlCommand("UpdatePassword", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("p_email", email);
+                        command.Parameters.AddWithValue("p_password", password);
+
+                        command.ExecuteNonQuery();
+                        return "Success";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return $"System error: {ex.GetType().Name}";
+            }
         }
     }
 

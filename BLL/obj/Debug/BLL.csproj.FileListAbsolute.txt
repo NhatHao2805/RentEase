@@ -1680,3 +1680,235 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\Merge15_4\BLL\obj\Debug\BLL.c
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\Merge15_4\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\Merge15_4\BLL\obj\Debug\BLL.dll
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\Merge15_4\BLL\obj\Debug\BLL.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\BLL.dll.config
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\BLL.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\BLL.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.FSharp.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.Telemetry.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.TypeProviders.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Dahomey.Cbor.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\EPPlus.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\FSharp.Core.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\FSharp.Data.Adaptive.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\FsPickler.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\SingleFileExtractor.Core.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\SourceAFIS.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Collections.Immutable.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Security.Cryptography.Xml.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Text.Json.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.ValueTuple.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.FSharp.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.FSharp.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.Telemetry.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.Telemetry.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Aardvark.Base.TypeProviders.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\EPPlus.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\FSharp.Core.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\FSharp.Data.Adaptive.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\FSharp.Data.Adaptive.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\FsPickler.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\FsPickler.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\SourceAFIS.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Collections.Immutable.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Text.Json.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\System.ValueTuple.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\cs\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\de\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\es\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\fr\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\it\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\ja\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\ko\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\pl\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\pt-BR\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\ru\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\tr\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\zh-Hans\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\bin\Debug\zh-Hant\FSharp.Core.resources.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\obj\Debug\BLL.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn_17_4\RentEase-HoaiAn\BLL\obj\Debug\BLL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\BLL.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\BLL.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\BLL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.FSharp.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.Telemetry.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.TypeProviders.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Dahomey.Cbor.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\DAL.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\EPPlus.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\FSharp.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\FSharp.Data.Adaptive.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\FsPickler.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\MySqlConnector.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\SingleFileExtractor.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\SourceAFIS.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Collections.Immutable.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Memory.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Reflection.Metadata.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Security.Cryptography.Xml.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Text.Json.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.ValueTuple.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\MySql.Data.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Google.Protobuf.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\ZstdSharp.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\DAL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\DAL.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\DTO.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.FSharp.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.FSharp.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.Telemetry.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.Telemetry.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Aardvark.Base.TypeProviders.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\EPPlus.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\FSharp.Core.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\FSharp.Data.Adaptive.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\FSharp.Data.Adaptive.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\FsPickler.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\FsPickler.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\MySqlConnector.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\SourceAFIS.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Collections.Immutable.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Memory.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Reflection.Metadata.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Text.Json.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\System.ValueTuple.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\MySql.Data.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\Google.Protobuf.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\cs\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\de\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\es\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\fr\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\it\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\ja\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\ko\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\pl\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\pt-BR\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\ru\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\tr\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\zh-Hans\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\zh-Hant\FSharp.Core.resources.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\obj\Debug\BLL.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\obj\Debug\BLL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\BCrypt.Net-Next.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\RentEase\BLL\bin\Debug\BCrypt.Net-Next.xml

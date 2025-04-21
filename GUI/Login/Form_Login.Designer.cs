@@ -37,15 +37,16 @@ namespace GUI
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
-            this.textBoxTK_DN = new GUI.Custom.MyGunaTextBox();
-            this.buttonDangNhap1 = new GUI.Custom.MyGunaButton();
-            this.textBoxMK_DN = new GUI.Custom.MyGunaTextBox();
+            this.quenmk_lb = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.textBoxTK_DN = new GUI.Custom.MyGunaTextBox();
+            this.buttonDangNhap1 = new GUI.Custom.MyGunaButton();
+            this.textBoxMK_DN = new GUI.Custom.MyGunaTextBox();
+            this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
@@ -119,6 +120,7 @@ namespace GUI
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Controls.Add(this.quenmk_lb);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button2);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button3);
@@ -139,91 +141,18 @@ namespace GUI
             this.guna2GradientPanel1.Size = new System.Drawing.Size(372, 555);
             this.guna2GradientPanel1.TabIndex = 149;
             // 
-            // guna2HtmlLabel1
+            // quenmk_lb
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(71, 406);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(172, 21);
-            this.guna2HtmlLabel1.TabIndex = 124;
-            this.guna2HtmlLabel1.Text = "Don\'t have an account?";
-            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
-            // 
-            // hienMk
-            // 
-            this.hienMk.AllowLinksHandling = true;
-            this.hienMk.MaximumSize = new System.Drawing.Size(0, 0);
-            this.hienMk.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.hienMk.ToolTipTitle = "Hiện mật khẩu";
-            this.hienMk.Popup += new System.Windows.Forms.PopupEventHandler(this.hienMk_Popup);
-            // 
-            // textBoxTK_DN
-            // 
-            this.textBoxTK_DN.BackColor = System.Drawing.Color.Transparent;
-            this.textBoxTK_DN.BorderColor = System.Drawing.Color.Silver;
-            this.textBoxTK_DN.BorderRadius = 10;
-            this.textBoxTK_DN.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxTK_DN.DefaultText = "";
-            this.textBoxTK_DN.Font = new System.Drawing.Font("Segoe UI", 11.2F);
-            this.textBoxTK_DN.ForeColor = System.Drawing.Color.Black;
-            this.textBoxTK_DN.Location = new System.Drawing.Point(71, 186);
-            this.textBoxTK_DN.Multiline = true;
-            this.textBoxTK_DN.Name = "textBoxTK_DN";
-            this.textBoxTK_DN.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.textBoxTK_DN.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.textBoxTK_DN.PlaceholderText = "";
-            this.textBoxTK_DN.SelectedText = "";
-            this.textBoxTK_DN.ShadowDecoration.BorderRadius = 10;
-            this.textBoxTK_DN.ShadowDecoration.Enabled = true;
-            this.textBoxTK_DN.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.textBoxTK_DN.Size = new System.Drawing.Size(250, 50);
-            this.textBoxTK_DN.TabIndex = 16;
-            this.textBoxTK_DN.TextOffset = new System.Drawing.Point(5, 5);
-            // 
-            // buttonDangNhap1
-            // 
-            this.buttonDangNhap1.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDangNhap1.BorderColor = System.Drawing.Color.Silver;
-            this.buttonDangNhap1.BorderRadius = 10;
-            this.buttonDangNhap1.BorderThickness = 1;
-            this.buttonDangNhap1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.buttonDangNhap1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDangNhap1.ForeColor = System.Drawing.Color.White;
-            this.buttonDangNhap1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.buttonDangNhap1.Location = new System.Drawing.Point(71, 342);
-            this.buttonDangNhap1.Name = "buttonDangNhap1";
-            this.buttonDangNhap1.ShadowDecoration.BorderRadius = 10;
-            this.buttonDangNhap1.ShadowDecoration.Enabled = true;
-            this.buttonDangNhap1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.buttonDangNhap1.Size = new System.Drawing.Size(250, 50);
-            this.buttonDangNhap1.TabIndex = 14;
-            this.buttonDangNhap1.Text = "Đăng nhập";
-            this.buttonDangNhap1.Click += new System.EventHandler(this.buttonDangNhap_Click);
-            // 
-            // textBoxMK_DN
-            // 
-            this.textBoxMK_DN.BackColor = System.Drawing.Color.Transparent;
-            this.textBoxMK_DN.BorderColor = System.Drawing.Color.Silver;
-            this.textBoxMK_DN.BorderRadius = 10;
-            this.textBoxMK_DN.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxMK_DN.DefaultText = "";
-            this.textBoxMK_DN.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.textBoxMK_DN.ForeColor = System.Drawing.Color.Black;
-            this.textBoxMK_DN.Location = new System.Drawing.Point(71, 266);
-            this.textBoxMK_DN.Multiline = true;
-            this.textBoxMK_DN.Name = "textBoxMK_DN";
-            this.textBoxMK_DN.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.textBoxMK_DN.PasswordChar = '*';
-            this.textBoxMK_DN.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.textBoxMK_DN.PlaceholderText = "";
-            this.textBoxMK_DN.SelectedText = "";
-            this.textBoxMK_DN.ShadowDecoration.BorderRadius = 10;
-            this.textBoxMK_DN.ShadowDecoration.Enabled = true;
-            this.textBoxMK_DN.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.textBoxMK_DN.Size = new System.Drawing.Size(250, 40);
-            this.textBoxMK_DN.TabIndex = 17;
-            this.textBoxMK_DN.TextOffset = new System.Drawing.Point(5, 5);
+            this.quenmk_lb.AutoSize = true;
+            this.quenmk_lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quenmk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.quenmk_lb.Location = new System.Drawing.Point(174, 430);
+            this.quenmk_lb.Name = "quenmk_lb";
+            this.quenmk_lb.Size = new System.Drawing.Size(172, 23);
+            this.quenmk_lb.TabIndex = 151;
+            this.quenmk_lb.Text = "Quên/Đổi mật khẩu?";
+            this.quenmk_lb.Click += new System.EventHandler(this.quenmk_lb_Click);
             // 
             // guna2Button1
             // 
@@ -287,6 +216,17 @@ namespace GUI
             this.guna2Button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass_MouseDown);
             this.guna2Button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass_MouseUp);
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(71, 406);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(172, 21);
+            this.guna2HtmlLabel1.TabIndex = 124;
+            this.guna2HtmlLabel1.Text = "Don\'t have an account?";
+            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
+            // 
             // guna2PictureBox5
             // 
             this.guna2PictureBox5.Image = global::GUI.Properties.Resources.Logo;
@@ -297,6 +237,82 @@ namespace GUI
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox5.TabIndex = 132;
             this.guna2PictureBox5.TabStop = false;
+            // 
+            // textBoxTK_DN
+            // 
+            this.textBoxTK_DN.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxTK_DN.BorderColor = System.Drawing.Color.Silver;
+            this.textBoxTK_DN.BorderRadius = 10;
+            this.textBoxTK_DN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxTK_DN.DefaultText = "";
+            this.textBoxTK_DN.Font = new System.Drawing.Font("Segoe UI", 11.2F);
+            this.textBoxTK_DN.ForeColor = System.Drawing.Color.Black;
+            this.textBoxTK_DN.Location = new System.Drawing.Point(71, 186);
+            this.textBoxTK_DN.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBoxTK_DN.Multiline = true;
+            this.textBoxTK_DN.Name = "textBoxTK_DN";
+            this.textBoxTK_DN.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.textBoxTK_DN.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBoxTK_DN.PlaceholderText = "";
+            this.textBoxTK_DN.SelectedText = "";
+            this.textBoxTK_DN.ShadowDecoration.BorderRadius = 10;
+            this.textBoxTK_DN.ShadowDecoration.Enabled = true;
+            this.textBoxTK_DN.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.textBoxTK_DN.Size = new System.Drawing.Size(250, 50);
+            this.textBoxTK_DN.TabIndex = 16;
+            this.textBoxTK_DN.TextOffset = new System.Drawing.Point(5, 5);
+            // 
+            // buttonDangNhap1
+            // 
+            this.buttonDangNhap1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDangNhap1.BorderColor = System.Drawing.Color.Silver;
+            this.buttonDangNhap1.BorderRadius = 10;
+            this.buttonDangNhap1.BorderThickness = 1;
+            this.buttonDangNhap1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.buttonDangNhap1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDangNhap1.ForeColor = System.Drawing.Color.White;
+            this.buttonDangNhap1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.buttonDangNhap1.Location = new System.Drawing.Point(71, 342);
+            this.buttonDangNhap1.Name = "buttonDangNhap1";
+            this.buttonDangNhap1.ShadowDecoration.BorderRadius = 10;
+            this.buttonDangNhap1.ShadowDecoration.Enabled = true;
+            this.buttonDangNhap1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.buttonDangNhap1.Size = new System.Drawing.Size(250, 50);
+            this.buttonDangNhap1.TabIndex = 14;
+            this.buttonDangNhap1.Text = "Đăng nhập";
+            this.buttonDangNhap1.Click += new System.EventHandler(this.buttonDangNhap_Click);
+            // 
+            // textBoxMK_DN
+            // 
+            this.textBoxMK_DN.BackColor = System.Drawing.Color.Transparent;
+            this.textBoxMK_DN.BorderColor = System.Drawing.Color.Silver;
+            this.textBoxMK_DN.BorderRadius = 10;
+            this.textBoxMK_DN.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxMK_DN.DefaultText = "";
+            this.textBoxMK_DN.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.textBoxMK_DN.ForeColor = System.Drawing.Color.Black;
+            this.textBoxMK_DN.Location = new System.Drawing.Point(71, 266);
+            this.textBoxMK_DN.Multiline = true;
+            this.textBoxMK_DN.Name = "textBoxMK_DN";
+            this.textBoxMK_DN.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.textBoxMK_DN.PasswordChar = '*';
+            this.textBoxMK_DN.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBoxMK_DN.PlaceholderText = "";
+            this.textBoxMK_DN.SelectedText = "";
+            this.textBoxMK_DN.ShadowDecoration.BorderRadius = 10;
+            this.textBoxMK_DN.ShadowDecoration.Enabled = true;
+            this.textBoxMK_DN.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.textBoxMK_DN.Size = new System.Drawing.Size(250, 40);
+            this.textBoxMK_DN.TabIndex = 17;
+            this.textBoxMK_DN.TextOffset = new System.Drawing.Point(5, 5);
+            // 
+            // hienMk
+            // 
+            this.hienMk.AllowLinksHandling = true;
+            this.hienMk.MaximumSize = new System.Drawing.Size(0, 0);
+            this.hienMk.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.hienMk.ToolTipTitle = "Hiện mật khẩu";
+            this.hienMk.Popup += new System.Windows.Forms.PopupEventHandler(this.hienMk_Popup);
             // 
             // guna2PictureBox1
             // 
@@ -346,6 +362,7 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlToolTip hienMk;
+        private System.Windows.Forms.Label quenmk_lb;
     }
 }
 

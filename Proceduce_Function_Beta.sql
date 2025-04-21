@@ -721,4 +721,19 @@ BEGIN
     );
 END//
 
+-- New 20/4
+CREATE PROCEDURE UpdatePassword(
+    IN p_email VARCHAR(255),
+    IN p_password VARCHAR(255)
+)
+BEGIN
+    DECLARE user_id VARCHAR(50) DEFAULT '';
+    
+    -- Lấy ID user thay vì count
+    SELECT USERNAME INTO user_id FROM USER WHERE EMAIL = p_email;
+	-- Cập nhật bằng khóa chính
+	UPDATE USER 
+	SET PASSWORD = p_password 
+	WHERE USERNAME = user_id;
+END //
 DELIMITER ;

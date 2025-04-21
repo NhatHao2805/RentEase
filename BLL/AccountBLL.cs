@@ -62,5 +62,28 @@ namespace BLL
         {
             return AccountAccess.Load_TenantName();
         }
+
+        public static string UpdatePassword(string email, string newPassword, string confirmPassword)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                return "Email cannot be empty";
+            }
+            if (string.IsNullOrEmpty(newPassword) || string.IsNullOrEmpty(confirmPassword))
+            {
+                return "Please enter both password fields!";
+            }
+
+            if (newPassword != confirmPassword)
+            {
+                return "Passwords do not match!";
+            }
+            if (newPassword.Length < 8)
+            {
+                return "Password must be at least 8 characters long";
+            }
+
+            return AccountAccess.UpdatePassword(email, newPassword);
+        }
     }
 }

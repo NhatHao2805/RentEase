@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -51,6 +54,9 @@
     </Reference>
     <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
       <HintPath>..\packages\MySqlConnector.2.4.0\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -233,7 +239,19 @@
     <Compile Include="honhathao\Form_Tenant.Designer.cs">
       <DependentUpon>Form_Tenant.cs</DependentUpon>
     </Compile>
+    <Compile Include="honhathao\languages\BotChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\languages\BotChat.Designer.cs">
+      <DependentUpon>BotChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="honhathao\RandomKey.cs" />
+    <Compile Include="Login\Form_ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form_ForgotPassword.Designer.cs">
+      <DependentUpon>Form_ForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +322,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
       <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\languages\BotChat.resx">
+      <DependentUpon>BotChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Form_ForgotPassword.resx">
+      <DependentUpon>Form_ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quanlyphuongtien\Form_AddParkingArea.resx">
       <DependentUpon>Form_AddParkingArea.cs</DependentUpon>

@@ -1,4 +1,6 @@
-﻿phongdon: Phòng đơn  
+﻿helo: Xin chào, tôi có thể giúp gì cho bạn?
+troli: Trợ lí
+phongdon: Phòng đơn  
 phongdoi: Phòng đôi  
 phongthuong: Phòng thường  
 phongcaocap: Phòng cao cấp  
