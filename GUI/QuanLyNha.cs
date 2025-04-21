@@ -51,6 +51,13 @@ namespace GUI
         public quanlynha(Form_Login form1)
         {
             InitializeComponent();
+
+            //ẩn thanh Tab 
+            tabQuanLy.SizeMode = TabSizeMode.Fixed;
+            tabQuanLy.ItemSize = new Size(0, 1);
+            tabQuanLy.Appearance = TabAppearance.FlatButtons;
+            tabQuanLy.Region = new Region(new RectangleF(0, 1, tabQuanLy.Width, tabQuanLy.Height - 1));
+
             setStartPositon();
             this.form1 = form1;
             load_Building_By_User();
@@ -564,34 +571,34 @@ namespace GUI
             buildingKey.Text = data.Rows[listBuildingID.SelectedIndex][1].ToString();
             loadInfo();
         }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (panel1_extendedEnabled)
-            {
-                if (panel1.Height >= panel1_extendedSize)
-                {
-                    panel1_extendedEnabled = false;
-                    panel1_timer.Stop();
-                }
-                else
-                {
-                    panel1.Height += 5;
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    if (panel1_extendedEnabled)
+        //    {
+        //        if (panel1.Height >= panel1_extendedSize)
+        //        {
+        //            panel1_extendedEnabled = false;
+        //            panel1_timer.Stop();
+        //        }
+        //        else
+        //        {
+        //            panel1.Height += 5;
 
-                }
-            }
-            else
-            {
-                if (panel1.Height <= panel1_originalSize)
-                {
-                    panel1_extendedEnabled = true;
-                    panel1_timer.Stop();
-                }
-                else
-                {
-                    panel1.Height -= 5;
-                }
-            }
-        }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (panel1.Height <= panel1_originalSize)
+        //        {
+        //            panel1_extendedEnabled = true;
+        //            panel1_timer.Stop();
+        //        }
+        //        else
+        //        {
+        //            panel1.Height -= 5;
+        //        }
+        //    }
+        //}
 
 
 
@@ -2587,6 +2594,31 @@ namespace GUI
         }
 
         private void tabQuanLy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void quanlynha_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void quanlynha_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void quanlynha_Shown(object sender, EventArgs e)
+        {
+     
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

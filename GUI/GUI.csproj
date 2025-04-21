@@ -561,6 +561,15 @@
     <Content Include="honhathao\languages\Vietnamese.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-parking-lot-96.png" />
+    <None Include="Resources\icons8-payment-100.png" />
+    <None Include="Resources\icons8-fingerprint-64-trắng.png" />
+    <None Include="Resources\icons8-parking-lot-96-trắng.png" />
+    <None Include="Resources\icons8-asset-96-trắng.png" />
+    <None Include="Resources\icons8-service-100-trắng.png" />
+    <None Include="Resources\icons8-pay-100-trắng.png" />
+    <None Include="Resources\icons8-contract-48-trắng.png" />
+    <None Include="Resources\icons8-room-100-trắng.png" />
     <None Include="Resources\icons8-fingerprint-50.png" />
     <None Include="Resources\icons8-bot.gif" />
   </ItemGroup>
