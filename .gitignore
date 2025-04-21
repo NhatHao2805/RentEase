@@ -1,9 +1,16 @@
-# Google Service Account Key
-*service-account-key.json
-*serviceAccountKey.json
+# Google Cloud Service Account Keys
+service-account-key.json
+serviceAccountKey.json
+*.service-account.json
+*.gcp-key.json
+*.google-key.json
 *.json.key
 *.p12
+*.p8
+*.pem
 rentease.json
+
+
 # Visual Studio files
 .vs/
 *.suo

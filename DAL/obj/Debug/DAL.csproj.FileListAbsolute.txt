@@ -943,4 +943,3 @@ D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Core.xml
 D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Sheets.v4.pdb
 D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Apis.Sheets.v4.xml
 D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Newtonsoft.Json.xml
-D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\rentease.json

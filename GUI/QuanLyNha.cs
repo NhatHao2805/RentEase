@@ -55,6 +55,8 @@ namespace GUI
             this.index = index;
             load_Building_By_User();
             loadInfo();
+
+        
         }
 
         private void loadInfo()
@@ -296,8 +298,18 @@ namespace GUI
         //-----------------------------------------------------------------------
         //Code mới
 
-        //Code sửa từ function đã có
 
+        //Code sửa từ function đã có
+        public void btn_dichvu_Click(object sender, EventArgs e)
+        {
+            checkBox9.Visible = false;
+            guna2DateTimePicker2.Visible = false;
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "N0";
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "#,##0 VND";
+            tabQuanLy.SelectedIndex = 4;
+            LoadDichVu();
+        }
         //Code xóa
 
         //-----------------------------------------------------------------------
@@ -427,15 +439,7 @@ namespace GUI
             loadBill(null);
         }
 
-        public void btn_dichvu_Click(object sender, EventArgs e)
-        {
 
-            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "N0";  
-            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
-            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "#,##0 VND";
-            tabQuanLy.SelectedIndex = 4;
-            LoadDichVu();
-        }
 
 
         
@@ -2504,7 +2508,7 @@ namespace GUI
 
         }
 
-        // Yeu cau phan anh
+        // Yeu cau phan anh 21/4/2025
         private void guna2GradientButton13_Click(object sender, EventArgs e)
         {
             try
@@ -2536,5 +2540,6 @@ namespace GUI
         {
 
         }
+
     }
 }

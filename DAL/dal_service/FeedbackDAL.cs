@@ -21,33 +21,25 @@ namespace DAL.dal_service
     public class FeedbackAccess
     {
         private static readonly string SPREADSHEET_ID = "1s84h8F8gtSzbUu_OlLDN4OlJavJDPymj-ogUz98yxGo";
-        private static readonly string SHEET_NAME = "FormSheet"; // Tên mặc định của Google Form
+        private static readonly string SHEET_NAME = "FormSheet"; 
+        // Tên mặc định của Google Form
+                                                                 
         //private static readonly string CREDENTIALS_PATH = "rentease.json"; // Đường dẫn tới file credentials
-        private static readonly string CREDENTIALS_PATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rentease.json");
+                                                                 
+        //private static readonly string CREDENTIALS_PATH = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "rentease.json");
+
+
+        // Thêm dòng này:
+        private static readonly string API_KEY = "AIzaSyDyyWZhohtKlFn-IiaUaJerF_xQeEoSpzI";
         // Khởi tạo Google Sheet Service
         private static SheetsService InitializeGoogleSheetService()
         {
             try
             {
-                GoogleCredential credential;
-                string fullPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CREDENTIALS_PATH);
-
-                if (!File.Exists(fullPath))
-                {
-                    Console.WriteLine($"Credentials file not found at: {fullPath}");
-                    return null;
-                }
-
-                using (var stream = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
-                {
-                    credential = GoogleCredential.FromStream(stream)
-                        .CreateScoped(SheetsService.Scope.Spreadsheets);
-                }
-
-                // Create service
+                // Tạo service với API Key thay vì Service Account
                 var service = new SheetsService(new BaseClientService.Initializer()
                 {
-                    HttpClientInitializer = credential,
+                    ApiKey = API_KEY,
                     ApplicationName = "Rentease"
                 });
 
@@ -57,10 +49,11 @@ namespace DAL.dal_service
             {
                 Console.WriteLine("Error initializing Google Sheets API: " + ex.Message);
                 Console.WriteLine("Stack trace: " + ex.StackTrace);
-                throw; // Rethrow to properly handle the error
+                throw;
             }
         }
         // Thêm hàm lấy phản hồi theo ID tòa nhà
+        // Trong FeedbackAccess (DAL)
         public static List<FeedbackDTO> GetFeedbacksByBuildingID(string buildingID)
         {
             List<FeedbackDTO> feedbacks = new List<FeedbackDTO>();
@@ -92,10 +85,7 @@ namespace DAL.dal_service
 
                                 feedback.FeedbackID = reader["FEEDBACKID"].ToString();
                                 feedback.TenantID = reader["TENANTID"] != DBNull.Value ? reader["TENANTID"].ToString() : null;
-
-                                // Lấy email từ bảng TENANT hoặc từ bảng FEEDBACK
-                                feedback.Email = reader["EMAIL"].ToString();
-
+                                  feedback.Email = reader["EMAIL"].ToString();
                                 feedback.HasFeedback = Convert.ToBoolean(reader["HAS_FEEDBACK"]);
                                 feedback.Content = reader["CONTENT"].ToString();
                                 feedback.DateSend = Convert.ToDateTime(reader["DATESEND"]);
@@ -131,10 +121,8 @@ namespace DAL.dal_service
                     throw new Exception("Không thể kết nối với Google Sheets API");
                 }
 
-                // Định nghĩa phạm vi dữ liệu cần đọc (A:D tương ứng với 4 cột trong sheet của bạn)
+                // Định nghĩa phạm vi dữ liệu cần đọc
                 string range = $"{SHEET_NAME}!A:D";
-
-
 
                 // Thực hiện request
                 SpreadsheetsResource.ValuesResource.GetRequest request =
@@ -159,16 +147,31 @@ namespace DAL.dal_service
                     // Kiểm tra có đủ dữ liệu không
                     if (row.Count >= 4)
                     {
-                        DateTime submitTime = DateTime.Now;
+                        DateTime submitTime;
+                        string rawTimeString = row[0]?.ToString() ?? "";
+
                         try
                         {
-                            // Cột A: Thời gian (Timestamp) - định dạng DD/MM/YYYY HH:MM:SS
-                            submitTime = DateTime.Parse(row[0].ToString());
+                            // QUAN TRỌNG: Parse chính xác thời gian từ sheet
+                            // Format thường là DD/MM/YYYY HH:MM:SS
+                            if (DateTime.TryParse(rawTimeString, out submitTime))
+                            {
+                                Console.WriteLine($"Parsed time successfully: {rawTimeString} -> {submitTime}");
+                            }
+                            else
+                            {
+                                // Thử format cụ thể nếu không parse được trực tiếp
+                                string[] formats = { "dd/MM/yyyy HH:mm:ss", "dd/MM/yyyy HH:mm", "MM/dd/yyyy HH:mm:ss", "MM/dd/yyyy HH:mm" };
+                                submitTime = DateTime.ParseExact(rawTimeString, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
+                                Console.WriteLine($"Parsed time with format: {rawTimeString} -> {submitTime}");
+                            }
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine($"Không thể parse thời gian: {ex.Message}");
-                            // Nếu không parse được, sử dụng thời gian hiện tại
+                            Console.WriteLine($"Không thể parse thời gian '{rawTimeString}': {ex.Message}");
+                            // Sử dụng thời gian hiện tại như là fallback cuối cùng
+                            submitTime = DateTime.Now;
+                            Console.WriteLine($"Using current time instead: {submitTime}");
                         }
 
                         // Cột B: Địa chỉ email
@@ -186,10 +189,10 @@ namespace DAL.dal_service
                             Email = email,
                             HasFeedback = hasFeedback,
                             Content = content,
-                            DateSend = submitTime,
+                            DateSend = submitTime, // Sử dụng thời gian từ sheet
                             Status = "PENDING", // Mặc định là chưa xử lý
-                            TenantID = null, // Sẽ tìm dựa trên email sau
-                            TenantName = "" // Sẽ tìm dựa trên TenantID sau
+                            TenantID = null,
+                            TenantName = ""
                         };
 
                         feedbacks.Add(feedback);
@@ -217,8 +220,7 @@ namespace DAL.dal_service
                 Console.WriteLine($"Stack Trace: {ex.StackTrace}");
                 throw;
             }
-        }
-        // Thêm phương thức lấy tên tenant từ ID
+        }        // Thêm phương thức lấy tên tenant từ ID
         private static string GetTenantNameById(string tenantId, MySqlConnection conn)
         {
             if (string.IsNullOrEmpty(tenantId) || conn == null)
@@ -317,7 +319,6 @@ namespace DAL.dal_service
 
                 try
                 {
-                    // Không cần kiểm tra trùng lặp vì đã xóa tất cả dữ liệu cũ
                     // Tìm TenantID dựa vào Email (nếu chưa có)
                     if (string.IsNullOrEmpty(feedback.TenantID))
                     {
@@ -327,11 +328,14 @@ namespace DAL.dal_service
                     // Tạo FeedbackID mới
                     string feedbackId = GenerateNewFeedbackID(conn);
 
+                    // QUAN TRỌNG: Log thời gian trước khi lưu vào database để kiểm tra
+                    Console.WriteLine($"Saving feedback with time: {feedback.DateSend} (ID: {feedbackId})");
+
                     // Thêm phản hồi mới
                     string insertQuery = @"INSERT INTO FEEDBACK 
-                                (FEEDBACKID, TENANTID, EMAIL, HAS_FEEDBACK, CONTENT, DATESEND, STATUS) 
-                                VALUES 
-                                (@feedbackId, @tenantId, @email, @hasFeedback, @content, @dateSend, @status)";
+                        (FEEDBACKID, TENANTID, EMAIL, HAS_FEEDBACK, CONTENT, DATESEND, STATUS) 
+                        VALUES 
+                        (@feedbackId, @tenantId, @email, @hasFeedback, @content, @dateSend, @status)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
@@ -340,10 +344,20 @@ namespace DAL.dal_service
                         cmd.Parameters.AddWithValue("@email", feedback.Email);
                         cmd.Parameters.AddWithValue("@hasFeedback", feedback.HasFeedback);
                         cmd.Parameters.AddWithValue("@content", feedback.Content);
+
+                        // QUAN TRỌNG: Sử dụng đúng thời gian từ DTO
                         cmd.Parameters.AddWithValue("@dateSend", feedback.DateSend);
+
                         cmd.Parameters.AddWithValue("@status", feedback.Status);
 
                         int result = cmd.ExecuteNonQuery();
+
+                        // Kiểm tra sau khi lưu
+                        if (result > 0)
+                        {
+                            Console.WriteLine($"Đã lưu feedback ID {feedbackId} với thời gian {feedback.DateSend}");
+                        }
+
                         return result > 0;
                     }
                 }
@@ -361,7 +375,7 @@ namespace DAL.dal_service
                 Console.WriteLine("Bắt đầu đồng bộ dữ liệu từ Google Sheet");
 
                 // Lấy dữ liệu từ Google Sheet
-                List<FeedbackDTO> googleSheetFeedbacks = FeedbackAccess.GetFeedbacksFromGoogleSheet();
+                List<FeedbackDTO> googleSheetFeedbacks = GetFeedbacksFromGoogleSheet();
 
                 Console.WriteLine($"Đã lấy {googleSheetFeedbacks?.Count ?? 0} feedback từ Google Sheet");
 
@@ -372,81 +386,48 @@ namespace DAL.dal_service
                 }
 
                 // Lấy danh sách feedback hiện có trong database
-                List<FeedbackDTO> existingFeedbacks = FeedbackAccess.GetAllFeedbacksFromDatabase();
+                List<FeedbackDTO> existingFeedbacks = GetAllFeedbacksFromDatabase();
                 Console.WriteLine($"Đã lấy {existingFeedbacks.Count} feedback từ database");
 
-                int successCount = 0;
-                int updatedCount = 0;
-                int newCount = 0;
+                // Tạo dictionary lưu trạng thái hiện tại để dễ tìm kiếm
+                Dictionary<string, string> existingStatusMap = new Dictionary<string, string>();
 
-                // Xử lý từng feedback từ Google Sheet
+                foreach (var feedback in existingFeedbacks)
+                {
+                    // Tạo key duy nhất từ email và thời gian (giữ trạng thái)
+                    string uniqueKey = $"{feedback.Email.Trim().ToLower()}_{feedback.DateSend.ToString("yyyyMMddHHmm")}";
+                    existingStatusMap[uniqueKey] = feedback.Status;
+                }
+
+                int successCount = 0;
+
+                // Xóa toàn bộ dữ liệu feedback cũ
+                bool clearResult = ClearAllFeedbacks();
+                if (!clearResult)
+                {
+                    Console.WriteLine("Không thể xóa dữ liệu cũ!");
+                    return false;
+                }
+
+                // Thêm lại dữ liệu mới, nhưng giữ nguyên trạng thái cũ nếu có
                 foreach (FeedbackDTO googleFeedback in googleSheetFeedbacks)
                 {
-                    Console.WriteLine($"Xử lý feedback từ email: {googleFeedback.Email}, thời gian: {googleFeedback.DateSend}");
+                    string uniqueKey = $"{googleFeedback.Email.Trim().ToLower()}_{googleFeedback.DateSend.ToString("yyyyMMddHHmm")}";
 
-                    // Tìm feedback tương ứng trong database
-                    FeedbackDTO existingFeedback = null;
-
-                    foreach (var fb in existingFeedbacks)
+                    // Nếu feedback này đã tồn tại, sử dụng trạng thái cũ
+                    if (existingStatusMap.ContainsKey(uniqueKey))
                     {
-                        if (fb.Email.Trim().Equals(googleFeedback.Email.Trim(), StringComparison.OrdinalIgnoreCase) &&
-                            Math.Abs((fb.DateSend - googleFeedback.DateSend).TotalMinutes) < 5)
-                        {
-                            existingFeedback = fb;
-                            Console.WriteLine($"Đã tìm thấy feedback tương ứng ID: {fb.FeedbackID}, trạng thái: {fb.Status}");
-                            break;
-                        }
+                        googleFeedback.Status = existingStatusMap[uniqueKey];
+                        Console.WriteLine($"Giữ nguyên trạng thái: {googleFeedback.Status} cho {googleFeedback.Email}");
                     }
 
-                    if (existingFeedback != null)
+                    if (SaveFeedbackToDatabase(googleFeedback))
                     {
-                        // Feedback đã tồn tại, giữ nguyên trạng thái xử lý
-                        googleFeedback.Status = existingFeedback.Status;
-                        googleFeedback.FeedbackID = existingFeedback.FeedbackID;
-
-                        Console.WriteLine($"Giữ nguyên trạng thái: {googleFeedback.Status}");
-
-                        if (googleFeedback.Content != existingFeedback.Content ||
-                            googleFeedback.HasFeedback != existingFeedback.HasFeedback)
-                        {
-                            Console.WriteLine("Nội dung khác nhau, cập nhật feedback");
-
-                            // Chỉ cập nhật khi nội dung thay đổi
-                            if (FeedbackAccess.UpdateFeedbackContent(googleFeedback))
-                            {
-                                updatedCount++;
-                                successCount++;
-                                Console.WriteLine("Cập nhật thành công");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Cập nhật thất bại");
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("Nội dung không thay đổi, bỏ qua");
-                        }
-                    }
-                    else
-                    {
-                        // Feedback chưa tồn tại, thêm mới
-                        Console.WriteLine("Feedback chưa tồn tại, thêm mới");
-
-                        if (FeedbackAccess.SaveFeedbackToDatabase(googleFeedback))
-                        {
-                            newCount++;
-                            successCount++;
-                            Console.WriteLine("Thêm mới thành công");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Thêm mới thất bại");
-                        }
+                        successCount++;
                     }
                 }
 
-                Console.WriteLine($"Kết quả đồng bộ: {successCount} thành công ({newCount} mới, {updatedCount} cập nhật)");
+                Console.WriteLine($"Kết quả đồng bộ: {successCount} thành công");
                 return successCount > 0;
             }
             catch (Exception ex)
@@ -456,58 +437,7 @@ namespace DAL.dal_service
                 return false;
             }
         }
-        public static bool UpdateFeedbackContent(FeedbackDTO feedback)
-        {
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
-            {
-                if (conn == null)
-                {
-                    Console.WriteLine("Không thể kết nối database");
-                    return false;
-                }
-
-                try
-                {
-                    Console.WriteLine($"Cập nhật nội dung feedback ID: {feedback.FeedbackID}");
-
-                    // Kiểm tra feedback ID có tồn tại không
-                    string checkQuery = "SELECT COUNT(*) FROM FEEDBACK WHERE FEEDBACKID = @feedbackId";
-                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
-                    {
-                        checkCmd.Parameters.AddWithValue("@feedbackId", feedback.FeedbackID);
-                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
-
-                        if (count == 0)
-                        {
-                            Console.WriteLine($"Không tìm thấy feedback ID: {feedback.FeedbackID}");
-                            return false;
-                        }
-                    }
-
-                    // Cập nhật nội dung feedback nhưng giữ nguyên trạng thái
-                    string updateQuery = @"UPDATE FEEDBACK 
-                            SET CONTENT = @content, HAS_FEEDBACK = @hasFeedback 
-                            WHERE FEEDBACKID = @feedbackId";
-
-                    using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@feedbackId", feedback.FeedbackID);
-                        cmd.Parameters.AddWithValue("@content", feedback.Content);
-                        cmd.Parameters.AddWithValue("@hasFeedback", feedback.HasFeedback);
-
-                        int result = cmd.ExecuteNonQuery();
-                        Console.WriteLine($"Kết quả cập nhật: {result} dòng thay đổi");
-                        return result > 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Lỗi cập nhật nội dung feedback: " + ex.Message);
-                    Console.WriteLine("Stack trace: " + ex.StackTrace);
-                    return false;
-                }
-            }
-        }
+      
         public static bool ReplaceAllFeedbacks(List<FeedbackDTO> newFeedbacks)
         {
             using (MySqlConnection conn = MySqlConnectionData.Connect())
@@ -677,8 +607,8 @@ namespace DAL.dal_service
                 {
                     // Câu truy vấn đơn giản
                     string query = @"SELECT f.*, t.FIRSTNAME, t.LASTNAME, t.EMAIL as TENANT_EMAIL 
-                      FROM FEEDBACK f 
-                      LEFT JOIN TENANT t ON f.TENANTID = t.TENANTID 
+                          FROM FEEDBACK f 
+                          LEFT JOIN TENANT t ON f.TENANTID = t.TENANTID 
                       WHERE f.DATESEND BETWEEN @fromDate AND @toDate ";
 
                     if (!string.IsNullOrEmpty(status) && status != "Tất cả")
@@ -796,10 +726,13 @@ namespace DAL.dal_service
 
                 try
                 {
-                    using (MySqlCommand cmd = new MySqlCommand("UPDATE FEEDBACK SET STATUS = @status WHERE FEEDBACKID = @id", conn))
+                    string query = "UPDATE FEEDBACK SET STATUS = @status WHERE FEEDBACKID = @feedbackId";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
+                        cmd.Parameters.AddWithValue("@feedbackId", feedbackID);
                         cmd.Parameters.AddWithValue("@status", status);
-                        cmd.Parameters.AddWithValue("@id", feedbackID);
+
                         int result = cmd.ExecuteNonQuery();
                         return result > 0;
                     }
@@ -836,6 +769,62 @@ namespace DAL.dal_service
 
             return prefix + (lastID + 1).ToString("D3");
         }
+
+        // Trong FeedbackAccess (DAL)
+        public static bool UpdateFeedbackContent(FeedbackDTO feedback)
+        {
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null)
+                {
+                    Console.WriteLine("Không thể kết nối database");
+                    return false;
+                }
+
+                try
+                {
+                    Console.WriteLine($"Cập nhật nội dung feedback ID: {feedback.FeedbackID}");
+
+                    // Kiểm tra feedback ID có tồn tại không
+                    string checkQuery = "SELECT COUNT(*) FROM FEEDBACK WHERE FEEDBACKID = @feedbackId";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@feedbackId", feedback.FeedbackID);
+                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (count == 0)
+                        {
+                            Console.WriteLine($"Không tìm thấy feedback ID: {feedback.FeedbackID}");
+                            return false;
+                        }
+                    }
+
+                    // Cập nhật nội dung feedback nhưng giữ nguyên trạng thái
+                    string updateQuery = @"UPDATE FEEDBACK 
+                    SET CONTENT = @content, HAS_FEEDBACK = @hasFeedback 
+                    WHERE FEEDBACKID = @feedbackId";
+
+                    using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@feedbackId", feedback.FeedbackID);
+                        cmd.Parameters.AddWithValue("@content", feedback.Content);
+                        cmd.Parameters.AddWithValue("@hasFeedback", feedback.HasFeedback);
+
+                        int result = cmd.ExecuteNonQuery();
+                        Console.WriteLine($"Kết quả cập nhật: {result} dòng thay đổi");
+                        return result > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi cập nhật nội dung feedback: " + ex.Message);
+                    Console.WriteLine("Stack trace: " + ex.StackTrace);
+                    return false;
+                }
+            }
+        }
+
+
     }
     
 
