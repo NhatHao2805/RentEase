@@ -29,9 +29,9 @@ namespace GUI.gui_service
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.dgvFingerprints = new System.Windows.Forms.DataGridView();
             this.panelEnroll = new System.Windows.Forms.Panel();
             this.lblImageStatus = new System.Windows.Forms.Label();
@@ -39,7 +39,6 @@ namespace GUI.gui_service
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdateImage = new Guna.UI2.WinForms.Guna2Button();
             this.btnSelectImage = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBoxFingerprint = new System.Windows.Forms.PictureBox();
             this.btnTestFingerprint = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdatePermission = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -51,63 +50,44 @@ namespace GUI.gui_service
             this.cboTenants = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelRegister = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel18 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.pictureBoxFingerprint = new System.Windows.Forms.PictureBox();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFingerprints)).BeginInit();
             this.panelEnroll.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFingerprint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.panel1.Controls.Add(this.guna2PictureBox5);
+            this.panel1.Controls.Add(this.guna2CustomGradientPanel18);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1333, 65);
+            this.panel1.Size = new System.Drawing.Size(1300, 65);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 15);
+            this.label1.Location = new System.Drawing.Point(84, -1);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(242, 29);
+            this.label1.Size = new System.Drawing.Size(248, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "QUẢN LÝ VÂN TAY";
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BorderColor = System.Drawing.Color.Silver;
-            this.btnBack.BorderRadius = 5;
-            this.btnBack.BorderThickness = 1;
-            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBack.FillColor = System.Drawing.Color.White;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.btnBack.Image = global::GUI.Properties.Resources.icons8_back_50;
-            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBack.Location = new System.Drawing.Point(1216, 7);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.ShadowDecoration.BorderRadius = 10;
-            this.btnBack.ShadowDecoration.Enabled = true;
-            this.btnBack.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.btnBack.Size = new System.Drawing.Size(113, 45);
-            this.btnBack.TabIndex = 0;
-            this.btnBack.Text = "Quay lại";
-            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.label1.Text = "Quản lý vân tay";
             // 
             // dgvFingerprints
             // 
@@ -116,8 +96,16 @@ namespace GUI.gui_service
             this.dgvFingerprints.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFingerprints.BackgroundColor = System.Drawing.Color.White;
             this.dgvFingerprints.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFingerprints.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvFingerprints.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFingerprints.Location = new System.Drawing.Point(21, 112);
+            this.dgvFingerprints.Location = new System.Drawing.Point(10, 73);
             this.dgvFingerprints.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFingerprints.MultiSelect = false;
             this.dgvFingerprints.Name = "dgvFingerprints";
@@ -148,7 +136,7 @@ namespace GUI.gui_service
             this.panelEnroll.Controls.Add(this.labelSelectTenant);
             this.panelEnroll.Controls.Add(this.cboTenants);
             this.panelEnroll.Controls.Add(this.labelRegister);
-            this.panelEnroll.Location = new System.Drawing.Point(907, 98);
+            this.panelEnroll.Location = new System.Drawing.Point(885, 66);
             this.panelEnroll.Margin = new System.Windows.Forms.Padding(4);
             this.panelEnroll.Name = "panelEnroll";
             this.panelEnroll.Size = new System.Drawing.Size(411, 677);
@@ -249,16 +237,6 @@ namespace GUI.gui_service
             this.btnSelectImage.TabIndex = 12;
             this.btnSelectImage.Text = "Chọn ảnh";
             this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
-            // 
-            // pictureBoxFingerprint
-            // 
-            this.pictureBoxFingerprint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxFingerprint.Location = new System.Drawing.Point(23, 329);
-            this.pictureBoxFingerprint.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxFingerprint.Name = "pictureBoxFingerprint";
-            this.pictureBoxFingerprint.Size = new System.Drawing.Size(365, 73);
-            this.pictureBoxFingerprint.TabIndex = 11;
-            this.pictureBoxFingerprint.TabStop = false;
             // 
             // btnTestFingerprint
             // 
@@ -430,21 +408,81 @@ namespace GUI.gui_service
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 83);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(94, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 20);
+            this.label2.Size = new System.Drawing.Size(158, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "DANH SÁCH VÂN TAY";
+            this.label2.Text = "Xem danh sách vân tay";
+            // 
+            // guna2CustomGradientPanel18
+            // 
+            this.guna2CustomGradientPanel18.BorderRadius = 2;
+            this.guna2CustomGradientPanel18.FillColor = System.Drawing.Color.PaleGreen;
+            this.guna2CustomGradientPanel18.FillColor2 = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel18.FillColor3 = System.Drawing.Color.DarkKhaki;
+            this.guna2CustomGradientPanel18.FillColor4 = System.Drawing.Color.Lime;
+            this.guna2CustomGradientPanel18.Location = new System.Drawing.Point(71, 4);
+            this.guna2CustomGradientPanel18.Name = "guna2CustomGradientPanel18";
+            this.guna2CustomGradientPanel18.Size = new System.Drawing.Size(7, 50);
+            this.guna2CustomGradientPanel18.TabIndex = 135;
+            // 
+            // pictureBoxFingerprint
+            // 
+            this.pictureBoxFingerprint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxFingerprint.Location = new System.Drawing.Point(23, 329);
+            this.pictureBoxFingerprint.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxFingerprint.Name = "pictureBoxFingerprint";
+            this.pictureBoxFingerprint.Size = new System.Drawing.Size(365, 73);
+            this.pictureBoxFingerprint.TabIndex = 11;
+            this.pictureBoxFingerprint.TabStop = false;
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_fingerprint_50;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(10, 0);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 136;
+            this.guna2PictureBox5.TabStop = false;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderColor = System.Drawing.Color.Silver;
+            this.btnBack.BorderRadius = 5;
+            this.btnBack.BorderThickness = 1;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.White;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnBack.Image = global::GUI.Properties.Resources.icons8_back_50;
+            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBack.Location = new System.Drawing.Point(1144, 9);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.BorderRadius = 10;
+            this.btnBack.ShadowDecoration.Enabled = true;
+            this.btnBack.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.btnBack.Size = new System.Drawing.Size(143, 45);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "Quay lại";
+            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // FingerprintManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(1333, 800);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(1300, 750);
             this.Controls.Add(this.panelEnroll);
             this.Controls.Add(this.dgvFingerprints);
             this.Controls.Add(this.panel1);
@@ -460,8 +498,8 @@ namespace GUI.gui_service
             this.panelEnroll.ResumeLayout(false);
             this.panelEnroll.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFingerprint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -489,5 +527,7 @@ namespace GUI.gui_service
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox5;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel18;
     }
 }

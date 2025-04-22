@@ -13,6 +13,53 @@ namespace DAL
 {
     public class AssetAccess
     {
+        public static DataTable LoadAssets(string Username, string buildingid)
+        {
+            DataTable output = new DataTable();
+
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    // Kiểm tra và mở kết nối nếu chưa mở
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+
+                    using (MySqlCommand command = new MySqlCommand("load_Assets", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@p_username", Username);
+                        command.Parameters.AddWithValue("@p_buildingid", buildingid);
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                output.Columns.Add(reader.GetName(i), reader.GetFieldType(i));
+                            }
+
+                            while (reader.Read())
+                            {
+                                DataRow row = output.NewRow();
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                {
+                                    row[i] = reader.IsDBNull(i) ? DBNull.Value : reader.GetValue(i);
+                                }
+                                output.Rows.Add(row);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+{
+                Console.WriteLine("Error in LoadAsset: " + ex.Message);
+            }
+            return output;
+        }
+
         public static DataTable LoadRoomID(string buildingid)
         {
             DataTable dt = new DataTable();

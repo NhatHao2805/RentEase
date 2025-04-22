@@ -3,7 +3,6 @@ using System.Windows.Forms;
 using DTO;
 using BLL;
 using System.Collections.Generic;
-using BLL.hoaian;
 using System.Net.Mail;
 using System.Net;
 using System.IO;
@@ -27,7 +26,7 @@ namespace GUI
         {
             InitializeComponent();
             loadLanguage();
-            
+
             // Initialize countdown timer
             countdownTimer = new System.Windows.Forms.Timer();
             countdownTimer.Interval = 1000; // 1 second
@@ -83,7 +82,7 @@ namespace GUI
                 return;
             }
 
-            lblCountdown.Text = Language.GetCurrentLanguage() == "vi" ? 
+            lblCountdown.Text = Language.GetCurrentLanguage() == "vi" ?
                 $"Thời gian còn lại: {remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}" :
                 $"Time remaining: {remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}";
         }
@@ -103,7 +102,7 @@ namespace GUI
                 mail.From = new MailAddress(senderEmail, "RentEase Support");
                 mail.To.Add(email);
                 mail.Subject = Language.GetCurrentLanguage() == "vi" ? "Đặt lại mật khẩu RentEase" : "RentEase Password Reset";
-                
+
                 // Create HTML body with exact styling match
                 string htmlBody = $@"
 <!DOCTYPE html>
@@ -186,7 +185,7 @@ namespace GUI
             </div>
             
             <div class='message'>
-                {(Language.GetCurrentLanguage() == "vi" 
+                {(Language.GetCurrentLanguage() == "vi"
                     ? "Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu cho tài khoản RentEase của bạn. Để tiến hành đặt lại mật khẩu, vui lòng sử dụng mã OTP (Mật khẩu dùng một lần) sau:"
                     : "We received a request to reset your password for your RentEase account. To proceed with the password reset, please use the following OTP (One-Time Password) code:")}
             </div>
@@ -228,14 +227,14 @@ namespace GUI
 
                 // Send email
                 smtpClient.Send(mail);
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                    "Mã OTP đã được gửi đến email của bạn!" : 
+                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    "Mã OTP đã được gửi đến email của bạn!" :
                     "OTP has been sent to your email!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                    $"Lỗi khi gửi email: {ex.Message}" : 
+                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    $"Lỗi khi gửi email: {ex.Message}" :
                     $"Error sending email: {ex.Message}");
             }
         }
@@ -261,7 +260,7 @@ namespace GUI
             btnSendOTP.Enabled = false;
             btnSendOTP.Text = Language.GetCurrentLanguage() == "vi" ? "Đang gửi..." : "Sending...";
 
-            string userEmail = UserBLL.CheckEmail(txtEmail.Text.Trim());
+            string userEmail = AccountBLL.CheckEmail(txtEmail.Text.Trim());
             switch (userEmail)
             {
                 case "required_email":
@@ -296,8 +295,8 @@ namespace GUI
         {
             if (IsOTPExpired())
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                    "Mã OTP đã hết hạn. Vui lòng yêu cầu mã mới." : 
+                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    "Mã OTP đã hết hạn. Vui lòng yêu cầu mã mới." :
                     "OTP has expired. Please request a new one.");
                 txtOTP.Enabled = false;
                 btnVerify.Enabled = false;
@@ -309,8 +308,8 @@ namespace GUI
             string enteredOTP = txtOTP.Text.Trim();
             if (string.IsNullOrEmpty(enteredOTP))
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                    "Vui lòng nhập mã OTP!" : 
+                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    "Vui lòng nhập mã OTP!" :
                     "Please enter the OTP code!");
                 return;
             }
@@ -319,8 +318,8 @@ namespace GUI
             if (enteredOTP == otpCode)
             {
                 countdownTimer.Stop();
-                lblCountdown.Text = Language.GetCurrentLanguage() == "vi" ? 
-                    "Xác thực thành công!" : 
+                lblCountdown.Text = Language.GetCurrentLanguage() == "vi" ?
+                    "Xác thực thành công!" :
                     "OTP verified successfully!";
 
                 // Switch to password reset panel
@@ -328,16 +327,16 @@ namespace GUI
                 panelStep2.Visible = true;
                 this.Size = new System.Drawing.Size(395, 299);
 
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                    "Xác thực thành công! Bạn có thể đặt lại mật khẩu." : 
+                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    "Xác thực thành công! Bạn có thể đặt lại mật khẩu." :
                     "OTP verified successfully! You can now reset your password.");
             }
             else
             {
                 if (otpAttempts >= MAX_OTP_ATTEMPTS)
                 {
-                    MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                        $"Bạn đã vượt quá số lần thử tối đa ({MAX_OTP_ATTEMPTS}). Vui lòng yêu cầu mã OTP mới." : 
+                    MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                        $"Bạn đã vượt quá số lần thử tối đa ({MAX_OTP_ATTEMPTS}). Vui lòng yêu cầu mã OTP mới." :
                         $"You have exceeded the maximum number of attempts ({MAX_OTP_ATTEMPTS}). Please request a new OTP.");
                     txtOTP.Enabled = false;
                     btnVerify.Enabled = false;
@@ -346,8 +345,8 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                        $"Mã OTP không đúng! Bạn còn {MAX_OTP_ATTEMPTS - otpAttempts} lần thử." : 
+                    MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                        $"Mã OTP không đúng! Bạn còn {MAX_OTP_ATTEMPTS - otpAttempts} lần thử." :
                         $"Invalid OTP code! You have {MAX_OTP_ATTEMPTS - otpAttempts} attempts remaining.");
                 }
             }
@@ -356,13 +355,13 @@ namespace GUI
         private void txtNewPassword_TextChanged(object sender, EventArgs e)
         {
             isPasswordValid = ValidatePassword(txtNewPassword.Text);
-            btnResetPassword.Enabled = isPasswordValid && !string.IsNullOrEmpty(txtConfirmPassword.Text) && 
+            btnResetPassword.Enabled = isPasswordValid && !string.IsNullOrEmpty(txtConfirmPassword.Text) &&
                                      txtNewPassword.Text == txtConfirmPassword.Text;
         }
 
         private void txtConfirmPassword_TextChanged(object sender, EventArgs e)
         {
-            btnResetPassword.Enabled = isPasswordValid && !string.IsNullOrEmpty(txtConfirmPassword.Text) && 
+            btnResetPassword.Enabled = isPasswordValid && !string.IsNullOrEmpty(txtConfirmPassword.Text) &&
                                      txtNewPassword.Text == txtConfirmPassword.Text;
         }
 
@@ -378,14 +377,14 @@ namespace GUI
 
             if (result.StartsWith("Database error:"))
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                    $"Lỗi cơ sở dữ liệu: {result.Substring(15)}" : 
+                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    $"Lỗi cơ sở dữ liệu: {result.Substring(15)}" :
                     $"Database problem: {result.Substring(15)}");
             }
             else if (result == "Success")
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? 
-                    "Đặt lại mật khẩu thành công!" : 
+                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    "Đặt lại mật khẩu thành công!" :
                     "Password updated successfully!");
                 this.Close();
             }

@@ -182,5 +182,12 @@ namespace GUI
         {
 
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form_Login lg = new Form_Login();
+            lg.Show();
+            this.Close();
+        }
     }
 }

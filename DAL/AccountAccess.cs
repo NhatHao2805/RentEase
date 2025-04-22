@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using DTO;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Crypto.Generators;
-using BCrypt.Net;
 using System.IO;
 
 namespace DAL
@@ -144,6 +143,32 @@ namespace DAL
             catch (Exception ex)
             {
                 return $"System error: {ex.GetType().Name}";
+            }
+        }
+
+        public static string CheckEmail(string email)
+        {
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+
+                    using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE EMAIL=@p_email;", conn))
+                    {
+                        command.Parameters.AddWithValue("p_email", email);
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        return count > 0 ? "Valid" : "Invalid";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in CheckEmail: " + ex.Message);
+                return "Error";
             }
         }
     }

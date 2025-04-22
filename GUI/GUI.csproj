@@ -33,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BCrypt.Net-Next, Version=4.0.3.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
-      <HintPath>..\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCrypt.Net-Next.dll</HintPath>
-    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -94,13 +91,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuildingManagement\Form_Building.cs">
+    <Compile Include="Building\Form_Building.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuildingManagement\Form_Building.Designer.cs">
+    <Compile Include="Building\Form_Building.Designer.cs">
       <DependentUpon>Form_Building.cs</DependentUpon>
     </Compile>
     <Compile Include="ContractTemplateForm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom\OverlayHelper.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Custom\Custom.cs">
@@ -252,6 +252,12 @@
     <Compile Include="Login\Form_ForgotPassword.Designer.cs">
       <DependentUpon>Form_ForgotPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form1.Designer.cs">
+      <DependentUpon>loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\Form_SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,15 +302,9 @@
     <Compile Include="quanlyphuongtien\Form_UpdateVehicle.Designer.cs">
       <DependentUpon>Form_UpdateVehicle.cs</DependentUpon>
     </Compile>
-    <Content Include="honhathao\languages\initialLanguage.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\icons8-fingerprint-64.png" />
     <None Include="Resources\Logo.png" />
     <None Include="Resources\5603109.jpg" />
-    <EmbeddedResource Include="BuildingManagement\Form_Building.resx">
-      <DependentUpon>Form_Building.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Form_ForgotPassword.resx">
       <DependentUpon>Form_ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\loading.resx">
+      <DependentUpon>loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="quanlyphuongtien\Form_AddParkingArea.resx">
       <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
@@ -428,15 +431,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="honhathao\languages\English.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="honhathao\languages\ListLanguage.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="honhathao\languages\Vietnamese.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -568,6 +562,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-home-100-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="honhathao\languages\English.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\initialLanguage.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\ListLanguage.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\Vietnamese.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\icons8-bot-64-2.png" />
+    <None Include="Resources\icons8-parking-lot-96.png" />
+    <None Include="Resources\icons8-payment-100.png" />
+    <None Include="Resources\icons8-fingerprint-64-trắng.png" />
+    <None Include="Resources\icons8-parking-lot-96-trắng.png" />
+    <None Include="Resources\icons8-asset-96-trắng.png" />
+    <None Include="Resources\icons8-service-100-trắng.png" />
+    <None Include="Resources\icons8-pay-100-trắng.png" />
+    <None Include="Resources\icons8-contract-48-trắng.png" />
+    <None Include="Resources\icons8-room-100-trắng.png" />
+    <None Include="Resources\icons8-fingerprint-50.png" />
+    <None Include="Resources\icons8-bot.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DAL;
 using DTO;
 using System.Text.RegularExpressions;
-using Microsoft.VisualBasic; 
+using Microsoft.VisualBasic;
 
 namespace BLL
 {
@@ -84,6 +84,15 @@ namespace BLL
             }
 
             return AccountAccess.UpdatePassword(email, newPassword);
+        }
+
+        public static string CheckEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+            {
+                return "required_email";
+            }
+            return AccountAccess.CheckEmail(email);
         }
     }
 }

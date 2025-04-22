@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using BLL.honhathao;
 using Guna.UI2.WinForms;
 using static System.Net.Mime.MediaTypeNames;
 
@@ -22,10 +23,10 @@ namespace GUI.honhathao.languages
         private string usern;
         public BotChat(string usern)
         {
-            Console.WriteLine(Language.translate("phongdon"));
+            Console.WriteLine(Language.translate("troli"));
             InitializeComponent();
             this.usern = usern;
-            chat = ( DateTime.Now.ToString("[HH:mm:ss] \n") + "[" + Language.translate("troli") + "] " + Language.translate("helo")+ "\n\n");
+            chat = (DateTime.Now.ToString("[HH:mm:ss] \n") + "[" + Language.translate("troli") + "] " + Language.translate("helo")+ "\n\n");
             richTextBox1.Text = chat;
         }
 
@@ -51,8 +52,8 @@ namespace GUI.honhathao.languages
             using (HttpClient client = new HttpClient())
             {
                 // URL webhook từ n8n
-                string n8nWebhookUrl = "https://honhathao9.app.n8n.cloud/webhook/20777478-c497-47a2-bf0b-ed1b05ada1f6";
-                //string n8nWebhookUrl = "https://honhathao9.app.n8n.cloud/webhook-test/20777478-c497-47a2-bf0b-ed1b05ada1f6";
+                //string n8nWebhookUrl = "https://honhathao9.app.n8n.cloud/webhook/20777478-c497-47a2-bf0b-ed1b05ada1f6";
+                string n8nWebhookUrl = "https://honhathao9.app.n8n.cloud/webhook-test/20777478-c497-47a2-bf0b-ed1b05ada1f6";
             
                 var payload = new
                 {
@@ -118,6 +119,11 @@ namespace GUI.honhathao.languages
         private void richTextBox1_Enter(object sender, EventArgs e)
         {
             guna2TextBox1.Focus();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

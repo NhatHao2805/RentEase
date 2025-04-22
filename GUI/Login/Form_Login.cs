@@ -16,7 +16,6 @@ namespace GUI
 {
     public partial class Form_Login: Form
     {
-
         public User taikhoan = new User();
         AccountBLL taikhoanBLL = new AccountBLL();
         Form_Building f2;
@@ -154,7 +153,12 @@ namespace GUI
 
         }
 
-        private void quenmk_lb_Click(object sender, EventArgs e)
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //New HoaiAn
+        private void dmk_lb_Click(object sender, EventArgs e)
         {
             Form_ForgotPassword forgotPasswordForm = new Form_ForgotPassword();
             forgotPasswordForm.ShowDialog();

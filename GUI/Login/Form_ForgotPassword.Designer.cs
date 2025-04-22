@@ -48,7 +48,7 @@
             this.panelStep1.SuspendLayout();
             this.panelStep2.SuspendLayout();
             this.SuspendLayout();
-            
+
             // panelStep1
             this.panelStep1.Controls.Add(this.lblCountdown);
             this.panelStep1.Controls.Add(this.btnVerify);
@@ -61,7 +61,7 @@
             this.panelStep1.Name = "panelStep1";
             this.panelStep1.Size = new System.Drawing.Size(355, 230);
             this.panelStep1.TabIndex = 0;
-            
+
             // panelStep2
             this.panelStep2.Controls.Add(this.lblPasswordRequirements);
             this.panelStep2.Controls.Add(this.btnResetPassword);
@@ -82,13 +82,13 @@
             this.labelEmail.Size = new System.Drawing.Size(44, 16);
             this.labelEmail.TabIndex = 0;
             this.labelEmail.Text = "Email:";
-            
+
             // txtEmail
             this.txtEmail.Location = new System.Drawing.Point(4, 26);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(345, 22);
             this.txtEmail.TabIndex = 1;
-            
+
             // btnSendOTP
             this.btnSendOTP.Location = new System.Drawing.Point(4, 58);
             this.btnSendOTP.Name = "btnSendOTP";
@@ -97,7 +97,7 @@
             this.btnSendOTP.Text = "Send OTP";
             this.btnSendOTP.UseVisualStyleBackColor = true;
             this.btnSendOTP.Click += new System.EventHandler(this.btnSendOTP_Click);
-            
+
             // labelOTP
             this.labelOTP.AutoSize = true;
             this.labelOTP.Location = new System.Drawing.Point(4, 98);
@@ -105,14 +105,14 @@
             this.labelOTP.Size = new System.Drawing.Size(38, 16);
             this.labelOTP.TabIndex = 3;
             this.labelOTP.Text = "OTP:";
-            
+
             // txtOTP
             this.txtOTP.Enabled = false;
             this.txtOTP.Location = new System.Drawing.Point(4, 118);
             this.txtOTP.Name = "txtOTP";
             this.txtOTP.Size = new System.Drawing.Size(345, 22);
             this.txtOTP.TabIndex = 4;
-            
+
             // btnVerify
             this.btnVerify.Enabled = false;
             this.btnVerify.Location = new System.Drawing.Point(4, 150);
@@ -122,7 +122,7 @@
             this.btnVerify.Text = "Verify";
             this.btnVerify.UseVisualStyleBackColor = true;
             this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
-            
+
             // lblCountdown
             this.lblCountdown.AutoSize = true;
             this.lblCountdown.Location = new System.Drawing.Point(4, 190);
@@ -137,7 +137,7 @@
             this.labelNewPassword.Size = new System.Drawing.Size(100, 16);
             this.labelNewPassword.TabIndex = 0;
             this.labelNewPassword.Text = "New Password:";
-            
+
             // txtNewPassword
             this.txtNewPassword.Location = new System.Drawing.Point(4, 26);
             this.txtNewPassword.Name = "txtNewPassword";
@@ -145,7 +145,7 @@
             this.txtNewPassword.Size = new System.Drawing.Size(345, 22);
             this.txtNewPassword.TabIndex = 1;
             this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
-            
+
             // labelConfirmPassword
             this.labelConfirmPassword.AutoSize = true;
             this.labelConfirmPassword.Location = new System.Drawing.Point(4, 58);
@@ -153,7 +153,7 @@
             this.labelConfirmPassword.Size = new System.Drawing.Size(118, 16);
             this.labelConfirmPassword.TabIndex = 2;
             this.labelConfirmPassword.Text = "Confirm Password:";
-            
+
             // txtConfirmPassword
             this.txtConfirmPassword.Location = new System.Drawing.Point(4, 78);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
@@ -161,7 +161,7 @@
             this.txtConfirmPassword.Size = new System.Drawing.Size(345, 22);
             this.txtConfirmPassword.TabIndex = 3;
             this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
-            
+
             // btnResetPassword
             this.btnResetPassword.Location = new System.Drawing.Point(4, 110);
             this.btnResetPassword.Name = "btnResetPassword";
@@ -170,7 +170,7 @@
             this.btnResetPassword.Text = "Reset Password";
             this.btnResetPassword.UseVisualStyleBackColor = true;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
-            
+
             // lblPasswordRequirements
             this.lblPasswordRequirements.AutoSize = true;
             this.lblPasswordRequirements.Location = new System.Drawing.Point(4, 150);
@@ -178,7 +178,7 @@
             this.lblPasswordRequirements.Size = new System.Drawing.Size(193, 64);
             this.lblPasswordRequirements.TabIndex = 5;
             this.lblPasswordRequirements.Text = "Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character";
-            
+
             // Form_ForgotPassword
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

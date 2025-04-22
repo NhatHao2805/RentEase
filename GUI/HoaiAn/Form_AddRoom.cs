@@ -242,5 +242,25 @@ namespace GUI
                 DaHetHan_chbox.Checked = false;
             }
         }
+
+        private void floor_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void type_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void convenient_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
