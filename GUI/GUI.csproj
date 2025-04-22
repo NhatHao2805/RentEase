@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -33,8 +33,53 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySqlConnector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d33d3e53aa5f8c92, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySqlConnector.2.4.0\lib\net471\MySqlConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,25 +91,344 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Building\Form_Building.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Building\Form_Building.Designer.cs">
+      <DependentUpon>Form_Building.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="ContractTemplateForm .cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Custom\OverlayHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Custom\Custom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelExporter.cs" />
+    <Compile Include="gui_service\AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\DeleteService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\DeleteService.Designer.cs">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\FeedbackManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\FeedbackManagementForm.Designer.cs">
+      <DependentUpon>FeedbackManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\FingerprintManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\FingerprintManagementForm.Designer.cs">
+      <DependentUpon>FingerprintManagementForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\InsertService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\InsertService.Designer.cs">
+      <DependentUpon>InsertService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui_service\SeeAllService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui_service\SeeAllService.Designer.cs">
+      <DependentUpon>SeeAllService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_AddAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_AddAssets.Designer.cs">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_AddRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_AddRoom.Designer.cs">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_AssetsDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_AssetsDetail.Designer.cs">
+      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_RentalHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_RentalHistory.Designer.cs">
+      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateAssets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateAssets.Designer.cs">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hoaian\Form_UpdateRoom.Designer.cs">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_AddPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_AddPayment.Designer.cs">
+      <DependentUpon>Form_AddPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_Payment.Designer.cs">
+      <DependentUpon>Form_Payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_W_E.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_W_E.Designer.cs">
+      <DependentUpon>Form_W_E.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_Add_W_E.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_Add_W_E.Designer.cs">
+      <DependentUpon>Form_Add_W_E.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_BillDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_BillDetail.Designer.cs">
+      <DependentUpon>Form_BillDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_LoadAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_LoadAll.Designer.cs">
+      <DependentUpon>Form_LoadAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_TenantHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_TenantHistory.Designer.cs">
+      <DependentUpon>Form_TenantHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_AddBuilding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_AddBuilding.Designer.cs">
+      <DependentUpon>Form_AddBuilding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_AddContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_AddContract.Designer.cs">
+      <DependentUpon>Form_AddContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_Registration.Designer.cs">
+      <DependentUpon>Form_Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_Tenant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_Tenant.Designer.cs">
+      <DependentUpon>Form_Tenant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\languages\BotChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\languages\BotChat.Designer.cs">
+      <DependentUpon>BotChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\RandomKey.cs" />
+    <Compile Include="Login\Form_ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form_ForgotPassword.Designer.cs">
+      <DependentUpon>Form_ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form1.Designer.cs">
+      <DependentUpon>loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Form_SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form_SignUp.Designer.cs">
+      <DependentUpon>Form_SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyNha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyNha.Designer.cs">
+      <DependentUpon>QuanLyNha.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="quanlyphuongtien\Form_AddParkingArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_AddParkingArea.Designer.cs">
+      <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_AddVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_AddVehicle.Designer.cs">
+      <DependentUpon>Form_AddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateParkingArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateParkingArea.Designer.cs">
+      <DependentUpon>Form_UpdateParkingArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="quanlyphuongtien\Form_UpdateVehicle.Designer.cs">
+      <DependentUpon>Form_UpdateVehicle.cs</DependentUpon>
+    </Compile>
+    <None Include="Resources\icons8-fingerprint-64.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\5603109.jpg" />
+    <EmbeddedResource Include="gui_service\FeedbackManagementForm.resx">
+      <DependentUpon>FeedbackManagementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
+      <DependentUpon>Form_AddAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_AddRoom.resx">
+      <DependentUpon>Form_AddRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_AssetsDetail.resx">
+      <DependentUpon>Form_AssetsDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_RentalHistory.resx">
+      <DependentUpon>Form_RentalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_UpdateAssets.resx">
+      <DependentUpon>Form_UpdateAssets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
+      <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\languages\BotChat.resx">
+      <DependentUpon>BotChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Form_ForgotPassword.resx">
+      <DependentUpon>Form_ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\loading.resx">
+      <DependentUpon>loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_AddParkingArea.resx">
+      <DependentUpon>Form_AddParkingArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_AddVehicle.resx">
+      <DependentUpon>Form_AddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_UpdateParkingArea.resx">
+      <DependentUpon>Form_UpdateParkingArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="quanlyphuongtien\Form_UpdateVehicle.resx">
+      <DependentUpon>Form_UpdateVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\Phu-My-Hung-Tower.jpg" />
+    <None Include="Resources\icons8-ophthalmology-50.png" />
+    <None Include="Resources\LogoApp.jpg" />
+    <None Include="Resources\icons8-pay-50.png" />
+    <None Include="Resources\icons8-water-50.png" />
+    <None Include="Resources\icons8-filing-cabinet-50.png" />
+    <None Include="Resources\icons8-back-50.png" />
+    <None Include="Resources\icons8-vehicle-50-3.png" />
+    <None Include="Resources\icons8-vehicle-50-2.png" />
+    <None Include="Resources\icons8-service-50.png" />
+    <None Include="Resources\icons8-parking-100.png" />
+    <None Include="Resources\icons8-vehicle-50.png" />
+    <None Include="Resources\icons8-view-96.png" />
+    <None Include="Resources\icons8-lightning-bolt-80.png" />
+    <None Include="Resources\icons8-evaluate-64.png" />
+    <None Include="Resources\icons8-view-80.png" />
+    <None Include="Resources\icons8-remind-100.png" />
+    <EmbeddedResource Include="ContractTemplateForm .resx">
+      <DependentUpon>ContractTemplateForm .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\DeleteService.resx">
+      <DependentUpon>DeleteService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\FingerprintManagementForm.resx">
+      <DependentUpon>FingerprintManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\InsertService.resx">
+      <DependentUpon>InsertService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\SeeAllService.resx">
+      <DependentUpon>SeeAllService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_AddPayment.resx">
+      <DependentUpon>Form_AddPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_Payment.resx">
+      <DependentUpon>Form_Payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_Add_W_E.resx">
+      <DependentUpon>Form_Add_W_E.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_BillDetail.resx">
+      <DependentUpon>Form_BillDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_LoadAll.resx">
+      <DependentUpon>Form_LoadAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_TenantHistory.resx">
+      <DependentUpon>Form_TenantHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_AddBuilding.resx">
+      <DependentUpon>Form_AddBuilding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_AddContract.resx">
+      <DependentUpon>Form_AddContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_Registration.resx">
+      <DependentUpon>Form_Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_Tenant.resx">
+      <DependentUpon>Form_Tenant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_W_E.resx">
+      <DependentUpon>Form_W_E.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Form_SignUp.resx">
+      <DependentUpon>Form_SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyNha.resx">
+      <DependentUpon>QuanLyNha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +440,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -107,6 +472,131 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\img_Login %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-homeQL-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-room-90 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contract-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cash-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-service-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mortgage-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-lot-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\office-building.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-invoice-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-activity-history-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-registration-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tenant-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-contract-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trash-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-edit-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-plus-240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-activity-history-100-ư.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-detail-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-notification.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white-icons8-notification-90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sign-up-100 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-document-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sign-up-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-online-payment.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-service.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-list.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-home-100-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="honhathao\languages\English.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\initialLanguage.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\ListLanguage.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="honhathao\languages\Vietnamese.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\icons8-bot-64-2.png" />
+    <None Include="Resources\icons8-parking-lot-96.png" />
+    <None Include="Resources\icons8-payment-100.png" />
+    <None Include="Resources\icons8-fingerprint-64-trắng.png" />
+    <None Include="Resources\icons8-parking-lot-96-trắng.png" />
+    <None Include="Resources\icons8-asset-96-trắng.png" />
+    <None Include="Resources\icons8-service-100-trắng.png" />
+    <None Include="Resources\icons8-pay-100-trắng.png" />
+    <None Include="Resources\icons8-contract-48-trắng.png" />
+    <None Include="Resources\icons8-room-100-trắng.png" />
+    <None Include="Resources\icons8-fingerprint-50.png" />
+    <None Include="Resources\icons8-bot.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

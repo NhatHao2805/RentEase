@@ -7,3 +7,939 @@ C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\DTO.pdb
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\obj\Debug\DAL.dll
 C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\obj\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\DAL.dll.config
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\DAL.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\DTO.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Google.Protobuf.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\MySql.Data.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\MySqlConnector.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Buffers.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.IO.Pipelines.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Memory.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\ZstdSharp.dll
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\DTO.dll.config
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Google.Protobuf.pdb
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Google.Protobuf.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\MySql.Data.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\MySqlConnector.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Buffers.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.IO.Pipelines.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Memory.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEaseTDT\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEaseTDT\RentEase\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RentEase\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RentEase\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\RentEaseTDT\RentEase\DAL\obj\Debug\DAL.dll
+D:\RentEaseTDT\RentEase\DAL\obj\Debug\DAL.pdb
+D:\RentEase\DAL\bin\Debug\DAL.dll.config
+D:\RentEase\DAL\bin\Debug\DAL.dll
+D:\RentEase\DAL\bin\Debug\DAL.pdb
+D:\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+D:\RentEase\DAL\bin\Debug\DTO.dll
+D:\RentEase\DAL\bin\Debug\Google.Protobuf.dll
+D:\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.dll
+D:\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.dll
+D:\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEase\DAL\bin\Debug\MySql.Data.dll
+D:\RentEase\DAL\bin\Debug\MySqlConnector.dll
+D:\RentEase\DAL\bin\Debug\System.Buffers.dll
+D:\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEase\DAL\bin\Debug\System.IO.Pipelines.dll
+D:\RentEase\DAL\bin\Debug\System.Memory.dll
+D:\RentEase\DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEase\DAL\bin\Debug\ZstdSharp.dll
+D:\RentEase\DAL\bin\Debug\DTO.pdb
+D:\RentEase\DAL\bin\Debug\DTO.dll.config
+D:\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+D:\RentEase\DAL\bin\Debug\Google.Protobuf.pdb
+D:\RentEase\DAL\bin\Debug\Google.Protobuf.xml
+D:\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.xml
+D:\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.xml
+D:\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEase\DAL\bin\Debug\MySql.Data.xml
+D:\RentEase\DAL\bin\Debug\MySqlConnector.xml
+D:\RentEase\DAL\bin\Debug\System.Buffers.xml
+D:\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEase\DAL\bin\Debug\System.IO.Pipelines.xml
+D:\RentEase\DAL\bin\Debug\System.Memory.xml
+D:\RentEase\DAL\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEase\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\RentEase\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\RentEase\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\RentEase\DAL\obj\Debug\DAL.dll
+D:\RentEase\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\OneDrive\Máy tính\CNPM\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-NhatHao\RentEase-NhatHao\DAL\obj\Debug\DAL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\DAL.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\DAL.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\DAL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Memory.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\DTO.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Memory.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\obj\Debug\DAL.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\temp\DAL\obj\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\DAL.dll.config
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\DAL.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\DTO.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Google.Protobuf.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\MySql.Data.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\MySqlConnector.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Buffers.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.IO.Pipelines.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Memory.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\ZstdSharp.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\DTO.dll.config
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Google.Protobuf.pdb
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Google.Protobuf.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\MySql.Data.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\MySqlConnector.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Buffers.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.IO.Pipelines.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Memory.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\obj\Debug\DAL.dll
+D:\RentEaseTDT\RentEase-NhatHao\RentEase\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Phats_3_4\RentEase-Phats\DAL\obj\Debug\DAL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\DAL.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\DAL.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\DAL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Memory.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\DTO.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Memory.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\obj\Debug\DAL.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-HoaiAn (1)\RentEase-HoaiAn\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-Huy_6_4\RentEase-Huy - Copy - Copy\DAL\obj\Debug\DAL.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\DAL.dll.config
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\DAL.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\DAL.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\DTO.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Google.Protobuf.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\MySql.Data.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\MySqlConnector.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Buffers.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.IO.Pipelines.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Memory.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\ZstdSharp.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\DTO.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\DTO.dll.config
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Google.Protobuf.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Google.Protobuf.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\MySql.Data.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\MySqlConnector.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Buffers.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.IO.Pipelines.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Memory.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Numerics.Vectors.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\obj\Debug\DAL.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\DAL\obj\Debug\DAL.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\DAL.dll.config
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\DAL.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\DAL.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\DTO.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Protobuf.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\MySql.Data.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\MySqlConnector.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Buffers.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.IO.Pipelines.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Memory.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\ZstdSharp.dll
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\DTO.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\DTO.dll.config
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Protobuf.pdb
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Google.Protobuf.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\K4os.Hash.xxHash.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\MySql.Data.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\MySqlConnector.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Buffers.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.IO.Pipelines.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Memory.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEaseTDT\RE\RentEase\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEaseTDT\RE\RentEase\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RE\RentEase\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RE\RentEase\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\RentEaseTDT\RE\RentEase\DAL\obj\Debug\DAL.dll
+D:\RentEaseTDT\RE\RentEase\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_11_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-NhutHuy_12_4\RentEase-NhutHuy - Copy\DAL\obj\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\DAL.dll.config
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\DAL.pdb
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Google.Protobuf.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\MySql.Data.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\ZstdSharp.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Google.Protobuf.pdb
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Google.Protobuf.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\MySql.Data.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.IO.Pipelines.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.dll
+C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\DAL.dll.config
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\DAL.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\DTO.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Protobuf.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\K4os.Compression.LZ4.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\K4os.Hash.xxHash.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\MySql.Data.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\MySqlConnector.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Buffers.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.IO.Pipelines.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Memory.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\ZstdSharp.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\DTO.dll.config
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Protobuf.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Protobuf.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\K4os.Compression.LZ4.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\K4os.Hash.xxHash.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\MySql.Data.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\MySqlConnector.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Buffers.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.IO.Pipelines.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Memory.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\obj\Debug\DAL.csproj.Up2Date
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\obj\Debug\DAL.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\obj\Debug\DAL.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Auth.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Core.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Sheets.v4.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Newtonsoft.Json.dll
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Auth.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Auth.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Core.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Core.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Sheets.v4.pdb
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Google.Apis.Sheets.v4.xml
+D:\RentEaseTDT\RentEase-HoaiAn\RentEase-HoaiAn\DAL\bin\Debug\Newtonsoft.Json.xml

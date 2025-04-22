@@ -1,0 +1,431 @@
+﻿helo: Xin chào, tôi có thể giúp gì cho bạn?
+troli: Trợ lí
+phongdon: Phòng đơn  
+phongdoi: Phòng đôi  
+phongthuong: Phòng thường  
+phongcaocap: Phòng cao cấp  
+studio: Studio  
+phongnguyencan: Phòng nguyên căn  
+dauthang: Đầu tháng
+cuoithang: Cuối tháng
+dango: Đang ở
+dangbaoketthuc: Đang báo kết thúc
+daquahanhopdong: Đã quá hạn hợp đồng
+dangnotien: Đang nợ tiền
+dangtrong: Đang trống
+dangcocgiucho: Đang cọc giữ chỗ
+saphethanhopdong: Sắp hết hạn hợp đồng
+nam: Nam
+nu: Nữ
+dangcho: Đang chờ
+daduyet: Đã duyệt
+ELECTRICITY: Điện
+WATER: Nước
+tienmat: Tiền mặt
+chuyenkhoan: Chuyển khoản
+thetindung: Thẻ tín dụng
+xemay: Xe máy
+xeoto: Xe ô tô
+xedap: Xe đạp
+xemay/xedap: Xe máy/Xe đạp
+honhop: Hỗn hợp
+tot: Tốt
+huhongnhe: Hư hỏng nhẹ
+canduocsuachua/thaythe: Cần được sửa chữa/Thay thế
+dangsuachua: Đang sửa chữa
+dangthaythe: Đang thay thế
+khonghieuluc: Không hiệu lực
+danghieuluc: Đang hiệu lực
+hoanthanh: Hoàn thành
+chuahoanthanh: Chưa hoàn thành
+daxuly: Đã xử lý
+chuaxuly: Chưa xử lý
+dangxuly: Đang xử lý
+dagiaiquyet: Đã giải quyết
+chuagiaiquyet: Chưa giải quyết
+dangsudung: Đang sử dụng
+chuasudung: Chưa sử dụng
+Title: Đăng nhập
+Username: Tên đăng nhập
+Password: Mật khẩu
+Password2: Mật khẩu xác nhận
+Sign_in: Đăng nhập
+Sign_up: Đăng ký
+Sign_Up_Title_Form:Đăng ký
+User_info:Thông tin chi tiết
+Account_info:Thông tin tài khoản
+Fullname:Họ và tên
+Birthday:Ngày Sinh
+Email:Email
+Gender:Giới tính
+Numberphone:Số điện thoại
+Address:Địa chỉ
+Room_Management: Quản lý phòng
+Contract_Management: Quản lý hợp đồng
+Payment_Management: Quản lý thanh toán
+Service_Management: Quản lý dịch vụ
+Facility_Management: Quản lý cơ sở vật chất
+Parking_Management: Quản lý bãi đỗ xe
+room_list_management: Quản lý danh sách phòng
+text_room_list_management: Tất cả danh sách phòng của bạn
+edit: Chỉnh sửa
+edit_in: Chỉnh sửa danh sách phòng
+delete: Xóa
+view_rental_history: Xem lịch sử thuê phòng
+export_to_excel: Xuất sang Excel
+occupied: Đang ở
+vacant: Đang Trống
+ending_soon: Đang Báo Kết Thúc
+reserved: Đang Cọc Giữ Chỗ
+contract_expiring_soon: Sắp Hết Hạn Hợp Đồng
+contract_expired: Đã Hết Hạn Hợp Đồng
+owing_money: Đang Nợ Tiền
+building_add: Thêm
+building_change: Đổi
+taxpayer_information_management: Quản Lý Thông Tin Khách Thuế
+contract_management: Quản Lý Hợp Đồng
+house_tax_history_management: Quản Lý Lịch Sử Thuế Nhà
+residence_registration_management: Quản Lý Đăng Ký Lưu Trú
+all_contracts: Tất cả Hợp đồng
+created_contracts_list: Danh sách hợp đồng được tạo
+contract_expiration_reminder: Nhắc nhở sắp hết hợp đồng
+within_term: Trong thời hạn
+about_to_expire: Sắp hết hạn
+expired: Đã quá hạn
+set_contract_template: Thiết lập mẫu hợp đồng
+search: Tìm kiếm
+rental_history_title: Lịch sử thuê nhà
+rental_history_description: Danh sách lịch sử thuê nhà của khách thuê
+view_all_tenants: Xem toàn bộ khách thuê
+evaluation: Đánh giá
+tenant_information_title: Thông tin khách thuê
+tenant_information_description: Danh sách thông tin khách thuê
+residence_registration_title: Đăng ký lưu trú
+residence_registration_description: Danh sách thông tin đăng ký lưu trú
+bill_information_title: Tất cả hóa đơn
+bill_information_description: Tất cả hóa đơn thu tiền nhà xuất hiện ở đây
+button_diennuoc:Điện nước
+button_xemchitiet:Xem chi tiết
+button_xemlstt:Xem danh sách thanh toán
+button_tbdenkhachthue:Thông báo đến khách thuê
+checkbox_dathu:Đã thu
+checkbox_chuathu:Chưa thu
+checkbox_dangno:Đang nợ
+checkbox_dahuy:Đã hủy
+checkbox_loctheothang:Chọn theo tháng
+asset_information_title: Tất cả tài sản
+asset_information_description: Danh sách tài sản đang có
+checkbox_tangdan:Giá trị tăng dần
+checkbox_giamdan:Giá trị giảm dần
+checkbox_theoten:Tìm kiếm theo tên
+service_management_title: Quản lý Dịch vụ
+service_management_description: Các dịch vụ khách thuê sử dụng
+view_service: Xem dịch vụ
+filter_highlow: Giá cao-thấp
+filter_lowhigh: Giá thấp-cao
+filter_recent: Ngày gần đây
+filter_oldest: Ngày xa nhất
+filter_az: Tên tăng dần
+filter_by_month: Lọc theo tháng
+action_editdelete: Sửa / Xóa
+action_registCancel: Đăng ký / Hủy
+parking_management_title: Quản lý Bãi đậu xe
+parking_lot_label: Bãi đỗ xe
+vehicle_label: Phương tiện
+parking_list_title: Danh sách bãi đậu xe
+: Bảng của phòng
+roomtable_room_id: Mã phòng
+roomtable_building: Mã tòa nhà
+roomtable_floor: Tầng
+roomtable_room_type: Loại phòng
+roomtable_convenient: Tiện ích
+roomtable_area: Diện tích
+roomtable_price: Giá thuê
+roomtable_status: Trạng thái
+: Bảng của Hợp đồng
+contracttable_contract_id: Mã hợp đồng
+contracttable_room_id: Mã phòng
+contracttable_tenant_id: Mã khách thuê
+contracttable_first_name: Họ
+contracttable_last_name: Tên
+contracttable_create_date: Ngày tạo
+contracttable_start_date: Ngày bắt đầu
+contracttable_end_date: Ngày kết thúc
+contracttable_monthly_rent: Tiền thuê hàng tháng
+contracttable_payments: Phương thức thanh toán
+contracttable_deposit: Tiền đặt cọc
+contracttable_notes: Ghi chú
+: Bảng Lịch sửa thuê nhà của khách
+lstntable_historyid: Mã lịch sử
+lstntable_contractid: Mã hợp đồng
+lstntable_tenantid: Mã khách hàng
+lstntable_firstname: Họ
+lstntable_lastname: Tên
+lstntable_startdate: Ngày bắt đầu
+lstntable_enddate: Ngày kết thúc
+lstntable_note: Ghi chú
+: Bảng khách thuê
+tenanttable_tenantid: Mã khách hàng
+tenanttable_firstname: Họ
+tenanttable_lastname: Tên
+tenanttable_birthday: Ngày sinh
+tenanttable_gender: Giới tính
+tenanttable_numberphone: SĐT
+tenanttable_email: Email
+: Bảng Lưu trú của khách
+registrationtable_registrationid: Mã lưu trú
+registrationtable_roomid: Mã phòng
+registrationtable_tenantid: Mã khách hàng
+registrationtable_firstname: Họ
+registrationtable_lastname: Tên
+registrationtable_registrationdate: Ngày đăng ký
+registrationtable_expirationdate: Ngày hết hạn
+registrationtable_status: Trạng thái
+: Bảng thanh toán
+billtable_billid: Mã hóa đơn
+billtable_tenantid: Mã khách thuê
+billtable_fisrtname: Họ
+billtable_lastname: Tên
+billtable_total: Tổng tiền
+billtable_startdate: Ngày bắt đầu
+billtable_enddate: Ngày bắt đầu
+billtable_coalesce: Nợ
+: Bảng đăng ký dịch vụ
+servicetable_ordernumber: STT
+servicetable_roomid: Mã phòng
+servicetable_tenantname: Tên khách thuê 
+servicetable_servicename: Tên dịch vụ
+servicetable_serviceprice: Giá dịch vụ
+servicetable_startdate: Ngày bắt đầu
+servicetable_enddate: Ngày kết thúc
+: Bảng cơ sở vật chất
+assettable_assetid: Mã tài sản
+assettable_roomid: Mã phòng
+assettable_assetname: Tên tài sản
+assettable_price: Giá
+assettable_status: Trạng thái
+assettable_usedate: Ngày đưa vào sử dụng
+btn_save: Lưu
+:Form_AddContract
+contract.add_title: Thêm hợp đồng
+contract.add_subtitle: Thêm hợp đồng mới vào danh sách
+contract.room_number: Số phòng
+contract.tenant_name: Khách thuê
+contract.creation_date: Ngày Tạo
+contract.start_date: Ngày Bắt Đầu
+contract.end_date: Ngày Kết Thúc
+contract.monthly_rent: Giá Thuê Hàng Tháng
+contract.payment_schedule: Lịch thanh toán
+contract.deposit: Tiền đặt cọc
+contract.notes: Ghi chú
+:LoadAll
+LoadAll.room_number: Số phòng
+LoadAll.tenant: Người Thuê
+LoadAll.last_name: Họ
+LoadAll.first_name: Tên
+LoadAll.rating: Đánh giá
+LoadAll.detail_title: Xem chi tiết
+LoadAll.detail_subtitle: Xem chi tiết thanh toán
+LoadAll.placeholder: Tìm kiếm theo tên
+LoadAll.button: Tìm kiếm
+:Form_addTenant
+tenant.title: Người thuê nhà
+tenant.subtitle: Đăng ký người thuê nhà mới
+tenant.last_name: Họ đệm
+tenant.first_name: Tên
+tenant.dob: Ngày sinh
+tenant.gender: Giới tính
+tenant.phone: SĐT
+tenant.email: Email
+tenant.save_button: Lưu
+:Form_addRegistration
+registration.title: Đăng ký
+registration.subtitle: Đăng ký mới
+registration.customer_name: Tên khách hàng
+registration.room_code: Mã phòng
+registration.start_date: Ngày đăng ký ở
+registration.end_date: Ngày hết hạn
+registration.status: Trạng thái
+registration.save_button: Lưu
+:Form_addWaterElectricity
+invoice.title: Hóa đơn điện nước
+invoice.subtitle: Tạo hóa đơn thanh toán cho khách hàng
+invoice.utility_prompt: Thêm Điện Nước Hằng Tháng để tạo hóa đơn
+utility.table_header.figure: Mã số
+utility.table_header.unit_price: Đơn giá
+utility.table_header.tenant_id: Mã khách thuê
+utility.table_header.old_figure: Số cũ
+utility.table_header.new_figure: Số mới
+utility.table_header.unit: Đơn vị
+date_headers.start_date: Ngày bắt đầu
+date_headers.end_date: Ngày kết thúc
+date_headers.record_date: Ngày ghi
+date_headers.type: Loại
+:Form_addUtilityBill
+utility_bill.title: Thêm hóa đơn điện nước
+utility_bill.subtitle: Thêm hóa đơn điện nước vào danh sách
+utility_bill.room_number: Số phòng
+utility_bill.tenant_name: Khách thuê
+utility_bill.old_electric: Số điện cũ
+utility_bill.new_electric: Số điện mới
+utility_bill.old_water: Số nước cũ
+utility_bill.new_water: Số nước mới
+utility_bill.month: Tháng
+utility_bill.add_button: Thêm
+:Form_parking
+parking.table_header.parking_id: Mã bãi xe
+parking.table_header.building_id: Mã tòa nhà
+parking.table_header.address: Địa chỉ
+parking.table_header.type: Loại bãi xe
+parking.table_header.capacity: Sức chứa
+parking.table_header.current_vehicles: Số xe hiện tại
+parking.table_header.status: Trạng thái
+parking.type.car: Bãi xe ô tô
+parking.type.motor_bike: Bãi xe máy/xe đạp
+parking.type.mixed: Bãi xe hỗn hợp
+parking.type.available: Bãi xe còn trống
+parking.type.full: Bãi xe đã đầy
+:Form_Vehicle
+vehicle.table_header.vehicle_id: Mã xe
+vehicle.table_header.customer_id: Mã khách hàng
+vehicle.table_header.last_name: Họ
+vehicle.table_header.first_name: Tên
+vehicle.table_header.price_id: Mã đơn giá
+vehicle.table_header.price: Đơn giá
+vehicle.table_header.vehicle_type: Loại xe
+vehicle.table_header.license_plate: Biển số
+vehicle.table_header.parking_slot_id: Mã chỗ đỗ
+vehicle.table_header.status: Trạng thái
+vehicle.type.car: Xe ô tô
+vehicle.type.motor_bike: Xe máy
+vehicle.type.bicycle: Xe đạp
+btn_vantay: Quản lý vân tay
+label_lang: Ngôn ngữ
+:Form_Payment
+payment.table_header.payment_id: Mã thanh toán
+payment.table_header.tenant_id: Mã khách thuê
+payment.table_header.first_name: Tên
+payment.table_header.last_name: Họ
+payment.table_header.bill_id: Mã hóa đơn
+payment.table_header.method: Phương thức
+payment.table_header.total: Tổng tiền
+payment.table_header.payment_time: Thời gian thanh toán
+payment_history.title: Lịch sử thanh toán
+payment_history.detail_title: Chi tiết thanh toán
+:Form_RegistService
+service_registration.title: Đăng ký dịch vụ
+service_registration.subtitle: Thêm dịch vụ mới vào bảng
+service_registration.customer_name: Tên khách hàng
+service_registration.room_code: Mã số phòng
+service_registration.service_name: Tên dịch vụ
+service_registration.cancel_button: Hủy đăng ký
+service_registration.register_button: Đăng ký
+:Form_DelService
+service.delete_title: Xóa dịch vụ
+service.delete_subtitle: Xóa dịch vụ trong bảng
+service.name: Tên dịch vụ
+service.price: Giá dịch vụ
+service.delete_button: Xóa
+service.adjust_fee_button: Điều chỉnh phí
+:Form_addService
+service.add_title: Thêm dịch vụ
+service.add_subtitle: Thêm dịch vụ mới
+service.name: Tên dịch vụ
+service.price: Giá dịch vụ
+service.save_button: Lưu
+service.cancel_button: Đơn
+service.list.title: Tất cả dịch vụ
+service.list.subtitle: Mọi dịch vụ đều hiển thị ở đây
+:Form_Fingerprint
+fingerprint_management.title: Quản lý vân tay
+fingerprint_management.list_title: Danh sách vân tay
+fingerprint.table_header.fingerprint_id: Mã vân tay
+fingerprint.table_header.tenant_id: Mã người thuê
+fingerprint.table_header.first_name: Tên
+fingerprint.table_header.last_name: Họ
+fingerprint.table_header.access_right: Quyền truy cập
+fingerprint.table_header.registration_date: Ngày đăng ký
+fingerprint.table_header.image_name: Tên ảnh
+fingerprint_registration.title: Đăng ký vân tay
+fingerprint_registration.select_tenant: Chọn khách trọ
+fingerprint_registration.new_registration: Đăng ký vân tay mới
+fingerprint_registration.access_area: Quyền truy cập khu vực
+fingerprint_registration.no_data: Chưa chọn dữ liệu
+fingerprint_registration.no_image: Chưa chọn ảnh
+fingerprint_registration.select_image: Chọn ảnh
+fingerprint_registration.update_image: Cập nhật ảnh
+fingerprint_registration.delete_fingerprint: Xóa vân tay
+fingerprint_registration.update_permission: Cập nhật quyền
+fingerprint_registration.verify_fingerprint: Kiểm tra vân tay
+btn_quaylai: Quay lại
+:Form_addAsset
+asset.add_title: Thêm tài sản
+asset.add_subtitle: Thêm tài sản mới
+asset.update_title: Cập nhật tài sản
+asset.update_subtitle: Cập nhật tài sản của bạn
+room_code: Mã phòng
+asset_code: Mã tài sản
+asset_name: Tên tài sản
+asset_value: Giá trị
+usage_period: Thời gian sử dụng
+status: Trạng thái
+add_button: Thêm
+btn_dong: Đóng
+:Form_addRoom
+room.add_title: Thêm phòng
+room.add_subtitle: Thêm phòng mới
+property_type: Tầng nhà
+classification: Phân loại
+amenities: Tiện ích
+area: Diện tích
+rent_price: Giá thuê
+status: Trạng thái
+status_options.occupied: Đang ở
+status_options.vacant: Đang Trống
+status_options.owing: Đang Nợ Tiền
+notification.ending: Đang Báo Kết Thúc
+notification.reserved: Đang Cọc Giữ Chỗ
+:Form_assetDetail
+asset.detail_title: Chi tiết tài sản
+asset.detail_description: Mọi chi tiết về tài sản ở đây
+contract.expired: Đã Hết Hạn Hợp Đồng
+contract.near_expiry: Sắp Hết Hạn Hợp Đồng
+:Form_rentalHistory
+rental_history.history_id: Mã Lịch sử
+rental_history.contract_id: Mã Hợp đồng
+rental_history.room_id: Mã Phòng
+rental_history.customer_id: Mã KH
+rental_history.first_name: Tên
+rental_history.last_name: Họ
+rental_history.title: Lịch sử thuê nhà
+rental_history.description: Mọi chi tiết về lịch sử thuê nhà ở đây
+:Form_parking
+parking.add_title: Thêm bãi đậu xe
+parking.add_subtitle: Thêm bãi đậu xe vào bảng
+parking.address: Địa Chỉ
+parking.type: Phân loại
+parking.capacity: Sức Chứa
+parking.update_title: Cập nhật bãi đậu xe
+parking.update_subtitle: Cập nhật bãi đậu xe vào bảng
+parking.id_parking: Mã bãi đậu xe
+:Form_vehicle
+vehicle.add_title: Thêm phương tiện
+vehicle.add_subtitle: Thêm phương tiện vào bảng
+vehicle.update_title: Cập nhật phương tiện
+vehicle.update_subtitle: Cập nhật phương tiện vào bảng
+vehicle.vehicle_id: Mã phương tiện
+vehicle.tenant_id: Mã khách thuê
+vehicle.type: Phân loại
+vehicle.parking_id: Mã bãi xe
+vehicle.monthly_fee: Đơn giá/tháng
+vehicle.license_plate: Biển số xe
+vehicle.price_id: Mã đơn giá
+assetdetail.assetid: Mã tài sản  
+assetdetail.assetname: Tên tài sản  
+assetdetail.price: Giá trị  
+assetdetail.asset_status: Trạng thái tài sản  
+assetdetail.use_date: Ngày sử dụng  
+assetdetail.roomid: Mã phòng  
+assetdetail.room_type: Loại phòng
+assetdetail.floor: Tầng  
+assetdetail.buildingid: Mã tòa nhà  

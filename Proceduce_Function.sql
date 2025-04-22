@@ -1,0 +1,1588 @@
+DELIMITER //
+
+/*==============================================================*/
+/* Nhut Huy 11/4                                    */
+/*==============================================================*/
+CREATE PROCEDURE sp_GetAllDichVu ()
+BEGIN
+    SELECT ServiceID, ServiceName, UnitPrice FROM SERVICE;
+END//
+
+CREATE PROCEDURE GetExpiringEmails(IN p_buildingID VARCHAR(10))
+BEGIN
+    SELECT 
+        t.EMAIL
+    FROM contract c
+    JOIN tenant t ON c.TENANTID = t.TENANTID
+    JOIN room r ON c.ROOMID = r.ROOMID
+    WHERE 
+        DATEDIFF(c.ENDDATE, CURDATE()) BETWEEN 0 AND 4
+        AND r.BUILDINGID = p_buildingID;
+END//
+
+CREATE PROCEDURE GetFingerprints(IN p_username VARCHAR(20))
+BEGIN
+    SELECT f.FINGERID, f.USERNAME, f.TENANTID, t.FIRSTNAME, t.LASTNAME, 
+           f.AREAPERMISSION, f.ENROLLMENT_DATE, f.IMAGE_NAME
+    FROM FINGERPRINTS f 
+    JOIN TENANT t ON f.TENANTID = t.TENANTID 
+    WHERE f.USERNAME = p_username;
+END //
+
+
+
+CREATE PROCEDURE AddFingerprint(
+    IN p_fingerid VARCHAR(10),
+    IN p_username VARCHAR(20),
+    IN p_tenantid VARCHAR(10),
+    IN p_areapermission VARCHAR(200),
+    IN p_fingerprint_image LONGBLOB,
+    IN p_image_name VARCHAR(100)
+)
+BEGIN
+    INSERT INTO FINGERPRINTS (
+        FINGERID, 
+        USERNAME, 
+        TENANTID, 
+        AREAPERMISSION, 
+        ENROLLMENT_DATE, 
+        FINGERPRINT_IMAGE,
+        IMAGE_NAME
+    ) 
+    VALUES (
+        p_fingerid,
+        p_username,
+        p_tenantid,
+        p_areapermission,
+        NOW(),
+        p_fingerprint_image,
+        p_image_name
+    );
+END //
+
+
+-- Xóa vân tay
+
+CREATE PROCEDURE DeleteFingerprint(IN p_fingerid VARCHAR(10))
+BEGIN
+    DELETE FROM FINGERPRINTS 
+    WHERE FINGERID = p_fingerid;
+END //
+
+
+-- Cập nhật quyền truy cập
+
+CREATE PROCEDURE UpdateAreaPermission(
+    IN p_fingerid VARCHAR(10), 
+    IN p_areapermission VARCHAR(200)
+)
+BEGIN
+    UPDATE FINGERPRINTS 
+    SET AREAPERMISSION = p_areapermission
+    WHERE FINGERID = p_fingerid;
+END //
+
+
+-- Cập nhật ảnh vân tay
+
+CREATE PROCEDURE UpdateFingerprintImage(
+    IN p_fingerid VARCHAR(10),
+    IN p_fingerprint_image LONGBLOB,
+    IN p_image_name VARCHAR(100)
+)
+BEGIN
+    UPDATE FINGERPRINTS 
+    SET FINGERPRINT_IMAGE = p_fingerprint_image,
+        IMAGE_NAME = p_image_name
+    WHERE FINGERID = p_fingerid;
+END //
+
+
+
+CREATE PROCEDURE GetFingerprintImage(IN p_fingerid VARCHAR(10))
+BEGIN
+    SELECT FINGERPRINT_IMAGE 
+    FROM FINGERPRINTS 
+    WHERE FINGERID = p_fingerid;
+END //
+
+
+DROP PROCEDURE IF EXISTS GetTenantsByUsername //
+CREATE PROCEDURE GetTenantsByUsername(IN p_username VARCHAR(20), IN p_buildingid VARCHAR(10))
+BEGIN
+    -- Đơn giản hóa truy vấn để xem có vấn đề gì
+    SELECT t.TENANTID, t.FIRSTNAME, t.LASTNAME, t.PHONENUMBER, c.ROOMID, r.BUILDINGID
+    FROM TENANT t
+    LEFT JOIN CONTRACT c ON t.TENANTID = c.TENANTID
+    LEFT JOIN ROOM r ON c.ROOMID = r.ROOMID
+    WHERE r.BUILDINGID = p_buildingid;
+END //
+
+CREATE PROCEDURE GetAccessAreas(IN p_buildingid VARCHAR(10))
+BEGIN
+    SELECT AREAID, TYPE AS AreaName, 'Khu vực đỗ xe' AS Description
+    FROM PARKINGAREA
+    WHERE BUILDINGID = p_buildingid
+    UNION
+    SELECT CONCAT('FLOOR_', FLOOR) AS AreaID, CONCAT('Tầng ', FLOOR) AS AreaName, 'Khu vực tầng' AS Description
+    FROM ROOM
+    WHERE BUILDINGID = p_buildingid
+    GROUP BY FLOOR
+    UNION
+    SELECT 'COMMON' AS AreaID, 'Khu vực chung' AS AreaName, 'Khu vực sinh hoạt chung' AS Description;
+END //
+/*==============================================================*/
+/*                                 */
+/*==============================================================*/
+
+-- CREATE DEFINER=`root`@`localhost` FUNCTION `createAssetID`() RETURNS varchar(10) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
+--     DETERMINISTIC
+-- BEGIN
+--     DECLARE new_id VARCHAR(10);
+--     DECLARE max_num INT;
+--     DECLARE next_num INT;
+--     
+--     -- Tìm số lớn nhất hiện có trong database
+--     SELECT IFNULL(MAX(CAST(SUBSTRING(ASSETID, 3) AS UNSIGNED)), 0) INTO max_num
+--     FROM ASSETS
+--     WHERE ASSETID REGEXP '^TS[0-9]+$';
+--     
+--     -- Tăng số lên 1
+--     SET next_num = max_num + 1;
+--     
+--     -- Tạo ID mới với định dạng TS + số (4 chữ số, thêm 0 ở đầu nếu cần)
+--     SET new_id = CONCAT('TS', LPAD(next_num, 4, '0'));
+--     
+--     RETURN new_id;
+-- END//
+
+-- CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_addAsset`(
+--     IN p_roomid VARCHAR(10),
+--     IN p_assetname VARCHAR(50),
+--     IN p_price FLOAT,
+--     IN p_status VARCHAR(50),
+--     IN p_usedate DATE
+-- )
+-- BEGIN
+--     DECLARE new_asset_id VARCHAR(10);
+--     
+--     -- Tạo ID tài sản mới (giả sử có hàm createAssetID tương tự như createRoomID)
+--     SET new_asset_id = createAssetID();
+--     
+--     -- Thêm tài sản vào bảng ASSETS
+--     INSERT INTO ASSETS (ASSETID, ROOMID, ASSETNAME, PRICE, STATUS, USE_DATE)
+--     VALUES (new_asset_id, p_roomid, p_assetname, p_price, p_status, p_usedate);
+-- END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateAsset`(
+    IN p_assetid VARCHAR(10),
+    IN p_roomid VARCHAR(10),
+    IN p_assetname VARCHAR(50),
+    IN p_price FLOAT,
+    IN p_status VARCHAR(50),
+    IN p_usedate DATE
+)
+BEGIN
+    UPDATE ASSETS 
+    SET 
+        ROOMID = p_roomid,
+        ASSETNAME = p_assetname,
+        PRICE = p_price,
+        STATUS = p_status,
+        USE_DATE = p_usedate
+    WHERE 
+        ASSETID = p_assetid;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_DeleteAssets`(
+    IN p_assetid VARCHAR(10),
+    OUT p_result INT,
+    OUT p_message VARCHAR(255))
+BEGIN
+    DECLARE asset_exists INT;
+    
+    -- Kiểm tra xem tài sản có tồn tại không
+    SELECT COUNT(*) INTO asset_exists FROM ASSETS WHERE ASSETID = p_assetid;
+    
+    IF asset_exists = 0 THEN
+        SET p_result = 0;
+        SET p_message = 'Tài sản không tồn tại';
+    ELSE
+        -- Xóa tài sản (các bản ghi liên quan trong MAINTENANCE và REPAIR_REQUEST sẽ tự động xóa nhờ ON DELETE CASCADE)
+        DELETE FROM ASSETS WHERE ASSETID = p_assetid;
+        
+        SET p_result = 1;
+        SET p_message = CONCAT('Đã xóa tài sản ', p_assetid, ' thành công');
+    END IF;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_FilterAssets`(
+    IN p_username VARCHAR(20),
+    IN p_sort_order VARCHAR(10), -- NULL, 'ASC' hoặc 'DESC'
+    IN p_asset_name VARCHAR(100), -- Tên tài sản để tìm kiếm (có thể để NULL)
+    IN p_buildingid VARCHAR(20)
+)
+BEGIN
+    SELECT 
+        r.ROOMID,
+        a.ASSETID,
+        a.ASSETNAME,
+        a.PRICE,
+        a.STATUS,
+        a.USE_DATE
+    FROM 
+        ASSETS a
+    JOIN 
+        ROOM r ON a.ROOMID = r.ROOMID
+    JOIN 
+        BUILDING b ON r.BUILDINGID = b.BUILDINGID
+    JOIN 
+        USER u ON b.USERNAME = u.USERNAME
+    WHERE 
+        u.USERNAME = p_username
+        AND (p_asset_name IS NULL OR a.ASSETNAME LIKE CONCAT('%', p_asset_name, '%') COLLATE utf8mb4_general_ci)
+        AND (p_buildingid IS NULL OR r.BUILDINGID = p_buildingid)
+    ORDER BY 
+        CASE 
+            WHEN p_sort_order = 'ASC' THEN a.PRICE 
+            WHEN p_sort_order = 'DESC' THEN -a.PRICE -- Trick để sắp xếp DESC
+            ELSE NULL 
+        END,
+        a.ASSETNAME COLLATE utf8mb4_general_ci;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `load_Room`(
+    IN p_username VARCHAR(20), 
+    IN p_buildingid VARCHAR(10))
+BEGIN
+	IF p_buildingid is null then
+		SELECT 
+			r.ROOMID, 
+			r.BUILDINGID, 
+			r.FLOOR,
+			r.TYPE, 
+			r.CONVENIENT, 
+			r.AREA, 
+			r.PRICE, 
+			r.STATUS
+		FROM ROOM r
+		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+		JOIN USER u ON u.USERNAME = b.USERNAME
+		WHERE u.USERNAME = p_username;
+	ELSE
+		SELECT 
+			r.ROOMID, 
+			r.BUILDINGID, 
+			r.FLOOR,
+			r.TYPE, 
+			r.CONVENIENT, 
+			r.AREA, 
+			r.PRICE, 
+			r.STATUS
+		FROM ROOM r
+		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+		JOIN USER u ON u.USERNAME = b.USERNAME
+		WHERE u.USERNAME = p_username AND b.BUILDINGID = p_buildingid;
+	END IF;
+END//
+
+CREATE PROCEDURE `load_RentalHistory`(
+    IN p_username VARCHAR(50),
+    IN p_buildingid VARCHAR(20))
+BEGIN
+    SELECT 
+        c.CONTRACTID AS RENTAL_HISTORY_ID,
+        c.CONTRACTID,
+        r.ROOMID,
+        t.TENANTID,
+        t.FIRSTNAME,
+        t.LASTNAME,
+        t.GENDER,
+        t.PHONENUMBER,
+        r.TYPE,
+        r.CONVENIENT,
+        r.AREA,
+        r.PRICE,
+        r.STATUS,
+        c.STARTDATE,
+        c.ENDDATE,
+        'Đã kết thúc' AS REASON_FOR_LEAVING,
+        r.BUILDINGID,
+        b.ADDRESS AS BUILDING_ADDRESS
+    FROM 
+        CONTRACT c
+    JOIN 
+        TENANT t ON c.TENANTID = t.TENANTID
+    JOIN 
+        ROOM r ON c.ROOMID = r.ROOMID
+    JOIN 
+        BUILDING b ON r.BUILDINGID = b.BUILDINGID
+    WHERE 
+        b.USERNAME = p_username
+        AND r.BUILDINGID = p_buildingid
+        AND c.ENDDATE < CURDATE() -- Chỉ lấy các hợp đồng đã kết thúc
+    ORDER BY 
+        c.ENDDATE DESC;
+END// 
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `load_Assets`(
+    IN p_username VARCHAR(50),
+    IN p_buildingid VARCHAR(20))
+BEGIN
+    SELECT 
+        a.ROOMID,
+        a.ASSETID,
+        a.ASSETNAME,
+        a.PRICE,
+        a.STATUS,
+        a.USE_DATE
+    FROM ASSETS a
+    JOIN ROOM r ON a.ROOMID = r.ROOMID
+    JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+    WHERE b.USERNAME = p_username
+    AND (p_buildingid IS NULL OR r.BUILDINGID = p_buildingid)
+    ORDER BY a.USE_DATE DESC;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_AssetDetails`(
+    IN p_username VARCHAR(20),
+    IN p_buildingid VARCHAR(20))
+BEGIN
+    -- Thông tin tài sản được gán cho user này (có lọc theo tòa nhà nếu cần)
+    SELECT 
+        a.ASSETID,
+        a.ASSETNAME,
+        a.PRICE,
+        a.STATUS AS ASSET_STATUS,
+        DATE_FORMAT(a.USE_DATE, '%d/%m/%Y') AS USE_DATE,
+        r.ROOMID,
+        r.TYPE AS ROOM_TYPE,
+        r.FLOOR,
+        b.BUILDINGID
+    FROM 
+        ASSETS a
+    JOIN 
+        ROOM r ON a.ROOMID = r.ROOMID
+    JOIN 
+        BUILDING b ON r.BUILDINGID = b.BUILDINGID
+    JOIN 
+        USER u ON b.USERNAME = u.USERNAME
+    WHERE 
+        u.USERNAME = p_username
+        AND (p_buildingid IS NULL OR b.BUILDINGID = p_buildingid);
+    
+    -- Lịch sử bảo trì các tài sản của user này (có lọc theo tòa nhà)
+    SELECT 
+        m.MAINTENANCEID,
+        m.ASSETID,
+        a.ASSETNAME,
+        DATE_FORMAT(m.MAINTENANCE_DATE, '%d/%m/%Y') AS MAINTENANCE_DATE,
+        m.DESCRIPTION,
+        m.STATUS AS MAINTENANCE_STATUS,
+        CASE 
+            WHEN m.STATUS = 'Completed' THEN 'Hoàn thành'
+            WHEN m.STATUS = 'Pending' THEN 'Đang chờ'
+            WHEN m.STATUS = 'Cancelled' THEN 'Đã hủy'
+            ELSE m.STATUS
+        END AS STATUS_VN
+    FROM 
+        MAINTENANCE m
+    JOIN 
+        ASSETS a ON m.ASSETID = a.ASSETID
+    JOIN 
+        ROOM r ON a.ROOMID = r.ROOMID
+    JOIN 
+        BUILDING b ON r.BUILDINGID = b.BUILDINGID
+    JOIN 
+        USER u ON b.USERNAME = u.USERNAME
+    WHERE 
+        u.USERNAME = p_username
+        AND b.BUILDINGID = p_buildingid
+    ORDER BY 
+        m.MAINTENANCE_DATE DESC
+    LIMIT 50; -- Giới hạn kết quả để tăng hiệu năng
+    
+    -- Lịch sử yêu cầu sửa chữa (có lọc theo tòa nhà)
+    SELECT 
+        rr.REQUESTID,
+        rr.ASSETID,
+        a.ASSETNAME,
+        DATE_FORMAT(rr.REQUEST_DATE, '%d/%m/%Y %H:%i') AS REQUEST_DATE,
+        rr.DESCRIPTION,
+        rr.STATUS AS REQUEST_STATUS,
+        CASE 
+            WHEN rr.STATUS = 'Pending' THEN 'Chờ xử lý'
+            WHEN rr.STATUS = 'Processing' THEN 'Đang xử lý'
+            WHEN rr.STATUS = 'Completed' THEN 'Hoàn thành'
+            WHEN rr.STATUS = 'Rejected' THEN 'Từ chối'
+            ELSE rr.STATUS
+        END AS STATUS_VN,
+        CONCAT(t.FIRSTNAME, ' ', t.LASTNAME) AS TENANT_NAME,
+        t.PHONENUMBER
+    FROM 
+        REPAIR_REQUEST rr
+    JOIN 
+        ASSETS a ON rr.ASSETID = a.ASSETID
+    JOIN 
+        ROOM r ON a.ROOMID = r.ROOMID
+    JOIN 
+        BUILDING b ON r.BUILDINGID = b.BUILDINGID
+    JOIN 
+        USER u ON b.USERNAME = u.USERNAME
+    JOIN 
+        TENANT t ON rr.TENANTID = t.TENANTID
+    WHERE 
+        u.USERNAME = p_username
+        AND (p_buildingid IS NULL OR b.BUILDINGID = p_buildingid)
+    ORDER BY 
+        rr.REQUEST_DATE DESC
+    LIMIT 50; -- Giới hạn kết quả
+END//
+
+CREATE PROCEDURE GetServiceUsage(
+    IN P_BUILDINGID VARCHAR(10),
+    IN P_SORTOPTION VARCHAR(10) 
+)
+BEGIN
+    SET @row_num = 0;
+    SET @orderClause = CASE 
+        WHEN P_SORTOPTION = 'TenTang' THEN 'TENANTNAME ASC'
+        WHEN P_SORTOPTION = 'GiaTang' THEN 'UNITPRICE ASC'
+        WHEN P_SORTOPTION = 'GiaGiam' THEN 'UNITPRICE DESC'
+        WHEN P_SORTOPTION = 'NgayMoi' THEN 'START_DATE DESC'
+        WHEN P_SORTOPTION = 'NgayCu' THEN 'START_DATE ASC'
+        ELSE 'ROOMID ASC'
+    END;
+
+    -- Xây dựng câu lệnh SQL động với điều kiện WHERE
+    SET @sql = CONCAT('
+        SELECT 
+            (@row_num := @row_num + 1) AS STT,
+            R.ROOMID, 
+            CONCAT(T.FIRSTNAME, '' '', T.LASTNAME) AS TENANTNAME,
+            S.SERVICENAME, 
+            S.UNITPRICE,
+            US.START_DATE,
+            US.END_DATE
+        FROM USE_SERVICE US
+        JOIN TENANT T ON US.TENANTID = T.TENANTID
+        JOIN SERVICE S ON US.SERVICEID = S.SERVICEID
+        JOIN CONTRACT C ON C.TENANTID = T.TENANTID
+        JOIN ROOM R ON C.ROOMID = R.ROOMID
+        JOIN BUILDING B ON R.BUILDINGID = B.BUILDINGID 
+        WHERE R.BUILDINGID = ?
+        ORDER BY ', @orderClause);
+
+    PREPARE stmt FROM @sql;
+    EXECUTE stmt USING P_BUILDINGID;
+    DEALLOCATE PREPARE stmt;
+
+END //
+
+
+CREATE PROCEDURE GetRoomsByTenantAndBuilding(
+    IN p_tenantID VARCHAR(50),
+    IN p_buildingID VARCHAR(50)
+)
+BEGIN
+    SELECT p.ROOMID 
+    FROM contract c 
+    JOIN room p ON c.ROOMID = p.ROOMID 
+    WHERE c.TENANTID = p_tenantID 
+    AND p.BUILDINGID = p_buildingID;
+END //
+
+
+CREATE PROCEDURE GetTenantsByBuilding(
+    IN p_buildingID VARCHAR(50)
+)
+BEGIN
+    SELECT T.TenantID, T.FIRSTNAME, T.LASTNAME 
+    FROM Tenant T
+    JOIN CONTRACT C ON T.TenantID = C.TenantID
+    JOIN ROOM R ON C.RoomID = R.RoomID
+    WHERE R.BUILDINGID = p_buildingID;
+END //
+
+
+
+CREATE PROCEDURE GetAllElectricWaterData(
+    IN p_buildingID VARCHAR(50)
+)
+BEGIN
+    SELECT * FROM water_electricity we 
+    JOIN CONTRACT C ON we.TenantID = C.TenantID
+    JOIN ROOM R ON C.RoomID = R.RoomID
+    WHERE R.BUILDINGID = p_buildingID;
+END //
+
+
+CREATE PROCEDURE update_registration(
+	IN p_registration_id VARCHAR(20),
+    IN p_status VARCHAR(20)
+    
+)
+BEGIN
+    UPDATE temporary_registration t
+    SET t.`STATUS` = p_status        
+    WHERE t.REGISTRATIONID = p_registration_id;
+END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createBuildingID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(building.BUILDINGID), 'B000') INTO max_id FROM building;
+    SET number_part = CAST(SUBSTRING(max_id, 2) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('DK', LPAD(number_part, 3, '0'));
+    RETURN new_id;
+END//
+CREATE PROCEDURE add_building(
+	IN p_BUILDING_KEY VARCHAR(20),
+	IN p_USERNAME VARCHAR(20),
+   IN p_ADDRESS VARCHAR(200)
+)
+BEGIN
+	DECLARE newid VARCHAR(20);
+	SET newid = createBuildingID();
+	
+	
+	INSERT INTO Building (
+        BUILDINGID,
+        BUILDING_KEY,
+        USERNAME,
+        ADDRESS
+    )
+    VALUES (
+        newid,
+        p_BUILDING_KEY,
+        p_USERNAME,
+        p_ADDRESS
+    );
+END//
+CREATE PROCEDURE del_registration(
+    IN p_registration_id VARCHAR(50)
+)
+BEGIN 
+	DELETE FROM temporary_registration 
+	WHERE REGISTRATIONID = p_registration_id;
+END//
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Contract_filter`(
+    IN p_buildingID VARCHAR(50),
+    IN control VARCHAR(2),
+    IN p_lastname VARCHAR(20)
+)
+BEGIN
+
+    SELECT 
+        c.CONTRACTID,
+        c.ROOMID,
+        c.TENANTID,
+        t.FIRSTNAME,
+        t.LASTNAME,
+        c.CREATEDATE,
+        c.STARTDATE,
+        c.ENDDATE,
+        c.MONTHLYRENT, 
+        c.PAYMENTSCHEDULE,
+        c.DEPOSIT,
+        c.NOTES
+    FROM contract c
+    JOIN room r ON r.ROOMID = c.ROOMID
+    JOIN building b ON r.BUILDINGID = b.BUILDINGID
+    JOIN user u ON u.USERNAME = b.USERNAME
+    JOIN tenant t ON t.TENANTID = c.TENANTID
+    WHERE b.BUILDINGID = p_buildingID
+    AND (
+      (control = '1' AND DATEDIFF(c.ENDDATE, CURDATE()) BETWEEN 0 AND 30)
+   OR (control = '2' AND c.ENDDATE < CURDATE()) 
+   OR (control = '3' AND c.STARTDATE <= CURDATE() AND c.ENDDATE >= CURDATE()) 
+   OR (control NOT IN ('1', '2', '3')) 
+    )
+	 AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
+END//
+
+CREATE PROCEDURE add_Tenant(
+		IN p_username VARCHAR(20),
+    IN p_FirstName NVARCHAR(100),
+    IN p_LastName NVARCHAR(100),
+    IN p_Birthday DATE,
+    IN p_Gender VARCHAR(10),
+    IN p_PhoneNumber VARCHAR(20),
+    IN p_Email VARCHAR(100)
+)
+BEGIN
+	DECLARE newid VARCHAR(20);
+	SET newid = createTenantID();
+    INSERT INTO Tenant (
+    		tenant.USERNAME,
+        TENANTID,
+        FIRSTNAME,
+        LASTNAME,
+        BIRTHDAY,
+        GENDER,
+        PHONENUMBER,
+        EMAIL
+    ) VALUES (
+    		p_username,
+    		newid,
+        p_FirstName,
+        p_LastName,
+        p_Birthday,
+        p_Gender,
+        p_PhoneNumber,
+        p_Email
+    );
+END //
+
+CREATE PROCEDURE load_registration(
+    IN p_building_id VARCHAR(50),
+    IN p_lastname VARCHAR(20)
+)
+BEGIN 
+	SELECT tr.REGISTRATIONID,tr.ROOMID,tr.TENANTID,t.FIRSTNAME,t.LASTNAME,tr.REGISTRATION_DATE,tr.EXPIRATION_DATE,tr.`STATUS` FROM temporary_registration tr
+	JOIN room r ON r.ROOMID = tr.ROOMID
+	JOIN tenant t ON t.TENANTID = tr.TENANTID
+	WHERE r.BUILDINGID = p_building_id
+	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
+END//
+
+CREATE PROCEDURE load_Tenant(
+	IN p_username VARCHAR(20),
+   IN p_lastname VARCHAR(20)
+)
+BEGIN 
+    SELECT t.* FROM tenant t
+	 JOIN user u ON u.USERNAME = t.USERNAME 
+	 WHERE u.USERNAME = p_username
+	 AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Contract`(IN p_buildingID VARCHAR(50))
+BEGIN
+   SELECT 
+      c.CONTRACTID,
+      c.ROOMID,
+      c.TENANTID,
+      t.FIRSTNAME,
+      t.LASTNAME,
+      c.CREATEDATE,
+      c.STARTDATE,
+      c.ENDDATE,
+      c.MONTHLYRENT, 
+      c.PAYMENTSCHEDULE,
+      c.DEPOSIT,
+      c.NOTES
+   FROM contract c
+   JOIN room r ON r.ROOMID = c.ROOMID
+   JOIN building b ON r.BUILDINGID = b.BUILDINGID
+   JOIN user u ON u.USERNAME = b.USERNAME
+   JOIN tenant t ON t.TENANTID = c.TENANTID
+   WHERE b.BUILDINGID = p_buildingID;
+END//
+
+CREATE PROCEDURE add_Registration(
+    IN p_tenant_id VARCHAR(50),
+    IN p_room_id VARCHAR(50),
+    IN p_registration_date DATETIME,
+    IN p_expiration_date DATETIME,
+    IN p_status VARCHAR(50)
+)
+BEGIN
+   DECLARE v_registration_id VARCHAR(50);
+	
+	SET v_registration_id = createRegisterID();
+
+    INSERT INTO temporary_registration (
+        REGISTRATIONID,
+        TENANTID,
+        ROOMID,
+        REGISTRATION_DATE,
+        EXPIRATION_DATE,
+        STATUS
+    ) VALUES (
+        v_registration_id,
+        p_tenant_id,
+        p_room_id,
+        p_registration_date,
+        p_expiration_date,
+        p_status
+    );
+
+END //
+
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createRegisterID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(temporary_registration.REGISTRATIONID), 'DK000') INTO max_id FROM temporary_registration;
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('DK', LPAD(number_part, 3, '0'));
+    RETURN new_id;
+END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createTenantHistorytID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(tenant_history.HISTORYID), 'LS000') INTO max_id FROM tenant_history;
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('LS', LPAD(number_part, 3, '0'));
+    RETURN new_id;
+END//
+
+
+CREATE PROCEDURE add_Contract(
+    IN p_building_id VARCHAR(50),
+    IN p_id_room VARCHAR(50),
+    IN p_tenantid VARCHAR(50),
+    IN p_createddate DATETIME,
+    IN p_startdate DATETIME,
+    IN p_enddate DATETIME,
+    IN p_paymentschedule VARCHAR(50),
+    IN p_deposit FLOAT,
+    IN p_note VARCHAR(200)
+)
+BEGIN
+    DECLARE v_contractid VARCHAR(50);
+    DECLARE v_monthrent FLOAT;
+    
+
+    SET v_contractid = createContractID();
+
+    SELECT r.PRICE INTO v_monthrent
+    FROM room r 
+    JOIN building b ON b.BUILDINGID = r.BUILDINGID 
+    WHERE b.BUILDINGID = p_building_id
+    LIMIT 1;
+  
+    INSERT INTO contract (
+        CONTRACTID, 
+        ROOMID, 
+        TENANTID, 
+        CREATEDATE, 
+        STARTDATE, 
+        ENDDATE, 
+        MONTHLYRENT, 
+        PAYMENTSCHEDULE, 
+        DEPOSIT, 
+        NOTES
+    ) VALUES (
+        v_contractid,
+        p_id_room,
+        p_tenantid,
+        p_createddate,
+        p_startdate,
+        p_enddate,
+        v_monthrent,
+        p_paymentschedule,
+        p_deposit,
+        p_note
+    );
+
+    SELECT CONCAT('Contract ', v_contractid, ' created successfully') AS result;
+END//
+
+
+CREATE PROCEDURE change_building_key(
+    IN p_building_id VARCHAR(20),
+    IN p_building_key VARCHAR(20)
+)
+BEGIN
+    DECLARE key_exists INT;
+
+    SELECT COUNT(*) INTO key_exists
+    FROM building 
+    WHERE BUILDING_KEY = p_building_key 
+    AND BUILDINGID != p_building_id;
+    
+    IF key_exists = 0 THEN
+        UPDATE building 
+        SET BUILDING_KEY = p_building_key
+        WHERE BUILDINGID = p_building_id;
+    END IF;
+END//
+
+CREATE PROCEDURE load_building_by_user(
+    IN usern VARCHAR(20)
+)
+BEGIN
+    SELECT b.BUILDINGID, b.BUILDING_KEY 
+    FROM BUILDING b
+    JOIN user u ON b.USERNAME = u.USERNAME
+    WHERE u.USERNAME = usern;
+END//
+
+CREATE PROCEDURE del_Tenant(
+    IN p_TenantID VARCHAR(50)
+ ) 
+BEGIN
+     DELETE FROM tenant
+     WHERE TENANTID = p_TenantID;
+END //
+
+CREATE PROCEDURE update_Tenant(
+    IN p_TenantID VARCHAR(50),
+    IN p_FirstName VARCHAR(100),
+    IN p_LastName vARCHAR(100),
+    IN p_Birthday DATETime,
+    IN p_Gender VARCHAR(10),
+    IN p_PhoneNumber VARCHAR(20),
+    IN p_Email VARCHAR(100))
+    
+BEGIN
+     UPDATE tenant SET
+         FIRSTNAME = p_FirstName,
+         LASTNAME = p_LastName,
+         BIRTHDAY = p_Birthday,
+         GENDER = p_Gender,
+         PHONENUMBER = p_PhoneNumber,
+         EMAIL = p_Email
+     WHERE TENANTID = p_TenantID;
+END //
+
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createTenantID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(TENANTID), 'T000') INTO max_id FROM tenant;
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('T', LPAD(number_part, 3, '0'));
+    RETURN new_id;
+END//
+
+CREATE PROCEDURE INSERT_SERVICE_USAGE(
+    IN P_TENANTID VARCHAR(10),
+    IN P_SERVICEID VARCHAR(10),
+    IN P_STARTDATE DATE,
+    IN P_ENDDATE DATE
+)
+BEGIN
+    INSERT INTO use_service (TENANTID, SERVICEID, START_DATE, END_DATE)
+    VALUES (P_TENANTID, P_SERVICEID, P_STARTDATE, P_ENDDATE);
+END //
+
+CREATE PROCEDURE InsertService(
+    IN p_ServiceName VARCHAR(255),
+    IN p_UnitPrice DECIMAL(10,2)
+)
+BEGIN
+    DECLARE newID INT;
+    DECLARE formattedID VARCHAR(10);
+
+    -- Lấy số lượng bản ghi hiện tại
+    SELECT COUNT(*) + 1 INTO newID FROM Service;
+
+    -- Định dạng ID theo mẫu DVXXX
+    SET formattedID = CONCAT('DV', LPAD(newID, 3, '0'));
+
+    -- Thêm dữ liệu vào bảng
+    INSERT INTO Service (SERVICEID, SERVICENAME, UNITPRICE)
+    VALUES (formattedID, p_ServiceName, p_UnitPrice);
+END//
+
+
+CREATE PROCEDURE DeleteTenantService(
+    IN p_TenantID VARCHAR(10),
+    IN p_ServiceID VARCHAR(10)
+)
+BEGIN
+    DELETE FROM use_service
+    WHERE TENANTID = p_TenantID AND SERVICEID = p_ServiceID;
+END //
+
+
+
+CREATE PROCEDURE DeleteDichVu(IN p_serviceID VARCHAR(10))
+BEGIN
+    DELETE FROM service WHERE service.SERVICEID = p_serviceID;
+END//
+
+
+CREATE PROCEDURE UpdateServicePrice(
+    IN p_ServiceID VARCHAR(255),
+    IN p_NewPrice DECIMAL(10,2)
+)
+BEGIN
+    UPDATE service 
+    SET UNITPRICE = p_NewPrice
+    WHERE SERVICEID = p_ServiceID;
+END //
+
+-- Thủ tục để lấy tất cả bãi đậu xe
+CREATE PROCEDURE sp_GetAllParkingAreas()
+BEGIN
+    SELECT * FROM PARKINGAREA ORDER BY AREAID;
+END //
+
+-- Thủ tục để lấy danh sách ID tòa nhà
+CREATE PROCEDURE sp_GetAllBuildings()
+BEGIN
+    SELECT BUILDINGID, ADDRESS FROM BUILDING ORDER BY BUILDINGID;
+END //
+
+-- Hàm để tạo ID tòa nhà mới tự động tăng
+CREATE FUNCTION fn_GenerateNewBuildingId() 
+RETURNS VARCHAR(10)
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(10);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(10);
+    
+    -- Lấy ID lớn nhất hiện tại, nếu không có thì mặc định là 'BD000'
+    SELECT IFNULL(MAX(BUILDINGID), 'BD000') INTO max_id FROM BUILDING;
+    
+    -- Tách phần số và tăng lên 1
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    
+    -- Tạo ID mới với format 'BDxxx' 
+    SET new_id = CONCAT('BD', LPAD(number_part, 3, '0'));
+    
+    RETURN new_id;
+END //
+-- Thêm trigger để tự động cập nhật khi có tòa nhà mới
+CREATE TRIGGER after_building_insert
+AFTER INSERT ON BUILDING
+FOR EACH ROW
+BEGIN
+    -- Tự động tạo một bản ghi trong bảng PARKINGAREA với thông tin mặc định
+    DECLARE new_area_id VARCHAR(10);
+    SET new_area_id = fn_GenerateNewParkingAreaId();
+    
+    -- Thêm bãi đậu xe mặc định cho tòa nhà mới
+    INSERT INTO PARKINGAREA (AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY)
+    VALUES (new_area_id, NEW.BUILDINGID, CONCAT('Khu vực trước tòa nhà ', NEW.BUILDINGID), 'Xe máy', 10);
+END //
+
+-- Thủ tục để thêm tòa nhà mới với ID tự động tăng
+CREATE PROCEDURE sp_AddBuilding(
+    IN p_username VARCHAR(20),
+    IN p_address VARCHAR(100),
+    IN p_numOfFloors INT,
+    IN p_numOfRooms INT,
+    OUT p_message VARCHAR(255),
+    OUT p_success BOOLEAN
+)
+BEGIN
+    DECLARE new_building_id VARCHAR(10);
+    
+    -- Mặc định thành công
+    SET p_success = TRUE;
+    SET p_message = 'Thêm tòa nhà thành công!';
+    
+    -- Kiểm tra dữ liệu đầu vào
+    IF p_username IS NULL OR p_username = '' THEN
+        SET p_success = FALSE;
+        SET p_message = 'Tên người dùng không được để trống!';
+    ELSEIF p_address IS NULL OR p_address = '' THEN
+        SET p_success = FALSE;
+        SET p_message = 'Địa chỉ không được để trống!';
+    ELSEIF p_numOfFloors <= 0 THEN
+        SET p_success = FALSE;
+        SET p_message = 'Số tầng phải lớn hơn 0!';
+    ELSEIF p_numOfRooms <= 0 THEN
+        SET p_success = FALSE;
+        SET p_message = 'Số phòng phải lớn hơn 0!';
+    ELSE
+        -- Kiểm tra username có tồn tại không
+        IF NOT EXISTS (SELECT 1 FROM USER WHERE USERNAME = p_username) THEN
+            SET p_success = FALSE;
+            SET p_message = 'Tên người dùng không tồn tại!';
+        ELSE
+            -- Tạo ID mới
+            SET new_building_id = fn_GenerateNewBuildingId();
+            
+            -- Thực hiện thêm dữ liệu
+            INSERT INTO BUILDING (BUILDINGID, USERNAME, ADDRESS, NUMOFFLOORS, NUMOFROOMS)
+            VALUES (new_building_id, p_username, p_address, p_numOfFloors, p_numOfRooms);
+            
+            -- Trả về ID mới tạo trong thông báo
+            SET p_message = CONCAT('Thêm tòa nhà thành công! ID mới: ', new_building_id);
+        END IF;
+    END IF;
+END //
+
+-- Thủ tục để lấy danh sách địa chỉ đã có trong bảng PARKINGAREA
+CREATE PROCEDURE sp_GetParkingAddresses()
+BEGIN
+    SELECT DISTINCT ADDRESS FROM PARKINGAREA ORDER BY ADDRESS;
+END //
+
+-- Hàm để tạo ID bãi đậu xe mới tự động tăng
+CREATE FUNCTION fn_GenerateNewParkingAreaId() 
+RETURNS VARCHAR(10)
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(10);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(10);
+    
+    SELECT IFNULL(MAX(AREAID), 'PA000') INTO max_id FROM PARKINGAREA;
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('PA', LPAD(number_part, 3, '0'));
+    
+    RETURN new_id;
+END //
+
+-- Thủ tục để kiểm tra dữ liệu và thêm bãi đậu xe mới
+CREATE PROCEDURE sp_AddParkingArea(
+    IN p_buildingId VARCHAR(10),
+    IN p_address VARCHAR(100),
+    IN p_type VARCHAR(50),
+    IN p_capacity INT,
+    OUT p_message VARCHAR(255),
+    OUT p_success BOOLEAN
+)
+BEGIN
+    DECLARE new_area_id VARCHAR(10);
+    
+    -- Mặc định thành công
+    SET p_success = TRUE;
+    SET p_message = 'Thêm bãi đậu xe thành công!';
+    
+    -- Kiểm tra dữ liệu đầu vào
+    IF p_buildingId IS NULL OR p_buildingId = '' THEN
+        SET p_success = FALSE;
+        SET p_message = 'ID tòa nhà không được để trống!';
+    ELSEIF p_address IS NULL OR p_address = '' THEN
+        SET p_success = FALSE;
+        SET p_message = 'Địa chỉ không được để trống!';
+    ELSEIF p_type IS NULL OR p_type = '' THEN
+        SET p_success = FALSE;
+        SET p_message = 'Loại bãi đậu xe không được để trống!';
+    ELSEIF p_type != 'Xe máy' AND p_type != 'Ô tô' THEN
+        SET p_success = FALSE;
+        SET p_message = 'Loại bãi đậu xe không hợp lệ. Chỉ chấp nhận "Xe máy" hoặc "Ô tô"!';
+    ELSEIF p_capacity IS NULL OR p_capacity <= 0 THEN
+        SET p_success = FALSE;
+        SET p_message = 'Sức chứa phải là số nguyên dương!';
+    ELSE
+        -- Kiểm tra tòa nhà có tồn tại không
+        IF NOT EXISTS (SELECT 1 FROM BUILDING WHERE BUILDINGID = p_buildingId) THEN
+            SET p_success = FALSE;
+            SET p_message = 'ID tòa nhà không tồn tại!';
+        ELSE
+            -- Tạo ID mới
+            SET new_area_id = fn_GenerateNewParkingAreaId();
+            
+            -- Thực hiện thêm dữ liệu
+            INSERT INTO PARKINGAREA (AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY)
+            VALUES (new_area_id, p_buildingId, p_address, p_type, p_capacity);
+            
+            -- Trả về ID mới tạo trong thông báo
+            SET p_message = CONCAT('Thêm bãi đậu xe thành công! ID mới: ', new_area_id);
+        END IF;
+    END IF;
+END //
+
+-- Thủ tục để khởi tạo dữ liệu form
+-- CREATE PROCEDURE sp_InitParkingAreaForm(
+--     OUT p_new_area_id VARCHAR(10)
+-- )
+-- BEGIN
+--     -- Tạo ID mới
+--     SET p_new_area_id = fn_GenerateNewParkingAreaId();
+-- END //
+
+-- Thủ tục để cập nhật bãi đậu xe
+-- CREATE PROCEDURE sp_UpdateParkingArea(
+--     IN p_areaId VARCHAR(10),
+--     IN p_buildingId VARCHAR(10),
+--     IN p_address VARCHAR(100),
+--     IN p_type VARCHAR(50),
+--     IN p_capacity INT,
+--     OUT p_message VARCHAR(255),
+--     OUT p_success BOOLEAN
+-- )
+-- BEGIN
+--     -- Mặc định thành công
+--     SET p_success = TRUE;
+--     SET p_message = 'Cập nhật bãi đậu xe thành công!';
+--     
+--     -- Kiểm tra dữ liệu đầu vào
+--     IF p_areaId IS NULL OR p_areaId = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'ID bãi đậu xe không được để trống!';
+--     ELSEIF p_buildingId IS NULL OR p_buildingId = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'ID tòa nhà không được để trống!';
+--     ELSEIF p_address IS NULL OR p_address = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'Địa chỉ không được để trống!';
+--     ELSEIF p_type IS NULL OR p_type = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'Loại bãi đậu xe không được để trống!';
+--     ELSEIF p_type != 'Xe máy' AND p_type != 'Ô tô' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'Loại bãi đậu xe không hợp lệ. Chỉ chấp nhận "Xe máy" hoặc "Ô tô"!';
+--     ELSEIF p_capacity IS NULL OR p_capacity <= 0 THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'Sức chứa phải là số nguyên dương!';
+--     ELSE
+--         -- Kiểm tra bãi đậu xe có tồn tại không
+--         IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaId) THEN
+--             SET p_success = FALSE;
+--             SET p_message = 'ID bãi đậu xe không tồn tại!';
+--         ELSE
+--             -- Kiểm tra tòa nhà có tồn tại không
+--             IF NOT EXISTS (SELECT 1 FROM BUILDING WHERE BUILDINGID = p_buildingId) THEN
+--                 SET p_success = FALSE;
+--                 SET p_message = 'ID tòa nhà không tồn tại!';
+--             ELSE
+--                 -- Thực hiện cập nhật dữ liệu
+--                 UPDATE PARKINGAREA
+--                 SET BUILDINGID = p_buildingId, 
+--                     ADDRESS = p_address, 
+--                     TYPE = p_type, 
+--                     CAPACITY = p_capacity
+--                 WHERE AREAID = p_areaId;
+--             END IF;
+--         END IF;
+--     END IF;
+-- END //
+
+-- Thủ tục để xóa bãi đậu xe
+-- CREATE PROCEDURE sp_DeleteParkingArea(
+--     IN p_areaId VARCHAR(10),
+--     OUT p_message VARCHAR(255),
+--     OUT p_success BOOLEAN
+-- )
+-- BEGIN
+--     -- Mặc định thành công
+--     SET p_success = TRUE;
+--     SET p_message = 'Xóa bãi đậu xe thành công!';
+--     
+--     -- Kiểm tra dữ liệu đầu vào
+--     IF p_areaId IS NULL OR p_areaId = '' THEN
+--         SET p_success = FALSE;
+--         SET p_message = 'ID bãi đậu xe không được để trống!';
+--     ELSE
+--         -- Kiểm tra bãi đậu xe có tồn tại không
+--         IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaId) THEN
+--             SET p_success = FALSE;
+--             SET p_message = 'ID bãi đậu xe không tồn tại!';
+--         ELSE
+--             -- Kiểm tra có xe đang đậu không
+--             IF EXISTS (SELECT 1 FROM PARKING WHERE AREAID = p_areaId) THEN
+--                 SET p_success = FALSE;
+--                 SET p_message = 'Không thể xóa bãi đậu xe đang có xe!';
+--             ELSE
+--                 -- Thực hiện xóa dữ liệu
+--                 DELETE FROM PARKINGAREA WHERE AREAID = p_areaId;
+--             END IF;
+--         END IF;
+--     END IF;
+-- END //
+
+-- Thủ tục để lấy thông tin sức chứa của bãi đậu xe
+CREATE PROCEDURE sp_GetParkingAreaCapacity(
+    IN p_areaId VARCHAR(10),
+    OUT p_totalCapacity INT,
+    OUT p_usedCapacity INT,
+    OUT p_availableCapacity INT
+)
+BEGIN
+    -- Lấy tổng sức chứa
+    SELECT CAPACITY INTO p_totalCapacity
+    FROM PARKINGAREA
+    WHERE AREAID = p_areaId;
+    
+    -- Đếm số lượng xe đang đậu
+    SELECT COUNT(*) INTO p_usedCapacity
+    FROM PARKING
+    WHERE AREAID = p_areaId;
+    
+    -- Tính số chỗ còn trống
+    SET p_availableCapacity = p_totalCapacity - p_usedCapacity;
+END //
+
+-- Thủ tục để lấy tất cả bãi đậu xe theo loại
+CREATE PROCEDURE sp_GetParkingAreasByType(
+    IN p_type VARCHAR(50)
+)
+BEGIN
+    SELECT * FROM PARKINGAREA WHERE TYPE = p_type ORDER BY AREAID;
+END //
+
+-- Thủ tục để lấy tất cả bãi đậu xe theo tòa nhà
+CREATE PROCEDURE sp_GetParkingAreasByBuilding(
+    IN p_buildingId VARCHAR(10)
+)
+BEGIN
+    SELECT * FROM PARKINGAREA WHERE BUILDINGID = p_buildingId ORDER BY AREAID;
+END //
+
+
+CREATE PROCEDURE update_Contract(
+	IN p_contractId VARCHAR(20),
+    IN p_endDate DATETIME,
+    IN p_paymentSchedule VARCHAR(50),
+    IN p_deposit FLOAT,
+    IN p_notes VARCHAR(200)
+    
+)
+BEGIN
+    UPDATE contract
+    SET 
+        ENDDATE = p_endDate,
+        PAYMENTSCHEDULE = p_paymentSchedule,
+        DEPOSIT = p_deposit,
+        NOTES = p_notes
+    WHERE 
+        CONTRACTID = p_contractId;
+END//
+
+CREATE PROCEDURE alter_Contract(IN contract_id VARCHAR(50))
+BEGIN
+   SELECT 
+      c.CONTRACTID,
+		c.ROOMID,
+		CONCAT(t.FIRSTNAME, ' ', t.LASTNAME) AS FullName,
+		c.CREATEDATE,
+		c.STARTDATE,
+		c.ENDDATE,
+		c.MONTHLYRENT , 
+		c.PAYMENTSCHEDULE,
+		c.DEPOSIT,
+		c.NOTES
+   FROM contract c
+   JOIN tenant t ON t.TENANTID = c.TENANTID
+   JOIN room r ON r.ROOMID = c.ROOMID
+   JOIN building b ON r.BUILDINGID = b.BUILDINGID
+   JOIN user u ON u.USERNAME = b.USERNAME
+   WHERE c.CONTRACTID = contract_id;
+END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `check_account`(
+    `usern` VARCHAR(50)
+) RETURNS INT
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE account_exists INT;
+    SELECT COUNT(*) INTO account_exists FROM user WHERE USERNAME = usern;
+    IF account_exists = 0 THEN
+        RETURN 1;  -- Tài khoản không tồn tại
+    ELSE
+        RETURN 0;  -- Tài khoản đã tồn tại
+    END IF;
+END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createBuildingID`() 
+RETURNS VARCHAR(20) CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(BuildingID), 'B000') INTO max_id FROM Building;
+    SET number_part = CAST(SUBSTRING(max_id, 2) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('B', LPAD(number_part, 3, '0'));
+    RETURN new_id;
+END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createContractID`()
+RETURNS VARCHAR(20) 
+DETERMINISTIC
+BEGIN
+    DECLARE max_id VARCHAR(20);
+    DECLARE number_part INT;
+    DECLARE new_id VARCHAR(20);
+    
+    SELECT IFNULL(MAX(ContractID), 'CT000') INTO max_id FROM Contract;
+    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+    SET new_id = CONCAT('CT', LPAD(number_part, 3, '0'));
+    RETURN new_id;
+END//
+
+ CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `checkFloorCapacity`(
+    p_buildingid VARCHAR(10),
+    p_floor INT
+) 
+RETURNS INT
+DETERMINISTIC
+BEGIN
+     DECLARE max_rooms_on_floor INT;
+    DECLARE current_rooms_on_floor INT;
+    
+    -- Kiểm tra số phòng hiện có trên tầng này
+    SELECT COUNT(*) INTO current_rooms_on_floor
+    FROM ROOM 
+    WHERE BUILDINGID = p_buildingid AND FLOOR = p_floor;
+    
+    SELECT COUNT(*) INTO max_rooms_on_floor
+    FROM BUILDING 
+    WHERE BUILDINGID = p_buildingid;
+    
+    -- Trả về TRUE nếu còn chỗ (current_rooms_on_floor < max_rooms_per_floor)
+    IF current_rooms_on_floor <= max_rooms_on_floor THEN
+        RETURN 1;
+    END IF;
+    
+    RETURN 0;
+END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createRoomID`(
+    building_id VARCHAR(10), 
+    floor_num INT
+) 
+RETURNS VARCHAR(10)
+DETERMINISTIC
+BEGIN
+    DECLARE next_room_num INT;
+    DECLARE new_room_id VARCHAR(10);
+    
+    -- Tìm số phòng lớn nhất hiện có trên tầng này của tòa nhà
+    SELECT IFNULL(MAX(CAST(SUBSTRING(ROOMID, 5) AS UNSIGNED)), 0) + 1 INTO next_room_num
+    FROM ROOM 
+    WHERE BUILDINGID = building_id AND FLOOR = floor_num
+    AND ROOMID LIKE CONCAT('R', floor_num, '%');
+    
+    -- Tạo mã phòng mới (ví dụ: R101, R102,...)
+    SET new_room_id = CONCAT('R', floor_num, LPAD(next_room_num, 2, '0'));
+    
+    RETURN new_room_id;
+END//
+
+
+
+
+CREATE PROCEDURE del_Contract(
+    IN contract_id VARCHAR(20)
+)
+BEGIN
+    DELETE FROM contract
+    WHERE contract.CONTRACTID = contract_id;
+END//
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Room`(IN p_username VARCHAR(50))
+BEGIN
+    SELECT 
+        r.ROOMID, 
+        r.BUILDINGID, 
+        r.FLOOR,
+        r.TYPE, 
+        r.CONVENIENT, 
+        r.AREA, 
+        r.PRICE, 
+        r.STATUS
+    FROM room r
+    JOIN building b ON r.BUILDINGID = b.BUILDINGID
+    JOIN user u ON u.USERNAME = b.USERNAME
+    WHERE u.USERNAME = p_username;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Assets`(
+    IN p_username VARCHAR(50))
+BEGIN
+    SELECT 
+        a.ASSETID,
+        a.ROOMID,
+        a.ASSETNAME,
+        a.PRICE,
+        a.STATUS,
+        a.USE_DATE,
+        r.BUILDINGID,
+        r.TYPE AS ROOM_TYPE,
+        r.FLOOR
+    FROM ASSETS a
+    JOIN ROOM r ON a.ROOMID = r.ROOMID
+    JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+    WHERE b.USERNAME = p_username
+    ORDER BY a.USE_DATE DESC;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `proc_addAccount`(
+    IN `usern` VARCHAR(50),
+    IN `passw` VARCHAR(50),
+    IN `fulln` VARCHAR(100),
+    IN `emai` VARCHAR(150),
+    IN `birthd` DATE,
+    IN `gender` VARCHAR(50),
+    IN `phonen` VARCHAR(11),
+    IN `addre` VARCHAR(200)
+)
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+SQL SECURITY DEFINER
+COMMENT ''
+BEGIN
+   INSERT INTO user (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBER, ADDRESS) 
+   VALUES (usern, fulln, passw, emai, birthd, gender, phonen, addre);
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `proc_login`(
+    IN `usern` VARCHAR(20),
+    IN `passw` VARCHAR(20)
+)
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+SQL SECURITY DEFINER
+COMMENT ''
+BEGIN
+    SELECT * FROM user WHERE USERNAME = usern AND PASSWORD = passw;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Room_Extended`(IN p_username VARCHAR(50))
+BEGIN
+    SELECT 
+        r.ROOMID, 
+        r.BUILDINGID, 
+        r.TYPE, 
+        r.CONVENIENT, 
+        r.AREA, 
+        r.PRICE, 
+        r.STATUS
+    FROM room r
+    JOIN building b ON r.BUILDINGID = b.BUILDINGID
+    JOIN user u ON u.USERNAME = b.USERNAME
+    WHERE u.USERNAME = p_username;
+END//
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_floor`(IN p_buildingid VARCHAR(20))
+BEGIN
+    SELECT NUMOFFLOORS 
+    FROM BUILDING 
+    WHERE BUILDINGID = p_buildingid;
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_roomid`(IN p_buildingid VARCHAR(20))
+BEGIN
+    SELECT ROOMID 
+    FROM ROOM 
+    WHERE BUILDINGID = p_buildingid;
+END//
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_buildingid`(IN p_username VARCHAR(20))
+BEGIN
+    SELECT BUILDINGID 
+    FROM BUILDING 
+    WHERE USERNAME = p_username;
+END//
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `proc_addRoom`(
+    IN p_buildingid VARCHAR(10),
+    IN p_floor INT,
+    IN p_type VARCHAR(50),
+    IN p_convenient VARCHAR(200),
+    IN p_area FLOAT,
+    IN p_price FLOAT,
+    IN p_status VARCHAR(50)
+)
+BEGIN
+    DECLARE new_room_id VARCHAR(10);
+	SET new_room_id = createRoomID(p_buildingid, p_floor);
+
+    INSERT INTO ROOM (ROOMID, BUILDINGID, TYPE, FLOOR, CONVENIENT, AREA, PRICE, STATUS)
+    VALUES (new_room_id, p_buildingid, p_type, p_floor, p_convenient, p_area, p_price, p_status);
+END//
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `proc_updateRoom`(
+	IN p_roomid VARCHAR(10),
+    IN p_buildingid VARCHAR(10),
+    IN p_floor INT,
+    IN p_type VARCHAR(50),
+    IN p_convenient VARCHAR(200),
+    IN p_area FLOAT,
+    IN p_price FLOAT,
+    IN p_status VARCHAR(100)
+)
+BEGIN
+    UPDATE ROOM 
+SET BUILDINGID = p_buildingid,
+    TYPE = p_type,
+    FLOOR = p_floor,
+    CONVENIENT = p_convenient,
+    AREA = p_area,
+    PRICE = p_price,
+    STATUS = p_status
+WHERE ROOMID = p_roomid;
+END//
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `sp_DeleteRoom`(
+    IN p_roomid VARCHAR(10),
+    OUT p_result INT,
+    OUT p_message VARCHAR(255))
+BEGIN
+    DECLARE room_exists INT;
+    
+    -- Kiểm tra xem phòng có tồn tại không
+    SELECT COUNT(*) INTO room_exists FROM Room WHERE RoomID = p_roomid;
+    
+    IF room_exists = 0 THEN
+        SET p_result = 0;
+        SET p_message = 'Phòng không tồn tại';
+    ELSE
+        -- Xóa phòng (với ON DELETE CASCADE, các bản ghi liên quan sẽ tự động xóa)
+        DELETE FROM Room WHERE RoomID = p_roomid;
+        
+        SET p_result = 1;
+        SET p_message = CONCAT('Đã xóa phòng ', p_roomid, ' thành công');
+    END IF;
+END//
+
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `filter_room`(
+    IN p_username VARCHAR(50),
+    IN p_buildingid VARCHAR(20),
+    IN p_status_list VARCHAR(1000)
+)
+BEGIN
+        -- Tạo bảng tạm lưu trạng thái
+        CREATE TEMPORARY TABLE IF NOT EXISTS temp_statuses (
+            status_value VARCHAR(100)
+        );
+        TRUNCATE TABLE temp_statuses;
+        
+        -- Chèn các trạng thái vào bảng tạm
+        SET @sql = CONCAT('INSERT INTO temp_statuses VALUES ("', 
+                         REPLACE(p_status_list, '; ', '"),("'), '")');
+        PREPARE stmt FROM @sql;
+        EXECUTE stmt;
+        DEALLOCATE PREPARE stmt;
+        
+        -- Đếm tổng số trạng thái cần kiểm tra
+        SET @total_statuses = (SELECT COUNT(*) FROM temp_statuses);
+        
+        -- Lọc phòng phải chứa TẤT CẢ trạng thái được chọn
+        SELECT r.*
+        FROM ROOM r
+        JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+        WHERE b.USERNAME = p_username and r.buildingid = p_buildingid
+        AND (
+            SELECT COUNT(*) 
+            FROM temp_statuses ts 
+            WHERE r.STATUS LIKE CONCAT('%', ts.status_value, '%')
+        ) = @total_statuses;
+        
+        DROP TEMPORARY TABLE IF EXISTS temp_statuses;
+END//
+
