@@ -31,7 +31,7 @@ using GUI.Custom;
 
 namespace GUI
 {
-    public partial class quanlynha: Form
+    public partial class quanlynha : Form
     {
         Form_Login form1;
         private int index;
@@ -46,7 +46,7 @@ namespace GUI
         private Size size_component_quanlytaichinh = new Size(1010, 552);
         private Size size_component_quanlytaichinh_1 = new Size(10, 10);
         private Point location_component_quanlytaichinh = new Point(12, 86);
-        private Point location_component_quanlytaichinh_1 = new Point(30,30);
+        private Point location_component_quanlytaichinh_1 = new Point(30, 30);
         DataTable data = null;
 
         public quanlynha(Form_Login form1, int index)
@@ -78,7 +78,7 @@ namespace GUI
             loadRegistration(null);
             loadBill(null);
 
-            LoadDichVu(); 
+            LoadDichVu();
             loadInitLanguage();
             load_Vehicle();
             loadLanguage();
@@ -110,11 +110,11 @@ namespace GUI
             dgv_Tenant.Columns[6].Width = 300;
             dgv_Tenant.ScrollBars = ScrollBars.Both;
 
-            translateValue(dgv_Tenant, 4); 
+            translateValue(dgv_Tenant, 4);
         }
         private void loadTenantHistory(string name)
         {
-            DataTable data = TenantHistoryBLL.TenantHistoryBLL_load_Tenant(listBuildingID.Text,name);
+            DataTable data = TenantHistoryBLL.TenantHistoryBLL_load_Tenant(listBuildingID.Text, name);
             dgv_LSTN.DataSource = data;
             dgv_LSTN.Columns[0].Width = 90;
             dgv_LSTN.Columns[1].Width = 150;
@@ -135,7 +135,7 @@ namespace GUI
             dgv_DKLT.Columns[4].Width = 100;
             dgv_DKLT.Columns[5].Width = 200;
             dgv_DKLT.ScrollBars = ScrollBars.Both;
-            translateValue(dgv_DKLT, 7); 
+            translateValue(dgv_DKLT, 7);
         }
 
         private void load_Contract(int control, string name)
@@ -154,7 +154,7 @@ namespace GUI
             dgv_QLHD.Columns[10].Width = 100;
             dgv_QLHD.Columns[11].Width = 200;
             dgv_QLHD.ScrollBars = ScrollBars.Both;
-            translateValue(dgv_QLHD, 9); 
+            translateValue(dgv_QLHD, 9);
 
         }
 
@@ -181,7 +181,7 @@ namespace GUI
             dgv_QLCSVC.ScrollBars = ScrollBars.Both;
         }
 
-        private void load_QLP() 
+        private void load_QLP()
         {
             if (listBuildingID.SelectedItem == null)
             {
@@ -205,7 +205,7 @@ namespace GUI
             {
                 if (!row.IsNewRow)
                 {
-                    
+
                     Console.WriteLine(row.Cells[7].Value.ToString());
                     string[] status = row.Cells[7].Value.ToString().Split(';');
                     for (int i = 0; i < status.Length; i++)
@@ -263,7 +263,7 @@ namespace GUI
         }
         public void LoadDichVu()
         {
-           
+
 
             var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
@@ -344,7 +344,7 @@ namespace GUI
                 listBuildingID.SelectedIndex = index;
                 buildingKey.Text = data.Rows[0][1].ToString();
             }
-           
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -354,25 +354,19 @@ namespace GUI
         }
 
 
-       
+
 
         public GetAllServiceBLL getAllServiceBLL = new GetAllServiceBLL();
-        private void btn_xemdichvu_Click(object sender, EventArgs e)
+        //Code sửa từ function đã có
+        public void btn_dichvu_Click(object sender, EventArgs e)
         {
-            try
-            {
-                List<DichVuDTO> listDichVu = new List<DichVuDTO>();
-                listDichVu = getAllServiceBLL.GetAllDichVu();
-
-                SeeAllService seeForm = new SeeAllService(listDichVu);
-                //seeForm.ShowDialog();
-                OverlayManager.ShowWithOverlay(this, seeForm);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không thể lấy danh sách dịch vụ: " + ex.Message);
-            }
-
+            checkBox9.Visible = false;
+            guna2DateTimePicker2.Visible = false;
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "N0";
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
+            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "#,##0 VND";
+            tabQuanLy.SelectedIndex = 4;
+            LoadDichVu();
         }
 
         private void guna2GradientButton12_Click(object sender, EventArgs e)
@@ -384,7 +378,7 @@ namespace GUI
 
 
 
-            bool emailSentSuccessfully = true;  
+            bool emailSentSuccessfully = true;
 
             foreach (var emailRecipient in danhSachEmail)
             {
@@ -406,7 +400,7 @@ namespace GUI
                 if (!result)
                 {
                     emailSentSuccessfully = false;
-                    break; 
+                    break;
                 }
             }
 
@@ -440,18 +434,10 @@ namespace GUI
             loadBill(null);
         }
 
-        public void btn_dichvu_Click(object sender, EventArgs e)
-        {
-
-            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "N0";  
-            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("vi-VN");
-            dgvServiceInfo.Columns["ServicePrice"].DefaultCellStyle.Format = "#,##0 VND";
-            tabQuanLy.SelectedIndex = 4;
-            LoadDichVu();
-        }
 
 
-        
+
+
         private void button11_Click(object sender, EventArgs e)
         {
             DataTable tmp = TenantHistoryBLL.TenantHistoryBLL_count_TenantHistory(listBuildingID.Text);
@@ -489,7 +475,7 @@ namespace GUI
         }
         private void guna2Button7_Click(object sender, EventArgs e)
         {
-            
+
             BotChat b = new BotChat(form1.taikhoan.Username);
             //b.Show();
             OverlayManager.ShowWithOverlay(this, b);
@@ -497,7 +483,7 @@ namespace GUI
         }
         private void guna2GradientButton2_Click(object sender, EventArgs e)
         {
-            
+
             Form_TenantHistory f = new Form_TenantHistory(dgv_LSTN.Rows[dgv_LSTN.CurrentCell.RowIndex].Cells[0].Value.ToString());
             //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
@@ -517,7 +503,7 @@ namespace GUI
         }
         private void loadBill(string name)
         {
-            DataTable data = BillBLL.BillBLL_load_Bill(form1.taikhoan.Username, name,listBuildingID.Text);
+            DataTable data = BillBLL.BillBLL_load_Bill(form1.taikhoan.Username, name, listBuildingID.Text);
             dgv_thanhtoan.DataSource = data;
             dgv_thanhtoan.ScrollBars = ScrollBars.Both;
         }
@@ -549,7 +535,7 @@ namespace GUI
             tabControl1.SelectedIndex = 1;
 
         }
-        
+
 
         private void button20_Click(object sender, EventArgs e)
         {
@@ -566,7 +552,7 @@ namespace GUI
 
         }
 
-        
+
         private void listBuildingID_SelectionChangeCommitted(object sender, EventArgs e)
         {
             clearAllDataGridView();
@@ -740,7 +726,8 @@ namespace GUI
                     MessageBox.Show("Xóa thành công");
                     loadRegistration(null);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Vui lòng chọn đăng ký lưu trú cần xóa", "Thông báo",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -870,13 +857,13 @@ namespace GUI
         {
             try
             {
-                string status = (DangO_chbox1.Checked ? Language.reverseTranslate(DangO_chbox1.Text)+"; " : "")
-                              + (DangTrong_chbox1.Checked ? Language.reverseTranslate(DangTrong_chbox1.Text)+"; " : "")
-                              + (DangKT_chbox1.Checked ? Language.reverseTranslate(DangKT_chbox1.Text)+"; " : "")
-                              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text)+"; " : "")
-                              + (DaQuaHan_chbox.Checked ? Language.reverseTranslate(DaQuaHan_chbox.Text)+"; " : "")
-                              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text)+"; " : "")
-                              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text)+"" : "");
+                string status = (DangO_chbox1.Checked ? Language.reverseTranslate(DangO_chbox1.Text) + "; " : "")
+                              + (DangTrong_chbox1.Checked ? Language.reverseTranslate(DangTrong_chbox1.Text) + "; " : "")
+                              + (DangKT_chbox1.Checked ? Language.reverseTranslate(DangKT_chbox1.Text) + "; " : "")
+                              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
+                              + (DaQuaHan_chbox.Checked ? Language.reverseTranslate(DaQuaHan_chbox.Text) + "; " : "")
+                              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
+                              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) + "" : "");
                 status = status.TrimEnd(';', ' ');
 
 
@@ -961,7 +948,7 @@ namespace GUI
             {
                 DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.SelectedItem.ToString());
 
-                dgv_QLCSVC.DataSource = null; 
+                dgv_QLCSVC.DataSource = null;
                 dgv_QLCSVC.DataSource = filteredData;
 
                 dgv_QLCSVC.Columns["RoomID"].DisplayIndex = 0;
@@ -1011,7 +998,7 @@ namespace GUI
                 Status = selectedRow.Cells["Status"].Value?.ToString()
             };
             Form_UpdateAssets updateAssets = new Form_UpdateAssets(form1.taikhoan.Username, selectedAsset, listBuildingID.SelectedItem.ToString());
-            
+
             OverlayManager.ShowWithOverlay(this, updateAssets);
             if (updateAssets.DialogResult == DialogResult.OK)
             {
@@ -1062,8 +1049,8 @@ namespace GUI
             }
         }
 
-   
-        
+
+
 
 
         private void button34_Click(object sender, EventArgs e)
@@ -1202,7 +1189,7 @@ namespace GUI
         private List<CheckBox> sortOptions = new List<CheckBox>();
 
         public string filet_Service = "Default";
-       
+
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             CheckBox current = (CheckBox)sender;
@@ -1250,7 +1237,7 @@ namespace GUI
                 }
                 var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
-                if (data == null || data.Count == 0) 
+                if (data == null || data.Count == 0)
                 {
                     MessageBox.Show("Không có dữ liệu!");
                 }
@@ -1300,7 +1287,7 @@ namespace GUI
             };
             Form_UpdateRoom updateRoom = new Form_UpdateRoom(form1.taikhoan.Username, selectedRoom);
 
-            OverlayManager.ShowWithOverlay(this, updateRoom); 
+            OverlayManager.ShowWithOverlay(this, updateRoom);
 
             if (updateRoom.DialogResult == DialogResult.OK)
             {
@@ -1383,11 +1370,11 @@ namespace GUI
             dgv_QLP.ScrollBars = ScrollBars.Both;
         }
 
-        
+
 
         private UserService serviceUsageBLL = new UserService();
 
-  
+
         public void LoadParkingAreaDataWithFilter(DataTable filteredData)
         {
             try
@@ -1548,7 +1535,7 @@ namespace GUI
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            Form_AddBuilding f = new Form_AddBuilding(RandomKey.RandomString(10) , form1.taikhoan.Username);
+            Form_AddBuilding f = new Form_AddBuilding(RandomKey.RandomString(10), form1.taikhoan.Username);
             //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
             load_Building_By_User();
@@ -1798,7 +1785,7 @@ namespace GUI
             {
                 load_Vehicle();
             }
-        }   
+        }
         private void guna2GradientButton6_Click(object sender, EventArgs e)
         {
             if (guna2DataGridView1.SelectedRows.Count == 0)
@@ -1845,7 +1832,7 @@ namespace GUI
         {
             try
             {
-                string type = checkBox2.Checked ? "xeoto" : 
+                string type = checkBox2.Checked ? "xeoto" :
                               checkBox5.Checked ? "xemay" :
                              (checkBox7.Checked ? "xedap" : null);
 
@@ -1981,7 +1968,7 @@ namespace GUI
         }
         private void loadLanguage()
         {
-            
+
             string selectedLanguage = listLanguage.SelectedItem.ToString();
             Language.SetCurrentLanguage(selectedLanguage);
             load_Contract(0, null);
@@ -2025,13 +2012,13 @@ namespace GUI
                         button40.Text = kvp.Value;
                         button22.Text = kvp.Value;
                         guna2GradientButton5.Text = kvp.Value;
-                        button53.Text = kvp.Value; 
+                        button53.Text = kvp.Value;
                         break;
 
                     case "delete":
                         button11.Text = kvp.Value;
                         button31.Text = kvp.Value;
-                        button15.Text = kvp.Value; 
+                        button15.Text = kvp.Value;
                         button29.Text = kvp.Value;
                         guna2GradientButton6.Text = kvp.Value;
                         button52.Text = kvp.Value;
@@ -2044,7 +2031,7 @@ namespace GUI
                         break;
                     case "export_to_excel":
                         button36.Text = kvp.Value;
-                        button26.Text = kvp.Value; 
+                        button26.Text = kvp.Value;
                         button8.Text = kvp.Value;
                         guna2GradientButton7.Text = kvp.Value;
                         button9.Text = kvp.Value;
@@ -2381,22 +2368,22 @@ namespace GUI
                         dgv_DKLT.Columns["ROOMID"].HeaderText = kvp.Value;
                         break;
                     case "registrationtable_tenantid":
-                         dgv_DKLT.Columns["TENANTID"].HeaderText = kvp.Value;
+                        dgv_DKLT.Columns["TENANTID"].HeaderText = kvp.Value;
                         break;
                     case "registrationtable_firstname":
-                         dgv_DKLT.Columns["FIRSTNAME"].HeaderText = kvp.Value;
+                        dgv_DKLT.Columns["FIRSTNAME"].HeaderText = kvp.Value;
                         break;
                     case "registrationtable_lastname":
-                         dgv_DKLT.Columns["LASTNAME"].HeaderText = kvp.Value;
+                        dgv_DKLT.Columns["LASTNAME"].HeaderText = kvp.Value;
                         break;
                     case "registrationtable_registrationdate":
-                         dgv_DKLT.Columns["REGISTRATION_DATE"].HeaderText = kvp.Value;
+                        dgv_DKLT.Columns["REGISTRATION_DATE"].HeaderText = kvp.Value;
                         break;
                     case "registrationtable_expirationdate":
-                         dgv_DKLT.Columns["EXPIRATION_DATE"].HeaderText = kvp.Value;
+                        dgv_DKLT.Columns["EXPIRATION_DATE"].HeaderText = kvp.Value;
                         break;
                     case "registrationtable_status":
-                         dgv_DKLT.Columns["STATUS"].HeaderText = kvp.Value;
+                        dgv_DKLT.Columns["STATUS"].HeaderText = kvp.Value;
                         break;
                     case "billtable_billid":
                         dgv_thanhtoan.Columns["BILLID"].HeaderText = kvp.Value;
@@ -2617,7 +2604,7 @@ namespace GUI
 
         private void quanlynha_Shown(object sender, EventArgs e)
         {
-     
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -2628,6 +2615,50 @@ namespace GUI
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        // Yeu Cau Phan Anh
+        private void guna2GradientButton13_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Lấy ID tòa nhà hiện tại đang chọn
+                string buildingID = listBuildingID.Text;
+
+                if (string.IsNullOrEmpty(buildingID))
+                {
+                    MessageBox.Show("Vui lòng chọn tòa nhà trước khi xem phản ánh!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Khởi tạo form Quản lý phản ánh với buildingID
+                FeedbackManagementForm feedbackForm = new FeedbackManagementForm(buildingID);
+
+                // Hiển thị form dạng dialog
+                feedbackForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi mở form Quản lý phản ánh: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_xemdichvu_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<DichVuDTO> listDichVu = new List<DichVuDTO>();
+                listDichVu = getAllServiceBLL.GetAllDichVu();
+
+                SeeAllService seeForm = new SeeAllService(listDichVu);
+                seeForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể lấy danh sách dịch vụ: " + ex.Message);
+            }
         }
     }
 }

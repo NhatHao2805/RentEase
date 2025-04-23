@@ -1565,3 +1565,15 @@ C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\BLL\obj\Debug\BLL.csproj.
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\BLL\obj\Debug\BLL.dll
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\BLL\obj\Debug\BLL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Auth.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Sheets.v4.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Auth.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Core.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Core.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Sheets.v4.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\BLL\bin\Debug\Google.Apis.Sheets.v4.xml

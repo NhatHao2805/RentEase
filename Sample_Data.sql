@@ -1,6 +1,6 @@
 -- 1 USER
 INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBER, ADDRESS) VALUES
-('ad', 'Nguyễn Văn An', 'ad', 'admin1@rentease.com', '1980-05-15', 'nam', '0912345678', '123 Đường Lê Lợi, Q1, TP.HCM'),
+('ad', 'Nguyễn Văn An', 'ad', 'hoaianduong2411@gmail.com', '1980-05-15', 'nam', '0912345678', '123 Đường Lê Lợi, Q1, TP.HCM'),
 ('manager02', 'Trần Thị Bình', 'manager@123', 'manager2@rentease.com', '1985-08-20', 'nu', '0987654321', '456 Đường Nguyễn Huệ, Q1, TP.HCM'),
 ('owner03', 'Lê Hoàng Cường', 'owner@123', 'owner3@rentease.com', '1975-11-10', 'nam', '0909123456', '789 Đường Pasteur, Q3, TP.HCM'),
 ('staff04', 'Phạm Thị Dung', 'staff@123', 'staff4@rentease.com', '1990-03-25', 'nu', '0911222333', '321 Đường CMT8, Q10, TP.HCM'),
@@ -10,6 +10,8 @@ INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBE
 ('accountant08', 'Hoàng Thị Hương', 'account@123', 'account8@rentease.com', '1987-04-18', 'nu', '0909876543', '258 Đường Nguyễn Trãi, Q5, TP.HCM'),
 ('technician09', 'Phan Văn Long', 'tech@123', 'tech9@rentease.com', '1983-06-22', 'nam', '0912456789', '369 Đường Bà Hạt, Q10, TP.HCM'),
 ('reception10', 'Lý Thị Mai', 'reception@123', 'reception10@rentease.com', '1991-02-14', 'nu', '0987654321', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM');
+-- select * from user;
+-- UPDATE USER SET PASSWORD='ad1' WHERE EMAIL='hoaianduong2411@gmail.com';
 
 -- 2 BUILDING
 INSERT INTO BUILDING (BUILDINGID, BUILDING_KEY, USERNAME, ADDRESS, NUMOFFLOORS, NUMOFROOMS) VALUES

@@ -880,3 +880,17 @@ C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.csproj.
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.dll
 C:\Users\ACER\Downloads\RentEase-19_4\RentEase-gd_14-4\DAL\obj\Debug\DAL.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Auth.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Sheets.v4.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Auth.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Core.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Core.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Sheets.v4.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Google.Apis.Sheets.v4.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\DAL\bin\Debug\Newtonsoft.Json.xml

@@ -14,6 +14,8 @@ CREATE TABLE TENANT (
     GENDER               VARCHAR(10) COMMENT 'Giới tính',
     PHONENUMBER          VARCHAR(20) COMMENT 'Số điện thoại',
     EMAIL                VARCHAR(50) COMMENT 'Email',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (TENANTID)
 );
 
@@ -28,6 +30,8 @@ CREATE TABLE BILL (
     END_DATE          	 DATETIME COMMENT 'Thời gian kết thúc thanh toán',
     NOTIFICATION_SENT    BOOLEAN DEFAULT FALSE COMMENT 'Đánh dấu thông báo nhắc nợ đã được gửi',
     REFUND_AMOUNT        FLOAT COMMENT 'Số tiền hoàn trả',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (BILLID)
 );
 
@@ -38,6 +42,8 @@ CREATE TABLE SERVICE (
     SERVICEID               VARCHAR(10) NOT NULL COMMENT 'ID dịch vụ',
     SERVICENAME             VARCHAR(100) NOT NULL COMMENT 'Tên dịch vụ',
     UNITPRICE           	FLOAT NOT NULL COMMENT 'Đơn giá',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (SERVICEID)
 );
 
@@ -47,8 +53,10 @@ CREATE TABLE SERVICE (
 CREATE TABLE BILLDETAIL (
 	BILLDETAIL_ID			VARCHAR(10) NOT NULL COMMENT 'ID chi tiết hóa đơn',
 	BILLID               	VARCHAR(10) NOT NULL COMMENT 'ID hóa đơn',
-   ID				VARCHAR(10) NOT NULL COMMENT 'ID',
+    ID						VARCHAR(10) NOT NULL COMMENT 'ID',
     AMOUNT           		FLOAT NOT NULL COMMENT 'Thành tiền',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY(BILLDETAIL_ID)
 );
 
@@ -61,6 +69,8 @@ CREATE TABLE PAYMENT (
     METHOD               	VARCHAR(50) NOT NULL COMMENT 'Phương thức',
     TOTAL             		FLOAT NOT NULL COMMENT 'Tổng tiền',
     PAYMENTTIME           	FLOAT NOT NULL COMMENT 'Thời gian thanh toán',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (PAYMENTID)
 );
 
@@ -73,6 +83,8 @@ CREATE TABLE FINGERPRINTS (
     TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     AREAPERMISSION       VARCHAR(200) COMMENT 'Quyền truy cập khu vực',
     ENROLLMENT_DATE      DATE COMMENT 'Ngày đăng ký vân tay',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (FINGERID)
 );
 
@@ -94,6 +106,8 @@ CREATE TABLE CONTRACT (
     AUTO_RENEW           BOOLEAN DEFAULT FALSE COMMENT 'Đánh dấu hợp đồng tự động gia hạn',
     TERMINATION_REASON   VARCHAR(200) COMMENT 'Lý do chấm dứt hợp đồng trước hạn',
     CONTRACT_FILE_PATH   VARCHAR(255) COMMENT 'Đường dẫn đến bản sao hợp đồng điện tử',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (CONTRACTID)
 );
 
@@ -107,6 +121,8 @@ CREATE TABLE FEEDBACK (
     CONTENT              VARCHAR(200) COMMENT 'Nội dung',
     DATESEND			 DATE COMMENT 'Ngày gửi',
     STATUS               ENUM('PENDING', 'RESOLVED') DEFAULT 'PENDING' COMMENT 'Trạng thái xử lý',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (FEEDBACKID)
 );
 
@@ -120,6 +136,8 @@ CREATE TABLE BUILDING (
     ADDRESS                 VARCHAR(100) COMMENT 'Địa chỉ',
     NUMOFFLOORS             INT COMMENT 'Số lượng tầng',
     NUMOFROOMS              INT COMMENT 'Số lượng phòng',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (BUILDINGID)
 );
 
@@ -130,11 +148,13 @@ CREATE TABLE ROOM (
     ROOMID              VARCHAR(10) NOT NULL COMMENT 'ID nhà',
     BUILDINGID           VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
     TYPE                 VARCHAR(50) COMMENT 'Loại nhà',
-    FLOOR					 INT COMMENT 'Tầng nhà',
+    FLOOR				INT COMMENT 'Tầng nhà',
     CONVENIENT           VARCHAR(200) COMMENT 'Tiện ích',
     AREA                 FLOAT COMMENT 'Diện tích',
     PRICE                FLOAT COMMENT 'Giá',
     STATUS               VARCHAR(50) COMMENT 'Trạng thái',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (ROOMID)
 );
 
@@ -148,6 +168,8 @@ CREATE TABLE ASSETS (
     PRICE                	FLOAT COMMENT 'Giá',
     STATUS               	VARCHAR(50) COMMENT 'Trạng thái',
     USE_DATE 				DATE COMMENT 'Ngày đưa vào sử dụng',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (ASSETID)
 );
 
@@ -159,6 +181,8 @@ CREATE TABLE MAINTENANCE (
     MAINTENANCE_DATE 		DATE COMMENT 'Ngày bảo trì',
     DESCRIPTION				TEXT COMMENT 'Mô tả công việc bảo trì',
     STATUS               	VARCHAR(50) COMMENT 'Trạng thái',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (MAINTENANCEID)
 );
 
@@ -172,6 +196,8 @@ CREATE TABLE REPAIR_REQUEST (
     REQUEST_DATE 			DATE COMMENT 'Ngày yêu cầu',
     DESCRIPTION				TEXT COMMENT 'Mô tả yêu cầu',
     STATUS               	VARCHAR(50) COMMENT 'Trạng thái',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (REQUESTID)
 );
 
@@ -187,6 +213,8 @@ CREATE TABLE USER (
     GENDER               VARCHAR(10) COMMENT 'Giới tính',
     PHONENUMBER          VARCHAR(20) COMMENT 'Số điện thoại',
     ADDRESS              VARCHAR(100) COMMENT 'Địa chỉ',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (USERNAME)
 );
 
@@ -199,6 +227,8 @@ CREATE TABLE PARKINGAREA (
     ADDRESS              	VARCHAR(100) COMMENT 'Địa chỉ',
     TYPE             	    VARCHAR(50) COMMENT 'Loại bãi đậu xe',
     CAPACITY           		INT COMMENT 'Sức chứa',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (AREAID)
 );
 
@@ -210,6 +240,8 @@ CREATE TABLE PARKING (
     AREAID						VARCHAR(10) NOT NULL COMMENT 'ID bãi đậu xe',
     VEHICLEID              		VARCHAR(10) COMMENT 'ID xe',
     STATUS						VARCHAR(20) COMMENT 'Tình trạng',
+    ISDELETED			 		INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 		DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (PARKINGID)
 );
 
@@ -220,6 +252,8 @@ CREATE TABLE PET (
 	PETID					VARCHAR(10) NOT NULL COMMENT 'ID thú cưng',
     TENANTID             	VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     TYPE		    	    VARCHAR(20) COMMENT 'Loại động vật',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (PETID)
 );
 
@@ -231,6 +265,8 @@ CREATE TABLE RELATIVES (
     FULLNAME             VARCHAR(50) COMMENT 'Họ và tên',
     BIRTH                DATE COMMENT 'Ngày sinh',
     GENDER               VARCHAR(10) COMMENT 'Giới tính',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (RELATIVEID)
 );
 
@@ -241,6 +277,8 @@ CREATE TABLE RELATIONSHIP (
     TENANTID             VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     RELATIVEID       	 VARCHAR(10) NOT NULL COMMENT 'ID mối quan hệ',
     RELATIONSHIP         VARCHAR(50) COMMENT 'Mối quan hệ',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (TENANTID, RELATIVEID)
 );
 
@@ -250,10 +288,12 @@ CREATE TABLE RELATIONSHIP (
 CREATE TABLE RENTAL_HISTORY (
     CONTRACTID              VARCHAR(10) NOT NULL COMMENT 'ID hợp đồng',
     ROOMID          		VARCHAR(10) NOT NULL COMMENT 'ID phòng',
-    TENANTID            	 VARCHAR(100) NOT NULL COMMENT 'ID khách thuê',
+    TENANTID            	VARCHAR(100) NOT NULL COMMENT 'ID khách thuê',
     STARTDATE            	DATETIME COMMENT 'Ngày bắt đầu',
     ENDDATE              	DATETIME COMMENT 'Ngày kết thúc',
     REASON_FOR_LEAVING   	VARCHAR(200) COMMENT 'Lý do rời đi',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (CONTRACTID)
 );
 
@@ -269,6 +309,8 @@ CREATE TABLE TEMPORARY_REGISTRATION (
     STATUS				VARCHAR(50) COMMENT 'Trạng thái bản đăng ký',
     CREATE_DATE			DATETIME COMMENT 'Ngày tạo bản đăng ký',
     UPDATE_DATE			DATETIME COMMENT 'Ngày cập nhật',
+    ISDELETED			INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (REGISTRATIONID)
 );
 
@@ -307,6 +349,8 @@ CREATE TABLE VEHICLE (
     VEHICLE_UNITPRICE_ID	VARCHAR(10) NOT NULL COMMENT 'ID đơn giá phương tiện',
     TYPE                 	VARCHAR(50) COMMENT 'Loại phương tiện',
     LICENSEPLATE         	VARCHAR(20) COMMENT 'Biển số xe',
+    ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (VEHICLEID)
 );
 
@@ -334,6 +378,8 @@ CREATE TABLE WATER_ELECTRICITY (
     END_DATE             DATE COMMENT 'Ngày kết thúc tính',
     RECORD_DATE          DATE COMMENT 'Ngày ghi chỉ số',
     TYPE                 ENUM('ELECTRICITY', 'WATER') NOT NULL COMMENT 'Loại chỉ số (điện/nước)',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (FIGUREID)
 );
 
@@ -472,3 +518,9 @@ ADD FINGERPRINT_IMAGE LONGBLOB COMMENT 'Dữ liệu ảnh vân tay',
 ADD IMAGE_NAME VARCHAR(100) COMMENT 'Tên file ảnh vân tay';
 -- Huy new- 9/4
 
+-- Huy New 19/4 
+-- Nếu cần thêm cột EMAIL vào bảng FEEDBACK
+ALTER TABLE FEEDBACK ADD COLUMN EMAIL VARCHAR(50) AFTER TENANTID;
+
+-- Nếu cần thêm cột HAS_FEEDBACK để lưu trạng thái Có/Không
+ALTER TABLE FEEDBACK ADD COLUMN HAS_FEEDBACK BOOLEAN DEFAULT TRUE AFTER EMAIL;

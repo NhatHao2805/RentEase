@@ -1699,3 +1699,15 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Newton
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.languages.BotChat.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Login.Loading.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Form_ForgotPassword.resources
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Auth.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Sheets.v4.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Auth.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Core.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Core.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Sheets.v4.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Sheets.v4.xml

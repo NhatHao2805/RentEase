@@ -95,7 +95,7 @@ namespace DAL
             {
                 if (conn == null) return name;
 
-                using (MySqlCommand command = new MySqlCommand("Select FIRSTNAME,LASTNAME from tenant", conn))
+                using (MySqlCommand command = new MySqlCommand("Select FIRSTNAME,LASTNAME from tenant WHERE ISDELETED = 0;", conn))
                 {
 
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -157,7 +157,7 @@ namespace DAL
                         conn.Open();
                     }
 
-                    using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE EMAIL=@p_email;", conn))
+                    using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE EMAIL=@p_email AND WHERE ISDELETED = 0;", conn))
                     {
                         command.Parameters.AddWithValue("p_email", email);
                         int count = Convert.ToInt32(command.ExecuteScalar());

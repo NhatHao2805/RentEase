@@ -33,7 +33,7 @@ namespace GUI
             countdownTimer.Tick += CountdownTimer_Tick;
 
             // Set initial form size for step 1
-            this.Size = new System.Drawing.Size(395, 299); // Height includes title bar
+            //this.Size = new System.Drawing.Size(395, 299); // Height includes title bar
         }
 
         private void loadLanguage()
@@ -395,6 +395,16 @@ namespace GUI
 
             btnResetPassword.Enabled = true;
             btnResetPassword.Text = Language.GetCurrentLanguage() == "vi" ? "Đặt lại mật khẩu" : "Reset Password";
+        }
+
+        private void Form_ForgotPassword_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
