@@ -719,5 +719,10 @@ namespace GUI
             lblTotalCount.Text = "Tổng số: 0 phản ánh";
             this.Controls.Add(lblTotalCount);
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

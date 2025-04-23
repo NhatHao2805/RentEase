@@ -75,19 +75,19 @@ namespace GUI.BuildingManagement
             this.btnRefresh = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tabAddBuilding = new System.Windows.Forms.TabPage();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
+            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel18 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panelMain = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btn_quanlynha = new Guna.UI2.WinForms.Guna2Button();
             this.btn_themnha = new Guna.UI2.WinForms.Guna2Button();
-            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
-            this.btnBack = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panelAddBuilding.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFloors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRooms)).BeginInit();
@@ -98,10 +98,10 @@ namespace GUI.BuildingManagement
             this.searchPanel.SuspendLayout();
             this.tabAddBuilding.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSearch
@@ -386,10 +386,10 @@ namespace GUI.BuildingManagement
             this.tabManageBuilding.BackColor = System.Drawing.Color.White;
             this.tabManageBuilding.Controls.Add(this.dgvBuildings);
             this.tabManageBuilding.Controls.Add(this.searchPanel);
-            this.tabManageBuilding.Location = new System.Drawing.Point(4, 44);
+            this.tabManageBuilding.Location = new System.Drawing.Point(4, 5);
             this.tabManageBuilding.Name = "tabManageBuilding";
             this.tabManageBuilding.Padding = new System.Windows.Forms.Padding(10);
-            this.tabManageBuilding.Size = new System.Drawing.Size(705, 442);
+            this.tabManageBuilding.Size = new System.Drawing.Size(705, 481);
             this.tabManageBuilding.TabIndex = 0;
             this.tabManageBuilding.Text = "Quản lý tòa nhà";
             // 
@@ -565,6 +565,62 @@ namespace GUI.BuildingManagement
             this.guna2Panel1.Size = new System.Drawing.Size(967, 70);
             this.guna2Panel1.TabIndex = 150;
             // 
+            // exitButton
+            // 
+            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
+            this.exitButton.BorderRadius = 1;
+            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exitButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
+            this.exitButton.Location = new System.Drawing.Point(932, 1);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(30, 30);
+            this.exitButton.TabIndex = 139;
+            this.exitButton.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderColor = System.Drawing.Color.Silver;
+            this.btnBack.BorderRadius = 5;
+            this.btnBack.BorderThickness = 1;
+            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnBack.FillColor = System.Drawing.Color.MintCream;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
+            this.btnBack.Image = global::GUI.Properties.Resources.icons8_back_50;
+            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnBack.Location = new System.Drawing.Point(841, 35);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.BorderRadius = 10;
+            this.btnBack.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.btnBack.Size = new System.Drawing.Size(120, 30);
+            this.btnBack.TabIndex = 138;
+            this.btnBack.Text = "Back";
+            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnBack.Click += new System.EventHandler(this.OnBackClick);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::GUI.Properties.Resources.icons8_home;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 7);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 137;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // guna2CustomGradientPanel18
             // 
             this.guna2CustomGradientPanel18.BorderRadius = 2;
@@ -597,6 +653,25 @@ namespace GUI.BuildingManagement
             this.label1.Size = new System.Drawing.Size(232, 35);
             this.label1.TabIndex = 135;
             this.label1.Text = "Quản lý Tòa Nhà";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderColor = System.Drawing.Color.Silver;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(235)))), ((int)(((byte)(220)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.guna2Button1.Image = global::GUI.Properties.Resources.icon_0;
+            this.guna2Button1.Location = new System.Drawing.Point(898, 1);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(10);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(30, 30);
+            this.guna2Button1.TabIndex = 133;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2AnimateWindow1
             // 
@@ -707,81 +782,6 @@ namespace GUI.BuildingManagement
             this.btn_themnha.TextFormatNoPrefix = true;
             this.btn_themnha.Click += new System.EventHandler(this.btn_csvc_Click);
             // 
-            // exitButton
-            // 
-            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
-            this.exitButton.BorderRadius = 1;
-            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
-            this.exitButton.Location = new System.Drawing.Point(932, 1);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(30, 30);
-            this.exitButton.TabIndex = 139;
-            this.exitButton.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.BorderColor = System.Drawing.Color.Silver;
-            this.btnBack.BorderRadius = 5;
-            this.btnBack.BorderThickness = 1;
-            this.btnBack.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnBack.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnBack.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnBack.FillColor = System.Drawing.Color.MintCream;
-            this.btnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(118)))), ((int)(((byte)(212)))));
-            this.btnBack.Image = global::GUI.Properties.Resources.icons8_back_50;
-            this.btnBack.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnBack.Location = new System.Drawing.Point(841, 35);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.ShadowDecoration.BorderRadius = 10;
-            this.btnBack.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.btnBack.Size = new System.Drawing.Size(120, 30);
-            this.btnBack.TabIndex = 138;
-            this.btnBack.Text = "Back";
-            this.btnBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnBack.Click += new System.EventHandler(this.OnBackClick);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::GUI.Properties.Resources.icons8_home;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 7);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 137;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(235)))), ((int)(((byte)(220)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2Button1.Image = global::GUI.Properties.Resources.icon_0;
-            this.guna2Button1.Location = new System.Drawing.Point(898, 1);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(10);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(30, 30);
-            this.guna2Button1.TabIndex = 133;
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
             // Form_Building
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -806,10 +806,10 @@ namespace GUI.BuildingManagement
             this.tabAddBuilding.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

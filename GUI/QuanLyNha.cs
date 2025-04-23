@@ -2594,7 +2594,7 @@ namespace GUI
 
         private void quanlynha_Load(object sender, EventArgs e)
         {
-
+            btn_phong.Checked = true;
         }
 
         private void quanlynha_Paint(object sender, PaintEventArgs e)
@@ -2636,7 +2636,8 @@ namespace GUI
                 FeedbackManagementForm feedbackForm = new FeedbackManagementForm(buildingID);
 
                 // Hiển thị form dạng dialog
-                feedbackForm.ShowDialog();
+                //feedbackForm.ShowDialog();
+                OverlayManager.ShowWithOverlay(this, feedbackForm);
             }
             catch (Exception ex)
             {

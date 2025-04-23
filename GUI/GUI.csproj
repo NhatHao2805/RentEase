@@ -326,6 +326,9 @@
     <EmbeddedResource Include="Building\Form_Building.resx">
       <DependentUpon>Form_Building.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gui_service\FeedbackManagementForm.resx">
+      <DependentUpon>FeedbackManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </EmbeddedResource>
@@ -597,6 +600,9 @@
     <Content Include="honhathao\languages\Vietnamese.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-feedback-50.png" />
+    <None Include="Resources\icons8-form-50.png" />
+    <None Include="Resources\icons8-request-feedback-96.png" />
     <None Include="Resources\icons8-home-internet-100.png" />
     <None Include="Resources\icons8-add-home-100.png" />
     <None Include="Resources\icons8-lock.gif" />

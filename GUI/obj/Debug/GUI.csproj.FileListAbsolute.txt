@@ -1711,3 +1711,18 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Core.xml
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Sheets.v4.pdb
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Google.Apis.Sheets.v4.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Auth.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Core.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Sheets.v4.dll
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Auth.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Auth.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Core.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Core.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Sheets.v4.pdb
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\bin\Debug\Google.Apis.Sheets.v4.xml
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.BuildingManagement.Form_Building.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_ForgotPassword.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.FeedbackManagementForm.resources
