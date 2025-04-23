@@ -134,7 +134,8 @@
             this.email_tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.email_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.email_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.email_tb.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.email_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.email_tb.Location = new System.Drawing.Point(313, 89);
             this.email_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -159,7 +160,8 @@
             this.sdt_tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.sdt_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.sdt_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sdt_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.sdt_tb.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sdt_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.sdt_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.sdt_tb.Location = new System.Drawing.Point(313, 267);
             this.sdt_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -217,7 +219,8 @@
             this.diachi_tb.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.diachi_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.diachi_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.diachi_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.diachi_tb.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diachi_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.diachi_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.diachi_tb.Location = new System.Drawing.Point(313, 175);
             this.diachi_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -334,8 +337,8 @@
             this.textBoxTK_DK.BorderRadius = 10;
             this.textBoxTK_DK.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxTK_DK.DefaultText = "";
-            this.textBoxTK_DK.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.textBoxTK_DK.ForeColor = System.Drawing.Color.Black;
+            this.textBoxTK_DK.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTK_DK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBoxTK_DK.Location = new System.Drawing.Point(45, 104);
             this.textBoxTK_DK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxTK_DK.Multiline = true;
@@ -373,8 +376,8 @@
             this.textBoxMK_DK1.BorderRadius = 10;
             this.textBoxMK_DK1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxMK_DK1.DefaultText = "";
-            this.textBoxMK_DK1.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.textBoxMK_DK1.ForeColor = System.Drawing.Color.Black;
+            this.textBoxMK_DK1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMK_DK1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBoxMK_DK1.Location = new System.Drawing.Point(45, 189);
             this.textBoxMK_DK1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMK_DK1.Multiline = true;
@@ -398,8 +401,8 @@
             this.textBoxMK_DK2.BorderRadius = 10;
             this.textBoxMK_DK2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxMK_DK2.DefaultText = "";
-            this.textBoxMK_DK2.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.textBoxMK_DK2.ForeColor = System.Drawing.Color.Black;
+            this.textBoxMK_DK2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMK_DK2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBoxMK_DK2.Location = new System.Drawing.Point(45, 262);
             this.textBoxMK_DK2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMK_DK2.Multiline = true;
@@ -465,8 +468,8 @@
             this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2ComboBox1.ItemHeight = 24;
             this.guna2ComboBox1.Items.AddRange(new object[] {
             "Nam",
@@ -516,7 +519,8 @@
             this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2TextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.Location = new System.Drawing.Point(21, 89);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

@@ -38,19 +38,19 @@ namespace GUI
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.dmk_lb = new System.Windows.Forms.Label();
             this.dkm_lb = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.textBoxTK_DN = new GUI.Custom.MyGunaTextBox();
-            this.buttonDangNhap1 = new GUI.Custom.MyGunaButton();
-            this.textBoxMK_DN = new GUI.Custom.MyGunaTextBox();
             this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.dmk_lb = new System.Windows.Forms.Label();
+            this.textBoxTK_DN = new GUI.Custom.MyGunaTextBox();
+            this.buttonDangNhap1 = new GUI.Custom.MyGunaButton();
+            this.textBoxMK_DN = new GUI.Custom.MyGunaTextBox();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -79,12 +79,11 @@ namespace GUI
             // dk_lb
             // 
             this.dk_lb.AutoSize = true;
-            this.dk_lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dk_lb.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dk_lb.Location = new System.Drawing.Point(239, 404);
+            this.dk_lb.Location = new System.Drawing.Point(239, 406);
             this.dk_lb.Name = "dk_lb";
-            this.dk_lb.Size = new System.Drawing.Size(75, 23);
+            this.dk_lb.Size = new System.Drawing.Size(68, 19);
             this.dk_lb.TabIndex = 21;
             this.dk_lb.Text = "Đăng ký";
             this.dk_lb.Click += new System.EventHandler(this.dk_lb_Click);
@@ -98,10 +97,10 @@ namespace GUI
             this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(220, 494);
+            this.guna2ComboBox1.Location = new System.Drawing.Point(220, 489);
             this.guna2ComboBox1.Name = "guna2ComboBox1";
             this.guna2ComboBox1.ShadowDecoration.BorderRadius = 10;
             this.guna2ComboBox1.ShadowDecoration.Enabled = true;
@@ -144,6 +143,19 @@ namespace GUI
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(372, 555);
             this.guna2GradientPanel1.TabIndex = 149;
+            this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
+            // 
+            // dmk_lb
+            // 
+            this.dmk_lb.AutoSize = true;
+            this.dmk_lb.Font = new System.Drawing.Font("Times New Roman", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dmk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dmk_lb.Location = new System.Drawing.Point(182, 430);
+            this.dmk_lb.Name = "dmk_lb";
+            this.dmk_lb.Size = new System.Drawing.Size(125, 19);
+            this.dmk_lb.TabIndex = 151;
+            this.dmk_lb.Text = "Quên mật khẩu?";
+            this.dmk_lb.Click += new System.EventHandler(this.dmk_lb_Click);
             // 
             // dkm_lb
             // 
@@ -236,6 +248,31 @@ namespace GUI
             this.guna2PictureBox5.TabIndex = 132;
             this.guna2PictureBox5.TabStop = false;
             // 
+            // hienMk
+            // 
+            this.hienMk.AllowLinksHandling = true;
+            this.hienMk.MaximumSize = new System.Drawing.Size(0, 0);
+            this.hienMk.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
+            this.hienMk.ToolTipTitle = "Hiện mật khẩu";
+            this.hienMk.Popup += new System.Windows.Forms.PopupEventHandler(this.hienMk_Popup);
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::GUI.Properties.Resources._5603109;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -5);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(531, 555);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 150;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
+            // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+            this.guna2AnimateWindow1.TargetForm = this;
+            // 
             // textBoxTK_DN
             // 
             this.textBoxTK_DN.BackColor = System.Drawing.Color.Transparent;
@@ -301,44 +338,6 @@ namespace GUI
             this.textBoxMK_DN.Size = new System.Drawing.Size(250, 40);
             this.textBoxMK_DN.TabIndex = 17;
             this.textBoxMK_DN.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // hienMk
-            // 
-            this.hienMk.AllowLinksHandling = true;
-            this.hienMk.MaximumSize = new System.Drawing.Size(0, 0);
-            this.hienMk.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.hienMk.ToolTipTitle = "Hiện mật khẩu";
-            this.hienMk.Popup += new System.Windows.Forms.PopupEventHandler(this.hienMk_Popup);
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::GUI.Properties.Resources._5603109;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(0, -5);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(531, 555);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 150;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.Click += new System.EventHandler(this.guna2PictureBox1_Click);
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
-            this.guna2AnimateWindow1.TargetForm = this;
-            // 
-            // dmk_lb
-            // 
-            this.dmk_lb.AutoSize = true;
-            this.dmk_lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dmk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dmk_lb.Location = new System.Drawing.Point(149, 430);
-            this.dmk_lb.Name = "dmk_lb";
-            this.dmk_lb.Size = new System.Drawing.Size(172, 23);
-            this.dmk_lb.TabIndex = 151;
-            this.dmk_lb.Text = "Quên/Đổi mật khẩu?";
-            this.dmk_lb.Click += new System.EventHandler(this.dmk_lb_Click);
             // 
             // Form_Login
             // 

@@ -1699,3 +1699,5 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\bin\Debug\Newton
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.honhathao.languages.BotChat.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Login.Loading.resources
 C:\Users\ASUS\OneDrive\Máy tính\New folder\Clone\RentEase\GUI\obj\Debug\GUI.Form_ForgotPassword.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.Form_ForgotPassword.resources
+D:\HOC\CN PHAN MEM\Dự án\RentEase\GUI\obj\Debug\GUI.BuildingManagement.Form_Building.resources

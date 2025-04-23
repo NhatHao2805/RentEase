@@ -227,5 +227,33 @@ namespace GUI.BuildingManagement
             numFloors.Value = numFloors.Minimum;
             numRooms.Value = numRooms.Minimum;
         }
+
+        private void dgvBuildings_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_dichvu_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedIndex = 0;
+        }
+
+        private void btn_csvc_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectedIndex = 1;
+        }
+
+        private void Form_Building_Load(object sender, EventArgs e)
+        {
+          
+        btn_quanlynha.Checked = true;
+        
+
     }
+}
 }
