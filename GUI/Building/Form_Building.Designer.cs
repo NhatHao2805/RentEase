@@ -143,7 +143,7 @@ namespace GUI.BuildingManagement
             this.panelAddBuilding.Location = new System.Drawing.Point(10, 10);
             this.panelAddBuilding.Name = "panelAddBuilding";
             this.panelAddBuilding.Padding = new System.Windows.Forms.Padding(20);
-            this.panelAddBuilding.Size = new System.Drawing.Size(685, 422);
+            this.panelAddBuilding.Size = new System.Drawing.Size(685, 461);
             this.panelAddBuilding.TabIndex = 0;
             // 
             // lblBuildingKey
@@ -386,10 +386,10 @@ namespace GUI.BuildingManagement
             this.tabManageBuilding.BackColor = System.Drawing.Color.White;
             this.tabManageBuilding.Controls.Add(this.dgvBuildings);
             this.tabManageBuilding.Controls.Add(this.searchPanel);
-            this.tabManageBuilding.Location = new System.Drawing.Point(4, 5);
+            this.tabManageBuilding.Location = new System.Drawing.Point(4, 44);
             this.tabManageBuilding.Name = "tabManageBuilding";
             this.tabManageBuilding.Padding = new System.Windows.Forms.Padding(10);
-            this.tabManageBuilding.Size = new System.Drawing.Size(705, 481);
+            this.tabManageBuilding.Size = new System.Drawing.Size(705, 442);
             this.tabManageBuilding.TabIndex = 0;
             this.tabManageBuilding.Text = "Quản lý tòa nhà";
             // 
@@ -541,10 +541,10 @@ namespace GUI.BuildingManagement
             // 
             this.tabAddBuilding.BackColor = System.Drawing.Color.White;
             this.tabAddBuilding.Controls.Add(this.panelAddBuilding);
-            this.tabAddBuilding.Location = new System.Drawing.Point(4, 44);
+            this.tabAddBuilding.Location = new System.Drawing.Point(4, 5);
             this.tabAddBuilding.Name = "tabAddBuilding";
             this.tabAddBuilding.Padding = new System.Windows.Forms.Padding(10);
-            this.tabAddBuilding.Size = new System.Drawing.Size(705, 442);
+            this.tabAddBuilding.Size = new System.Drawing.Size(705, 481);
             this.tabAddBuilding.TabIndex = 1;
             this.tabAddBuilding.Text = "Thêm tòa nhà";
             // 
@@ -654,7 +654,7 @@ namespace GUI.BuildingManagement
             this.btn_quanlynha.HoverState.BorderColor = System.Drawing.Color.Teal;
             this.btn_quanlynha.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
             this.btn_quanlynha.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_quanlynha.Image = global::GUI.Properties.Resources.icons8_home_internet_1001;
+            this.btn_quanlynha.Image = global::GUI.Properties.Resources.icons8_home_internet_100;
             this.btn_quanlynha.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn_quanlynha.ImageSize = new System.Drawing.Size(50, 50);
             this.btn_quanlynha.Location = new System.Drawing.Point(3, 21);

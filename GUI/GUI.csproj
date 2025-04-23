@@ -323,6 +323,9 @@
     <None Include="Resources\icons8-fingerprint-64.png" />
     <None Include="Resources\Logo.png" />
     <None Include="Resources\5603109.jpg" />
+    <EmbeddedResource Include="Building\Form_Building.resx">
+      <DependentUpon>Form_Building.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="hoaian\Form_AddAssets.resx">
       <DependentUpon>Form_AddAssets.cs</DependentUpon>
     </EmbeddedResource>
@@ -594,6 +597,9 @@
     <Content Include="honhathao\languages\Vietnamese.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-home-internet-100.png" />
+    <None Include="Resources\icons8-add-home-100.png" />
+    <None Include="Resources\icons8-lock.gif" />
     <None Include="Resources\icons8-bot-64-2.png" />
     <None Include="Resources\icons8-parking-lot-96.png" />
     <None Include="Resources\icons8-payment-100.png" />
