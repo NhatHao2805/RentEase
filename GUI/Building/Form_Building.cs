@@ -177,19 +177,14 @@ namespace GUI.BuildingManagement
 
         private void OnBackClick(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to go back to login?", "Confirm",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Hide();
-                form1.Show();
-            }
+            this.Hide();
+            form1.Show();
         }
 
         private void OnManageClick(object sender, EventArgs e)
         {
             if (selectedBuildingId != null)
             {
-                MessageBox.Show($"Opening management for building {selectedBuildingId}");
                 form2 = new quanlynha(form1, dgvBuildings.SelectedRows[0].Index);
                 form2.Show();
                 this.Hide();

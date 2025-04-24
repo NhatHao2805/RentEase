@@ -362,3 +362,87 @@ C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (1)\RentEase-GiaoDi-nFeedback\
 C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (1)\RentEase-GiaoDi-nFeedback\DTO\obj\Debug\DTO.csproj.Up2Date
 C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (1)\RentEase-GiaoDi-nFeedback\DTO\obj\Debug\DTO.dll
 C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (1)\RentEase-GiaoDi-nFeedback\DTO\obj\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\DTO.dll.config
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\DTO.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Auth.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Core.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Sheets.v4.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\MySqlConnector.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Buffers.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Memory.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Auth.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Core.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Core.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Sheets.v4.pdb
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Google.Apis.Sheets.v4.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\MySqlConnector.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Buffers.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Memory.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\obj\Debug\DTO.dll
+C:\Users\ASUS\OneDrive\Máy tính\New folder\Hao_24_4\DTO\obj\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\DTO.dll.config
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\DTO.pdb
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Auth.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Core.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Sheets.v4.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\MySqlConnector.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Buffers.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Memory.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.pdb
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Auth.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Core.pdb
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Core.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Sheets.v4.pdb
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Google.Apis.Sheets.v4.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\MySqlConnector.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Buffers.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Memory.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\obj\Debug\DTO.csproj.Up2Date
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\obj\Debug\DTO.dll
+C:\Users\ACER\Downloads\RentEase-GiaoDi-nFeedback (2)\RentEase-GiaoDi-nFeedback\DTO\obj\Debug\DTO.pdb

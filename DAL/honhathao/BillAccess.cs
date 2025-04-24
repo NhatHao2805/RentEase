@@ -91,7 +91,7 @@ namespace DAL.honhathao
             }
             return "Success";
         }
-        public static DataTable load_Bill(string usern,string name,string buildingid)
+        public static DataTable load_Bill(string usern,string name,string buildingid, string control)
         {
             DataTable output = new DataTable();
 
@@ -112,6 +112,7 @@ namespace DAL.honhathao
                             command.Parameters.AddWithValue("p_lastname", DBNull.Value);
                         }
                         command.Parameters.AddWithValue("p_buildingid", buildingid);
+                        command.Parameters.AddWithValue("p_control", control);
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {

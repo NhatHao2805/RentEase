@@ -117,11 +117,15 @@ CREATE PROCEDURE auto_AddTenantHistory(
     IN p_TENANTID VARCHAR(50),
     IN p_ROOMID VARCHAR(50),
     IN p_STARTDATE DATETIME,
-    IN p_ENDDATE DATETIME
+    IN p_ENDDATE DATETIME,
+    IN p_buildingid VARCHAR(10)
 )
 BEGIN
     DECLARE new_HISTORYID VARCHAR(50);
+    DECLARE room_id VARCHAR(10);
     SET new_HISTORYID = createTenantHistorytID();
+
+	SELECT ROOMID INTO room_id FROM ROOM WHERE BUILDINGID = p_buildingid AND ROOMNAME = p_ROOMID;
 
     INSERT INTO tenant_history (
         HISTORYID,
@@ -135,7 +139,7 @@ BEGIN
         new_HISTORYID,
         p_CONTRACTID,
         p_TENANTID,
-        p_ROOMID,
+        room_id,
         p_STARTDATE,
         p_ENDDATE
     );
@@ -384,7 +388,8 @@ END//
 CREATE PROCEDURE load_bill(
 	IN p_user VARCHAR(20),
 	IN p_lastname VARCHAR(20),
-	IN p_buildingid VARCHAR(20)
+	IN p_buildingid VARCHAR(20),
+    IN p_control varchar(2)
 )
 BEGIN
     -- Delete records that have been soft-deleted for more than 30 days
@@ -399,6 +404,12 @@ BEGIN
     JOIN building bu ON bu.BUILDINGID = r.BUILDINGID
     WHERE t.USERNAME = p_user
 	AND t.ISDELETED = 0
+    AND b.ISDELETED = 0
+    AND (
+		(p_control = 0)   
+     or (p_control = 1 AND b.TOTAL - COALESCE(p.TOTAL,0) <= 0)
+     or (p_control = 2 AND b.TOTAL - COALESCE(p.TOTAL,0) > 0)
+     )
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'))
 	AND bu.BUILDINGID = p_buildingid;
 END //
@@ -504,6 +515,7 @@ BEGIN
     RETURN new_id;
 END //
 
+-- select createParkingAreaID();
 -- New 8/4/2025
 CREATE FUNCTION createParkingAreaID()
 RETURNS VARCHAR(20) 
@@ -976,7 +988,7 @@ BEGIN
 
     SELECT 
         a.ASSETID,
-        a.ROOMID,
+        r.ROOMNAME,
         a.ASSETNAME,
         a.PRICE,
         a.STATUS,
@@ -1017,6 +1029,9 @@ CREATE PROCEDURE proc_addAsset(
 )
 BEGIN
     DECLARE new_asset_id VARCHAR(20);
+    DECLARE room_id VARCHAR(10);
+    
+    SELECT ROOMID INTO room_id FROM ROOM WHERE BUILDINGID = p_buildingid AND ROOMNAME = p_roomid;
     
 	-- Tạo ID mới cho tài sản
 	SET new_asset_id = createAssetID();
@@ -1031,7 +1046,7 @@ BEGIN
 		USE_DATE
 	) VALUES (
 		new_asset_id,
-		p_roomid,
+		room_id,
 		p_assetname,
 		p_price,
 		p_status,
@@ -1045,12 +1060,16 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `proc_updateAsset`(
     IN p_assetname VARCHAR(50),
     IN p_price FLOAT,
     IN p_status VARCHAR(50),
-    IN p_usedate DATE
+    IN p_usedate DATE,
+    IN p_buildingid VARCHAR(10)
 )
 BEGIN
+	DECLARE room_id VARCHAR(10);
+    SELECT ROOMID into room_id FROM ROOM WHERE BUILDINGID = p_buildingid AND ROOMNAME = p_roomid;
+
     UPDATE ASSETS 
     SET 
-        ROOMID = p_roomid,
+        ROOMID = room_id,
         ASSETNAME = p_assetname,
         PRICE = p_price,
         STATUS = p_status,
@@ -1096,7 +1115,7 @@ BEGIN
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
     
     SELECT 
-        r.ROOMID,
+        r.ROOMNAME,
         a.ASSETID,
         a.ASSETNAME,
         a.PRICE,
@@ -1137,7 +1156,7 @@ BEGIN
         a.PRICE,
         a.STATUS AS ASSET_STATUS,
         DATE_FORMAT(a.USE_DATE, '%d/%m/%Y') AS USE_DATE,
-        r.ROOMID,
+        r.ROOMNAME,
         r.TYPE AS ROOM_TYPE,
         r.FLOOR,
         b.BUILDINGID
@@ -1241,7 +1260,7 @@ BEGIN
 	DELETE FROM contract 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT p.ROOMID 
+    SELECT p.ROOMNAME 
     FROM contract c 
     JOIN room p ON c.ROOMID = p.ROOMID 
     WHERE c.TENANTID = p_tenantID 
@@ -1255,7 +1274,7 @@ BEGIN
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
     SELECT 
-        r.ROOMID, 
+        r.ROOMNAME, 
         r.BUILDINGID, 
         r.TYPE, 
         r.CONVENIENT, 
@@ -1273,20 +1292,9 @@ BEGIN
 	DELETE FROM ROOM 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT ROOMID 
+    SELECT ROOMNAME 
     FROM ROOM 
     WHERE BUILDINGID = p_buildingid;
-END//
-
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_buildingid`(IN p_username VARCHAR(20))
-BEGIN
-	DELETE FROM BUILDING 
-    WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
-
-    SELECT BUILDINGID 
-    FROM BUILDING 
-    WHERE USERNAME = p_username;
 END//
 
 
@@ -1301,10 +1309,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `proc_addRoom`(
 )
 BEGIN
     DECLARE new_room_id VARCHAR(10);
+    DECLARE new_room_name VARCHAR(10);
 	SET new_room_id = createRoomID(p_buildingid, p_floor);
+    SET new_room_name = createRoomName(p_buildingid, p_floor);
 
-    INSERT INTO ROOM (ROOMID, BUILDINGID, TYPE, FLOOR, CONVENIENT, AREA, PRICE, STATUS)
-    VALUES (new_room_id, p_buildingid, p_type, p_floor, p_convenient, p_area, p_price, p_status);
+    INSERT INTO ROOM (ROOMID, ROOMNAME, BUILDINGID, TYPE, FLOOR, CONVENIENT, AREA, PRICE, STATUS)
+    VALUES (new_room_id, new_room_name, p_buildingid, p_type, p_floor, p_convenient, p_area, p_price, p_status);
 END//
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `proc_updateRoom`(
@@ -1318,6 +1328,10 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `proc_updateRoom`(
     IN p_status VARCHAR(100)
 )
 BEGIN
+	DECLARE room_id VARCHAR(10);
+    
+    SELECT ROOMID INTO room_id FROM ROOM WHERE BUILDINGID = p_buildingid AND ROOMNAME = p_roomid;
+
     UPDATE ROOM 
 SET BUILDINGID = p_buildingid,
     TYPE = p_type,
@@ -1326,19 +1340,20 @@ SET BUILDINGID = p_buildingid,
     AREA = p_area,
     PRICE = p_price,
     STATUS = p_status
-WHERE ROOMID = p_roomid;
+WHERE ROOMNAME = p_roomid;
 END//
 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `sp_DeleteRoom`(
     IN p_roomid VARCHAR(10),
+    IN p_buildingid VARCHAR(10),
     OUT p_result INT,
     OUT p_message VARCHAR(255))
 BEGIN
     DECLARE room_exists INT;
     
     -- Kiểm tra xem phòng có tồn tại không
-    SELECT COUNT(*) INTO room_exists FROM Room WHERE RoomID = p_roomid;
+    SELECT COUNT(*) INTO room_exists FROM Room WHERE ROOMNAME = p_roomid AND BUILDINGID = p_buildingid;
     
     IF room_exists = 0 THEN
         SET p_result = 0;
@@ -1348,7 +1363,7 @@ BEGIN
         UPDATE ROOM
 		SET ISDELETED = 1,
 		   DELETED_DATE = CURDATE() 
-		WHERE RoomID = p_roomid;
+		WHERE ROOMNAME = p_roomid AND BUILDINGID = p_buildingid;
         
         SET p_result = 1;
         SET p_message = CONCAT('Đã xóa phòng ', p_roomid, ' thành công');
@@ -1383,7 +1398,7 @@ BEGIN
     SET @total_statuses = (SELECT COUNT(*) FROM temp_statuses);
     
     -- Lọc phòng phải chứa TẤT CẢ trạng thái được chọn
-    SELECT r.*
+    SELECT r.ROOMNAME, r.BUILDINGID, r.TYPE, r.FLOOR, r.CONVENIENT, r.AREA, r.PRICE, r.STATUS
     FROM ROOM r
     JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
     WHERE b.USERNAME = p_username 
@@ -1425,6 +1440,7 @@ BEGIN
     RETURN 0;
 END//
 
+
 CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createRoomID`(
     building_id VARCHAR(10), 
     floor_num INT
@@ -1435,24 +1451,56 @@ BEGIN
     DECLARE next_room_num INT;
     DECLARE new_room_id VARCHAR(10);
     
-    -- Tìm số phòng lớn nhất hiện có trên tầng này của tòa nhà
-    SELECT IFNULL(MAX(CAST(SUBSTRING(ROOMID, LENGTH(CONCAT('R', floor_num)) + 1) AS UNSIGNED)), 0) + 1 
+    -- Tìm số phòng lớn nhất hiện có trong toàn bộ tòa nhà và tăng thêm 1
+    SELECT IFNULL(MAX(CAST(SUBSTRING(ROOMID, 2) AS UNSIGNED)), 0) + 1 
     INTO next_room_num
-    FROM ROOM 
-    WHERE BUILDINGID = building_id AND FLOOR = floor_num
-    AND ROOMID LIKE CONCAT('R', floor_num, '%');
+    FROM ROOM;
     
-    -- Kiểm tra nếu số phòng vượt quá 99 (2 chữ số)
-    IF next_room_num > 99 THEN
+    -- Kiểm tra nếu số phòng vượt quá 9999 (4 chữ số)
+    IF next_room_num > 9999 THEN
         SIGNAL SQLSTATE '45000' 
-        SET MESSAGE_TEXT = 'Đã đạt số lượng phòng tối đa cho tầng này';
+        SET MESSAGE_TEXT = 'Đã đạt số lượng phòng tối đa cho tòa nhà';
     END IF;
     
-    -- Tạo mã phòng mới (ví dụ: R101, R102,... hoặc R1001 nếu tầng 10)
-    SET new_room_id = CONCAT('R', floor_num, LPAD(next_room_num, 2, '0'));
+    -- Tạo mã phòng mới với định dạng R + 4 chữ số (ví dụ: R0001, R0002,...)
+    SET new_room_id = CONCAT('R', LPAD(next_room_num, 4, '0'));
     
     RETURN new_room_id;
 END//
+
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `createRoomName`(
+    building_id VARCHAR(10), 
+    floor_num INT
+) 
+RETURNS VARCHAR(10)
+DETERMINISTIC
+BEGIN
+    DECLARE next_room_num INT;
+    DECLARE new_room_id VARCHAR(10);
+    DECLARE floor_prefix VARCHAR(1);
+    
+    -- Chuyển số tầng thành ký tự đầu tiên (0-9)
+    SET floor_prefix = CAST(floor_num AS CHAR);
+    
+    -- Tìm số phòng lớn nhất hiện có trên tầng này của tòa nhà
+    SELECT IFNULL(MAX(CAST(SUBSTRING(ROOMID, 2) AS UNSIGNED)), 0) + 1 
+    INTO next_room_num
+    FROM ROOM 
+    WHERE BUILDINGID = building_id AND FLOOR = floor_num
+    AND ROOMNAME LIKE CONCAT('R', floor_prefix, '%');
+    
+    -- Kiểm tra nếu số phòng vượt quá 999 (3 chữ số)
+    IF next_room_num > 999 THEN
+        SIGNAL SQLSTATE '45000' 
+        SET MESSAGE_TEXT = 'Đã đạt số lượng phòng tối đa';
+    END IF;
+    
+    -- Tạo mã phòng mới với định dạng R + 1 chữ số tầng + 3 chữ số phòng (ví dụ: R0001, R1002,...)
+    SET new_room_id = CONCAT('R', floor_prefix, LPAD(next_room_num, 2, '0'));
+    
+    RETURN new_room_id;
+END//
+
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `load_Room`(
     IN p_username VARCHAR(20), 
@@ -1463,7 +1511,7 @@ BEGIN
 
 	IF p_buildingid is null then
 		SELECT 
-			r.ROOMID, 
+			r.ROOMNAME, 
 			r.BUILDINGID, 
 			r.FLOOR,
 			r.TYPE, 
@@ -1478,7 +1526,7 @@ BEGIN
 		AND r.ISDELETED = 0;
 	ELSE
 		SELECT 
-			r.ROOMID, 
+			r.ROOMNAME, 
 			r.BUILDINGID, 
 			r.FLOOR,
 			r.TYPE, 
@@ -1505,7 +1553,7 @@ BEGIN
     SELECT 
         c.CONTRACTID AS RENTAL_HISTORY_ID,
         c.CONTRACTID,
-        r.ROOMID,
+        r.ROOMNAME,
         t.TENANTID,
         t.FIRSTNAME,
         t.LASTNAME,
@@ -1544,6 +1592,16 @@ END//
 
 
 -- BUILDING
+CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_buildingid`(IN p_username VARCHAR(20))
+BEGIN
+	DELETE FROM BUILDING 
+    WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
+
+    SELECT BUILDINGID 
+    FROM BUILDING 
+    WHERE USERNAME = p_username;
+END//
+
 -- Thủ tục để lấy danh sách ID tòa nhà
 CREATE PROCEDURE sp_GetAllBuildings()
 BEGIN
@@ -1557,33 +1615,33 @@ BEGIN
 END //
 
 -- Hàm để tạo ID tòa nhà mới tự động tăng
-CREATE FUNCTION fn_GenerateNewBuildingId() 
-RETURNS VARCHAR(10)
-DETERMINISTIC
-BEGIN
-    DECLARE max_id VARCHAR(10);
-    DECLARE number_part INT;
-    DECLARE new_id VARCHAR(10);
-    
-    SELECT IFNULL(MAX(BUILDINGID), 'BD000') INTO max_id FROM BUILDING
-    WHERE ISDELETED = 0;
-    SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
-    SET new_id = CONCAT('BD', LPAD(number_part, 3, '0'));
-    RETURN new_id;
-END //
+-- CREATE FUNCTION fn_GenerateNewBuildingId() 
+-- RETURNS VARCHAR(10)
+-- DETERMINISTIC
+-- BEGIN
+--     DECLARE max_id VARCHAR(10);
+--     DECLARE number_part INT;
+--     DECLARE new_id VARCHAR(10);
+--     
+--     SELECT IFNULL(MAX(BUILDINGID), 'BD000') INTO max_id FROM BUILDING
+--     WHERE ISDELETED = 0;
+--     SET number_part = CAST(SUBSTRING(max_id, 3) AS UNSIGNED) + 1;
+--     SET new_id = CONCAT('BD', LPAD(number_part, 3, '0'));
+--     RETURN new_id;
+-- END //
 -- Thêm trigger để tự động cập nhật khi có tòa nhà mới
-CREATE TRIGGER after_building_insert
-AFTER INSERT ON BUILDING
-FOR EACH ROW
-BEGIN
-    -- Tự động tạo một bản ghi trong bảng PARKINGAREA với thông tin mặc định
-    DECLARE new_area_id VARCHAR(10);
-    SET new_area_id = fn_GenerateNewParkingAreaId();
-    
-    -- Thêm bãi đậu xe mặc định cho tòa nhà mới
-    INSERT INTO PARKINGAREA (AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY)
-    VALUES (new_area_id, NEW.BUILDINGID, CONCAT('Khu vực trước tòa nhà ', NEW.BUILDINGID), 'Xe máy', 10);
-END //
+-- CREATE TRIGGER after_building_insert
+-- AFTER INSERT ON BUILDING
+-- FOR EACH ROW
+-- BEGIN
+--     -- Tự động tạo một bản ghi trong bảng PARKINGAREA với thông tin mặc định
+--     DECLARE new_area_id VARCHAR(10);
+--     SET new_area_id = createParkingAreaID();
+--     
+--     -- Thêm bãi đậu xe mặc định cho tòa nhà mới
+--     INSERT INTO PARKINGAREA (AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY)
+--     VALUES (new_area_id, NEW.BUILDINGID, CONCAT('Tầng hầm ', NEW.BUILDINGID), 'honhop', 10);
+-- END //
 
 -- New 15/4
 CREATE PROCEDURE addBuilding(
@@ -1758,7 +1816,7 @@ BEGIN
 	DELETE FROM CONTRACT 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-   SELECT c.* 
+   SELECT c.CONTRACTID, r.ROOMNAME, c.TENANTID, c.CREATEDATE, c.STARTDATE, c.ENDDATE, c.MONTHLYRENT, c.PAYMENTSCHEDULE, c.DEPOSIT, c.STATUS, c.NOTES, c.AUTO_RENEW, c.TERMINATION_REASON, c.CONTRACT_FILE_PATH
 	FROM contract c
 	JOIN room r ON r.ROOMID = c.ROOMID
 	JOIN building b ON b.BUILDINGID = r.BUILDINGID
@@ -1797,7 +1855,7 @@ BEGIN
 
    SELECT 
       c.CONTRACTID,
-		c.ROOMID,
+		r.ROOMNAME,
 		CONCAT(t.FIRSTNAME, ' ', t.LASTNAME) AS FullName,
 		c.CREATEDATE,
 		c.STARTDATE,
@@ -1844,9 +1902,15 @@ CREATE PROCEDURE add_Contract(
 BEGIN
     DECLARE v_contractid VARCHAR(50);
     DECLARE v_monthrent FLOAT;
+    DECLARE room_id VARCHAR(10);
 
     SET v_contractid = createContractID();
 
+	SELECT ROOMID INTO room_id
+    FROM ROOM
+    WHERE BUILDINGID = p_building_id
+    AND ROOMNAME = p_id_room;
+    
     SELECT r.PRICE INTO v_monthrent
     FROM room r 
     JOIN building b ON b.BUILDINGID = r.BUILDINGID 
@@ -1866,7 +1930,7 @@ BEGIN
         NOTES
     ) VALUES (
         v_contractid,
-        p_id_room,
+        room_id,
         p_tenantid,
         p_createddate,
         p_startdate,
@@ -1901,7 +1965,7 @@ BEGIN
 
     SELECT 
         c.CONTRACTID,
-        c.ROOMID,
+        r.ROOMNAME,
         c.TENANTID,
         t.FIRSTNAME,
         t.LASTNAME,
@@ -1920,6 +1984,7 @@ BEGIN
     WHERE b.BUILDINGID = p_buildingID
     AND t.ISDELETED = 0
     AND r.ISDELETED = 0
+    AND c.ISDELETED = 0
     AND (
       (control = '1' AND DATEDIFF(c.ENDDATE, CURDATE()) BETWEEN 0 AND 30)
    OR (control = '2' AND c.ENDDATE < CURDATE()) 
@@ -1936,7 +2001,7 @@ BEGIN
 
    SELECT 
       c.CONTRACTID,
-      c.ROOMID,
+      r.ROOMNAME,
       c.TENANTID,
       t.FIRSTNAME,
       t.LASTNAME,
@@ -2051,7 +2116,7 @@ BEGIN
     SET @sql = CONCAT('
         SELECT 
             (@row_num := @row_num + 1) AS STT,
-            R.ROOMID, 
+            R.ROOMNAME, 
             CONCAT(T.FIRSTNAME, '' '', T.LASTNAME) AS TENANTNAME,
             S.SERVICENAME, 
             S.UNITPRICE,
@@ -2094,12 +2159,15 @@ CREATE PROCEDURE add_Registration(
     IN p_room_id VARCHAR(50),
     IN p_registration_date DATETIME,
     IN p_expiration_date DATETIME,
-    IN p_status VARCHAR(50)
+    IN p_status VARCHAR(50),
+    IN p_buildingid VARCHAR(50)
 )
 BEGIN
    DECLARE v_registration_id VARCHAR(50);
-	
+	DECLARE room_id VARCHAR(10);
 	SET v_registration_id = createRegisterID();
+
+	SELECT ROOMID INTO room_id FROM ROOM WHERE BUILDINGID = p_buildingid AND ROOMNAME = p_room_id;
 
     INSERT INTO temporary_registration (
         REGISTRATIONID,
@@ -2111,7 +2179,7 @@ BEGIN
     ) VALUES (
         v_registration_id,
         p_tenant_id,
-        p_room_id,
+        room_id,
         p_registration_date,
         p_expiration_date,
         p_status
@@ -2147,12 +2215,13 @@ BEGIN
     DELETE FROM temporary_registration 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT tr.REGISTRATIONID,tr.ROOMID,tr.TENANTID,t.FIRSTNAME,t.LASTNAME,tr.REGISTRATION_DATE,tr.EXPIRATION_DATE,tr.`STATUS` FROM temporary_registration tr
+    SELECT tr.REGISTRATIONID,r.ROOMNAME,tr.TENANTID,t.FIRSTNAME,t.LASTNAME,tr.REGISTRATION_DATE,tr.EXPIRATION_DATE,tr.`STATUS` FROM temporary_registration tr
 	JOIN room r ON r.ROOMID = tr.ROOMID
 	JOIN tenant t ON t.TENANTID = tr.TENANTID
 	WHERE r.BUILDINGID = p_building_id
 	AND t.ISDELETED = 0
 	AND r.ISDELETED = 0
+    AND tr.ISDELETED = 0
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
 END//
 
@@ -2163,7 +2232,7 @@ BEGIN
 	DELETE FROM TENANT 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT t.TENANTID, t.FIRSTNAME, t.LASTNAME, t.PHONENUMBER, c.ROOMID, r.BUILDINGID
+    SELECT t.TENANTID, t.FIRSTNAME, t.LASTNAME, t.PHONENUMBER, r.ROOMNAME, r.BUILDINGID
     FROM TENANT t
     LEFT JOIN CONTRACT c ON t.TENANTID = c.TENANTID
     LEFT JOIN ROOM r ON c.ROOMID = r.ROOMID

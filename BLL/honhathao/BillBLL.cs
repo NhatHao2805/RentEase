@@ -26,9 +26,9 @@ namespace BLL.honhathao
             }
             return output.Rows[0][0].ToString();
         }
-        public static DataTable BillBLL_load_Bill(string usern, string name,string buildingid)
+        public static DataTable BillBLL_load_Bill(string usern, string name,string buildingid,string control)
         {           
-            return BillAccess.load_Bill(usern, name,buildingid); 
+            return BillAccess.load_Bill(usern, name,buildingid, control); 
         }
         public static string BillBLL_Del_Bill(string billID)
         {

@@ -22,6 +22,7 @@ namespace GUI.honhathao
             this.billid = billid;
             InitializeComponent();
             loadInfo();
+            loadLanguage();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -40,6 +41,39 @@ namespace GUI.honhathao
             this.Close();
         }
 
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "invoice_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "invoice_description":
+                        label22.Text = a.Value;
+                        break;
+                    case "bill_id":
+                        dgv_billdetail.Columns[0].HeaderText = a.Value;
+                        break;
+                    case "record_id":
+                        dgv_billdetail.Columns[1].HeaderText = a.Value;
+                        break;
+                    case "service_name":
+                        dgv_billdetail.Columns[2].HeaderText = a.Value;
+                        break;
+                    case "amount":
+                        dgv_billdetail.Columns[3].HeaderText = a.Value;
+                        break;
+                }
+            }
+        }
+//        bill_id:Bill Id
+//record_id:Id
+//service_name:Service Name
+//amount:Amount
+        //        invoice_title:Invoice Details
+        //invoice_description:Customer payment invoice details
         private void loadInfo()
         {
             DataTable dataTable = BLL.honhathao.BillDetailBLL.load_BillDetail(billid);

@@ -157,7 +157,8 @@ namespace GUI.honhathao
                         SoPhong.Text,
                         ngayDk.Value.ToString("yyyy-MM-dd"),
                         ngayHethan.Value.ToString("yyyy-MM-dd"),
-                        Language.reverseTranslate(TrangThai.Text));
+                        Language.reverseTranslate(TrangThai.Text),
+                        buildingid);
                     
                     MessageBox.Show(result);
                     if(result == "Success")

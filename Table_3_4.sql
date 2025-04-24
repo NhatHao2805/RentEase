@@ -152,6 +152,7 @@ CREATE TABLE BUILDING (
 /*==============================================================*/
 CREATE TABLE ROOM (
     ROOMID              VARCHAR(10) NOT NULL COMMENT 'ID nhà',
+    ROOMNAME			VARCHAR(10) NOT NULL COMMENT 'Tên nhà',
     BUILDINGID           VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
     TYPE                 VARCHAR(50) COMMENT 'Loại nhà',
     FLOOR				INT COMMENT 'Tầng nhà',

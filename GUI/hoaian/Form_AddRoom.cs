@@ -91,7 +91,7 @@ namespace GUI
         private void add_btn_Click(object sender, EventArgs e)
         {
             room.BuildingId = _buildingid;
-            room.Type = type_cb.Text;
+            room.Type = Language.reverseTranslate(type_cb.Text);
             room.Floor = floor_cb.Text;
             room.Convenient = convenient_tb.Text;
             room.Price = price_tb.Text;

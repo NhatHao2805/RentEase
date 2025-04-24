@@ -1,4 +1,10 @@
-﻿helo: Hello, How can i help you?
+﻿bill_id:Bill Id
+record_id:Id
+service_name:Service Name
+amount:Amount
+invoice_title:Invoice Details  
+invoice_description:Customer payment invoice details  
+helo: Hello, How can i help you?
 troli: Assistant
 phongdon: Single Room  
 phongdoi: Double Room  

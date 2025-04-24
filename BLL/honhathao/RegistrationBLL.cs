@@ -21,7 +21,7 @@ namespace BLL.honhathao
         {
             return RegistrationAccess.load_registration(buildingid,name);
         }
-        public static string RegistrationBLL_add_Registration(string p_tenant_id, string RoomId, string registration_date, string expiration_date, string status)
+        public static string RegistrationBLL_add_Registration(string p_tenant_id, string RoomId, string registration_date, string expiration_date, string status, string buildingid)
         {
             if(DateTime.TryParse(registration_date, out DateTime parsedDate))
             {
@@ -44,7 +44,7 @@ namespace BLL.honhathao
                 return "Registration date cannot be after expiration date.";
             }
 
-            return RegistrationAccess.add_Registration(p_tenant_id, RoomId, registration_date, expiration_date, status);
+            return RegistrationAccess.add_Registration(p_tenant_id, RoomId, registration_date, expiration_date, status, buildingid);
         }
     }
 }

@@ -41,7 +41,7 @@ namespace BLL
             return AssetAccess.addAsset(assets, buildingid);
         }
 
-        public static string UpdateAsset(Assets assets)
+        public static string UpdateAsset(Assets assets, string buildingid)
         {
 
             if (string.IsNullOrEmpty(assets.AssetName))
@@ -61,7 +61,7 @@ namespace BLL
                 }
             }
 
-            return AssetAccess.updateAsset(assets);
+            return AssetAccess.updateAsset(assets, buildingid);
         }
 
         public static DataTable LoadRoomID(string buildingid)

@@ -79,7 +79,7 @@ namespace DAL.honhathao
             }
             return output;
         }
-        public static String add_Registration(string p_tenant_id, string RoomId, string registration_date, string expiration_date, string status)
+        public static String add_Registration(string p_tenant_id, string RoomId, string registration_date, string expiration_date, string status, string buildingid)
         {
             try
             {
@@ -94,6 +94,7 @@ namespace DAL.honhathao
                         command.Parameters.AddWithValue("@p_registration_date", registration_date);
                         command.Parameters.AddWithValue("@p_expiration_date", expiration_date);
                         command.Parameters.AddWithValue("@p_status", status);
+                        command.Parameters.AddWithValue("@p_buildingid", buildingid);
                         command.ExecuteNonQuery();
                     }
                 }

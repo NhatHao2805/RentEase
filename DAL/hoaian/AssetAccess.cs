@@ -117,7 +117,7 @@ namespace DAL
             }
         }
 
-        public static string updateAsset(Assets assets)
+        public static string updateAsset(Assets assets, string buildingid)
         {
             try
             {
@@ -129,12 +129,13 @@ namespace DAL
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                        command.Parameters.AddWithValue("@p_roomid", assets.RoomId);
                         command.Parameters.AddWithValue("@p_assetid", assets.AssetId);
+                        command.Parameters.AddWithValue("@p_roomid", assets.RoomId);
                         command.Parameters.AddWithValue("@p_assetname", assets.AssetName);
                         command.Parameters.AddWithValue("@p_price", assets.Price);
-                        command.Parameters.AddWithValue("@p_usedate", assets.UseDate);
                         command.Parameters.AddWithValue("@p_status", assets.Status);
+                        command.Parameters.AddWithValue("@p_usedate", assets.UseDate);
+                        command.Parameters.AddWithValue("@p_buildingid", buildingid);
 
                         command.ExecuteNonQuery();
                         return "Update Successfully";

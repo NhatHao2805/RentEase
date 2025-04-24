@@ -1,4 +1,10 @@
-﻿helo: Xin chào, tôi có thể giúp gì cho bạn?
+﻿bill_id:Mã hóa đơn
+record_id:Mã bản ghi
+service_name:Tên dịch vụ
+amount:Số tiền
+invoice_title:Chi tiết hóa đơn  
+invoice_description:Chi tiết hóa đơn thanh toán của khách hàng  
+helo: Xin chào, tôi có thể giúp gì cho bạn?
 troli: Trợ lí
 phongdon: Phòng đơn  
 phongdoi: Phòng đôi  
