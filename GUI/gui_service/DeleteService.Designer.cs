@@ -82,7 +82,7 @@
             this.guna2GradientPanel12.Controls.Add(this.guna2CustomGradientPanel18);
             this.guna2GradientPanel12.Controls.Add(this.label22);
             this.guna2GradientPanel12.Controls.Add(this.label23);
-            this.guna2GradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(215)))), ((int)(((byte)(255)))));
+            this.guna2GradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(235)))), ((int)(((byte)(220)))));
             this.guna2GradientPanel12.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
             this.guna2GradientPanel12.Location = new System.Drawing.Point(2, 1);
             this.guna2GradientPanel12.Name = "guna2GradientPanel12";
@@ -98,9 +98,10 @@
             this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
+            this.exitButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.HoverState.FillColor = System.Drawing.Color.Red;
             this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
             this.exitButton.Location = new System.Drawing.Point(520, 0);
             this.exitButton.Name = "exitButton";
@@ -297,14 +298,14 @@
             // 
             // DeleteService
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(554, 380);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2GradientPanel12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DeleteService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteService";
             this.Load += new System.EventHandler(this.DeleteService_Load);
             this.guna2GradientPanel12.ResumeLayout(false);

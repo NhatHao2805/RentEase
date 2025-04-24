@@ -64,7 +64,7 @@ namespace DAL
             {
                 if (conn == null) return price;
 
-                using (MySqlCommand command = new MySqlCommand("Select PRICE from room where ROOMID = @roomid", conn))
+                using (MySqlCommand command = new MySqlCommand("Select PRICE from room where ROOMID = @roomid AND ISDELETED = 0", conn))
                 {
                     command.Parameters.AddWithValue("@roomid", roomid);
 
@@ -92,7 +92,7 @@ namespace DAL
                 using (MySqlCommand command = new MySqlCommand("" +
                     "Select ROOMID from room r " +
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
-                    "where b.ADDRESS = @addr", conn))
+                    "where b.ADDRESS = @addr AND ISDELETED = 0", conn))
                 {
                     command.Parameters.AddWithValue("@addr", addressBuilding);
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -124,7 +124,7 @@ namespace DAL
                 using (MySqlCommand command = new MySqlCommand("" +
                     "Select ROOMID from room r " +
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
-                    "where b.BUILDINGID = @addr", conn))
+                    "where b.BUILDINGID = @addr AND r.ISDELETED = 0", conn))
                 {
                     command.Parameters.AddWithValue("@addr", buildingid);
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -153,7 +153,7 @@ namespace DAL
                 if (conn == null) return address;
                 using (MySqlCommand command = new MySqlCommand("" +
                     "Select ADDRESS from building " +
-                    "where USERNAME = @usern", conn))
+                    "where USERNAME = @usern AND ISDELETED = 0", conn))
                 {
 
                     command.Parameters.AddWithValue("@usern", username);

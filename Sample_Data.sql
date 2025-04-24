@@ -1,6 +1,6 @@
 -- 1 USER
 INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBER, ADDRESS) VALUES
-('ad', 'Nguyễn Văn An', 'ad', 'admin1@rentease.com', '1980-05-15', 'nam', '0912345678', '123 Đường Lê Lợi, Q1, TP.HCM'),
+('ad', 'Nguyễn Văn An', 'ad', 'hoaianduong2411@gmail.com', '1980-05-15', 'nam', '0912345678', '123 Đường Lê Lợi, Q1, TP.HCM'),
 ('manager02', 'Trần Thị Bình', 'manager@123', 'manager2@rentease.com', '1985-08-20', 'nu', '0987654321', '456 Đường Nguyễn Huệ, Q1, TP.HCM'),
 ('owner03', 'Lê Hoàng Cường', 'owner@123', 'owner3@rentease.com', '1975-11-10', 'nam', '0909123456', '789 Đường Pasteur, Q3, TP.HCM'),
 ('staff04', 'Phạm Thị Dung', 'staff@123', 'staff4@rentease.com', '1990-03-25', 'nu', '0911222333', '321 Đường CMT8, Q10, TP.HCM'),
@@ -265,4 +265,3 @@ INSERT INTO VEHICLE_UNITPRICE (VEHICLE_UNITPRICE_ID, UNITPRICE, TYPE) VALUES
 ('VUP001', 500000, 'xeoto'),
 ('VUP002', 100000, 'xemay'),
 ('VUP003', 50000, 'xedap');
--- select * from parking;

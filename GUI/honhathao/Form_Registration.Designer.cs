@@ -70,7 +70,7 @@
             this.TenKhachHang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TenKhachHang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TenKhachHang.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.TenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.TenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TenKhachHang.ItemHeight = 30;
             this.TenKhachHang.Location = new System.Drawing.Point(170, 11);
             this.TenKhachHang.Name = "TenKhachHang";
@@ -89,7 +89,7 @@
             this.SoPhong.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SoPhong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.SoPhong.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.SoPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.SoPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.SoPhong.ItemHeight = 30;
             this.SoPhong.Location = new System.Drawing.Point(170, 11);
             this.SoPhong.Name = "SoPhong";
@@ -108,7 +108,7 @@
             this.TrangThai.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TrangThai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TrangThai.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.TrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.TrangThai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.TrangThai.ItemHeight = 30;
             this.TrangThai.Location = new System.Drawing.Point(170, 11);
             this.TrangThai.Name = "TrangThai";
@@ -375,11 +375,12 @@
             this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
+            this.exitButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
-            this.exitButton.Location = new System.Drawing.Point(522, 0);
+            this.exitButton.Location = new System.Drawing.Point(521, 3);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(30, 30);
             this.exitButton.TabIndex = 20;
@@ -414,9 +415,9 @@
             this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(95, 39);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(91, 20);
+            this.label22.Size = new System.Drawing.Size(176, 20);
             this.label22.TabIndex = 122;
-            this.label22.Text = "Đăng ký mới";
+            this.label22.Text = "Hồ sơ đăng ký lưu trú mới";
             // 
             // label23
             // 
@@ -424,19 +425,19 @@
             this.label23.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
             this.label23.Location = new System.Drawing.Point(93, 9);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(103, 29);
+            this.label23.Size = new System.Drawing.Size(184, 29);
             this.label23.TabIndex = 123;
-            this.label23.Text = "Đăng ký";
+            this.label23.Text = "Đăng ký lưu trú";
             // 
             // Form_Registration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(554, 525);
             this.Controls.Add(this.guna2GradientPanel12);
             this.Controls.Add(this.guna2GradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel6.ResumeLayout(false);

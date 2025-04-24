@@ -182,7 +182,7 @@ namespace GUI
             {
                 MessageBox.Show("Không tìm thấy bãi đậu xe cho loại xe đã chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            areaid_cb.SelectedItem = ParkingAreaBLL.GetAreaIdByVehicleId(infor.VehicleID).Rows[0]["AREAID"].ToString();
+            //areaid_cb.SelectedItem = ParkingAreaBLL.GetAreaIdByVehicleId(infor.VehicleID).Rows[0]["AREAID"].ToString();
 
             unitpriceid_tb.SelectedItem = VehicleBLL.GetVehicleUnitPriceIdByType(Language.reverseTranslate(type_cb.Text)).ToString();
             if (type_cb.SelectedItem == null) return;

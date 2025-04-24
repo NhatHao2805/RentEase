@@ -15,7 +15,7 @@ namespace DAL.honhathao
             using (MySqlConnection conn = MySqlConnectionData.Connect())
             {
                 if (conn == null) return name;
-                using (MySqlCommand command = new MySqlCommand("Select TENANTID from tenant", conn))
+                using (MySqlCommand command = new MySqlCommand("Select TENANTID from tenant WHERE ISDELETED = 0", conn))
                 {
 
                     using (MySqlDataReader reader = command.ExecuteReader())

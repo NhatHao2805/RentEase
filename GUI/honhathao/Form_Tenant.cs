@@ -133,6 +133,7 @@ namespace GUI.honhathao
                     else
                     {
                         MessageBox.Show(result, "Error", MessageBoxButtons.OK);
+                        this.Close();
                     }
                     break;
                 case 1:

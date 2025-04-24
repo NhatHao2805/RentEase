@@ -109,7 +109,7 @@ namespace DAL.honhathao
                         conn.Open();
                     }
 
-                    using (MySqlCommand command = new MySqlCommand("SELECT * FROM BUILDING WHERE USERNAME=@username", conn))
+                    using (MySqlCommand command = new MySqlCommand("SELECT * FROM BUILDING WHERE USERNAME=@username AND ISDELETED = 0", conn))
                     {
                         command.Parameters.AddWithValue("username", username);
                         using (MySqlDataReader reader = command.ExecuteReader())

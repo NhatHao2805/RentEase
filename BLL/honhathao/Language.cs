@@ -70,14 +70,15 @@ namespace BLL
         }
         public static string translate(string key)
         {
-            if (languages.ContainsKey(key))
+           
+            foreach (KeyValuePair<string, string> kvp in languages)
             {
-                return languages[key];
-            }
-            else
-            {
-                return "null";
-            }
+                if (kvp.Key.Equals(key))
+                {
+                    return kvp.Value;
+                }
+            } 
+            return "-1";
         }
         public static string reverseTranslate(string value)
         {

@@ -115,7 +115,7 @@ namespace DAL.DAL_Service
             {
                 if (conn == null) return list;
 
-                string query = "SELECT SERVICEID, SERVICENAME, UNITPRICE FROM service";
+                string query = "SELECT SERVICEID, SERVICENAME, UNITPRICE FROM service WHERE ISDELETED = 0;";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     using (MySqlDataReader reader = cmd.ExecuteReader())

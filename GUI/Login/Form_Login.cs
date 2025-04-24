@@ -152,6 +152,17 @@ namespace GUI
         {
 
         }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //New HoaiAn
+        private void dmk_lb_Click(object sender, EventArgs e)
+        {
+            Form_ForgotPassword forgotPasswordForm = new Form_ForgotPassword();
+            forgotPasswordForm.ShowDialog();
+        }
     }
     
 }

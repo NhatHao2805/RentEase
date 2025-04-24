@@ -86,6 +86,7 @@
             this.price_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.price_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.price_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.price_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.price_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.price_tb.Location = new System.Drawing.Point(170, 11);
             this.price_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -110,6 +111,7 @@
             this.area_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.area_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.area_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.area_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.area_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.area_tb.Location = new System.Drawing.Point(170, 11);
             this.area_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -131,15 +133,16 @@
             this.type_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.type_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.type_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.type_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.type_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.type_cb.ItemHeight = 30;
-            this.type_cb.Location = new System.Drawing.Point(170, 11);
+            this.type_cb.Location = new System.Drawing.Point(170, 7);
             this.type_cb.Name = "type_cb";
             this.type_cb.ShadowDecoration.BorderRadius = 10;
             this.type_cb.ShadowDecoration.Enabled = true;
             this.type_cb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.type_cb.Size = new System.Drawing.Size(317, 36);
             this.type_cb.TabIndex = 45;
+            this.type_cb.SelectedIndexChanged += new System.EventHandler(this.type_cb_SelectedIndexChanged);
             // 
             // DangO_chbox
             // 
@@ -285,6 +288,7 @@
             this.convenient_tb.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.convenient_tb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.convenient_tb.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.convenient_tb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.convenient_tb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.convenient_tb.Location = new System.Drawing.Point(170, 11);
             this.convenient_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -296,6 +300,7 @@
             this.convenient_tb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.convenient_tb.Size = new System.Drawing.Size(317, 36);
             this.convenient_tb.TabIndex = 73;
+            this.convenient_tb.TextChanged += new System.EventHandler(this.convenient_tb_TextChanged);
             // 
             // floor_cb
             // 
@@ -306,15 +311,16 @@
             this.floor_cb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.floor_cb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.floor_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.floor_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.floor_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.floor_cb.ItemHeight = 30;
-            this.floor_cb.Location = new System.Drawing.Point(170, 11);
+            this.floor_cb.Location = new System.Drawing.Point(170, 7);
             this.floor_cb.Name = "floor_cb";
             this.floor_cb.ShadowDecoration.BorderRadius = 10;
             this.floor_cb.ShadowDecoration.Enabled = true;
             this.floor_cb.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.floor_cb.Size = new System.Drawing.Size(317, 36);
             this.floor_cb.TabIndex = 76;
+            this.floor_cb.SelectedIndexChanged += new System.EventHandler(this.floor_cb_SelectedIndexChanged);
             // 
             // guna2GradientPanel12
             // 
@@ -339,9 +345,10 @@
             this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
+            this.exitButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
             this.exitButton.Location = new System.Drawing.Point(522, 2);
             this.exitButton.Name = "exitButton";
@@ -498,6 +505,7 @@
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(75, 25);
             this.guna2HtmlLabel3.TabIndex = 141;
             this.guna2HtmlLabel3.Text = "Diện tích:";
+            this.guna2HtmlLabel3.Click += new System.EventHandler(this.guna2HtmlLabel3_Click);
             // 
             // guna2GradientPanel4
             // 

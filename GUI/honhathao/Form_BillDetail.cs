@@ -53,5 +53,10 @@ namespace GUI.honhathao
                 }
             }
         }
+
+        private void dgv_billdetail_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

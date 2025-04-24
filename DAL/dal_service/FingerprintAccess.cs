@@ -105,7 +105,7 @@ namespace DAL
             {
                 MySqlConnection conn = MySqlConnectionData.Connect();
 
-                string query = "SELECT FINGERPRINT_IMAGE FROM FINGERPRINT WHERE FINGERID = @fingerid";
+                string query = "SELECT FINGERPRINT_IMAGE FROM FINGERPRINT WHERE FINGERID = @fingerid AND ISDELETED = 0";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@fingerid", fingerprintID);
 
@@ -229,7 +229,7 @@ namespace DAL
                         conn.Open();
                     }
 
-                    string query = "SELECT FINGERPRINT_IMAGE FROM fingerprints WHERE FingerID = @FingerprintID";
+                    string query = "SELECT FINGERPRINT_IMAGE FROM fingerprints WHERE FingerID = @FingerprintID AND ISDELETED = 0";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -288,7 +288,7 @@ namespace DAL
             {
                 MySqlConnection conn = MySqlConnectionData.Connect();
 
-                string query = "SELECT IMAGE_NAME FROM FINGERPRINTS WHERE FINGERID = @fingerid";
+                string query = "SELECT IMAGE_NAME FROM FINGERPRINTS WHERE FINGERID = @fingerid AND ISDELETED = 0";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@fingerid", fingerprintID);
 
