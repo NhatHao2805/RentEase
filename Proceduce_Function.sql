@@ -245,7 +245,7 @@ BEGIN
    DECLARE v_startdate VARCHAR(50);       -- Sửa thành DATE
    DECLARE v_enddate VARCHAR(50);         -- Sửa thành DATE
    
-		SET p_tenantID = (
+	SET p_tenantID = (
 			SELECT t.TENANTID FROM tenant t
 			JOIN contract c ON c.TENANTID = t.TENANTID
 			JOIN room r ON r.ROOMID = c.ROOMID
@@ -255,19 +255,17 @@ BEGIN
     SET v_start_date = STR_TO_DATE(CONCAT('1/', p_month, '/', YEAR(CURDATE())), '%d/%m/%Y');
     SET v_end_date = LAST_DAY(v_start_date);
     SET v_now = Date(NOW());
-    SET new_ID = createFigureID();
     
+    SET new_ID = createFigureID();
     INSERT INTO WATER_ELECTRICITY (FIGUREID, UNITPRICEID, TENANTID, OLDFIGURE, NEWFIGURE, START_DATE, END_DATE,RECORD_DATE,TYPE,UNIT)
     VALUES (new_ID, 'UP001',p_tenantID,p_o_e,  p_n_e, v_start_date,v_end_date,v_now,'ELECTRICITY','kWh');
     
-    -- Thêm dữ liệu nước
     SET new_ID_0 = createFigureID();
     INSERT INTO WATER_ELECTRICITY (FIGUREID, UNITPRICEID, TENANTID, OLDFIGURE, NEWFIGURE, START_DATE, END_DATE,RECORD_DATE,TYPE,UNIT)
     VALUES (new_ID_0, 'UP002',  p_tenantID,  p_o_w, p_n_w, v_start_date, v_end_date,v_now,'WATER','m3');
 
    SET new_id_2 = createBillID();
 
-   -- Sửa @new_id thành new_id
    INSERT INTO billdetail (BILLID, ID, AMOUNT)
    SELECT new_id_2, us.SERVICEID, s.UNITPRICE 
    FROM use_service us
@@ -285,7 +283,7 @@ BEGIN
    FROM billdetail
    WHERE BILLID = new_id_2;
 
-   SET v_startdate = CURDATE();    -- Bỏ hàm Date() thừa
+   SET v_startdate = CURDATE();    
    SET v_enddate = DATE_ADD(CURDATE(), INTERVAL 30 DAY);
     
    INSERT INTO bill (BILLID, TENANTID, TOTAL, START_DATE, END_DATE)
@@ -384,6 +382,16 @@ BEGIN
     SET new_id = CONCAT('HD', LPAD(number_part, 3, '0'));
     RETURN new_id;
 END//
+
+CREATE PROCEDURE load_tenant_by_roomid(
+	IN p_room_id VARCHAR(20)
+)
+BEGIN
+   SELECT t.TENANTID,t.FIRSTNAME,t.LASTNAME FROM tenant t
+	JOIN contract c ON c.TENANTID = t.TENANTID
+	Join room r on r.ROOMID = c.ROOMID
+	WHERE r.ROOMNAME = p_room_id;
+END //
 
 CREATE PROCEDURE load_bill(
 	IN p_user VARCHAR(20),
