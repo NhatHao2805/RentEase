@@ -1,53 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\",
+  "WorkspaceRootPath": "D:\\RentEaseTDT\\RentEase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease-hoaian\\rentease-hoaian\\gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease\\gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease-hoaian\\rentease-hoaian\\gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\gui\\building\\form_building.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\building\\form_building.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\building\\form_building.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease-hoaian\\rentease-hoaian\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease-hoaian\\rentease-hoaian\\gui\\gui_service\\feedbackmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\gui_service\\feedbackmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\gui_service\\feedbackmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|d:\\renteasetdt\\rentease-hoaian\\rentease-hoaian\\gui\\quanlynha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\quanlynha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|d:\\renteasetdt\\rentease-hoaian\\rentease-hoaian\\dal\\dal_service\\feedbackdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|D:\\RentEaseTDT\\RentEase\\dal\\dal_service\\feedbackdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\dal_service\\feedbackdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|d:\\renteasetdt\\rentease-hoaian\\rentease-hoaian\\bll\\bll_service\\feedbackbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|D:\\RentEaseTDT\\RentEase\\bll\\bll_service\\feedbackbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\bll_service\\feedbackbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\gui\\login\\form_forgotpassword.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\login\\form_forgotpassword.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\login\\form_forgotpassword.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\gui\\login\\form_forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\login\\form_forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\login\\form_forgotpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\gui\\building\\form_building.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|D:\\RentEaseTDT\\RentEase\\gui\\building\\form_building.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\building\\form_building.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -64,28 +64,26 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
               "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs [Design]",
-              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
+              "RelativeToolTip": "..\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-20T08:12:34.966Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\QuanLyNha.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\QuanLyNha.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.cs",
               "ViewState": "AgIAADgKAAAAAAAAAAAjwD8KAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-20T08:13:45.792Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -111,11 +109,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "FingerprintManagementForm.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\gui_service\\FingerprintManagementForm.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\gui_service\\FingerprintManagementForm.cs",
               "RelativeDocumentMoniker": "GUI\\gui_service\\FingerprintManagementForm.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\gui_service\\FingerprintManagementForm.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\gui_service\\FingerprintManagementForm.cs",
               "RelativeToolTip": "GUI\\gui_service\\FingerprintManagementForm.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-22T17:12:22.393Z",
               "EditorCaption": ""
@@ -124,115 +122,106 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "FingerprintManagementForm.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\gui_service\\FingerprintManagementForm.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\gui_service\\FingerprintManagementForm.cs",
               "RelativeDocumentMoniker": "GUI\\gui_service\\FingerprintManagementForm.cs",
               "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\gui_service\\FingerprintManagementForm.cs [Design]",
-              "RelativeToolTip": "GUI\\gui_service\\FingerprintManagementForm.cs [Design]",
+              "RelativeToolTip": "..\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\gui_service\\FingerprintManagementForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T17:12:06.291Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-22T17:12:06.291Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "QuanLyNha.Designer.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\QuanLyNha.Designer.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\QuanLyNha.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.Designer.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\QuanLyNha.Designer.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\QuanLyNha.Designer.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.Designer.cs",
               "ViewState": "AgIAAEESAAAAAAAAAAAkwEgSAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T17:01:20.301Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T17:01:20.301Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "FeedbackDAL.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\DAL\\dal_service\\FeedbackDAL.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\DAL\\dal_service\\FeedbackDAL.cs",
               "RelativeDocumentMoniker": "DAL\\dal_service\\FeedbackDAL.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\DAL\\dal_service\\FeedbackDAL.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase\\DAL\\dal_service\\FeedbackDAL.cs",
               "RelativeToolTip": "DAL\\dal_service\\FeedbackDAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAArwAsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T17:00:39.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T17:00:39.894Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "FeedbackBLL.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\BLL\\bll_service\\FeedbackBLL.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\BLL\\bll_service\\FeedbackBLL.cs",
               "RelativeDocumentMoniker": "BLL\\bll_service\\FeedbackBLL.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\BLL\\bll_service\\FeedbackBLL.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase\\BLL\\bll_service\\FeedbackBLL.cs",
               "RelativeToolTip": "BLL\\bll_service\\FeedbackBLL.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAtwBkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T16:55:52.47Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T16:55:52.47Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "FeedbackManagementForm.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\gui_service\\FeedbackManagementForm.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\gui_service\\FeedbackManagementForm.cs",
               "RelativeDocumentMoniker": "GUI\\gui_service\\FeedbackManagementForm.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\gui_service\\FeedbackManagementForm.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\gui_service\\FeedbackManagementForm.cs",
               "RelativeToolTip": "GUI\\gui_service\\FeedbackManagementForm.cs",
               "ViewState": "AgIAAIQCAAAAAAAAAAAAwNICAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T16:55:42.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T16:55:42.623Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Form_ForgotPassword.Designer.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Login\\Form_ForgotPassword.Designer.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Login\\Form_ForgotPassword.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Login\\Form_ForgotPassword.Designer.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Login\\Form_ForgotPassword.Designer.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Login\\Form_ForgotPassword.Designer.cs",
               "RelativeToolTip": "GUI\\Login\\Form_ForgotPassword.Designer.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAABMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T14:55:31.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T14:55:31.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Form_ForgotPassword.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Login\\Form_ForgotPassword.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Login\\Form_ForgotPassword.cs",
               "RelativeDocumentMoniker": "GUI\\Login\\Form_ForgotPassword.cs",
               "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Login\\Form_ForgotPassword.cs [Design]",
-              "RelativeToolTip": "GUI\\Login\\Form_ForgotPassword.cs [Design]",
+              "RelativeToolTip": "..\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Login\\Form_ForgotPassword.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T14:55:30.451Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-22T14:55:30.451Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "Form_Building.Designer.cs",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Building\\Form_Building.Designer.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Building\\Form_Building.Designer.cs",
               "RelativeDocumentMoniker": "GUI\\Building\\Form_Building.Designer.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Building\\Form_Building.Designer.cs",
+              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\Building\\Form_Building.Designer.cs",
               "RelativeToolTip": "GUI\\Building\\Form_Building.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T14:55:23.242Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T14:55:23.242Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Form_Building.cs [Design]",
-              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Building\\Form_Building.cs",
+              "DocumentMoniker": "D:\\RentEaseTDT\\RentEase\\GUI\\Building\\Form_Building.cs",
               "RelativeDocumentMoniker": "GUI\\Building\\Form_Building.cs",
               "ToolTip": "D:\\RentEaseTDT\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Building\\Form_Building.cs [Design]",
-              "RelativeToolTip": "GUI\\Building\\Form_Building.cs [Design]",
+              "RelativeToolTip": "..\\RentEase-HoaiAn\\RentEase-HoaiAn\\GUI\\Building\\Form_Building.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T14:55:21.269Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-22T14:55:21.269Z"
             }
           ]
         }
