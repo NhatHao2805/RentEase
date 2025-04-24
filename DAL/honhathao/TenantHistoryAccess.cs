@@ -81,7 +81,7 @@ namespace DAL.honhathao
             return "Success";
         }
 
-        public static void auto_AddTenantHistory(string contractid, string tenantid, string roomid, string startdate, string enddate)
+        public static void auto_AddTenantHistory(string contractid, string tenantid, string roomid, string startdate, string enddate, string buildingid)
         {
             //try
             //{
@@ -96,6 +96,7 @@ namespace DAL.honhathao
                     command.Parameters.AddWithValue("@p_ROOMID", roomid);
                     command.Parameters.AddWithValue("@p_STARTDATE",DateTime.Parse(startdate));
                     command.Parameters.AddWithValue("@p_ENDDATE", DateTime.Parse(enddate));
+                    command.Parameters.AddWithValue("@p_buildingid", buildingid);
                     command.ExecuteNonQuery();
                 }
             }

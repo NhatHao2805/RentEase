@@ -138,6 +138,7 @@
             this.SapHetHan_chbox.UncheckedState.BorderRadius = 0;
             this.SapHetHan_chbox.UncheckedState.BorderThickness = 0;
             this.SapHetHan_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.SapHetHan_chbox.CheckedChanged += new System.EventHandler(this.SapHetHan_chbox_CheckedChanged);
             // 
             // DaHetHan_chbox
             // 
@@ -155,6 +156,7 @@
             this.DaHetHan_chbox.UncheckedState.BorderRadius = 0;
             this.DaHetHan_chbox.UncheckedState.BorderThickness = 0;
             this.DaHetHan_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DaHetHan_chbox.CheckedChanged += new System.EventHandler(this.DaHetHan_chbox_CheckedChanged);
             // 
             // DangO_chbox
             // 
@@ -172,6 +174,7 @@
             this.DangO_chbox.UncheckedState.BorderRadius = 0;
             this.DangO_chbox.UncheckedState.BorderThickness = 0;
             this.DangO_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangO_chbox.CheckedChanged += new System.EventHandler(this.DangO_chbox_CheckedChanged);
             // 
             // DangCoc_chbox
             // 
@@ -189,6 +192,7 @@
             this.DangCoc_chbox.UncheckedState.BorderRadius = 0;
             this.DangCoc_chbox.UncheckedState.BorderThickness = 0;
             this.DangCoc_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangCoc_chbox.CheckedChanged += new System.EventHandler(this.DangCoc_chbox_CheckedChanged);
             // 
             // DangKT_chbox
             // 
@@ -206,6 +210,7 @@
             this.DangKT_chbox.UncheckedState.BorderRadius = 0;
             this.DangKT_chbox.UncheckedState.BorderThickness = 0;
             this.DangKT_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangKT_chbox.CheckedChanged += new System.EventHandler(this.DangKT_chbox_CheckedChanged);
             // 
             // DangNoTien_chbox
             // 
@@ -240,6 +245,7 @@
             this.DangTrong_chbox.UncheckedState.BorderRadius = 0;
             this.DangTrong_chbox.UncheckedState.BorderThickness = 0;
             this.DangTrong_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.DangTrong_chbox.CheckedChanged += new System.EventHandler(this.DangTrong_chbox_CheckedChanged);
             // 
             // price_tb
             // 

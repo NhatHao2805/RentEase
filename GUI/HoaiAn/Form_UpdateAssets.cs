@@ -118,7 +118,7 @@ namespace GUI
             assets.UseDate = useDate_dpk.Value.ToString("yyyy-MM-dd");
             assets.Status = Language.reverseTranslate(status_cb.SelectedItem.ToString());
 
-            string check = AssetBLL.UpdateAsset(assets);
+            string check = AssetBLL.UpdateAsset(assets, _buildingid);
 
             switch (check)
             {

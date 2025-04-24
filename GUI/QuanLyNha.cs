@@ -47,7 +47,7 @@ namespace GUI
         private Size size_component_quanlytaichinh_1 = new Size(10, 10);
         private Point location_component_quanlytaichinh = new Point(12, 86);
         private Point location_component_quanlytaichinh_1 = new Point(30, 30);
-        DataTable data = null;
+        DataTable datakey = null;
 
         public quanlynha(Form_Login form1, int index)
         {
@@ -63,7 +63,9 @@ namespace GUI
             this.form1 = form1;
             this.index = index;
             load_Building_By_User();
+            loadInitLanguage();
             loadInfo();
+
         }
 
         private void loadInfo()
@@ -79,8 +81,8 @@ namespace GUI
             loadBill(null);
 
             LoadDichVu();
-            loadInitLanguage();
             load_Vehicle();
+            update_LSTN();
             loadLanguage();
         }
 
@@ -316,36 +318,14 @@ namespace GUI
             tabQuanLy.Location = tabQL;
             //tabQuanLy.Size = size_tabQL;
 
-            dklt4.Location = tabHD;
+            dklt444.Location = tabHD;
             //dklt4.Size = size_tabHD;
 
             tabControl1.Location = tabHD;
             //tabControl1.Size = size_tabHD;
         }
 
-        private void load_Building_By_User()
-        {
-            if (data != null)
-            {
-                data.Clear();
-                listBuildingID.Items.Clear();
-            }
-            data = BuildingBLL.BuildingBLL_load_Building_By_User(form1.taikhoan.Username);
-            for (int i = 0; i < data.Rows.Count; i++)
-            {
-                listBuildingID.Items.Add(data.Rows[i][0].ToString());
-            }
-            if (listBuildingID.Items.Count == 0)
-            {
-                return;
-            }
-            else
-            {
-                listBuildingID.SelectedIndex = index;
-                buildingKey.Text = data.Rows[0][1].ToString();
-            }
-
-        }
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -435,26 +415,7 @@ namespace GUI
         }
 
 
-
-
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-            DataTable tmp = TenantHistoryBLL.TenantHistoryBLL_count_TenantHistory(listBuildingID.Text);
-            Console.WriteLine(tmp.Rows.Count);
-            if (tmp != null)
-            {
-                for (int i = 0; i < tmp.Rows.Count; i++)
-                {
-                    TenantHistoryBLL.TenantHistoryBLL_auto_AddTenantHistory(
-                        tmp.Rows[i][0].ToString(),
-                        tmp.Rows[i][2].ToString(),
-                        tmp.Rows[i][1].ToString(),
-                        tmp.Rows[i][4].ToString(),
-                        tmp.Rows[i][5].ToString());
-                }
-            }
-        }
+        
 
         private void addTenantHistory()
         {
@@ -469,7 +430,8 @@ namespace GUI
                         tmp.Rows[i][2].ToString(),
                         tmp.Rows[i][1].ToString(),
                         tmp.Rows[i][4].ToString(),
-                        tmp.Rows[i][5].ToString());
+                        tmp.Rows[i][5].ToString(),
+                        listBuildingID.Text);
                 }
             }
         }
@@ -556,7 +518,7 @@ namespace GUI
         private void listBuildingID_SelectionChangeCommitted(object sender, EventArgs e)
         {
             clearAllDataGridView();
-            buildingKey.Text = data.Rows[listBuildingID.SelectedIndex][1].ToString();
+            buildingKey.Text = datakey.Rows[listBuildingID.SelectedIndex][1].ToString();
             loadInfo();
         }
         //private void timer1_Tick(object sender, EventArgs e)
@@ -637,81 +599,81 @@ namespace GUI
 
         private void hd1_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 0;
+            dklt444.SelectedIndex = 0;
         }
         private void hd2_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 0;
+            dklt444.SelectedIndex = 0;
 
         }
         private void hd3_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 0;
+            dklt444.SelectedIndex = 0;
 
         }
         private void hd4_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 0;
+            dklt444.SelectedIndex = 0;
 
         }
         private void lstn1_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 1;
+            dklt444.SelectedIndex = 1;
 
         }
         private void lstn2_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 1;
+            dklt444.SelectedIndex = 1;
 
         }
         private void lstn3_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 1;
+            dklt444.SelectedIndex = 1;
 
         }
         private void lstn4_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 1;
+            dklt444.SelectedIndex = 1;
 
         }
         private void ttkt1_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 2;
+            dklt444.SelectedIndex = 2;
 
         }
         private void ttkt2_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 2;
+            dklt444.SelectedIndex = 2;
 
         }
         private void ttkt3_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 2;
+            dklt444.SelectedIndex = 2;
 
         }
         private void ttkt4_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 2;
+            dklt444.SelectedIndex = 2;
 
         }
         private void dklt1_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 3;
+            dklt444.SelectedIndex = 3;
 
         }
         private void dklt2_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 3;
+            dklt444.SelectedIndex = 3;
 
         }
         private void dklt3_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 3;
+            dklt444.SelectedIndex = 3;
 
         }
         private void dklt4_Click(object sender, EventArgs e)
         {
-            dklt4.SelectedIndex = 3;
+            dklt444.SelectedIndex = 3;
 
         }
         private void button15_Click(object sender, EventArgs e)
@@ -743,8 +705,9 @@ namespace GUI
                 {
                     TenantBLL.TenantBLL_del_Tenant(dgv_Tenant.SelectedRows[0].Cells[0].Value.ToString());
                     MessageBox.Show("Xóa thành công");
-                    loadTenant(null);
+                    //loadTenant(null);
                 }
+                loadInfo();
             }
             catch (Exception ex)
             {
@@ -792,7 +755,7 @@ namespace GUI
                 dgv_QLCSVC.DataSource = null;
                 dgv_QLCSVC.DataSource = filteredData;
 
-                dgv_QLCSVC.Columns["RoomID"].DisplayIndex = 0;
+                dgv_QLCSVC.Columns["ROOMNAME"].DisplayIndex = 0;
                 dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
                 dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
                 dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
@@ -937,9 +900,8 @@ namespace GUI
         {
             DataGridViewRow data = null;
             Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username);
-            //f.ShowDialog();
-            OverlayManager.ShowWithOverlay(this, f);
-
+            f.ShowDialog();
+            //OverlayManager.ShowWithOverlay(this, f);
             loadTenant(null);
         }
         private void FilterAssets(string priceSort, string nameSort)
@@ -997,7 +959,7 @@ namespace GUI
                 UseDate = selectedRow.Cells["Use_Date"].Value?.ToString(),
                 Status = selectedRow.Cells["Status"].Value?.ToString()
             };
-            Form_UpdateAssets updateAssets = new Form_UpdateAssets(form1.taikhoan.Username, selectedAsset, listBuildingID.SelectedItem.ToString());
+            Form_UpdateAssets updateAssets = new Form_UpdateAssets(form1.taikhoan.Username, selectedAsset, listBuildingID.Text);
 
             OverlayManager.ShowWithOverlay(this, updateAssets);
             if (updateAssets.DialogResult == DialogResult.OK)
@@ -1275,7 +1237,7 @@ namespace GUI
 
             Room selectedRoom = new Room
             {
-                RoomId = selectedRow.Cells["RoomID"].Value.ToString(),
+                RoomId = selectedRow.Cells["RoomName"].Value.ToString(),
                 BuildingId = selectedRow.Cells["BuildingID"].Value.ToString(),
                 Type = selectedRow.Cells["Type"].Value?.ToString(),
                 Floor = selectedRow.Cells["Floor"].Value?.ToString(),
@@ -1304,14 +1266,14 @@ namespace GUI
                 return;
             }
 
-            string roomId = dgv_QLP.SelectedRows[0].Cells["RoomID"].Value.ToString();
+            string roomId = dgv_QLP.SelectedRows[0].Cells["ROOMNAME"].Value.ToString();
 
             if (MessageBox.Show($"Bạn có chắc muốn xóa phòng {roomId}?",
                               "Xác nhận xóa",
                               MessageBoxButtons.YesNo,
                               MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                var (success, message) = RoomBLL.DeleteRoom(roomId);
+                var (success, message) = RoomBLL.DeleteRoom(roomId, listBuildingID.Text);
 
                 MessageBox.Show(message,
                               success ? "Thành công" : "Lỗi",
@@ -1320,7 +1282,7 @@ namespace GUI
 
                 if (success)
                 {
-                    load_QLP();
+                    loadInfo();
                 }
             }
         }
@@ -1350,7 +1312,7 @@ namespace GUI
 
         private void ConfigureDataGridView()
         {
-            dgv_QLP.Columns["RoomID"].DisplayIndex = 0;
+            dgv_QLP.Columns["ROOMNAME"].DisplayIndex = 0;
             dgv_QLP.Columns["BuildingID"].DisplayIndex = 1;
             dgv_QLP.Columns["Floor"].DisplayIndex = 2;
             dgv_QLP.Columns["Type"].DisplayIndex = 3;
@@ -1358,7 +1320,7 @@ namespace GUI
             dgv_QLP.Columns["Area"].DisplayIndex = 5;
             dgv_QLP.Columns["Price"].DisplayIndex = 6;
             dgv_QLP.Columns["Status"].DisplayIndex = 7;
-            dgv_QLP.Columns["RoomID"].Width = 90;
+            dgv_QLP.Columns["ROOMNAME"].Width = 90;
             dgv_QLP.Columns["BuildingID"].Width = 90;
             dgv_QLP.Columns["Floor"].Width = 150;
             dgv_QLP.Columns["Type"].Width = 150;
@@ -1455,30 +1417,39 @@ namespace GUI
 
         private void button50_Click(object sender, EventArgs e)
         {
-            try
-            {
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
-                    sfd.FileName = $"ThongKeDichVu_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
-                    if (sfd.ShowDialog() != DialogResult.OK)
-                    {
-                        return;
-                    }
+            //try
+            //{
+            //    using (SaveFileDialog sfd = new SaveFileDialog())
+            //    {
+            //        sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            //        sfd.FileName = $"ThongKeDichVu_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
+            //        if (sfd.ShowDialog() != DialogResult.OK)
+            //        {
+            //            return;
+            //        }
 
-                    if (BLL.BLL_Service.ServiceBLL.ExportServicesToExcelWithChart(sfd.FileName, out string message))
-                    {
-                        MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
+            //        if (BLL.BLL_Service.ServiceBLL.ExportServicesToExcelWithChart(sfd.FileName, out string message))
+            //        {
+            //            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+            if (dgvServiceInfo.Visible)
             {
-                MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ExcelExporter.ExportToExcel(dgvServiceInfo, "Danh sách đăng ký dịch vụ");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1527,7 +1498,7 @@ namespace GUI
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thay đổi key không?", "Xác nhận thay đổi", buttons);
             if (result == DialogResult.Yes)
             {
-                BuildingBLL.BuildingBLL_change_building_key(data.Rows[listBuildingID.SelectedIndex][0].ToString(), new_key);
+                BuildingBLL.BuildingBLL_change_building_key(datakey.Rows[listBuildingID.SelectedIndex][0].ToString(), new_key);
                 buildingKey.Text = new_key;
             }
             load_Building_By_User();
@@ -2016,7 +1987,6 @@ namespace GUI
                         break;
 
                     case "delete":
-                        button11.Text = kvp.Value;
                         button31.Text = kvp.Value;
                         button15.Text = kvp.Value;
                         button29.Text = kvp.Value;
@@ -2061,9 +2031,6 @@ namespace GUI
                         break;
                     case "owing_money":
                         DangNoTien_chbox.Text = kvp.Value;
-                        break;
-                    case "building_add":
-                        guna2Button3.Text = kvp.Value;
                         break;
                     case "building_change":
                         guna2Button2.Text = kvp.Value;
@@ -2110,9 +2077,6 @@ namespace GUI
                         break;
                     case "expired":
                         checkBox3.Text = kvp.Value;
-                        break;
-                    case "set_contract_template":
-                        button42.Text = kvp.Value;
                         break;
                     case "search":
                         button_tk_contract.Text = kvp.Value;
@@ -2254,7 +2218,7 @@ namespace GUI
                         break;
 
                     case "roomtable_room_id":
-                        dgv_QLP.Columns["RoomID"].HeaderText = kvp.Value;
+                        dgv_QLP.Columns["RoomName"].HeaderText = kvp.Value;
                         break;
                     case "roomtable_building":
                         dgv_QLP.Columns["BuildingID"].HeaderText = kvp.Value;
@@ -2281,7 +2245,7 @@ namespace GUI
                         dgv_QLHD.Columns["CONTRACTID"].HeaderText = kvp.Value;
                         break;
                     case "contracttable_room_id":
-                        dgv_QLHD.Columns["ROOMID"].HeaderText = kvp.Value;
+                        dgv_QLHD.Columns["ROOMNAME"].HeaderText = kvp.Value;
                         break;
                     case "contracttable_tenant_id":
                         dgv_QLHD.Columns["TENANTID"].HeaderText = kvp.Value;
@@ -2365,7 +2329,7 @@ namespace GUI
                         dgv_DKLT.Columns["REGISTRATIONID"].HeaderText = kvp.Value;
                         break;
                     case "registrationtable_roomid":
-                        dgv_DKLT.Columns["ROOMID"].HeaderText = kvp.Value;
+                        dgv_DKLT.Columns["ROOMNAME"].HeaderText = kvp.Value;
                         break;
                     case "registrationtable_tenantid":
                         dgv_DKLT.Columns["TENANTID"].HeaderText = kvp.Value;
@@ -2437,7 +2401,7 @@ namespace GUI
                         dgv_QLCSVC.Columns["ASSETID"].HeaderText = kvp.Value;
                         break;
                     case "assettable_roomid":
-                        dgv_QLCSVC.Columns["ROOMID"].HeaderText = kvp.Value;
+                        dgv_QLCSVC.Columns["ROOMNAME"].HeaderText = kvp.Value;
                         break;
                     case "assettable_assetname":
                         dgv_QLCSVC.Columns["ASSETNAME"].HeaderText = kvp.Value;
@@ -2659,6 +2623,95 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Không thể lấy danh sách dịch vụ: " + ex.Message);
+            }
+        }
+        //New NhatHao
+        private void update_LSTN()
+        {
+            DataTable tmp = TenantHistoryBLL.TenantHistoryBLL_count_TenantHistory(listBuildingID.Text);
+            if (tmp != null)
+            {
+                for (int i = 0; i < tmp.Rows.Count; i++)
+                {
+                    TenantHistoryBLL.TenantHistoryBLL_auto_AddTenantHistory(
+                        tmp.Rows[i][0].ToString(),
+                        tmp.Rows[i][2].ToString(),
+                        tmp.Rows[i][1].ToString(),
+                        tmp.Rows[i][4].ToString(),
+                        tmp.Rows[i][5].ToString(),
+                        listBuildingID.Text);
+                }
+            }
+        }
+        private void load_Building_By_User()
+        {
+            if (datakey != null)
+            {
+                datakey.Clear();
+                listBuildingID.Items.Clear();
+            }
+            datakey = BuildingBLL.BuildingBLL_load_Building_By_User(form1.taikhoan.Username);
+            datakey.Merge(KeyBLL.load_building_by_key(form1.taikhoan.Username));
+            for (int i = 0; i < datakey.Rows.Count; i++)
+            {
+                listBuildingID.Items.Add(datakey.Rows[i][0].ToString());
+            }
+
+            if (listBuildingID.Items.Count == 0)
+            {
+                return;
+            }
+            else
+            {
+                listBuildingID.SelectedIndex = index;
+                buildingKey.Text = datakey.Rows[0][1].ToString();
+
+            }
+            KeyBLL.reload_key();
+        }
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(KeyBLL.add_Key(form1.taikhoan.Username, guna2TextBox3.Text));
+            load_Building_By_User();
+            guna2Button5.Text = "";
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (dgv_DKLT.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_DKLT, "Danh sách đăng ký lưu trú");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (dgv_LSTN.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_LSTN, "Danh sách lịch sử thuê nhà");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (dgv_thanhtoan.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_thanhtoan, "Danh sách thanh toán");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

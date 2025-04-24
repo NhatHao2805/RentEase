@@ -90,7 +90,7 @@ namespace DAL
                 if (conn == null) return listRoom;
 
                 using (MySqlCommand command = new MySqlCommand("" +
-                    "Select ROOMID from room r " +
+                    "Select ROOMNAME from room r " +
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
                     "where b.ADDRESS = @addr AND ISDELETED = 0", conn))
                 {
@@ -122,7 +122,7 @@ namespace DAL
                 if (conn == null) return listRoom;
 
                 using (MySqlCommand command = new MySqlCommand("" +
-                    "Select ROOMID from room r " +
+                    "Select ROOMNAME from room r " +
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
                     "where b.BUILDINGID = @addr AND r.ISDELETED = 0", conn))
                 {
@@ -300,7 +300,7 @@ namespace DAL
             }
         }
 
-        public static (bool success, string message) DeleteRoom(string roomId)
+        public static (bool success, string message) DeleteRoom(string roomId, string buildingid)
         {
             try
             {
@@ -311,6 +311,7 @@ namespace DAL
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.AddWithValue("@p_roomid", roomId);
+                        cmd.Parameters.AddWithValue("@p_buildingid", buildingid);
                         cmd.Parameters.Add("@p_result", MySqlDbType.Int32).Direction = ParameterDirection.Output;
                         cmd.Parameters.Add("@p_message", MySqlDbType.VarChar, 255).Direction = ParameterDirection.Output;
 

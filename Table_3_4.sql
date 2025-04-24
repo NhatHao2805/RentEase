@@ -2,6 +2,11 @@ drop database if exists rentease;
 CREATE DATABASE rentease DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE rentease;
 
+Create table keyManager(
+	usern varchar(20),
+    keybuilding varchar(20)
+);
+
 /*==============================================================*/
 /* Table: TENANT                                                */
 /*==============================================================*/
@@ -88,6 +93,7 @@ CREATE TABLE FINGERPRINTS (
     PRIMARY KEY (FINGERID)
 );
 
+
 /*==============================================================*/
 /* Table: CONTRACT                                              */
 /*==============================================================*/
@@ -146,6 +152,7 @@ CREATE TABLE BUILDING (
 /*==============================================================*/
 CREATE TABLE ROOM (
     ROOMID              VARCHAR(10) NOT NULL COMMENT 'ID nhà',
+    ROOMNAME			VARCHAR(10) NOT NULL COMMENT 'Tên nhà',
     BUILDINGID           VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
     TYPE                 VARCHAR(50) COMMENT 'Loại nhà',
     FLOOR				INT COMMENT 'Tầng nhà',

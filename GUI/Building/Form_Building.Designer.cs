@@ -395,6 +395,10 @@ namespace GUI.BuildingManagement
             // 
             // dgvBuildings
             // 
+            this.dgvBuildings.AllowUserToAddRows = false;
+            this.dgvBuildings.AllowUserToDeleteRows = false;
+            this.dgvBuildings.AllowUserToResizeColumns = false;
+            this.dgvBuildings.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(240)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(160)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;

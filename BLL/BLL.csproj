@@ -190,6 +190,7 @@
     <Compile Include="hoaian\RentalHistoryBLL.cs" />
     <Compile Include="hoaian\RoomBLL.cs" />
     <Compile Include="hoaian\VehicleBLL.cs" />
+    <Compile Include="honhathao\KeyBLL.cs" />
     <Compile Include="honhathao\Language.cs" />
     <Compile Include="honhathao\TenantServiceBLL.cs" />
     <Compile Include="honhathao\PaymentBLL.cs" />

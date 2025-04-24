@@ -17,9 +17,9 @@ namespace BLL.honhathao
         {
             return TenantHistoryAccess.update_tenantHistory(tenantHistoryid, note);
         }
-        public static void TenantHistoryBLL_auto_AddTenantHistory(string contractid, string tenantid, string roomid, string startdate, string enddate)
+        public static void TenantHistoryBLL_auto_AddTenantHistory(string contractid, string tenantid, string roomid, string startdate, string enddate, string buildingid)
         {
-            TenantHistoryAccess.auto_AddTenantHistory(contractid, tenantid, roomid, startdate, enddate);
+            TenantHistoryAccess.auto_AddTenantHistory(contractid, tenantid, roomid, startdate, enddate, buildingid);
         }
         public static DataTable TenantHistoryBLL_count_TenantHistory(string buildingID)
         {
