@@ -451,7 +451,7 @@ namespace DAL.dal_service
                     transaction = conn.BeginTransaction();
 
                     // Xóa tất cả feedback cũ
-                    string deleteQuery = "UPDATE FEEDBACK SET ISDELETED = 1, DELETE_DATE = CURDATE()";
+                    string deleteQuery = "UPDATE FEEDBACK SET ISDELETED = 1, DELETED_DATE = CURDATE()";
                     using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn, transaction))
                     {
                         cmd.ExecuteNonQuery();
@@ -702,7 +702,7 @@ namespace DAL.dal_service
                 try
                 {
                     // Thực hiện câu truy vấn DELETE
-                    string query = "UPDATE FEEDBACK SET ISDELETED = 1, DELETE_DATE = CURDATE()";
+                    string query = "UPDATE FEEDBACK SET ISDELETED = 1, DELETED_DATE = CURDATE()";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {

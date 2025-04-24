@@ -10,8 +10,6 @@ INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBE
 ('accountant08', 'Hoàng Thị Hương', 'account@123', 'account8@rentease.com', '1987-04-18', 'nu', '0909876543', '258 Đường Nguyễn Trãi, Q5, TP.HCM'),
 ('technician09', 'Phan Văn Long', 'tech@123', 'tech9@rentease.com', '1983-06-22', 'nam', '0912456789', '369 Đường Bà Hạt, Q10, TP.HCM'),
 ('reception10', 'Lý Thị Mai', 'reception@123', 'reception10@rentease.com', '1991-02-14', 'nu', '0987654321', '753 Đường Lạc Long Quân, Q.Tân Bình, TP.HCM');
--- select * from user;
--- UPDATE USER SET PASSWORD='ad1' WHERE EMAIL='hoaianduong2411@gmail.com';
 
 -- 2 BUILDING
 INSERT INTO BUILDING (BUILDINGID, BUILDING_KEY, USERNAME, ADDRESS, NUMOFFLOORS, NUMOFROOMS) VALUES
@@ -267,4 +265,3 @@ INSERT INTO VEHICLE_UNITPRICE (VEHICLE_UNITPRICE_ID, UNITPRICE, TYPE) VALUES
 ('VUP001', 500000, 'xeoto'),
 ('VUP002', 100000, 'xemay'),
 ('VUP003', 50000, 'xedap');
--- select * from parking;

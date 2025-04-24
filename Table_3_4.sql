@@ -322,6 +322,8 @@ CREATE TABLE USE_SERVICE (
 	SERVICEID			VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     START_DATE          DATE COMMENT 'Ngày bắt đầu sử dụng',
     END_DATE            DATE COMMENT 'Ngày kết thúc sử dụng',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (TENANTID, SERVICEID)
 );
  
@@ -336,6 +338,8 @@ CREATE TABLE TENANT_HISTORY (
     STARTDATE            DATETIME COMMENT 'Ngày bắt đầu',
     ENDDATE				DATETIME COMMENT 'Ngày kết thúc',
     NOTES                VARCHAR(200) COMMENT 'Ghi chú',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (HISTORYID)
 );
 
@@ -361,6 +365,8 @@ CREATE TABLE VEHICLE_UNITPRICE (
     VEHICLE_UNITPRICE_ID            VARCHAR(10) NOT NULL COMMENT 'ID đơn giá phương tiện',
     UNITPRICE         				FLOAT COMMENT 'Đơn giá',
     TYPE							VARCHAR(50) COMMENT 'phân loại phương tiện',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (VEHICLE_UNITPRICE_ID)
 );
 

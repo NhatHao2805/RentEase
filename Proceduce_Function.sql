@@ -1310,7 +1310,7 @@ BEGIN
         -- Xóa phòng (với ON DELETE CASCADE, các bản ghi liên quan sẽ tự động xóa)
         UPDATE ROOM
 		SET ISDELETED = 1,
-		   DELETE_DATE = CURDATE() 
+		   DELETED_DATE = CURDATE() 
 		WHERE RoomID = p_roomid;
         
         SET p_result = 1;
