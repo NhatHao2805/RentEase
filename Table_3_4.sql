@@ -400,8 +400,8 @@ CREATE TABLE WATER_ELECTRICITY (
 /* Table: WATER_ELEC_UNITPRICE                                      */
 /*==============================================================*/
 CREATE TABLE WATER_ELECT_UNITPRICE (
-    UNITPRICEID          VARCHAR(10) NOT NULL COMMENT 'ID đơn giá',
-    TYPE			 	 VARCHAR(10) COMMENT 'Phân loại điện/nước',
+    UNITPRICEID          VARCHAR(20) NOT NULL COMMENT 'ID đơn giá',
+    TYPE			 	 VARCHAR(20) COMMENT 'Phân loại điện/nước',
     UNITPRICE            FLOAT COMMENT 'Đơn giá',
     PRIMARY KEY (UNITPRICEID)
 );

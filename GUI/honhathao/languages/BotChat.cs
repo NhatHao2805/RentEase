@@ -51,9 +51,8 @@ namespace GUI.honhathao.languages
         {
             using (HttpClient client = new HttpClient())
             {
-                // URL webhook từ n8n
-                //string n8nWebhookUrl = "https://honhathao9.app.n8n.cloud/webhook/20777478-c497-47a2-bf0b-ed1b05ada1f6";
-                string n8nWebhookUrl = "https://honhathao9.app.n8n.cloud/webhook-test/20777478-c497-47a2-bf0b-ed1b05ada1f6";
+
+                string n8nWebhookUrl = "https://honhathao10.app.n8n.cloud/webhook/20777478-c497-47a2-bf0b-ed1b05ada1f6";
             
                 var payload = new
                 {

@@ -25,6 +25,21 @@ DROP TRIGGER IF EXISTS before_del_Bill//
 DROP TRIGGER IF EXISTS before_del_Billdetail//
 DROP TRIGGER IF EXISTS after_add_W_E//
 
+CREATE DEFINER=`root`@`localhost` FUNCTION `check_account`(
+    `usern` VARCHAR(50)
+) RETURNS INT
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE account_exists INT;
+    SELECT COUNT(*) INTO account_exists FROM user WHERE USERNAME = usern;
+    IF account_exists = 0 THEN
+        RETURN 1;  -- Tài khoản không tồn tại
+    ELSE
+        RETURN 0;  -- Tài khoản đã tồn tại
+    END IF;
+END//
+
 CREATE PROCEDURE add_key(
     p_usern VARCHAR(20),
     p_key VARCHAR(20)
@@ -390,7 +405,8 @@ BEGIN
    SELECT t.TENANTID,t.FIRSTNAME,t.LASTNAME FROM tenant t
 	JOIN contract c ON c.TENANTID = t.TENANTID
 	Join room r on r.ROOMID = c.ROOMID
-	WHERE r.ROOMNAME = p_room_id;
+	WHERE r.ROOMNAME = p_room_id
+    and c.ISDELETED = 0;
 END //
 
 CREATE PROCEDURE load_bill(

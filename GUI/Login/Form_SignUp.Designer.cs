@@ -50,9 +50,7 @@
             this.textBoxMK_DK2 = new GUI.Custom.MyGunaTextBox();
             this.info_user = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.gt_cb = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
@@ -419,10 +417,8 @@
             // info_user
             // 
             this.info_user.Controls.Add(this.label7);
-            this.info_user.Controls.Add(this.guna2ComboBox1);
             this.info_user.Controls.Add(this.gt_cb);
             this.info_user.Controls.Add(this.email_tb);
-            this.info_user.Controls.Add(this.guna2TextBox1);
             this.info_user.Controls.Add(this.name_tb);
             this.info_user.Controls.Add(this.label6);
             this.info_user.Controls.Add(this.guna2DateTimePicker1);
@@ -437,7 +433,7 @@
             this.info_user.FillColor = System.Drawing.Color.AliceBlue;
             this.info_user.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.info_user.ForeColor = System.Drawing.Color.White;
-            this.info_user.Location = new System.Drawing.Point(2, 71);
+            this.info_user.Location = new System.Drawing.Point(6, 71);
             this.info_user.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.info_user.Name = "info_user";
             this.info_user.Size = new System.Drawing.Size(587, 411);
@@ -455,32 +451,6 @@
             this.label7.Size = new System.Drawing.Size(75, 23);
             this.label7.TabIndex = 38;
             this.label7.Text = "Giới tính";
-            // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2ComboBox1.BorderRadius = 10;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 24;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ",
-            "Khác..."});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(25, 271);
-            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.BorderRadius = 10;
-            this.guna2ComboBox1.ShadowDecoration.Enabled = true;
-            this.guna2ComboBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2ComboBox1.Size = new System.Drawing.Size(255, 30);
-            this.guna2ComboBox1.TabIndex = 7;
-            this.guna2ComboBox1.SelectedIndexChanged += new System.EventHandler(this.gt_cb_SelectedIndexChanged);
             // 
             // gt_cb
             // 
@@ -503,31 +473,6 @@
             this.gt_cb.Size = new System.Drawing.Size(255, 30);
             this.gt_cb.TabIndex = 7;
             this.gt_cb.SelectedIndexChanged += new System.EventHandler(this.gt_cb_SelectedIndexChanged);
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(21, 89);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.BorderRadius = 10;
-            this.guna2TextBox1.ShadowDecoration.Enabled = true;
-            this.guna2TextBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2TextBox1.Size = new System.Drawing.Size(255, 39);
-            this.guna2TextBox1.TabIndex = 3;
             // 
             // guna2DateTimePicker1
             // 
@@ -723,8 +668,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel18;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2Button buttonXemPass1;
         private Guna.UI2.WinForms.Guna2Button buttonXemPass2;

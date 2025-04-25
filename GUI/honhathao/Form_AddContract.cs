@@ -131,7 +131,7 @@ namespace GUI
             switch (control)
             {
                 case 0:
-                    for (int i = 0; i < table_tenant.Rows.Count - 1; i++)
+                    for (int i = 0; i < table_tenant.Rows.Count; i++)
                     {                  
                         ListTenantID.Items.Add(table_tenant.Rows[i].Cells[0].Value.ToString() + ": " + table_tenant.Rows[i].Cells[1].Value.ToString()+ " " + table_tenant.Rows[i].Cells[2].Value.ToString());
                     }
@@ -274,19 +274,19 @@ namespace GUI
 
         private void TienDatCoc_TextChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TienDatCoc.Text)) return;
-            int selectionStart = TienDatCoc.SelectionStart;
-            string cleanText = TienDatCoc.Text.Replace(",", "");
+            //if (string.IsNullOrEmpty(TienDatCoc.Text)) return;
+            //int selectionStart = TienDatCoc.SelectionStart;
+            //string cleanText = TienDatCoc.Text.Replace(",", "");
 
-            if (decimal.TryParse(cleanText, out decimal number))
-            {
-                TienDatCoc.Text = number.ToString("#,##0");
-                TienDatCoc.SelectionStart = selectionStart + (TienDatCoc.Text.Length - cleanText.Length);
-            }
-            else
-            {
-                TienDatCoc.Text = "0";
-            }
+            //if (decimal.TryParse(cleanText, out decimal number))
+            //{
+            //    TienDatCoc.Text = number.ToString("#,##0");
+            //    TienDatCoc.SelectionStart = selectionStart + (TienDatCoc.Text.Length - cleanText.Length);
+            //}
+            //else
+            //{
+            //    TienDatCoc.Text = "0";
+            //}
         }
     }
 }
