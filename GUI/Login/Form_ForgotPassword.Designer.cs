@@ -30,8 +30,6 @@
         {
             this.panelStep2 = new System.Windows.Forms.Panel();
             this.btnResetPassword = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtConfirmPassword = new GUI.Custom.MyGunaTextBox();
-            this.txtNewPassword = new GUI.Custom.MyGunaTextBox();
             this.lblPasswordRequirements = new System.Windows.Forms.Label();
             this.labelConfirmPassword = new System.Windows.Forms.Label();
             this.labelNewPassword = new System.Windows.Forms.Label();
@@ -40,15 +38,17 @@
             this.lblCountdown = new System.Windows.Forms.Label();
             this.panelStep1 = new System.Windows.Forms.Panel();
             this.btnVerify = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtOTP = new GUI.Custom.MyGunaTextBox();
             this.btnSendOTP = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtEmail = new GUI.Custom.MyGunaTextBox();
             this.guna2GradientPanel12 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CustomGradientPanel18 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.exitButton = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.txtOTP = new GUI.Custom.MyGunaTextBox();
+            this.txtEmail = new GUI.Custom.MyGunaTextBox();
+            this.txtConfirmPassword = new GUI.Custom.MyGunaTextBox();
+            this.txtNewPassword = new GUI.Custom.MyGunaTextBox();
             this.panelStep2.SuspendLayout();
             this.panelStep1.SuspendLayout();
             this.guna2GradientPanel12.SuspendLayout();
@@ -66,7 +66,7 @@
             this.panelStep2.Controls.Add(this.labelNewPassword);
             this.panelStep2.Location = new System.Drawing.Point(4, 70);
             this.panelStep2.Name = "panelStep2";
-            this.panelStep2.Size = new System.Drawing.Size(390, 340);
+            this.panelStep2.Size = new System.Drawing.Size(390, 450);
             this.panelStep2.TabIndex = 1;
             this.panelStep2.Visible = false;
             // 
@@ -95,56 +95,6 @@
             this.btnResetPassword.Size = new System.Drawing.Size(180, 50);
             this.btnResetPassword.TabIndex = 139;
             this.btnResetPassword.Text = "Reset Password";
-            // 
-            // txtConfirmPassword
-            // 
-            this.txtConfirmPassword.BackColor = System.Drawing.Color.Transparent;
-            this.txtConfirmPassword.BorderColor = System.Drawing.Color.Silver;
-            this.txtConfirmPassword.BorderRadius = 10;
-            this.txtConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtConfirmPassword.DefaultText = "";
-            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.2F);
-            this.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtConfirmPassword.Location = new System.Drawing.Point(20, 119);
-            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtConfirmPassword.PlaceholderText = "Cornfirm password";
-            this.txtConfirmPassword.SelectedText = "";
-            this.txtConfirmPassword.ShadowDecoration.BorderRadius = 10;
-            this.txtConfirmPassword.ShadowDecoration.Enabled = true;
-            this.txtConfirmPassword.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.txtConfirmPassword.Size = new System.Drawing.Size(349, 44);
-            this.txtConfirmPassword.TabIndex = 19;
-            this.txtConfirmPassword.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
-            // 
-            // txtNewPassword
-            // 
-            this.txtNewPassword.BackColor = System.Drawing.Color.Transparent;
-            this.txtNewPassword.BorderColor = System.Drawing.Color.Silver;
-            this.txtNewPassword.BorderRadius = 10;
-            this.txtNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewPassword.DefaultText = "";
-            this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 11.2F);
-            this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtNewPassword.Location = new System.Drawing.Point(24, 27);
-            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtNewPassword.Name = "txtNewPassword";
-            this.txtNewPassword.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
-            this.txtNewPassword.PasswordChar = '*';
-            this.txtNewPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtNewPassword.PlaceholderText = "Enter new password";
-            this.txtNewPassword.SelectedText = "";
-            this.txtNewPassword.ShadowDecoration.BorderRadius = 10;
-            this.txtNewPassword.ShadowDecoration.Enabled = true;
-            this.txtNewPassword.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.txtNewPassword.Size = new System.Drawing.Size(349, 44);
-            this.txtNewPassword.TabIndex = 18;
-            this.txtNewPassword.TextOffset = new System.Drawing.Point(10, 0);
-            this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
             // 
             // lblPasswordRequirements
             // 
@@ -248,29 +198,6 @@
             this.btnVerify.Text = "Verify";
             this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
             // 
-            // txtOTP
-            // 
-            this.txtOTP.BackColor = System.Drawing.Color.Transparent;
-            this.txtOTP.BorderColor = System.Drawing.Color.Silver;
-            this.txtOTP.BorderRadius = 10;
-            this.txtOTP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtOTP.DefaultText = "";
-            this.txtOTP.Font = new System.Drawing.Font("Segoe UI", 11.2F);
-            this.txtOTP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtOTP.Location = new System.Drawing.Point(19, 197);
-            this.txtOTP.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtOTP.Name = "txtOTP";
-            this.txtOTP.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
-            this.txtOTP.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtOTP.PlaceholderText = "OTP...";
-            this.txtOTP.SelectedText = "";
-            this.txtOTP.ShadowDecoration.BorderRadius = 10;
-            this.txtOTP.ShadowDecoration.Enabled = true;
-            this.txtOTP.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.txtOTP.Size = new System.Drawing.Size(349, 44);
-            this.txtOTP.TabIndex = 139;
-            this.txtOTP.TextOffset = new System.Drawing.Point(10, 0);
-            // 
             // btnSendOTP
             // 
             this.btnSendOTP.BackColor = System.Drawing.Color.Transparent;
@@ -298,29 +225,6 @@
             this.btnSendOTP.Text = "Send OTP";
             this.btnSendOTP.Click += new System.EventHandler(this.btnSendOTP_Click);
             // 
-            // txtEmail
-            // 
-            this.txtEmail.BackColor = System.Drawing.Color.Transparent;
-            this.txtEmail.BorderColor = System.Drawing.Color.Silver;
-            this.txtEmail.BorderRadius = 10;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "";
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11.2F);
-            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtEmail.Location = new System.Drawing.Point(19, 33);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
-            this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtEmail.PlaceholderText = "Enter your email";
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.ShadowDecoration.BorderRadius = 10;
-            this.txtEmail.ShadowDecoration.Enabled = true;
-            this.txtEmail.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.txtEmail.Size = new System.Drawing.Size(349, 44);
-            this.txtEmail.TabIndex = 17;
-            this.txtEmail.TextOffset = new System.Drawing.Point(10, 0);
-            // 
             // guna2GradientPanel12
             // 
             this.guna2GradientPanel12.BackColor = System.Drawing.Color.Transparent;
@@ -335,6 +239,36 @@
             this.guna2GradientPanel12.Name = "guna2GradientPanel12";
             this.guna2GradientPanel12.Size = new System.Drawing.Size(396, 70);
             this.guna2GradientPanel12.TabIndex = 150;
+            // 
+            // exitButton
+            // 
+            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
+            this.exitButton.BorderRadius = 1;
+            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.exitButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
+            this.exitButton.Location = new System.Drawing.Point(361, 3);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(30, 30);
+            this.exitButton.TabIndex = 20;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // guna2PictureBox5
+            // 
+            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_lock1;
+            this.guna2PictureBox5.ImageRotate = 0F;
+            this.guna2PictureBox5.Location = new System.Drawing.Point(7, 5);
+            this.guna2PictureBox5.Name = "guna2PictureBox5";
+            this.guna2PictureBox5.Size = new System.Drawing.Size(60, 60);
+            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox5.TabIndex = 132;
+            this.guna2PictureBox5.TabStop = false;
             // 
             // guna2CustomGradientPanel18
             // 
@@ -368,35 +302,101 @@
             this.label23.TabIndex = 123;
             this.label23.Text = "Quên mật khẩu";
             // 
-            // exitButton
+            // txtOTP
             // 
-            this.exitButton.BorderColor = System.Drawing.Color.DimGray;
-            this.exitButton.BorderRadius = 1;
-            this.exitButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
-            this.exitButton.Location = new System.Drawing.Point(361, 3);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(30, 30);
-            this.exitButton.TabIndex = 20;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.txtOTP.BackColor = System.Drawing.Color.Transparent;
+            this.txtOTP.BorderColor = System.Drawing.Color.Silver;
+            this.txtOTP.BorderRadius = 10;
+            this.txtOTP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtOTP.DefaultText = "";
+            this.txtOTP.Font = new System.Drawing.Font("Segoe UI", 11.2F);
+            this.txtOTP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtOTP.Location = new System.Drawing.Point(19, 197);
+            this.txtOTP.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtOTP.Name = "txtOTP";
+            this.txtOTP.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
+            this.txtOTP.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtOTP.PlaceholderText = "OTP...";
+            this.txtOTP.SelectedText = "";
+            this.txtOTP.ShadowDecoration.BorderRadius = 10;
+            this.txtOTP.ShadowDecoration.Enabled = true;
+            this.txtOTP.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.txtOTP.Size = new System.Drawing.Size(349, 44);
+            this.txtOTP.TabIndex = 139;
+            this.txtOTP.TextOffset = new System.Drawing.Point(10, 0);
             // 
-            // guna2PictureBox5
+            // txtEmail
             // 
-            this.guna2PictureBox5.Image = global::GUI.Properties.Resources.icons8_lock1;
-            this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(7, 5);
-            this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(60, 60);
-            this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox5.TabIndex = 132;
-            this.guna2PictureBox5.TabStop = false;
+            this.txtEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txtEmail.BorderColor = System.Drawing.Color.Silver;
+            this.txtEmail.BorderRadius = 10;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 11.2F);
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtEmail.Location = new System.Drawing.Point(19, 33);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
+            this.txtEmail.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtEmail.PlaceholderText = "Enter your email";
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.ShadowDecoration.BorderRadius = 10;
+            this.txtEmail.ShadowDecoration.Enabled = true;
+            this.txtEmail.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.txtEmail.Size = new System.Drawing.Size(349, 44);
+            this.txtEmail.TabIndex = 17;
+            this.txtEmail.TextOffset = new System.Drawing.Point(10, 0);
+            // 
+            // txtConfirmPassword
+            // 
+            this.txtConfirmPassword.BackColor = System.Drawing.Color.Transparent;
+            this.txtConfirmPassword.BorderColor = System.Drawing.Color.Silver;
+            this.txtConfirmPassword.BorderRadius = 10;
+            this.txtConfirmPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtConfirmPassword.DefaultText = "";
+            this.txtConfirmPassword.Font = new System.Drawing.Font("Segoe UI", 11.2F);
+            this.txtConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtConfirmPassword.Location = new System.Drawing.Point(20, 119);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
+            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtConfirmPassword.PlaceholderText = "Cornfirm password";
+            this.txtConfirmPassword.SelectedText = "";
+            this.txtConfirmPassword.ShadowDecoration.BorderRadius = 10;
+            this.txtConfirmPassword.ShadowDecoration.Enabled = true;
+            this.txtConfirmPassword.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.txtConfirmPassword.Size = new System.Drawing.Size(349, 44);
+            this.txtConfirmPassword.TabIndex = 19;
+            this.txtConfirmPassword.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtConfirmPassword.TextChanged += new System.EventHandler(this.txtConfirmPassword_TextChanged);
+            // 
+            // txtNewPassword
+            // 
+            this.txtNewPassword.BackColor = System.Drawing.Color.Transparent;
+            this.txtNewPassword.BorderColor = System.Drawing.Color.Silver;
+            this.txtNewPassword.BorderRadius = 10;
+            this.txtNewPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNewPassword.DefaultText = "";
+            this.txtNewPassword.Font = new System.Drawing.Font("Segoe UI", 11.2F);
+            this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtNewPassword.Location = new System.Drawing.Point(24, 27);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
+            this.txtNewPassword.PasswordChar = '*';
+            this.txtNewPassword.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtNewPassword.PlaceholderText = "Enter new password";
+            this.txtNewPassword.SelectedText = "";
+            this.txtNewPassword.ShadowDecoration.BorderRadius = 10;
+            this.txtNewPassword.ShadowDecoration.Enabled = true;
+            this.txtNewPassword.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.txtNewPassword.Size = new System.Drawing.Size(349, 44);
+            this.txtNewPassword.TabIndex = 18;
+            this.txtNewPassword.TextOffset = new System.Drawing.Point(10, 0);
+            this.txtNewPassword.TextChanged += new System.EventHandler(this.txtNewPassword_TextChanged);
             // 
             // Form_ForgotPassword
             // 

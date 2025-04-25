@@ -84,6 +84,8 @@ namespace GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(quanlynha));
             this.panel1_timer = new System.Windows.Forms.Timer(this.components);
             this.guna2GradientPanel17 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.listBuildingID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.buildingKey = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -220,9 +222,6 @@ namespace GUI
             this.guna2CustomGradientPanel21 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.checkBox16 = new System.Windows.Forms.CheckBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.checkBox14 = new System.Windows.Forms.CheckBox();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
             this.checkBox12 = new System.Windows.Forms.CheckBox();
             this.dgv_thanhtoan = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -349,8 +348,7 @@ namespace GUI
             this.guna2GradientPanel22 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ListBuilding = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.buildingKhoa = new Guna.UI2.WinForms.Guna2HtmlToolTip();
-            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.guna2GradientPanel17.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabQuanLy.SuspendLayout();
@@ -460,6 +458,59 @@ namespace GUI
             this.guna2GradientPanel17.Name = "guna2GradientPanel17";
             this.guna2GradientPanel17.Size = new System.Drawing.Size(251, 155);
             this.guna2GradientPanel17.TabIndex = 141;
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button5.BorderColor = System.Drawing.Color.Green;
+            this.guna2Button5.BorderRadius = 10;
+            this.guna2Button5.BorderThickness = 1;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.guna2Button5.Location = new System.Drawing.Point(160, 115);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button5.ShadowDecoration.Enabled = true;
+            this.guna2Button5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2Button5.Size = new System.Drawing.Size(80, 40);
+            this.guna2Button5.TabIndex = 132;
+            this.guna2Button5.Text = "Thêm";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.guna2TextBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2TextBox3.BorderRadius = 10;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox3.ForeColor = System.Drawing.Color.Teal;
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Location = new System.Drawing.Point(14, 115);
+            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.ShadowDecoration.BorderRadius = 10;
+            this.guna2TextBox3.ShadowDecoration.Enabled = true;
+            this.guna2TextBox3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2TextBox3.Size = new System.Drawing.Size(140, 40);
+            this.guna2TextBox3.TabIndex = 133;
+            this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.buildingKhoa.SetToolTip(this.guna2TextBox3, "Khóa tòa nhà ");
             // 
             // listBuildingID
             // 
@@ -3497,11 +3548,9 @@ namespace GUI
             // 
             this.guna2CustomGradientPanel21.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2CustomGradientPanel21.BorderThickness = 1;
+            this.guna2CustomGradientPanel21.Controls.Add(this.checkBox6);
             this.guna2CustomGradientPanel21.Controls.Add(this.guna2DateTimePicker1);
             this.guna2CustomGradientPanel21.Controls.Add(this.pictureBox7);
-            this.guna2CustomGradientPanel21.Controls.Add(this.checkBox16);
-            this.guna2CustomGradientPanel21.Controls.Add(this.checkBox15);
-            this.guna2CustomGradientPanel21.Controls.Add(this.checkBox14);
             this.guna2CustomGradientPanel21.Controls.Add(this.checkBox13);
             this.guna2CustomGradientPanel21.Controls.Add(this.checkBox12);
             this.guna2CustomGradientPanel21.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -3536,6 +3585,7 @@ namespace GUI
             this.guna2DateTimePicker1.TabIndex = 102;
             this.guna2DateTimePicker1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.guna2DateTimePicker1.Value = new System.DateTime(2025, 4, 13, 11, 51, 0, 0);
+            this.guna2DateTimePicker1.Visible = false;
             // 
             // pictureBox7
             // 
@@ -3549,53 +3599,18 @@ namespace GUI
             this.pictureBox7.TabStop = false;
             this.boLoc.SetToolTip(this.pictureBox7, "Lọc dữ liệu bảng");
             // 
-            // checkBox16
-            // 
-            this.checkBox16.AutoSize = true;
-            this.checkBox16.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox16.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox16.Location = new System.Drawing.Point(64, 14);
-            this.checkBox16.Name = "checkBox16";
-            this.checkBox16.Size = new System.Drawing.Size(154, 27);
-            this.checkBox16.TabIndex = 27;
-            this.checkBox16.Text = "Hóa đơn đã thu";
-            this.checkBox16.UseVisualStyleBackColor = false;
-            // 
-            // checkBox15
-            // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox15.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox15.Location = new System.Drawing.Point(211, 14);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(173, 27);
-            this.checkBox15.TabIndex = 28;
-            this.checkBox15.Text = "Hóa đơn chưa thu";
-            this.checkBox15.UseVisualStyleBackColor = false;
-            // 
-            // checkBox14
-            // 
-            this.checkBox14.AutoSize = true;
-            this.checkBox14.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox14.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox14.Location = new System.Drawing.Point(548, 14);
-            this.checkBox14.Name = "checkBox14";
-            this.checkBox14.Size = new System.Drawing.Size(157, 27);
-            this.checkBox14.TabIndex = 29;
-            this.checkBox14.Text = "Hóa đơn đã hủy";
-            this.checkBox14.UseVisualStyleBackColor = false;
-            // 
             // checkBox13
             // 
             this.checkBox13.AutoSize = true;
             this.checkBox13.BackColor = System.Drawing.Color.Transparent;
             this.checkBox13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox13.Location = new System.Drawing.Point(378, 14);
+            this.checkBox13.Location = new System.Drawing.Point(60, 13);
             this.checkBox13.Name = "checkBox13";
             this.checkBox13.Size = new System.Drawing.Size(168, 27);
             this.checkBox13.TabIndex = 30;
             this.checkBox13.Text = "Hóa đơn đang nợ";
             this.checkBox13.UseVisualStyleBackColor = false;
+            this.checkBox13.CheckedChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
             // 
             // checkBox12
             // 
@@ -3608,6 +3623,7 @@ namespace GUI
             this.checkBox12.TabIndex = 33;
             this.checkBox12.Text = "Lọc theo tháng";
             this.checkBox12.UseVisualStyleBackColor = false;
+            this.checkBox12.Visible = false;
             // 
             // dgv_thanhtoan
             // 
@@ -6064,58 +6080,18 @@ namespace GUI
             this.buildingKhoa.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
             this.buildingKhoa.ToolTipTitle = "Building Key";
             // 
-            // guna2Button5
+            // checkBox6
             // 
-            this.guna2Button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Button5.BorderColor = System.Drawing.Color.Green;
-            this.guna2Button5.BorderRadius = 10;
-            this.guna2Button5.BorderThickness = 1;
-            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
-            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.guna2Button5.Location = new System.Drawing.Point(160, 115);
-            this.guna2Button5.Name = "guna2Button5";
-            this.guna2Button5.ShadowDecoration.BorderRadius = 10;
-            this.guna2Button5.ShadowDecoration.Enabled = true;
-            this.guna2Button5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2Button5.Size = new System.Drawing.Size(80, 40);
-            this.guna2Button5.TabIndex = 132;
-            this.guna2Button5.Text = "Thêm";
-            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
-            // 
-            // guna2TextBox3
-            // 
-            this.guna2TextBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.guna2TextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2TextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2TextBox3.BorderRadius = 10;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.Teal;
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(14, 115);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.ShadowDecoration.BorderRadius = 10;
-            this.guna2TextBox3.ShadowDecoration.Enabled = true;
-            this.guna2TextBox3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2TextBox3.Size = new System.Drawing.Size(140, 40);
-            this.guna2TextBox3.TabIndex = 133;
-            this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.buildingKhoa.SetToolTip(this.guna2TextBox3, "Khóa tòa nhà ");
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(249, 13);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(213, 27);
+            this.checkBox6.TabIndex = 103;
+            this.checkBox6.Text = "Hóa đơn đã thanh toán";
+            this.checkBox6.UseVisualStyleBackColor = false;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // quanlynha
             // 
@@ -6412,9 +6388,6 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel21;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.CheckBox checkBox16;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.CheckBox checkBox14;
         private System.Windows.Forms.CheckBox checkBox13;
         private System.Windows.Forms.CheckBox checkBox12;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel22;
@@ -6526,5 +6499,6 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton13;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private System.Windows.Forms.CheckBox checkBox6;
     }
 }

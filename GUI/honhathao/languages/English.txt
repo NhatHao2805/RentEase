@@ -1,4 +1,10 @@
-﻿helo: Hello, How can i help you?
+﻿bill_id:Bill Id
+record_id:Id
+service_name:Service Name
+amount:Amount
+invoice_title:Invoice Details  
+invoice_description:Customer payment invoice details  
+helo: Hello, How can i help you?
 troli: Assistant
 phongdon: Single Room  
 phongdoi: Double Room  
@@ -141,7 +147,7 @@ parking_lot_label: Parking Lot
 vehicle_label: Vehicle
 parking_list_title: Parking Lot List
 : Room Table
-roomtable_room_id: Room id
+roomtable_room_id: Room
 roomtable_building: Building id
 roomtable_floor: Floor
 roomtable_room_type: Room type

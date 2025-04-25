@@ -157,7 +157,7 @@ namespace DAL
                         conn.Open();
                     }
 
-                    using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE EMAIL=@p_email AND WHERE ISDELETED = 0;", conn))
+                    using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE EMAIL=@p_email AND ISDELETED = 0;", conn))
                     {
                         command.Parameters.AddWithValue("p_email", email);
                         int count = Convert.ToInt32(command.ExecuteScalar());

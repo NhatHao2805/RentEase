@@ -95,7 +95,8 @@ namespace GUI.honhathao
                 hodem.Text = data.Cells[1].Value.ToString();
                 ten.Text = data.Cells[2].Value.ToString();
                 ngaysinh.Value = DateTime.Parse(data.Cells[3].Value.ToString());
-                gioitinh.Text = Language.translate(data.Cells[4].Value.ToString());
+                //gioitinh.Text = Language.translate(data.Cells[4].Value.ToString());
+                gioitinh.SelectedItem = data.Cells[4].Value.ToString();
                 sdt.Text = data.Cells[5].Value.ToString();
                 email.Text = data.Cells[6].Value.ToString();
             }

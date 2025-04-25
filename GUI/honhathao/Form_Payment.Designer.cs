@@ -77,6 +77,7 @@
             this.button41.Size = new System.Drawing.Size(145, 36);
             this.button41.TabIndex = 125;
             this.button41.Text = "Xuất sang Excel";
+            this.button41.Click += new System.EventHandler(this.button41_Click);
             // 
             // guna2GradientPanel12
             // 
