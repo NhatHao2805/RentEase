@@ -1,4 +1,5 @@
-﻿bill_id:Bill Id
+﻿changePass:Forgot/Change password?
+bill_id:Bill Id
 record_id:Id
 service_name:Service Name
 amount:Amount
@@ -79,6 +80,20 @@ Parking_Management: Parking Management
 room_list_management: Room Management
 text_room_list_management: All Your Room Listings
 edit: Edit
+building_management: Building Management
+building_management_subtitle: Building management interface
+building_section: Building Management
+add_building_btn: Add Building
+refresh_btn: Refresh
+manage_btn: Manage
+forgot_pw.title :Forgot Password
+forgot_pw.subtitle :Reset your password
+forgot_pw.email_label :Email
+forgot_pw.email_placeholder :Enter your email
+forgot_pw.send_otp_btn :Send OTP
+forgot_pw.otp_label :OTP Code
+forgot_pw.otp_placeholder :Enter OTP
+forgot_pw.verify_btn :Verify
 edit_in: Edit room list
 delete: Delete
 view_rental_history: View Rental History

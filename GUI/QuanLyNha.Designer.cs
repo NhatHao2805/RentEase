@@ -220,6 +220,7 @@ namespace GUI
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.guna2CustomGradientPanel21 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
@@ -348,7 +349,6 @@ namespace GUI
             this.guna2GradientPanel22 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ListBuilding = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.buildingKhoa = new Guna.UI2.WinForms.Guna2HtmlToolTip();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.guna2GradientPanel17.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabQuanLy.SuspendLayout();
@@ -3561,6 +3561,19 @@ namespace GUI
             this.guna2CustomGradientPanel21.Size = new System.Drawing.Size(1025, 50);
             this.guna2CustomGradientPanel21.TabIndex = 129;
             // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(249, 13);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(213, 27);
+            this.checkBox6.TabIndex = 103;
+            this.checkBox6.Text = "Hóa đơn đã thanh toán";
+            this.checkBox6.UseVisualStyleBackColor = false;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            // 
             // guna2DateTimePicker1
             // 
             this.guna2DateTimePicker1.BackColor = System.Drawing.Color.Transparent;
@@ -4669,7 +4682,6 @@ namespace GUI
             this.btn_xemdichvu.Size = new System.Drawing.Size(190, 50);
             this.btn_xemdichvu.TabIndex = 130;
             this.btn_xemdichvu.Text = "Xem Dịch Vụ ";
-            this.XoaDuLieu.SetToolTip(this.btn_xemdichvu, "Sửa / Xóa dữ liệu bảng");
             this.btn_xemdichvu.Click += new System.EventHandler(this.btn_xemdichvu_Click);
             // 
             // themDV_btn
@@ -6079,19 +6091,6 @@ namespace GUI
             this.buildingKhoa.MaximumSize = new System.Drawing.Size(0, 0);
             this.buildingKhoa.TitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
             this.buildingKhoa.ToolTipTitle = "Building Key";
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(249, 13);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(213, 27);
-            this.checkBox6.TabIndex = 103;
-            this.checkBox6.Text = "Hóa đơn đã thanh toán";
-            this.checkBox6.UseVisualStyleBackColor = false;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // quanlynha
             // 

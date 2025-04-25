@@ -12,6 +12,7 @@ using BLL;
 using System.Runtime.InteropServices;
 using GUI;
 using GUI.BuildingManagement;
+using GUI.Custom;
 namespace GUI
 {
     public partial class Form_Login: Form
@@ -56,7 +57,6 @@ namespace GUI
                     return;
                 case "Tài khoản hoặc mật khẩu không chính xác!":
                     MessageBox.Show(check);
-
                     return;
             }
             //Chưa hoàn chỉnh
@@ -133,6 +133,9 @@ namespace GUI
                     case "Sign_up":
                         dk_lb.Text = kvp.Value;
                         break;
+                    case "changePass":
+                        dmk_lb.Text = kvp.Value;
+                        break;
 
                 }
             }
@@ -161,7 +164,7 @@ namespace GUI
         private void dmk_lb_Click(object sender, EventArgs e)
         {
             Form_ForgotPassword forgotPasswordForm = new Form_ForgotPassword();
-            forgotPasswordForm.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, forgotPasswordForm);
         }
     }
     

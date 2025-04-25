@@ -7,6 +7,8 @@ using System.Net.Mail;
 using System.Net;
 using System.IO;
 using System.Text.RegularExpressions;
+using static System.Net.WebRequestMethods;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -36,7 +38,15 @@ namespace GUI
             // Set initial form size for step 1
             //this.Size = new System.Drawing.Size(395, 299); // Height includes title bar
         }
-
+ 
+//        forgot_pw.title :Quên mật khẩu
+//forgot_pw.subtitle :Đổi mật khẩu của bạn
+//forgot_pw.email_label :Email
+//forgot_pw.email_placeholder :Nhập email của bạn
+//forgot_pw.send_otp_btn :Gửi mã OTP
+//forgot_pw.otp_label :Mã OTP
+//forgot_pw.otp_placeholder :Nhập mã OTP
+//forgot_pw.verify_btn :Xác thực
         private void loadLanguage()
         {
             string selectedLanguage = Language.GetCurrentLanguage();
@@ -46,6 +56,12 @@ namespace GUI
                 {
                     case "Enter_Email":
                         labelEmail.Text = kvp.Value;
+                        break;
+                    case "forgot_pw.title":
+                        label23.Text = kvp.Value;
+                        break;
+                    case "forgot_pw.subtitle":
+                        label22.Text = kvp.Value;
                         break;
                     case "Send_OTP":
                         btnSendOTP.Text = kvp.Value;
@@ -330,7 +346,7 @@ namespace GUI
                 // Switch to password reset panel
                 panelStep1.Visible = false;
                 panelStep2.Visible = true;
-                this.Size = new System.Drawing.Size(395, 299);
+                //this.Size = new System.Drawing.Size(395, 299);
 
                 MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     "Xác thực thành công! Bạn có thể đặt lại mật khẩu." :
