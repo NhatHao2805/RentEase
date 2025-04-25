@@ -19,7 +19,7 @@ namespace BLL
         }
         private bool checkPattern_1(string input)
         {
-            string pattern = "^[a-zA-Z0-9 ]+$";
+            string pattern = @"^[a-zA-Z0-9\s]+$";
             return Regex.IsMatch(input, pattern);
         }
 

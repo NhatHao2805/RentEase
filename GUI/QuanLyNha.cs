@@ -196,6 +196,7 @@ namespace GUI
                 dgv_QLHD.Columns[9].Width = 100;
                 dgv_QLHD.Columns[10].Width = 100;
                 dgv_QLHD.Columns[11].Width = 200;
+                dgv_QLHD.Columns[10].DefaultCellStyle.Format = "0";
                 dgv_QLHD.ScrollBars = ScrollBars.Both;
                 translateValue(dgv_QLHD, 9);
             }
@@ -272,7 +273,7 @@ namespace GUI
 
                     }
                 }
-                translateValue(dgv_QLP, 3);
+                translateValue(dgv_QLP, 2);
             }catch(Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -355,7 +356,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            }
+    }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -807,6 +808,8 @@ namespace GUI
                 dgv_QLCSVC.DataSource = null;
                 dgv_QLCSVC.DataSource = filteredData;
 
+                translateValue(dgv_QLCSVC, 4);
+
                 //dgv_QLCSVC.Columns["RoomName"].DisplayIndex = 0;
                 //dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
                 //dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
@@ -843,7 +846,6 @@ namespace GUI
                     DataGridViewRow data = dgv_DKLT.Rows[row];
                     Form_Registration f = new Form_Registration(row, listBuildingID.Text, 1, dgv_DKLT, null);
 
-                    //f.ShowDialog();
                     OverlayManager.ShowWithOverlay(this, f);
 
                     loadRegistration(null);
@@ -887,7 +889,21 @@ namespace GUI
 
                 dgv_QLP.DataSource = null;
                 dgv_QLP.DataSource = filteredData;
+                foreach (DataGridViewRow row in dgv_QLP.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
 
+
+                        string[] status1 = row.Cells[7].Value.ToString().Split(';');
+                        for (int i = 0; i < status1.Length; i++)
+                        {
+                            status1[i] = Language.translate(status1[i].Trim());
+                        }
+                        row.Cells[7].Value = string.Join(";", status1);
+                    }
+                }
+                translateValue(dgv_QLP, 2);
                 ConfigureDataGridView();
             }
             catch (Exception ex)
@@ -952,8 +968,8 @@ namespace GUI
         {
             DataGridViewRow data = null;
             Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username);
-            f.ShowDialog();
-            //OverlayManager.ShowWithOverlay(this, f);
+            //f.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, f);
             loadTenant(null);
         }
         //private void FilterAssets(string priceSort, string nameSort)
@@ -1641,6 +1657,7 @@ namespace GUI
                 DataTable filteredData = ParkingAreaBLL.FilterParkingArea(listBuildingID.SelectedItem.ToString(), type, status);
 
                 guna2DataGridView7.DataSource = filteredData;
+                translateValue(guna2DataGridView7, 3);
                 ConfigureParkingArea();
 
             }
@@ -1858,6 +1875,8 @@ namespace GUI
 
                 DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), type);
                 guna2DataGridView1.DataSource = data;
+                translateValue(guna2DataGridView1, 6);
+                translateValue(guna2DataGridView1, 9);
                 ConfigureVehicle();
             }
             catch (Exception ex)
@@ -2154,6 +2173,9 @@ namespace GUI
                         break;
                     case "residence_registration_description":
                         label13.Text = kvp.Value;
+                        break;
+                    case "LoadAll.placeholder":
+                        guna2HtmlLabel5.Text = kvp.Value;
                         break;
 
                     case "bill_information_title":

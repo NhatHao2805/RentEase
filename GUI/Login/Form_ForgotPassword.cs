@@ -330,7 +330,7 @@ namespace GUI
                 // Switch to password reset panel
                 panelStep1.Visible = false;
                 panelStep2.Visible = true;
-                this.Size = new System.Drawing.Size(395, 299);
+                //this.Size = new System.Drawing.Size(395, 299);
 
                 MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     "Xác thực thành công! Bạn có thể đặt lại mật khẩu." :

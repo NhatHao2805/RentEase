@@ -152,6 +152,11 @@ namespace GUI.honhathao
             switch (control)
             {
                 case 0:
+                    if (ngayDk.Value > ngayHethan.Value)
+                    {
+                        MessageBox.Show("Ngày đăng ký không được lớn hơn ngày hết hạn");
+                        return;
+                    }
                     string result = RegistrationBLL.RegistrationBLL_add_Registration(
                         tenant.Rows[TenKhachHang.SelectedIndex].Cells[0].Value.ToString(),
                         SoPhong.Text,
@@ -167,8 +172,14 @@ namespace GUI.honhathao
                     }
                     break;
                 case 1:
+                    if (ngayDk.Value > ngayHethan.Value)
+                    {
+                        MessageBox.Show("Ngày đăng ký không được lớn hơn ngày hết hạn");
+                        return;
+                    }
                     string result1 = RegistrationBLL.RegistratrionBLL_update_registration(
                         table.Rows[row].Cells[0].Value.ToString(),
+                        ngayHethan.Value.ToString("yyyy-MM-dd"),
                         Language.reverseTranslate(TrangThai.Text));
                     if (result1 == "Success")
                     {

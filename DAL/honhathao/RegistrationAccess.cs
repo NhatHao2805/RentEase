@@ -106,7 +106,7 @@ namespace DAL.honhathao
             }
             return "Success";
         }
-        public static string update_registration(string registrationid,string state)
+        public static string update_registration(string registrationid,string endDate ,string state)
         {
             try
             {
@@ -117,6 +117,8 @@ namespace DAL.honhathao
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@p_registration_id", registrationid);
                         command.Parameters.AddWithValue("@p_status", state);
+                        Console.WriteLine(endDate);
+                        command.Parameters.AddWithValue("@p_endDate", endDate);
                         command.ExecuteNonQuery();
                     }
                 }

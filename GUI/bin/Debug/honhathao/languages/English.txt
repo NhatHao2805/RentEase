@@ -219,8 +219,8 @@ assettable_price: Price
 assettable_status: Status
 assettable_usedate: Usage date
 :Form_AddContract
-contract.add_title: Add Contract
-contract.add_subtitle: Add a new contract to the list
+contract.add_title: Contract
+contract.add_subtitle: Add/Edit a contract to the list
 contract.room_number: Room Number
 contract.tenant_name: Tenant
 contract.creation_date: Creation Date
@@ -236,13 +236,16 @@ LoadAll.tenant: Tenant
 LoadAll.last_name: Last Name
 LoadAll.first_name: First Name
 LoadAll.rating: Rating
-LoadAll.detail_title: View Details
-LoadAll.detail_subtitle: View Payment Details
+LoadAll.detail_title: View all tenants
+LoadAll.detail_subtitle: View tenant reviews
 LoadAll.placeholder: Search by Name
-LoadAll.button: Search\
+LoadAll.button: Search
+LichSuThueNha: Rental History
+DanhGiaTraiNghiem: Your experience review
+DanhGia: Review
 :Form_addTenant
 tenant.title: Tenant
-tenant.subtitle: Register New Tenant
+tenant.subtitle: Add/Edit New Tenant
 tenant.last_name: Last Name
 tenant.first_name: First Name
 tenant.dob: Date of Birth
@@ -384,8 +387,8 @@ status: Status
 add_button: Add
 btn_dong: Close
 :Form_addRoom
-room.add_title: Add Room
-room.add_subtitle: Add New Room
+room.add_title: Room
+room.add_subtitle: Add/Edit Room
 property_type: Floor
 classification: Classification
 amenities: Amenities

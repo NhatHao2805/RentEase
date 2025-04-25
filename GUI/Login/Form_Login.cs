@@ -12,6 +12,7 @@ using BLL;
 using System.Runtime.InteropServices;
 using GUI;
 using GUI.BuildingManagement;
+using GUI.Custom;
 namespace GUI
 {
     public partial class Form_Login: Form
@@ -161,7 +162,8 @@ namespace GUI
         private void dmk_lb_Click(object sender, EventArgs e)
         {
             Form_ForgotPassword forgotPasswordForm = new Form_ForgotPassword();
-            forgotPasswordForm.ShowDialog();
+            //forgotPasswordForm.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, forgotPasswordForm);
         }
     }
     

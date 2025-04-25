@@ -168,6 +168,13 @@ END//
 
 
 -- PAYMENT-BILL-W-E
+CREATE PROCEDURE take_billid()
+BEGIN
+   SELECT b.BILLID FROM bill b
+	WHERE b.TOTAL IS NULL
+	LIMIT 1;
+END //
+
 CREATE FUNCTION createPaymentID()
 RETURNS VARCHAR(20) 
 DETERMINISTIC
@@ -227,6 +234,7 @@ END//
 
 CREATE PROCEDURE add_w_e(
     IN p_buildingid VARCHAR(50),
+    IN p_tenantid VARCHAR(50),
     IN p_o_w VARCHAR(50),  -- Chỉ số nước cũ
     IN p_n_w VARCHAR(50),  -- Chỉ số nước mới
     IN p_o_e VARCHAR(50),  -- Chỉ số điện cũ
@@ -234,24 +242,19 @@ CREATE PROCEDURE add_w_e(
     IN p_month VARCHAR(50) -- Tháng (1-12)
 )
 BEGIN
-   DECLARE new_ID VARCHAR(50);
-   DECLARE new_ID_0 VARCHAR(50);
-   DECLARE p_tenantID VARCHAR(50);
-   DECLARE v_start_date VARCHAR(50);
-   DECLARE v_end_date VARCHAR(50);
-	DECLARE v_now VARCHAR(50);
-	DECLARE new_id_2 VARCHAR(20);
-   DECLARE v_total FLOAT;  -- Thay đổi kiểu dữ liệu
-   DECLARE v_startdate VARCHAR(50);       -- Sửa thành DATE
-   DECLARE v_enddate VARCHAR(50);         -- Sửa thành DATE
+   DECLARE new_ID VARCHAR(50);-- Id điện 
+   DECLARE new_ID_0 VARCHAR(50);-- Id nước 
    
-	SET p_tenantID = (
-			SELECT t.TENANTID FROM tenant t
-			JOIN contract c ON c.TENANTID = t.TENANTID
-			JOIN room r ON r.ROOMID = c.ROOMID
-			JOIN building b ON b.BUILDINGID = r.BUILDINGID
-			WHERE b.BUILDINGID = p_buildingid
-			LIMIT 1);
+   DECLARE v_start_date VARCHAR(50);-- ngày bắt đầu thanh toán
+   DECLARE v_end_date VARCHAR(50);-- ngày kết thúc thanh toán
+	DECLARE v_now VARCHAR(50);-- Ngày tạo hóa đơn
+	DECLARE new_id_2 VARCHAR(20);-- Id bill
+    
+   DECLARE v_total VARCHAR(20);  -- Tổng tiền add vào bill     
+   
+   DECLARE billdt_id_1 VARCHAR(20);
+   DECLARE billdt_id_2 VARCHAR(20);
+    
     SET v_start_date = STR_TO_DATE(CONCAT('1/', p_month, '/', YEAR(CURDATE())), '%d/%m/%Y');
     SET v_end_date = LAST_DAY(v_start_date);
     SET v_now = Date(NOW());
@@ -266,28 +269,30 @@ BEGIN
 
    SET new_id_2 = createBillID();
 
-   INSERT INTO billdetail (BILLID, ID, AMOUNT)
-   SELECT new_id_2, us.SERVICEID, s.UNITPRICE 
+	set billdt_id_1 = createBillDetailID();
+   INSERT INTO billdetail (BILLDETAIL_ID,BILLID, ID, AMOUNT)
+   SELECT billdt_id_1,new_id_2, us.SERVICEID, s.UNITPRICE 
    FROM use_service us
    JOIN service s ON s.SERVICEID = us.SERVICEID
-   WHERE us.TENANTID = p_tenantID;
+   WHERE us.TENANTID = p_tenantid
+   AND s.ISDELETED = 0
+   AND us.ISDELETED = 0;
    
-   INSERT INTO billdetail (BILLID, ID, AMOUNT)
-   SELECT new_id_2, we.FIGUREID,weu.UNITPRICE
+   set billdt_id_2 = createBillDetailID();
+   INSERT INTO billdetail (BILLDETAIL_ID, BILLID, ID, AMOUNT)
+   SELECT billdt_id_2,new_id_2, we.FIGUREID,weu.UNITPRICE
    FROM water_electricity we
-   JOIN water_elec_unitprice weu ON weu.UNITPRICEID = we.UNITPRICEID
-   WHERE we.TENANTID = p_tenantID
-	AND (we.FIGUREID = new_ID_0 OR we.FIGUREID = new_ID);
+   JOIN WATER_ELECT_UNITPRICE weu ON weu.UNITPRICEID = we.UNITPRICEID
+   WHERE we.TENANTID = p_tenantid
+	AND (we.FIGUREID = new_ID_0 OR we.FIGUREID = new_ID)
+    AND we.ISDELETED = 0;
    
    SELECT SUM(AMOUNT) INTO v_total
    FROM billdetail
    WHERE BILLID = new_id_2;
-
-   SET v_startdate = CURDATE();    
-   SET v_enddate = DATE_ADD(CURDATE(), INTERVAL 30 DAY);
     
    INSERT INTO bill (BILLID, TENANTID, TOTAL, START_DATE, END_DATE)
-   VALUES (new_id_2, p_tenantID, v_total, v_startdate, v_enddate);	
+   VALUES (new_id_2, p_tenantID, v_total, v_start_date, v_end_date);	
 END //
 
 CREATE PROCEDURE del_W_E(
@@ -335,6 +340,9 @@ BEGIN
 	JOIN building b ON b.BUILDINGID = r.BUILDINGID
 	WHERE b.BUILDINGID = p_buildingid
 	AND t.ISDELETED = 0
+    AND we.ISDELETED = 0
+    AND c.ISDELETED = 0
+    AND room.ISDELETED = 0
 	AND t.USERNAME =  p_user;
 END //
 
@@ -390,7 +398,8 @@ BEGIN
    SELECT t.TENANTID,t.FIRSTNAME,t.LASTNAME FROM tenant t
 	JOIN contract c ON c.TENANTID = t.TENANTID
 	Join room r on r.ROOMID = c.ROOMID
-	WHERE r.ROOMNAME = p_room_id;
+	WHERE r.ROOMNAME = p_room_id
+    AND t.ISDELETED = 0;
 END //
 
 CREATE PROCEDURE load_bill(
@@ -507,6 +516,7 @@ END//
 
 CREATE FUNCTION generate_parking_id()
 RETURNS VARCHAR(10)
+READS SQL DATA
 BEGIN
     DECLARE new_id VARCHAR(10);
     DECLARE max_id INT;
@@ -935,6 +945,21 @@ END //
 
 -- USER
 -- New 20/4
+CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `check_account`(
+    usern VARCHAR(50)
+) RETURNS INT
+DETERMINISTIC
+READS SQL DATA
+BEGIN
+    DECLARE account_exists INT;
+    SELECT COUNT(*) INTO account_exists FROM user WHERE USERNAME = usern;
+    IF account_exists = 0 THEN
+        RETURN 1;  -- Tài khoản không tồn tại
+    ELSE
+        RETURN 0;  -- Tài khoản đã tồn tại
+    END IF;
+END//
+
 CREATE PROCEDURE UpdatePassword(
     IN p_email VARCHAR(255),
     IN p_password VARCHAR(255)
@@ -1521,8 +1546,8 @@ BEGIN
 		SELECT 
 			r.ROOMNAME, 
 			r.BUILDINGID, 
-			r.FLOOR,
 			r.TYPE, 
+            r.FLOOR,
 			r.CONVENIENT, 
 			r.AREA, 
 			r.PRICE, 
@@ -1536,8 +1561,8 @@ BEGIN
 		SELECT 
 			r.ROOMNAME, 
 			r.BUILDINGID, 
+            r.TYPE, 
 			r.FLOOR,
-			r.TYPE, 
 			r.CONVENIENT, 
 			r.AREA, 
 			r.PRICE, 
@@ -2105,6 +2130,7 @@ BEGIN
     WHERE SERVICEID = p_ServiceID;
 END //
 
+
 CREATE PROCEDURE GetServiceUsage(
     IN P_BUILDINGID VARCHAR(10),
     IN P_SORTOPTION VARCHAR(10) 
@@ -2120,7 +2146,6 @@ BEGIN
         ELSE 'ROOMID ASC'
     END;
 
-    -- Xây dựng câu lệnh SQL động với điều kiện WHERE
     SET @sql = CONCAT('
         SELECT 
             (@row_num := @row_num + 1) AS STT,
@@ -2136,16 +2161,17 @@ BEGIN
         JOIN CONTRACT C ON C.TENANTID = T.TENANTID
         JOIN ROOM R ON C.ROOMID = R.ROOMID
         JOIN BUILDING B ON R.BUILDINGID = B.BUILDINGID 
-        WHERE R.BUILDINGID = ?
+        WHERE R.BUILDINGID = ''', P_BUILDINGID, '''
         AND T.ISDELETED = 0
         AND R.ISDELETED = 0
         AND S.ISDELETED = 0
         ORDER BY ', @orderClause);
 
     PREPARE stmt FROM @sql;
-    EXECUTE stmt USING P_BUILDINGID;
+    EXECUTE stmt;
     DEALLOCATE PREPARE stmt;
 END //
+
 
 -- REGISTRATION
 CREATE FUNCTION createRegisterID()
@@ -2196,11 +2222,13 @@ END //
 
 CREATE PROCEDURE update_registration(
 	IN p_registration_id VARCHAR(20),
-    IN p_status VARCHAR(20)
+    IN p_status VARCHAR(20),
+    IN p_endDate VARCHAR(20)
 )
 BEGIN
     UPDATE temporary_registration t
-    SET t.`STATUS` = p_status        
+    SET t.`STATUS` = p_status
+    and t.EXPIRATION_DATE = p_endDate
     WHERE t.REGISTRATIONID = p_registration_id;
 END//
 
@@ -2530,15 +2558,3 @@ END //
 --         END IF;
 --     END IF;
 -- END //
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,7 @@ namespace GUI.honhathao
         {
             this.tenantHistoryID = tenantHistoryID;
             InitializeComponent();
+            loadLanguage();
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -29,7 +31,30 @@ namespace GUI.honhathao
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
-
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "LichSuThueNha":
+                        label23.Text = a.Value;
+                        break;
+                    case "DanhGiaTraiNghiem":
+                        label22.Text = a.Value;
+                        break;
+                    case "DanhGia":
+                        guna2HtmlLabel14.Text = a.Value;
+                        break;
+                    case "tenant.save_button":
+                        guna2Button1.Text = a.Value;
+                        break;
+                }
+            }
+        }
+//        LichSuThueNha: Rental History
+//DanhGiaTraiNghiem: Your experience review
+//DanhGia: Review
         private void exitButton_Click(object sender, EventArgs e)
         {
             this.Close();
