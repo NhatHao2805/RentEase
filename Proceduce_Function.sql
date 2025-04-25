@@ -1521,8 +1521,8 @@ BEGIN
 		SELECT 
 			r.ROOMNAME, 
 			r.BUILDINGID, 
-			r.FLOOR,
 			r.TYPE, 
+            r.FLOOR,
 			r.CONVENIENT, 
 			r.AREA, 
 			r.PRICE, 
@@ -1536,8 +1536,8 @@ BEGIN
 		SELECT 
 			r.ROOMNAME, 
 			r.BUILDINGID, 
+            r.TYPE, 
 			r.FLOOR,
-			r.TYPE, 
 			r.CONVENIENT, 
 			r.AREA, 
 			r.PRICE, 
@@ -2196,11 +2196,13 @@ END //
 
 CREATE PROCEDURE update_registration(
 	IN p_registration_id VARCHAR(20),
-    IN p_status VARCHAR(20)
+    IN p_status VARCHAR(20),
+    IN p_endDate VARCHAR(20)
 )
 BEGIN
     UPDATE temporary_registration t
-    SET t.`STATUS` = p_status        
+    SET t.`STATUS` = p_status
+    and t.EXPIRATION_DATE = p_endDate
     WHERE t.REGISTRATIONID = p_registration_id;
 END//
 

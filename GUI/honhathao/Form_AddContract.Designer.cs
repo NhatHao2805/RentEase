@@ -170,6 +170,7 @@
             this.TienDatCoc.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.TienDatCoc.Size = new System.Drawing.Size(160, 36);
             this.TienDatCoc.TabIndex = 30;
+            this.TienDatCoc.TextChanged += new System.EventHandler(this.TienDatCoc_TextChanged);
             // 
             // GhiChu
             // 

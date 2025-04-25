@@ -196,6 +196,7 @@ namespace GUI
                 dgv_QLHD.Columns[9].Width = 100;
                 dgv_QLHD.Columns[10].Width = 100;
                 dgv_QLHD.Columns[11].Width = 200;
+                dgv_QLHD.Columns[10].DefaultCellStyle.Format = "0";
                 dgv_QLHD.ScrollBars = ScrollBars.Both;
                 translateValue(dgv_QLHD, 9);
             }
@@ -272,7 +273,7 @@ namespace GUI
 
                     }
                 }
-                translateValue(dgv_QLP, 3);
+                translateValue(dgv_QLP, 2);
             }catch(Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -807,12 +808,12 @@ namespace GUI
                 dgv_QLCSVC.DataSource = null;
                 dgv_QLCSVC.DataSource = filteredData;
 
-                dgv_QLCSVC.Columns["ROOMNAME"].DisplayIndex = 0;
-                dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
-                dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
-                dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
-                dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
-                dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
+                //dgv_QLCSVC.Columns["RoomName"].DisplayIndex = 0;
+                //dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
+                //dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
+                //dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
+                //dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
+                //dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
             }
             catch (Exception ex)
             {
@@ -843,7 +844,6 @@ namespace GUI
                     DataGridViewRow data = dgv_DKLT.Rows[row];
                     Form_Registration f = new Form_Registration(row, listBuildingID.Text, 1, dgv_DKLT, null);
 
-                    //f.ShowDialog();
                     OverlayManager.ShowWithOverlay(this, f);
 
                     loadRegistration(null);
@@ -887,7 +887,21 @@ namespace GUI
 
                 dgv_QLP.DataSource = null;
                 dgv_QLP.DataSource = filteredData;
+                foreach (DataGridViewRow row in dgv_QLP.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
 
+
+                        string[] status1 = row.Cells[7].Value.ToString().Split(';');
+                        for (int i = 0; i < status1.Length; i++)
+                        {
+                            status1[i] = Language.translate(status1[i].Trim());
+                        }
+                        row.Cells[7].Value = string.Join(";", status1);
+                    }
+                }
+                translateValue(dgv_QLP, 2);
                 ConfigureDataGridView();
             }
             catch (Exception ex)
@@ -952,33 +966,33 @@ namespace GUI
         {
             DataGridViewRow data = null;
             Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username);
-            f.ShowDialog();
-            //OverlayManager.ShowWithOverlay(this, f);
+            //f.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, f);
             loadTenant(null);
         }
-        private void FilterAssets(string priceSort, string nameSort)
-        {
-            try
-            {
-                DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.SelectedItem.ToString());
+        //private void FilterAssets(string priceSort, string nameSort)
+        //{
+        //    try
+        //    {
+        //        DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.SelectedItem.ToString());
 
-                dgv_QLCSVC.DataSource = null;
-                dgv_QLCSVC.DataSource = filteredData;
+        //        dgv_QLCSVC.DataSource = null;
+        //        dgv_QLCSVC.DataSource = filteredData;
 
-                dgv_QLCSVC.Columns["RoomID"].DisplayIndex = 0;
-                dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
-                dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
-                dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
-                dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
-                dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
-                load_Assets();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //        dgv_QLCSVC.Columns["RoomID"].DisplayIndex = 0;
+        //        dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
+        //        dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
+        //        dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
+        //        dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
+        //        dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
+        //        load_Assets();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
+        //                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         private void button25_Click_1(object sender, EventArgs e)
         {
@@ -1004,7 +1018,7 @@ namespace GUI
 
             Assets selectedAsset = new Assets
             {
-                RoomId = selectedRow.Cells["RoomID"].Value.ToString(),
+                RoomId = selectedRow.Cells["ROOMNAME"].Value.ToString(),
                 AssetId = selectedRow.Cells["AssetID"].Value.ToString(),
                 AssetName = selectedRow.Cells["AssetName"].Value.ToString(),
                 Price = selectedRow.Cells["Price"].Value?.ToString(),
@@ -2155,6 +2169,9 @@ namespace GUI
                     case "residence_registration_description":
                         label13.Text = kvp.Value;
                         break;
+                    case "LoadAll.placeholder":
+                        guna2HtmlLabel5.Text = kvp.Value;
+                        break;
 
                     case "bill_information_title":
                         label17.Text = kvp.Value;
@@ -2188,10 +2205,10 @@ namespace GUI
                         label18.Text = kvp.Value;
                         break;
                     case "checkbox_tangdan":
-                        checkBox22.Text = kvp.Value;
+                        checkBox23.Text = kvp.Value;
                         break;
                     case "checkbox_giamdan":
-                        checkBox23.Text = kvp.Value;
+                        checkBox22.Text = kvp.Value;
                         break;
                     case "checkbox_theoten":
                         guna2HtmlLabel2.Text = kvp.Value;

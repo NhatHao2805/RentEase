@@ -126,16 +126,10 @@ namespace GUI.honhathao
                         sdt.Text,
                         email.Text
                     );
-                    if(result == "Thêm thành công")
-                    {
-                        MessageBox.Show(result, "Information", MessageBoxButtons.OK);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(result, "Error", MessageBoxButtons.OK);
-                        this.Close();
-                    }
+
+                    MessageBox.Show(result, "Information", MessageBoxButtons.OK);
+                    this.Close();
+
                     break;
                 case 1:
                     string result1 = TenantBLL.TenantBLL_update_Tenant(
@@ -147,16 +141,11 @@ namespace GUI.honhathao
                         sdt.Text,
                         email.Text
                     );
-                    if (result1 == "Thêm thành công")
-                    {
-                        MessageBox.Show(result1, "Information", MessageBoxButtons.OK);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(result1, "Error", MessageBoxButtons.OK);
-                    }
-                    
+
+                    MessageBox.Show(result1, "Information", MessageBoxButtons.OK);
+                    this.Close();
+
+
                     break;
             }
         }

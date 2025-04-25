@@ -213,8 +213,8 @@ assettable_status: Trạng thái
 assettable_usedate: Ngày đưa vào sử dụng
 btn_save: Lưu
 :Form_AddContract
-contract.add_title: Thêm hợp đồng
-contract.add_subtitle: Thêm hợp đồng mới vào danh sách
+contract.add_title: Hợp đồng
+contract.add_subtitle: Thêm/Chỉnh sửa hợp đồng vào danh sách
 contract.room_number: Số phòng
 contract.tenant_name: Khách thuê
 contract.creation_date: Ngày Tạo
@@ -230,13 +230,16 @@ LoadAll.tenant: Người Thuê
 LoadAll.last_name: Họ
 LoadAll.first_name: Tên
 LoadAll.rating: Đánh giá
-LoadAll.detail_title: Xem chi tiết
-LoadAll.detail_subtitle: Xem chi tiết thanh toán
+LoadAll.detail_title: Xem toàn bộ khách thuê
+LoadAll.detail_subtitle: Xem đánh giá khách thuê
 LoadAll.placeholder: Tìm kiếm theo tên
 LoadAll.button: Tìm kiếm
+LichSuThueNha: Lịch sử thuê nhà
+DanhGiaTraiNghiem: Đánh giá trải nghiệm của bạn
+DanhGia: Đánh giá
 :Form_addTenant
 tenant.title: Người thuê nhà
-tenant.subtitle: Đăng ký người thuê nhà mới
+tenant.subtitle: Đăng ký/Chỉnh sửa người thuê nhà 
 tenant.last_name: Họ đệm
 tenant.first_name: Tên
 tenant.dob: Ngày sinh
@@ -378,8 +381,8 @@ status: Trạng thái
 add_button: Thêm
 btn_dong: Đóng
 :Form_addRoom
-room.add_title: Thêm phòng
-room.add_subtitle: Thêm phòng mới
+room.add_title: Phòng ở
+room.add_subtitle: Thêm/Chỉnh sửa phòng ở
 property_type: Tầng nhà
 classification: Phân loại
 amenities: Tiện ích

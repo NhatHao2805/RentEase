@@ -9,9 +9,9 @@ namespace BLL.honhathao
 {
     public class RegistrationBLL
     {
-        public static string RegistratrionBLL_update_registration(string registrationid, string state)
+        public static string RegistratrionBLL_update_registration(string registrationid,string endDate, string state)
         {
-            return RegistrationAccess.update_registration( registrationid, state);
+            return RegistrationAccess.update_registration( registrationid, endDate, state);
         }
         public static string RegistrationBLL_del_registration(string p_registration_id)
         {
