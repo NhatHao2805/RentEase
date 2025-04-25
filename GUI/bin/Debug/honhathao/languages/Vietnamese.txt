@@ -57,6 +57,9 @@ Password: Mật khẩu
 Password2: Mật khẩu xác nhận
 Sign_in: Đăng nhập
 Sign_up: Đăng ký
+Forgot_Password: Quên mật khẩu ?
+Forgotpassword: Quên mật khẩu
+Change_password: Đổi mật khẩu
 Sign_Up_Title_Form:Đăng ký
 User_info:Thông tin chi tiết
 Account_info:Thông tin tài khoản

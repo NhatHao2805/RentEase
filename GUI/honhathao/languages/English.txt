@@ -61,6 +61,9 @@ Password: Password
 Password2: Confirm Password
 Sign_in: Sign in
 Sign_up: Sign up
+Forgot_Password: Forgot Password ?
+Forgotpassword: Forgot Password
+Change_password: Change your password
 Sign_Up_Title_Form: Sign Up
 User_info: Detail Information
 Account_info: Account Information
@@ -147,7 +150,7 @@ parking_lot_label: Parking Lot
 vehicle_label: Vehicle
 parking_list_title: Parking Lot List
 : Room Table
-roomtable_room_id: Room
+roomtable_room_id: Room id
 roomtable_building: Building id
 roomtable_floor: Floor
 roomtable_room_type: Room type

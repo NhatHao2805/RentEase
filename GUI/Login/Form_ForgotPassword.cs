@@ -22,7 +22,7 @@ namespace GUI
         private System.Windows.Forms.Timer countdownTimer;
         private bool isPasswordValid = false;
 
-        public Form_ForgotPassword()
+        public Form_ForgotPassword(string language)
         {
             InitializeComponent();
             loadLanguage();
@@ -44,6 +44,12 @@ namespace GUI
             {
                 switch (kvp.Key)
                 {
+                    case "Forgotpassword":
+                        label23.Text = kvp.Value;
+                        break;
+                    case "Change_password":
+                        label22.Text = kvp.Value;
+                        break;
                     case "Enter_Email":
                         labelEmail.Text = kvp.Value;
                         break;
