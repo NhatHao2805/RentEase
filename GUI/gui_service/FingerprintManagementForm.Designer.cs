@@ -44,7 +44,6 @@ namespace GUI.gui_service
             this.btnUpdateImage = new Guna.UI2.WinForms.Guna2Button();
             this.btnSelectImage = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBoxFingerprint = new System.Windows.Forms.PictureBox();
-            this.btnTestFingerprint = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdatePermission = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEnroll = new Guna.UI2.WinForms.Guna2Button();
@@ -190,7 +189,6 @@ namespace GUI.gui_service
             this.panelEnroll.Controls.Add(this.btnUpdateImage);
             this.panelEnroll.Controls.Add(this.btnSelectImage);
             this.panelEnroll.Controls.Add(this.pictureBoxFingerprint);
-            this.panelEnroll.Controls.Add(this.btnTestFingerprint);
             this.panelEnroll.Controls.Add(this.btnUpdatePermission);
             this.panelEnroll.Controls.Add(this.btnDelete);
             this.panelEnroll.Controls.Add(this.btnEnroll);
@@ -311,30 +309,6 @@ namespace GUI.gui_service
             this.pictureBoxFingerprint.Size = new System.Drawing.Size(365, 73);
             this.pictureBoxFingerprint.TabIndex = 11;
             this.pictureBoxFingerprint.TabStop = false;
-            // 
-            // btnTestFingerprint
-            // 
-            this.btnTestFingerprint.BackColor = System.Drawing.Color.Transparent;
-            this.btnTestFingerprint.BorderColor = System.Drawing.Color.Silver;
-            this.btnTestFingerprint.BorderRadius = 5;
-            this.btnTestFingerprint.BorderThickness = 1;
-            this.btnTestFingerprint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTestFingerprint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTestFingerprint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTestFingerprint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTestFingerprint.FillColor = System.Drawing.Color.Maroon;
-            this.btnTestFingerprint.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTestFingerprint.ForeColor = System.Drawing.Color.White;
-            this.btnTestFingerprint.Location = new System.Drawing.Point(23, 566);
-            this.btnTestFingerprint.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTestFingerprint.Name = "btnTestFingerprint";
-            this.btnTestFingerprint.ShadowDecoration.BorderRadius = 10;
-            this.btnTestFingerprint.ShadowDecoration.Enabled = true;
-            this.btnTestFingerprint.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.btnTestFingerprint.Size = new System.Drawing.Size(365, 55);
-            this.btnTestFingerprint.TabIndex = 9;
-            this.btnTestFingerprint.Text = "Kiểm tra vân tay";
-            this.btnTestFingerprint.Click += new System.EventHandler(this.btnTestFingerprint_Click);
             // 
             // btnUpdatePermission
             // 
@@ -521,7 +495,6 @@ namespace GUI.gui_service
         private Guna.UI2.WinForms.Guna2Button btnEnroll;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnUpdatePermission;
-        private Guna.UI2.WinForms.Guna2Button btnTestFingerprint;
         private System.Windows.Forms.PictureBox pictureBoxFingerprint;
         private Guna.UI2.WinForms.Guna2Button btnSelectImage;
         private Guna.UI2.WinForms.Guna2Button btnUpdateImage;

@@ -85,7 +85,7 @@ namespace DAL.dal_service
             }
             return output;
         }
-        public static string add_W_E(string buildingID,string tenantID, string o_w, string n_w, string o_e, string n_e, string month)
+        public static string add_W_E(string buildingID,string tenantid, string o_w, string n_w, string o_e, string n_e, string month)
         {
             //try
             //{
@@ -95,7 +95,7 @@ namespace DAL.dal_service
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@p_buildingID", buildingID);
-                    command.Parameters.AddWithValue("@p_tenantid", tenantID);
+                    command.Parameters.AddWithValue("@p_tenantid", tenantid);
                     command.Parameters.AddWithValue("@p_o_w", o_w);
                     command.Parameters.AddWithValue("@p_n_w", n_w);
                     command.Parameters.AddWithValue("@p_o_e", o_e);

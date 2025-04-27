@@ -1,5 +1,4 @@
-﻿changePass:Quên/Đổi mật khẩu?
-bill_id:Mã hóa đơn
+﻿bill_id:Mã hóa đơn
 record_id:Mã bản ghi
 service_name:Tên dịch vụ
 amount:Số tiền
@@ -58,26 +57,15 @@ Password: Mật khẩu
 Password2: Mật khẩu xác nhận
 Sign_in: Đăng nhập
 Sign_up: Đăng ký
+Forgot_Password: Quên mật khẩu ?
+Forgotpassword: Quên mật khẩu
+Change_password: Đổi mật khẩu
 Sign_Up_Title_Form:Đăng ký
 User_info:Thông tin chi tiết
 Account_info:Thông tin tài khoản
 Fullname:Họ và tên
 Birthday:Ngày Sinh
 Email:Email
-building_management: Quản lý Tòa Nhà
-building_management_subtitle: Giao diện quản lý các tòa nhà
-building_section: Quản lý tòa nhà
-add_building_btn: Thêm tòa nhà
-refresh_btn: Làm mới
-manage_btn: Quản lý
-forgot_pw.title :Quên mật khẩu
-forgot_pw.subtitle :Đổi mật khẩu của bạn
-forgot_pw.email_label :Email
-forgot_pw.email_placeholder :Nhập email của bạn
-forgot_pw.send_otp_btn :Gửi mã OTP
-forgot_pw.otp_label :Mã OTP
-forgot_pw.otp_placeholder :Nhập mã OTP
-forgot_pw.verify_btn :Xác thực
 Gender:Giới tính
 Numberphone:Số điện thoại
 Address:Địa chỉ

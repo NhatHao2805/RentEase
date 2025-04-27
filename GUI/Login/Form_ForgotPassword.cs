@@ -7,8 +7,6 @@ using System.Net.Mail;
 using System.Net;
 using System.IO;
 using System.Text.RegularExpressions;
-using static System.Net.WebRequestMethods;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -24,7 +22,7 @@ namespace GUI
         private System.Windows.Forms.Timer countdownTimer;
         private bool isPasswordValid = false;
 
-        public Form_ForgotPassword()
+        public Form_ForgotPassword(string language)
         {
             InitializeComponent();
             loadLanguage();
@@ -38,15 +36,7 @@ namespace GUI
             // Set initial form size for step 1
             //this.Size = new System.Drawing.Size(395, 299); // Height includes title bar
         }
- 
-//        forgot_pw.title :Quên mật khẩu
-//forgot_pw.subtitle :Đổi mật khẩu của bạn
-//forgot_pw.email_label :Email
-//forgot_pw.email_placeholder :Nhập email của bạn
-//forgot_pw.send_otp_btn :Gửi mã OTP
-//forgot_pw.otp_label :Mã OTP
-//forgot_pw.otp_placeholder :Nhập mã OTP
-//forgot_pw.verify_btn :Xác thực
+
         private void loadLanguage()
         {
             string selectedLanguage = Language.GetCurrentLanguage();
@@ -54,14 +44,14 @@ namespace GUI
             {
                 switch (kvp.Key)
                 {
-                    case "Enter_Email":
-                        labelEmail.Text = kvp.Value;
-                        break;
-                    case "forgot_pw.title":
+                    case "Forgotpassword":
                         label23.Text = kvp.Value;
                         break;
-                    case "forgot_pw.subtitle":
+                    case "Change_password":
                         label22.Text = kvp.Value;
+                        break;
+                    case "Enter_Email":
+                        labelEmail.Text = kvp.Value;
                         break;
                     case "Send_OTP":
                         btnSendOTP.Text = kvp.Value;

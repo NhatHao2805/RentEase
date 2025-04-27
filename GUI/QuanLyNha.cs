@@ -109,20 +109,8 @@ namespace GUI
             try
             {
                 DataTable data = TenantBLL.TenantBLL_load_Tenant(form1.taikhoan.Username, name);
-                if (dgv_LSTN.Rows.Count == 0)
-                {
-                    button31.Enabled = false;
-                    button34.Enabled = false;
-                    button37.Enabled = false;
-
-                }
-                else
-                {
-                    button31.Enabled = true;
-                    button34.Enabled = true;
-                    button37.Enabled = true;
-                }
                 data.Columns.RemoveAt(0);
+
                 dgv_Tenant.DataSource = data;
                 dgv_Tenant.Columns[0].Width = 90;
                 dgv_Tenant.Columns[1].Width = 150;
@@ -148,18 +136,6 @@ namespace GUI
 
                 DataTable data = TenantHistoryBLL.TenantHistoryBLL_load_Tenant(listBuildingID.Text, name);
                 dgv_LSTN.DataSource = data;
-                if (dgv_LSTN.Rows.Count == 0)
-                {
-                    guna2GradientButton2.Enabled = false;
-                    button9.Enabled = false;
-
-                }
-                else
-                {
-                    guna2GradientButton2.Enabled = true;
-                    button9.Enabled = true;
-                }
-
                 dgv_LSTN.Columns[0].Width = 90;
                 dgv_LSTN.Columns[1].Width = 150;
                 dgv_LSTN.Columns[2].Width = 100;
@@ -177,23 +153,8 @@ namespace GUI
         {
             try
             {
-
                 DataTable data = RegistrationBLL.RegistrationBLL_load_registration(listBuildingID.Text, name);
-                
                 dgv_DKLT.DataSource = data;
-                if (dgv_DKLT.Rows.Count == 0)
-                {
-                    button15.Enabled = false;
-                    button16.Enabled = false;
-                    button17.Enabled = false;
-
-                }
-                else
-                {
-                    button15.Enabled = true;
-                    button16.Enabled = true;
-                    button17.Enabled = true;
-                }
                 dgv_DKLT.Columns[0].Width = 90;
                 dgv_DKLT.Columns[1].Width = 150;
                 dgv_DKLT.Columns[2].Width = 100;
@@ -217,18 +178,10 @@ namespace GUI
                 if (dgv_QLHD.Rows.Count == 0)
                 {
                     button40.Enabled = false;
-                    button41.Enabled = false;
-                    button39.Enabled = false;
-                    guna2GradientButton12.Enabled = false;
-
                 }
                 else
                 {
                     button40.Enabled = true;
-                    button41.Enabled = true;
-                    button39.Enabled = true;
-                    guna2GradientButton12.Enabled = true;
-                    
                 }
 
                 dgv_QLHD.Columns[0].Width = 70;
@@ -267,12 +220,18 @@ namespace GUI
         private void load_Assets()
         {
             try {
-                FilterAssets();
+
+                string priceSort = checkBox23.Checked ? "ASC" : null
+                                 + (checkBox22.Checked ? "DESC" : null);
+                string nameSort = checkBox19.Checked ? guna2TextBox1.Text : null;
+                dgv_QLCSVC.DataSource = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.Text);
+
+
                 dgv_QLCSVC.Columns[0].Width = 90;
                 dgv_QLCSVC.Columns[1].Width = 90;
                 dgv_QLCSVC.Columns[2].Width = 150;
                 dgv_QLCSVC.Columns[3].Width = 100;
-                dgv_QLCSVC.Columns[4].Width = 150;
+                dgv_QLCSVC.Columns[4].Width = 120;
                 dgv_QLCSVC.Columns[5].Width = 80;
                 translateValue(dgv_QLCSVC, 4);
                 dgv_QLCSVC.ScrollBars = ScrollBars.Both;
@@ -287,38 +246,25 @@ namespace GUI
         {
             try
             {
+                string status = (DangO_chbox1.Checked ? Language.reverseTranslate(DangO_chbox1.Text) + "; " : "")
+                              + (DangTrong_chbox1.Checked ? Language.reverseTranslate(DangTrong_chbox1.Text) + "; " : "")
+                              + (DangKT_chbox1.Checked ? Language.reverseTranslate(DangKT_chbox1.Text) + "; " : "")
+                              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
+                              + (DaQuaHan_chbox.Checked ? Language.reverseTranslate(DaQuaHan_chbox.Text) + "; " : "")
+                              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
+                              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) + "" : "");
+                status = status.TrimEnd(';', ' ');
 
-                if (listBuildingID.SelectedItem == null)
-                {
-                    dgv_QLP.DataSource = RoomBLL.LoadRoom(form1.taikhoan.Username, null);
-                }
-                else
-                {
-                    dgv_QLP.DataSource = RoomBLL.LoadRoom(form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-                }
-                if (dgv_QLP.Rows.Count == 0)
-                {
-                    button29.Enabled = false;
-                    button32.Enabled = false;
-                    button33.Enabled = false;
-                    button36.Enabled = false;
 
-                }
-                else
-                {
-                    button29.Enabled = true;
-                    button32.Enabled = true;
-                    button33.Enabled = true;
-                    button36.Enabled = true;
+                dgv_QLP.DataSource = RoomBLL.FilterRoomByStatus(status, form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
 
-                }
                 dgv_QLP.Columns[0].Width = 90;
                 dgv_QLP.Columns[1].Width = 90;
                 dgv_QLP.Columns[2].Width = 150;
-                dgv_QLP.Columns[3].Width = 250;
-                dgv_QLP.Columns[4].Width = 80;
-                dgv_QLP.Columns[5].Width = 80;
-                dgv_QLP.Columns[6].Width = 80;
+                dgv_QLP.Columns[3].Width = 50;
+                dgv_QLP.Columns[4].Width = 150;
+                dgv_QLP.Columns[5].Width = 120;
+                dgv_QLP.Columns[6].Width = 120;
                 dgv_QLP.Columns[7].Width = 250;
                 dgv_QLP.ScrollBars = ScrollBars.Both;
 
@@ -328,12 +274,12 @@ namespace GUI
                     {
 
 
-                        string[] status = row.Cells[7].Value.ToString().Split(';');
-                        for (int i = 0; i < status.Length; i++)
+                        string[] status1 = row.Cells[7].Value.ToString().Split(';');
+                        for (int i = 0; i < status1.Length; i++)
                         {
-                            status[i] = Language.translate(status[i].Trim());
+                            status1[i] = Language.translate(status1[i].Trim());
                         }
-                        row.Cells[7].Value = string.Join(";", status);
+                        row.Cells[7].Value = string.Join(";", status1);
 
                     }
                 }
@@ -359,8 +305,17 @@ namespace GUI
                 string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
 
                 guna2DataGridView7.DataSource = ParkingAreaBLL.FilterParkingArea(listBuildingID.SelectedItem.ToString(), type, status);
+
+                guna2DataGridView7.Columns[0].Width = 90;
+                guna2DataGridView7.Columns[1].Width = 90;
+                guna2DataGridView7.Columns[2].Width = 150;
+                guna2DataGridView7.Columns[3].Width = 100;
+                guna2DataGridView7.Columns[4].Width = 100;
+                guna2DataGridView7.Columns[5].Width = 90;
+                guna2DataGridView7.Columns[6].Width = 120;
+                guna2DataGridView7.ScrollBars = ScrollBars.Both;
+
                 translateValue(guna2DataGridView7, 3);
-                ConfigureParkingArea();
             }
             catch (Exception ex)
             {
@@ -375,22 +330,19 @@ namespace GUI
                 DataTable data = VehicleBLL.FilterVehicle(listBuildingID.SelectedItem.ToString(), null);
 
                 guna2DataGridView1.DataSource = data;
-                if(guna2DataGridView1.Rows.Count == 0)
-                {
-                    guna2GradientButton5.Enabled = false;
-                    guna2GradientButton6.Enabled = false;
-                    guna2GradientButton7.Enabled = false;
 
-                }
-                else
-                {
-                    guna2GradientButton5.Enabled = true;
-                    guna2GradientButton6.Enabled = true;
-                    guna2GradientButton7.Enabled = true;
-                }
+                guna2DataGridView1.Columns[0].Width = 90;
+                guna2DataGridView1.Columns[1].Width = 90;
+                guna2DataGridView1.Columns[2].Width = 180;
+                guna2DataGridView1.Columns[3].Width = 90;
+                guna2DataGridView1.Columns[4].Width = 150;
+                guna2DataGridView1.Columns[5].Width = 150;
+                guna2DataGridView1.Columns[6].Width = 120;
+                guna2DataGridView1.Columns[7].Width = 200;
+                guna2DataGridView1.ScrollBars = ScrollBars.Both;
+
                 translateValue(guna2DataGridView1, 6);
                 translateValue(guna2DataGridView1, 9);
-                ConfigureVehicle();
             }
             catch (Exception ex)
             {
@@ -406,27 +358,9 @@ namespace GUI
             {
                 var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
-                if (data == null || data.Count == 0)
-                {
-                    MessageBox.Show("Không có dữ liệu!");
-                }
+           
                 dgvServiceInfo.DataSource = data;
-                if (dgvServiceInfo.Rows.Count == 0)
-                {
-                    button45.Enabled = false;
-                    button49.Enabled = false;
-                    button50.Enabled = false;
-                    btn_xemdichvu.Enabled = false;
 
-                }
-                else
-                {
-                    button45.Enabled = true;
-                    button49.Enabled = true;
-                    button50.Enabled = true;
-                    btn_xemdichvu.Enabled = true;
-
-                }
                 checkBox_DV1.Visible = true;
                 checkBox_DV2.Visible = true;
                 checkBox_DV3.Visible = true;
@@ -448,7 +382,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-    }
+            }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -513,25 +447,120 @@ namespace GUI
             string danhSachTo = bll.LayChuoiEmailNguoiNhan(listBuildingID.Text);
             string[] danhSachEmail = danhSachTo.Split(',');
 
-
-
             bool emailSentSuccessfully = true;
 
             foreach (var emailRecipient in danhSachEmail)
             {
                 string recipientEmail = emailRecipient.Trim();
 
-
-
+                // Tạo email với nội dung HTML đẹp hơn
                 EmailDTO email = new EmailDTO
                 {
                     From = "nhuthuyhk9@gmail.com",
                     Password = "gdjq astk ezog zdjz",
                     To = recipientEmail,
-                    Subject = "Gửi từ phần mềm quản lí nhà Rentease",
-                    Body = "Xin chào, hợp đồng của bạn sắp hết hạn. Đây là email tự động."
+                    Subject = "Thông báo: Hợp đồng thuê nhà sắp hết hạn - RentEase",
+                    Body = @"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #777777;
+            border-top: 1px solid #dddddd;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .warning {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        .info {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>Thông Báo Hợp Đồng Sắp Hết Hạn</h1>
+        </div>
+        <div class='content'>
+            <p>Kính gửi Quý khách,</p>
+            
+            <p>Chúng tôi gửi thông báo này để nhắc nhở rằng <span class='warning'>hợp đồng thuê nhà của Quý khách sắp hết hạn</span> trong thời gian tới.</p>
+            
+            <div class='info'>
+                <p>Để đảm bảo quyền lợi và tránh gián đoạn các dịch vụ, xin vui lòng liên hệ với chúng tôi để thực hiện một trong các lựa chọn sau:</p>
+                <ul>
+                    <li>Gia hạn hợp đồng thuê nhà</li>
+                    <li>Thảo luận điều khoản cho hợp đồng mới</li>
+                    <li>Thông báo chấm dứt hợp đồng (nếu có kế hoạch chuyển đi)</li>
+                </ul>
+            </div>
+            
+            <p>Xin vui lòng <span class='highlight'>liên hệ với chúng tôi trước ngày hết hạn</span> để chúng tôi có thể hỗ trợ Quý khách tốt nhất.</p>
+            
+            <p>Nếu Quý khách có bất kỳ câu hỏi nào, đừng ngần ngại liên hệ với chúng tôi qua email hoặc số điện thoại được cung cấp trong hợp đồng.</p>
+            
+            <p>Trân trọng,<br>
+            <strong>Ban Quản Lý - RentEase</strong></p>
+        </div>
+        <div class='footer'>
+            <p>Email này được gửi tự động từ hệ thống quản lý RentEase. Vui lòng không trả lời email này.</p>
+            <p>&copy; " + DateTime.Now.Year + @" RentEase. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </div>
+</body>
+</html>"
                 };
 
+                // Đánh dấu email là HTML
+                email.IsHtml = true;
                 bool result = bll.GuiEmail(email);
 
                 if (!result)
@@ -543,11 +572,11 @@ namespace GUI
 
             if (emailSentSuccessfully)
             {
-                MessageBox.Show("Gửi email thành công!");
+                MessageBox.Show("Gửi email thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Gửi email thất bại.");
+                MessageBox.Show("Gửi email thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_vantay_Click(object sender, EventArgs e)
@@ -564,7 +593,7 @@ namespace GUI
         private void guna2GradientButton1_Click_1(object sender, EventArgs e)
         {
             Form_W_E form_W_E = new Form_W_E(form1.taikhoan.Username, listBuildingID.Text);
-
+            //form_W_E.ShowDialog();
             OverlayManager.ShowWithOverlay(this, form_W_E);
 
             string result = BillBLL.BillBLL_calculate_bill();
@@ -624,25 +653,8 @@ namespace GUI
         {
             try
             {
-                
                 DataTable data = BillBLL.BillBLL_load_Bill(form1.taikhoan.Username, name, listBuildingID.Text, control);
                 dgv_thanhtoan.DataSource = data;
-                if (dgv_thanhtoan.Rows.Count == 0)
-                {
-                    button20.Enabled = false;
-                    button10.Enabled = false;
-                    button18.Enabled = false;
-                    button43.Enabled = false;
-                    button8.Enabled = false;
-                }
-                else
-                {
-                    button20.Enabled = true;
-                    button10.Enabled = true;
-                    button18.Enabled = true;
-                    button43.Enabled = true;
-                    button8.Enabled = true;
-                }
                 dgv_thanhtoan.ScrollBars = ScrollBars.Both;
             }
             catch (Exception ex)
@@ -691,7 +703,6 @@ namespace GUI
         {
             try
             {
-                
                 string result = BillBLL.BillBLL_Del_Bill(
                 dgv_thanhtoan.Rows[dgv_thanhtoan.CurrentCell.RowIndex].Cells[0].Value.ToString());
                 MessageBox.Show(result);
@@ -886,7 +897,7 @@ namespace GUI
                 checkBox22.Checked = false;
                 checkBox19.Checked = false;
             }
-            FilterAssets();
+            load_Assets();
         }
         private void checkBox22_CheckedChanged(object sender, EventArgs e)
         {
@@ -895,7 +906,7 @@ namespace GUI
                 checkBox23.Checked = false;
                 checkBox19.Checked = false;
             }
-            FilterAssets();
+            load_Assets();
         }
         private void checkBox19_CheckedChanged(object sender, EventArgs e)
         {
@@ -904,48 +915,7 @@ namespace GUI
                 checkBox23.Checked = false;
                 checkBox22.Checked = false;
             }
-            FilterAssets();
-        }
-        private void FilterAssets()
-        {
-            try
-            {
-                string priceSort = checkBox23.Checked ? "ASC" : null
-                                 + (checkBox22.Checked ? "DESC" : null);
-                string nameSort = checkBox19.Checked ? guna2TextBox1.Text : null;
-                DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.Text);
-
-                dgv_QLCSVC.DataSource = null;
-                dgv_QLCSVC.DataSource = filteredData;
-                if (dgv_QLCSVC.Rows.Count == 0)
-                {
-                    button21.Enabled = false;
-                    button22.Enabled = false;
-                    button24.Enabled = false;
-                    button26.Enabled = false;
-
-                }
-                else
-                {
-                    button21.Enabled = true;
-                    button22.Enabled = true;
-                    button24.Enabled = true;
-                    button26.Enabled = true;
-                }
-                translateValue(dgv_QLCSVC, 4);
-
-                //dgv_QLCSVC.Columns["RoomName"].DisplayIndex = 0;
-                //dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
-                //dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
-                //dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
-                //dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
-                //dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            load_Assets();
         }
         private void button14_Click(object sender, EventArgs e)
         {
@@ -991,49 +961,6 @@ namespace GUI
             if (!checkBox1.Checked && !checkBox4.Checked && !checkBox3.Checked)
             {
                 load_Contract(0, timkiem_contract.Text);
-            }
-        }
-        // New HoaiAn 14/4
-        private void FilterRoomByStatus()
-        {
-            try
-            {
-                string status = (DangO_chbox1.Checked ? Language.reverseTranslate(DangO_chbox1.Text) + "; " : "")
-                              + (DangTrong_chbox1.Checked ? Language.reverseTranslate(DangTrong_chbox1.Text) + "; " : "")
-                              + (DangKT_chbox1.Checked ? Language.reverseTranslate(DangKT_chbox1.Text) + "; " : "")
-                              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
-                              + (DaQuaHan_chbox.Checked ? Language.reverseTranslate(DaQuaHan_chbox.Text) + "; " : "")
-                              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
-                              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) + "" : "");
-                status = status.TrimEnd(';', ' ');
-
-
-                DataTable filteredData = RoomBLL.FilterRoomByStatus(status, form1.taikhoan.Username, listBuildingID.SelectedItem.ToString());
-
-
-                dgv_QLP.DataSource = null;
-                dgv_QLP.DataSource = filteredData;
-                foreach (DataGridViewRow row in dgv_QLP.Rows)
-                {
-                    if (!row.IsNewRow)
-                    {
-
-
-                        string[] status1 = row.Cells[7].Value.ToString().Split(';');
-                        for (int i = 0; i < status1.Length; i++)
-                        {
-                            status1[i] = Language.translate(status1[i].Trim());
-                        }
-                        row.Cells[7].Value = string.Join(";", status1);
-                    }
-                }
-                translateValue(dgv_QLP, 2);
-                ConfigureDataGridView();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void button_tk_contract_Click(object sender, EventArgs e)
@@ -1092,33 +1019,9 @@ namespace GUI
         {
             DataGridViewRow data = null;
             Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username);
-            //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
             loadTenant(null);
         }
-        //private void FilterAssets(string priceSort, string nameSort)
-        //{
-        //    try
-        //    {
-        //        DataTable filteredData = AssetBLL.FilterAssets(form1.taikhoan.Username, priceSort, nameSort, listBuildingID.SelectedItem.ToString());
-
-        //        dgv_QLCSVC.DataSource = null;
-        //        dgv_QLCSVC.DataSource = filteredData;
-
-        //        dgv_QLCSVC.Columns["RoomID"].DisplayIndex = 0;
-        //        dgv_QLCSVC.Columns["AssetID"].DisplayIndex = 1;
-        //        dgv_QLCSVC.Columns["AssetName"].DisplayIndex = 2;
-        //        dgv_QLCSVC.Columns["Price"].DisplayIndex = 3;
-        //        dgv_QLCSVC.Columns["Status"].DisplayIndex = 4;
-        //        dgv_QLCSVC.Columns["Use_Date"].DisplayIndex = 5;
-        //        load_Assets();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
-        //                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
 
         private void button25_Click_1(object sender, EventArgs e)
         {
@@ -1285,7 +1188,7 @@ namespace GUI
             {
                 DangTrong_chbox1.Checked = false;
             }
-            FilterRoomByStatus();
+            load_QLP();
         }
         // New HoaiAn 14/4
         private void DangTrong_chbox1_CheckedChanged(object sender, EventArgs e)
@@ -1294,7 +1197,7 @@ namespace GUI
             {
                 DangO_chbox1.Checked = false;
             }
-            FilterRoomByStatus();
+            load_QLP();
         }
         // New HoaiAn 14/4
         private void DangKT_chbox1_CheckedChanged(object sender, EventArgs e)
@@ -1303,7 +1206,7 @@ namespace GUI
             {
                 DangCoc_chbox.Checked = false;
             }
-            FilterRoomByStatus();
+            load_QLP();
         }
         // New HoaiAn 14/4
         private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
@@ -1312,7 +1215,7 @@ namespace GUI
             {
                 DangKT_chbox1.Checked = false;
             }
-            FilterRoomByStatus();
+            load_QLP();
         }
         // New HoaiAn 14/4
         private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
@@ -1321,7 +1224,7 @@ namespace GUI
             {
                 DaQuaHan_chbox.Checked = false;
             }
-            FilterRoomByStatus();
+            load_QLP();
         }
         // New HoaiAn 14/4
         private void DaQuaHan_chbox_CheckedChanged(object sender, EventArgs e)
@@ -1330,12 +1233,12 @@ namespace GUI
             {
                 SapHetHan_chbox.Checked = false;
             }
-            FilterRoomByStatus();
+            load_QLP();
         }
 
         private void DangNoTien_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            FilterRoomByStatus();
+            load_QLP();
         }
         private List<CheckBox> sortOptions = new List<CheckBox>();
 
@@ -1499,27 +1402,6 @@ namespace GUI
             }
         }
 
-        private void ConfigureDataGridView()
-        {
-            dgv_QLP.Columns["ROOMNAME"].DisplayIndex = 0;
-            dgv_QLP.Columns["BuildingID"].DisplayIndex = 1;
-            dgv_QLP.Columns["Floor"].DisplayIndex = 2;
-            dgv_QLP.Columns["Type"].DisplayIndex = 3;
-            dgv_QLP.Columns["Convenient"].DisplayIndex = 4;
-            dgv_QLP.Columns["Area"].DisplayIndex = 5;
-            dgv_QLP.Columns["Price"].DisplayIndex = 6;
-            dgv_QLP.Columns["Status"].DisplayIndex = 7;
-            dgv_QLP.Columns["ROOMNAME"].Width = 90;
-            dgv_QLP.Columns["BuildingID"].Width = 90;
-            dgv_QLP.Columns["Floor"].Width = 150;
-            dgv_QLP.Columns["Type"].Width = 150;
-            dgv_QLP.Columns["Convenient"].Width = 250;
-            dgv_QLP.Columns["Area"].Width = 80;
-            dgv_QLP.Columns["Price"].Width = 80;
-            dgv_QLP.Columns["Status"].Width = 150;
-
-            dgv_QLP.ScrollBars = ScrollBars.Both;
-        }
 
 
 
@@ -1531,19 +1413,7 @@ namespace GUI
             try
             {
                 guna2DataGridView7.DataSource = filteredData;
-                if (guna2DataGridView7.Rows.Count == 0)
-                {
-                    button52.Enabled = false;
-                    button53.Enabled = false;
-                    button57.Enabled = false;
 
-                }
-                else
-                {
-                    button52.Enabled = true;
-                    button53.Enabled = true;
-                    button57.Enabled = true;
-                }
                 guna2DataGridView7.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
                 guna2DataGridView7.EnableHeadersVisualStyles = false;
 
@@ -1576,23 +1446,11 @@ namespace GUI
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void button49_Click(object sender, EventArgs e)
-        {
-            AddService addServiceForm = new AddService(listBuildingID.Text);
-            addServiceForm.ShowDialog();
-        }
-
-        private void button45_Click(object sender, EventArgs e)
-        {
-            DeleteService delServiceForm = new DeleteService(this);
-            delServiceForm.ShowDialog();
-        }
-
-        private void themDV_btn_Click(object sender, EventArgs e)
+        private void themDV_btn_Click_1(object sender, EventArgs e)
         {
             InsertService insertServiceForm = new InsertService();
-            insertServiceForm.ShowDialog();
+            //insertServiceForm.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, insertServiceForm);
         }
 
         private void button49_Click_1(object sender, EventArgs e)
@@ -1609,12 +1467,7 @@ namespace GUI
             OverlayManager.ShowWithOverlay(this, delServiceForm);
         }
 
-        private void themDV_btn_Click_1(object sender, EventArgs e)
-        {
-            InsertService insertServiceForm = new InsertService();
-            //insertServiceForm.ShowDialog();
-            OverlayManager.ShowWithOverlay(this, insertServiceForm);
-        }
+      
 
         private void button50_Click(object sender, EventArgs e)
         {
@@ -1794,70 +1647,12 @@ namespace GUI
 
                 guna2DataGridView7.DataSource = filteredData;
                 translateValue(guna2DataGridView7, 3);
-                ConfigureParkingArea();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi lọc dữ liệu: " + ex.Message, "Lỗi",
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void ConfigureParkingArea()
-        {
-            guna2DataGridView7.ReadOnly = true;
-            guna2DataGridView7.AllowUserToAddRows = false;
-            guna2DataGridView7.AllowUserToDeleteRows = false;
-            guna2DataGridView7.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            guna2DataGridView7.ScrollBars = ScrollBars.Both;
-
-            if (guna2DataGridView7.Columns.Count > 0)
-            {
-                if (guna2DataGridView7.Columns.Contains("AREAID"))
-                    guna2DataGridView7.Columns["AREAID"].HeaderText = "Mã bãi xe";
-                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
-                    guna2DataGridView7.Columns["BUILDINGID"].HeaderText = "Mã tòa nhà";
-                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
-                    guna2DataGridView7.Columns["ADDRESS"].HeaderText = "Địa chỉ";
-                if (guna2DataGridView7.Columns.Contains("TYPE"))
-                    guna2DataGridView7.Columns["TYPE"].HeaderText = "Loại bãi xe";
-                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
-                    guna2DataGridView7.Columns["CAPACITY"].HeaderText = "Sức chứa";
-                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
-                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].HeaderText = "Số xe hiện tại";
-                if (guna2DataGridView7.Columns.Contains("STATUS"))
-                    guna2DataGridView7.Columns["STATUS"].HeaderText = "Trạng thái";
-
-                int displayIndex = 0;
-                if (guna2DataGridView7.Columns.Contains("AREAID"))
-                    guna2DataGridView7.Columns["AREAID"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
-                    guna2DataGridView7.Columns["BUILDINGID"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
-                    guna2DataGridView7.Columns["ADDRESS"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView7.Columns.Contains("TYPE"))
-                    guna2DataGridView7.Columns["TYPE"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
-                    guna2DataGridView7.Columns["CAPACITY"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
-                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView7.Columns.Contains("STATUS"))
-                    guna2DataGridView7.Columns["STATUS"].DisplayIndex = displayIndex++;
-
-                if (guna2DataGridView7.Columns.Contains("AREAID"))
-                    guna2DataGridView7.Columns["AREAID"].Width = 90;
-                if (guna2DataGridView7.Columns.Contains("BUILDINGID"))
-                    guna2DataGridView7.Columns["BUILDINGID"].Width = 90;
-                if (guna2DataGridView7.Columns.Contains("ADDRESS"))
-                    guna2DataGridView7.Columns["ADDRESS"].Width = 250;
-                if (guna2DataGridView7.Columns.Contains("TYPE"))
-                    guna2DataGridView7.Columns["TYPE"].Width = 150;
-                if (guna2DataGridView7.Columns.Contains("CAPACITY"))
-                    guna2DataGridView7.Columns["CAPACITY"].Width = 90;
-                if (guna2DataGridView7.Columns.Contains("CURRENT_VEHICLES"))
-                    guna2DataGridView7.Columns["CURRENT_VEHICLES"].Width = 90;
-                if (guna2DataGridView7.Columns.Contains("STATUS"))
-                    guna2DataGridView7.Columns["STATUS"].Width = 90;
             }
         }
         // New HoaiAn 14/4
@@ -2013,87 +1808,11 @@ namespace GUI
                 guna2DataGridView1.DataSource = data;
                 translateValue(guna2DataGridView1, 6);
                 translateValue(guna2DataGridView1, 9);
-                ConfigureVehicle();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi",
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void ConfigureVehicle()
-        {
-            if (guna2DataGridView1.Columns.Count > 0)
-            {
-                guna2DataGridView1.ReadOnly = true;
-                guna2DataGridView1.AllowUserToAddRows = false;
-                guna2DataGridView1.AllowUserToDeleteRows = false;
-                guna2DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                guna2DataGridView1.ScrollBars = ScrollBars.Both;
-
-                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
-                    guna2DataGridView1.Columns["VEHICLEID"].HeaderText = "Mã xe";
-                if (guna2DataGridView1.Columns.Contains("TENANTID"))
-                    guna2DataGridView1.Columns["TENANTID"].HeaderText = "Mã khách hàng";
-                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
-                    guna2DataGridView1.Columns["FIRSTNAME"].HeaderText = "Họ";
-                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
-                    guna2DataGridView1.Columns["LASTNAME"].HeaderText = "Tên";
-                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
-                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].HeaderText = "Mã đơn giá";
-                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
-                    guna2DataGridView1.Columns["UNITPRICE"].HeaderText = "Đơn giá";
-                if (guna2DataGridView1.Columns.Contains("TYPE"))
-                    guna2DataGridView1.Columns["TYPE"].HeaderText = "Loại xe";
-                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
-                    guna2DataGridView1.Columns["LICENSEPLATE"].HeaderText = "Biển số";
-                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
-                    guna2DataGridView1.Columns["PARKINGID"].HeaderText = "Mã chỗ đỗ";
-                if (guna2DataGridView1.Columns.Contains("STATUS"))
-                    guna2DataGridView1.Columns["STATUS"].HeaderText = "Trạng thái";
-
-                int displayIndex = 0;
-                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
-                    guna2DataGridView1.Columns["VEHICLEID"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("TENANTID"))
-                    guna2DataGridView1.Columns["TENANTID"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
-                    guna2DataGridView1.Columns["FIRSTNAME"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
-                    guna2DataGridView1.Columns["LASTNAME"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
-                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
-                    guna2DataGridView1.Columns["UNITPRICE"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("TYPE"))
-                    guna2DataGridView1.Columns["TYPE"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
-                    guna2DataGridView1.Columns["LICENSEPLATE"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
-                    guna2DataGridView1.Columns["PARKINGID"].DisplayIndex = displayIndex++;
-                if (guna2DataGridView1.Columns.Contains("STATUS"))
-                    guna2DataGridView1.Columns["STATUS"].DisplayIndex = displayIndex++;
-
-                if (guna2DataGridView1.Columns.Contains("VEHICLEID"))
-                    guna2DataGridView1.Columns["VEHICLEID"].Width = 90;
-                if (guna2DataGridView1.Columns.Contains("TENANTID"))
-                    guna2DataGridView1.Columns["TENANTID"].Width = 90;
-                if (guna2DataGridView1.Columns.Contains("FIRSTNAME"))
-                    guna2DataGridView1.Columns["FIRSTNAME"].Width = 100;
-                if (guna2DataGridView1.Columns.Contains("LASTNAME"))
-                    guna2DataGridView1.Columns["LASTNAME"].Width = 100;
-                if (guna2DataGridView1.Columns.Contains("VEHICLE_UNITPRICE_ID"))
-                    guna2DataGridView1.Columns["VEHICLE_UNITPRICE_ID"].Width = 90;
-                if (guna2DataGridView1.Columns.Contains("UNITPRICE"))
-                    guna2DataGridView1.Columns["UNITPRICE"].Width = 90;
-                if (guna2DataGridView1.Columns.Contains("TYPE"))
-                    guna2DataGridView1.Columns["TYPE"].Width = 120;
-                if (guna2DataGridView1.Columns.Contains("LICENSEPLATE"))
-                    guna2DataGridView1.Columns["LICENSEPLATE"].Width = 100;
-                if (guna2DataGridView1.Columns.Contains("PARKINGID"))
-                    guna2DataGridView1.Columns["PARKINGID"].Width = 90;
-                if (guna2DataGridView1.Columns.Contains("STATUS"))
-                    guna2DataGridView1.Columns["STATUS"].Width = 90;
             }
         }
         // New HoaiAn 14/4
@@ -2823,7 +2542,6 @@ namespace GUI
         private void update_LSTN()
         {
             DataTable tmp = TenantHistoryBLL.TenantHistoryBLL_count_TenantHistory(listBuildingID.Text);
-            
             if (tmp != null)
             {
                 for (int i = 0; i < tmp.Rows.Count; i++)
@@ -2937,5 +2655,12 @@ namespace GUI
         {
             checkBill();
         }
+
+        private void tabPage11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

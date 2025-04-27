@@ -57,6 +57,7 @@ namespace GUI
                     return;
                 case "Tài khoản hoặc mật khẩu không chính xác!":
                     MessageBox.Show(check);
+
                     return;
             }
             //Chưa hoàn chỉnh
@@ -91,7 +92,8 @@ namespace GUI
         private void dk_lb_Click(object sender, EventArgs e)
         {
             Form_SignUp dk = new Form_SignUp();
-            dk.Show();
+            OverlayManager.ShowWithOverlay(this, dk);
+            //dk.Show();
         }
         private void loadInfo()//New Nhathao
         {
@@ -133,7 +135,7 @@ namespace GUI
                     case "Sign_up":
                         dk_lb.Text = kvp.Value;
                         break;
-                    case "changePass":
+                    case "Forgot_Password":
                         dmk_lb.Text = kvp.Value;
                         break;
 
@@ -163,7 +165,8 @@ namespace GUI
         //New HoaiAn
         private void dmk_lb_Click(object sender, EventArgs e)
         {
-            Form_ForgotPassword forgotPasswordForm = new Form_ForgotPassword();
+            Form_ForgotPassword forgotPasswordForm = new Form_ForgotPassword(guna2ComboBox1.SelectedItem.ToString());
+            //forgotPasswordForm.ShowDialog();
             OverlayManager.ShowWithOverlay(this, forgotPasswordForm);
         }
     }

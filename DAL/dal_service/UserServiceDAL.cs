@@ -49,7 +49,7 @@ namespace DAL.DAL_Service
                                         UserServiceDTO item = new UserServiceDTO
                                         {
                                             STT = reader.GetInt32("STT"),
-                                            RoomID = reader.GetString("ROOMNAME"),
+                                            RoomID = reader.GetString("ROOMID"),
                                             TenantName = reader.GetString("TENANTNAME"),
                                             ServiceName = reader.GetString("SERVICENAME"),
                                             ServicePrice = reader.GetDecimal("UNITPRICE"),

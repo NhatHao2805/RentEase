@@ -121,9 +121,9 @@ namespace GUI.gui_service
                     case "fingerprint_registration.update_permission":
                         btnUpdatePermission.Text = a.Value;
                         break;
-                    case "fingerprint_registration.verify_fingerprint":
-                        btnTestFingerprint.Text = a.Value;
-                        break;
+                    //case "fingerprint_registration.verify_fingerprint":
+                    //    btnTestFingerprint.Text = a.Value;
+                    //    break;
                     case "btn_quaylai":
                         btnBack.Text = a.Value;
                         break;
