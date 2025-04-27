@@ -91,7 +91,7 @@ namespace GUI
 
         private void dk_lb_Click(object sender, EventArgs e)
         {
-            Form_SignUp dk = new Form_SignUp();
+            Form_SignUp dk = new Form_SignUp(this);
             OverlayManager.ShowWithOverlay(this, dk);
             //dk.Show();
         }

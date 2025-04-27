@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.Custom;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,10 +19,13 @@ namespace GUI
 
         User taikhoan = new User();
         AccountBLL taikhoanBLL = new AccountBLL();
-        public Form_SignUp()
+        private Form_Login lg;
+        public Form_SignUp(Form_Login lg)
         {
+            this.lg = lg;
             InitializeComponent();
             loadLanguage();//New NhatHao
+            guna2DateTimePicker1.MaxDate = DateTime.Now;
         }
 
         private void loadLanguage()//New NhatHao
@@ -107,7 +111,7 @@ namespace GUI
 
         private void buttonXemPass2_MouseUp(object sender, MouseEventArgs e)
         {
-            textBoxMK_DK2.PasswordChar = '\0';
+            textBoxMK_DK2.PasswordChar = '*';
 
         }
 
@@ -133,26 +137,26 @@ namespace GUI
 
             switch (check)
             {
-                case "requeid_taikhoan":
-                    MessageBox.Show("Thông tin tài khoản không hợp lệ!");
-                    return;
-                case "requeid_password":
-                    MessageBox.Show("Mật khẩu không hợp lệ!");
-                    return;
                 case "requeid_username":
                     MessageBox.Show("Tên không hợp lệ!");
                     return;
                 case "requeid_email":
                     MessageBox.Show("Email không hợp lệ!");
                     return;
+                case "requeid_address":
+                    MessageBox.Show("Vui lòng nhập địa chỉ!");
+                    return;
                 case "requeid_gender":
                     MessageBox.Show("Vui lòng chọn giới tính");
                     return;
                 case "requeid_phonenumber":
-                    MessageBox.Show("Số điên thoại không hợp lệ!");
+                    MessageBox.Show("Số điện thoại không hợp lệ!");
                     return;
-                case "requeid_address":
-                    MessageBox.Show("Vui lòng nhập địa chỉ!");
+                case "requeid_taikhoan":
+                    MessageBox.Show("Thông tin tài khoản không hợp lệ!");
+                    return;
+                case "requeid_password":
+                    MessageBox.Show("Mật khẩu không hợp lệ!");
                     return;
             }
 
@@ -185,7 +189,6 @@ namespace GUI
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form_Login lg = new Form_Login();
             lg.Show();
             this.Close();
         }

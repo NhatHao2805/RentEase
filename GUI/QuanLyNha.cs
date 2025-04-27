@@ -262,7 +262,7 @@ namespace GUI
                 dgv_QLP.Columns[1].Width = 90;
                 dgv_QLP.Columns[2].Width = 150;
                 dgv_QLP.Columns[3].Width = 50;
-                dgv_QLP.Columns[4].Width = 150;
+                dgv_QLP.Columns[4].Width = 200;
                 dgv_QLP.Columns[5].Width = 120;
                 dgv_QLP.Columns[6].Width = 120;
                 dgv_QLP.Columns[7].Width = 250;
