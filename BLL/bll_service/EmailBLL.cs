@@ -40,7 +40,7 @@ namespace BLL.bll_service
 
                 mail.Subject = email.Subject;
                 mail.Body = email.Body;
-                mail.IsBodyHtml = false;
+                mail.IsBodyHtml = email.IsHtml;
 
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.Credentials = new NetworkCredential(email.From, email.Password);
@@ -49,8 +49,9 @@ namespace BLL.bll_service
                 smtp.Send(mail);
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                Console.WriteLine($"Lỗi gửi email: {ex.Message}");
                 return false;
             }
         }
