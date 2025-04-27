@@ -2484,9 +2484,7 @@ BEGIN
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
     SELECT t.* FROM tenant t
-	JOIN user u ON u.USERNAME = t.USERNAME 
-    join building b on b.USERNAME = u.USERNAME
-	WHERE b.BUILDINGID = p_building
+	WHERE t.BUILDINGID = p_building
 	AND t.ISDELETED = 0
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
 END//
