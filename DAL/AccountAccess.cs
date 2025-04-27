@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
+using System.IO;
 
 namespace DAL
 {
@@ -93,7 +95,7 @@ namespace DAL
             {
                 if (conn == null) return name;
 
-                using (MySqlCommand command = new MySqlCommand("Select FIRSTNAME,LASTNAME from tenant", conn))
+                using (MySqlCommand command = new MySqlCommand("Select FIRSTNAME,LASTNAME from tenant WHERE ISDELETED = 0;", conn))
                 {
 
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -114,6 +116,60 @@ namespace DAL
             }
             return name;
 
+        }
+
+        public static string UpdatePassword(string email, string password)
+        {
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn == null) return "Database connection failed!";
+
+                    //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt());
+
+                    using (MySqlCommand command = new MySqlCommand("UpdatePassword", conn))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("p_email", email);
+                        command.Parameters.AddWithValue("p_password", password);
+
+                        command.ExecuteNonQuery();
+                        return "Success";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return $"System error: {ex.GetType().Name}";
+            }
+        }
+
+        public static string CheckEmail(string email)
+        {
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn.State != ConnectionState.Open)
+                    {
+                        conn.Open();
+                    }
+
+                    using (MySqlCommand command = new MySqlCommand("SELECT COUNT(*) FROM USER WHERE EMAIL=@p_email AND ISDELETED = 0;", conn))
+                    {
+                        command.Parameters.AddWithValue("p_email", email);
+                        int count = Convert.ToInt32(command.ExecuteScalar());
+                        return count > 0 ? "Valid" : "Invalid";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in CheckEmail: " + ex.Message);
+                return "Error";
+            }
         }
     }
 

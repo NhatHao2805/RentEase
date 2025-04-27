@@ -20,7 +20,7 @@ namespace DAL
             using (MySqlConnection conn = MySqlConnectionData.Connect())
             {
                 if (conn == null) return name;
-                using (MySqlCommand command = new MySqlCommand("Select AREAID from PARKINGAREA", conn))
+                using (MySqlCommand command = new MySqlCommand("Select AREAID from PARKINGAREA WHERE ISDELETED = 0", conn))
                 {
 
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -179,9 +179,9 @@ namespace DAL
                                             DROP PROCEDURE IF EXISTS GetAreaIds;
                                             CREATE PROCEDURE GetAreaIds(IN p_type VARCHAR(50), IN p_buildingid VARCHAR(20))
                                             BEGIN
-                                                SELECT pa.*
+                                                SELECT AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY
                                                 FROM PARKINGAREA pa
-                                                WHERE (pa.BUILDINGID = p_buildingid) AND
+                                                WHERE (pa.BUILDINGID = p_buildingid) AND ISDELETED = 0 AND
                                                     ((pa.TYPE = p_type) OR
                                                     (pa.TYPE = 'xemay/xedap' AND (p_type = 'xemay' OR p_type = 'xedap')) OR
                                                     (pa.TYPE = 'honhop' AND p_type IN ('xeoto', 'xemay', 'xedap')));
@@ -228,7 +228,7 @@ namespace DAL
                         conn.Open();
                     }
 
-                    using (MySqlCommand command = new MySqlCommand("SELECT * FROM PARKING WHERE VEHICLEID = @p_vehicleId;", conn))
+                    using (MySqlCommand command = new MySqlCommand("SELECT PARKINGID, AREAID, VEHICLEID, STATUS FROM PARKING WHERE VEHICLEID = @p_vehicleId AND ISDELETED = 0;", conn))
                     {
                         command.Parameters.AddWithValue("p_vehicleId", vehicleId);
                         using (MySqlDataReader reader = command.ExecuteReader())

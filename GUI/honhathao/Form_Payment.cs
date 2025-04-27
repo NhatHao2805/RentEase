@@ -116,5 +116,18 @@ namespace GUI.honhathao
         {
             loadInfo(guna2TextBox1.Text);
         }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            if (dgv_payment.Visible)
+            {
+                ExcelExporter.ExportToExcel(dgv_payment, "Danh sách thanh toán");
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

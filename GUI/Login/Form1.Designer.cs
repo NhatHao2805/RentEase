@@ -67,7 +67,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Bahnschrift Condensed", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(255)))), ((int)(((byte)(144)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(402, 365);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(380, 365);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(157, 59);
             this.guna2HtmlLabel1.TabIndex = 3;
@@ -79,7 +79,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Bahnschrift Condensed", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(200)))), ((int)(((byte)(160)))));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(404, 489);
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(380, 487);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(142, 42);
             this.guna2HtmlLabel2.TabIndex = 4;

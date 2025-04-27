@@ -95,7 +95,7 @@ namespace GUI
             roomid_cb.Items.Clear();
             foreach (DataRow row in RoomBLL.LoadRoomIdByBuildingID(infor.BuildingId).Rows)
             {
-                roomid_cb.Items.Add(row["ROOMID"].ToString());
+                roomid_cb.Items.Add(row["ROOMNAME"].ToString());
             }
 
             floor_cb.Items.Clear();
@@ -171,7 +171,7 @@ namespace GUI
         {
             room.RoomId = infor.RoomId;
             room.BuildingId = infor.BuildingId;
-            room.Type = type_cb.Text;
+            room.Type = Language.reverseTranslate(type_cb.Text);
             room.Floor = floor_cb.Text;
             room.Convenient = convenient_tb.Text;
             room.Price = price_tb.Text;
@@ -208,30 +208,6 @@ namespace GUI
                     return;
                 case "required_status":
                     MessageBox.Show("Bạn chưa chọn trạng thái");
-                    return;
-                case "Không thể vừa 'Đang ở' vừa 'Đang trống'.":
-                    MessageBox.Show("Không thể vừa 'Đang ở' vừa 'Đang trống'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Đang trống' vừa 'Đang ở'.":
-                    MessageBox.Show("Không thể vừa 'Đang trống' vừa 'Đang ở'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang báo kết thúc'.":
-                    MessageBox.Show("Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang báo kết thúc'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.":
-                    MessageBox.Show("Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.":
-                    MessageBox.Show("Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.");
-                    UndoCheckBox();
-                    return;
-                case "Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.":
-                    MessageBox.Show("Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồngg'.");
-                    UndoCheckBox();
                     return;
                 case "Database connection failed!":
                     MessageBox.Show("Kết nối thất bại");
@@ -273,6 +249,54 @@ namespace GUI
         private void close_btn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DangO_chbox.Checked)
+            {
+                DangTrong_chbox.Checked = false;
+            }
+        }
+
+        private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DangTrong_chbox.Checked)
+            {
+                DangO_chbox.Checked = false;
+            }
+        }
+
+        private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DangKT_chbox.Checked)
+            {
+                DangCoc_chbox.Checked = false;
+            }
+        }
+
+        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(DangCoc_chbox.Checked)
+{
+                DangKT_chbox.Checked = false;
+            }
+        }
+
+        private void DaHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (DaHetHan_chbox.Checked)
+            {
+                SapHetHan_chbox.Checked = false;
+            }
+        }
+
+        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SapHetHan_chbox.Checked)
+            {
+                DaHetHan_chbox.Checked = false;
+            }
         }
     }
 }

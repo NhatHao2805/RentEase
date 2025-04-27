@@ -20,7 +20,7 @@ namespace DAL.DAL_Service
                     if (conn.State == ConnectionState.Closed)
                         conn.Open();
 
-                    string query = "SELECT COUNT(*) FROM service WHERE SERVICENAME = @TenDichVu";
+                    string query = "SELECT COUNT(*) FROM service WHERE SERVICENAME = @TenDichVu AND ISDELETED = 0";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {

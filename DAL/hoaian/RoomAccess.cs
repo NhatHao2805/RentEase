@@ -64,7 +64,7 @@ namespace DAL
             {
                 if (conn == null) return price;
 
-                using (MySqlCommand command = new MySqlCommand("Select PRICE from room where ROOMID = @roomid", conn))
+                using (MySqlCommand command = new MySqlCommand("Select PRICE from room where ROOMNAME = @roomid AND ISDELETED = 0", conn))
                 {
                     command.Parameters.AddWithValue("@roomid", roomid);
 
@@ -90,9 +90,9 @@ namespace DAL
                 if (conn == null) return listRoom;
 
                 using (MySqlCommand command = new MySqlCommand("" +
-                    "Select ROOMID from room r " +
+                    "Select ROOMNAME from room r " +
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
-                    "where b.ADDRESS = @addr", conn))
+                    "where b.ADDRESS = @addr AND ISDELETED = 0", conn))
                 {
                     command.Parameters.AddWithValue("@addr", addressBuilding);
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -122,9 +122,9 @@ namespace DAL
                 if (conn == null) return listRoom;
 
                 using (MySqlCommand command = new MySqlCommand("" +
-                    "Select ROOMID from room r " +
+                    "Select ROOMNAME from room r " +
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
-                    "where b.BUILDINGID = @addr", conn))
+                    "where b.BUILDINGID = @addr AND r.ISDELETED = 0", conn))
                 {
                     command.Parameters.AddWithValue("@addr", buildingid);
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -153,7 +153,7 @@ namespace DAL
                 if (conn == null) return address;
                 using (MySqlCommand command = new MySqlCommand("" +
                     "Select ADDRESS from building " +
-                    "where USERNAME = @usern", conn))
+                    "where USERNAME = @usern AND ISDELETED = 0", conn))
                 {
 
                     command.Parameters.AddWithValue("@usern", username);
@@ -300,7 +300,7 @@ namespace DAL
             }
         }
 
-        public static (bool success, string message) DeleteRoom(string roomId)
+        public static (bool success, string message) DeleteRoom(string roomId, string buildingid)
         {
             try
             {
@@ -311,6 +311,7 @@ namespace DAL
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.Parameters.AddWithValue("@p_roomid", roomId);
+                        cmd.Parameters.AddWithValue("@p_buildingid", buildingid);
                         cmd.Parameters.Add("@p_result", MySqlDbType.Int32).Direction = ParameterDirection.Output;
                         cmd.Parameters.Add("@p_message", MySqlDbType.VarChar, 255).Direction = ParameterDirection.Output;
 

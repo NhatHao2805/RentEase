@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Reflection;
+using System.Windows.Input;
 namespace BLL
 {
     public class Language
@@ -78,7 +79,7 @@ namespace BLL
                     return kvp.Value;
                 }
             } 
-            return "-1";
+            return key;
         }
         public static string reverseTranslate(string value)
         {
@@ -89,7 +90,7 @@ namespace BLL
                     return kvp.Key;
                 }
             }
-            return "-1"; 
+            return value; 
         }
     }
 }

@@ -80,7 +80,7 @@ namespace GUI.honhathao
             switch (control)
             {
                 case 0:
-                    for(int i = 0 ; i < table.Rows.Count - 1; i++)
+                    for(int i = 0 ; i < tenant.Rows.Count ; i++)
                     {
                         TenKhachHang.Items.Add(tenant.Rows[i].Cells[0].Value.ToString() + ": " + tenant.Rows[i].Cells[1].Value.ToString() + " " + tenant.Rows[i].Cells[2].Value.ToString());                     
                     }
@@ -89,9 +89,9 @@ namespace GUI.honhathao
                     {
                         SoPhong.Items.Add(id);
                     }
-                    TenKhachHang.SelectedIndex = 0;
-                    SoPhong.SelectedIndex = 0;
-                    TrangThai.SelectedIndex = 0;
+                    //TenKhachHang.SelectedIndex = 0;
+                    //SoPhong.SelectedIndex = 0;
+                    //TrangThai.SelectedIndex = 0;
                     break;
                 case 1:
                     TenKhachHang.Items.Clear();
@@ -152,12 +152,18 @@ namespace GUI.honhathao
             switch (control)
             {
                 case 0:
+                    if (ngayDk.Value > ngayHethan.Value)
+                    {
+                        MessageBox.Show("Ngày đăng ký không được lớn hơn ngày hết hạn");
+                        return;
+                    }
                     string result = RegistrationBLL.RegistrationBLL_add_Registration(
                         tenant.Rows[TenKhachHang.SelectedIndex].Cells[0].Value.ToString(),
                         SoPhong.Text,
                         ngayDk.Value.ToString("yyyy-MM-dd"),
                         ngayHethan.Value.ToString("yyyy-MM-dd"),
-                        Language.reverseTranslate(TrangThai.Text));
+                        Language.reverseTranslate(TrangThai.Text),
+                        buildingid);
                     
                     MessageBox.Show(result);
                     if(result == "Success")
@@ -166,8 +172,14 @@ namespace GUI.honhathao
                     }
                     break;
                 case 1:
+                    if (ngayDk.Value > ngayHethan.Value)
+                    {
+                        MessageBox.Show("Ngày đăng ký không được lớn hơn ngày hết hạn");
+                        return;
+                    }
                     string result1 = RegistrationBLL.RegistratrionBLL_update_registration(
                         table.Rows[row].Cells[0].Value.ToString(),
+                        ngayHethan.Value.ToString("yyyy-MM-dd"),
                         Language.reverseTranslate(TrangThai.Text));
                     if (result1 == "Success")
                     {

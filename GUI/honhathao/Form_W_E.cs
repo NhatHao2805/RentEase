@@ -1,6 +1,7 @@
 ﻿using BLL;
 using BLL.honhathao;
 using DTO;
+using GUI.Custom;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using ScrollBars = System.Windows.Forms.ScrollBars;
+
 namespace GUI.honhathao
 {
     public partial class Form_W_E: Form
@@ -95,7 +98,9 @@ namespace GUI.honhathao
         private void button38_Click(object sender, EventArgs e)
         {
             Form_Add_W_E form = new Form_Add_W_E(buildingid);
-            form.ShowDialog();
+
+            //form.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, form);
             dgv_we.DataSource = null;
             loadInfo();
         }
@@ -112,7 +117,20 @@ namespace GUI.honhathao
                     row.Cells[9].Value = Language.translate(row.Cells[9].Value.ToString());
                 }
             }
+
             loadLanguage();
+            dgv_we.Columns[0].Width = 100;
+            dgv_we.Columns[1].Width = 100;
+            dgv_we.Columns[2].Width = 100;
+            dgv_we.Columns[3].Width = 100;
+            dgv_we.Columns[4].Width = 100;
+            dgv_we.Columns[5].Width = 100;
+            dgv_we.Columns[6].Width = 100;
+            dgv_we.Columns[7].Width = 100;
+            dgv_we.Columns[8].Width = 100;
+            //dgv_we.Columns[9].Width = 100;
+            dgv_we.ScrollBars = ScrollBars.Both;
+
         }
     }
 }

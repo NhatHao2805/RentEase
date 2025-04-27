@@ -61,9 +61,9 @@ namespace GUI
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.buttonDangNhap1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtTemplateName = new Guna.UI2.WinForms.Guna2TextBox();
             this.cboTemplates = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.buttonDangNhap1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnSave = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnExportPDF = new Guna.UI2.WinForms.Guna2GradientButton();
             this.exitButton = new Guna.UI2.WinForms.Guna2Button();
@@ -119,7 +119,7 @@ namespace GUI
             this.guna2GradientPanel12.Controls.Add(this.guna2CustomGradientPanel18);
             this.guna2GradientPanel12.Controls.Add(this.label22);
             this.guna2GradientPanel12.Controls.Add(this.label23);
-            this.guna2GradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(254)))), ((int)(((byte)(218)))));
+            this.guna2GradientPanel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(235)))), ((int)(((byte)(220)))));
             this.guna2GradientPanel12.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(254)))), ((int)(((byte)(255)))));
             this.guna2GradientPanel12.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel12.Name = "guna2GradientPanel12";
@@ -178,32 +178,6 @@ namespace GUI
             this.guna2GradientPanel2.Size = new System.Drawing.Size(776, 53);
             this.guna2GradientPanel2.TabIndex = 140;
             // 
-            // buttonDangNhap1
-            // 
-            this.buttonDangNhap1.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDangNhap1.BorderColor = System.Drawing.Color.Transparent;
-            this.buttonDangNhap1.BorderRadius = 10;
-            this.buttonDangNhap1.BorderThickness = 1;
-            this.buttonDangNhap1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonDangNhap1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonDangNhap1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonDangNhap1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonDangNhap1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonDangNhap1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(230)))), ((int)(((byte)(100)))));
-            this.buttonDangNhap1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(158)))), ((int)(((byte)(87)))));
-            this.buttonDangNhap1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDangNhap1.ForeColor = System.Drawing.Color.White;
-            this.buttonDangNhap1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonDangNhap1.Location = new System.Drawing.Point(14, 8);
-            this.buttonDangNhap1.Name = "buttonDangNhap1";
-            this.buttonDangNhap1.ShadowDecoration.BorderRadius = 15;
-            this.buttonDangNhap1.ShadowDecoration.Depth = 50;
-            this.buttonDangNhap1.ShadowDecoration.Enabled = true;
-            this.buttonDangNhap1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.buttonDangNhap1.Size = new System.Drawing.Size(90, 35);
-            this.buttonDangNhap1.TabIndex = 141;
-            this.buttonDangNhap1.Text = "Tải mẫu";
-            // 
             // txtTemplateName
             // 
             this.txtTemplateName.BorderColor = System.Drawing.Color.Gray;
@@ -246,6 +220,32 @@ namespace GUI
             this.cboTemplates.Size = new System.Drawing.Size(272, 36);
             this.cboTemplates.TabIndex = 142;
             this.cboTemplates.SelectedIndexChanged += new System.EventHandler(this.cboTemplates_SelectedIndexChanged);
+            // 
+            // buttonDangNhap1
+            // 
+            this.buttonDangNhap1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonDangNhap1.BorderColor = System.Drawing.Color.Transparent;
+            this.buttonDangNhap1.BorderRadius = 10;
+            this.buttonDangNhap1.BorderThickness = 1;
+            this.buttonDangNhap1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonDangNhap1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonDangNhap1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonDangNhap1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonDangNhap1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonDangNhap1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(230)))), ((int)(((byte)(100)))));
+            this.buttonDangNhap1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(158)))), ((int)(((byte)(87)))));
+            this.buttonDangNhap1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDangNhap1.ForeColor = System.Drawing.Color.White;
+            this.buttonDangNhap1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.buttonDangNhap1.Location = new System.Drawing.Point(14, 8);
+            this.buttonDangNhap1.Name = "buttonDangNhap1";
+            this.buttonDangNhap1.ShadowDecoration.BorderRadius = 15;
+            this.buttonDangNhap1.ShadowDecoration.Depth = 50;
+            this.buttonDangNhap1.ShadowDecoration.Enabled = true;
+            this.buttonDangNhap1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.buttonDangNhap1.Size = new System.Drawing.Size(90, 35);
+            this.buttonDangNhap1.TabIndex = 141;
+            this.buttonDangNhap1.Text = "Tải mẫu";
             // 
             // btnSave
             // 
@@ -309,9 +309,10 @@ namespace GUI
             this.exitButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.exitButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.exitButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.exitButton.FillColor = System.Drawing.Color.IndianRed;
+            this.exitButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
             this.exitButton.Location = new System.Drawing.Point(769, 2);
             this.exitButton.Name = "exitButton";

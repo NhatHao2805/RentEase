@@ -1,4 +1,11 @@
-﻿helo: Hello, How can i help you?
+﻿changePass:Forgot/Change password?
+bill_id:Bill Id
+record_id:Id
+service_name:Service Name
+amount:Amount
+invoice_title:Invoice Details  
+invoice_description:Customer payment invoice details  
+helo: Hello, How can i help you?
 troli: Assistant
 phongdon: Single Room  
 phongdoi: Double Room  
@@ -73,6 +80,20 @@ Parking_Management: Parking Management
 room_list_management: Room Management
 text_room_list_management: All Your Room Listings
 edit: Edit
+building_management: Building Management
+building_management_subtitle: Building management interface
+building_section: Building Management
+add_building_btn: Add Building
+refresh_btn: Refresh
+manage_btn: Manage
+forgot_pw.title :Forgot Password
+forgot_pw.subtitle :Reset your password
+forgot_pw.email_label :Email
+forgot_pw.email_placeholder :Enter your email
+forgot_pw.send_otp_btn :Send OTP
+forgot_pw.otp_label :OTP Code
+forgot_pw.otp_placeholder :Enter OTP
+forgot_pw.verify_btn :Verify
 edit_in: Edit room list
 delete: Delete
 view_rental_history: View Rental History
@@ -141,7 +162,7 @@ parking_lot_label: Parking Lot
 vehicle_label: Vehicle
 parking_list_title: Parking Lot List
 : Room Table
-roomtable_room_id: Room id
+roomtable_room_id: Room
 roomtable_building: Building id
 roomtable_floor: Floor
 roomtable_room_type: Room type
@@ -213,8 +234,8 @@ assettable_price: Price
 assettable_status: Status
 assettable_usedate: Usage date
 :Form_AddContract
-contract.add_title: Add Contract
-contract.add_subtitle: Add a new contract to the list
+contract.add_title: Contract
+contract.add_subtitle: Add/Edit a contract to the list
 contract.room_number: Room Number
 contract.tenant_name: Tenant
 contract.creation_date: Creation Date
@@ -230,13 +251,16 @@ LoadAll.tenant: Tenant
 LoadAll.last_name: Last Name
 LoadAll.first_name: First Name
 LoadAll.rating: Rating
-LoadAll.detail_title: View Details
-LoadAll.detail_subtitle: View Payment Details
+LoadAll.detail_title: View all tenants
+LoadAll.detail_subtitle: View tenant reviews
 LoadAll.placeholder: Search by Name
-LoadAll.button: Search\
+LoadAll.button: Search
+LichSuThueNha: Rental History
+DanhGiaTraiNghiem: Your experience review
+DanhGia: Review
 :Form_addTenant
 tenant.title: Tenant
-tenant.subtitle: Register New Tenant
+tenant.subtitle: Add/Edit New Tenant
 tenant.last_name: Last Name
 tenant.first_name: First Name
 tenant.dob: Date of Birth
@@ -378,8 +402,8 @@ status: Status
 add_button: Add
 btn_dong: Close
 :Form_addRoom
-room.add_title: Add Room
-room.add_subtitle: Add New Room
+room.add_title: Room
+room.add_subtitle: Add/Edit Room
 property_type: Floor
 classification: Classification
 amenities: Amenities

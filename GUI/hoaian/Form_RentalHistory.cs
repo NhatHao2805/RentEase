@@ -108,7 +108,7 @@ namespace GUI
                 // Đặt tên cột tiếng Việt
                 dgv_RentalHistory.Columns["RENTAL_HISTORY_ID"].HeaderText = "Mã Lịch sử";
                 dgv_RentalHistory.Columns["CONTRACTID"].HeaderText = "Mã Hợp đồng";
-                dgv_RentalHistory.Columns["ROOMID"].HeaderText = "Mã Phòng";
+                dgv_RentalHistory.Columns["ROOMNAME"].HeaderText = "Mã Phòng";
                 dgv_RentalHistory.Columns["TENANTID"].HeaderText = "Mã KH";
                 dgv_RentalHistory.Columns["FIRSTNAME"].HeaderText = "Tên";
                 dgv_RentalHistory.Columns["LASTNAME"].HeaderText = "Họ";
@@ -128,7 +128,7 @@ namespace GUI
                 // Đặt độ rộng cột
                 dgv_RentalHistory.Columns["RENTAL_HISTORY_ID"].Width = 100;
                 dgv_RentalHistory.Columns["CONTRACTID"].Width = 100;
-                dgv_RentalHistory.Columns["ROOMID"].Width = 80;
+                dgv_RentalHistory.Columns["ROOMNAME"].Width = 80;
                 dgv_RentalHistory.Columns["TENANTID"].Width = 80;
                 dgv_RentalHistory.Columns["FIRSTNAME"].Width = 100;
                 dgv_RentalHistory.Columns["LASTNAME"].Width = 100;

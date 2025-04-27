@@ -11,13 +11,15 @@ using DTO;
 using BLL;
 using System.Runtime.InteropServices;
 using GUI;
+using GUI.BuildingManagement;
+using GUI.Custom;
 namespace GUI
 {
     public partial class Form_Login: Form
     {
         public User taikhoan = new User();
         AccountBLL taikhoanBLL = new AccountBLL();
-        quanlynha f2;
+        Form_Building f2;
         public Form_Login()
         {
             InitializeComponent();
@@ -55,11 +57,10 @@ namespace GUI
                     return;
                 case "Tài khoản hoặc mật khẩu không chính xác!":
                     MessageBox.Show(check);
-
                     return;
             }
             //Chưa hoàn chỉnh
-            f2 = new quanlynha(this);
+            f2 = new Form_Building(this);
             f2.Show();
             this.Hide();
 
@@ -132,6 +133,9 @@ namespace GUI
                     case "Sign_up":
                         dk_lb.Text = kvp.Value;
                         break;
+                    case "changePass":
+                        dmk_lb.Text = kvp.Value;
+                        break;
 
                 }
             }
@@ -150,6 +154,17 @@ namespace GUI
         private void hienMk_Popup(object sender, PopupEventArgs e)
         {
 
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+        //New HoaiAn
+        private void dmk_lb_Click(object sender, EventArgs e)
+        {
+            Form_ForgotPassword forgotPasswordForm = new Form_ForgotPassword();
+            OverlayManager.ShowWithOverlay(this, forgotPasswordForm);
         }
     }
     
