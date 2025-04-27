@@ -2475,17 +2475,18 @@ BEGIN
 END //
 
 CREATE PROCEDURE load_Tenant(
-	IN p_username VARCHAR(20),
+    in p_building varchar(20),
     IN p_lastname VARCHAR(20)
 )
 BEGIN 
-    -- Delete records that have been soft-deleted for more than 30 days
+
     DELETE FROM tenant 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
     SELECT t.* FROM tenant t
 	JOIN user u ON u.USERNAME = t.USERNAME 
-	WHERE u.USERNAME = p_username
+    join building b on b.USERNAME = u.USERNAME
+	WHERE b.BUILDINGID = p_building
 	AND t.ISDELETED = 0
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
 END//

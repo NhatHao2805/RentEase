@@ -108,8 +108,8 @@ namespace GUI
         {
             try
             {
-                DataTable data = TenantBLL.TenantBLL_load_Tenant(form1.taikhoan.Username, name);
-                if (dgv_LSTN.Rows.Count == 0)
+                DataTable data = TenantBLL.TenantBLL_load_Tenant(listBuildingID.Text, name);
+                if (dgv_Tenant.Rows.Count == 0)
                 {
                     button31.Enabled = false;
                     button34.Enabled = false;

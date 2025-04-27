@@ -21,6 +21,7 @@ CREATE TABLE TENANT (
     EMAIL                VARCHAR(50) COMMENT 'Email',
     ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
     DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
+    BUILDINGID 			VARCHAR(20) NOT NULL COMMENT 'ID tòa nhà',
     PRIMARY KEY (TENANTID)
 );
 

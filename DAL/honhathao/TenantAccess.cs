@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 using MySql.Data.MySqlClient;
 namespace DAL.honhathao
 {
@@ -37,7 +38,7 @@ namespace DAL.honhathao
             return name;
 
         }
-        public static DataTable load_Tenant(string username,string name)
+        public static DataTable load_Tenant(string buildingid, string name)
         {
             DataTable output = new DataTable();
 
@@ -47,8 +48,9 @@ namespace DAL.honhathao
                 {
                     using (MySqlCommand command = new MySqlCommand("load_Tenant", conn))
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@p_username", username);
+                        command.CommandType = CommandType.StoredProcedure; 
+
+                        command.Parameters.AddWithValue("@p_building", buildingid);
                         if (name != null)
                         {
                             command.Parameters.AddWithValue("p_lastname", name);
