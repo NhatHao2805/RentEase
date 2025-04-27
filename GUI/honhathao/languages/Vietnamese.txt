@@ -1,4 +1,5 @@
-﻿changePass:Quên/Đổi mật khẩu?
+﻿checkdelete: Bạn có muốn xóa không?
+changePass:Quên/Đổi mật khẩu?
 bill_id:Mã hóa đơn
 record_id:Mã bản ghi
 service_name:Tên dịch vụ

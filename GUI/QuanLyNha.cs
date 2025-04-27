@@ -1260,7 +1260,7 @@ namespace GUI
                 DataGridViewRow selectedRow = dgv_QLHD.Rows[row];
                 Console.WriteLine(selectedRow.Cells[0].Value.ToString());
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa hợp đồng này không?", "Xác nhận xóa", buttons);
+                DialogResult result = MessageBox.Show(Language.translate("checkdelete"),"", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     MessageBox.Show(ContractBLL.ContractBLL_delete_Contract(selectedRow.Cells[0].Value.ToString()));

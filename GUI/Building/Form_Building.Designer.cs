@@ -708,7 +708,7 @@ namespace GUI.BuildingManagement
             // 
             this.guna2PictureBox8.Image = global::GUI.Properties.Resources.LogoApp;
             this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(37, 289);
+            this.guna2PictureBox8.Location = new System.Drawing.Point(34, 336);
             this.guna2PictureBox8.Name = "guna2PictureBox8";
             this.guna2PictureBox8.Size = new System.Drawing.Size(185, 130);
             this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
