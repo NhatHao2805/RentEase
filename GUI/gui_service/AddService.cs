@@ -21,7 +21,7 @@ namespace GUI.GUI_Service
     {
         
         private string buildingID;
-        private quanlynha parentForm;
+
         public AddService(string buildingid)
         {
             this.buildingID = buildingid;
@@ -116,10 +116,14 @@ namespace GUI.GUI_Service
 
         public void LoadComboBoxData()
         {
-            // Load danh sách khách hàng
-            TenantName.DataSource = khachHangBLL.GetKhachHangForComboBox(buildingID);
-            TenantName.DisplayMember = "Name";
-            TenantName.ValueMember = "ID";
+            var data = khachHangBLL.GetKhachHangForComboBox(buildingID);
+            Console.WriteLine(buildingID + "AAAAAAAAAAAAAA");
+            if (data != null && data.Count > 0)
+            {
+                TenantName.DataSource = data;
+                TenantName.DisplayMember = "Name";  // Đảm bảo đúng tên thuộc tính
+                TenantName.ValueMember = "ID";
+            }
 
 
             TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
@@ -197,7 +201,7 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                parentForm.btn_dichvu_Click(sender, e);
+          
             }
             else
             {
@@ -226,7 +230,7 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                parentForm.btn_dichvu_Click(sender, e);
+             
             }
             else
             {

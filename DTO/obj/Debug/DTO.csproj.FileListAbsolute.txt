@@ -530,3 +530,45 @@ C:\Users\ASUS\OneDrive\Máy tính\New folder\26_4\DTO\obj\Debug\DTO.csproj.CoreC
 C:\Users\ASUS\OneDrive\Máy tính\New folder\26_4\DTO\obj\Debug\DTO.csproj.Up2Date
 C:\Users\ASUS\OneDrive\Máy tính\New folder\26_4\DTO\obj\Debug\DTO.dll
 C:\Users\ASUS\OneDrive\Máy tính\New folder\26_4\DTO\obj\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\DTO.dll.config
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\DTO.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\DTO.pdb
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Auth.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Core.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Sheets.v4.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\MySqlConnector.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Newtonsoft.Json.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Buffers.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Memory.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Numerics.Vectors.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.pdb
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Auth.pdb
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Auth.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Core.pdb
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Core.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Sheets.v4.pdb
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Google.Apis.Sheets.v4.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\MySqlConnector.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\Newtonsoft.Json.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Buffers.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Memory.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Numerics.Vectors.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\RentEaseTDT\RentEase\DTO\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.csproj.Up2Date
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.dll
+D:\RentEaseTDT\RentEase\DTO\obj\Debug\DTO.pdb

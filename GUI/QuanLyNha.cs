@@ -358,10 +358,7 @@ namespace GUI
             {
                 var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
-                if (data == null || data.Count == 0)
-                {
-                    MessageBox.Show("Không có dữ liệu!");
-                }
+           
                 dgvServiceInfo.DataSource = data;
 
                 checkBox_DV1.Visible = true;
@@ -450,25 +447,120 @@ namespace GUI
             string danhSachTo = bll.LayChuoiEmailNguoiNhan(listBuildingID.Text);
             string[] danhSachEmail = danhSachTo.Split(',');
 
-
-
             bool emailSentSuccessfully = true;
 
             foreach (var emailRecipient in danhSachEmail)
             {
                 string recipientEmail = emailRecipient.Trim();
 
-
-
+                // Tạo email với nội dung HTML đẹp hơn
                 EmailDTO email = new EmailDTO
                 {
                     From = "nhuthuyhk9@gmail.com",
                     Password = "gdjq astk ezog zdjz",
                     To = recipientEmail,
-                    Subject = "Gửi từ phần mềm quản lí nhà Rentease",
-                    Body = "Xin chào, hợp đồng của bạn sắp hết hạn. Đây là email tự động."
+                    Subject = "Thông báo: Hợp đồng thuê nhà sắp hết hạn - RentEase",
+                    Body = @"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px 5px 0 0;
+        }
+        .content {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #777777;
+            border-top: 1px solid #dddddd;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .warning {
+            color: #ff6600;
+            font-weight: bold;
+        }
+        .info {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>Thông Báo Hợp Đồng Sắp Hết Hạn</h1>
+        </div>
+        <div class='content'>
+            <p>Kính gửi Quý khách,</p>
+            
+            <p>Chúng tôi gửi thông báo này để nhắc nhở rằng <span class='warning'>hợp đồng thuê nhà của Quý khách sắp hết hạn</span> trong thời gian tới.</p>
+            
+            <div class='info'>
+                <p>Để đảm bảo quyền lợi và tránh gián đoạn các dịch vụ, xin vui lòng liên hệ với chúng tôi để thực hiện một trong các lựa chọn sau:</p>
+                <ul>
+                    <li>Gia hạn hợp đồng thuê nhà</li>
+                    <li>Thảo luận điều khoản cho hợp đồng mới</li>
+                    <li>Thông báo chấm dứt hợp đồng (nếu có kế hoạch chuyển đi)</li>
+                </ul>
+            </div>
+            
+            <p>Xin vui lòng <span class='highlight'>liên hệ với chúng tôi trước ngày hết hạn</span> để chúng tôi có thể hỗ trợ Quý khách tốt nhất.</p>
+            
+            <p>Nếu Quý khách có bất kỳ câu hỏi nào, đừng ngần ngại liên hệ với chúng tôi qua email hoặc số điện thoại được cung cấp trong hợp đồng.</p>
+            
+            <p>Trân trọng,<br>
+            <strong>Ban Quản Lý - RentEase</strong></p>
+        </div>
+        <div class='footer'>
+            <p>Email này được gửi tự động từ hệ thống quản lý RentEase. Vui lòng không trả lời email này.</p>
+            <p>&copy; " + DateTime.Now.Year + @" RentEase. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </div>
+</body>
+</html>"
                 };
 
+                // Đánh dấu email là HTML
+                email.IsHtml = true;
                 bool result = bll.GuiEmail(email);
 
                 if (!result)
@@ -480,11 +572,11 @@ namespace GUI
 
             if (emailSentSuccessfully)
             {
-                MessageBox.Show("Gửi email thành công!");
+                MessageBox.Show("Gửi email thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Gửi email thất bại.");
+                MessageBox.Show("Gửi email thất bại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_vantay_Click(object sender, EventArgs e)
@@ -1354,23 +1446,11 @@ namespace GUI
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void button49_Click(object sender, EventArgs e)
-        {
-            AddService addServiceForm = new AddService(listBuildingID.Text);
-            addServiceForm.ShowDialog();
-        }
-
-        private void button45_Click(object sender, EventArgs e)
-        {
-            DeleteService delServiceForm = new DeleteService(this);
-            delServiceForm.ShowDialog();
-        }
-
-        private void themDV_btn_Click(object sender, EventArgs e)
+        private void themDV_btn_Click_1(object sender, EventArgs e)
         {
             InsertService insertServiceForm = new InsertService();
-            insertServiceForm.ShowDialog();
+            //insertServiceForm.ShowDialog();
+            OverlayManager.ShowWithOverlay(this, insertServiceForm);
         }
 
         private void button49_Click_1(object sender, EventArgs e)
@@ -1387,12 +1467,7 @@ namespace GUI
             OverlayManager.ShowWithOverlay(this, delServiceForm);
         }
 
-        private void themDV_btn_Click_1(object sender, EventArgs e)
-        {
-            InsertService insertServiceForm = new InsertService();
-            //insertServiceForm.ShowDialog();
-            OverlayManager.ShowWithOverlay(this, insertServiceForm);
-        }
+      
 
         private void button50_Click(object sender, EventArgs e)
         {
@@ -2585,5 +2660,7 @@ namespace GUI
         {
 
         }
+
+
     }
 }
