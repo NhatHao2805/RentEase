@@ -1423,7 +1423,7 @@ BEGIN
 	DELETE FROM contract 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT p.ROOMNAME 
+    SELECT p.ROOMID, p.ROOMNAME 
     FROM contract c 
     JOIN room p ON c.ROOMID = p.ROOMID 
     WHERE c.TENANTID = p_tenantID 
@@ -2309,6 +2309,7 @@ BEGIN
     SET @sql = CONCAT('
         SELECT 
             (@row_num := @row_num + 1) AS STT,
+            R.ROOMID,
             R.ROOMNAME, 
             CONCAT(T.FIRSTNAME, '' '', T.LASTNAME) AS TENANTNAME,
             S.SERVICENAME, 
@@ -2325,6 +2326,7 @@ BEGIN
         AND T.ISDELETED = 0
         AND R.ISDELETED = 0
         AND S.ISDELETED = 0
+        AND US.ISDELETED = 0
         ORDER BY ', @orderClause);
 
     PREPARE stmt FROM @sql;

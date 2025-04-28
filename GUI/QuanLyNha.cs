@@ -459,23 +459,18 @@ namespace GUI
         }
         public void LoadDichVu()
         {
-
-
             try
             {
                 var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
-                if (data == null || data.Count == 0)
-                {
-                    MessageBox.Show("Không có dữ liệu!");
-                }
+               
                 dgvServiceInfo.DataSource = data;
                 if (dgvServiceInfo.Rows.Count == 0)
                 {
                     button45.Enabled = false;
-                    button49.Enabled = false;
-                    button50.Enabled = false;
-                    btn_xemdichvu.Enabled = false;
+                    //button49.Enabled = false;
+                    //button50.Enabled = false;
+                    //btn_xemdichvu.Enabled = false;
 
                 }
                 else
@@ -507,7 +502,7 @@ namespace GUI
             {
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-    }
+        }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -580,15 +575,111 @@ namespace GUI
             {
                 string recipientEmail = emailRecipient.Trim();
 
+                if (string.IsNullOrEmpty(recipientEmail))
+                    continue;
 
+                // Tạo nội dung HTML email
+                string htmlBody = $@"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <style>
+        body {{ 
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }}
+        .container {{
+            max-width: 600px;
+            margin: 0 auto;
+        }}
+        .header {{
+            background-color: #4361EE;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }}
+        .header h1 {{
+            margin: 0;
+            font-size: 24px;
+            font-weight: normal;
+        }}
+        .content {{
+            padding: 20px;
+            background-color: #ffffff;
+        }}
+        .greeting {{
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }}
+        .message {{
+            color: #333;
+            margin-bottom: 20px;
+        }}
+        .warning-box {{
+            background-color: #fff7e6;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+        }}
+        .action-button {{
+            display: inline-block;
+            background-color: #4361EE;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin: 15px 0;
+        }}
+        .footer {{
+            background-color: #f2f2f2;
+            padding: 15px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }}
+    </style>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>Thông Báo Từ RentEase</h1>
+        </div>
+        <div class='content'>
+            <div class='greeting'>Kính gửi Quý khách,</div>
+            
+            <div class='message'>
+                Hệ thống RentEase xin thông báo rằng hợp đồng thuê nhà của bạn sắp hết hạn trong vài ngày tới.
+            </div>
+
+            <div class='warning-box'>
+                <strong>Lưu ý:</strong> Để đảm bảo quyền lợi sử dụng liên tục, bạn vui lòng liên hệ với chủ nhà để thực hiện gia hạn hợp đồng càng sớm càng tốt.
+            </div>
+
+            <p>Nếu bạn đã liên hệ với chủ nhà hoặc có kế hoạch chấm dứt hợp đồng, vui lòng bỏ qua thông báo này.</p>
+            
+            <p>Xin chân thành cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.</p>
+        </div>
+        <div class='footer'>
+            <p>© 2023 RentEase - Phần mềm quản lý nhà cho thuê chuyên nghiệp</p>
+            <p>Đây là email tự động, vui lòng không trả lời email này.</p>
+        </div>
+    </div>
+</body>
+</html>";
 
                 EmailDTO email = new EmailDTO
                 {
                     From = "nhuthuyhk9@gmail.com",
                     Password = "gdjq astk ezog zdjz",
                     To = recipientEmail,
-                    Subject = "Gửi từ phần mềm quản lí nhà Rentease",
-                    Body = "Xin chào, hợp đồng của bạn sắp hết hạn. Đây là email tự động."
+                    Subject = "Thông báo: Hợp đồng thuê nhà sắp hết hạn",
+                    Body = htmlBody
                 };
 
                 bool result = bll.GuiEmail(email);
@@ -1568,15 +1659,13 @@ namespace GUI
 
         private void button49_Click_1(object sender, EventArgs e)
         {
-            AddService addServiceForm = new AddService(listBuildingID.Text);
-            //addServiceForm.ShowDialog();
+            AddService addServiceForm = new AddService(listBuildingID.Text, this);
             OverlayManager.ShowWithOverlay(this, addServiceForm);
         }
 
         private void button45_Click_1(object sender, EventArgs e)
         {
             DeleteService delServiceForm = new DeleteService(this);
-            //delServiceForm.ShowDialog();
             OverlayManager.ShowWithOverlay(this, delServiceForm);
         }
 

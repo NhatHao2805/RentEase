@@ -8,7 +8,7 @@ namespace DAL
 {
     public class MySqlConnectionData
     {
-        private static readonly string connectString = "server=localhost;port=3306;database=rentease;user=root;password=zxcvbnm;";
+        private static readonly string connectString = "server=localhost;port=3306;database=rentease;user=root;password=";
 
         public static MySqlConnection Connect()
         {
