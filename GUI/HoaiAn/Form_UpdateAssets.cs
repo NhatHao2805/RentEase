@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using System.Globalization;
+using BLL;
 using DTO;
 using Guna.UI2.WinForms;
 using System;
@@ -57,7 +58,7 @@ namespace GUI
                     case "btn_save":
                         add_btn.Text = a.Value;
                         break;
-                    case " asset.update_title":
+                    case "asset.update_title":
                         label23.Text = a.Value;
                         break;
                     case "asset.update_subtitle":
@@ -79,7 +80,7 @@ namespace GUI
             status_cb.Items.Clear();
             status_cb.Items.Add(infor.Status);
 
-            string[] status = { Language.translate("tot"), Language.translate("huhongnhe"), Language.translate("canduocsuachua/thaythe"), Language.translate("dangthaythe"), Language.translate("dangsuthaythe") };
+            string[] status = { Language.translate("tot"), Language.translate("huhongnhe"), Language.translate("canduocsuachua/thaythe"), Language.translate("dangsuachua"), Language.translate("dangthaythe") };
             foreach (string s in status)
             {
                 if (!status_cb.Items.Contains(s))
@@ -103,10 +104,34 @@ namespace GUI
 
             // Disable các field không được phép sửa
             roomid_cb.Enabled = false;
-            assetId_tb.Enabled = false;
-            assetName_tb.Enabled = false;
-            price_tb.Enabled = false;
             useDate_dpk.Enabled = false;
+        }
+
+        private void price_tb_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(price_tb.Text))
+                return;
+
+            string value = price_tb.Text.Replace(",", "").Replace("VND", "").Trim();
+
+            if (decimal.TryParse(value, out decimal number))
+            {
+                if (!price_tb.Text.EndsWith("VND"))
+                {
+                    price_tb.TextChanged -= price_tb_TextChanged;
+                    price_tb.Text = string.Format("{0:N0} VND", number);
+                    price_tb.SelectionStart = price_tb.Text.Length - 4;
+                    price_tb.TextChanged += price_tb_TextChanged;
+                }
+            }
+        }
+
+        private void price_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void add_btn_Click(object sender, EventArgs e)
@@ -118,7 +143,7 @@ namespace GUI
             assets.UseDate = useDate_dpk.Value.ToString("yyyy-MM-dd");
             assets.Status = Language.reverseTranslate(status_cb.SelectedItem.ToString());
 
-            string check = AssetBLL.UpdateAsset(assets);
+            string check = AssetBLL.UpdateAsset(assets, _buildingid);
 
             switch (check)
             {
@@ -129,9 +154,12 @@ namespace GUI
                     MessageBox.Show("Bạn chưa nhập giá trị tài sản");
                     return;
                 case "invalid_price_format":
-                    MessageBox.Show("Giá trị tài sản không hợp lệ\nVí dụ: 2000000 hoặc 3.500000");
+                    MessageBox.Show("Giá trị tài sản không hợp lệ\nVui lòng nhập số");
                     price_tb.Text = string.Empty;
                     assets.Price = null;
+                    return;
+                case "price_out_of_range":
+                    MessageBox.Show("Giá trị tài sản phải từ 1,000 VND đến 1,000,000,000 VND");
                     return;
                 case "Database connection failed!":
                     MessageBox.Show("Kết nối thất bại");
@@ -141,7 +169,6 @@ namespace GUI
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                     return;
-
                 default:
                     MessageBox.Show($"Lỗi không xác định: {check}");
                     return;

@@ -10,6 +10,7 @@ namespace DTO.DTO_Service
     {
         public int STT { get; set; }
         public string RoomID { get; set; }
+        public string RoomName { get; set; }
         public string TenantName { get; set; }
         public string ServiceName { get; set; }
         public decimal ServicePrice { get; set; }

@@ -22,9 +22,10 @@ namespace GUI.GUI_Service
         
         private string buildingID;
         private quanlynha parentForm;
-        public AddService(string buildingid)
+        public AddService(string buildingid, quanlynha parent = null)
         {
             this.buildingID = buildingid;
+            this.parentForm = parent;
             InitializeComponent();
             loadLanguage();
         }
@@ -100,8 +101,8 @@ namespace GUI.GUI_Service
 
                     // Hiển thị danh sách phòng vào ComboBox
                     Room.DataSource = rooms;
-                    Room.DisplayMember = "ID"; // Hiển thị ID phòng
-                    Room.ValueMember = "ID";   // Giá trị là ID phòng
+                    Room.DisplayMember = "Name"; // Hiển thị tên phòng (ROOMNAME)
+                    Room.ValueMember = "ID";   // Giá trị là ID phòng (ROOMID)
 
                    
                 }
@@ -124,8 +125,8 @@ namespace GUI.GUI_Service
 
             TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
 
-            Room.DisplayMember = "ID";  // Đảm bảo đúng tên thuộc tính trong DTO
-            Room.ValueMember = "ID";
+            Room.DisplayMember = "Name";  // Đảm bảo hiển thị tên phòng (ROOMNAME)
+            Room.ValueMember = "ID";      // Giá trị là ID phòng (ROOMID)
 
 
 
@@ -175,20 +176,6 @@ namespace GUI.GUI_Service
         // Nut Dang Ky
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            //if (TenantName.SelectedValue == null || Room.SelectedValue == null || Service.SelectedValue == null || string.IsNullOrEmpty(Cost.Text))
-            //{
-            //    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            ////todo: tao hang create id khach hang theo index
-            //if (dichVuBLL.AddService("T00" + TenantName.SelectedIndex, Room.SelectedValue.ToString(), Service.SelectedValue.ToString(), int.Parse(Cost.Text)))
-            //{
-            //    MessageBox.Show("Thêm dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Thêm dịch vụ thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
             string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
             string serviceID = Service.SelectedValue.ToString();  // Lấy ID từ ComboBox
 
@@ -197,7 +184,11 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                parentForm.btn_dichvu_Click(sender, e);
+                // Refresh data in parent form if it exists
+                if (parentForm != null)
+                {
+                    parentForm.LoadDichVu();
+                }
             }
             else
             {
@@ -206,8 +197,6 @@ namespace GUI.GUI_Service
            
             // Đóng form đăng ký sau khi thành công
             this.Close();
-
-          
         }
 
         private void guna2HtmlLabel1_Click_2(object sender, EventArgs e)
@@ -226,7 +215,11 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                parentForm.btn_dichvu_Click(sender, e);
+                // Refresh data in parent form if it exists
+                if (parentForm != null)
+                {
+                    parentForm.LoadDichVu();
+                }
             }
             else
             {
@@ -234,7 +227,6 @@ namespace GUI.GUI_Service
             }
 
             this.Close();
-           
         }
 
         private void TenantName_SelectedIndexChanged_1(object sender, EventArgs e)

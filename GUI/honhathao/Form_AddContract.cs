@@ -131,7 +131,7 @@ namespace GUI
             switch (control)
             {
                 case 0:
-                    for (int i = 0; i < table_tenant.Rows.Count - 1; i++)
+                    for (int i = 0; i < table_tenant.Rows.Count; i++)
                     {                  
                         ListTenantID.Items.Add(table_tenant.Rows[i].Cells[0].Value.ToString() + ": " + table_tenant.Rows[i].Cells[1].Value.ToString()+ " " + table_tenant.Rows[i].Cells[2].Value.ToString());
                     }
@@ -179,10 +179,7 @@ namespace GUI
                     }
                     LichThanhToan.SelectedIndex = 0;
                     LichThanhToan.Enabled = false;
-
-                    TienDatCoc.Text = table.Rows[row].Cells[10].Value.ToString();
-                    GhiChu.Text = table.Rows[row].Cells[11].Value.ToString();
-
+                    TienDatCoc.Text = string.Format("{0:#,##0}", table.Rows[row].Cells[10].Value);
                     break;
             }
                 
@@ -201,6 +198,11 @@ namespace GUI
                 // buildingid,  RoomId,  Tenantid,  CreateDate,  StartDate,  EndDate,  PaymenSchedule,  Deposite,  Note
                 case 0:
                     if(ListTenantID.SelectedIndex > -1) {
+                        if (guna2DateTimePicker2.Value > guna2DateTimePicker3.Value)
+                        {
+                            MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc");
+                            return;
+                        }
                         string result = ContractBLL.ContractBLL_add_Contract(
                         buildingid,
                         SoPhong.Text,
@@ -235,6 +237,11 @@ namespace GUI
 
                         break;
                 case 1:
+                    if (guna2DateTimePicker2.Value > guna2DateTimePicker3.Value)
+                    {
+                        MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc");
+                        return;
+                    }
                     string result1 = ContractBLL.ContractBLL_update_Contract(
                     table.Rows[row].Cells[0].Value.ToString(),
                     guna2DateTimePicker3.Value.ToString("yyyy-MM-dd"),
@@ -263,6 +270,23 @@ namespace GUI
         private void exitButton_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TienDatCoc_TextChanged(object sender, EventArgs e)
+        {
+            //if (string.IsNullOrEmpty(TienDatCoc.Text)) return;
+            //int selectionStart = TienDatCoc.SelectionStart;
+            //string cleanText = TienDatCoc.Text.Replace(",", "");
+
+            //if (decimal.TryParse(cleanText, out decimal number))
+            //{
+            //    TienDatCoc.Text = number.ToString("#,##0");
+            //    TienDatCoc.SelectionStart = selectionStart + (TienDatCoc.Text.Length - cleanText.Length);
+            //}
+            //else
+            //{
+            //    TienDatCoc.Text = "0";
+            //}
         }
     }
 }

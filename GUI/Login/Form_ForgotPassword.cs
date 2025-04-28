@@ -7,6 +7,8 @@ using System.Net.Mail;
 using System.Net;
 using System.IO;
 using System.Text.RegularExpressions;
+using static System.Net.WebRequestMethods;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -31,11 +33,21 @@ namespace GUI
             countdownTimer = new System.Windows.Forms.Timer();
             countdownTimer.Interval = 1000; // 1 second
             countdownTimer.Tick += CountdownTimer_Tick;
+            btnVerify.Enabled = false;
+            btnResetPassword.Enabled = false;
 
             // Set initial form size for step 1
             //this.Size = new System.Drawing.Size(395, 299); // Height includes title bar
         }
-
+ 
+//        forgot_pw.title :Quên mật khẩu
+//forgot_pw.subtitle :Đổi mật khẩu của bạn
+//forgot_pw.email_label :Email
+//forgot_pw.email_placeholder :Nhập email của bạn
+//forgot_pw.send_otp_btn :Gửi mã OTP
+//forgot_pw.otp_label :Mã OTP
+//forgot_pw.otp_placeholder :Nhập mã OTP
+//forgot_pw.verify_btn :Xác thực
         private void loadLanguage()
         {
             string selectedLanguage = Language.GetCurrentLanguage();
@@ -45,6 +57,12 @@ namespace GUI
                 {
                     case "Enter_Email":
                         labelEmail.Text = kvp.Value;
+                        break;
+                    case "forgot_pw.title":
+                        label23.Text = kvp.Value;
+                        break;
+                    case "forgot_pw.subtitle":
+                        label22.Text = kvp.Value;
                         break;
                     case "Send_OTP":
                         btnSendOTP.Text = kvp.Value;
@@ -64,8 +82,18 @@ namespace GUI
                     case "Reset_Password":
                         btnResetPassword.Text = kvp.Value;
                         break;
+                    case "Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character":
+                        lblPasswordRequirements.Text = kvp.Value;
+                        break;
+
                 }
             }
+            btnSendOTP.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Gửi mã" : "Send OTP";
+            txtEmail.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập email của bạn..." : "Enter your email...";
+            btnVerify.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Xác nhận" : "Verify";
+            txtOTP.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập mã OTP..." : "Enter OTP code...";
+            txtNewPassword.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập mật khẩu mới..." : "Enter new password...";
+            txtConfirmPassword.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Xác nhận mật khẩu..." : "Confirm new password...";
         }
 
         private void CountdownTimer_Tick(object sender, EventArgs e)
@@ -74,15 +102,15 @@ namespace GUI
             if (remainingTime.TotalSeconds <= 0)
             {
                 countdownTimer.Stop();
-                lblCountdown.Text = Language.GetCurrentLanguage() == "vi" ? "Mã OTP đã hết hạn" : "OTP has expired";
+                lblCountdown.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Mã OTP đã hết hạn" : "OTP has expired";
                 btnSendOTP.Enabled = true;
-                btnSendOTP.Text = Language.GetCurrentLanguage() == "vi" ? "Gửi lại mã" : "Resend OTP";
+                btnSendOTP.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Gửi lại mã" : "Resend OTP";
                 txtOTP.Enabled = false;
                 btnVerify.Enabled = false;
                 return;
             }
 
-            lblCountdown.Text = Language.GetCurrentLanguage() == "vi" ?
+            lblCountdown.Text = Language.GetCurrentLanguage() == "Vietnamese" ?
                 $"Thời gian còn lại: {remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}" :
                 $"Time remaining: {remainingTime.Minutes:D2}:{remainingTime.Seconds:D2}";
         }
@@ -101,7 +129,7 @@ namespace GUI
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress(senderEmail, "RentEase Support");
                 mail.To.Add(email);
-                mail.Subject = Language.GetCurrentLanguage() == "vi" ? "Đặt lại mật khẩu RentEase" : "RentEase Password Reset";
+                mail.Subject = Language.GetCurrentLanguage() == "Vietnamese" ? "Đặt lại mật khẩu RentEase" : "RentEase Password Reset";
 
                 // Create HTML body with exact styling match
                 string htmlBody = $@"
@@ -177,15 +205,15 @@ namespace GUI
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>{(Language.GetCurrentLanguage() == "vi" ? "Đặt lại mật khẩu RentEase" : "RentEase Password Reset")}</h1>
+            <h1>{(Language.GetCurrentLanguage() == "Vietnamese" ? "Đặt lại mật khẩu RentEase" : "RentEase Password Reset")}</h1>
         </div>
         <div class='content'>
             <div class='greeting'>
-                {(Language.GetCurrentLanguage() == "vi" ? "Kính gửi Người dùng," : "Dear User,")}
+                {(Language.GetCurrentLanguage() == "Vietnamese" ? "Kính gửi Người dùng," : "Dear User,")}
             </div>
             
             <div class='message'>
-                {(Language.GetCurrentLanguage() == "vi"
+                {(Language.GetCurrentLanguage() == "Vietnamese"
                     ? "Chúng tôi đã nhận được yêu cầu đặt lại mật khẩu cho tài khoản RentEase của bạn. Để tiến hành đặt lại mật khẩu, vui lòng sử dụng mã OTP (Mật khẩu dùng một lần) sau:"
                     : "We received a request to reset your password for your RentEase account. To proceed with the password reset, please use the following OTP (One-Time Password) code:")}
             </div>
@@ -195,20 +223,20 @@ namespace GUI
             </div>
 
             <div class='expiry'>
-                {(Language.GetCurrentLanguage() == "vi"
+                {(Language.GetCurrentLanguage() == "Vietnamese"
                     ? $"Mã này sẽ hết hạn sau {OTP_EXPIRY_MINUTES} phút vì lý do bảo mật."
                     : $"This code will expire in {OTP_EXPIRY_MINUTES} minutes for security reasons.")}
             </div>
 
             <div class='warning'>
-                {(Language.GetCurrentLanguage() == "vi"
+                {(Language.GetCurrentLanguage() == "Vietnamese"
                     ? "Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này hoặc liên hệ với nhóm hỗ trợ của chúng tôi nếu bạn có thắc mắc."
                     : "If you did not request this password reset, please ignore this email or contact our support team if you have concerns.")}
             </div>
 
             <div class='signature'>
-                {(Language.GetCurrentLanguage() == "vi" ? "Trân trọng," : "Best regards,")}<br>
-                {(Language.GetCurrentLanguage() == "vi" ? "Nhóm hỗ trợ RentEase" : "RentEase Support Team")}
+                {(Language.GetCurrentLanguage() == "Vietnamese" ? "Trân trọng," : "Best regards,")}<br>
+                {(Language.GetCurrentLanguage() == "Vietnamese" ? "Nhóm hỗ trợ RentEase" : "RentEase Support Team")}
             </div>
         </div>
     </div>
@@ -227,13 +255,13 @@ namespace GUI
 
                 // Send email
                 smtpClient.Send(mail);
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     "Mã OTP đã được gửi đến email của bạn!" :
                     "OTP has been sent to your email!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     $"Lỗi khi gửi email: {ex.Message}" :
                     $"Error sending email: {ex.Message}");
             }
@@ -258,27 +286,27 @@ namespace GUI
         private void btnSendOTP_Click(object sender, EventArgs e)
         {
             btnSendOTP.Enabled = false;
-            btnSendOTP.Text = Language.GetCurrentLanguage() == "vi" ? "Đang gửi..." : "Sending...";
+            btnSendOTP.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Đang gửi..." : "Sending...";
 
             string userEmail = AccountBLL.CheckEmail(txtEmail.Text.Trim());
             switch (userEmail)
             {
                 case "required_email":
-                    MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? "Vui lòng nhập email" : "Please enter your email");
+                    MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ? "Vui lòng nhập email" : "Please enter your email");
                     btnSendOTP.Enabled = true;
-                    btnSendOTP.Text = Language.GetCurrentLanguage() == "vi" ? "Gửi mã" : "Send OTP";
+                    btnSendOTP.Focus();
                     return;
                 case "Invalid":
-                    MessageBox.Show(Language.GetCurrentLanguage() == "vi" ? "Email không hợp lệ" : "Invalid email");
+                    MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ? "Email không hợp lệ" : "Invalid email");
                     btnSendOTP.Enabled = true;
-                    btnSendOTP.Text = Language.GetCurrentLanguage() == "vi" ? "Gửi mã" : "Send OTP";
+                    btnSendOTP.Focus();
                     return;
                 case "Valid":
+                    btnVerify.Enabled = true;
                     Random random = new Random();
                     otpCode = random.Next(100000, 999999).ToString();
                     otpGeneratedTime = DateTime.Now;
                     otpAttempts = 0;
-
                     SendOTPEmail(txtEmail.Text.Trim(), otpCode);
 
                     txtOTP.Enabled = true;
@@ -288,27 +316,27 @@ namespace GUI
             }
 
             btnSendOTP.Enabled = true;
-            btnSendOTP.Text = Language.GetCurrentLanguage() == "vi" ? "Gửi lại mã" : "Resend OTP";
+            btnSendOTP.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Gửi lại mã" : "Resend OTP";
         }
 
         private void btnVerify_Click(object sender, EventArgs e)
         {
             if (IsOTPExpired())
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     "Mã OTP đã hết hạn. Vui lòng yêu cầu mã mới." :
                     "OTP has expired. Please request a new one.");
                 txtOTP.Enabled = false;
                 btnVerify.Enabled = false;
                 btnSendOTP.Enabled = true;
-                btnSendOTP.Text = Language.GetCurrentLanguage() == "vi" ? "Gửi lại mã" : "Resend OTP";
+                btnSendOTP.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Gửi lại mã" : "Resend OTP";
                 return;
             }
 
             string enteredOTP = txtOTP.Text.Trim();
             if (string.IsNullOrEmpty(enteredOTP))
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     "Vui lòng nhập mã OTP!" :
                     "Please enter the OTP code!");
                 return;
@@ -318,16 +346,16 @@ namespace GUI
             if (enteredOTP == otpCode)
             {
                 countdownTimer.Stop();
-                lblCountdown.Text = Language.GetCurrentLanguage() == "vi" ?
+                lblCountdown.Text = Language.GetCurrentLanguage() == "Vietnamese" ?
                     "Xác thực thành công!" :
                     "OTP verified successfully!";
 
                 // Switch to password reset panel
                 panelStep1.Visible = false;
                 panelStep2.Visible = true;
-                this.Size = new System.Drawing.Size(395, 299);
+                //this.Size = new System.Drawing.Size(395, 299);
 
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     "Xác thực thành công! Bạn có thể đặt lại mật khẩu." :
                     "OTP verified successfully! You can now reset your password.");
             }
@@ -335,17 +363,17 @@ namespace GUI
             {
                 if (otpAttempts >= MAX_OTP_ATTEMPTS)
                 {
-                    MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                         $"Bạn đã vượt quá số lần thử tối đa ({MAX_OTP_ATTEMPTS}). Vui lòng yêu cầu mã OTP mới." :
                         $"You have exceeded the maximum number of attempts ({MAX_OTP_ATTEMPTS}). Please request a new OTP.");
                     txtOTP.Enabled = false;
                     btnVerify.Enabled = false;
                     btnSendOTP.Enabled = true;
-                    btnSendOTP.Text = Language.GetCurrentLanguage() == "vi" ? "Gửi lại mã" : "Resend OTP";
+                    btnSendOTP.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Gửi lại mã" : "Resend OTP";
                 }
                 else
                 {
-                    MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                    MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                         $"Mã OTP không đúng! Bạn còn {MAX_OTP_ATTEMPTS - otpAttempts} lần thử." :
                         $"Invalid OTP code! You have {MAX_OTP_ATTEMPTS - otpAttempts} attempts remaining.");
                 }
@@ -368,7 +396,7 @@ namespace GUI
         private void btnResetPassword_Click(object sender, EventArgs e)
         {
             btnResetPassword.Enabled = false;
-            btnResetPassword.Text = Language.GetCurrentLanguage() == "vi" ? "Đang đặt lại..." : "Resetting...";
+            btnResetPassword.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Đang đặt lại..." : "Resetting...";
 
             string result = AccountBLL.UpdatePassword(
                 txtEmail.Text.Trim(),
@@ -377,13 +405,13 @@ namespace GUI
 
             if (result.StartsWith("Database error:"))
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     $"Lỗi cơ sở dữ liệu: {result.Substring(15)}" :
                     $"Database problem: {result.Substring(15)}");
             }
             else if (result == "Success")
             {
-                MessageBox.Show(Language.GetCurrentLanguage() == "vi" ?
+                MessageBox.Show(Language.GetCurrentLanguage() == "Vietnamese" ?
                     "Đặt lại mật khẩu thành công!" :
                     "Password updated successfully!");
                 this.Close();
@@ -394,7 +422,7 @@ namespace GUI
             }
 
             btnResetPassword.Enabled = true;
-            btnResetPassword.Text = Language.GetCurrentLanguage() == "vi" ? "Đặt lại mật khẩu" : "Reset Password";
+            btnResetPassword.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Đặt lại mật khẩu" : "Reset Password";
         }
 
         private void Form_ForgotPassword_Load(object sender, EventArgs e)

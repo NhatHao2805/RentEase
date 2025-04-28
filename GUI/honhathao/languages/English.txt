@@ -1,4 +1,49 @@
-﻿helo: Hello, How can i help you?
+﻿building_key: Building key
+building_address: Address
+num_of_floors: Number of floors
+num_of_rooms: Number of rooms each floor
+btn_save: Save
+btn_cancel: Cancel
+buildingtable_buildingid: Building id
+buildingtable_buildingkey: Building key
+buildingtable_username: User Name
+buildingtable_address: Address
+buildingtable_numoffloors: Number of floors
+buildingtable_numofrooms: Number of rooms each floor
+all_text: All
+requestfb: Request/Feedback
+doubleclick:Double click on a line to see the detailed reflection content
+page_title: Customer Feedback Management
+page_subtitle: All customer feedback is here
+search_section: Search
+date_filter_start: From date
+date_filter_end: To date
+table_header_customer: Customer Name
+table_header_email: Email
+table_header_content: Content
+table_header_date: Sent Date
+table_header_status: Status
+action_show_all: All
+action_filter: Filter
+action_refresh: Refresh
+action_import: Import data from Google Form
+status_processed: Processed
+export_excel: Export to excel
+Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character: Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character
+New_Password: New Password
+Confirm_Password: Confirm Password
+Reset_Password: Reset Password
+full: Full
+empty: Empty
+checkdelete: Do you want to delete this?
+changePass:Forgot/Change password?
+bill_id:Bill Id
+record_id:Id
+service_name:Service Name
+amount:Amount
+invoice_title:Invoice Details  
+invoice_description:Customer payment invoice details  
+helo: Hello, How can i help you?
 troli: Assistant
 phongdon: Single Room  
 phongdoi: Double Room  
@@ -19,6 +64,7 @@ nam: Male
 nu: Female
 dangcho: Pending
 daduyet: Approved
+dagiaiquyet: Resolved
 ELECTRICITY: Electricity
 WATER: Water
 tienmat: Cash
@@ -56,6 +102,7 @@ Password2: Confirm Password
 Sign_in: Sign in
 Sign_up: Sign up
 Sign_Up_Title_Form: Sign Up
+Sign_up_content: Sign up new account
 User_info: Detail Information
 Account_info: Account Information
 Fullname: Full Name
@@ -73,6 +120,20 @@ Parking_Management: Parking Management
 room_list_management: Room Management
 text_room_list_management: All Your Room Listings
 edit: Edit
+building_management: Building Management
+building_management_subtitle: Building management interface
+building_section: Building Management
+add_building_btn: Add Building
+refresh_btn: Refresh
+manage_btn: Manage
+forgot_pw.title :Forgot Password
+forgot_pw.subtitle :Reset your password
+forgot_pw.email_label :Email
+forgot_pw.email_placeholder :Enter your email
+forgot_pw.send_otp_btn :Send OTP
+forgot_pw.otp_label :OTP Code
+forgot_pw.otp_placeholder :Enter OTP
+forgot_pw.verify_btn :Verify
 edit_in: Edit room list
 delete: Delete
 view_rental_history: View Rental History
@@ -141,13 +202,13 @@ parking_lot_label: Parking Lot
 vehicle_label: Vehicle
 parking_list_title: Parking Lot List
 : Room Table
-roomtable_room_id: Room id
+roomtable_room_id: Room
 roomtable_building: Building id
 roomtable_floor: Floor
 roomtable_room_type: Room type
 roomtable_convenient: Amenities
-roomtable_area: Area
-roomtable_price: Price
+roomtable_area: Area (m2)
+roomtable_price: Price (VND)
 roomtable_status: Status
 : Contract Table
 contracttable_contract_id: Contract id
@@ -213,8 +274,8 @@ assettable_price: Price
 assettable_status: Status
 assettable_usedate: Usage date
 :Form_AddContract
-contract.add_title: Add Contract
-contract.add_subtitle: Add a new contract to the list
+contract.add_title: Contract
+contract.add_subtitle: Add/Edit a contract to the list
 contract.room_number: Room Number
 contract.tenant_name: Tenant
 contract.creation_date: Creation Date
@@ -230,13 +291,16 @@ LoadAll.tenant: Tenant
 LoadAll.last_name: Last Name
 LoadAll.first_name: First Name
 LoadAll.rating: Rating
-LoadAll.detail_title: View Details
-LoadAll.detail_subtitle: View Payment Details
+LoadAll.detail_title: View all tenants
+LoadAll.detail_subtitle: View tenant reviews
 LoadAll.placeholder: Search by Name
-LoadAll.button: Search\
+LoadAll.button: Search
+LichSuThueNha: Rental History
+DanhGiaTraiNghiem: Your experience review
+DanhGia: Review
 :Form_addTenant
 tenant.title: Tenant
-tenant.subtitle: Register New Tenant
+tenant.subtitle: Add/Edit New Tenant
 tenant.last_name: Last Name
 tenant.first_name: First Name
 tenant.dob: Date of Birth
@@ -378,13 +442,13 @@ status: Status
 add_button: Add
 btn_dong: Close
 :Form_addRoom
-room.add_title: Add Room
-room.add_subtitle: Add New Room
+room.add_title: Room
+room.add_subtitle: Add/Edit Room
 property_type: Floor
 classification: Classification
 amenities: Amenities
-area: Area
-rent_price: Rent Price
+area: Area (m2)
+rent_price: Rent Price (VND)
 status: Status
 status_options.occupied: Occupied
 status_options.vacant: Vacant
@@ -413,6 +477,7 @@ parking.type: Type
 parking.capacity: Capacity
 parking.update_title: Update Parking
 parking.update_subtitle: Update parking in table
+vehicle.vehicle_id: Vehicle ID
 parking.id_parking: Parking ID
 btn_save: Save
 :Form_vehicle

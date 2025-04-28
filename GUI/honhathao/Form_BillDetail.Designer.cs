@@ -47,6 +47,10 @@
             // 
             // dgv_billdetail
             // 
+            this.dgv_billdetail.AllowUserToAddRows = false;
+            this.dgv_billdetail.AllowUserToDeleteRows = false;
+            this.dgv_billdetail.AllowUserToResizeColumns = false;
+            this.dgv_billdetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(240)))), ((int)(((byte)(225)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
@@ -155,6 +159,7 @@
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(30, 30);
             this.exitButton.TabIndex = 20;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // guna2PictureBox5
             // 

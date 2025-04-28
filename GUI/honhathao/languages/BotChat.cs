@@ -51,9 +51,8 @@ namespace GUI.honhathao.languages
         {
             using (HttpClient client = new HttpClient())
             {
-                // URL webhook từ n8n
-                //string n8nWebhookUrl = "https://honhathao9.app.n8n.cloud/webhook/20777478-c497-47a2-bf0b-ed1b05ada1f6";
-                string n8nWebhookUrl = "https://honhathao9.app.n8n.cloud/webhook-test/20777478-c497-47a2-bf0b-ed1b05ada1f6";
+
+                string n8nWebhookUrl = "https://honhathao10.app.n8n.cloud/webhook/chatbot";
             
                 var payload = new
                 {
@@ -95,7 +94,7 @@ namespace GUI.honhathao.languages
             answer = answer.Replace("}","");
             answer = answer.Replace("{output:", "");
             Console.WriteLine("\'"+answer+"\'");
-            chat += (" " + DateTime.Now.ToString("[HH:mm:ss]")+ " " + answer + "\n\n");
+            chat += (DateTime.Now.ToString("[HH:mm:ss] \n") + Language.translate("troli") + answer + "\n\n");
             richTextBox1.Text = chat;
 
             guna2Button1.Enabled = true;
@@ -103,15 +102,15 @@ namespace GUI.honhathao.languages
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            loadMessageAsync();
+            _ = loadMessageAsync();
         }
 
         private void guna2TextBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = true; 
-                loadMessageAsync();
+                e.SuppressKeyPress = true;
+                _ = loadMessageAsync();
 
             }
         }

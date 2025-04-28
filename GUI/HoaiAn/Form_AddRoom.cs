@@ -91,7 +91,7 @@ namespace GUI
         private void add_btn_Click(object sender, EventArgs e)
         {
             room.BuildingId = _buildingid;
-            room.Type = type_cb.Text;
+            room.Type = Language.reverseTranslate(type_cb.Text);
             room.Floor = floor_cb.Text;
             room.Convenient = convenient_tb.Text;
             room.Price = price_tb.Text;
@@ -123,7 +123,12 @@ namespace GUI
                     MessageBox.Show("Bạn chưa nhập diện tích");
                     return;
                 case "invalid_area_format":
-                    MessageBox.Show("Diện tích phòng không hợp lệ\nVí dụ: 20 hoặc 35.75");
+                    MessageBox.Show("Diện tích phòng không hợp lệ");
+                    area_tb.Text = string.Empty;
+                    room.Area = null;
+                    return;
+                case "area_too_large":
+                    MessageBox.Show("Diện tích không được vượt quá 1000m2");
                     area_tb.Text = string.Empty;
                     room.Area = null;
                     return;
@@ -131,7 +136,12 @@ namespace GUI
                     MessageBox.Show("Bạn chưa nhập giá thuê");
                     return;
                 case "invalid_price_format":
-                    MessageBox.Show("Giá phòng không hợp lệ\nVí dụ: 2000000 hoặc 3.500000");
+                    MessageBox.Show("Giá phòng không hợp lệ");
+                    price_tb.Text = string.Empty;
+                    room.Price = null;
+                    return;
+                case "price_too_large":
+                    MessageBox.Show("Giá thuê không được vượt quá 1 tỷ đồng");
                     price_tb.Text = string.Empty;
                     room.Price = null;
                     return;

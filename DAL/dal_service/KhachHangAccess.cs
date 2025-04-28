@@ -95,7 +95,10 @@ namespace DAL.DAL_Service
                     {
                         while (reader.Read())
                         {
-                            rooms.Add(new PhongDTO { ID = reader.GetString("ROOMID") });
+                            rooms.Add(new PhongDTO { 
+                                ID = reader.GetString("ROOMID"),
+                                Name = reader.GetString("ROOMNAME")
+                            });
                         }
                     }
                 }

@@ -28,9 +28,17 @@ namespace BLL
             }
             else
             {
-                if (!decimal.TryParse(assets.Price, out decimal priceValue) || priceValue <= 0)
+                // Xóa định dạng tiền tệ để kiểm tra
+                string cleanPrice = assets.Price.Replace("VND", "").Replace(",", "").Trim();
+                if (!decimal.TryParse(cleanPrice, out decimal priceValue))
                 {
                     return "invalid_price_format";
+                }
+                
+                // Kiểm tra giới hạn giá trị (1,000 VND đến 1,000,000,000 VND)
+                if (priceValue < 1000 || priceValue > 1000000000)
+                {
+                    return "price_out_of_range";
                 }
             }
             if (string.IsNullOrEmpty(assets.Status))
@@ -41,7 +49,7 @@ namespace BLL
             return AssetAccess.addAsset(assets, buildingid);
         }
 
-        public static string UpdateAsset(Assets assets)
+        public static string UpdateAsset(Assets assets, string buildingid)
         {
 
             if (string.IsNullOrEmpty(assets.AssetName))
@@ -55,13 +63,21 @@ namespace BLL
             }
             else
             {
-                if (!decimal.TryParse(assets.Price, out decimal priceValue) || priceValue <= 0)
+                // Xóa định dạng tiền tệ để kiểm tra
+                string cleanPrice = assets.Price.Replace("VND", "").Replace(",", "").Trim();
+                if (!decimal.TryParse(cleanPrice, out decimal priceValue))
                 {
                     return "invalid_price_format";
                 }
+                
+                // Kiểm tra giới hạn giá trị
+                if (priceValue < 1000 || priceValue > 1000000000)
+                {
+                    return "price_out_of_range";
+                }
             }
 
-            return AssetAccess.updateAsset(assets);
+            return AssetAccess.updateAsset(assets, buildingid);
         }
 
         public static DataTable LoadRoomID(string buildingid)

@@ -43,13 +43,16 @@ namespace GUI
                         label22.Text = a.Value;
                         break;
                     case "vehicle.vehicle_id":
-                        guna2HtmlLabel7.Text = a.Value;
+                        guna2HtmlLabel6.Text = a.Value;
                         break;
                     case "vehicle.tenant_id":
                         guna2HtmlLabel14.Text = a.Value;
                         break;
                     case "vehicle.type":
                         guna2HtmlLabel16.Text = a.Value;
+                        break;
+                    case "vehicle.parking_id":
+                        guna2HtmlLabel15.Text = a.Value;
                         break;
                     case "vehicle.price_id":
                         guna2HtmlLabel7.Text = a.Value;
@@ -161,9 +164,7 @@ namespace GUI
             }
             unitpriceid_tb.SelectedItem = infor.VehicleUnitPriceID;
 
-            vehicleid_tb.Enabled = false;
             unitpriceid_tb.Enabled = false;
-            licenseplate_tb.Enabled = false;
         }
 
         private void type_cb_SelectedIndexChanged(object sender, EventArgs e)

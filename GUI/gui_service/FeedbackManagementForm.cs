@@ -46,9 +46,9 @@ namespace GUI
                 }
 
                 // Khởi tạo combobox status
-                cboStatus.Items.Add("Tất cả");
-                cboStatus.Items.Add("PENDING");
-                cboStatus.Items.Add("RESOLVED");
+                cboStatus.Items.Add(Language.translate("all_text"));
+                cboStatus.Items.Add(Language.translate("dangcho"));
+                cboStatus.Items.Add(Language.translate("dagiaiquyet"));
                 cboStatus.SelectedIndex = 0;
 
                 // Khởi tạo datepicker
@@ -60,12 +60,83 @@ namespace GUI
 
                 // QUAN TRỌNG: Chỉ load dữ liệu từ DATABASE, không đồng bộ
                 LoadFeedbackDataFromDatabase();
+                loadLanguage();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khởi tạo form: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "page_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "page_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "search_section":
+                        label2.Text = a.Value;
+                        break;
+                    case "date_filter_start":
+                        label4.Text = a.Value;
+                        break;
+                    case "date_filter_end":
+                        label5.Text = a.Value;
+                        break;
+                    case "table_header_customer":
+                        dgvFeedbacks.Columns[1].HeaderText = a.Value;
+                        break;
+                    case "table_header_email":
+                        dgvFeedbacks.Columns[2].HeaderText = a.Value;
+                        break;
+                    case "table_header_content":
+                        dgvFeedbacks.Columns[3].HeaderText = a.Value;
+                        break;
+                    case "table_header_date":
+                        dgvFeedbacks.Columns[4].HeaderText = a.Value;
+                        break;
+                    case "table_header_status":
+                        label3.Text = a.Value;
+                        dgvFeedbacks.Columns[5].HeaderText = a.Value;
+                        break;
+                    case "doubleclick":
+                        label6.Text = a.Value;
+                        break;
+                    case "export_excel":
+                        btnExport.Text = a.Value;
+                        break;
+                    case "action_filter":
+                        btnFilter.Text = a.Value;
+                        break;
+                    case "action_refresh":
+                        btnResetFilter.Text = a.Value;
+                        break;
+                    case "action_import":
+                        btnSync.Text = a.Value;
+                        break;
+                }
+            }
+        }
+        //        page_title: Quản lý phản ánh khách hàng   export_excel
+        //page_subtitle: Mọi phản ánh của khách hàng đều ở đây
+        //search_section: Tìm kiếm
+        //date_filter_start: Từ ngày
+        //date_filter_end: Đến ngày
+        //table_header_customer: Tên khách hàng
+        //table_header_email: Email
+        //table_header_content: Nội dung
+        //table_header_date: Ngày gửi
+        //table_header_status: Trạng thái
+        //action_show_all: Tất cả
+        //action_filter: Lọc
+        //action_refresh: Làm mới
+        //action_import: Dòng bệ dữ liệu từ Google Form
         private void LoadFeedbackDataFromDatabase()
         {
             try
@@ -553,93 +624,102 @@ namespace GUI
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    Cursor = Cursors.WaitCursor;
+            //    Console.WriteLine("Bắt đầu xuất Excel...");
+
+            //    // Kiểm tra có dữ liệu không
+            //    if (dgvFeedbacks.Rows.Count == 0)
+            //    {
+            //        MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo",
+            //                       MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        Cursor = Cursors.Default;
+            //        return;
+            //    }
+
+            //    // Phương pháp 1: Sử dụng ExcelExporter có sẵn
+            //    if (typeof(ExcelExporter) != null)
+            //    {
+            //        ExcelExporter.ExportToExcel(dgvFeedbacks, "Danh sách phản ánh khách hàng");
+            //    }
+            //    else
+            //    {
+            //        // Phương pháp 2: Xuất Excel thủ công nếu ExcelExporter không có
+            //        SaveFileDialog saveDialog = new SaveFileDialog();
+            //        saveDialog.Filter = "Excel Files|*.xlsx";
+            //        saveDialog.Title = "Xuất danh sách phản ánh";
+            //        saveDialog.FileName = "DanhSachPhanAnh_" + DateTime.Now.ToString("yyyyMMdd");
+
+            //        if (saveDialog.ShowDialog() == DialogResult.OK)
+            //        {
+            //            // Tạo Excel application
+            //            Excel.Application excelApp = new Excel.Application();
+            //            excelApp.Visible = false;
+            //            Excel.Workbook workbook = excelApp.Workbooks.Add();
+            //            Excel.Worksheet worksheet = workbook.ActiveSheet;
+
+            //            // Tiêu đề
+            //            worksheet.Cells[1, 1] = "DANH SÁCH PHẢN ÁNH KHÁCH HÀNG";
+            //            Excel.Range titleRange = worksheet.Range["A1", GetExcelColumnName(dgvFeedbacks.Columns.Count) + "1"];
+            //            titleRange.Merge();
+            //            titleRange.Font.Bold = true;
+            //            titleRange.Font.Size = 14;
+            //            titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+
+            //            // Header
+            //            for (int i = 0; i < dgvFeedbacks.Columns.Count; i++)
+            //            {
+            //                if (dgvFeedbacks.Columns[i].Visible)
+            //                {
+            //                    worksheet.Cells[2, i + 1] = dgvFeedbacks.Columns[i].HeaderText;
+            //                    worksheet.Cells[2, i + 1].Font.Bold = true;
+            //                }
+            //            }
+
+            //            // Dữ liệu
+            //            for (int i = 0; i < dgvFeedbacks.Rows.Count; i++)
+            //            {
+            //                for (int j = 0; j < dgvFeedbacks.Columns.Count; j++)
+            //                {
+            //                    if (dgvFeedbacks.Columns[j].Visible && dgvFeedbacks.Rows[i].Cells[j].Value != null)
+            //                    {
+            //                        worksheet.Cells[i + 3, j + 1] = dgvFeedbacks.Rows[i].Cells[j].Value.ToString();
+            //                    }
+            //                }
+            //            }
+
+            //            // Tự động điều chỉnh cột
+            //            worksheet.Columns.AutoFit();
+
+            //            // Lưu file
+            //            workbook.SaveAs(saveDialog.FileName);
+            //            workbook.Close();
+            //            excelApp.Quit();
+
+            //            MessageBox.Show("Xuất Excel thành công!\nFile: " + saveDialog.FileName,
+            //                           "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //        }
+            //    }
+
+            //    Cursor = Cursors.Default;
+            //}
+            //catch (Exception ex)
+            //{
+            //    Cursor = Cursors.Default;
+            //    MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message, "Lỗi",
+            //                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    Console.WriteLine("Lỗi xuất Excel: " + ex.Message);
+            //    Console.WriteLine("Stack trace: " + ex.StackTrace);
+            //}
+            if (dgvFeedbacks.Visible)
             {
-                Cursor = Cursors.WaitCursor;
-                Console.WriteLine("Bắt đầu xuất Excel...");
-
-                // Kiểm tra có dữ liệu không
-                if (dgvFeedbacks.Rows.Count == 0)
-                {
-                    MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo",
-                                   MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    Cursor = Cursors.Default;
-                    return;
-                }
-
-                // Phương pháp 1: Sử dụng ExcelExporter có sẵn
-                if (typeof(ExcelExporter) != null)
-                {
-                    ExcelExporter.ExportToExcel(dgvFeedbacks, "Danh sách phản ánh khách hàng");
-                }
-                else
-                {
-                    // Phương pháp 2: Xuất Excel thủ công nếu ExcelExporter không có
-                    SaveFileDialog saveDialog = new SaveFileDialog();
-                    saveDialog.Filter = "Excel Files|*.xlsx";
-                    saveDialog.Title = "Xuất danh sách phản ánh";
-                    saveDialog.FileName = "DanhSachPhanAnh_" + DateTime.Now.ToString("yyyyMMdd");
-
-                    if (saveDialog.ShowDialog() == DialogResult.OK)
-                    {
-                        // Tạo Excel application
-                        Excel.Application excelApp = new Excel.Application();
-                        excelApp.Visible = false;
-                        Excel.Workbook workbook = excelApp.Workbooks.Add();
-                        Excel.Worksheet worksheet = workbook.ActiveSheet;
-
-                        // Tiêu đề
-                        worksheet.Cells[1, 1] = "DANH SÁCH PHẢN ÁNH KHÁCH HÀNG";
-                        Excel.Range titleRange = worksheet.Range["A1", GetExcelColumnName(dgvFeedbacks.Columns.Count) + "1"];
-                        titleRange.Merge();
-                        titleRange.Font.Bold = true;
-                        titleRange.Font.Size = 14;
-                        titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-
-                        // Header
-                        for (int i = 0; i < dgvFeedbacks.Columns.Count; i++)
-                        {
-                            if (dgvFeedbacks.Columns[i].Visible)
-                            {
-                                worksheet.Cells[2, i + 1] = dgvFeedbacks.Columns[i].HeaderText;
-                                worksheet.Cells[2, i + 1].Font.Bold = true;
-                            }
-                        }
-
-                        // Dữ liệu
-                        for (int i = 0; i < dgvFeedbacks.Rows.Count; i++)
-                        {
-                            for (int j = 0; j < dgvFeedbacks.Columns.Count; j++)
-                            {
-                                if (dgvFeedbacks.Columns[j].Visible && dgvFeedbacks.Rows[i].Cells[j].Value != null)
-                                {
-                                    worksheet.Cells[i + 3, j + 1] = dgvFeedbacks.Rows[i].Cells[j].Value.ToString();
-                                }
-                            }
-                        }
-
-                        // Tự động điều chỉnh cột
-                        worksheet.Columns.AutoFit();
-
-                        // Lưu file
-                        workbook.SaveAs(saveDialog.FileName);
-                        workbook.Close();
-                        excelApp.Quit();
-
-                        MessageBox.Show("Xuất Excel thành công!\nFile: " + saveDialog.FileName,
-                                       "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-
-                Cursor = Cursors.Default;
+                ExcelExporter.ExportToExcel(dgvFeedbacks, "Danh sách phản hồi");
             }
-            catch (Exception ex)
+            else
             {
-                Cursor = Cursors.Default;
-                MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message, "Lỗi",
-                               MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine("Lỗi xuất Excel: " + ex.Message);
-                Console.WriteLine("Stack trace: " + ex.StackTrace);
+                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -718,6 +798,11 @@ namespace GUI
             lblTotalCount.Location = new Point(10, dgvFeedbacks.Bottom + 10);
             lblTotalCount.Text = "Tổng số: 0 phản ánh";
             this.Controls.Add(lblTotalCount);
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

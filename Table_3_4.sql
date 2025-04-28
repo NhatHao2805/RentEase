@@ -2,6 +2,11 @@ drop database if exists rentease;
 CREATE DATABASE rentease DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE rentease;
 
+Create table keyManager(
+	usern varchar(20),
+    keybuilding varchar(20)
+);
+
 /*==============================================================*/
 /* Table: TENANT                                                */
 /*==============================================================*/
@@ -16,6 +21,7 @@ CREATE TABLE TENANT (
     EMAIL                VARCHAR(50) COMMENT 'Email',
     ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
     DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
+    BUILDINGID 			VARCHAR(20) NOT NULL COMMENT 'ID tòa nhà',
     PRIMARY KEY (TENANTID)
 );
 
@@ -56,8 +62,8 @@ CREATE TABLE BILLDETAIL (
     ID						VARCHAR(10) NOT NULL COMMENT 'ID',
     AMOUNT           		FLOAT NOT NULL COMMENT 'Thành tiền',
     ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
-    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
-    PRIMARY KEY(BILLDETAIL_ID)
+    DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)'
+    -- PRIMARY KEY(BILLDETAIL_ID) 
 );
 
 /*==============================================================*/
@@ -87,6 +93,7 @@ CREATE TABLE FINGERPRINTS (
     DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (FINGERID)
 );
+
 
 /*==============================================================*/
 /* Table: CONTRACT                                              */
@@ -146,12 +153,13 @@ CREATE TABLE BUILDING (
 /*==============================================================*/
 CREATE TABLE ROOM (
     ROOMID              VARCHAR(10) NOT NULL COMMENT 'ID nhà',
+    ROOMNAME			VARCHAR(10) NOT NULL COMMENT 'Tên nhà',
     BUILDINGID           VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
     TYPE                 VARCHAR(50) COMMENT 'Loại nhà',
     FLOOR				INT COMMENT 'Tầng nhà',
     CONVENIENT           VARCHAR(200) COMMENT 'Tiện ích',
-    AREA                 FLOAT COMMENT 'Diện tích',
-    PRICE                FLOAT COMMENT 'Giá',
+    AREA                 NUMERIC COMMENT 'Diện tích',
+    PRICE                NUMERIC COMMENT 'Giá',
     STATUS               VARCHAR(50) COMMENT 'Trạng thái',
     ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
     DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
@@ -165,7 +173,7 @@ CREATE TABLE ASSETS (
     ASSETID              	VARCHAR(10) NOT NULL COMMENT 'ID tài sản',
     ROOMID           		VARCHAR(10) NOT NULL COMMENT 'ID phòng',
     ASSETNAME               VARCHAR(50) COMMENT 'Tên tài sản',
-    PRICE                	FLOAT COMMENT 'Giá',
+    PRICE                	NUMERIC COMMENT 'Giá',
     STATUS               	VARCHAR(50) COMMENT 'Trạng thái',
     USE_DATE 				DATE COMMENT 'Ngày đưa vào sử dụng',
     ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
@@ -226,7 +234,7 @@ CREATE TABLE PARKINGAREA (
     BUILDINGID				VARCHAR(10) NOT NULL COMMENT 'ID tòa nhà',
     ADDRESS              	VARCHAR(100) COMMENT 'Địa chỉ',
     TYPE             	    VARCHAR(50) COMMENT 'Loại bãi đậu xe',
-    CAPACITY           		INT COMMENT 'Sức chứa',
+    CAPACITY           		NUMERIC COMMENT 'Sức chứa',
     ISDELETED			 	INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
     DELETED_DATE 		 	DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (AREAID)
@@ -322,6 +330,8 @@ CREATE TABLE USE_SERVICE (
 	SERVICEID			VARCHAR(10) NOT NULL COMMENT 'ID người thuê',
     START_DATE          DATE COMMENT 'Ngày bắt đầu sử dụng',
     END_DATE            DATE COMMENT 'Ngày kết thúc sử dụng',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (TENANTID, SERVICEID)
 );
  
@@ -336,6 +346,8 @@ CREATE TABLE TENANT_HISTORY (
     STARTDATE            DATETIME COMMENT 'Ngày bắt đầu',
     ENDDATE				DATETIME COMMENT 'Ngày kết thúc',
     NOTES                VARCHAR(200) COMMENT 'Ghi chú',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (HISTORYID)
 );
 
@@ -361,6 +373,8 @@ CREATE TABLE VEHICLE_UNITPRICE (
     VEHICLE_UNITPRICE_ID            VARCHAR(10) NOT NULL COMMENT 'ID đơn giá phương tiện',
     UNITPRICE         				FLOAT COMMENT 'Đơn giá',
     TYPE							VARCHAR(50) COMMENT 'phân loại phương tiện',
+    ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
+    DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (VEHICLE_UNITPRICE_ID)
 );
 
@@ -387,8 +401,8 @@ CREATE TABLE WATER_ELECTRICITY (
 /* Table: WATER_ELEC_UNITPRICE                                      */
 /*==============================================================*/
 CREATE TABLE WATER_ELECT_UNITPRICE (
-    UNITPRICEID          VARCHAR(10) NOT NULL COMMENT 'ID đơn giá',
-    TYPE			 	 VARCHAR(10) COMMENT 'Phân loại điện/nước',
+    UNITPRICEID          VARCHAR(20) NOT NULL COMMENT 'ID đơn giá',
+    TYPE			 	 VARCHAR(20) COMMENT 'Phân loại điện/nước',
     UNITPRICE            FLOAT COMMENT 'Đơn giá',
     PRIMARY KEY (UNITPRICEID)
 );
@@ -414,8 +428,8 @@ ALTER TABLE BILL
 ADD CONSTRAINT FK_BILL_TENANT FOREIGN KEY (TENANTID) REFERENCES TENANT(TENANTID) ON DELETE CASCADE;
 
 -- Bảng BILLDETAIL
-ALTER TABLE BILLDETAIL
-ADD CONSTRAINT FK_BILLDETAIL_BILL FOREIGN KEY (BILLID) REFERENCES BILL(BILLID) ON DELETE CASCADE;
+-- ALTER TABLE BILLDETAIL
+-- ADD CONSTRAINT FK_BILLDETAIL_BILL FOREIGN KEY (BILLID) REFERENCES BILL(BILLID) ON DELETE CASCADE;
 
 -- Bảng PAYMENT
 ALTER TABLE PAYMENT

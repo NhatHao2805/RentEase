@@ -17,7 +17,7 @@ namespace DAL
             {
                 if (conn == null) return roomList;
 
-                string query = "SELECT ROOMID FROM Contract WHERE TENANTID = @TenantID AND ISDELETED = 0";
+                string query = "SELECT r.ROOMNAME FROM Contract c JOIN ROOM r ON c.ROOMID = r.ROOMID WHERE TENANTID = @TenantID AND ISDELETED = 0";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@TenantID", tenantID);

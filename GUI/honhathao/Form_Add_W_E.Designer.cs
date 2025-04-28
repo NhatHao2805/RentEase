@@ -87,6 +87,7 @@
             this.SoPhong.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.SoPhong.Size = new System.Drawing.Size(317, 36);
             this.SoPhong.TabIndex = 25;
+            this.SoPhong.SelectedIndexChanged += new System.EventHandler(this.SoPhong_SelectedIndexChanged);
             this.SoPhong.SelectionChangeCommitted += new System.EventHandler(this.SoPhong_SelectionChangeCommitted);
             // 
             // o_e

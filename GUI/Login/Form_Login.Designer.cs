@@ -38,11 +38,11 @@ namespace GUI
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.dmk_lb = new System.Windows.Forms.Label();
             this.dkm_lb = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.textBoxTK_DN = new GUI.Custom.MyGunaTextBox();
             this.buttonDangNhap1 = new GUI.Custom.MyGunaButton();
@@ -50,7 +50,6 @@ namespace GUI
             this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.dmk_lb = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -82,7 +81,7 @@ namespace GUI
             this.dk_lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dk_lb.Location = new System.Drawing.Point(239, 404);
+            this.dk_lb.Location = new System.Drawing.Point(264, 404);
             this.dk_lb.Name = "dk_lb";
             this.dk_lb.Size = new System.Drawing.Size(75, 23);
             this.dk_lb.TabIndex = 21;
@@ -128,7 +127,6 @@ namespace GUI
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button2);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button3);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox5);
             this.guna2GradientPanel1.Controls.Add(this.textBoxTK_DN);
             this.guna2GradientPanel1.Controls.Add(this.buttonDangNhap1);
@@ -144,6 +142,19 @@ namespace GUI
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Size = new System.Drawing.Size(372, 555);
             this.guna2GradientPanel1.TabIndex = 149;
+            // 
+            // dmk_lb
+            // 
+            this.dmk_lb.AutoSize = true;
+            this.dmk_lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dmk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dmk_lb.Location = new System.Drawing.Point(67, 404);
+            this.dmk_lb.Name = "dmk_lb";
+            this.dmk_lb.Size = new System.Drawing.Size(172, 23);
+            this.dmk_lb.TabIndex = 151;
+            this.dmk_lb.Text = "Quên/Đổi mật khẩu?";
+            this.dmk_lb.Click += new System.EventHandler(this.dmk_lb_Click);
             // 
             // dkm_lb
             // 
@@ -213,17 +224,6 @@ namespace GUI
             this.hienMk.SetToolTip(this.guna2Button3, "Ấn giữ để hiện mật khẩu");
             this.guna2Button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass_MouseDown);
             this.guna2Button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass_MouseUp);
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(71, 406);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(172, 21);
-            this.guna2HtmlLabel1.TabIndex = 124;
-            this.guna2HtmlLabel1.Text = "Don\'t have an account?";
-            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // guna2PictureBox5
             // 
@@ -327,19 +327,6 @@ namespace GUI
             this.guna2AnimateWindow1.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
             this.guna2AnimateWindow1.TargetForm = this;
             // 
-            // dmk_lb
-            // 
-            this.dmk_lb.AutoSize = true;
-            this.dmk_lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
-                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dmk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dmk_lb.Location = new System.Drawing.Point(149, 430);
-            this.dmk_lb.Name = "dmk_lb";
-            this.dmk_lb.Size = new System.Drawing.Size(172, 23);
-            this.dmk_lb.TabIndex = 151;
-            this.dmk_lb.Text = "Quên/Đổi mật khẩu?";
-            this.dmk_lb.Click += new System.EventHandler(this.dmk_lb_Click);
-            // 
             // Form_Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -374,7 +361,6 @@ namespace GUI
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlToolTip hienMk;

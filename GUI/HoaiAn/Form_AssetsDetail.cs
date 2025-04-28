@@ -57,7 +57,7 @@ namespace GUI
                         dgv_AssetsDetail.Columns["USE_DATE"].HeaderText = a.Value;
                         break;
                     case "assetdetail.roomid":
-                        dgv_AssetsDetail.Columns["ROOMID"].HeaderText = a.Value;
+                        dgv_AssetsDetail.Columns["ROOMNAME"].HeaderText = a.Value;
                         break;
                     case "assetdetail.room_type":
                         dgv_AssetsDetail.Columns["ROOM_TYPE"].HeaderText = a.Value;

@@ -88,6 +88,7 @@
             this.vehicleid_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.vehicleid_tb.Name = "vehicleid_tb";
             this.vehicleid_tb.PlaceholderText = "";
+            this.vehicleid_tb.ReadOnly = true;
             this.vehicleid_tb.SelectedText = "";
             this.vehicleid_tb.ShadowDecoration.BorderRadius = 10;
             this.vehicleid_tb.ShadowDecoration.Enabled = true;
@@ -134,6 +135,7 @@
             this.unitprice_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.unitprice_tb.Name = "unitprice_tb";
             this.unitprice_tb.PlaceholderText = "";
+            this.unitprice_tb.ReadOnly = true;
             this.unitprice_tb.SelectedText = "";
             this.unitprice_tb.ShadowDecoration.BorderRadius = 10;
             this.unitprice_tb.ShadowDecoration.Enabled = true;
@@ -160,6 +162,7 @@
             this.licenseplate_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.licenseplate_tb.Name = "licenseplate_tb";
             this.licenseplate_tb.PlaceholderText = "";
+            this.licenseplate_tb.ReadOnly = true;
             this.licenseplate_tb.SelectedText = "";
             this.licenseplate_tb.ShadowDecoration.BorderRadius = 10;
             this.licenseplate_tb.ShadowDecoration.Enabled = true;

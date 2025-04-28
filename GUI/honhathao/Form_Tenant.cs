@@ -21,12 +21,14 @@ namespace GUI.honhathao
         private int control;
         private string username;
         private bool exit = false;
-        public Form_Tenant(DataGridViewRow data,int control,string username)
+        private string buildingid;
+        public Form_Tenant(DataGridViewRow data,int control,string username,string buildingid)
         {
             InitializeComponent();
             this.data = data;
             this.control = control;
             this.username = username;
+            this.buildingid = buildingid;
             loadLanguage();
             loadinfo();
         }
@@ -95,7 +97,8 @@ namespace GUI.honhathao
                 hodem.Text = data.Cells[1].Value.ToString();
                 ten.Text = data.Cells[2].Value.ToString();
                 ngaysinh.Value = DateTime.Parse(data.Cells[3].Value.ToString());
-                gioitinh.Text = Language.translate(data.Cells[4].Value.ToString());
+                //gioitinh.Text = Language.translate(data.Cells[4].Value.ToString());
+                gioitinh.SelectedItem = data.Cells[4].Value.ToString();
                 sdt.Text = data.Cells[5].Value.ToString();
                 email.Text = data.Cells[6].Value.ToString();
             }
@@ -123,17 +126,13 @@ namespace GUI.honhathao
                         ngaysinh.Value.ToString("yyyy-MM-dd"),
                         Language.reverseTranslate(gioitinh.Text),
                         sdt.Text,
-                        email.Text
+                        email.Text,
+                        buildingid
                     );
-                    if(result == "Thêm thành công")
-                    {
-                        MessageBox.Show(result, "Information", MessageBoxButtons.OK);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(result, "Error", MessageBoxButtons.OK);
-                    }
+
+                    MessageBox.Show(result, "Information", MessageBoxButtons.OK);
+                    this.Close();
+
                     break;
                 case 1:
                     string result1 = TenantBLL.TenantBLL_update_Tenant(
@@ -145,16 +144,11 @@ namespace GUI.honhathao
                         sdt.Text,
                         email.Text
                     );
-                    if (result1 == "Thêm thành công")
-                    {
-                        MessageBox.Show(result1, "Information", MessageBoxButtons.OK);
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(result1, "Error", MessageBoxButtons.OK);
-                    }
-                    
+
+                    MessageBox.Show(result1, "Information", MessageBoxButtons.OK);
+                    this.Close();
+
+
                     break;
             }
         }

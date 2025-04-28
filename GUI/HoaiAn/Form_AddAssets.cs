@@ -53,7 +53,7 @@ namespace GUI
                     case "btn_save":
                         add_btn.Text = a.Value;
                         break;
-                    case " asset.detail_title":
+                    case "asset.detail_title":
                         label23.Text = a.Value;
                         break;
                     case "asset.detail_description":
@@ -116,7 +116,7 @@ namespace GUI
 
             foreach (DataRow row in AssetBLL.LoadRoomID(_buildingid).Rows)
             {
-                roomid_cb.Items.Add(row["ROOMID"].ToString());
+                roomid_cb.Items.Add(row["ROOMNAME"].ToString());
             }
 
             status_cb.Items.Clear();

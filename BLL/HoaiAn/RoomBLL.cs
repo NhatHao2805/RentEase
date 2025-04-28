@@ -64,18 +64,25 @@ namespace BLL
                 {
                     return "invalid_area_format";
                 }
+                if (areaValue > 1000) // Giới hạn diện tích tối đa 1000m2
+                {
+                    return "area_too_large";
+                }
             }
 
             if (string.IsNullOrEmpty(room.Price))
             {
                 return "required_price";
             }
-
             else
             {
                 if (!decimal.TryParse(room.Price, out decimal priceValue) || priceValue <= 0)
                 {
                     return "invalid_price_format";
+                }
+                if (priceValue > 1000000000) // Giới hạn giá thuê tối đa 1 tỷ
+                {
+                    return "price_too_large";
                 }
             }
 
@@ -100,6 +107,10 @@ namespace BLL
                 {
                     return "invalid_area_format";
                 }
+                if (areaValue > 1000) // Giới hạn diện tích tối đa 1000m2
+                {
+                    return "area_too_large";
+                }
             }
 
             if (string.IsNullOrEmpty(room.Price))
@@ -113,6 +124,10 @@ namespace BLL
                 {
                     return "invalid_price_format";
                 }
+                if (priceValue > 1000000000) // Giới hạn giá thuê tối đa 1 tỷ
+                {
+                    return "price_too_large";
+                }
             }
 
             if (string.IsNullOrEmpty(room.Status))
@@ -120,43 +135,13 @@ namespace BLL
                 return "required_status";
             }
 
-            if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") < room.Status.IndexOf("Đang trống"))
-            {
-                return "Không thể vừa 'Đang ở' vừa 'Đang trống'.";
-            }
-
-            if (room.Status.Contains("Đang ở") && room.Status.Contains("Đang trống") && room.Status.IndexOf("Đang ở") > room.Status.IndexOf("Đang trống"))
-            {
-                return "Không thể vừa 'Đang trống' vừa 'Đang ở'.";
-            }
-
-            if (room.Status.Contains("Đang cọc giữ chỗ") && room.Status.Contains("Đang báo kết thúc") && room.Status.IndexOf("Đang cọc giữ chỗ") < room.Status.IndexOf("Đang báo kết thúc"))
-            {
-                return "Không thể vừa 'Đang cọc giữ chỗ' vừa 'Đang báo kết thúc'.";
-            }
-
-            if (room.Status.Contains("Đang cọc giữ chỗ") && room.Status.Contains("Đang báo kết thúc") && room.Status.IndexOf("Đang cọc giữ chỗ") > room.Status.IndexOf("Đang báo kết thúc"))
-            {
-                return "Không thể vừa 'Đang báo kết thúc' vừa 'Đang cọc giữ chỗ'.";
-            }
-
-            if (room.Status.Contains("Đã quá hạn hợp đồng") && room.Status.Contains("Sắp hết hạn hợp đồng") && room.Status.IndexOf("Đã quá hạn hợp đồng") < room.Status.IndexOf("Sắp hết hạn hợp đồng"))
-            {
-                return "Không thể vừa 'Đã quá hạn hợp đồng' vừa 'Sắp hết hạn hợp đồng'.";
-            }
-
-            if (room.Status.Contains("Đã quá hạn hợp đồng") && room.Status.Contains("Sắp hết hạn hợp đồng") && room.Status.IndexOf("Đã quá hạn hợp đồng") > room.Status.IndexOf("Sắp hết hạn hợp đồng"))
-            {
-                return "Không thể vừa 'Sắp hết hạn hợp đồng' vừa 'Đã quá hạn hợp đồng'.";
-            }
-
             string infor = RoomAccess.UpdateRoom(room);
             return infor;
         }
 
-        public static (bool success, string message) DeleteRoom(string roomId)
+        public static (bool success, string message) DeleteRoom(string roomId, string buildingid)
         {
-            return RoomAccess.DeleteRoom(roomId);
+            return RoomAccess.DeleteRoom(roomId, buildingid);
         }
         public static DataTable FilterRoomByStatus(string status, string userName, string buildingid)
         {

@@ -23,7 +23,7 @@ namespace DTO.DTO_Service
     public class PhongDTO
     {
         public string ID { get; set; }
-
+        public string Name { get; set; }
     }
     public class DichVuDTO
     {

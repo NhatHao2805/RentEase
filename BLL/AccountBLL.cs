@@ -19,7 +19,7 @@ namespace BLL
         }
         private bool checkPattern_1(string input)
         {
-            string pattern = "^[a-zA-Z0-9 ]+$";
+            string pattern = @"^[a-zA-Z0-9\s]+$";
             return Regex.IsMatch(input, pattern);
         }
 
@@ -48,13 +48,14 @@ namespace BLL
         }
         public string AccountBLL_CheckSignUp(User taikhoan)
         {
-            if (!checkPattern_0(taikhoan.Username)) return "requeid_taikhoan";
-            if (taikhoan.Password == "") return "requeid_password";
+            
             if (!checkPattern_1(RemoveDiacritics(taikhoan.FullName))) return "requeid_username";
             if (taikhoan.Email == "") return "requeid_email";
+            if (taikhoan.Address == "") return "requeid_address";
             if (taikhoan.Gender == "") return "requeid_gender";
             if (!checkPattern_2(taikhoan.PhoneNumber)) return "requeid_phonenumber";
-            if (taikhoan.Address == "") return "requeid_address";
+            if (!checkPattern_0(taikhoan.Username)) return "requeid_taikhoan";
+            if (taikhoan.Password == "") return "requeid_password";
             return AccountAccess.AccountAccess_CheckSignUp(taikhoan);
         }
 
