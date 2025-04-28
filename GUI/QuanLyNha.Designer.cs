@@ -1720,7 +1720,7 @@ namespace GUI
             this.guna2GradientButton12.Image = global::GUI.Properties.Resources.icons8_remind_100;
             this.guna2GradientButton12.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton12.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton12.Location = new System.Drawing.Point(651, 10);
+            this.guna2GradientButton12.Location = new System.Drawing.Point(654, 10);
             this.guna2GradientButton12.Name = "guna2GradientButton12";
             this.guna2GradientButton12.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.guna2GradientButton12.ShadowDecoration.BorderRadius = 15;
@@ -1754,7 +1754,7 @@ namespace GUI
             this.button38.HoverState.FillColor2 = System.Drawing.Color.LightGreen;
             this.button38.Image = global::GUI.Properties.Resources.icons8_plus_240;
             this.button38.ImageSize = new System.Drawing.Size(60, 60);
-            this.button38.Location = new System.Drawing.Point(283, 1);
+            this.button38.Location = new System.Drawing.Point(297, 1);
             this.button38.Name = "button38";
             this.button38.PressedColor = System.Drawing.Color.Transparent;
             this.button38.ShadowDecoration.BorderRadius = 15;
@@ -1787,7 +1787,7 @@ namespace GUI
             this.button40.Image = global::GUI.Properties.Resources.icons8_edit_901;
             this.button40.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button40.ImageSize = new System.Drawing.Size(22, 22);
-            this.button40.Location = new System.Drawing.Point(362, 10);
+            this.button40.Location = new System.Drawing.Point(373, 10);
             this.button40.Name = "button40";
             this.button40.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button40.ShadowDecoration.BorderRadius = 15;
@@ -1822,7 +1822,7 @@ namespace GUI
             this.button39.Image = global::GUI.Properties.Resources.icons8_trash_128;
             this.button39.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button39.ImageSize = new System.Drawing.Size(22, 22);
-            this.button39.Location = new System.Drawing.Point(521, 10);
+            this.button39.Location = new System.Drawing.Point(529, 10);
             this.button39.Name = "button39";
             this.button39.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button39.ShadowDecoration.BorderRadius = 15;
@@ -4680,7 +4680,6 @@ namespace GUI
             this.btn_xemdichvu.Size = new System.Drawing.Size(190, 50);
             this.btn_xemdichvu.TabIndex = 130;
             this.btn_xemdichvu.Text = "Xem Dịch Vụ ";
-            this.XoaDuLieu.SetToolTip(this.btn_xemdichvu, "Sửa / Xóa dữ liệu bảng");
             this.btn_xemdichvu.Click += new System.EventHandler(this.btn_xemdichvu_Click);
             // 
             // themDV_btn
@@ -4977,7 +4976,6 @@ namespace GUI
             this.tabPage11.Size = new System.Drawing.Size(1012, 710);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Bãi đỗ xe";
-            this.tabPage11.Click += new System.EventHandler(this.tabPage11_Click);
             // 
             // guna2DataGridView7
             // 
@@ -5353,7 +5351,7 @@ namespace GUI
             this.checkBox10.AutoSize = true;
             this.checkBox10.BackColor = System.Drawing.Color.Transparent;
             this.checkBox10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox10.Location = new System.Drawing.Point(65, 15);
+            this.checkBox10.Location = new System.Drawing.Point(76, 13);
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(109, 27);
             this.checkBox10.TabIndex = 109;
@@ -5366,7 +5364,7 @@ namespace GUI
             this.checkBox11.AutoSize = true;
             this.checkBox11.BackColor = System.Drawing.Color.Transparent;
             this.checkBox11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox11.Location = new System.Drawing.Point(204, 15);
+            this.checkBox11.Location = new System.Drawing.Point(225, 13);
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(175, 27);
             this.checkBox11.TabIndex = 110;
@@ -5379,7 +5377,7 @@ namespace GUI
             this.checkBox17.AutoSize = true;
             this.checkBox17.BackColor = System.Drawing.Color.Transparent;
             this.checkBox17.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox17.Location = new System.Drawing.Point(599, 15);
+            this.checkBox17.Location = new System.Drawing.Point(637, 13);
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(158, 27);
             this.checkBox17.TabIndex = 111;
@@ -5392,7 +5390,7 @@ namespace GUI
             this.checkBox18.AutoSize = true;
             this.checkBox18.BackColor = System.Drawing.Color.Transparent;
             this.checkBox18.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox18.Location = new System.Drawing.Point(413, 15);
+            this.checkBox18.Location = new System.Drawing.Point(445, 13);
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(148, 27);
             this.checkBox18.TabIndex = 112;
@@ -5405,7 +5403,7 @@ namespace GUI
             this.checkBox20.AutoSize = true;
             this.checkBox20.BackColor = System.Drawing.Color.Transparent;
             this.checkBox20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox20.Location = new System.Drawing.Point(810, 15);
+            this.checkBox20.Location = new System.Drawing.Point(844, 13);
             this.checkBox20.Name = "checkBox20";
             this.checkBox20.Size = new System.Drawing.Size(135, 27);
             this.checkBox20.TabIndex = 113;

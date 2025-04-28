@@ -1,6 +1,5 @@
 ﻿using BLL;
 using DTO;
-using GUI.Custom;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +21,9 @@ namespace GUI
         private Form_Login lg;
         public Form_SignUp(Form_Login lg)
         {
-            this.lg = lg;
             InitializeComponent();
             loadLanguage();//New NhatHao
+            this.lg = lg;
             guna2DateTimePicker1.MaxDate = DateTime.Now;
         }
 
@@ -115,6 +114,7 @@ namespace GUI
 
         }
 
+
         private bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email))
@@ -122,7 +122,7 @@ namespace GUI
 
             // Regex pattern for email validation according to RFC 5322
             string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
-            
+
             try
             {
                 // Check basic pattern
@@ -158,7 +158,6 @@ namespace GUI
                 MessageBox.Show("Email không hợp lệ! Vui lòng nhập đúng định dạng email.");
                 return;
             }
-
             if (textBoxMK_DK1.Text != textBoxMK_DK2.Text)
             {
                 MessageBox.Show("Mật khẩu không trùng khớp!");
@@ -170,7 +169,7 @@ namespace GUI
             taikhoan.Gender = gt_cb.Text;
             taikhoan.Email  = email_tb.Text;
             taikhoan.Address = diachi_tb.Text;
-            taikhoan.Birth = ns_datetimepicker.Value.ToString("yyyy-MM-dd");
+            taikhoan.Birth = ns_datetimepicker.Value.ToString("dd-MM-yyyy");
             taikhoan.PhoneNumber = sdt_tb.Text;
             taikhoan.FullName = name_tb.Text;
 
@@ -178,26 +177,26 @@ namespace GUI
 
             switch (check)
             {
+                case "requeid_taikhoan":
+                    MessageBox.Show("Thông tin tài khoản không hợp lệ!");
+                    return;
+                case "requeid_password":
+                    MessageBox.Show("Mật khẩu không hợp lệ!");
+                    return;
                 case "requeid_username":
                     MessageBox.Show("Tên không hợp lệ!");
                     return;
                 case "requeid_email":
                     MessageBox.Show("Email không hợp lệ!");
                     return;
-                case "requeid_address":
-                    MessageBox.Show("Vui lòng nhập địa chỉ!");
-                    return;
                 case "requeid_gender":
                     MessageBox.Show("Vui lòng chọn giới tính");
                     return;
                 case "requeid_phonenumber":
-                    MessageBox.Show("Số điện thoại không hợp lệ!");
+                    MessageBox.Show("Số điên thoại không hợp lệ!");
                     return;
-                case "requeid_taikhoan":
-                    MessageBox.Show("Thông tin tài khoản không hợp lệ!");
-                    return;
-                case "requeid_password":
-                    MessageBox.Show("Mật khẩu không hợp lệ!");
+                case "requeid_address":
+                    MessageBox.Show("Vui lòng nhập địa chỉ!");
                     return;
             }
 

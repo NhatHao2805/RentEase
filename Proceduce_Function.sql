@@ -242,23 +242,23 @@ BEGIN
 END//
 
 -- PAYMENT-BILL-W-E
--- CREATE PROCEDURE load_billdetail(
--- 	IN p_billID VARCHAR(20)
--- )
--- BEGIN
---    SELECT bd.BILLDETAIL_ID,bd.BILLID,bd.ID,s.SERVICENAME,bd.AMOUNT FROM billdetail bd 
---    JOIN service s ON s.SERVICEID = bd.ID
---    WHERE bd.BILLID = p_billID AND bd.ISDELETED = 0 AND s.ISDELETED = 0
--- 	union
--- 	SELECT bd.BILLDETAIL_ID,bd.BILLID,bd.ID,
--- 	CASE 
---         WHEN w.`TYPE` = 'WATER' THEN 'Nước'
---         WHEN w.`TYPE` = 'ELECTRICITY' THEN 'Điện'
---         ELSE w.`TYPE`
---    END,bd.AMOUNT FROM billdetail bd 
---    JOIN water_electricity w ON w.FIGUREID = bd.ID
--- 	WHERE bd.BILLID = p_billID AND bd.ISDELETED = 0 AND w.ISDELETED = 0;
--- END//
+CREATE PROCEDURE load_billdetail(
+	IN p_billID VARCHAR(20)
+)
+BEGIN
+   SELECT bd.BILLDETAIL_ID,bd.BILLID,bd.ID,s.SERVICENAME,bd.AMOUNT FROM billdetail bd 
+   JOIN service s ON s.SERVICEID = bd.ID
+   WHERE bd.BILLID = p_billID AND bd.ISDELETED = 0 AND s.ISDELETED = 0
+	union
+	SELECT bd.BILLDETAIL_ID,bd.BILLID,bd.ID,
+	CASE 
+        WHEN w.`TYPE` = 'WATER' THEN 'Nước'-- /
+        WHEN w.`TYPE` = 'ELECTRICITY' THEN 'Điện'
+        ELSE w.`TYPE`
+   END,bd.AMOUNT FROM billdetail bd 
+   JOIN water_electricity w ON w.FIGUREID = bd.ID
+	WHERE bd.BILLID = p_billID AND bd.ISDELETED = 0 AND w.ISDELETED = 0;
+END//
 
 CREATE PROCEDURE calculate_bill()
 BEGIN
@@ -336,49 +336,31 @@ BEGIN
 END//
 
 CREATE PROCEDURE load_payment(
-	IN p_lastname VARCHAR(20)
+	IN p_buildingID VARCHAR(20),
+	IN p_tenantid VARCHAR(20),
+	IN p_lastname VARCHAR(50)
 )
 BEGIN
-    -- Delete records that have been soft-deleted for more than 30 days
-    DELETE FROM payment 
+	DELETE FROM payment 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL, Date(p.PAYMENTTIME) AS 'PAYMENT_TIME' FROM payment p
-	JOIN bill b ON p.BILLID = b.BILLID
-	JOIN tenant t ON b.TENANTID = t.TENANTID
-	WHERE (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'))
-	AND p.ISDELETED = 0
-	AND b.ISDELETED = 0
-	AND t.ISDELETED = 0
-	LIMIT 100;
-END //
+   SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL,Date(p.PAYMENTTIME)  FROM payment p 
+   JOIN bill bi ON bi.BILLID = p.BILLID
+	JOIN tenant t ON t.TENANTID = bi.TENANTID
+   JOIN contract c ON c.TENANTID = t.TENANTID
+   JOIN room r ON r.ROOMID = c.ROOMID
+   JOIN building b ON b.BUILDINGID = r.BUILDINGID
 
--- CREATE PROCEDURE load_payment(
--- 	IN p_buildingID VARCHAR(20),
--- 	IN p_tenantid VARCHAR(20),
--- 	IN p_lastname VARCHAR(50)
--- )
--- BEGIN
--- 	DELETE FROM payment 
---     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
-
---    SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL,Date(p.PAYMENTTIME)  FROM payment p 
---    JOIN bill bi ON bi.BILLID = p.BILLID
--- 	JOIN tenant t ON t.TENANTID = bi.TENANTID
---    JOIN contract c ON c.TENANTID = t.TENANTID
---    JOIN room r ON r.ROOMID = c.ROOMID
---    JOIN building b ON b.BUILDINGID = r.BUILDINGID
-
---    WHERE b.BUILDINGID = p_buildingID
---     AND p.ISDELETED = 0
---     AND bi.ISDELETED = 0
---     AND t.ISDELETED = 0
---     AND c.ISDELETED = 0
---     AND r.ISDELETED = 0
---     AND b.ISDELETED = 0
--- 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'))
--- 	AND (p_tenantid IS NULL OR t.TENANTID = p_tenantid);
--- END//
+   WHERE b.BUILDINGID = p_buildingID
+    AND p.ISDELETED = 0
+    AND bi.ISDELETED = 0
+    AND t.ISDELETED = 0
+    AND c.ISDELETED = 0
+    AND r.ISDELETED = 0
+    AND b.ISDELETED = 0
+	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'))
+	AND (p_tenantid IS NULL OR t.TENANTID = p_tenantid);
+END//
 
 CREATE TRIGGER before_del_Bill
 BEFORE DELETE ON bill
@@ -503,22 +485,22 @@ BEGIN
     RETURN new_id;
 END//
 
-CREATE PROCEDURE load_billdetail(
-	IN p_billID VARCHAR(20)
-)
-BEGIN
-	DELETE FROM billdetail 
-    WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
+-- CREATE PROCEDURE load_billdetail(
+-- 	IN p_billID VARCHAR(20)
+-- )
+-- BEGIN
+-- 	DELETE FROM billdetail 
+--     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-   SELECT bd.BILLID,bd.ID,s.SERVICENAME,bd.AMOUNT FROM billdetail bd 
-   JOIN service s ON s.SERVICEID = bd.ID
-   WHERE bd.BILLID = p_billID
-	union
-	SELECT bd.BILLID,bd.ID,w.`TYPE`
-   ,bd.AMOUNT FROM billdetail bd 
-   JOIN water_electricity w ON w.FIGUREID = bd.ID
-	WHERE bd.BILLID = p_billID;
-END//
+--    SELECT bd.BILLID,bd.ID,s.SERVICENAME,bd.AMOUNT FROM billdetail bd 
+--    JOIN service s ON s.SERVICEID = bd.ID
+--    WHERE bd.BILLID = p_billID
+-- 	union
+-- 	SELECT bd.BILLID,bd.ID,w.`TYPE`
+--    ,bd.AMOUNT FROM billdetail bd 
+--    JOIN water_electricity w ON w.FIGUREID = bd.ID
+-- 	WHERE bd.BILLID = p_billID;
+-- END//
 
 CREATE FUNCTION createBillID()
 RETURNS VARCHAR(20) 
@@ -872,6 +854,9 @@ BEGIN
     WHERE (p_buildingid IS NULL OR pa.BUILDINGID = p_buildingid)  -- Lọc theo mã tòa nhà
     AND (p_vehicle_type IS NULL OR v.TYPE = p_vehicle_type)  -- Lọc theo loại phương tiện
     AND v.ISDELETED = 0
+    AND t.ISDELETED = 0
+    AND vup.ISDELETED = 0
+    AND p.ISDELETED = 0
     AND pa.ISDELETED = 0;
 END //
 
@@ -1438,7 +1423,7 @@ BEGIN
 	DELETE FROM contract 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT p.ROOMID
+    SELECT p.ROOMNAME 
     FROM contract c 
     JOIN room p ON c.ROOMID = p.ROOMID 
     WHERE c.TENANTID = p_tenantID 
@@ -1518,7 +1503,7 @@ SET BUILDINGID = p_buildingid,
     AREA = p_area,
     PRICE = p_price,
     STATUS = p_status
-WHERE ROOMNAME = p_roomid;
+WHERE ROOMID = room_id;
 END//
 
 
@@ -1573,7 +1558,9 @@ BEGIN
 		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
 		JOIN USER u ON u.USERNAME = b.USERNAME
 		WHERE u.USERNAME = p_username
-		AND r.ISDELETED = 0;
+		AND r.ISDELETED = 0
+        AND b.ISDELETED = 0
+        AND u.ISDELETED = 0;
 	ELSE
 
 		-- Tạo bảng tạm lưu trạng thái
@@ -1599,6 +1586,7 @@ BEGIN
 		WHERE b.USERNAME = p_username 
 		AND r.buildingid = p_buildingid
 		AND r.ISDELETED = 0
+        AND b.ISDELETED = 0
 		AND (
 			SELECT COUNT(*) 
 			FROM temp_statuses ts 
@@ -2321,7 +2309,7 @@ BEGIN
     SET @sql = CONCAT('
         SELECT 
             (@row_num := @row_num + 1) AS STT,
-            R.ROOMID, 
+            R.ROOMNAME, 
             CONCAT(T.FIRSTNAME, '' '', T.LASTNAME) AS TENANTNAME,
             S.SERVICENAME, 
             S.UNITPRICE,
@@ -2511,17 +2499,16 @@ BEGIN
 END //
 
 CREATE PROCEDURE load_Tenant(
-	IN p_username VARCHAR(20),
+    in p_building varchar(20),
     IN p_lastname VARCHAR(20)
 )
 BEGIN 
-    -- Delete records that have been soft-deleted for more than 30 days
+
     DELETE FROM tenant 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
     SELECT t.* FROM tenant t
-	JOIN user u ON u.USERNAME = t.USERNAME 
-	WHERE u.USERNAME = p_username
+	WHERE t.BUILDINGID = p_building
 	AND t.ISDELETED = 0
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
 END//

@@ -48,6 +48,7 @@ namespace BLL
         }
         public string AccountBLL_CheckSignUp(User taikhoan)
         {
+            
             if (!checkPattern_1(RemoveDiacritics(taikhoan.FullName))) return "requeid_username";
             if (taikhoan.Email == "") return "requeid_email";
             if (taikhoan.Address == "") return "requeid_address";

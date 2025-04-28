@@ -54,7 +54,6 @@ namespace GUI.BuildingManagement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Building));
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelAddBuilding = new Guna.UI2.WinForms.Guna2Panel();
             this.lblBuildingKey = new System.Windows.Forms.Label();
@@ -709,7 +708,7 @@ namespace GUI.BuildingManagement
             // 
             this.guna2PictureBox8.Image = global::GUI.Properties.Resources.LogoApp;
             this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(37, 289);
+            this.guna2PictureBox8.Location = new System.Drawing.Point(34, 336);
             this.guna2PictureBox8.Name = "guna2PictureBox8";
             this.guna2PictureBox8.Size = new System.Drawing.Size(185, 130);
             this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -796,7 +795,6 @@ namespace GUI.BuildingManagement
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Building";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form_Building_Load);

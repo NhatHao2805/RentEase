@@ -55,8 +55,43 @@ namespace GUI.BuildingManagement
                     SendMessage(Handle, 0x112, 0xf012, 0);
                 }
             };
+            loadLanguage();
         }
 
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "building_management":
+                        label1.Text = a.Value;
+                        break;
+                    case "building_management_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "building_section":
+                        btn_quanlynha.Text = a.Value;
+                        break;
+                    case "add_building_btn":
+                        btn_themnha.Text = a.Value;
+                        break;
+                    case "refresh_btn":
+                        btnRefresh.Text = a.Value;
+                        break;
+                    case "manage_btn":
+                        btnManage.Text = a.Value;
+                        break;
+                    case "btn_quaylai":
+                        btnBack.Text = a.Value;
+                        break;
+                    case "search":
+                        txtSearch.PlaceholderText = a.Value;
+                        break;
+                        //search: Tìm kiếm
+                }
+            }
+        }
         private void LoadBuildingData()
         {
             try

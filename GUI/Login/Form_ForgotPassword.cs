@@ -7,6 +7,8 @@ using System.Net.Mail;
 using System.Net;
 using System.IO;
 using System.Text.RegularExpressions;
+using static System.Net.WebRequestMethods;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -22,7 +24,7 @@ namespace GUI
         private System.Windows.Forms.Timer countdownTimer;
         private bool isPasswordValid = false;
 
-        public Form_ForgotPassword(string language)
+        public Form_ForgotPassword()
         {
             InitializeComponent();
             loadLanguage();
@@ -32,11 +34,20 @@ namespace GUI
             countdownTimer.Interval = 1000; // 1 second
             countdownTimer.Tick += CountdownTimer_Tick;
             btnVerify.Enabled = false;
+            btnResetPassword.Enabled = false;
 
             // Set initial form size for step 1
             //this.Size = new System.Drawing.Size(395, 299); // Height includes title bar
         }
-
+ 
+//        forgot_pw.title :Quên mật khẩu
+//forgot_pw.subtitle :Đổi mật khẩu của bạn
+//forgot_pw.email_label :Email
+//forgot_pw.email_placeholder :Nhập email của bạn
+//forgot_pw.send_otp_btn :Gửi mã OTP
+//forgot_pw.otp_label :Mã OTP
+//forgot_pw.otp_placeholder :Nhập mã OTP
+//forgot_pw.verify_btn :Xác thực
         private void loadLanguage()
         {
             string selectedLanguage = Language.GetCurrentLanguage();
@@ -44,14 +55,14 @@ namespace GUI
             {
                 switch (kvp.Key)
                 {
-                    case "Forgotpassword":
-                        label23.Text = kvp.Value;
-                        break;
-                    case "Change_password":
-                        label22.Text = kvp.Value;
-                        break;
                     case "Enter_Email":
                         labelEmail.Text = kvp.Value;
+                        break;
+                    case "forgot_pw.title":
+                        label23.Text = kvp.Value;
+                        break;
+                    case "forgot_pw.subtitle":
+                        label22.Text = kvp.Value;
                         break;
                     case "Send_OTP":
                         btnSendOTP.Text = kvp.Value;
@@ -71,12 +82,18 @@ namespace GUI
                     case "Reset_Password":
                         btnResetPassword.Text = kvp.Value;
                         break;
+                    case "Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character":
+                        lblPasswordRequirements.Text = kvp.Value;
+                        break;
+
                 }
             }
             btnSendOTP.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Gửi mã" : "Send OTP";
             txtEmail.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập email của bạn..." : "Enter your email...";
             btnVerify.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Xác nhận" : "Verify";
             txtOTP.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập mã OTP..." : "Enter OTP code...";
+            txtNewPassword.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập mật khẩu mới..." : "Enter new password...";
+            txtConfirmPassword.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Xác nhận mật khẩu..." : "Confirm new password...";
         }
 
         private void CountdownTimer_Tick(object sender, EventArgs e)

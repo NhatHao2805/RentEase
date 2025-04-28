@@ -13,7 +13,6 @@ namespace DTO.dto_service
         public string To { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
-        public bool IsHtml { get; set; } = false; // Thêm thuộc tính IsHtml với giá trị mặc định là false
     }
 
 }

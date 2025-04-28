@@ -57,7 +57,7 @@ namespace GUI
                     case "btn_save":
                         add_btn.Text = a.Value;
                         break;
-                    case " asset.update_title":
+                    case "asset.update_title":
                         label23.Text = a.Value;
                         break;
                     case "asset.update_subtitle":

@@ -84,14 +84,7 @@ namespace GUI.honhathao
             
             if(tenantID != null)
             {
-                W_E_BLL.Add_W_E(buildingid, o_w.Text, n_w.Text, o_e.Text, n_e.Text, month.Text);
-                string billid = BillBLL.BillBLL_load_BillID();
-                System.Data.DataTable data = TenantServiceBLL.TenantServiceBLL_load_registration_service_to_add(tenantID);
-                foreach (DataRow dataRow in data.Rows)
-                {
-                    TenantServiceBLL.TenantServiceBLL_add_all_registration_Ser_into_billdetail(
-                       billid, dataRow[0].ToString(), dataRow[1].ToString());
-                }
+                W_E_BLL.Add_W_E(buildingid, tenantID, o_w.Text, n_w.Text, o_e.Text, n_e.Text, month.Text); 
             }
             else
             {
