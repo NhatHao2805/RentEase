@@ -21,12 +21,14 @@ namespace GUI.honhathao
         private int control;
         private string username;
         private bool exit = false;
-        public Form_Tenant(DataGridViewRow data,int control,string username)
+        private string buildingid;
+        public Form_Tenant(DataGridViewRow data,int control,string username,string buildingid)
         {
             InitializeComponent();
             this.data = data;
             this.control = control;
             this.username = username;
+            this.buildingid = buildingid;
             loadLanguage();
             loadinfo();
         }
@@ -124,7 +126,8 @@ namespace GUI.honhathao
                         ngaysinh.Value.ToString("yyyy-MM-dd"),
                         Language.reverseTranslate(gioitinh.Text),
                         sdt.Text,
-                        email.Text
+                        email.Text,
+                        buildingid
                     );
 
                     MessageBox.Show(result, "Information", MessageBoxButtons.OK);

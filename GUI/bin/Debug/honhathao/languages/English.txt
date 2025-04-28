@@ -1,4 +1,9 @@
-﻿checkdelete: Do you want to delete this?
+﻿export_excel: Export to excel
+Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character: Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character
+New_Password: New Password
+Confirm_Password: Confirm Password
+Reset_Password: Reset Password
+checkdelete: Do you want to delete this?
 changePass:Forgot/Change password?
 bill_id:Bill Id
 record_id:Id
@@ -438,6 +443,7 @@ parking.type: Type
 parking.capacity: Capacity
 parking.update_title: Update Parking
 parking.update_subtitle: Update parking in table
+vehicle.vehicle_id: Vehicle ID
 parking.id_parking: Parking ID
 btn_save: Save
 :Form_vehicle

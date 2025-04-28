@@ -40,7 +40,7 @@ namespace BLL.bll_service
 
                 mail.Subject = email.Subject;
                 mail.Body = email.Body;
-                mail.IsBodyHtml = false;
+                mail.IsBodyHtml = true;
 
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.Credentials = new NetworkCredential(email.From, email.Password);

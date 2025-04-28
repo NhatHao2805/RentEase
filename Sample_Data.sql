@@ -249,16 +249,16 @@ INSERT INTO TEMPORARY_REGISTRATION (REGISTRATIONID, TENANTID, ROOMID, REGISTRATI
 
 -- 26 PARKING
 INSERT INTO PARKING (PARKINGID, AREAID, VEHICLEID, STATUS) VALUES
-('PK001', 'PA0001', 'V0001', 'dangsudung'),
-('PK002', 'PA0001', 'V0002', 'dangsudung'),
-('PK003', 'PA0002', 'V0003', 'dangsudung'),
-('PK004', 'PA0002', 'V0004', 'dangsudung'),
-('PK005', 'PA0003', 'V0005', 'dangsudung'),
-('PK006', 'PA0004', 'V0006', 'dangsudung'),
-('PK007', 'PA0005', 'V0007', 'dangsudung'),
-('PK008', 'PA0006', 'V0008', 'dangsudung'),
-('PK009', 'PA0007', 'V0009', 'dangsudung'),
-('PK010', 'PA0008', 'V0010', 'dangsudung');
+('P0001', 'PA0001', 'V0001', 'dangsudung'),
+('P0002', 'PA0001', 'V0002', 'dangsudung'),
+('P0003', 'PA0002', 'V0003', 'dangsudung'),
+('P0004', 'PA0002', 'V0004', 'dangsudung'),
+('P0005', 'PA0003', 'V0005', 'dangsudung'),
+('P0006', 'PA0004', 'V0006', 'dangsudung'),
+('P0007', 'PA0005', 'V0007', 'dangsudung'),
+('P0008', 'PA0006', 'V0008', 'dangsudung'),
+('P0009', 'PA0007', 'V0009', 'dangsudung'),
+('P0010', 'PA0008', 'V0010', 'dangsudung');
 
 -- 27 VEHICLE_UNITPRICE
 INSERT INTO VEHICLE_UNITPRICE (VEHICLE_UNITPRICE_ID, UNITPRICE, TYPE) VALUES

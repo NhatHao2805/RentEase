@@ -34,6 +34,7 @@ namespace GUI
             countdownTimer.Interval = 1000; // 1 second
             countdownTimer.Tick += CountdownTimer_Tick;
             btnVerify.Enabled = false;
+            btnResetPassword.Enabled = false;
 
             // Set initial form size for step 1
             //this.Size = new System.Drawing.Size(395, 299); // Height includes title bar
@@ -81,12 +82,18 @@ namespace GUI
                     case "Reset_Password":
                         btnResetPassword.Text = kvp.Value;
                         break;
+                    case "Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character":
+                        lblPasswordRequirements.Text = kvp.Value;
+                        break;
+
                 }
             }
             btnSendOTP.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Gửi mã" : "Send OTP";
             txtEmail.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập email của bạn..." : "Enter your email...";
             btnVerify.Text = Language.GetCurrentLanguage() == "Vietnamese" ? "Xác nhận" : "Verify";
             txtOTP.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập mã OTP..." : "Enter OTP code...";
+            txtNewPassword.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Nhập mật khẩu mới..." : "Enter new password...";
+            txtConfirmPassword.PlaceholderText = Language.GetCurrentLanguage() == "Vietnamese" ? "Xác nhận mật khẩu..." : "Confirm new password...";
         }
 
         private void CountdownTimer_Tick(object sender, EventArgs e)

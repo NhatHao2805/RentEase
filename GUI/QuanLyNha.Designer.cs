@@ -308,12 +308,10 @@ namespace GUI
             this.checkBox17 = new System.Windows.Forms.CheckBox();
             this.checkBox18 = new System.Windows.Forms.CheckBox();
             this.checkBox20 = new System.Windows.Forms.CheckBox();
-            this.guna2DateTimePicker3 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2CustomGradientPanel32 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2DateTimePicker4 = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
@@ -511,6 +509,7 @@ namespace GUI
             this.guna2TextBox3.TabIndex = 133;
             this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.buildingKhoa.SetToolTip(this.guna2TextBox3, "Khóa tòa nhà ");
+            this.guna2TextBox3.TextChanged += new System.EventHandler(this.guna2TextBox3_TextChanged);
             // 
             // listBuildingID
             // 
@@ -1722,7 +1721,7 @@ namespace GUI
             this.guna2GradientButton12.Image = global::GUI.Properties.Resources.icons8_remind_100;
             this.guna2GradientButton12.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton12.ImageSize = new System.Drawing.Size(22, 22);
-            this.guna2GradientButton12.Location = new System.Drawing.Point(651, 10);
+            this.guna2GradientButton12.Location = new System.Drawing.Point(654, 10);
             this.guna2GradientButton12.Name = "guna2GradientButton12";
             this.guna2GradientButton12.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.guna2GradientButton12.ShadowDecoration.BorderRadius = 15;
@@ -1789,7 +1788,7 @@ namespace GUI
             this.button40.Image = global::GUI.Properties.Resources.icons8_edit_901;
             this.button40.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button40.ImageSize = new System.Drawing.Size(22, 22);
-            this.button40.Location = new System.Drawing.Point(376, 10);
+            this.button40.Location = new System.Drawing.Point(373, 10);
             this.button40.Name = "button40";
             this.button40.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button40.ShadowDecoration.BorderRadius = 15;
@@ -1824,7 +1823,7 @@ namespace GUI
             this.button39.Image = global::GUI.Properties.Resources.icons8_trash_128;
             this.button39.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button39.ImageSize = new System.Drawing.Size(22, 22);
-            this.button39.Location = new System.Drawing.Point(535, 10);
+            this.button39.Location = new System.Drawing.Point(529, 10);
             this.button39.Name = "button39";
             this.button39.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button39.ShadowDecoration.BorderRadius = 15;
@@ -5338,7 +5337,6 @@ namespace GUI
             this.guna2CustomGradientPanel23.Controls.Add(this.checkBox17);
             this.guna2CustomGradientPanel23.Controls.Add(this.checkBox18);
             this.guna2CustomGradientPanel23.Controls.Add(this.checkBox20);
-            this.guna2CustomGradientPanel23.Controls.Add(this.guna2DateTimePicker3);
             this.guna2CustomGradientPanel23.Controls.Add(this.pictureBox4);
             this.guna2CustomGradientPanel23.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel23.FillColor3 = System.Drawing.Color.Honeydew;
@@ -5354,7 +5352,7 @@ namespace GUI
             this.checkBox10.AutoSize = true;
             this.checkBox10.BackColor = System.Drawing.Color.Transparent;
             this.checkBox10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox10.Location = new System.Drawing.Point(61, 15);
+            this.checkBox10.Location = new System.Drawing.Point(76, 13);
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(109, 27);
             this.checkBox10.TabIndex = 109;
@@ -5367,7 +5365,7 @@ namespace GUI
             this.checkBox11.AutoSize = true;
             this.checkBox11.BackColor = System.Drawing.Color.Transparent;
             this.checkBox11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox11.Location = new System.Drawing.Point(179, 15);
+            this.checkBox11.Location = new System.Drawing.Point(225, 13);
             this.checkBox11.Name = "checkBox11";
             this.checkBox11.Size = new System.Drawing.Size(175, 27);
             this.checkBox11.TabIndex = 110;
@@ -5380,7 +5378,7 @@ namespace GUI
             this.checkBox17.AutoSize = true;
             this.checkBox17.BackColor = System.Drawing.Color.Transparent;
             this.checkBox17.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox17.Location = new System.Drawing.Point(516, 15);
+            this.checkBox17.Location = new System.Drawing.Point(637, 13);
             this.checkBox17.Name = "checkBox17";
             this.checkBox17.Size = new System.Drawing.Size(158, 27);
             this.checkBox17.TabIndex = 111;
@@ -5393,7 +5391,7 @@ namespace GUI
             this.checkBox18.AutoSize = true;
             this.checkBox18.BackColor = System.Drawing.Color.Transparent;
             this.checkBox18.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox18.Location = new System.Drawing.Point(363, 15);
+            this.checkBox18.Location = new System.Drawing.Point(445, 13);
             this.checkBox18.Name = "checkBox18";
             this.checkBox18.Size = new System.Drawing.Size(148, 27);
             this.checkBox18.TabIndex = 112;
@@ -5406,38 +5404,13 @@ namespace GUI
             this.checkBox20.AutoSize = true;
             this.checkBox20.BackColor = System.Drawing.Color.Transparent;
             this.checkBox20.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
-            this.checkBox20.Location = new System.Drawing.Point(683, 15);
+            this.checkBox20.Location = new System.Drawing.Point(844, 13);
             this.checkBox20.Name = "checkBox20";
             this.checkBox20.Size = new System.Drawing.Size(135, 27);
             this.checkBox20.TabIndex = 113;
             this.checkBox20.Text = "Bãi xe đã đầy";
             this.checkBox20.UseVisualStyleBackColor = false;
             this.checkBox20.CheckedChanged += new System.EventHandler(this.checkBox20_CheckedChanged);
-            // 
-            // guna2DateTimePicker3
-            // 
-            this.guna2DateTimePicker3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2DateTimePicker3.BorderRadius = 10;
-            this.guna2DateTimePicker3.BorderThickness = 1;
-            this.guna2DateTimePicker3.Checked = true;
-            this.guna2DateTimePicker3.CustomFormat = "MM/yyyy";
-            this.guna2DateTimePicker3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.guna2DateTimePicker3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.guna2DateTimePicker3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(86)))), ((int)(((byte)(71)))));
-            this.guna2DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.guna2DateTimePicker3.Location = new System.Drawing.Point(814, 11);
-            this.guna2DateTimePicker3.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker3.Name = "guna2DateTimePicker3";
-            this.guna2DateTimePicker3.ShadowDecoration.BorderRadius = 10;
-            this.guna2DateTimePicker3.ShadowDecoration.CustomizableEdges.TopLeft = false;
-            this.guna2DateTimePicker3.ShadowDecoration.CustomizableEdges.TopRight = false;
-            this.guna2DateTimePicker3.ShadowDecoration.Enabled = true;
-            this.guna2DateTimePicker3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2DateTimePicker3.Size = new System.Drawing.Size(140, 30);
-            this.guna2DateTimePicker3.TabIndex = 108;
-            this.guna2DateTimePicker3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.guna2DateTimePicker3.Value = new System.DateTime(2025, 4, 13, 11, 51, 0, 0);
             // 
             // pictureBox4
             // 
@@ -5546,7 +5519,6 @@ namespace GUI
             this.guna2CustomGradientPanel32.BorderColor = System.Drawing.Color.Silver;
             this.guna2CustomGradientPanel32.BorderRadius = 10;
             this.guna2CustomGradientPanel32.BorderThickness = 1;
-            this.guna2CustomGradientPanel32.Controls.Add(this.guna2DateTimePicker4);
             this.guna2CustomGradientPanel32.Controls.Add(this.pictureBox5);
             this.guna2CustomGradientPanel32.Controls.Add(this.checkBox2);
             this.guna2CustomGradientPanel32.Controls.Add(this.checkBox5);
@@ -5558,31 +5530,6 @@ namespace GUI
             this.guna2CustomGradientPanel32.Name = "guna2CustomGradientPanel32";
             this.guna2CustomGradientPanel32.Size = new System.Drawing.Size(1025, 50);
             this.guna2CustomGradientPanel32.TabIndex = 142;
-            // 
-            // guna2DateTimePicker4
-            // 
-            this.guna2DateTimePicker4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2DateTimePicker4.BorderRadius = 10;
-            this.guna2DateTimePicker4.BorderThickness = 1;
-            this.guna2DateTimePicker4.Checked = true;
-            this.guna2DateTimePicker4.CustomFormat = "MM/yyyy";
-            this.guna2DateTimePicker4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.guna2DateTimePicker4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.guna2DateTimePicker4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(86)))), ((int)(((byte)(71)))));
-            this.guna2DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.guna2DateTimePicker4.Location = new System.Drawing.Point(520, 9);
-            this.guna2DateTimePicker4.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.guna2DateTimePicker4.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.guna2DateTimePicker4.Name = "guna2DateTimePicker4";
-            this.guna2DateTimePicker4.ShadowDecoration.BorderRadius = 10;
-            this.guna2DateTimePicker4.ShadowDecoration.CustomizableEdges.TopLeft = false;
-            this.guna2DateTimePicker4.ShadowDecoration.CustomizableEdges.TopRight = false;
-            this.guna2DateTimePicker4.ShadowDecoration.Enabled = true;
-            this.guna2DateTimePicker4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2DateTimePicker4.Size = new System.Drawing.Size(140, 30);
-            this.guna2DateTimePicker4.TabIndex = 102;
-            this.guna2DateTimePicker4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.guna2DateTimePicker4.Value = new System.DateTime(2025, 4, 13, 11, 51, 0, 0);
             // 
             // pictureBox5
             // 
@@ -6465,9 +6412,7 @@ namespace GUI
         private System.Windows.Forms.CheckBox checkBox17;
         private System.Windows.Forms.CheckBox checkBox18;
         private System.Windows.Forms.CheckBox checkBox20;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel32;
-        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox5;

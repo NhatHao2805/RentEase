@@ -43,7 +43,7 @@ namespace GUI
                         label22.Text = a.Value;
                         break;
                     case "vehicle.vehicle_id":
-                        guna2HtmlLabel7.Text = a.Value;
+                        guna2HtmlLabel6.Text = a.Value;
                         break;
                     case "vehicle.tenant_id":
                         guna2HtmlLabel14.Text = a.Value;

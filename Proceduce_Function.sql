@@ -854,6 +854,9 @@ BEGIN
     WHERE (p_buildingid IS NULL OR pa.BUILDINGID = p_buildingid)  -- Lọc theo mã tòa nhà
     AND (p_vehicle_type IS NULL OR v.TYPE = p_vehicle_type)  -- Lọc theo loại phương tiện
     AND v.ISDELETED = 0
+    AND t.ISDELETED = 0
+    AND vup.ISDELETED = 0
+    AND p.ISDELETED = 0
     AND pa.ISDELETED = 0;
 END //
 
@@ -1420,7 +1423,7 @@ BEGIN
 	DELETE FROM contract 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT p.ROOMNAME 
+    SELECT p.ROOMID, p.ROOMNAME 
     FROM contract c 
     JOIN room p ON c.ROOMID = p.ROOMID 
     WHERE c.TENANTID = p_tenantID 
@@ -1500,7 +1503,7 @@ SET BUILDINGID = p_buildingid,
     AREA = p_area,
     PRICE = p_price,
     STATUS = p_status
-WHERE ROOMNAME = p_roomid;
+WHERE ROOMID = room_id;
 END//
 
 
@@ -1540,37 +1543,58 @@ BEGIN
     -- Delete records that have been soft-deleted for more than 30 days
     DELETE FROM ROOM 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
+    
+    IF p_buildingid is null then
+		SELECT 
+			r.ROOMNAME, 
+			r.BUILDINGID, 
+			r.TYPE, 
+            r.FLOOR,
+			r.CONVENIENT, 
+			r.AREA, 
+			r.PRICE, 
+			r.STATUS
+		FROM ROOM r
+		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+		JOIN USER u ON u.USERNAME = b.USERNAME
+		WHERE u.USERNAME = p_username
+		AND r.ISDELETED = 0
+        AND b.ISDELETED = 0
+        AND u.ISDELETED = 0;
+	ELSE
 
-    -- Tạo bảng tạm lưu trạng thái
-    CREATE TEMPORARY TABLE IF NOT EXISTS temp_statuses (
-        status_value VARCHAR(100)
-    );
-    TRUNCATE TABLE temp_statuses;
-    
-    -- Chèn các trạng thái vào bảng tạm
-    SET @sql = CONCAT('INSERT INTO temp_statuses VALUES ("', 
-                     REPLACE(p_status_list, '; ', '"),("'), '")');
-    PREPARE stmt FROM @sql;
-    EXECUTE stmt;
-    DEALLOCATE PREPARE stmt;
-    
-    -- Đếm tổng số trạng thái cần kiểm tra
-    SET @total_statuses = (SELECT COUNT(*) FROM temp_statuses);
-    
-    -- Lọc phòng phải chứa TẤT CẢ trạng thái được chọn
-    SELECT r.ROOMNAME, r.BUILDINGID, r.TYPE, r.FLOOR, r.CONVENIENT, r.AREA, r.PRICE, r.STATUS
-    FROM ROOM r
-    JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
-    WHERE b.USERNAME = p_username 
-    AND r.buildingid = p_buildingid
-    AND r.ISDELETED = 0
-    AND (
-        SELECT COUNT(*) 
-        FROM temp_statuses ts 
-        WHERE r.STATUS LIKE CONCAT('%', ts.status_value, '%')
-    ) = @total_statuses;
-    
-    DROP TEMPORARY TABLE IF EXISTS temp_statuses;
+		-- Tạo bảng tạm lưu trạng thái
+		CREATE TEMPORARY TABLE IF NOT EXISTS temp_statuses (
+			status_value VARCHAR(100)
+		);
+		TRUNCATE TABLE temp_statuses;
+		
+		-- Chèn các trạng thái vào bảng tạm
+		SET @sql = CONCAT('INSERT INTO temp_statuses VALUES ("', 
+						 REPLACE(p_status_list, '; ', '"),("'), '")');
+		PREPARE stmt FROM @sql;
+		EXECUTE stmt;
+		DEALLOCATE PREPARE stmt;
+		
+		-- Đếm tổng số trạng thái cần kiểm tra
+		SET @total_statuses = (SELECT COUNT(*) FROM temp_statuses);
+		
+		-- Lọc phòng phải chứa TẤT CẢ trạng thái được chọn
+		SELECT r.ROOMNAME, r.BUILDINGID, r.TYPE, r.FLOOR, r.CONVENIENT, r.AREA, r.PRICE, r.STATUS
+		FROM ROOM r
+		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+		WHERE b.USERNAME = p_username 
+		AND r.buildingid = p_buildingid
+		AND r.ISDELETED = 0
+        AND b.ISDELETED = 0
+		AND (
+			SELECT COUNT(*) 
+			FROM temp_statuses ts 
+			WHERE r.STATUS LIKE CONCAT('%', ts.status_value, '%')
+		) = @total_statuses;
+		
+		DROP TEMPORARY TABLE IF EXISTS temp_statuses;
+	end if;
 END//
 
  CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `checkFloorCapacity`(
@@ -2285,6 +2309,7 @@ BEGIN
     SET @sql = CONCAT('
         SELECT 
             (@row_num := @row_num + 1) AS STT,
+            R.ROOMID,
             R.ROOMNAME, 
             CONCAT(T.FIRSTNAME, '' '', T.LASTNAME) AS TENANTNAME,
             S.SERVICENAME, 
@@ -2301,6 +2326,7 @@ BEGIN
         AND T.ISDELETED = 0
         AND R.ISDELETED = 0
         AND S.ISDELETED = 0
+        AND US.ISDELETED = 0
         ORDER BY ', @orderClause);
 
     PREPARE stmt FROM @sql;
@@ -2496,7 +2522,8 @@ CREATE PROCEDURE add_Tenant(
     IN p_Birthday DATE,
     IN p_Gender VARCHAR(10),
     IN p_PhoneNumber VARCHAR(20),
-    IN p_Email VARCHAR(100)
+    IN p_Email VARCHAR(100),
+    IN p_buildingid VARCHAR(100)
 )
 BEGIN
 	DECLARE newid VARCHAR(20);
@@ -2509,7 +2536,8 @@ BEGIN
         BIRTHDAY,
         GENDER,
         PHONENUMBER,
-        EMAIL
+        EMAIL,
+        BUILDINGID
     ) VALUES (
     		p_username,
     		newid,
@@ -2518,7 +2546,8 @@ BEGIN
         p_Birthday,
         p_Gender,
         p_PhoneNumber,
-        p_Email
+        p_Email,
+        p_buildingid
     );
 END //
 

@@ -97,6 +97,7 @@ namespace GUI.BuildingManagement
             try
             {
                 dgvBuildings.DataSource = BuildingBLL.LoadBuilding(form1.taikhoan.Username);
+
             }
             catch (Exception ex)
             {
@@ -112,6 +113,7 @@ namespace GUI.BuildingManagement
                 ClearInputFields();
             }
         }
+
 
         private void OnSearchTextChanged(object sender, EventArgs e)
         {
@@ -284,6 +286,13 @@ namespace GUI.BuildingManagement
             btn_quanlynha.Checked = true;
 
 
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(KeyBLL.add_Key(form1.taikhoan.Username, guna2TextBox3.Text));
+            LoadBuildingData();
+            guna2TextBox3.Text = "";
         }
     }
 }

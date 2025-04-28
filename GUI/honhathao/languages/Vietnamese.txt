@@ -1,4 +1,9 @@
-﻿checkdelete: Bạn có muốn xóa không?
+﻿export_excel: Xuất sang excel
+Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character: Mật khẩu phải chứa:\n• Ít nhất 8 ký tự\n• Ít nhất một số\n• Ít nhất một ký tự đặc biệt
+New_Password: Mật khẩu mới
+Confirm_Password: Xác nhận mật khẩu
+Reset_Password: Đổi mật khẩu
+checkdelete: Bạn có muốn xóa không?
 changePass:Quên/Đổi mật khẩu?
 bill_id:Mã hóa đơn
 record_id:Mã bản ghi
