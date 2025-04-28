@@ -91,7 +91,9 @@ namespace GUI
         private void dk_lb_Click(object sender, EventArgs e)
         {
             Form_SignUp dk = new Form_SignUp(this);
-            dk.Show();
+            //dk.Show();
+            OverlayManager.ShowWithOverlay(this, dk);
+
         }
         private void loadInfo()//New Nhathao
         {

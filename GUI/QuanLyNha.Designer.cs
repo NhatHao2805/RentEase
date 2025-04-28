@@ -644,10 +644,6 @@ namespace GUI
             this.btn_vantay.BackColor = System.Drawing.Color.Transparent;
             this.btn_vantay.BorderColor = System.Drawing.Color.Gray;
             this.btn_vantay.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btn_vantay.CheckedState.BorderColor = System.Drawing.Color.Teal;
-            this.btn_vantay.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
-            this.btn_vantay.CheckedState.ForeColor = System.Drawing.Color.Teal;
-            this.btn_vantay.CheckedState.Image = global::GUI.Properties.Resources.icons8_fingerprint_64;
             this.btn_vantay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_vantay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_vantay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1539,7 +1535,7 @@ namespace GUI
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_QLHD.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_QLHD.RowTemplate.Height = 24;
-            this.dgv_QLHD.Size = new System.Drawing.Size(1025, 455);
+            this.dgv_QLHD.Size = new System.Drawing.Size(1012, 455);
             this.dgv_QLHD.TabIndex = 135;
             this.dgv_QLHD.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_QLHD.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -2274,7 +2270,7 @@ namespace GUI
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_LSTN.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_LSTN.RowTemplate.Height = 24;
-            this.dgv_LSTN.Size = new System.Drawing.Size(1025, 455);
+            this.dgv_LSTN.Size = new System.Drawing.Size(1012, 455);
             this.dgv_LSTN.TabIndex = 136;
             this.dgv_LSTN.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_LSTN.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -2708,6 +2704,7 @@ namespace GUI
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_Tenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgv_Tenant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Tenant.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
             this.dgv_Tenant.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_Tenant.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -2754,7 +2751,7 @@ namespace GUI
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_Tenant.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_Tenant.RowTemplate.Height = 24;
-            this.dgv_Tenant.Size = new System.Drawing.Size(1025, 455);
+            this.dgv_Tenant.Size = new System.Drawing.Size(1012, 455);
             this.dgv_Tenant.TabIndex = 137;
             this.dgv_Tenant.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_Tenant.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -3269,7 +3266,7 @@ namespace GUI
             dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_DKLT.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgv_DKLT.RowTemplate.Height = 24;
-            this.dgv_DKLT.Size = new System.Drawing.Size(1025, 455);
+            this.dgv_DKLT.Size = new System.Drawing.Size(1012, 455);
             this.dgv_DKLT.TabIndex = 138;
             this.dgv_DKLT.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_DKLT.ThemeStyle.AlternatingRowsStyle.Font = null;
