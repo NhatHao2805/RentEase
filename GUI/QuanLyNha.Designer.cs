@@ -235,7 +235,6 @@ namespace GUI
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.button10 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.button43 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.button20 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.button18 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.button8 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -644,6 +643,10 @@ namespace GUI
             this.btn_vantay.BackColor = System.Drawing.Color.Transparent;
             this.btn_vantay.BorderColor = System.Drawing.Color.Gray;
             this.btn_vantay.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btn_vantay.CheckedState.BorderColor = System.Drawing.Color.Teal;
+            this.btn_vantay.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+            this.btn_vantay.CheckedState.ForeColor = System.Drawing.Color.Teal;
+            this.btn_vantay.CheckedState.Image = global::GUI.Properties.Resources.icons8_fingerprint_64;
             this.btn_vantay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btn_vantay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_vantay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -1535,7 +1538,7 @@ namespace GUI
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_QLHD.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_QLHD.RowTemplate.Height = 24;
-            this.dgv_QLHD.Size = new System.Drawing.Size(1012, 455);
+            this.dgv_QLHD.Size = new System.Drawing.Size(1025, 455);
             this.dgv_QLHD.TabIndex = 135;
             this.dgv_QLHD.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_QLHD.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -2270,7 +2273,7 @@ namespace GUI
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_LSTN.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_LSTN.RowTemplate.Height = 24;
-            this.dgv_LSTN.Size = new System.Drawing.Size(1012, 455);
+            this.dgv_LSTN.Size = new System.Drawing.Size(1025, 455);
             this.dgv_LSTN.TabIndex = 136;
             this.dgv_LSTN.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_LSTN.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -2704,7 +2707,6 @@ namespace GUI
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_Tenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgv_Tenant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Tenant.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
             this.dgv_Tenant.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_Tenant.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -2751,7 +2753,7 @@ namespace GUI
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_Tenant.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_Tenant.RowTemplate.Height = 24;
-            this.dgv_Tenant.Size = new System.Drawing.Size(1012, 455);
+            this.dgv_Tenant.Size = new System.Drawing.Size(1025, 455);
             this.dgv_Tenant.TabIndex = 137;
             this.dgv_Tenant.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_Tenant.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -3266,7 +3268,7 @@ namespace GUI
             dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_DKLT.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgv_DKLT.RowTemplate.Height = 24;
-            this.dgv_DKLT.Size = new System.Drawing.Size(1012, 455);
+            this.dgv_DKLT.Size = new System.Drawing.Size(1025, 455);
             this.dgv_DKLT.TabIndex = 138;
             this.dgv_DKLT.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgv_DKLT.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -3784,7 +3786,6 @@ namespace GUI
             this.guna2GradientPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
             this.guna2GradientPanel4.Controls.Add(this.guna2GradientButton1);
             this.guna2GradientPanel4.Controls.Add(this.button10);
-            this.guna2GradientPanel4.Controls.Add(this.button43);
             this.guna2GradientPanel4.Controls.Add(this.button20);
             this.guna2GradientPanel4.Controls.Add(this.button18);
             this.guna2GradientPanel4.Controls.Add(this.button8);
@@ -3814,7 +3815,7 @@ namespace GUI
             this.guna2GradientButton1.Image = global::GUI.Properties.Resources.icons8_lightning_bolt_80;
             this.guna2GradientButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.guna2GradientButton1.ImageSize = new System.Drawing.Size(27, 27);
-            this.guna2GradientButton1.Location = new System.Drawing.Point(97, 10);
+            this.guna2GradientButton1.Location = new System.Drawing.Point(271, 10);
             this.guna2GradientButton1.Name = "guna2GradientButton1";
             this.guna2GradientButton1.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.guna2GradientButton1.ShadowDecoration.BorderRadius = 15;
@@ -3846,7 +3847,7 @@ namespace GUI
             this.button10.Image = global::GUI.Properties.Resources.icons8_detail_100;
             this.button10.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button10.ImageSize = new System.Drawing.Size(27, 27);
-            this.button10.Location = new System.Drawing.Point(356, 10);
+            this.button10.Location = new System.Drawing.Point(530, 10);
             this.button10.Name = "button10";
             this.button10.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button10.ShadowDecoration.BorderRadius = 15;
@@ -3858,38 +3859,6 @@ namespace GUI
             this.button10.Text = "Xem chi tiết";
             this.button10.TextOffset = new System.Drawing.Point(3, 0);
             this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button43
-            // 
-            this.button43.BackColor = System.Drawing.Color.Transparent;
-            this.button43.BorderColor = System.Drawing.Color.Transparent;
-            this.button43.BorderRadius = 10;
-            this.button43.BorderThickness = 1;
-            this.button43.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button43.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button43.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button43.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button43.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button43.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button43.FillColor2 = System.Drawing.Color.Purple;
-            this.button43.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
-            this.button43.ForeColor = System.Drawing.Color.White;
-            this.button43.HoverState.BorderColor = System.Drawing.Color.Fuchsia;
-            this.button43.Image = global::GUI.Properties.Resources.white_icons8_notification_90;
-            this.button43.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.button43.ImageSize = new System.Drawing.Size(25, 25);
-            this.button43.Location = new System.Drawing.Point(687, 10);
-            this.button43.Name = "button43";
-            this.button43.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button43.ShadowDecoration.BorderRadius = 15;
-            this.button43.ShadowDecoration.Depth = 50;
-            this.button43.ShadowDecoration.Enabled = true;
-            this.button43.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.button43.Size = new System.Drawing.Size(160, 50);
-            this.button43.TabIndex = 130;
-            this.button43.Text = "Thông báo đến khách thuê";
-            this.button43.TextOffset = new System.Drawing.Point(4, 0);
-            this.button43.Click += new System.EventHandler(this.button43_Click);
             // 
             // button20
             // 
@@ -3912,7 +3881,7 @@ namespace GUI
             this.button20.Image = global::GUI.Properties.Resources.icons8_trash_128;
             this.button20.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button20.ImageSize = new System.Drawing.Size(27, 27);
-            this.button20.Location = new System.Drawing.Point(237, 10);
+            this.button20.Location = new System.Drawing.Point(411, 10);
             this.button20.Name = "button20";
             this.button20.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.button20.ShadowDecoration.BorderRadius = 15;
@@ -3945,7 +3914,7 @@ namespace GUI
             this.button18.Image = global::GUI.Properties.Resources.icons8_activity_history_100_ư;
             this.button18.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.button18.ImageSize = new System.Drawing.Size(25, 25);
-            this.button18.Location = new System.Drawing.Point(518, 10);
+            this.button18.Location = new System.Drawing.Point(692, 10);
             this.button18.Name = "button18";
             this.button18.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
             this.button18.ShadowDecoration.BorderRadius = 15;
@@ -6310,7 +6279,6 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel19;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox28;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
-        private Guna.UI2.WinForms.Guna2GradientButton button43;
         private Guna.UI2.WinForms.Guna2GradientButton button20;
         private Guna.UI2.WinForms.Guna2GradientButton button18;
         private Guna.UI2.WinForms.Guna2GradientButton button8;

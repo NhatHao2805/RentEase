@@ -1,4 +1,23 @@
-﻿all_text: Tất cả
+﻿invalid_: Giá trị không hợp lệ
+valid_: Hợp lệ
+asking: Vui lòng chọn đối tượng
+success_: Thành công
+fail_: Thất bại
+hoidelete: Bạn có muốn xóa không?
+add_key: Thêm Key
+building_key: Mã truy cập
+building_address: Địa chỉ
+num_of_floors: Số tầng
+num_of_rooms: Số phòng mỗi tầng
+btn_save: Lưu
+btn_cancel: Hủy
+buildingtable_buildingid: Mã tòa nhà
+buildingtable_buildingkey: Mã truy cập
+buildingtable_username: Chủ sở hữu
+buildingtable_address: Địa chỉ
+buildingtable_numoffloors: Số tầng
+buildingtable_numofrooms: Số phòng
+all_text: Tất cả
 requestfb: Yêu cầu/Phản ánh
 doubleclick: Click đúp vào một dòng để xem chi tiết nội dung phản ánh
 page_title: Quản lý phản ánh khách hàng
@@ -188,8 +207,8 @@ roomtable_building: Mã tòa nhà
 roomtable_floor: Tầng
 roomtable_room_type: Loại phòng
 roomtable_convenient: Tiện ích
-roomtable_area: Diện tích
-roomtable_price: Giá thuê
+roomtable_area: Diện tích (m2)
+roomtable_price: Giá thuê (VND)
 roomtable_status: Trạng thái
 : Bảng của Hợp đồng
 contracttable_contract_id: Mã hợp đồng
@@ -429,8 +448,8 @@ room.add_subtitle: Thêm/Chỉnh sửa phòng ở
 property_type: Tầng nhà
 classification: Phân loại
 amenities: Tiện ích
-area: Diện tích
-rent_price: Giá thuê
+area: Diện tích (m2)
+rent_price: Giá thuê (VND)
 status: Trạng thái
 status_options.occupied: Đang ở
 status_options.vacant: Đang Trống

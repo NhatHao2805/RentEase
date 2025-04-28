@@ -64,18 +64,25 @@ namespace BLL
                 {
                     return "invalid_area_format";
                 }
+                if (areaValue > 1000) // Giới hạn diện tích tối đa 1000m2
+                {
+                    return "area_too_large";
+                }
             }
 
             if (string.IsNullOrEmpty(room.Price))
             {
                 return "required_price";
             }
-
             else
             {
                 if (!decimal.TryParse(room.Price, out decimal priceValue) || priceValue <= 0)
                 {
                     return "invalid_price_format";
+                }
+                if (priceValue > 1000000000) // Giới hạn giá thuê tối đa 1 tỷ
+                {
+                    return "price_too_large";
                 }
             }
 
@@ -100,6 +107,10 @@ namespace BLL
                 {
                     return "invalid_area_format";
                 }
+                if (areaValue > 1000) // Giới hạn diện tích tối đa 1000m2
+                {
+                    return "area_too_large";
+                }
             }
 
             if (string.IsNullOrEmpty(room.Price))
@@ -112,6 +123,10 @@ namespace BLL
                 if (!decimal.TryParse(room.Price, out decimal priceValue) || priceValue <= 0)
                 {
                     return "invalid_price_format";
+                }
+                if (priceValue > 1000000000) // Giới hạn giá thuê tối đa 1 tỷ
+                {
+                    return "price_too_large";
                 }
             }
 

@@ -37,6 +37,10 @@ namespace BLL
                 {
                     return "invalid_capacity_format";
                 }
+                if (capacityValue > 10000)
+                {
+                    return "capacity_too_large";
+                }
             }
 
             return ParkingAreaAccess.addParkingArea(area);
@@ -56,9 +60,13 @@ namespace BLL
             }
             else
             {
-                if (!decimal.TryParse(area.Capacity, out decimal priceValue) || priceValue <= 0)
+                if (!decimal.TryParse(area.Capacity, out decimal capacityValue) || capacityValue <= 0)
                 {
                     return "invalid_capacity_format";
+                }
+                if (capacityValue > 10000)
+                {
+                    return "capacity_too_large";
                 }
             }
 

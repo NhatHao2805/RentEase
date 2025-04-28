@@ -85,12 +85,50 @@ namespace GUI.BuildingManagement
                     case "btn_quaylai":
                         btnBack.Text = a.Value;
                         break;
-                    case "building_add":
+                    case "add_key":
                         guna2Button5.Text = a.Value;
                         break;
 
                     case "search":
                         txtSearch.PlaceholderText = a.Value;
+                        break;
+
+                    case "building_key":
+                        lblBuildingKey.Text = a.Value;
+                        break;
+                    case "building_address":
+                        lblAddress.Text = a.Value;
+                        break;
+                    case "num_of_floors":
+                        lblFloors.Text = a.Value;
+                        break;
+                    case "num_of_rooms":
+                        lblNumRooms.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        btnSave.Text = a.Value;
+                        break;
+                    case "btn_cancel":
+                        btnCancel.Text = a.Value;
+                        break;
+
+                    case "buildingtable_buildingid":
+                        dgvBuildings.Columns["BuildingID"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_buildingkey":
+                        dgvBuildings.Columns["Building_Key"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_username":
+                        dgvBuildings.Columns["UserName"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_address":
+                        dgvBuildings.Columns["Address"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_numoffloors":
+                        dgvBuildings.Columns["NumOfFloors"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_numofrooms":
+                        dgvBuildings.Columns["NumofRooms"].HeaderText = a.Value;
                         break;
                         //search: Tìm kiếm
                 }
@@ -101,7 +139,7 @@ namespace GUI.BuildingManagement
             try
             {
                 dgvBuildings.DataSource = BuildingBLL.LoadBuilding(form1.taikhoan.Username);
-
+                dgvBuildings.ScrollBars = ScrollBars.Both;
             }
             catch (Exception ex)
             {

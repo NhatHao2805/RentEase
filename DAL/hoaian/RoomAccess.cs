@@ -123,6 +123,7 @@ namespace DAL
 
                 using (MySqlCommand command = new MySqlCommand("" +
                     "Select ROOMNAME from room r " +
+                    "join contract c on c.ROOMID = r.ROOMID "+
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
                     "where b.BUILDINGID = @addr AND r.ISDELETED = 0", conn))
                 {

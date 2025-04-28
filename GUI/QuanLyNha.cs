@@ -344,7 +344,7 @@ namespace GUI
                 dgv_QLP.Columns[3].Width = 70;
                 dgv_QLP.Columns[4].Width = 200;
                 dgv_QLP.Columns[5].Width = 120;
-                dgv_QLP.Columns[6].Width = 120;
+                dgv_QLP.Columns[6].Width = 150;
                 dgv_QLP.Columns[7].Width = 250;
                 dgv_QLP.ScrollBars = ScrollBars.Both;
 
@@ -376,7 +376,7 @@ namespace GUI
             {
                 if (listBuildingID.SelectedItem == null)
                 {
-                    MessageBox.Show("Vui lòng chọn tòa nhà", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Language.translate("asking"), "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -651,20 +651,20 @@ namespace GUI
 <body>
     <div class='container'>
         <div class='header'>
-            <h1>Thông Báo Từ RentEase</h1>
+            <h1> Từ RentEase</h1>
         </div>
         <div class='content'>
             <div class='greeting'>Kính gửi Quý khách,</div>
             
             <div class='message'>
-                Hệ thống RentEase xin thông báo rằng hợp đồng thuê nhà của bạn sắp hết hạn trong vài ngày tới.
+                Hệ thống RentEase xin  rằng hợp đồng thuê nhà của bạn sắp hết hạn trong vài ngày tới.
             </div>
 
             <div class='warning-box'>
                 <strong>Lưu ý:</strong> Để đảm bảo quyền lợi sử dụng liên tục, bạn vui lòng liên hệ với chủ nhà để thực hiện gia hạn hợp đồng càng sớm càng tốt.
             </div>
 
-            <p>Nếu bạn đã liên hệ với chủ nhà hoặc có kế hoạch chấm dứt hợp đồng, vui lòng bỏ qua thông báo này.</p>
+            <p>Nếu bạn đã liên hệ với chủ nhà hoặc có kế hoạch chấm dứt hợp đồng, vui lòng bỏ qua  này.</p>
             
             <p>Xin chân thành cảm ơn bạn đã sử dụng dịch vụ của chúng tôi.</p>
         </div>
@@ -681,7 +681,7 @@ namespace GUI
                     From = "nhuthuyhk9@gmail.com",
                     Password = "gdjq astk ezog zdjz",
                     To = recipientEmail,
-                    Subject = "Thông báo: Hợp đồng thuê nhà sắp hết hạn",
+                    Subject = ": Hợp đồng thuê nhà sắp hết hạn",
                     Body = htmlBody
                 };
 
@@ -696,11 +696,11 @@ namespace GUI
 
             if (emailSentSuccessfully)
             {
-                MessageBox.Show("Gửi email thành công!");
+                MessageBox.Show(Language.translate("success_"));
             }
             else
             {
-                MessageBox.Show("Gửi email thất bại.");
+                MessageBox.Show(Language.translate("fail_"));
             }
         }
         private void btn_vantay_Click(object sender, EventArgs e)
@@ -785,7 +785,6 @@ namespace GUI
                     button20.Enabled = false;
                     button10.Enabled = false;
                     button18.Enabled = false;
-                    button43.Enabled = false;
                     button8.Enabled = false;
                 }
                 else
@@ -793,7 +792,6 @@ namespace GUI
                     button20.Enabled = true;
                     button10.Enabled = true;
                     button18.Enabled = true;
-                    button43.Enabled = true;
                     button8.Enabled = true;
                 }
                 dgv_thanhtoan.ScrollBars = ScrollBars.Both;
@@ -813,7 +811,7 @@ namespace GUI
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn hóa đơn cần xem chi tiết", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -844,15 +842,16 @@ namespace GUI
         {
             try
             {
-                
-                string result = BillBLL.BillBLL_Del_Bill(
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
+                string resultq = BillBLL.BillBLL_Del_Bill(
                 dgv_thanhtoan.Rows[dgv_thanhtoan.CurrentCell.RowIndex].Cells[0].Value.ToString());
-                MessageBox.Show(result);
+                //MessageBox.Show(resultq);
                 loadBill(null, "0");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn hóa đơn cần xóa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -997,7 +996,7 @@ namespace GUI
             {
                 Console.WriteLine(dgv_DKLT.SelectedRows[0].Cells[0].Value.ToString());
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa đăng ký lưu trú này không?", "Xác nhận xóa", buttons);
+                DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
                 if (result == DialogResult.Yes)
                 {
                     RegistrationBLL.RegistrationBLL_del_registration(dgv_DKLT.SelectedRows[0].Cells[0].Value.ToString());
@@ -1007,7 +1006,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn đăng ký lưu trú cần xóa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1016,7 +1015,7 @@ namespace GUI
             try
             {
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Xác nhận xóa", buttons);
+                DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
                 if (result == DialogResult.Yes)
                 {
                     TenantBLL.TenantBLL_del_Tenant(dgv_Tenant.SelectedRows[0].Cells[0].Value.ToString());
@@ -1027,7 +1026,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn khách hàng cần xóa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1088,13 +1087,13 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Vui lòng chọn khách hàng trước!", "Thông báo",
+                    MessageBox.Show(Language.translate("asking"), "",
                                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (NullReferenceException ex)
             {
-                MessageBox.Show("Vui lòng chọn khách hàng cần sửa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1182,7 +1181,7 @@ namespace GUI
         {
             if (dgv_QLCSVC.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn tài sản cần sửa");
+                MessageBox.Show(Language.translate("asking"));
                 return;
             }
 
@@ -1214,13 +1213,13 @@ namespace GUI
                 DataGridViewRow selectedRow = dgv_QLCSVC.Rows[row];
                 Console.WriteLine(selectedRow.Cells[0].Value.ToString());
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(Language.translate("checkdelete"), "", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
                 if (result == DialogResult.Yes)
                 {
                     var (success, message) = AssetBLL.DeleteAssets(dgv_QLCSVC.SelectedRows[0].Cells["AssetID"].Value.ToString());
 
                     MessageBox.Show(message,
-                                    success ? "Thông báo" : "Lỗi",
+                                    success ? "" : "Lỗi",
                                     MessageBoxButtons.OK,
                                     success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
 
@@ -1233,7 +1232,7 @@ namespace GUI
 
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn tài sản cần xóa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1253,7 +1252,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1272,7 +1271,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn khách hàng cần sửa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1302,7 +1301,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn hợp đồng cần sửa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
@@ -1313,9 +1312,9 @@ namespace GUI
             {
                 int row = dgv_QLHD.CurrentCell.RowIndex;
                 DataGridViewRow selectedRow = dgv_QLHD.Rows[row];
-                Console.WriteLine(selectedRow.Cells[0].Value.ToString());
+
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(Language.translate("checkdelete"),"", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
                 if (result == DialogResult.Yes)
                 {
                     MessageBox.Show(ContractBLL.ContractBLL_delete_Contract(selectedRow.Cells[0].Value.ToString()));
@@ -1325,7 +1324,7 @@ namespace GUI
 
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn hợp đồng cần xóa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1474,7 +1473,7 @@ namespace GUI
         {
             if (dgv_QLP.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn phòng cần sửa");
+                MessageBox.Show(Language.translate("asking"));
                 return;
             }
             DataGridViewRow selectedRow = dgv_QLP.SelectedRows[0];
@@ -1511,7 +1510,7 @@ namespace GUI
                 DataGridViewRow selectedRow = dgv_QLP.Rows[row];
                 Console.WriteLine(selectedRow.Cells[0].Value.ToString());
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(Language.translate("checkdelete"), "", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
                 if (result == DialogResult.Yes)
                 {
                     var (success, message) = RoomBLL.DeleteRoom(dgv_QLP.SelectedRows[0].Cells["ROOMNAME"].Value.ToString(), listBuildingID.Text);
@@ -1530,37 +1529,12 @@ namespace GUI
 
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn hợp đồng cần xóa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
-            //if (dgv_QLP.SelectedRows.Count == 0)
-            //{
-            //    MessageBox.Show("Vui lòng chọn phòng cần xóa", "Thông báo",
-            //                  MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-
-            //string roomId = dgv_QLP.SelectedRows[0].Cells["ROOMNAME"].Value.ToString();
-
-            //if (MessageBox.Show($"Bạn có chắc muốn xóa phòng {roomId}?",
-            //                  "Xác nhận xóa",
-            //                  MessageBoxButtons.YesNo,
-            //                  MessageBoxIcon.Question) == DialogResult.Yes)
-            //{
-            //    var (success, message) = RoomBLL.DeleteRoom(roomId, listBuildingID.Text);
-
-            //    MessageBox.Show(message,
-            //                  success ? "Thành công" : "Lỗi",
-            //                  MessageBoxButtons.OK,
-            //                  success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
-
-            //    if (success)
-            //    {
-            //        loadInfo();
-            //    }
-            //}
+           
         }
 
         private void button33_Click(object sender, EventArgs e)
@@ -1581,7 +1555,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1681,38 +1655,13 @@ namespace GUI
 
         private void button50_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    using (SaveFileDialog sfd = new SaveFileDialog())
-            //    {
-            //        sfd.Filter = "Excel Files (*.xlsx)|*.xlsx";
-            //        sfd.FileName = $"ThongKeDichVu_{DateTime.Now:yyyyMMdd_HHmmss}.xlsx";
-            //        if (sfd.ShowDialog() != DialogResult.OK)
-            //        {
-            //            return;
-            //        }
-
-            //        if (BLL.BLL_Service.ServiceBLL.ExportServicesToExcelWithChart(sfd.FileName, out string message))
-            //        {
-            //            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show(message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Lỗi hệ thống: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
             if (dgvServiceInfo.Visible)
             {
                 ExcelExporter.ExportToExcel(dgvServiceInfo, "Danh sách đăng ký dịch vụ");
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1736,7 +1685,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1750,7 +1699,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1759,7 +1708,7 @@ namespace GUI
         {
             string new_key = RandomKey.RandomString(10);
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thay đổi key không?", "Xác nhận thay đổi", buttons);
+            DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
             if (result == DialogResult.Yes)
             {
                 BuildingBLL.BuildingBLL_change_building_key(datakey.Rows[listBuildingID.SelectedIndex][0].ToString(), new_key);
@@ -1788,7 +1737,7 @@ namespace GUI
         {
             if (guna2DataGridView7.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn bãi đậu xe cần sửa");
+                MessageBox.Show(Language.translate("asking"));
                 return;
             }
             DataGridViewRow selectedRow = guna2DataGridView7.SelectedRows[0];
@@ -1816,7 +1765,7 @@ namespace GUI
                 DataGridViewRow selectedRow = guna2DataGridView7.Rows[row];
                 Console.WriteLine(selectedRow.Cells[0].Value.ToString());
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(Language.translate("checkdelete"), "", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
                 if (result == DialogResult.Yes)
                 {
                     var (success, message) = ParkingAreaBLL.DeleteArea(guna2DataGridView7.SelectedRows[0].Cells["AreaId"].Value.ToString());
@@ -1835,7 +1784,7 @@ namespace GUI
 
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn bãi giữ xe cần xóa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1847,7 +1796,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -1916,7 +1865,7 @@ namespace GUI
         {
             if (guna2DataGridView1.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn phương tiện cần sửa");
+                MessageBox.Show(Language.translate("asking"));
                 return;
             }
             DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
@@ -1944,7 +1893,7 @@ namespace GUI
                 DataGridViewRow selectedRow = guna2DataGridView1.Rows[row];
                 Console.WriteLine(selectedRow.Cells[0].Value.ToString());
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(Language.translate("checkdelete"), "", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
                 if (result == DialogResult.Yes)
                 {
                     var (success, message) = VehicleBLL.DeleteVehicle(guna2DataGridView1.SelectedRows[0].Cells["VehicleId"].Value.ToString());
@@ -1963,7 +1912,7 @@ namespace GUI
 
             catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn phương tiện cần xóa", "Thông báo",
+                MessageBox.Show(Language.translate("asking"), "",
                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -1975,7 +1924,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -2218,9 +2167,6 @@ namespace GUI
                         break;
                     case "button_xemlstt":
                         button18.Text = kvp.Value;
-                        break;
-                    case "button_tbdenkhachthue":
-                        button43.Text = kvp.Value;
                         break;
                
                     case "checkbox_loctheothang":
@@ -2676,8 +2622,8 @@ namespace GUI
 
                 if (string.IsNullOrEmpty(buildingID))
                 {
-                    MessageBox.Show("Vui lòng chọn tòa nhà trước khi xem phản ánh!",
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Language.translate("asking"),
+                        "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -2770,7 +2716,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -2783,7 +2729,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -2796,7 +2742,7 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

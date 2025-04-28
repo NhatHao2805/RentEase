@@ -146,7 +146,7 @@ namespace GUI.BuildingManagement
             this.panelAddBuilding.Location = new System.Drawing.Point(10, 10);
             this.panelAddBuilding.Name = "panelAddBuilding";
             this.panelAddBuilding.Padding = new System.Windows.Forms.Padding(20);
-            this.panelAddBuilding.Size = new System.Drawing.Size(685, 461);
+            this.panelAddBuilding.Size = new System.Drawing.Size(685, 423);
             this.panelAddBuilding.TabIndex = 0;
             // 
             // lblBuildingKey
@@ -389,10 +389,10 @@ namespace GUI.BuildingManagement
             this.tabManageBuilding.BackColor = System.Drawing.Color.White;
             this.tabManageBuilding.Controls.Add(this.dgvBuildings);
             this.tabManageBuilding.Controls.Add(this.searchPanel);
-            this.tabManageBuilding.Location = new System.Drawing.Point(4, 5);
+            this.tabManageBuilding.Location = new System.Drawing.Point(4, 44);
             this.tabManageBuilding.Name = "tabManageBuilding";
             this.tabManageBuilding.Padding = new System.Windows.Forms.Padding(10);
-            this.tabManageBuilding.Size = new System.Drawing.Size(705, 481);
+            this.tabManageBuilding.Size = new System.Drawing.Size(705, 442);
             this.tabManageBuilding.TabIndex = 0;
             this.tabManageBuilding.Text = "Quản lý tòa nhà";
             // 
@@ -548,10 +548,10 @@ namespace GUI.BuildingManagement
             // 
             this.tabAddBuilding.BackColor = System.Drawing.Color.White;
             this.tabAddBuilding.Controls.Add(this.panelAddBuilding);
-            this.tabAddBuilding.Location = new System.Drawing.Point(4, 5);
+            this.tabAddBuilding.Location = new System.Drawing.Point(4, 44);
             this.tabAddBuilding.Name = "tabAddBuilding";
             this.tabAddBuilding.Padding = new System.Windows.Forms.Padding(10);
-            this.tabAddBuilding.Size = new System.Drawing.Size(705, 481);
+            this.tabAddBuilding.Size = new System.Drawing.Size(705, 443);
             this.tabAddBuilding.TabIndex = 1;
             this.tabAddBuilding.Text = "Thêm tòa nhà";
             // 
@@ -723,12 +723,12 @@ namespace GUI.BuildingManagement
             this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
             this.guna2Button5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.guna2Button5.Location = new System.Drawing.Point(157, 207);
+            this.guna2Button5.Location = new System.Drawing.Point(134, 207);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.BorderRadius = 10;
             this.guna2Button5.ShadowDecoration.Enabled = true;
             this.guna2Button5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2Button5.Size = new System.Drawing.Size(80, 40);
+            this.guna2Button5.Size = new System.Drawing.Size(103, 50);
             this.guna2Button5.TabIndex = 134;
             this.guna2Button5.Text = "Thêm";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
@@ -757,7 +757,7 @@ namespace GUI.BuildingManagement
             this.guna2TextBox3.ShadowDecoration.BorderRadius = 10;
             this.guna2TextBox3.ShadowDecoration.Enabled = true;
             this.guna2TextBox3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2TextBox3.Size = new System.Drawing.Size(140, 40);
+            this.guna2TextBox3.Size = new System.Drawing.Size(117, 50);
             this.guna2TextBox3.TabIndex = 135;
             this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

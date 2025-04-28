@@ -76,7 +76,12 @@ namespace GUI
                     case "Account_info":
                         info_account.Text = kvp.Value;
                         break;
-                    
+                    case "nam":
+                        gt_cb.Items.Add(kvp.Value);
+                        break;
+                    case "nu":
+                        gt_cb.Items.Add(kvp.Value);
+                        break;
                 }
             }
         }
@@ -123,12 +128,12 @@ namespace GUI
             if (string.IsNullOrWhiteSpace(email))
                 return false;
 
-            // Regex pattern for email validation according to RFC 5322
+
             string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
 
             try
             {
-                // Check basic pattern
+
                 if (!System.Text.RegularExpressions.Regex.IsMatch(email, pattern))
                     return false;
 
@@ -207,6 +212,7 @@ namespace GUI
             textBoxMK_DK1.Text = "";
             textBoxMK_DK2.Text = "";
             MessageBox.Show(check);
+            this.Close();
         }
 
         private void exitButton_Click(object sender, EventArgs e)

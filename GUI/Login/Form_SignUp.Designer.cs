@@ -463,10 +463,6 @@
             this.gt_cb.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.gt_cb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.gt_cb.ItemHeight = 24;
-            this.gt_cb.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ",
-            "Khác..."});
             this.gt_cb.Location = new System.Drawing.Point(25, 271);
             this.gt_cb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gt_cb.Name = "gt_cb";
@@ -484,7 +480,7 @@
             this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.Black;
-            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.guna2DateTimePicker1.Location = new System.Drawing.Point(25, 175);
             this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);

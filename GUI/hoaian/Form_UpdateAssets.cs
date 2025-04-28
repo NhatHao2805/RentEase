@@ -104,9 +104,6 @@ namespace GUI
 
             // Disable các field không được phép sửa
             roomid_cb.Enabled = false;
-            assetId_tb.Enabled = false;
-            assetName_tb.Enabled = false;
-            price_tb.Enabled = false;
             useDate_dpk.Enabled = false;
         }
 
