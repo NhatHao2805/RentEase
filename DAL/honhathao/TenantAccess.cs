@@ -89,7 +89,7 @@ namespace DAL.honhathao
             }
             return output;
         }
-        public static String add_Tenant(string username, string FirstName,string LastName,string Birthday, string Gender ,string PhoneNumber ,string Email )
+        public static String add_Tenant(string username, string FirstName,string LastName,string Birthday, string Gender ,string PhoneNumber ,string Email,string buildingid )
         {
             try
             {
@@ -105,6 +105,7 @@ namespace DAL.honhathao
                         command.Parameters.AddWithValue("@p_Gender", Gender);
                         command.Parameters.AddWithValue("@p_PhoneNumber", PhoneNumber);
                         command.Parameters.AddWithValue("@p_Email", Email);
+                        command.Parameters.AddWithValue("@p_buildingid", buildingid);
                         command.ExecuteNonQuery();
                     }
                 }

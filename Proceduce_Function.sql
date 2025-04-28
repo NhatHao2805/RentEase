@@ -623,8 +623,8 @@ BEGIN
             pa.CAPACITY,
             COUNT(p.VEHICLEID) as CURRENT_VEHICLES,
             CASE 
-                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'FULL'
-                ELSE 'EMPTY'
+                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'full'
+                ELSE 'empty'
             END as STATUS
         FROM PARKINGAREA pa
         LEFT JOIN PARKING p ON pa.AREAID = p.AREAID
@@ -2522,7 +2522,8 @@ CREATE PROCEDURE add_Tenant(
     IN p_Birthday DATE,
     IN p_Gender VARCHAR(10),
     IN p_PhoneNumber VARCHAR(20),
-    IN p_Email VARCHAR(100)
+    IN p_Email VARCHAR(100),
+    IN p_buildingid VARCHAR(100)
 )
 BEGIN
 	DECLARE newid VARCHAR(20);
@@ -2535,7 +2536,8 @@ BEGIN
         BIRTHDAY,
         GENDER,
         PHONENUMBER,
-        EMAIL
+        EMAIL,
+        BUILDINGID
     ) VALUES (
     		p_username,
     		newid,
@@ -2544,7 +2546,8 @@ BEGIN
         p_Birthday,
         p_Gender,
         p_PhoneNumber,
-        p_Email
+        p_Email,
+        p_buildingid
     );
 END //
 

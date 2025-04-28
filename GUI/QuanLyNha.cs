@@ -296,6 +296,8 @@ namespace GUI
                 dgv_QLCSVC.Columns[3].Width = 100;
                 dgv_QLCSVC.Columns[4].Width = 120;
                 dgv_QLCSVC.Columns[5].Width = 80;
+
+
                 translateValue(dgv_QLCSVC, 4);
                 dgv_QLCSVC.ScrollBars = ScrollBars.Both;
             }
@@ -339,7 +341,7 @@ namespace GUI
                 dgv_QLP.Columns[0].Width = 90;
                 dgv_QLP.Columns[1].Width = 90;
                 dgv_QLP.Columns[2].Width = 150;
-                dgv_QLP.Columns[3].Width = 50;
+                dgv_QLP.Columns[3].Width = 70;
                 dgv_QLP.Columns[4].Width = 200;
                 dgv_QLP.Columns[5].Width = 120;
                 dgv_QLP.Columns[6].Width = 120;
@@ -381,7 +383,7 @@ namespace GUI
                 string type = checkBox10.Checked ? "xeoto" :
                              (checkBox11.Checked ? "xemay/xedap" :
                              (checkBox18.Checked ? "honhop" : null));
-                string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
+                string status = checkBox17.Checked ? "empty" : (checkBox20.Checked ? "full" : null);
 
                 guna2DataGridView7.DataSource = ParkingAreaBLL.FilterParkingArea(listBuildingID.Text, type, status);
 
@@ -408,6 +410,7 @@ namespace GUI
                 guna2DataGridView7.ScrollBars = ScrollBars.Both;
 
                 translateValue(guna2DataGridView7, 3);
+                translateValue(guna2DataGridView7, 6);
             }
             catch (Exception ex)
             {
@@ -1157,7 +1160,7 @@ namespace GUI
         private void button30_Click(object sender, EventArgs e)
         {
             DataGridViewRow data = null;
-            Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username);
+            Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username,listBuildingID.Text);
             //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
             loadTenant(null);
@@ -1261,7 +1264,7 @@ namespace GUI
             {
                 int row = dgv_Tenant.CurrentCell.RowIndex;
                 DataGridViewRow data = dgv_Tenant.Rows[row];
-                Form_Tenant f = new Form_Tenant(data, 1, form1.taikhoan.Username);
+                Form_Tenant f = new Form_Tenant(data, 1, form1.taikhoan.Username, listBuildingID.Text);
                 //f.ShowDialog();
                 OverlayManager.ShowWithOverlay(this, f);
 
@@ -2748,7 +2751,7 @@ namespace GUI
         {
             MessageBox.Show(KeyBLL.add_Key(form1.taikhoan.Username, guna2TextBox3.Text));
             load_Building_By_User();
-            guna2Button5.Text = "";
+            guna2TextBox3.Text = "";
         }
 
         private void button17_Click(object sender, EventArgs e)
@@ -2816,6 +2819,11 @@ namespace GUI
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
             checkBill();
+        }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

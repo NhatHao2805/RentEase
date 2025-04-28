@@ -509,6 +509,7 @@ namespace GUI
             this.guna2TextBox3.TabIndex = 133;
             this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.buildingKhoa.SetToolTip(this.guna2TextBox3, "Khóa tòa nhà ");
+            this.guna2TextBox3.TextChanged += new System.EventHandler(this.guna2TextBox3_TextChanged);
             // 
             // listBuildingID
             // 
