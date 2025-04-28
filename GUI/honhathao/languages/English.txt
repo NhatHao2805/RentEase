@@ -1,4 +1,22 @@
-﻿export_excel: Export to excel
+﻿all_text: All
+requestfb: Request/Feedback
+doubleclick:Double click on a line to see the detailed reflection content
+page_title: Customer Feedback Management
+page_subtitle: All customer feedback is here
+search_section: Search
+date_filter_start: From date
+date_filter_end: To date
+table_header_customer: Customer Name
+table_header_email: Email
+table_header_content: Content
+table_header_date: Sent Date
+table_header_status: Status
+action_show_all: All
+action_filter: Filter
+action_refresh: Refresh
+action_import: Import data from Google Form
+status_processed: Processed
+export_excel: Export to excel
 Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character: Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character
 New_Password: New Password
 Confirm_Password: Confirm Password
@@ -34,6 +52,7 @@ nam: Male
 nu: Female
 dangcho: Pending
 daduyet: Approved
+dagiaiquyet: Resolved
 ELECTRICITY: Electricity
 WATER: Water
 tienmat: Cash

@@ -1,4 +1,22 @@
-﻿full: Đầy
+﻿all_text: Tất cả
+requestfb: Yêu cầu/Phản ánh
+doubleclick: Click đúp vào một dòng để xem chi tiết nội dung phản ánh
+page_title: Quản lý phản ánh khách hàng
+page_subtitle: Mọi phản ánh của khách hàng đều ở đây
+search_section: Tìm kiếm
+date_filter_start: Từ ngày
+date_filter_end: Đến ngày
+table_header_customer: Tên khách hàng
+table_header_email: Email
+table_header_content: Nội dung
+table_header_date: Ngày gửi
+table_header_status: Trạng thái
+action_show_all: Tất cả
+action_filter: Lọc
+action_refresh: Làm mới
+action_import: Dòng bệ dữ liệu từ Google Form
+status_processed: Đã xử lý
+full: Đầy
 empty: Còn trống
 export_excel: Xuất sang excel
 Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character: Mật khẩu phải chứa:\n• Ít nhất 8 ký tự\n• Ít nhất một số\n• Ít nhất một ký tự đặc biệt
@@ -34,6 +52,7 @@ nam: Nam
 nu: Nữ
 dangcho: Đang chờ
 daduyet: Đã duyệt
+dagiaiquyet: Đã giải quyết
 ELECTRICITY: Điện
 WATER: Nước
 tienmat: Tiền mặt

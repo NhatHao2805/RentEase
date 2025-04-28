@@ -46,9 +46,9 @@ namespace GUI
                 }
 
                 // Khởi tạo combobox status
-                cboStatus.Items.Add("Tất cả");
-                cboStatus.Items.Add("PENDING");
-                cboStatus.Items.Add("RESOLVED");
+                cboStatus.Items.Add(Language.translate("all_text"));
+                cboStatus.Items.Add(Language.translate("dangcho"));
+                cboStatus.Items.Add(Language.translate("dagiaiquyet"));
                 cboStatus.SelectedIndex = 0;
 
                 // Khởi tạo datepicker
@@ -60,12 +60,83 @@ namespace GUI
 
                 // QUAN TRỌNG: Chỉ load dữ liệu từ DATABASE, không đồng bộ
                 LoadFeedbackDataFromDatabase();
+                loadLanguage();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khởi tạo form: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "page_title":
+                        label23.Text = a.Value;
+                        break;
+                    case "page_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "search_section":
+                        label2.Text = a.Value;
+                        break;
+                    case "date_filter_start":
+                        label4.Text = a.Value;
+                        break;
+                    case "date_filter_end":
+                        label5.Text = a.Value;
+                        break;
+                    case "table_header_customer":
+                        dgvFeedbacks.Columns[1].HeaderText = a.Value;
+                        break;
+                    case "table_header_email":
+                        dgvFeedbacks.Columns[2].HeaderText = a.Value;
+                        break;
+                    case "table_header_content":
+                        dgvFeedbacks.Columns[3].HeaderText = a.Value;
+                        break;
+                    case "table_header_date":
+                        dgvFeedbacks.Columns[4].HeaderText = a.Value;
+                        break;
+                    case "table_header_status":
+                        label3.Text = a.Value;
+                        dgvFeedbacks.Columns[5].HeaderText = a.Value;
+                        break;
+                    case "doubleclick":
+                        label6.Text = a.Value;
+                        break;
+                    case "export_excel":
+                        btnExport.Text = a.Value;
+                        break;
+                    case "action_filter":
+                        btnFilter.Text = a.Value;
+                        break;
+                    case "action_refresh":
+                        btnResetFilter.Text = a.Value;
+                        break;
+                    case "action_import":
+                        btnSync.Text = a.Value;
+                        break;
+                }
+            }
+        }
+        //        page_title: Quản lý phản ánh khách hàng   export_excel
+        //page_subtitle: Mọi phản ánh của khách hàng đều ở đây
+        //search_section: Tìm kiếm
+        //date_filter_start: Từ ngày
+        //date_filter_end: Đến ngày
+        //table_header_customer: Tên khách hàng
+        //table_header_email: Email
+        //table_header_content: Nội dung
+        //table_header_date: Ngày gửi
+        //table_header_status: Trạng thái
+        //action_show_all: Tất cả
+        //action_filter: Lọc
+        //action_refresh: Làm mới
+        //action_import: Dòng bệ dữ liệu từ Google Form
         private void LoadFeedbackDataFromDatabase()
         {
             try

@@ -85,6 +85,10 @@ namespace GUI.BuildingManagement
                     case "btn_quaylai":
                         btnBack.Text = a.Value;
                         break;
+                    case "building_add":
+                        guna2Button5.Text = a.Value;
+                        break;
+
                     case "search":
                         txtSearch.PlaceholderText = a.Value;
                         break;

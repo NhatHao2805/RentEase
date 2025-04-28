@@ -2030,6 +2030,7 @@ namespace GUI
             string selectedLanguage = listLanguage.SelectedItem.ToString();
             Language.SetCurrentLanguage(selectedLanguage);
             //load_Contract(0, null);
+            //load_Contract(0, null);
             //load_QLP();
             //loadTenant(null);
             //loadRegistration(null);
@@ -2120,6 +2121,9 @@ namespace GUI
                         break;
                     case "building_change":
                         guna2Button2.Text = kvp.Value;
+                        break;
+                    case "building_add":
+                        guna2Button5.Text = kvp.Value;
                         break;
 
                     case "taxpayer_information_management":
@@ -2275,6 +2279,9 @@ namespace GUI
                         break;
                     case "action_registCancel":
                         button49.Text = kvp.Value;
+                        break;
+                    case "requestfb":
+                        guna2GradientButton13.Text = kvp.Value;
                         break;
 
                     case "parking_management_title":
