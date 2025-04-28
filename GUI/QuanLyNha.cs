@@ -65,6 +65,7 @@ namespace GUI
             load_Building_By_User();
             loadInitLanguage();
             loadInfo();
+            loadLanguage();
 
         }
 
@@ -83,7 +84,6 @@ namespace GUI
             LoadDichVu();
             load_Vehicle();
             update_LSTN();
-            loadLanguage();
         }
 
         private void clearAllDataGridView()
@@ -296,6 +296,8 @@ namespace GUI
                 dgv_QLCSVC.Columns[3].Width = 100;
                 dgv_QLCSVC.Columns[4].Width = 120;
                 dgv_QLCSVC.Columns[5].Width = 80;
+
+
                 translateValue(dgv_QLCSVC, 4);
                 dgv_QLCSVC.ScrollBars = ScrollBars.Both;
             }
@@ -339,7 +341,7 @@ namespace GUI
                 dgv_QLP.Columns[0].Width = 90;
                 dgv_QLP.Columns[1].Width = 90;
                 dgv_QLP.Columns[2].Width = 150;
-                dgv_QLP.Columns[3].Width = 50;
+                dgv_QLP.Columns[3].Width = 70;
                 dgv_QLP.Columns[4].Width = 200;
                 dgv_QLP.Columns[5].Width = 120;
                 dgv_QLP.Columns[6].Width = 120;
@@ -381,7 +383,7 @@ namespace GUI
                 string type = checkBox10.Checked ? "xeoto" :
                              (checkBox11.Checked ? "xemay/xedap" :
                              (checkBox18.Checked ? "honhop" : null));
-                string status = checkBox17.Checked ? "EMPTY" : (checkBox20.Checked ? "FULL" : null);
+                string status = checkBox17.Checked ? "empty" : (checkBox20.Checked ? "full" : null);
 
                 guna2DataGridView7.DataSource = ParkingAreaBLL.FilterParkingArea(listBuildingID.Text, type, status);
 
@@ -408,6 +410,7 @@ namespace GUI
                 guna2DataGridView7.ScrollBars = ScrollBars.Both;
 
                 translateValue(guna2DataGridView7, 3);
+                translateValue(guna2DataGridView7, 6);
             }
             catch (Exception ex)
             {
@@ -2026,10 +2029,11 @@ namespace GUI
 
             string selectedLanguage = listLanguage.SelectedItem.ToString();
             Language.SetCurrentLanguage(selectedLanguage);
-            load_Contract(0, null);
-            load_QLP();
-            loadTenant(null);
-            loadRegistration(null);
+            //load_Contract(0, null);
+            //load_QLP();
+            //loadTenant(null);
+            //loadRegistration(null);
+            loadInfo();
             foreach (KeyValuePair<string, string> kvp in Language.languages)
             {
                 switch (kvp.Key)

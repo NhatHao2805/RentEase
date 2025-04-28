@@ -143,7 +143,7 @@ namespace GUI
                         case "dangcocgiucho":
                             DangCoc_chbox.Checked = true;
                             break;
-                        case "dahethanhopdong":
+                        case "daquahanhopdong":
                             DaHetHan_chbox.Checked = true;
                             break;
                         case "dangbaoketthuc":

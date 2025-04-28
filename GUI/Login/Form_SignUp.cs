@@ -40,6 +40,9 @@ namespace GUI
                         label1.Text = kvp.Value;
                         buttonDangKy.Text = kvp.Value;
                         break;
+                    case "Sign_up_content":
+                        label22.Text = kvp.Value;
+                        break;
                     case "User_info":
                         info_user.Text = kvp.Value;
                         break;

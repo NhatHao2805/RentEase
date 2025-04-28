@@ -623,8 +623,8 @@ BEGIN
             pa.CAPACITY,
             COUNT(p.VEHICLEID) as CURRENT_VEHICLES,
             CASE 
-                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'FULL'
-                ELSE 'EMPTY'
+                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'full'
+                ELSE 'empty'
             END as STATUS
         FROM PARKINGAREA pa
         LEFT JOIN PARKING p ON pa.AREAID = p.AREAID

@@ -1,4 +1,6 @@
-﻿export_excel: Xuất sang excel
+﻿full: Đầy
+empty: Còn trống
+export_excel: Xuất sang excel
 Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character: Mật khẩu phải chứa:\n• Ít nhất 8 ký tự\n• Ít nhất một số\n• Ít nhất một ký tự đặc biệt
 New_Password: Mật khẩu mới
 Confirm_Password: Xác nhận mật khẩu
@@ -65,6 +67,7 @@ Password2: Mật khẩu xác nhận
 Sign_in: Đăng nhập
 Sign_up: Đăng ký
 Sign_Up_Title_Form:Đăng ký
+Sign_up_content: Đăng ký tài khoản mới
 User_info:Thông tin chi tiết
 Account_info:Thông tin tài khoản
 Fullname:Họ và tên
