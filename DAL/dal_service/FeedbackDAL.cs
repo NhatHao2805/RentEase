@@ -64,15 +64,13 @@ namespace DAL.dal_service
 
                 try
                 {
-                    // Câu truy vấn mới - chỉ lấy feedback từ khách hàng có hợp đồng còn hiệu lực
+                    // Câu truy vấn JOIN nhiều bảng để lấy phản hồi theo tòa nhà
                     string query = @"SELECT f.*, t.FIRSTNAME, t.LASTNAME, t.EMAIL, c.ROOMID 
                           FROM FEEDBACK f 
-                              JOIN TENANT t ON f.TENANTID = t.TENANTID 
-                              JOIN CONTRACT c ON t.TENANTID = c.TENANTID 
-                              JOIN ROOM r ON c.ROOMID = r.ROOMID 
+                          LEFT JOIN TENANT t ON f.TENANTID = t.TENANTID 
+                          LEFT JOIN CONTRACT c ON t.TENANTID = c.TENANTID 
+                          LEFT JOIN ROOM r ON c.ROOMID = r.ROOMID 
                           WHERE r.BUILDINGID = @buildingID 
-                              AND c.ISDELETED = 0 
-                              AND c.ENDDATE >= CURRENT_DATE()
                           ORDER BY f.DATESEND DESC";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -608,27 +606,21 @@ namespace DAL.dal_service
 
                 try
                 {
-                    // Câu truy vấn mới - chỉ lấy feedback từ khách hàng có hợp đồng còn hiệu lực
+                    // Câu truy vấn đơn giản
                     string query = @"SELECT f.*, t.FIRSTNAME, t.LASTNAME, t.EMAIL as TENANT_EMAIL 
                           FROM FEEDBACK f 
-                          JOIN TENANT t ON f.TENANTID = t.TENANTID 
-                          JOIN CONTRACT c ON t.TENANTID = c.TENANTID 
-                          JOIN ROOM r ON c.ROOMID = r.ROOMID 
-                          WHERE f.DATESEND BETWEEN @fromDate AND @toDate 
-                          AND f.ISDELETED = 0
-                          AND r.BUILDINGID = @buildingID
-                          AND c.ISDELETED = 0 
-                          AND c.ENDDATE >= CURRENT_DATE()";
+                          LEFT JOIN TENANT t ON f.TENANTID = t.TENANTID 
+                      WHERE f.DATESEND BETWEEN @fromDate AND @toDate AND f.ISDELETED = 0";
 
                     if (!string.IsNullOrEmpty(status) && status != "Tất cả")
                     {
-                        query += " AND f.STATUS = @status ";
+                        query += "AND f.STATUS = @status ";
                     }
 
                     // Tìm kiếm đơn giản: bất kỳ trường nào chứa từ khóa
                     if (!string.IsNullOrEmpty(searchText))
                     {
-                        query += @" AND (
+                        query += @"AND (
                     f.CONTENT LIKE @search 
                     OR f.EMAIL LIKE @search 
                     OR t.EMAIL LIKE @search 
@@ -638,7 +630,7 @@ namespace DAL.dal_service
                 ) ";
                     }
 
-                    query += " ORDER BY f.DATESEND DESC";
+                    query += "ORDER BY f.DATESEND DESC";
 
                     Console.WriteLine($"Debug - Query: {query}");
 
@@ -646,7 +638,6 @@ namespace DAL.dal_service
                     {
                         cmd.Parameters.AddWithValue("@fromDate", fromDate);
                         cmd.Parameters.AddWithValue("@toDate", toDate.AddDays(1).AddSeconds(-1));
-                        cmd.Parameters.AddWithValue("@buildingID", buildingID);
 
                         if (!string.IsNullOrEmpty(status) && status != "Tất cả")
                         {
@@ -834,42 +825,6 @@ namespace DAL.dal_service
             }
         }
 
-        // Kiểm tra xem tenant có hợp đồng hợp lệ không
-        public static bool HasValidContract(string tenantID)
-        {
-            if (string.IsNullOrEmpty(tenantID))
-            {
-                return false;
-            }
-
-            using (MySqlConnection conn = MySqlConnectionData.Connect())
-            {
-                if (conn == null)
-                {
-                    return false;
-                }
-
-                try
-                {
-                    string query = @"SELECT COUNT(*) FROM CONTRACT c 
-                                   WHERE c.TENANTID = @tenantID 
-                                   AND c.ISDELETED = 0 
-                                   AND c.ENDDATE >= CURRENT_DATE()";
-
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@tenantID", tenantID);
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        return count > 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Lỗi kiểm tra hợp đồng: {ex.Message}");
-                    return false;
-                }
-            }
-        }
 
     }
 }

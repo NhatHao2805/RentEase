@@ -84,18 +84,16 @@ namespace GUI.honhathao
             
             if(tenantID != null)
             {
-                W_E_BLL.Add_W_E(buildingid, tenantID, o_w.Text, n_w.Text, o_e.Text, n_e.Text, month.Text);
-                //string billid = BillBLL.BillBLL_load_BillID();
-                //System.Data.DataTable data = TenantServiceBLL.TenantServiceBLL_load_registration_service_to_add(tenantID);
-                //foreach (DataRow dataRow in data.Rows)
-                //{
-                //    TenantServiceBLL.TenantServiceBLL_add_all_registration_Ser_into_billdetail(
-                //       billid, dataRow[0].ToString(), dataRow[1].ToString());
-                //}
+                if (o_w.Text.Length == 0 || n_w.Text.Length == 0 || o_e.Text.Length == 0 || n_e.Text.Length == 0 || month.Text.Length == 0)
+                {
+                    MessageBox.Show(Language.translate("invalid_"));
+                    return;
+                }
+                W_E_BLL.Add_W_E(buildingid, tenantID, o_w.Text, n_w.Text, o_e.Text, n_e.Text, month.Text); 
             }
             else
             {
-                MessageBox.Show("Chưa chọn phòng");
+                MessageBox.Show(Language.translate("asking"));
             }
             
             this.Close();
@@ -144,13 +142,13 @@ namespace GUI.honhathao
                 {
                     if (oldElectric > newElectric)
                     {
-                        MessageBox.Show("Số điện cũ không được lớn hơn số điện mới");
+                        MessageBox.Show(Language.translate("invalid_"));
                         o_e.Text = "";
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Số điện không hợp lệ");
+                    MessageBox.Show(Language.translate("invalid_"));
                     o_e.Text = "";
                 }
             }
@@ -164,13 +162,13 @@ namespace GUI.honhathao
                 {
                     if (oldElectric > newElectric)
                     {
-                        MessageBox.Show("Số điện cũ không được lớn hơn số điện mới");
+                        MessageBox.Show(Language.translate("invalid_"));
                         n_e.Text = "";
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Số điện không hợp lệ");
+                    MessageBox.Show(Language.translate("invalid_"));
                     n_e.Text = "";
                 }
             }
@@ -184,38 +182,36 @@ namespace GUI.honhathao
                 {
                     if (oldWater > newWater)
                     {
-                        MessageBox.Show("Số nước cũ không được lớn hơn số nước mới");
+                        MessageBox.Show(Language.translate("invalid_"));
                         o_w.Text = "";
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Số nước không hợp lệ");
+                    MessageBox.Show(Language.translate("invalid_"));
                     o_w.Text = "";
                 }
             }
         }
-
-        private void n_w_TextChanged(object sender, EventArgs e)
+        private void n_w_Leave(object sender, EventArgs e)
         {
-            if (n_e.Text.Length > 0 && n_w.Text.Length > 0)
+            if (o_w.Text.Length > 0 && n_w.Text.Length > 0)
             {
                 if (int.TryParse(o_w.Text, out int oldWater) && int.TryParse(n_w.Text, out int newWater))
                 {
                     if (oldWater > newWater)
                     {
-                        MessageBox.Show("Số nước cũ không được lớn hơn số nước mới");
+                        MessageBox.Show(Language.translate("invalid_"));
                         n_w.Text = "";
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Số nước không hợp lệ");
+                    MessageBox.Show(Language.translate("invalid_"));
                     n_w.Text = "";
                 }
             }
         }
-
         private void SoPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
 

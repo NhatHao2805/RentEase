@@ -21,10 +21,11 @@ namespace GUI.GUI_Service
     {
         
         private string buildingID;
-
-        public AddService(string buildingid)
+        private quanlynha parentForm;
+        public AddService(string buildingid, quanlynha parent = null)
         {
             this.buildingID = buildingid;
+            this.parentForm = parent;
             InitializeComponent();
             loadLanguage();
         }
@@ -100,8 +101,8 @@ namespace GUI.GUI_Service
 
                     // Hiển thị danh sách phòng vào ComboBox
                     Room.DataSource = rooms;
-                    Room.DisplayMember = "ID"; // Hiển thị ID phòng
-                    Room.ValueMember = "ID";   // Giá trị là ID phòng
+                    Room.DisplayMember = "Name"; // Hiển thị tên phòng (ROOMNAME)
+                    Room.ValueMember = "ID";   // Giá trị là ID phòng (ROOMID)
 
                    
                 }
@@ -116,30 +117,56 @@ namespace GUI.GUI_Service
 
         public void LoadComboBoxData()
         {
-            var data = khachHangBLL.GetKhachHangForComboBox(buildingID);
-            Console.WriteLine(buildingID + "AAAAAAAAAAAAAA");
-            if (data != null && data.Count > 0)
+            try
             {
-                TenantName.DataSource = data;
-                TenantName.DisplayMember = "Name";  // Đảm bảo đúng tên thuộc tính
-                TenantName.ValueMember = "ID";
+                // Load danh sách khách hàng
+                var tenants = khachHangBLL.GetKhachHangForComboBox(buildingID);
+                TenantName.DataSource = tenants;
+                if (tenants != null && tenants.Any())
+                {
+                    TenantName.DisplayMember = "Name";
+                    TenantName.ValueMember = "ID";
+                    TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
+                }
+                else
+                {
+                    TenantName.DataSource = null;
+                    TenantName.Items.Clear();
+                }
+
+                // Cấu hình cho Room ComboBox
+                Room.DisplayMember = "Name";  // Đảm bảo hiển thị tên phòng (ROOMNAME)
+                Room.ValueMember = "ID";      // Giá trị là ID phòng (ROOMID)
+                Room.DataSource = null;       // Reset data source
+                Room.Items.Clear();           // Clear items
+
+                // Load danh sách dịch vụ
+                var services = dichVuBLL.GetDichVuForComboBox();
+                if (services != null && services.Any())
+                {
+                    Service.DataSource = services;
+                    Service.DisplayMember = "Name";
+                    Service.ValueMember = "ID";
+                }
+                else
+                {
+                    Service.DataSource = null;
+                    Service.Items.Clear();
+                }
             }
-
-
-            TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
-
-            Room.DisplayMember = "ID";  // Đảm bảo đúng tên thuộc tính trong DTO
-            Room.ValueMember = "ID";
-
-
-
-
-            // Load danh sách dịch vụ
-            Service.DataSource = dichVuBLL.GetDichVuForComboBox();
-
-            Service.DisplayMember = "Name";
-            Service.ValueMember = "ID";
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra khi tải dữ liệu: {ex.Message}", "Lỗi", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                // Reset tất cả ComboBox về trạng thái an toàn
+                TenantName.DataSource = null;
+                TenantName.Items.Clear();
+                Room.DataSource = null;
+                Room.Items.Clear();
+                Service.DataSource = null;
+                Service.Items.Clear();
+            }
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -179,20 +206,6 @@ namespace GUI.GUI_Service
         // Nut Dang Ky
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            //if (TenantName.SelectedValue == null || Room.SelectedValue == null || Service.SelectedValue == null || string.IsNullOrEmpty(Cost.Text))
-            //{
-            //    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-            ////todo: tao hang create id khach hang theo index
-            //if (dichVuBLL.AddService("T00" + TenantName.SelectedIndex, Room.SelectedValue.ToString(), Service.SelectedValue.ToString(), int.Parse(Cost.Text)))
-            //{
-            //    MessageBox.Show("Thêm dịch vụ thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Thêm dịch vụ thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
             string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
             string serviceID = Service.SelectedValue.ToString();  // Lấy ID từ ComboBox
 
@@ -201,7 +214,11 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-          
+                // Refresh data in parent form if it exists
+                if (parentForm != null)
+                {
+                    parentForm.LoadDichVu();
+                }
             }
             else
             {
@@ -210,8 +227,6 @@ namespace GUI.GUI_Service
            
             // Đóng form đăng ký sau khi thành công
             this.Close();
-
-          
         }
 
         private void guna2HtmlLabel1_Click_2(object sender, EventArgs e)
@@ -230,7 +245,11 @@ namespace GUI.GUI_Service
             if (isSuccess)
             {
                 MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             
+                // Refresh data in parent form if it exists
+                if (parentForm != null)
+                {
+                    parentForm.LoadDichVu();
+                }
             }
             else
             {
@@ -238,7 +257,6 @@ namespace GUI.GUI_Service
             }
 
             this.Close();
-           
         }
 
         private void TenantName_SelectedIndexChanged_1(object sender, EventArgs e)

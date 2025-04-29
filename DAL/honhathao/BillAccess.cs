@@ -84,10 +84,9 @@ namespace DAL.honhathao
                         command.ExecuteNonQuery();
                     }
                 }
-            }
-            catch (Exception ex)
+        }catch (Exception ex)
             {
-                return "Fail";
+                return "Fail!!";
             }
             return "Success";
         }

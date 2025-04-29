@@ -55,13 +55,91 @@ namespace GUI.BuildingManagement
                     SendMessage(Handle, 0x112, 0xf012, 0);
                 }
             };
+            loadLanguage();
         }
 
+        private void loadLanguage()
+        {
+            foreach (KeyValuePair<string, string> a in Language.languages)
+            {
+                switch (a.Key)
+                {
+                    case "building_management":
+                        label1.Text = a.Value;
+                        break;
+                    case "building_management_subtitle":
+                        label22.Text = a.Value;
+                        break;
+                    case "building_section":
+                        btn_quanlynha.Text = a.Value;
+                        break;
+                    case "add_building_btn":
+                        btn_themnha.Text = a.Value;
+                        break;
+                    case "refresh_btn":
+                        btnRefresh.Text = a.Value;
+                        break;
+                    case "manage_btn":
+                        btnManage.Text = a.Value;
+                        break;
+                    case "btn_quaylai":
+                        btnBack.Text = a.Value;
+                        break;
+                    case "add_key":
+                        guna2Button5.Text = a.Value;
+                        break;
+
+                    case "search":
+                        txtSearch.PlaceholderText = a.Value;
+                        break;
+
+                    case "building_key":
+                        lblBuildingKey.Text = a.Value;
+                        break;
+                    case "building_address":
+                        lblAddress.Text = a.Value;
+                        break;
+                    case "num_of_floors":
+                        lblFloors.Text = a.Value;
+                        break;
+                    case "num_of_rooms":
+                        lblNumRooms.Text = a.Value;
+                        break;
+                    case "btn_save":
+                        btnSave.Text = a.Value;
+                        break;
+                    case "btn_cancel":
+                        btnCancel.Text = a.Value;
+                        break;
+
+                    case "buildingtable_buildingid":
+                        dgvBuildings.Columns["BuildingID"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_buildingkey":
+                        dgvBuildings.Columns["Building_Key"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_username":
+                        dgvBuildings.Columns["UserName"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_address":
+                        dgvBuildings.Columns["Address"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_numoffloors":
+                        dgvBuildings.Columns["NumOfFloors"].HeaderText = a.Value;
+                        break;
+                    case "buildingtable_numofrooms":
+                        dgvBuildings.Columns["NumofRooms"].HeaderText = a.Value;
+                        break;
+                        //search: Tìm kiếm
+                }
+            }
+        }
         private void LoadBuildingData()
         {
             try
             {
                 dgvBuildings.DataSource = BuildingBLL.LoadBuilding(form1.taikhoan.Username);
+                dgvBuildings.ScrollBars = ScrollBars.Both;
             }
             catch (Exception ex)
             {
@@ -77,6 +155,7 @@ namespace GUI.BuildingManagement
                 ClearInputFields();
             }
         }
+
 
         private void OnSearchTextChanged(object sender, EventArgs e)
         {
@@ -248,6 +327,28 @@ namespace GUI.BuildingManagement
 
             btn_quanlynha.Checked = true;
 
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(KeyBLL.add_Key(form1.taikhoan.Username, guna2TextBox3.Text));
+            LoadBuildingData();
+            guna2TextBox3.Text = "";
+        }
+
+        private void panelAddBuilding_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void numFloors_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numRooms_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

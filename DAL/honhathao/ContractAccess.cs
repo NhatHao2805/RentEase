@@ -4,11 +4,40 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 using MySql.Data.MySqlClient;
 namespace DAL
 {
     public class ContractAccess
     {
+        public static bool Check_Contract(string BuildingID, string TenantID, string RoomName)
+        {
+
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+
+                string query = "" +
+                    "SELECT Count(c.CONTRACTID) from Contract c " +
+                    "JOIN ROOM r ON c.ROOMID = r.ROOMID " +
+                    "JOIN BUILDING b ON b.BUILDINGID = r.BUILDINGID " + 
+                    "JOIN Tenant t on t.TENANTID = c.TENANTID " + 
+                    "WHERE c.TENANTID = @TenantID " +  
+                    "AND r.ROOMNAME = @RoomName " +  
+                    "AND b.BUILDINGID = @BuildingID " +  
+                    "AND c.ISDELETED = 0";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@TenantID", TenantID);
+                    cmd.Parameters.AddWithValue("@RoomName", RoomName);
+                    cmd.Parameters.AddWithValue("@BuildingID", BuildingID);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    Console.WriteLine("Count: " + count);
+                    return count == 0;
+                }
+            }
+
+        }
         public static List<string> GetRoomsByTenantID(string tenantID)
         {
             List<string> roomList = new List<string>();

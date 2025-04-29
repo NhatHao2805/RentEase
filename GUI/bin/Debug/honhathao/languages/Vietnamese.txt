@@ -1,4 +1,50 @@
-﻿bill_id:Mã hóa đơn
+﻿invalid_: Giá trị không hợp lệ
+valid_: Hợp lệ
+asking: Vui lòng chọn đối tượng
+success_: Thành công
+fail_: Thất bại
+hoidelete: Bạn có muốn xóa không?
+add_key: Thêm Key
+building_key: Mã truy cập
+building_address: Địa chỉ
+num_of_floors: Số tầng
+num_of_rooms: Số phòng mỗi tầng
+btn_save: Lưu
+btn_cancel: Hủy
+buildingtable_buildingid: Mã tòa nhà
+buildingtable_buildingkey: Mã truy cập
+buildingtable_username: Chủ sở hữu
+buildingtable_address: Địa chỉ
+buildingtable_numoffloors: Số tầng
+buildingtable_numofrooms: Số phòng
+all_text: Tất cả
+requestfb: Yêu cầu/Phản ánh
+doubleclick: Click đúp vào một dòng để xem chi tiết nội dung phản ánh
+page_title: Quản lý phản ánh khách hàng
+page_subtitle: Mọi phản ánh của khách hàng đều ở đây
+search_section: Tìm kiếm
+date_filter_start: Từ ngày
+date_filter_end: Đến ngày
+table_header_customer: Tên khách hàng
+table_header_email: Email
+table_header_content: Nội dung
+table_header_date: Ngày gửi
+table_header_status: Trạng thái
+action_show_all: Tất cả
+action_filter: Lọc
+action_refresh: Làm mới
+action_import: Dòng bệ dữ liệu từ Google Form
+status_processed: Đã xử lý
+full: Đầy
+empty: Còn trống
+export_excel: Xuất sang excel
+Password must contain:\n• At least 8 characters\n• At least one number\n• At least one special character: Mật khẩu phải chứa:\n• Ít nhất 8 ký tự\n• Ít nhất một số\n• Ít nhất một ký tự đặc biệt
+New_Password: Mật khẩu mới
+Confirm_Password: Xác nhận mật khẩu
+Reset_Password: Đổi mật khẩu
+checkdelete: Bạn có muốn xóa không?
+changePass:Quên/Đổi mật khẩu?
+bill_id:Mã hóa đơn
 record_id:Mã bản ghi
 service_name:Tên dịch vụ
 amount:Số tiền
@@ -25,6 +71,7 @@ nam: Nam
 nu: Nữ
 dangcho: Đang chờ
 daduyet: Đã duyệt
+dagiaiquyet: Đã giải quyết
 ELECTRICITY: Điện
 WATER: Nước
 tienmat: Tiền mặt
@@ -57,15 +104,27 @@ Password: Mật khẩu
 Password2: Mật khẩu xác nhận
 Sign_in: Đăng nhập
 Sign_up: Đăng ký
-Forgot_Password: Quên mật khẩu ?
-Forgotpassword: Quên mật khẩu
-Change_password: Đổi mật khẩu
 Sign_Up_Title_Form:Đăng ký
+Sign_up_content: Đăng ký tài khoản mới
 User_info:Thông tin chi tiết
 Account_info:Thông tin tài khoản
 Fullname:Họ và tên
 Birthday:Ngày Sinh
 Email:Email
+building_management: Quản lý Tòa Nhà
+building_management_subtitle: Giao diện quản lý các tòa nhà
+building_section: Quản lý tòa nhà
+add_building_btn: Thêm tòa nhà
+refresh_btn: Làm mới
+manage_btn: Quản lý
+forgot_pw.title :Quên mật khẩu
+forgot_pw.subtitle :Đổi mật khẩu của bạn
+forgot_pw.email_label :Email
+forgot_pw.email_placeholder :Nhập email của bạn
+forgot_pw.send_otp_btn :Gửi mã OTP
+forgot_pw.otp_label :Mã OTP
+forgot_pw.otp_placeholder :Nhập mã OTP
+forgot_pw.verify_btn :Xác thực
 Gender:Giới tính
 Numberphone:Số điện thoại
 Address:Địa chỉ
@@ -148,8 +207,8 @@ roomtable_building: Mã tòa nhà
 roomtable_floor: Tầng
 roomtable_room_type: Loại phòng
 roomtable_convenient: Tiện ích
-roomtable_area: Diện tích
-roomtable_price: Giá thuê
+roomtable_area: Diện tích (m2)
+roomtable_price: Giá thuê (VND)
 roomtable_status: Trạng thái
 : Bảng của Hợp đồng
 contracttable_contract_id: Mã hợp đồng
@@ -389,8 +448,8 @@ room.add_subtitle: Thêm/Chỉnh sửa phòng ở
 property_type: Tầng nhà
 classification: Phân loại
 amenities: Tiện ích
-area: Diện tích
-rent_price: Giá thuê
+area: Diện tích (m2)
+rent_price: Giá thuê (VND)
 status: Trạng thái
 status_options.occupied: Đang ở
 status_options.vacant: Đang Trống

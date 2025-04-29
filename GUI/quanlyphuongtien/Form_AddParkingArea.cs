@@ -83,6 +83,9 @@ namespace GUI
                     capacity_tb.Text = string.Empty;
                     area.Capacity = null;
                     return;
+                case "capacity_too_large":
+                    MessageBox.Show("Sức chứa không thể vượt mức 10000");
+                    return;
                 case "Database connection failed!":
                     MessageBox.Show("Kết nối thất bại");
                     return;

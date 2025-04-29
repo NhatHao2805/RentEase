@@ -54,6 +54,7 @@ namespace GUI.BuildingManagement
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Building));
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelAddBuilding = new Guna.UI2.WinForms.Guna2Panel();
             this.lblBuildingKey = new System.Windows.Forms.Label();
@@ -85,6 +86,8 @@ namespace GUI.BuildingManagement
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panelMain = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btn_quanlynha = new Guna.UI2.WinForms.Guna2Button();
             this.btn_themnha = new Guna.UI2.WinForms.Guna2Button();
@@ -145,12 +148,13 @@ namespace GUI.BuildingManagement
             this.panelAddBuilding.Padding = new System.Windows.Forms.Padding(20);
             this.panelAddBuilding.Size = new System.Drawing.Size(685, 461);
             this.panelAddBuilding.TabIndex = 0;
+            this.panelAddBuilding.Paint += new System.Windows.Forms.PaintEventHandler(this.panelAddBuilding_Paint);
             // 
             // lblBuildingKey
             // 
             this.lblBuildingKey.AutoSize = true;
             this.lblBuildingKey.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuildingKey.Location = new System.Drawing.Point(114, 30);
+            this.lblBuildingKey.Location = new System.Drawing.Point(74, 41);
             this.lblBuildingKey.Name = "lblBuildingKey";
             this.lblBuildingKey.Size = new System.Drawing.Size(109, 23);
             this.lblBuildingKey.TabIndex = 0;
@@ -164,7 +168,7 @@ namespace GUI.BuildingManagement
             this.txtBuildingKey.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBuildingKey.DefaultText = "";
             this.txtBuildingKey.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtBuildingKey.Location = new System.Drawing.Point(274, 30);
+            this.txtBuildingKey.Location = new System.Drawing.Point(319, 30);
             this.txtBuildingKey.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtBuildingKey.Name = "txtBuildingKey";
             this.txtBuildingKey.PlaceholderText = "";
@@ -174,12 +178,13 @@ namespace GUI.BuildingManagement
             this.txtBuildingKey.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.txtBuildingKey.Size = new System.Drawing.Size(300, 36);
             this.txtBuildingKey.TabIndex = 1;
+            this.txtBuildingKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(114, 86);
+            this.lblAddress.Location = new System.Drawing.Point(74, 97);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(74, 23);
             this.lblAddress.TabIndex = 4;
@@ -193,7 +198,7 @@ namespace GUI.BuildingManagement
             this.txtAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddress.DefaultText = "";
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtAddress.Location = new System.Drawing.Point(274, 86);
+            this.txtAddress.Location = new System.Drawing.Point(319, 86);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.PlaceholderText = "";
@@ -203,12 +208,13 @@ namespace GUI.BuildingManagement
             this.txtAddress.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.txtAddress.Size = new System.Drawing.Size(300, 36);
             this.txtAddress.TabIndex = 5;
+            this.txtAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblFloors
             // 
             this.lblFloors.AutoSize = true;
             this.lblFloors.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFloors.Location = new System.Drawing.Point(114, 142);
+            this.lblFloors.Location = new System.Drawing.Point(74, 153);
             this.lblFloors.Name = "lblFloors";
             this.lblFloors.Size = new System.Drawing.Size(149, 23);
             this.lblFloors.TabIndex = 6;
@@ -221,7 +227,7 @@ namespace GUI.BuildingManagement
             this.numFloors.BorderRadius = 10;
             this.numFloors.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numFloors.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numFloors.Location = new System.Drawing.Point(274, 142);
+            this.numFloors.Location = new System.Drawing.Point(319, 142);
             this.numFloors.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numFloors.Maximum = new decimal(new int[] {
             -1,
@@ -239,17 +245,20 @@ namespace GUI.BuildingManagement
             this.numFloors.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.numFloors.Size = new System.Drawing.Size(300, 36);
             this.numFloors.TabIndex = 7;
+            this.numFloors.UpDownButtonFillColor = System.Drawing.Color.Teal;
+            this.numFloors.UpDownButtonForeColor = System.Drawing.Color.White;
             this.numFloors.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numFloors.ValueChanged += new System.EventHandler(this.numFloors_ValueChanged);
             // 
             // lblNumRooms
             // 
             this.lblNumRooms.AutoSize = true;
             this.lblNumRooms.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumRooms.Location = new System.Drawing.Point(114, 199);
+            this.lblNumRooms.Location = new System.Drawing.Point(74, 210);
             this.lblNumRooms.Name = "lblNumRooms";
             this.lblNumRooms.Size = new System.Drawing.Size(156, 23);
             this.lblNumRooms.TabIndex = 8;
@@ -262,7 +271,7 @@ namespace GUI.BuildingManagement
             this.numRooms.BorderRadius = 10;
             this.numRooms.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.numRooms.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.numRooms.Location = new System.Drawing.Point(274, 199);
+            this.numRooms.Location = new System.Drawing.Point(319, 199);
             this.numRooms.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numRooms.Maximum = new decimal(new int[] {
             -1,
@@ -280,11 +289,14 @@ namespace GUI.BuildingManagement
             this.numRooms.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.numRooms.Size = new System.Drawing.Size(300, 36);
             this.numRooms.TabIndex = 9;
+            this.numRooms.UpDownButtonFillColor = System.Drawing.Color.Teal;
+            this.numRooms.UpDownButtonForeColor = System.Drawing.Color.White;
             this.numRooms.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numRooms.ValueChanged += new System.EventHandler(this.numRooms_ValueChanged);
             // 
             // buttonPanel
             // 
@@ -386,10 +398,10 @@ namespace GUI.BuildingManagement
             this.tabManageBuilding.BackColor = System.Drawing.Color.White;
             this.tabManageBuilding.Controls.Add(this.dgvBuildings);
             this.tabManageBuilding.Controls.Add(this.searchPanel);
-            this.tabManageBuilding.Location = new System.Drawing.Point(4, 5);
+            this.tabManageBuilding.Location = new System.Drawing.Point(4, 44);
             this.tabManageBuilding.Name = "tabManageBuilding";
             this.tabManageBuilding.Padding = new System.Windows.Forms.Padding(10);
-            this.tabManageBuilding.Size = new System.Drawing.Size(705, 481);
+            this.tabManageBuilding.Size = new System.Drawing.Size(705, 442);
             this.tabManageBuilding.TabIndex = 0;
             this.tabManageBuilding.Text = "Quản lý tòa nhà";
             // 
@@ -696,6 +708,8 @@ namespace GUI.BuildingManagement
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.guna2Button5);
+            this.panel2.Controls.Add(this.guna2TextBox3);
             this.panel2.Controls.Add(this.guna2PictureBox8);
             this.panel2.Controls.Add(this.btn_quanlynha);
             this.panel2.Controls.Add(this.btn_themnha);
@@ -704,11 +718,63 @@ namespace GUI.BuildingManagement
             this.panel2.Size = new System.Drawing.Size(251, 460);
             this.panel2.TabIndex = 1;
             // 
+            // guna2Button5
+            // 
+            this.guna2Button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.guna2Button5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button5.BorderColor = System.Drawing.Color.Green;
+            this.guna2Button5.BorderRadius = 10;
+            this.guna2Button5.BorderThickness = 1;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(200)))));
+            this.guna2Button5.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2Button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.guna2Button5.Location = new System.Drawing.Point(134, 207);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.ShadowDecoration.BorderRadius = 10;
+            this.guna2Button5.ShadowDecoration.Enabled = true;
+            this.guna2Button5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2Button5.Size = new System.Drawing.Size(103, 50);
+            this.guna2Button5.TabIndex = 134;
+            this.guna2Button5.Text = "Thêm";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.guna2TextBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.guna2TextBox3.BorderRadius = 10;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox3.ForeColor = System.Drawing.Color.Teal;
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.Location = new System.Drawing.Point(11, 207);
+            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.ShadowDecoration.BorderRadius = 10;
+            this.guna2TextBox3.ShadowDecoration.Enabled = true;
+            this.guna2TextBox3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2TextBox3.Size = new System.Drawing.Size(117, 50);
+            this.guna2TextBox3.TabIndex = 135;
+            this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // guna2PictureBox8
             // 
             this.guna2PictureBox8.Image = global::GUI.Properties.Resources.LogoApp;
             this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(37, 289);
+            this.guna2PictureBox8.Location = new System.Drawing.Point(34, 336);
             this.guna2PictureBox8.Name = "guna2PictureBox8";
             this.guna2PictureBox8.Size = new System.Drawing.Size(185, 130);
             this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -795,6 +861,7 @@ namespace GUI.BuildingManagement
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Building";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form_Building_Load);
@@ -840,5 +907,7 @@ namespace GUI.BuildingManagement
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox8;
         private Guna.UI2.WinForms.Guna2Button btn_quanlynha;
         private Guna.UI2.WinForms.Guna2Button btn_themnha;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
     }
 }

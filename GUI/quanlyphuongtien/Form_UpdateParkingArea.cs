@@ -87,7 +87,7 @@ namespace GUI
             area.AreaId = infor.AreaId;
             area.BuildingId = infor.BuildingId;
             area.Address = address_tb.Text;
-            area.Type = type_cb.Text;
+            area.Type = Language.reverseTranslate(type_cb.Text);
             area.Capacity = capacity_tb.Text;
 
             string check = ParkingAreaBLL.UpdateArea(area);
@@ -107,6 +107,9 @@ namespace GUI
                     MessageBox.Show("Sức chứa không hợp lệ");
                     capacity_tb.Text = string.Empty;
                     area.Capacity = null;
+                    return;
+                case "capacity_too_large":
+                    MessageBox.Show("Sức chứa không thể vượt mức 10000");
                     return;
                 case "Database connection failed!":
                     MessageBox.Show("Kết nối thất bại");

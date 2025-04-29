@@ -88,6 +88,7 @@
             this.assetName_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.assetName_tb.Name = "assetName_tb";
             this.assetName_tb.PlaceholderText = "";
+            this.assetName_tb.ReadOnly = true;
             this.assetName_tb.SelectedText = "";
             this.assetName_tb.ShadowDecoration.BorderRadius = 10;
             this.assetName_tb.ShadowDecoration.Enabled = true;
@@ -114,6 +115,7 @@
             this.price_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.price_tb.Name = "price_tb";
             this.price_tb.PlaceholderText = "";
+            this.price_tb.ReadOnly = true;
             this.price_tb.SelectedText = "";
             this.price_tb.ShadowDecoration.BorderRadius = 10;
             this.price_tb.ShadowDecoration.Enabled = true;
@@ -140,6 +142,7 @@
             this.assetId_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.assetId_tb.Name = "assetId_tb";
             this.assetId_tb.PlaceholderText = "";
+            this.assetId_tb.ReadOnly = true;
             this.assetId_tb.SelectedText = "";
             this.assetId_tb.ShadowDecoration.BorderRadius = 10;
             this.assetId_tb.ShadowDecoration.Enabled = true;

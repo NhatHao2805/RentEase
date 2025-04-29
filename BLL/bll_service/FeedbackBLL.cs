@@ -159,39 +159,11 @@ namespace BLL.bll_service
                     Console.WriteLine($"Existing feedback: {uniqueKey} - Time: {feedback.DateSend}");
                 }
 
-                // Lọc chỉ lấy feedback từ khách hàng có hợp đồng đang có hiệu lực
-                // Chỉ lưu những feedback có TenantID và đang có hợp đồng hiệu lực
-                List<FeedbackDTO> validFeedbacks = new List<FeedbackDTO>();
-                foreach (var feedback in googleSheetFeedbacks)
-                {
-                    // Kiểm tra xem người dùng này có TenantID không
-                    if (!string.IsNullOrEmpty(feedback.TenantID))
-                    {
-                        // Kiểm tra xem tenant này có hợp đồng hợp lệ không
-                        bool hasTenantWithContract = FeedbackAccess.HasValidContract(feedback.TenantID);
-                        if (hasTenantWithContract)
-                        {
-                            validFeedbacks.Add(feedback);
-                            Console.WriteLine($"Valid feedback from tenant with contract: {feedback.Email}");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"Skipping feedback from tenant without active contract: {feedback.Email}");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Skipping feedback without tenantID: {feedback.Email}");
-                    }
-                }
-
-                Console.WriteLine($"Có {validFeedbacks.Count}/{googleSheetFeedbacks.Count} feedback hợp lệ từ khách hàng có hợp đồng");
-
                 // Danh sách feedback mới (không trùng lặp)
                 List<FeedbackDTO> newFeedbacks = new List<FeedbackDTO>();
 
-                // Kiểm tra từng feedback hợp lệ
-                foreach (var feedback in validFeedbacks)
+                // Kiểm tra từng feedback từ Google Sheet
+                foreach (var feedback in googleSheetFeedbacks)
                 {
                     // Tạo key tương tự để kiểm tra trùng lặp
                     string uniqueKey = $"{feedback.Email?.Trim().ToLower() ?? ""}|{feedback.Content?.Trim() ?? ""}";

@@ -128,6 +128,7 @@ BEGIN
     WHERE 
         DATEDIFF(c.ENDDATE, CURDATE()) BETWEEN 0 AND 4
         AND r.BUILDINGID = p_buildingID
+        AND c.ISDELETED = 0
         AND t.ISDELETED = 0
         AND r.ISDELETED = 0;
 END//
@@ -221,7 +222,10 @@ BEGIN
 	JOIN building b ON b.BUILDINGID = r.BUILDINGID
 	JOIN tenant t ON t.TENANTID = th.TENANTID
 	WHERE b.BUILDINGID = p_buildingID
-	AND t.ISDELETED = 0
+	AND th.ISDELETED = 0
+    AND r.ISDELETED = 0
+    AND b.ISDELETED = 0
+    AND t.ISDELETED = 0
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
 END//
 
@@ -242,23 +246,23 @@ BEGIN
 END//
 
 -- PAYMENT-BILL-W-E
--- CREATE PROCEDURE load_billdetail(
--- 	IN p_billID VARCHAR(20)
--- )
--- BEGIN
---    SELECT bd.BILLDETAIL_ID,bd.BILLID,bd.ID,s.SERVICENAME,bd.AMOUNT FROM billdetail bd 
---    JOIN service s ON s.SERVICEID = bd.ID
---    WHERE bd.BILLID = p_billID AND bd.ISDELETED = 0 AND s.ISDELETED = 0
--- 	union
--- 	SELECT bd.BILLDETAIL_ID,bd.BILLID,bd.ID,
--- 	CASE 
---         WHEN w.`TYPE` = 'WATER' THEN 'Nước'
---         WHEN w.`TYPE` = 'ELECTRICITY' THEN 'Điện'
---         ELSE w.`TYPE`
---    END,bd.AMOUNT FROM billdetail bd 
---    JOIN water_electricity w ON w.FIGUREID = bd.ID
--- 	WHERE bd.BILLID = p_billID AND bd.ISDELETED = 0 AND w.ISDELETED = 0;
--- END//
+CREATE PROCEDURE load_billdetail(
+	IN p_billID VARCHAR(20)
+)
+BEGIN
+   SELECT bd.BILLDETAIL_ID,bd.BILLID,bd.ID,s.SERVICENAME,bd.AMOUNT FROM billdetail bd 
+   JOIN service s ON s.SERVICEID = bd.ID
+   WHERE bd.BILLID = p_billID AND bd.ISDELETED = 0 AND s.ISDELETED = 0
+	union
+	SELECT bd.BILLDETAIL_ID,bd.BILLID,bd.ID,
+	CASE 
+        WHEN w.`TYPE` = 'WATER' THEN 'Nước'-- /
+        WHEN w.`TYPE` = 'ELECTRICITY' THEN 'Điện'
+        ELSE w.`TYPE`
+   END,bd.AMOUNT FROM billdetail bd 
+   JOIN water_electricity w ON w.FIGUREID = bd.ID
+	WHERE bd.BILLID = p_billID AND bd.ISDELETED = 0 AND w.ISDELETED = 0;
+END//
 
 CREATE PROCEDURE calculate_bill()
 BEGIN
@@ -336,49 +340,31 @@ BEGIN
 END//
 
 CREATE PROCEDURE load_payment(
-	IN p_lastname VARCHAR(20)
+	IN p_buildingID VARCHAR(20),
+	IN p_tenantid VARCHAR(20),
+	IN p_lastname VARCHAR(50)
 )
 BEGIN
-    -- Delete records that have been soft-deleted for more than 30 days
-    DELETE FROM payment 
+	DELETE FROM payment 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL, Date(p.PAYMENTTIME) AS 'PAYMENT_TIME' FROM payment p
-	JOIN bill b ON p.BILLID = b.BILLID
-	JOIN tenant t ON b.TENANTID = t.TENANTID
-	WHERE (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'))
-	AND p.ISDELETED = 0
-	AND b.ISDELETED = 0
-	AND t.ISDELETED = 0
-	LIMIT 100;
-END //
+   SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL,Date(p.PAYMENTTIME)  FROM payment p 
+   JOIN bill bi ON bi.BILLID = p.BILLID
+	JOIN tenant t ON t.TENANTID = bi.TENANTID
+   JOIN contract c ON c.TENANTID = t.TENANTID
+   JOIN room r ON r.ROOMID = c.ROOMID
+   JOIN building b ON b.BUILDINGID = r.BUILDINGID
 
--- CREATE PROCEDURE load_payment(
--- 	IN p_buildingID VARCHAR(20),
--- 	IN p_tenantid VARCHAR(20),
--- 	IN p_lastname VARCHAR(50)
--- )
--- BEGIN
--- 	DELETE FROM payment 
---     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
-
---    SELECT p.PAYMENTID,t.TENANTID,t.FIRSTNAME,t.LASTNAME,p.BILLID,p.METHOD,p.TOTAL,Date(p.PAYMENTTIME)  FROM payment p 
---    JOIN bill bi ON bi.BILLID = p.BILLID
--- 	JOIN tenant t ON t.TENANTID = bi.TENANTID
---    JOIN contract c ON c.TENANTID = t.TENANTID
---    JOIN room r ON r.ROOMID = c.ROOMID
---    JOIN building b ON b.BUILDINGID = r.BUILDINGID
-
---    WHERE b.BUILDINGID = p_buildingID
---     AND p.ISDELETED = 0
---     AND bi.ISDELETED = 0
---     AND t.ISDELETED = 0
---     AND c.ISDELETED = 0
---     AND r.ISDELETED = 0
---     AND b.ISDELETED = 0
--- 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'))
--- 	AND (p_tenantid IS NULL OR t.TENANTID = p_tenantid);
--- END//
+   WHERE b.BUILDINGID = p_buildingID
+    AND p.ISDELETED = 0
+    AND bi.ISDELETED = 0
+    AND t.ISDELETED = 0
+    AND c.ISDELETED = 0
+    AND r.ISDELETED = 0
+    AND b.ISDELETED = 0
+	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'))
+	AND (p_tenantid IS NULL OR t.TENANTID = p_tenantid);
+END//
 
 CREATE TRIGGER before_del_Bill
 BEFORE DELETE ON bill
@@ -503,23 +489,6 @@ BEGIN
     RETURN new_id;
 END//
 
-CREATE PROCEDURE load_billdetail(
-	IN p_billID VARCHAR(20)
-)
-BEGIN
-	DELETE FROM billdetail 
-    WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
-
-   SELECT bd.BILLID,bd.ID,s.SERVICENAME,bd.AMOUNT FROM billdetail bd 
-   JOIN service s ON s.SERVICEID = bd.ID
-   WHERE bd.BILLID = p_billID
-	union
-	SELECT bd.BILLID,bd.ID,w.`TYPE`
-   ,bd.AMOUNT FROM billdetail bd 
-   JOIN water_electricity w ON w.FIGUREID = bd.ID
-	WHERE bd.BILLID = p_billID;
-END//
-
 CREATE FUNCTION createBillID()
 RETURNS VARCHAR(20) 
 DETERMINISTIC
@@ -641,8 +610,8 @@ BEGIN
             pa.CAPACITY,
             COUNT(p.VEHICLEID) as CURRENT_VEHICLES,
             CASE 
-                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'FULL'
-                ELSE 'EMPTY'
+                WHEN COUNT(p.VEHICLEID) >= pa.CAPACITY THEN 'full'
+                ELSE 'empty'
             END as STATUS
         FROM PARKINGAREA pa
         LEFT JOIN PARKING p ON pa.AREAID = p.AREAID
@@ -678,7 +647,6 @@ BEGIN
     RETURN new_id;
 END //
 
--- select createParkingAreaID();
 -- New 8/4/2025
 CREATE FUNCTION createParkingAreaID()
 RETURNS VARCHAR(20) 
@@ -872,6 +840,9 @@ BEGIN
     WHERE (p_buildingid IS NULL OR pa.BUILDINGID = p_buildingid)  -- Lọc theo mã tòa nhà
     AND (p_vehicle_type IS NULL OR v.TYPE = p_vehicle_type)  -- Lọc theo loại phương tiện
     AND v.ISDELETED = 0
+    AND t.ISDELETED = 0
+    AND vup.ISDELETED = 0
+    AND p.ISDELETED = 0
     AND pa.ISDELETED = 0;
 END //
 
@@ -1438,7 +1409,7 @@ BEGIN
 	DELETE FROM contract 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT p.ROOMID
+    SELECT p.ROOMID, p.ROOMNAME 
     FROM contract c 
     JOIN room p ON c.ROOMID = p.ROOMID 
     WHERE c.TENANTID = p_tenantID 
@@ -1518,7 +1489,7 @@ SET BUILDINGID = p_buildingid,
     AREA = p_area,
     PRICE = p_price,
     STATUS = p_status
-WHERE ROOMNAME = p_roomid;
+WHERE ROOMID = room_id;
 END//
 
 
@@ -1573,7 +1544,9 @@ BEGIN
 		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
 		JOIN USER u ON u.USERNAME = b.USERNAME
 		WHERE u.USERNAME = p_username
-		AND r.ISDELETED = 0;
+		AND r.ISDELETED = 0
+        AND b.ISDELETED = 0
+        AND u.ISDELETED = 0;
 	ELSE
 
 		-- Tạo bảng tạm lưu trạng thái
@@ -1599,6 +1572,7 @@ BEGIN
 		WHERE b.USERNAME = p_username 
 		AND r.buildingid = p_buildingid
 		AND r.ISDELETED = 0
+        AND b.ISDELETED = 0
 		AND (
 			SELECT COUNT(*) 
 			FROM temp_statuses ts 
@@ -2321,7 +2295,8 @@ BEGIN
     SET @sql = CONCAT('
         SELECT 
             (@row_num := @row_num + 1) AS STT,
-            R.ROOMID, 
+            R.ROOMID,
+            R.ROOMNAME, 
             CONCAT(T.FIRSTNAME, '' '', T.LASTNAME) AS TENANTNAME,
             S.SERVICENAME, 
             S.UNITPRICE,
@@ -2337,6 +2312,7 @@ BEGIN
         AND T.ISDELETED = 0
         AND R.ISDELETED = 0
         AND S.ISDELETED = 0
+        AND US.ISDELETED = 0
         ORDER BY ', @orderClause);
 
     PREPARE stmt FROM @sql;
@@ -2511,17 +2487,16 @@ BEGIN
 END //
 
 CREATE PROCEDURE load_Tenant(
-	IN p_username VARCHAR(20),
+    in p_building varchar(20),
     IN p_lastname VARCHAR(20)
 )
 BEGIN 
-    -- Delete records that have been soft-deleted for more than 30 days
+
     DELETE FROM tenant 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
     SELECT t.* FROM tenant t
-	JOIN user u ON u.USERNAME = t.USERNAME 
-	WHERE u.USERNAME = p_username
+	WHERE t.BUILDINGID = p_building
 	AND t.ISDELETED = 0
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));
 END//
@@ -2533,7 +2508,8 @@ CREATE PROCEDURE add_Tenant(
     IN p_Birthday DATE,
     IN p_Gender VARCHAR(10),
     IN p_PhoneNumber VARCHAR(20),
-    IN p_Email VARCHAR(100)
+    IN p_Email VARCHAR(100),
+    IN p_buildingid VARCHAR(100)
 )
 BEGIN
 	DECLARE newid VARCHAR(20);
@@ -2546,7 +2522,8 @@ BEGIN
         BIRTHDAY,
         GENDER,
         PHONENUMBER,
-        EMAIL
+        EMAIL,
+        BUILDINGID
     ) VALUES (
     		p_username,
     		newid,
@@ -2555,178 +2532,7 @@ BEGIN
         p_Birthday,
         p_Gender,
         p_PhoneNumber,
-        p_Email
+        p_Email,
+        p_buildingid
     );
 END //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--- Thủ tục để kiểm tra dữ liệu và thêm bãi đậu xe mới
--- CREATE PROCEDURE sp_AddParkingArea(
---     IN p_buildingId VARCHAR(10),
---     IN p_address VARCHAR(100),
---     IN p_type VARCHAR(50),
---     IN p_capacity INT,
---     OUT p_message VARCHAR(255),
---     OUT p_success BOOLEAN
--- )
--- BEGIN
---     DECLARE new_area_id VARCHAR(10);
---     
---     -- Mặc định thành công
---     SET p_success = TRUE;
---     SET p_message = 'Thêm bãi đậu xe thành công!';
---     
---     -- Kiểm tra dữ liệu đầu vào
---     IF p_buildingId IS NULL OR p_buildingId = '' THEN
---         SET p_success = FALSE;
---         SET p_message = 'ID tòa nhà không được để trống!';
---     ELSEIF p_address IS NULL OR p_address = '' THEN
---         SET p_success = FALSE;
---         SET p_message = 'Địa chỉ không được để trống!';
---     ELSEIF p_type IS NULL OR p_type = '' THEN
---         SET p_success = FALSE;
---         SET p_message = 'Loại bãi đậu xe không được để trống!';
---     ELSEIF p_type != 'Xe máy' AND p_type != 'Ô tô' THEN
---         SET p_success = FALSE;
---         SET p_message = 'Loại bãi đậu xe không hợp lệ. Chỉ chấp nhận "Xe máy" hoặc "Ô tô"!';
---     ELSEIF p_capacity IS NULL OR p_capacity <= 0 THEN
---         SET p_success = FALSE;
---         SET p_message = 'Sức chứa phải là số nguyên dương!';
---     ELSE
---         -- Kiểm tra tòa nhà có tồn tại không
---         IF NOT EXISTS (SELECT 1 FROM BUILDING WHERE BUILDINGID = p_buildingId) THEN
---             SET p_success = FALSE;
---             SET p_message = 'ID tòa nhà không tồn tại!';
---         ELSE
---             -- Tạo ID mới
---             SET new_area_id = fn_GenerateNewParkingAreaId();
---             
---             -- Thực hiện thêm dữ liệu
---             INSERT INTO PARKINGAREA (AREAID, BUILDINGID, ADDRESS, TYPE, CAPACITY)
---             VALUES (new_area_id, p_buildingId, p_address, p_type, p_capacity);
---             
---             -- Trả về ID mới tạo trong thông báo
---             SET p_message = CONCAT('Thêm bãi đậu xe thành công! ID mới: ', new_area_id);
---         END IF;
---     END IF;
--- END //
-
--- Thủ tục để khởi tạo dữ liệu form
--- CREATE PROCEDURE sp_InitParkingAreaForm(
---     OUT p_new_area_id VARCHAR(10)
--- )
--- BEGIN
---     -- Tạo ID mới
---     SET p_new_area_id = fn_GenerateNewParkingAreaId();
--- END //
-
--- Thủ tục để cập nhật bãi đậu xe
--- CREATE PROCEDURE sp_UpdateParkingArea(
---     IN p_areaId VARCHAR(10),
---     IN p_buildingId VARCHAR(10),
---     IN p_address VARCHAR(100),
---     IN p_type VARCHAR(50),
---     IN p_capacity INT,
---     OUT p_message VARCHAR(255),
---     OUT p_success BOOLEAN
--- )
--- BEGIN
---     -- Mặc định thành công
---     SET p_success = TRUE;
---     SET p_message = 'Cập nhật bãi đậu xe thành công!';
---     
---     -- Kiểm tra dữ liệu đầu vào
---     IF p_areaId IS NULL OR p_areaId = '' THEN
---         SET p_success = FALSE;
---         SET p_message = 'ID bãi đậu xe không được để trống!';
---     ELSEIF p_buildingId IS NULL OR p_buildingId = '' THEN
---         SET p_success = FALSE;
---         SET p_message = 'ID tòa nhà không được để trống!';
---     ELSEIF p_address IS NULL OR p_address = '' THEN
---         SET p_success = FALSE;
---         SET p_message = 'Địa chỉ không được để trống!';
---     ELSEIF p_type IS NULL OR p_type = '' THEN
---         SET p_success = FALSE;
---         SET p_message = 'Loại bãi đậu xe không được để trống!';
---     ELSEIF p_type != 'Xe máy' AND p_type != 'Ô tô' THEN
---         SET p_success = FALSE;
---         SET p_message = 'Loại bãi đậu xe không hợp lệ. Chỉ chấp nhận "Xe máy" hoặc "Ô tô"!';
---     ELSEIF p_capacity IS NULL OR p_capacity <= 0 THEN
---         SET p_success = FALSE;
---         SET p_message = 'Sức chứa phải là số nguyên dương!';
---     ELSE
---         -- Kiểm tra bãi đậu xe có tồn tại không
---         IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaId) THEN
---             SET p_success = FALSE;
---             SET p_message = 'ID bãi đậu xe không tồn tại!';
---         ELSE
---             -- Kiểm tra tòa nhà có tồn tại không
---             IF NOT EXISTS (SELECT 1 FROM BUILDING WHERE BUILDINGID = p_buildingId) THEN
---                 SET p_success = FALSE;
---                 SET p_message = 'ID tòa nhà không tồn tại!';
---             ELSE
---                 -- Thực hiện cập nhật dữ liệu
---                 UPDATE PARKINGAREA
---                 SET BUILDINGID = p_buildingId, 
---                     ADDRESS = p_address, 
---                     TYPE = p_type, 
---                     CAPACITY = p_capacity
---                 WHERE AREAID = p_areaId;
---             END IF;
---         END IF;
---     END IF;
--- END //
-
--- Thủ tục để xóa bãi đậu xe
--- CREATE PROCEDURE sp_DeleteParkingArea(
---     IN p_areaId VARCHAR(10),
---     OUT p_message VARCHAR(255),
---     OUT p_success BOOLEAN
--- )
--- BEGIN
---     -- Mặc định thành công
---     SET p_success = TRUE;
---     SET p_message = 'Xóa bãi đậu xe thành công!';
---     
---     -- Kiểm tra dữ liệu đầu vào
---     IF p_areaId IS NULL OR p_areaId = '' THEN
---         SET p_success = FALSE;
---         SET p_message = 'ID bãi đậu xe không được để trống!';
---     ELSE
---         -- Kiểm tra bãi đậu xe có tồn tại không
---         IF NOT EXISTS (SELECT 1 FROM PARKINGAREA WHERE AREAID = p_areaId) THEN
---             SET p_success = FALSE;
---             SET p_message = 'ID bãi đậu xe không tồn tại!';
---         ELSE
---             -- Kiểm tra có xe đang đậu không
---             IF EXISTS (SELECT 1 FROM PARKING WHERE AREAID = p_areaId) THEN
---                 SET p_success = FALSE;
---                 SET p_message = 'Không thể xóa bãi đậu xe đang có xe!';
---             ELSE
---                 -- Thực hiện xóa dữ liệu
---                 DELETE FROM PARKINGAREA WHERE AREAID = p_areaId;
---             END IF;
---         END IF;
---     END IF;
--- END //

@@ -10,13 +10,14 @@ namespace BLL
 {
     public class RoomBLL
     {
+        
         public static List<string> RoomBLL_Load_RoomInBuilding_2(string buildingid)
         {
             return RoomAccess.RoomAccess_Load_RoomInBuilding_2(buildingid);
         }
-        public static List<string> RoomBLL_Load_RoomAddress(string Username)
+        public static List<string> RoomBLL_Load_RoomAddress(string buildingid)
         {
-            return RoomAccess.RoomAccess_Load_RoomAddress(Username);
+            return RoomAccess.RoomAccess_Load_RoomAddress(buildingid);
         }
         public static List<string> RoomBLL_Load_RoomInBuilding(string Address)
         {
@@ -64,18 +65,25 @@ namespace BLL
                 {
                     return "invalid_area_format";
                 }
+                if (areaValue > 1000) // Giới hạn diện tích tối đa 1000m2
+                {
+                    return "area_too_large";
+                }
             }
 
             if (string.IsNullOrEmpty(room.Price))
             {
                 return "required_price";
             }
-
             else
             {
                 if (!decimal.TryParse(room.Price, out decimal priceValue) || priceValue <= 0)
                 {
                     return "invalid_price_format";
+                }
+                if (priceValue > 1000000000) // Giới hạn giá thuê tối đa 1 tỷ
+                {
+                    return "price_too_large";
                 }
             }
 
@@ -100,6 +108,10 @@ namespace BLL
                 {
                     return "invalid_area_format";
                 }
+                if (areaValue > 1000) // Giới hạn diện tích tối đa 1000m2
+                {
+                    return "area_too_large";
+                }
             }
 
             if (string.IsNullOrEmpty(room.Price))
@@ -112,6 +124,10 @@ namespace BLL
                 if (!decimal.TryParse(room.Price, out decimal priceValue) || priceValue <= 0)
                 {
                     return "invalid_price_format";
+                }
+                if (priceValue > 1000000000) // Giới hạn giá thuê tối đa 1 tỷ
+                {
+                    return "price_too_large";
                 }
             }
 

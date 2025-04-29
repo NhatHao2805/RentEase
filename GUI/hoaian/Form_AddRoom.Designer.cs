@@ -382,20 +382,20 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Italic);
             this.label22.Location = new System.Drawing.Point(95, 39);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(118, 20);
+            this.label22.Size = new System.Drawing.Size(152, 25);
             this.label22.TabIndex = 122;
             this.label22.Text = "Thêm phòng mới";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold);
-            this.label23.Location = new System.Drawing.Point(93, 9);
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold);
+            this.label23.Location = new System.Drawing.Point(93, 4);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(149, 29);
+            this.label23.Size = new System.Drawing.Size(175, 35);
             this.label23.TabIndex = 123;
             this.label23.Text = "Thêm phòng";
             // 
@@ -548,7 +548,7 @@
             this.add_btn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.add_btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(230)))), ((int)(((byte)(100)))));
             this.add_btn.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(158)))), ((int)(((byte)(87)))));
-            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.add_btn.ForeColor = System.Drawing.Color.White;
             this.add_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.add_btn.Location = new System.Drawing.Point(218, 586);
@@ -620,8 +620,7 @@
             // 
             // Form_AddRoom
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(554, 748);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2GradientPanel12);

@@ -143,7 +143,7 @@ namespace GUI
                         case "dangcocgiucho":
                             DangCoc_chbox.Checked = true;
                             break;
-                        case "dahethanhopdong":
+                        case "daquahanhopdong":
                             DaHetHan_chbox.Checked = true;
                             break;
                         case "dangbaoketthuc":
@@ -198,11 +198,21 @@ namespace GUI
                     area_tb.Text = string.Empty;
                     room.Area = null;
                     return;
+                case "area_too_large":
+                    MessageBox.Show("Diện tích không được vượt quá 1000m2");
+                    area_tb.Text = string.Empty;
+                    room.Area = null;
+                    return;
                 case "required_price":
                     MessageBox.Show("Bạn chưa nhập giá thuê");
                     return;
                 case "invalid_price_format":
                     MessageBox.Show("Giá phòng không hợp lệ\nVí dụ: 2000000 hoặc 3.500000");
+                    price_tb.Text = string.Empty;
+                    room.Price = null;
+                    return;
+                case "price_too_large":
+                    MessageBox.Show("Giá thuê không được vượt quá 1 tỷ đồng");
                     price_tb.Text = string.Empty;
                     room.Price = null;
                     return;

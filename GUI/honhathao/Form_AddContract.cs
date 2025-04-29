@@ -140,7 +140,7 @@ namespace GUI
                     guna2DateTimePicker2.Value = DateTime.Today;
                     guna2DateTimePicker3.Value = DateTime.Today;
                     SoPhong.Items.Clear();
-                    List<string> a = RoomBLL.RoomBLL_Load_RoomInBuilding_2(buildingid);
+                    List<string> a = RoomBLL.RoomBLL_Load_RoomAddress(buildingid);
                     foreach (string id in a)
                     {
                         SoPhong.Items.Add(id);
@@ -200,7 +200,13 @@ namespace GUI
                     if(ListTenantID.SelectedIndex > -1) {
                         if (guna2DateTimePicker2.Value > guna2DateTimePicker3.Value)
                         {
-                            MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc");
+                            MessageBox.Show(Language.translate("invalid_"));
+                            return;
+                        }
+                        if (!ContractBLL.Check_Contract(buildingid, table_tenant.Rows[ListTenantID.SelectedIndex].Cells[0].Value.ToString(), SoPhong.Text))
+                        {
+                            MessageBox.Show(Language.translate("invalid_"));
+
                             return;
                         }
                         string result = ContractBLL.ContractBLL_add_Contract(
@@ -215,12 +221,12 @@ namespace GUI
                         GhiChu.Text);
                         if (result == "Please fill all the fields")
                         {
-                            MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                            MessageBox.Show(Language.translate("invalid_"));
                             return;
                         }
                         else if (result == "wrongDeposite")
                         {
-                            MessageBox.Show("Vui Lòng Nhập Đúng Số Tiền!");
+                            MessageBox.Show(Language.translate("invalid_"));
                             return;
                         }
                         else
@@ -230,7 +236,7 @@ namespace GUI
                         this.Close();
                     }
                     else {
-                        MessageBox.Show("Vui lòng chọn người thuê");
+                        MessageBox.Show(Language.translate("invalid_"));
                         return;
                     }
 
@@ -239,7 +245,7 @@ namespace GUI
                 case 1:
                     if (guna2DateTimePicker2.Value > guna2DateTimePicker3.Value)
                     {
-                        MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc");
+                        MessageBox.Show(Language.translate("invalid_"));
                         return;
                     }
                     string result1 = ContractBLL.ContractBLL_update_Contract(
@@ -250,11 +256,11 @@ namespace GUI
                     GhiChu.Text);
                     if (result1 == "Please fill all the fields")
                     {
-                        MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                        MessageBox.Show(Language.translate("invalid_"));
                         return;
                     }else if(result1 == "wrongDeposite")
                     {
-                        MessageBox.Show("Vui Lòng Nhập Đúng Số Tiền!");
+                        MessageBox.Show(Language.translate("invalid_"));
                         return;
                     }
                     else

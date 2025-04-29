@@ -43,7 +43,6 @@ namespace GUI
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.hienMk = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -70,7 +69,7 @@ namespace GUI
             // 
             this.labelMK_DN.AutoSize = true;
             this.labelMK_DN.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMK_DN.Location = new System.Drawing.Point(77, 240);
+            this.labelMK_DN.Location = new System.Drawing.Point(77, 256);
             this.labelMK_DN.Name = "labelMK_DN";
             this.labelMK_DN.Size = new System.Drawing.Size(85, 23);
             this.labelMK_DN.TabIndex = 13;
@@ -82,7 +81,7 @@ namespace GUI
             this.dk_lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dk_lb.Location = new System.Drawing.Point(239, 404);
+            this.dk_lb.Location = new System.Drawing.Point(264, 404);
             this.dk_lb.Name = "dk_lb";
             this.dk_lb.Size = new System.Drawing.Size(75, 23);
             this.dk_lb.TabIndex = 21;
@@ -114,20 +113,21 @@ namespace GUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(112, 82);
+            this.label1.Location = new System.Drawing.Point(127, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 38);
             this.label1.TabIndex = 123;
             this.label1.Text = "Đăng nhập";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.Controls.Add(this.dmk_lb);
             this.guna2GradientPanel1.Controls.Add(this.dkm_lb);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button1);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button2);
             this.guna2GradientPanel1.Controls.Add(this.guna2Button3);
-            this.guna2GradientPanel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2GradientPanel1.Controls.Add(this.guna2PictureBox5);
             this.guna2GradientPanel1.Controls.Add(this.textBoxTK_DN);
             this.guna2GradientPanel1.Controls.Add(this.buttonDangNhap1);
@@ -150,7 +150,7 @@ namespace GUI
             this.dmk_lb.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dmk_lb.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dmk_lb.Location = new System.Drawing.Point(695, 425);
+            this.dmk_lb.Location = new System.Drawing.Point(67, 404);
             this.dmk_lb.Name = "dmk_lb";
             this.dmk_lb.Size = new System.Drawing.Size(172, 23);
             this.dmk_lb.TabIndex = 151;
@@ -218,24 +218,13 @@ namespace GUI
             this.guna2Button3.HoverState.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button3.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button3.Image")));
             this.guna2Button3.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2Button3.Location = new System.Drawing.Point(280, 269);
+            this.guna2Button3.Location = new System.Drawing.Point(280, 285);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(33, 33);
             this.guna2Button3.TabIndex = 150;
             this.hienMk.SetToolTip(this.guna2Button3, "Ấn giữ để hiện mật khẩu");
             this.guna2Button3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass_MouseDown);
             this.guna2Button3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonXemPass_MouseUp);
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(71, 406);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(172, 21);
-            this.guna2HtmlLabel1.TabIndex = 124;
-            this.guna2HtmlLabel1.Text = "Don\'t have an account?";
-            this.guna2HtmlLabel1.Click += new System.EventHandler(this.guna2HtmlLabel1_Click);
             // 
             // guna2PictureBox5
             // 
@@ -325,7 +314,7 @@ namespace GUI
             this.textBoxMK_DN.DefaultText = "";
             this.textBoxMK_DN.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.textBoxMK_DN.ForeColor = System.Drawing.Color.Black;
-            this.textBoxMK_DN.Location = new System.Drawing.Point(71, 266);
+            this.textBoxMK_DN.Location = new System.Drawing.Point(71, 282);
             this.textBoxMK_DN.Name = "textBoxMK_DN";
             this.textBoxMK_DN.Padding = new System.Windows.Forms.Padding(15, 0, 10, 0);
             this.textBoxMK_DN.PasswordChar = '*';
@@ -344,7 +333,6 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(900, 550);
-            this.Controls.Add(this.dmk_lb);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2PictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -357,7 +345,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -375,7 +362,6 @@ namespace GUI
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlToolTip hienMk;

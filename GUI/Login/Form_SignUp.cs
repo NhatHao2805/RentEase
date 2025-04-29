@@ -18,10 +18,13 @@ namespace GUI
 
         User taikhoan = new User();
         AccountBLL taikhoanBLL = new AccountBLL();
-        public Form_SignUp()
+        private Form_Login lg;
+        public Form_SignUp(Form_Login lg)
         {
             InitializeComponent();
             loadLanguage();//New NhatHao
+            this.lg = lg;
+            guna2DateTimePicker1.MaxDate = DateTime.Now;
         }
 
         private void loadLanguage()//New NhatHao
@@ -36,6 +39,9 @@ namespace GUI
                     case "Sign_Up_Title_Form":
                         label1.Text = kvp.Value;
                         buttonDangKy.Text = kvp.Value;
+                        break;
+                    case "Sign_up_content":
+                        label22.Text = kvp.Value;
                         break;
                     case "User_info":
                         info_user.Text = kvp.Value;
@@ -70,7 +76,12 @@ namespace GUI
                     case "Account_info":
                         info_account.Text = kvp.Value;
                         break;
-                    
+                    case "nam":
+                        gt_cb.Items.Add(kvp.Value);
+                        break;
+                    case "nu":
+                        gt_cb.Items.Add(kvp.Value);
+                        break;
                 }
             }
         }
@@ -107,13 +118,54 @@ namespace GUI
 
         private void buttonXemPass2_MouseUp(object sender, MouseEventArgs e)
         {
-            textBoxMK_DK2.PasswordChar = '\0';
+            textBoxMK_DK2.PasswordChar = '*';
 
         }
 
 
+        private bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            try
+            {
+
+                if (!System.Text.RegularExpressions.Regex.IsMatch(email, pattern))
+                    return false;
+
+                // Additional checks
+                var parts = email.Split('@');
+                var localPart = parts[0];
+                var domain = parts[1];
+
+                // Check for invalid local-part conditions
+                if (localPart.StartsWith(".") || localPart.EndsWith(".") || localPart.Contains(".."))
+                    return false;
+
+                // Check for invalid domain conditions
+                if (domain.StartsWith("-") || domain.EndsWith("-") || domain.Contains(".."))
+                    return false;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void buttonDangKy_Click(object sender, EventArgs e)
         {
+            // Email validation
+            if (!IsValidEmail(email_tb.Text))
+            {
+                MessageBox.Show("Email không hợp lệ! Vui lòng nhập đúng định dạng email.");
+                return;
+            }
             if (textBoxMK_DK1.Text != textBoxMK_DK2.Text)
             {
                 MessageBox.Show("Mật khẩu không trùng khớp!");
@@ -125,7 +177,7 @@ namespace GUI
             taikhoan.Gender = gt_cb.Text;
             taikhoan.Email  = email_tb.Text;
             taikhoan.Address = diachi_tb.Text;
-            taikhoan.Birth = ns_datetimepicker.Value.ToString("yyyy-MM-dd");
+            taikhoan.Birth = ns_datetimepicker.Value.ToString("dd-MM-yyyy");
             taikhoan.PhoneNumber = sdt_tb.Text;
             taikhoan.FullName = name_tb.Text;
 
@@ -160,6 +212,7 @@ namespace GUI
             textBoxMK_DK1.Text = "";
             textBoxMK_DK2.Text = "";
             MessageBox.Show(check);
+            this.Close();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -185,7 +238,6 @@ namespace GUI
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form_Login lg = new Form_Login();
             lg.Show();
             this.Close();
         }

@@ -11,9 +11,9 @@ namespace BLL.honhathao
 {
     public class TenantBLL
     {
-       public static DataTable TenantBLL_load_Tenant(string username, string name)
+       public static DataTable TenantBLL_load_Tenant(string buildingid, string name)
         {
-            return TenantAccess.load_Tenant(username,name);
+            return TenantAccess.load_Tenant(buildingid,name);
         }
        public static (bool, string) TenantBLL_hodem(string FisrtName)
         {
@@ -98,7 +98,7 @@ namespace BLL.honhathao
             }
             return (true, "Hợp lệ");
         }
-        public static string TenantBLL_add_Tenant(string username, string FirstName, string LastName, string Birthday, string Gender, string PhoneNumber, string Email)
+        public static string TenantBLL_add_Tenant(string username, string FirstName, string LastName, string Birthday, string Gender, string PhoneNumber, string Email,string buildingid)
         {
             if (string.IsNullOrWhiteSpace(Email) && 
                 string.IsNullOrWhiteSpace(FirstName) && 
@@ -112,7 +112,7 @@ namespace BLL.honhathao
             var result = checklogic(FirstName, LastName, Birthday, Gender, PhoneNumber, Email);
             if (result.Item1)
             {
-                return TenantAccess.add_Tenant(username, FirstName, LastName, Birthday, Gender, PhoneNumber, Email);
+                return TenantAccess.add_Tenant(username, FirstName, LastName, Birthday, Gender, PhoneNumber, Email, buildingid);
             }
             else
             {
