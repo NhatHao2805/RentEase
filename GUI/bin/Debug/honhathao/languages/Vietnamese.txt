@@ -1,4 +1,6 @@
-﻿asking: Vui lòng chọn đối tượng
+﻿invalid_: Giá trị không hợp lệ
+valid_: Hợp lệ
+asking: Vui lòng chọn đối tượng
 success_: Thành công
 fail_: Thất bại
 hoidelete: Bạn có muốn xóa không?

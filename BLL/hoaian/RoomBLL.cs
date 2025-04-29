@@ -14,9 +14,9 @@ namespace BLL
         {
             return RoomAccess.RoomAccess_Load_RoomInBuilding_2(buildingid);
         }
-        public static List<string> RoomBLL_Load_RoomAddress(string Username)
+        public static List<string> RoomBLL_Load_RoomAddress(string buildingid)
         {
-            return RoomAccess.RoomAccess_Load_RoomAddress(Username);
+            return RoomAccess.RoomAccess_Load_RoomAddress(buildingid);
         }
         public static List<string> RoomBLL_Load_RoomInBuilding(string Address)
         {

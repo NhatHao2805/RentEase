@@ -2779,5 +2779,10 @@ namespace GUI
         {
 
         }
+
+        private void dgv_QLHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

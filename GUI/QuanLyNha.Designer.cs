@@ -1561,6 +1561,7 @@ namespace GUI
             this.dgv_QLHD.ThemeStyle.RowsStyle.Height = 24;
             this.dgv_QLHD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_QLHD.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgv_QLHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_QLHD_CellContentClick);
             // 
             // guna2CustomGradientPanel11
             // 

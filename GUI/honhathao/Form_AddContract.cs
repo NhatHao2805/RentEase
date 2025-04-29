@@ -140,7 +140,7 @@ namespace GUI
                     guna2DateTimePicker2.Value = DateTime.Today;
                     guna2DateTimePicker3.Value = DateTime.Today;
                     SoPhong.Items.Clear();
-                    List<string> a = RoomBLL.RoomBLL_Load_RoomInBuilding_2(buildingid);
+                    List<string> a = RoomBLL.RoomBLL_Load_RoomAddress(buildingid);
                     foreach (string id in a)
                     {
                         SoPhong.Items.Add(id);
