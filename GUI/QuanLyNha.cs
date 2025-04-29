@@ -466,13 +466,15 @@ namespace GUI
             {
                 var data = serviceUsageBLL.GetServiceUsage(filet_Service, listBuildingID.Text);
 
-               
+                if(dgv_QLHD.Rows.Count == 0)
+                {
+                    button49.Enabled = false;
+                }
                 dgvServiceInfo.DataSource = data;
                 if (dgvServiceInfo.Rows.Count == 0)
                 {
-                    button45.Enabled = false;
-                    //button49.Enabled = false;
-                    //button50.Enabled = false;
+                    button45.Enabled = false;  
+                    button50.Enabled = false;
                     //btn_xemdichvu.Enabled = false;
 
                 }

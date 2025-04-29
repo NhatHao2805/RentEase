@@ -117,26 +117,56 @@ namespace GUI.GUI_Service
 
         public void LoadComboBoxData()
         {
-            // Load danh sách khách hàng
-            TenantName.DataSource = khachHangBLL.GetKhachHangForComboBox(buildingID);
-            TenantName.DisplayMember = "Name";
-            TenantName.ValueMember = "ID";
+            try
+            {
+                // Load danh sách khách hàng
+                var tenants = khachHangBLL.GetKhachHangForComboBox(buildingID);
+                TenantName.DataSource = tenants;
+                if (tenants != null && tenants.Any())
+                {
+                    TenantName.DisplayMember = "Name";
+                    TenantName.ValueMember = "ID";
+                    TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
+                }
+                else
+                {
+                    TenantName.DataSource = null;
+                    TenantName.Items.Clear();
+                }
 
+                // Cấu hình cho Room ComboBox
+                Room.DisplayMember = "Name";  // Đảm bảo hiển thị tên phòng (ROOMNAME)
+                Room.ValueMember = "ID";      // Giá trị là ID phòng (ROOMID)
+                Room.DataSource = null;       // Reset data source
+                Room.Items.Clear();           // Clear items
 
-            TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
-
-            Room.DisplayMember = "Name";  // Đảm bảo hiển thị tên phòng (ROOMNAME)
-            Room.ValueMember = "ID";      // Giá trị là ID phòng (ROOMID)
-
-
-
-
-            // Load danh sách dịch vụ
-            Service.DataSource = dichVuBLL.GetDichVuForComboBox();
-
-            Service.DisplayMember = "Name";
-            Service.ValueMember = "ID";
-
+                // Load danh sách dịch vụ
+                var services = dichVuBLL.GetDichVuForComboBox();
+                if (services != null && services.Any())
+                {
+                    Service.DataSource = services;
+                    Service.DisplayMember = "Name";
+                    Service.ValueMember = "ID";
+                }
+                else
+                {
+                    Service.DataSource = null;
+                    Service.Items.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra khi tải dữ liệu: {ex.Message}", "Lỗi", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                // Reset tất cả ComboBox về trạng thái an toàn
+                TenantName.DataSource = null;
+                TenantName.Items.Clear();
+                Room.DataSource = null;
+                Room.Items.Clear();
+                Service.DataSource = null;
+                Service.Items.Clear();
+            }
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
