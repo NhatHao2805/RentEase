@@ -204,5 +204,10 @@ namespace GUI.honhathao
         {
 
         }
+
+        private void SoPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
