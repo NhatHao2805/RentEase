@@ -47,7 +47,7 @@ BEGIN
    
    DECLARE billdt_id_1 VARCHAR(20);
    DECLARE billdt_id_2 VARCHAR(20);
-    
+    DECLARE billdt_id_3 VARCHAR(20);
     SET v_start_date = STR_TO_DATE(CONCAT('1/', p_month, '/', YEAR(CURDATE())), '%d/%m/%Y');
     SET v_end_date = LAST_DAY(v_start_date);
     SET v_now = Date(NOW());
@@ -79,7 +79,19 @@ BEGIN
    WHERE we.TENANTID = p_tenantid
 	AND (we.FIGUREID = new_ID_0 OR we.FIGUREID = new_ID)
     AND we.ISDELETED = 0;
+    
    
+    set billdt_id_3 = createBillDetailID();
+    
+   INSERT INTO billdetail (BILLDETAIL_ID, BILLID, ID, AMOUNT)
+   SELECT billdt_id_3,new_id_2, r.ROOMID, r.PRICE
+   FROM room r
+   JOIN contract c ON c.ROOMID = r.ROOMID
+   WHERE c.TENANTID = p_tenantid
+    AND c.ISDELETED = 0
+    AND r.ISDELETED = 0;
+    
+    
    SELECT SUM(AMOUNT) INTO v_total
    FROM billdetail
    WHERE BILLID = new_id_2;
