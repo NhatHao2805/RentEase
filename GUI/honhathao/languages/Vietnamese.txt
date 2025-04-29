@@ -1,4 +1,5 @@
-﻿invalid_: Giá trị không hợp lệ
+﻿nonData: Không có dữ liệu để đăng ký
+invalid_: Giá trị không hợp lệ
 valid_: Hợp lệ
 asking: Vui lòng chọn đối tượng
 success_: Thành công

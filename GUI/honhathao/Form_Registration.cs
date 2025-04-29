@@ -89,9 +89,8 @@ namespace GUI.honhathao
                     {
                         SoPhong.Items.Add(id);
                     }
+                   
                     TrangThai.SelectedIndex = 0;
-                    TenKhachHang.SelectedIndex = 0;
-                    SoPhong.SelectedIndex = 0;
                     break;
                 case 1:
                     TenKhachHang.Items.Clear();

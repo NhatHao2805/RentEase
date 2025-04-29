@@ -114,13 +114,14 @@ namespace GUI
                     button31.Enabled = false;
                     button34.Enabled = false;
                     button37.Enabled = false;
-
+                    //button14.Enabled = false;
                 }
                 else
                 {
                     button31.Enabled = true;
                     button34.Enabled = true;
                     button37.Enabled = true;
+                    //button14.Enabled = true;
                 }
                 data.Columns.RemoveAt(0);
                 dgv_Tenant.DataSource = data;
@@ -1062,6 +1063,14 @@ namespace GUI
         }
         private void button14_Click(object sender, EventArgs e)
         {
+            if (dgv_QLP.Rows.Count > 0) {
+                MessageBox.Show(Language.translate("nonData") + " -> " + Language.translate("Room_Management"));
+                return;
+            }
+            if (dgv_Tenant.Rows.Count > 0) {
+                MessageBox.Show(Language.translate("nonData") + " -> " + Language.translate("tenant_information_title"));
+                return;
+            }
             Form_Registration f = new Form_Registration(1, listBuildingID.Text, 0, dgv_DKLT, dgv_Tenant);
             //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
@@ -2783,6 +2792,11 @@ namespace GUI
         }
 
         private void dgv_QLHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgv_Tenant_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
