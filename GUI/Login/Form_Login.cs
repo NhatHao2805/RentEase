@@ -166,6 +166,11 @@ namespace GUI
             Form_ForgotPassword forgotPasswordForm = new Form_ForgotPassword();
             OverlayManager.ShowWithOverlay(this, forgotPasswordForm);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

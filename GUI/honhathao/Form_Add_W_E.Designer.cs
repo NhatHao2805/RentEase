@@ -57,6 +57,7 @@
             this.guna2HtmlLabel13 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GradientPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
@@ -85,8 +86,9 @@
             this.SoPhong.ShadowDecoration.BorderRadius = 10;
             this.SoPhong.ShadowDecoration.Enabled = true;
             this.SoPhong.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.SoPhong.Size = new System.Drawing.Size(317, 36);
+            this.SoPhong.Size = new System.Drawing.Size(417, 36);
             this.SoPhong.TabIndex = 25;
+            this.SoPhong.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.SoPhong.SelectedIndexChanged += new System.EventHandler(this.SoPhong_SelectedIndexChanged);
             this.SoPhong.SelectionChangeCommitted += new System.EventHandler(this.SoPhong_SelectionChangeCommitted);
             // 
@@ -105,7 +107,7 @@
             this.o_e.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.o_e.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.o_e.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.o_e.Location = new System.Drawing.Point(125, 5);
+            this.o_e.Location = new System.Drawing.Point(182, 5);
             this.o_e.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.o_e.Name = "o_e";
             this.o_e.PlaceholderText = "";
@@ -115,6 +117,7 @@
             this.o_e.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.o_e.Size = new System.Drawing.Size(110, 45);
             this.o_e.TabIndex = 26;
+            this.o_e.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.o_e.Leave += new System.EventHandler(this.o_e_Leave);
             // 
             // n_e
@@ -132,7 +135,7 @@
             this.n_e.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.n_e.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.n_e.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.n_e.Location = new System.Drawing.Point(125, 5);
+            this.n_e.Location = new System.Drawing.Point(182, 5);
             this.n_e.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.n_e.Name = "n_e";
             this.n_e.PlaceholderText = "";
@@ -142,6 +145,7 @@
             this.n_e.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.n_e.Size = new System.Drawing.Size(110, 45);
             this.n_e.TabIndex = 27;
+            this.n_e.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.n_e.Leave += new System.EventHandler(this.n_e_Leave);
             // 
             // month
@@ -173,8 +177,9 @@
             this.month.ShadowDecoration.BorderRadius = 10;
             this.month.ShadowDecoration.Enabled = true;
             this.month.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.month.Size = new System.Drawing.Size(317, 36);
+            this.month.Size = new System.Drawing.Size(417, 36);
             this.month.TabIndex = 28;
+            this.month.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // n_w
             // 
@@ -191,7 +196,7 @@
             this.n_w.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.n_w.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.n_w.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.n_w.Location = new System.Drawing.Point(125, 5);
+            this.n_w.Location = new System.Drawing.Point(182, 5);
             this.n_w.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.n_w.Name = "n_w";
             this.n_w.PlaceholderText = "";
@@ -201,6 +206,7 @@
             this.n_w.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.n_w.Size = new System.Drawing.Size(110, 45);
             this.n_w.TabIndex = 33;
+            this.n_w.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.n_w.Leave += new System.EventHandler(this.n_w_Leave);
             // 
             // o_w
@@ -218,7 +224,7 @@
             this.o_w.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.o_w.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.o_w.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.o_w.Location = new System.Drawing.Point(125, 5);
+            this.o_w.Location = new System.Drawing.Point(181, 5);
             this.o_w.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.o_w.Name = "o_w";
             this.o_w.PlaceholderText = "";
@@ -228,6 +234,7 @@
             this.o_w.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.o_w.Size = new System.Drawing.Size(110, 45);
             this.o_w.TabIndex = 32;
+            this.o_w.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.o_w.Leave += new System.EventHandler(this.o_w_Leave);
             // 
             // guna2TextBox1
@@ -253,8 +260,9 @@
             this.guna2TextBox1.ShadowDecoration.BorderRadius = 10;
             this.guna2TextBox1.ShadowDecoration.Enabled = true;
             this.guna2TextBox1.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2TextBox1.Size = new System.Drawing.Size(317, 36);
+            this.guna2TextBox1.Size = new System.Drawing.Size(417, 36);
             this.guna2TextBox1.TabIndex = 39;
+            this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // guna2GradientPanel12
             // 
@@ -268,7 +276,7 @@
             this.guna2GradientPanel12.FillColor2 = System.Drawing.Color.FloralWhite;
             this.guna2GradientPanel12.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel12.Name = "guna2GradientPanel12";
-            this.guna2GradientPanel12.Size = new System.Drawing.Size(554, 70);
+            this.guna2GradientPanel12.Size = new System.Drawing.Size(654, 70);
             this.guna2GradientPanel12.TabIndex = 143;
             // 
             // exitButton
@@ -284,7 +292,7 @@
             this.exitButton.ForeColor = System.Drawing.Color.White;
             this.exitButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.exitButton.Image = global::GUI.Properties.Resources.icon_2;
-            this.exitButton.Location = new System.Drawing.Point(522, 2);
+            this.exitButton.Location = new System.Drawing.Point(622, 2);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(30, 30);
             this.exitButton.TabIndex = 20;
@@ -348,7 +356,7 @@
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FloralWhite;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(2, 71);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(550, 508);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(650, 489);
             this.guna2GradientPanel1.TabIndex = 144;
             this.guna2GradientPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2GradientPanel1_Paint);
             // 
@@ -362,12 +370,12 @@
             this.guna2GradientPanel7.Controls.Add(this.n_w);
             this.guna2GradientPanel7.FillColor = System.Drawing.Color.White;
             this.guna2GradientPanel7.FillColor2 = System.Drawing.Color.GhostWhite;
-            this.guna2GradientPanel7.Location = new System.Drawing.Point(285, 242);
+            this.guna2GradientPanel7.Location = new System.Drawing.Point(335, 242);
             this.guna2GradientPanel7.Name = "guna2GradientPanel7";
             this.guna2GradientPanel7.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientPanel7.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel7.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel7.Size = new System.Drawing.Size(255, 60);
+            this.guna2GradientPanel7.Size = new System.Drawing.Size(305, 60);
             this.guna2GradientPanel7.TabIndex = 149;
             // 
             // guna2HtmlLabel10
@@ -387,15 +395,16 @@
             this.guna2GradientPanel6.BorderRadius = 10;
             this.guna2GradientPanel6.BorderThickness = 1;
             this.guna2GradientPanel6.Controls.Add(this.guna2HtmlLabel9);
+            this.guna2GradientPanel6.Controls.Add(this.guna2TextBox2);
             this.guna2GradientPanel6.Controls.Add(this.o_w);
             this.guna2GradientPanel6.FillColor = System.Drawing.Color.White;
             this.guna2GradientPanel6.FillColor2 = System.Drawing.Color.GhostWhite;
-            this.guna2GradientPanel6.Location = new System.Drawing.Point(285, 170);
+            this.guna2GradientPanel6.Location = new System.Drawing.Point(335, 170);
             this.guna2GradientPanel6.Name = "guna2GradientPanel6";
             this.guna2GradientPanel6.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientPanel6.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel6.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel6.Size = new System.Drawing.Size(255, 60);
+            this.guna2GradientPanel6.Size = new System.Drawing.Size(305, 60);
             this.guna2GradientPanel6.TabIndex = 148;
             // 
             // guna2HtmlLabel9
@@ -423,7 +432,7 @@
             this.guna2GradientPanel8.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientPanel8.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel8.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel8.Size = new System.Drawing.Size(525, 60);
+            this.guna2GradientPanel8.Size = new System.Drawing.Size(625, 60);
             this.guna2GradientPanel8.TabIndex = 147;
             // 
             // guna2HtmlLabel14
@@ -451,7 +460,7 @@
             this.guna2GradientPanel5.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientPanel5.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel5.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel5.Size = new System.Drawing.Size(525, 60);
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(625, 60);
             this.guna2GradientPanel5.TabIndex = 144;
             // 
             // guna2HtmlLabel11
@@ -479,7 +488,7 @@
             this.guna2GradientPanel4.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientPanel4.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel4.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel4.Size = new System.Drawing.Size(255, 60);
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(305, 60);
             this.guna2GradientPanel4.TabIndex = 143;
             // 
             // guna2HtmlLabel12
@@ -508,7 +517,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.guna2Button1.Location = new System.Drawing.Point(220, 395);
+            this.guna2Button1.Location = new System.Drawing.Point(270, 390);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.BorderRadius = 15;
             this.guna2Button1.ShadowDecoration.Depth = 50;
@@ -534,7 +543,7 @@
             this.guna2GradientPanel3.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientPanel3.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel3.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel3.Size = new System.Drawing.Size(255, 60);
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(305, 60);
             this.guna2GradientPanel3.TabIndex = 142;
             // 
             // guna2HtmlLabel13
@@ -562,7 +571,7 @@
             this.guna2GradientPanel2.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientPanel2.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(525, 60);
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(625, 60);
             this.guna2GradientPanel2.TabIndex = 139;
             // 
             // guna2HtmlLabel15
@@ -575,11 +584,39 @@
             this.guna2HtmlLabel15.TabIndex = 1;
             this.guna2HtmlLabel15.Text = "Khách thuê:";
             // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2TextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2TextBox2.BorderRadius = 10;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Location = new System.Drawing.Point(-195, 5);
+            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.ShadowDecoration.BorderRadius = 10;
+            this.guna2TextBox2.ShadowDecoration.Enabled = true;
+            this.guna2TextBox2.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.guna2TextBox2.Size = new System.Drawing.Size(110, 45);
+            this.guna2TextBox2.TabIndex = 26;
+            this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.guna2TextBox2.Leave += new System.EventHandler(this.o_e_Leave);
+            // 
             // Form_Add_W_E
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 582);
+            this.ClientSize = new System.Drawing.Size(654, 560);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2GradientPanel12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -638,5 +675,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel10;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
     }
 }

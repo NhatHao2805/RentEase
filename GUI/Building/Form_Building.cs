@@ -336,5 +336,20 @@ namespace GUI.BuildingManagement
             LoadBuildingData();
             guna2TextBox3.Text = "";
         }
+
+        private void panelAddBuilding_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void numFloors_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numRooms_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
