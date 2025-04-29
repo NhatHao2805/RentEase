@@ -128,7 +128,6 @@ namespace GUI.honhathao
             dgv_we.Columns[6].Width = 100;
             dgv_we.Columns[7].Width = 100;
             dgv_we.Columns[8].Width = 100;
-            //dgv_we.Columns[9].Width = 100;
             dgv_we.ScrollBars = ScrollBars.Both;
 
         }

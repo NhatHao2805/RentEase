@@ -84,6 +84,7 @@ namespace GUI.honhathao
             
             if(tenantID != null)
             {
+                Console.WriteLine("Tenant ID: hi " + tenantID);
                 if (o_w.Text.Length == 0 || n_w.Text.Length == 0 || o_e.Text.Length == 0 || n_e.Text.Length == 0 || month.Text.Length == 0)
                 {
                     MessageBox.Show(Language.translate("invalid_"));
@@ -112,7 +113,7 @@ namespace GUI.honhathao
 
         private void SoPhong_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            System.Data.DataTable data = TenantBLL.TenantBLL_load_Tenant_by_RoomID(SoPhong.Text);
+            System.Data.DataTable data = TenantBLL.TenantBLL_load_Tenant_by_RoomID(buildingid,SoPhong.Text);
             DataRow row = data.Rows[0];
             StringBuilder sb = new StringBuilder();
 

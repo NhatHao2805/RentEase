@@ -463,7 +463,7 @@ SELECT
     we.RECORD_DATE,
     we.TYPE
 FROM water_electricity we
-	JOIN tenant t ON t.TENANTID = we.TENANTID
+JOIN tenant t ON t.TENANTID = we.TENANTID
 	JOIN contract c ON c.TENANTID = t.TENANTID
     JOIN room r ON r.ROOMID = c.ROOMID 
     JOIN building b ON b.BUILDINGID = r.BUILDINGID
@@ -504,13 +504,16 @@ BEGIN
 END//
 
 CREATE PROCEDURE load_tenant_by_roomid(
-	IN p_room_id VARCHAR(20)
+	IN p_room_id VARCHAR(20),
+    IN p_building_id VARCHAR(20)
 )
 BEGIN
    SELECT t.TENANTID,t.FIRSTNAME,t.LASTNAME FROM tenant t
 	JOIN contract c ON c.TENANTID = t.TENANTID
 	Join room r on r.ROOMID = c.ROOMID
+    join building b on b.BUILDINGID = r.BUILDINGID
 	WHERE r.ROOMNAME = p_room_id
+    AND b.BUILDINGID = p_building_id
     AND t.ISDELETED = 0
     AND c.ISDELETED = 0
     AND r.ISDELETED = 0;
@@ -1454,7 +1457,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `proc_addRoom`(
     IN p_convenient VARCHAR(200),
     IN p_area FLOAT,
     IN p_price FLOAT,
-    IN p_status VARCHAR(50)
+    IN p_status VARCHAR(100)
 )
 BEGIN
     DECLARE new_room_id VARCHAR(10);
@@ -2081,6 +2084,8 @@ BEGIN
     WHERE BUILDINGID = p_building_id
     AND ROOMNAME = p_id_room;
     
+    UPDATE ROOM SET STATUS = 'dango' WHERE ROOMID = room_id;
+    
     SELECT r.PRICE INTO v_monthrent
     FROM room r 
     JOIN building b ON b.BUILDINGID = r.BUILDINGID 
@@ -2118,10 +2123,18 @@ CREATE PROCEDURE del_Contract(
     IN contract_id VARCHAR(20)
 )
 BEGIN
+    DECLARE p_roomid VARCHAR(10);
+
     UPDATE contract
     SET ISDELETED = 1,
         DELETED_DATE = CURDATE()
     WHERE contract.CONTRACTID = contract_id;
+    
+    SELECT ROOMID INTO p_roomid FROM CONTRACT WHERE CONTRACT = contract_id;
+    UPDATE ROOM
+    SET ISDELETED = 0,
+		STATUS = 'dangtrong'
+	WHERE ROOMID = p_roomid;
 END//
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `load_Contract_filter`(
@@ -2480,10 +2493,24 @@ CREATE PROCEDURE del_Tenant(
     IN p_TenantID VARCHAR(50)
 ) 
 BEGIN
+	DECLARE p_roomid VARCHAR(10);
+
     UPDATE tenant
     SET ISDELETED = 1,
         DELETED_DATE = CURDATE()
     WHERE TENANTID = p_TenantID;
+    
+     UPDATE contract
+    SET ISDELETED = 1,
+        DELETED_DATE = CURDATE()
+    WHERE TENANTID = p_TenantID;
+    
+    SELECT ROOMID INTO p_roomid FROM CONTRACT WHERE TENANTID = p_TenantID;
+    UPDATE ROOM
+    SET ISDELETED = 0,
+		STATUS = 'dangtrong'
+	WHERE ROOMID = p_roomid;
+		
 END //
 
 CREATE PROCEDURE load_Tenant(

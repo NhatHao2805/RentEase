@@ -1,94 +1,70 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\",
+  "WorkspaceRootPath": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\honhathao\\form_add_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_add_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-temp\\rentease-temp\\gui\\gui_service\\addservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\gui_service\\addservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\honhathao\\form_add_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-temp\\rentease-temp\\gui\\gui_service\\addservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\gui_service\\addservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|c:\\users\\acer\\downloads\\rentease-temp\\rentease-temp\\dal\\honhathao\\tenantaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\honhathao\\tenantaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|c:\\users\\acer\\downloads\\rentease-temp\\rentease-temp\\bll\\honhathao\\tenantbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\honhathao\\tenantbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\gui\\honhathao\\form_add_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_add_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-temp1\\rentease-temp\\gui\\honhathao\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-temp\\rentease-temp\\gui\\honhathao\\form_add_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_add_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\honhathao\\form_addpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_addpayment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\gui\\honhathao\\form_registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\hoaian\\form_updateroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\hoaian\\form_updateroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\hoaian\\form_addroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\hoaian\\form_addroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\honhathao\\languages\\vietnamese.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\languages\\vietnamese.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\login\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\login\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\login\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\login\\form_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\building\\form_building.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\building\\form_building.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\building\\form_building.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\building\\form_building.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\gui_service\\fingerprintmanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\databaseaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\honhathao\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\bll\\hoaian\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0EDDF51-40BD-489E-ACF0-367EA0394C9F}|BLL\\BLL.csproj|solutionrelative:bll\\hoaian\\roombll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\dal\\hoaian\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\dal\\hoaian\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FC2C614-C3B2-45F1-8028-233A79FE7F26}|DAL\\DAL.csproj|solutionrelative:dal\\hoaian\\roomaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\honhathao\\languages\\botchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\languages\\botchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\gui\\honhathao\\form_registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_registration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\honhathao\\languages\\botchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\languages\\botchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-temp\\rentease-temp\\gui\\honhathao\\form_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\gui\\honhathao\\languages\\english.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-temp\\rentease-temp\\gui\\honhathao\\form_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_w_e.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|c:\\users\\acer\\downloads\\rentease-temp\\rentease-temp\\gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\quanlynha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\gui\\honhathao\\languages\\english.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\languages\\english.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\gui\\honhathao\\languages\\vietnamese.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\languages\\vietnamese.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\gui\\honhathao\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5C8D2763-91F5-414A-BC00-903943EB1009}|GUI\\GUI.csproj|solutionrelative:gui\\honhathao\\form_addcontract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,261 +74,211 @@
       "DocumentGroups": [
         {
           "DockedWidth": 140,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "Vietnamese.txt",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\languages\\Vietnamese.txt",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\languages\\Vietnamese.txt",
               "RelativeDocumentMoniker": "GUI\\honhathao\\languages\\Vietnamese.txt",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\languages\\Vietnamese.txt",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\languages\\Vietnamese.txt",
               "RelativeToolTip": "GUI\\honhathao\\languages\\Vietnamese.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2025-04-27T18:18:18.369Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 13,
               "Title": "English.txt",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\languages\\English.txt",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\languages\\English.txt",
               "RelativeDocumentMoniker": "GUI\\honhathao\\languages\\English.txt",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\languages\\English.txt",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\languages\\English.txt",
               "RelativeToolTip": "GUI\\honhathao\\languages\\English.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAAAJ4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
               "WhenOpened": "2025-04-27T18:18:17.53Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "QuanLyNha.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\QuanLyNha.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\QuanLyNha.cs",
               "RelativeToolTip": "GUI\\QuanLyNha.cs",
-              "ViewState": "AgIAAPAEAAAAAAAAAAAEwP0EAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAM0BAAAAAAAAAAAxwN8BAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-28T05:39:50.999Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "QuanLyNha.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\QuanLyNha.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\QuanLyNha.cs",
               "RelativeDocumentMoniker": "GUI\\QuanLyNha.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\QuanLyNha.cs [Design]",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\QuanLyNha.cs [Design]",
+              "RelativeToolTip": "GUI\\QuanLyNha.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-27T15:38:52.881Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form_AddContract.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_AddContract.cs",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_AddContract.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_AddContract.cs [Design]",
-              "RelativeToolTip": "GUI\\honhathao\\Form_AddContract.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "AddService.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\gui_service\\AddService.cs",
+              "RelativeDocumentMoniker": "GUI\\gui_service\\AddService.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\gui_service\\AddService.cs",
+              "RelativeToolTip": "GUI\\gui_service\\AddService.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAwwHoAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T18:30:06.43Z",
+              "WhenOpened": "2025-04-29T09:18:45.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddService.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\gui_service\\AddService.cs",
+              "RelativeDocumentMoniker": "GUI\\gui_service\\AddService.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\gui_service\\AddService.cs [Design]",
+              "RelativeToolTip": "GUI\\gui_service\\AddService.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T09:18:43.969Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Form_AddPayment.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_AddPayment.cs",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_AddPayment.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\honhathao\\Form_AddPayment.cs [Design]",
+              "Title": "TenantBLL.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\BLL\\honhathao\\TenantBLL.cs",
+              "RelativeDocumentMoniker": "BLL\\honhathao\\TenantBLL.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\BLL\\honhathao\\TenantBLL.cs",
+              "RelativeToolTip": "BLL\\honhathao\\TenantBLL.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAowJQAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T06:09:53.212Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form_Add_W_E.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_Add_W_E.cs",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_Add_W_E.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_Add_W_E.cs [Design]",
-              "RelativeToolTip": "GUI\\honhathao\\Form_Add_W_E.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T02:53:42.15Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form_UpdateRoom.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\hoaian\\Form_UpdateRoom.cs",
-              "RelativeDocumentMoniker": "GUI\\hoaian\\Form_UpdateRoom.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\hoaian\\Form_UpdateRoom.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T06:03:43.199Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Form_AddRoom.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\hoaian\\Form_AddRoom.cs",
-              "RelativeDocumentMoniker": "GUI\\hoaian\\Form_AddRoom.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\hoaian\\Form_AddRoom.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T06:02:57.137Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form_Login.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\Login\\Form_Login.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\Form_Login.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\Login\\Form_Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T05:59:09.575Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Form_Login.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\Login\\Form_Login.cs",
-              "RelativeDocumentMoniker": "GUI\\Login\\Form_Login.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\Login\\Form_Login.cs",
-              "RelativeToolTip": "GUI\\Login\\Form_Login.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAASwKwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T05:59:44.077Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Form_Building.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\Building\\Form_Building.cs",
-              "RelativeDocumentMoniker": "GUI\\Building\\Form_Building.cs",
-              "ToolTip": "D:\\HOC\\CN PHAN MEM\\D\u1EF1 \u00E1n\\RentEase\\GUI\\Building\\Form_Building.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T05:55:07.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Form_Building.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\Building\\Form_Building.cs",
-              "RelativeDocumentMoniker": "GUI\\Building\\Form_Building.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\Building\\Form_Building.cs",
-              "RelativeToolTip": "GUI\\Building\\Form_Building.cs",
-              "ViewState": "AgIAAEQBAAAAAAAAAAAvwFUBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T05:56:00.261Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FingerprintManagementForm.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\gui_service\\FingerprintManagementForm.cs",
-              "RelativeDocumentMoniker": "GUI\\gui_service\\FingerprintManagementForm.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\gui_service\\FingerprintManagementForm.cs",
-              "RelativeToolTip": "GUI\\gui_service\\FingerprintManagementForm.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T04:26:01.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "FingerprintManagementForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\gui_service\\FingerprintManagementForm.cs",
-              "RelativeDocumentMoniker": "GUI\\gui_service\\FingerprintManagementForm.cs",
-              "ToolTip": "D:\\RentEaseTDT\\RentEase\\GUI\\gui_service\\FingerprintManagementForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T04:25:54.738Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DatabaseAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\DAL\\DatabaseAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\DatabaseAccess.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\DAL\\DatabaseAccess.cs",
-              "RelativeToolTip": "DAL\\DatabaseAccess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T03:46:48.369Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BotChat.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\languages\\BotChat.cs",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\languages\\BotChat.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\languages\\BotChat.cs",
-              "RelativeToolTip": "GUI\\honhathao\\languages\\BotChat.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T02:32:46.42Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Form_AddContract.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_AddContract.cs",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_AddContract.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_AddContract.cs",
-              "RelativeToolTip": "GUI\\honhathao\\Form_AddContract.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAswI4AAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T18:30:07.695Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form_Add_W_E.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_Add_W_E.cs",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_Add_W_E.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\Form_Add_W_E.cs",
-              "RelativeToolTip": "GUI\\honhathao\\Form_Add_W_E.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAwwGcAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T02:53:44.805Z",
+              "WhenOpened": "2025-04-29T09:08:42.411Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RoomBLL.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\BLL\\HoaiAn\\RoomBLL.cs",
-              "RelativeDocumentMoniker": "BLL\\HoaiAn\\RoomBLL.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\BLL\\HoaiAn\\RoomBLL.cs",
-              "RelativeToolTip": "BLL\\HoaiAn\\RoomBLL.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAMwBAAAAA7AAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "TenantAccess.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\DAL\\honhathao\\TenantAccess.cs",
+              "RelativeDocumentMoniker": "DAL\\honhathao\\TenantAccess.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\DAL\\honhathao\\TenantAccess.cs",
+              "RelativeToolTip": "DAL\\honhathao\\TenantAccess.cs",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAAwK0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T02:53:54.11Z"
+              "WhenOpened": "2025-04-29T09:08:17.414Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "BotChat.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\GUI\\honhathao\\languages\\BotChat.cs",
-              "RelativeDocumentMoniker": "GUI\\honhathao\\languages\\BotChat.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-HoaiAn (1)\\RentEase-HoaiAn\\GUI\\honhathao\\languages\\BotChat.cs [Design]",
-              "RelativeToolTip": "..\\..\\RentEase-HoaiAn (1)\\RentEase-HoaiAn\\GUI\\honhathao\\languages\\BotChat.cs [Design]",
+              "DocumentIndex": 11,
+              "Title": "Form_W_E.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_W_E.cs",
+              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_W_E.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_W_E.cs",
+              "RelativeToolTip": "GUI\\honhathao\\Form_W_E.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAADwv24AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T02:32:44.291Z"
+              "WhenOpened": "2025-04-29T08:59:30.852Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 10,
+              "Title": "Form_W_E.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_W_E.cs",
+              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_W_E.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_W_E.cs [Design]",
+              "RelativeToolTip": "GUI\\honhathao\\Form_W_E.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T08:59:29.611Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form_Add_W_E.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_Add_W_E.cs",
+              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_Add_W_E.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_Add_W_E.cs [Design]",
+              "RelativeToolTip": "GUI\\honhathao\\Form_Add_W_E.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T08:34:29.326Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "RoomAccess.cs",
-              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\DAL\\HoaiAn\\RoomAccess.cs",
-              "RelativeDocumentMoniker": "DAL\\HoaiAn\\RoomAccess.cs",
-              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp1\\RentEase-temp\\DAL\\HoaiAn\\RoomAccess.cs",
-              "RelativeToolTip": "DAL\\HoaiAn\\RoomAccess.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAApwJQAAAA+AAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\DAL\\hoaian\\RoomAccess.cs",
+              "RelativeDocumentMoniker": "DAL\\hoaian\\RoomAccess.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\DAL\\hoaian\\RoomAccess.cs",
+              "RelativeToolTip": "DAL\\hoaian\\RoomAccess.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAwHoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T17:53:23.391Z"
+              "WhenOpened": "2025-04-29T08:19:14.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form_Registration.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_Registration.cs",
+              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_Registration.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_Registration.cs",
+              "RelativeToolTip": "GUI\\honhathao\\Form_Registration.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAQwFwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T07:01:01.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form_Registration.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_Registration.cs",
+              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_Registration.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_Registration.cs [Design]",
+              "RelativeToolTip": "GUI\\honhathao\\Form_Registration.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T07:00:56.125Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form_Add_W_E.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_Add_W_E.cs",
+              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_Add_W_E.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_Add_W_E.cs",
+              "RelativeToolTip": "GUI\\honhathao\\Form_Add_W_E.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAewHMAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T06:27:20.784Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Form_AddContract.cs",
+              "DocumentMoniker": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_AddContract.cs",
+              "RelativeDocumentMoniker": "GUI\\honhathao\\Form_AddContract.cs",
+              "ToolTip": "C:\\Users\\ACER\\Downloads\\RentEase-temp\\RentEase-temp\\GUI\\honhathao\\Form_AddContract.cs",
+              "RelativeToolTip": "GUI\\honhathao\\Form_AddContract.cs",
+              "ViewState": "AgIAALIAAAAAAAAAAAAiwNAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T18:30:07.695Z"
             }
           ]
         },

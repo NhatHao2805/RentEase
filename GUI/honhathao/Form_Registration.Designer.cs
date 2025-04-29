@@ -98,6 +98,7 @@
             this.SoPhong.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.SoPhong.Size = new System.Drawing.Size(320, 36);
             this.SoPhong.TabIndex = 26;
+            this.SoPhong.SelectedIndexChanged += new System.EventHandler(this.SoPhong_SelectedIndexChanged);
             // 
             // TrangThai
             // 
