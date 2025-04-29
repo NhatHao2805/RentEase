@@ -89,9 +89,9 @@ namespace GUI.honhathao
                     {
                         SoPhong.Items.Add(id);
                     }
-                    //TenKhachHang.SelectedIndex = 0;
-                    //SoPhong.SelectedIndex = 0;
-                    //TrangThai.SelectedIndex = 0;
+                    TrangThai.SelectedIndex = 0;
+                    TenKhachHang.SelectedIndex = 0;
+                    SoPhong.SelectedIndex = 0;
                     break;
                 case 1:
                     TenKhachHang.Items.Clear();
@@ -152,7 +152,13 @@ namespace GUI.honhathao
             switch (control)
             {
                 case 0:
-                    if (ngayDk.Value > ngayHethan.Value)
+                    
+                    if (ngayDk.Value > ngayHethan.Value 
+                        || tenant.Rows[TenKhachHang.SelectedIndex].Cells[0].Value.ToString().Trim() == " " 
+                        || SoPhong.Text.Trim() == ""
+                        || SoPhong.Text.Trim() == ""
+                        || SoPhong.Text.Trim() == ""
+                        )
                     {
                         MessageBox.Show(Language.translate("invalid_"));
                         return;
