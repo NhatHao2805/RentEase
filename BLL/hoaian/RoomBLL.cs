@@ -10,7 +10,6 @@ namespace BLL
 {
     public class RoomBLL
     {
-        
         public static List<string> RoomBLL_Load_RoomInBuilding_2(string buildingid)
         {
             return RoomAccess.RoomAccess_Load_RoomInBuilding_2(buildingid);

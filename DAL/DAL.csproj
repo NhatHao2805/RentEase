@@ -135,13 +135,13 @@
     <Compile Include="hoaian\RoomAccess.cs" />
     <Compile Include="hoaian\VehicleAccess.cs" />
     <Compile Include="honhathao\BillAccess.cs" />
-    <Compile Include="honhathao\ContractAccess.cs" />
     <Compile Include="honhathao\KeyAccess.cs" />
     <Compile Include="honhathao\TenantServiceAccess.cs" />
     <Compile Include="honhathao\PaymentAccess.cs" />
     <Compile Include="DatabaseAccess.cs" />
     <Compile Include="honhathao\BuildingAccess.cs" />
     <Compile Include="honhathao\BillDetailAccess.cs" />
+    <Compile Include="honhathao\ContractAccess.cs" />
     <Compile Include="honhathao\RegistrationAccess.cs" />
     <Compile Include="honhathao\TenantAccess.cs" />
     <Compile Include="honhathao\TenantHistoryAccess.cs" />

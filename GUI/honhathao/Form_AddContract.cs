@@ -203,12 +203,6 @@ namespace GUI
                             MessageBox.Show(Language.translate("invalid_"));
                             return;
                         }
-                        if (!ContractBLL.Check_Contract(buildingid, table_tenant.Rows[ListTenantID.SelectedIndex].Cells[0].Value.ToString(), SoPhong.Text))
-                        {
-                            MessageBox.Show(Language.translate("invalid_"));
-
-                            return;
-                        }
                         string result = ContractBLL.ContractBLL_add_Contract(
                         buildingid,
                         SoPhong.Text,

@@ -9,10 +9,6 @@ namespace BLL
 {
     public class ContractBLL
     {
-        public static bool Check_Contract(string BuildingID, string TenantID, string RoomName)
-        {
-            return ContractAccess.Check_Contract(BuildingID, TenantID, RoomName);
-        }
         public static List<string> GetRoomsByTenant(string tenantID)
         {
             return ContractAccess.GetRoomsByTenantID(tenantID);

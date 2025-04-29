@@ -114,6 +114,7 @@ namespace GUI
                     button31.Enabled = false;
                     button34.Enabled = false;
                     button37.Enabled = false;
+
                 }
                 else
                 {
@@ -139,7 +140,7 @@ namespace GUI
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-        }
+            }
         private void loadTenantHistory(string name)
         {
             try
@@ -1002,7 +1003,7 @@ namespace GUI
                 {
                     RegistrationBLL.RegistrationBLL_del_registration(dgv_DKLT.SelectedRows[0].Cells[0].Value.ToString());
                     MessageBox.Show("Xóa thành công");
-                    loadInfo();
+                    loadRegistration(null);
                 }
             }
             catch (Exception ex)
@@ -1061,24 +1062,11 @@ namespace GUI
         }
         private void button14_Click(object sender, EventArgs e)
         {
-            if (dgv_QLP.Rows.Count == 0) {
-                MessageBox.Show(Language.translate("nonData") + " -> " + Language.translate("Room_Management"));
-                return;
-            }
-            if (dgv_Tenant.Rows.Count == 0) {
-                MessageBox.Show(Language.translate("nonData") + " -> " + Language.translate("tenant_information_title"));
-                return;
-            }
-            if (dgv_QLHD.Rows.Count == 0)
-            {
-                MessageBox.Show(Language.translate("nonData") + " -> " + Language.translate("contract_management"));
-                return;
-            }
             Form_Registration f = new Form_Registration(1, listBuildingID.Text, 0, dgv_DKLT, dgv_Tenant);
-
+            //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
 
-            loadInfo();
+            loadRegistration(null);
         }
         private void timkiem_ttenant_Click(object sender, EventArgs e)
         {
@@ -1097,7 +1085,7 @@ namespace GUI
 
                     OverlayManager.ShowWithOverlay(this, f);
 
-                    loadInfo();
+                    loadRegistration(null);
                 }
                 else
                 {
@@ -1176,7 +1164,7 @@ namespace GUI
             Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username,listBuildingID.Text);
             //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
-            loadInfo();
+            loadTenant(null);
         }
 
         private void button25_Click_1(object sender, EventArgs e)
@@ -1281,7 +1269,7 @@ namespace GUI
                 //f.ShowDialog();
                 OverlayManager.ShowWithOverlay(this, f);
 
-                loadInfo();
+                loadTenant(null);
             }
             catch (Exception ex)
             {
@@ -2795,11 +2783,6 @@ namespace GUI
         }
 
         private void dgv_QLHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgv_Tenant_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

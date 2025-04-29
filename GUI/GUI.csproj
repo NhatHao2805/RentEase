@@ -191,23 +191,11 @@
     <Compile Include="hoaian\Form_UpdateRoom.Designer.cs">
       <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="honhathao\Form_AddContract.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="honhathao\Form_AddContract.Designer.cs">
-      <DependentUpon>Form_AddContract.cs</DependentUpon>
-    </Compile>
     <Compile Include="honhathao\Form_AddPayment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="honhathao\Form_AddPayment.Designer.cs">
       <DependentUpon>Form_AddPayment.cs</DependentUpon>
-    </Compile>
-    <Compile Include="honhathao\Form_Add_W_E.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="honhathao\Form_Add_W_E.Designer.cs">
-      <DependentUpon>Form_Add_W_E.cs</DependentUpon>
     </Compile>
     <Compile Include="honhathao\Form_Payment.cs">
       <SubType>Form</SubType>
@@ -220,6 +208,12 @@
     </Compile>
     <Compile Include="honhathao\Form_W_E.Designer.cs">
       <DependentUpon>Form_W_E.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_Add_W_E.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_Add_W_E.Designer.cs">
+      <DependentUpon>Form_Add_W_E.cs</DependentUpon>
     </Compile>
     <Compile Include="honhathao\Form_BillDetail.cs">
       <SubType>Form</SubType>
@@ -244,6 +238,12 @@
     </Compile>
     <Compile Include="honhathao\Form_AddBuilding.Designer.cs">
       <DependentUpon>Form_AddBuilding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="honhathao\Form_AddContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="honhathao\Form_AddContract.Designer.cs">
+      <DependentUpon>Form_AddContract.cs</DependentUpon>
     </Compile>
     <Compile Include="honhathao\Form_Registration.cs">
       <SubType>Form</SubType>
@@ -347,12 +347,6 @@
     <EmbeddedResource Include="hoaian\Form_UpdateRoom.resx">
       <DependentUpon>Form_UpdateRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="honhathao\Form_AddContract.resx">
-      <DependentUpon>Form_AddContract.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="honhathao\Form_Add_W_E.resx">
-      <DependentUpon>Form_Add_W_E.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="honhathao\languages\BotChat.resx">
       <DependentUpon>BotChat.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +409,9 @@
     <EmbeddedResource Include="honhathao\Form_Payment.resx">
       <DependentUpon>Form_Payment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_Add_W_E.resx">
+      <DependentUpon>Form_Add_W_E.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="honhathao\Form_BillDetail.resx">
       <DependentUpon>Form_BillDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="honhathao\Form_AddBuilding.resx">
       <DependentUpon>Form_AddBuilding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="honhathao\Form_AddContract.resx">
+      <DependentUpon>Form_AddContract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="honhathao\Form_Registration.resx">
       <DependentUpon>Form_Registration.cs</DependentUpon>

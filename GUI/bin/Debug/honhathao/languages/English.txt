@@ -1,5 +1,4 @@
-﻿nonData: No data to register 
-invalid_: Value Invalid
+﻿invalid_: Value Invalid
 valid_: Valid
 asking: Please select an object
 success_: Success

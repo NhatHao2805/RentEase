@@ -160,7 +160,7 @@ CREATE TABLE ROOM (
     CONVENIENT           VARCHAR(200) COMMENT 'Tiện ích',
     AREA                 NUMERIC COMMENT 'Diện tích',
     PRICE                NUMERIC COMMENT 'Giá',
-    STATUS               VARCHAR(100) COMMENT 'Trạng thái',
+    STATUS               VARCHAR(50) COMMENT 'Trạng thái',
     ISDELETED			 INT DEFAULT 0 COMMENT 'Đánh dấu đã xóa',
     DELETED_DATE 		 DATE COMMENT 'Ngày bắt đầu xóa (đếm ngược 30 ngày)',
     PRIMARY KEY (ROOMID)

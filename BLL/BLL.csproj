@@ -191,7 +191,6 @@
     <Compile Include="hoaian\RoomBLL.cs" />
     <Compile Include="hoaian\VehicleBLL.cs" />
     <Compile Include="honhathao\BillBLL.cs" />
-    <Compile Include="honhathao\ContractBLL.cs" />
     <Compile Include="honhathao\KeyBLL.cs" />
     <Compile Include="honhathao\Language.cs" />
     <Compile Include="honhathao\TenantServiceBLL.cs" />
@@ -199,6 +198,7 @@
     <Compile Include="honhathao\Payment.cs" />
     <Compile Include="honhathao\BuildingBLL.cs" />
     <Compile Include="honhathao\BillDetailBLL.cs" />
+    <Compile Include="honhathao\ContractBLL.cs" />
     <Compile Include="honhathao\RegistrationBLL.cs" />
     <Compile Include="honhathao\TenantBLL.cs" />
     <Compile Include="honhathao\TenantHistoryBLL.cs" />
