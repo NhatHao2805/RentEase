@@ -196,7 +196,6 @@ namespace GUI.honhathao
                     else
                     {
                         MessageBox.Show(Language.translate("fail_"));
-                   
                     }
                     break;
             }

@@ -71,6 +71,7 @@ namespace GUI
 
         private void loadInfo()
         {
+
             load_QLP();
             load_PA();
             load_Contract(0, null);
@@ -96,6 +97,7 @@ namespace GUI
                 dgv_Tenant.DataSource = null;
                 dgv_LSTN.DataSource = null;
                 dgv_DKLT.DataSource = null;
+                dgv_thanhtoan.DataSource = null;
                 load_Vehicle();
                 load_PA();
             }
@@ -1352,7 +1354,7 @@ namespace GUI
                 DialogResult result = MessageBox.Show(Language.translate("hoidelete"), "", buttons);
                 if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show(ContractBLL.ContractBLL_delete_Contract(selectedRow.Cells[0].Value.ToString()));
+                    MessageBox.Show(Language.translate(ContractBLL.ContractBLL_delete_Contract(selectedRow.Cells[0].Value.ToString())));
                 }
                 load_Contract(0, timkiem_contract.Text);
             }
@@ -1360,9 +1362,9 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show(Language.translate("asking"), "",
-                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
+            }
 
 
 
@@ -2345,28 +2347,28 @@ namespace GUI
                         break;
 
                     case "lstntable_historyid":
-                        dgv_LSTN.Columns["HISTORYID"].HeaderText = kvp.Value;
+                        dgv_LSTN.Columns[0].HeaderText = kvp.Value;
                         break;
                     case "lstntable_contractid":
-                        dgv_LSTN.Columns["CONTRACTID"].HeaderText = kvp.Value;
+                        dgv_LSTN.Columns[1].HeaderText = kvp.Value;
                         break;
                     case "lstntable_tenantid":
-                        dgv_LSTN.Columns["TENANTID"].HeaderText = kvp.Value;
+                        dgv_LSTN.Columns[2].HeaderText = kvp.Value;
                         break;
                     case "lstntable_firstname":
-                        dgv_LSTN.Columns["FIRSTNAME"].HeaderText = kvp.Value;
+                        dgv_LSTN.Columns[3].HeaderText = kvp.Value;
                         break;
                     case "lstntable_lastname":
-                        dgv_LSTN.Columns["LASTNAME"].HeaderText = kvp.Value;
+                        dgv_LSTN.Columns[4].HeaderText = kvp.Value;
                         break;
                     case "lstntable_startdate":
-                        dgv_LSTN.Columns["STARTDATE"].HeaderText = kvp.Value;
+                        dgv_LSTN.Columns[5].HeaderText = kvp.Value;
                         break;
                     case "lstntable_enddate":
-                        dgv_LSTN.Columns["ENDDATE"].HeaderText = kvp.Value;
+                        dgv_LSTN.Columns[6].HeaderText = kvp.Value;
                         break;
                     case "lstntable_note":
-                        dgv_LSTN.Columns["NOTES"].HeaderText = kvp.Value;
+                        dgv_LSTN.Columns[7].HeaderText = kvp.Value;
                         break;
 
                     case "tenanttable_tenantid":
@@ -2790,14 +2792,16 @@ namespace GUI
             {
                 checkBox6.Checked = false;
                 control = "2";
+                loadBill(null, control);
+                return;
             }
-
             if (checkBox6.Checked)
             {
                 checkBox13.Checked = false;
                 control = "1";
+                loadBill(null, control);
+                return;
             }
-            loadBill(null, control);
         }
 
         private void checkBox13_CheckedChanged(object sender, EventArgs e)

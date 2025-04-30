@@ -40,6 +40,7 @@ namespace GUI
             this.table_tenant = table_tenant;
             InitializeComponent(); 
             LoadInfo();
+            loadLanguage();
         }
 
         private void loadLanguage()
@@ -145,7 +146,6 @@ namespace GUI
                     {
                         SoPhong.Items.Add(id);
                     }
-                    loadLanguage();
 
                     break;
                 case 1:

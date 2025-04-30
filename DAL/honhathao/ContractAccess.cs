@@ -227,12 +227,12 @@ namespace DAL
                         command.ExecuteNonQuery();
                     }
                 }
-            }
+        }
             catch (Exception ex)
             {
-                return "Xóa thất bại";
+                return "fail_";
             }
-            return "Xóa thành công!";
+            return "success_";
 
         }
     }

@@ -117,7 +117,7 @@ namespace DAL.honhathao
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@p_registration_id", registrationid);
                         command.Parameters.AddWithValue("@p_status", state);
-                        Console.WriteLine(endDate);
+                        Console.WriteLine(state);
                         command.Parameters.AddWithValue("@p_endDate", endDate);
                         command.ExecuteNonQuery();
                     }

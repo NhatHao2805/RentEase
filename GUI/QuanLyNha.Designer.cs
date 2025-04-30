@@ -3573,7 +3573,7 @@ namespace GUI
             this.checkBox6.TabIndex = 103;
             this.checkBox6.Text = "Hóa đơn đã thanh toán";
             this.checkBox6.UseVisualStyleBackColor = false;
-            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
+            this.checkBox6.CheckStateChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // guna2DateTimePicker1
             // 
@@ -3624,7 +3624,7 @@ namespace GUI
             this.checkBox13.TabIndex = 30;
             this.checkBox13.Text = "Hóa đơn đang nợ";
             this.checkBox13.UseVisualStyleBackColor = false;
-            this.checkBox13.CheckedChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
+            this.checkBox13.CheckStateChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
             // 
             // checkBox12
             // 

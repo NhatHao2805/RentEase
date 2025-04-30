@@ -551,6 +551,8 @@ BEGIN
     WHERE t.USERNAME = p_user
 	AND t.ISDELETED = 0
     AND b.ISDELETED = 0
+	AND c.ISDELETED = 0
+    AND r.ISDELETED = 0
     AND (
 		(p_control = 0)   
      or (p_control = 1 AND b.TOTAL - COALESCE(p.TOTAL,0) <= 0)
@@ -2131,7 +2133,7 @@ BEGIN
     SELECT CONCAT('Contract ', v_contractid, ' created successfully') AS result;
 END//
 
-CREATE PROCEDURE del_Contract(
+CREATE DEFINER=`root`@`localhost` PROCEDURE `del_Contract`(
     IN contract_id VARCHAR(20)
 )
 BEGIN
@@ -2140,9 +2142,11 @@ BEGIN
     UPDATE contract
     SET ISDELETED = 1,
         DELETED_DATE = CURDATE()
-    WHERE contract.CONTRACTID = contract_id;
+    WHERE CONTRACTID = contract_id;
     
-    SELECT ROOMID INTO p_roomid FROM CONTRACT WHERE CONTRACT = contract_id;
+    SELECT ROOMID INTO p_roomid FROM CONTRACT 
+    WHERE CONTRACTID = contract_id;
+    
     UPDATE ROOM
     SET ISDELETED = 0,
 		STATUS = 'dangtrong'
@@ -2401,7 +2405,7 @@ CREATE PROCEDURE update_registration(
 BEGIN
     UPDATE temporary_registration t
     SET t.`STATUS` = p_status
-    and t.EXPIRATION_DATE = p_endDate
+		,t.EXPIRATION_DATE = p_endDate
     WHERE t.REGISTRATIONID = p_registration_id;
 END//
 
