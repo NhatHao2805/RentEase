@@ -208,8 +208,9 @@ namespace GUI.GUI_Service
         {
             string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
             string serviceID = Service.SelectedValue.ToString();  // Lấy ID từ ComboBox
+            string roomID = Room.SelectedValue.ToString();  // Lấy RoomID từ ComboBox
 
-            bool isSuccess = serviceUsageBLL.RegisterServiceUsage(tenantID, serviceID, "insert");
+            bool isSuccess = serviceUsageBLL.RegisterServiceUsage(tenantID, serviceID, roomID, "insert");
 
             if (isSuccess)
             {
@@ -224,7 +225,7 @@ namespace GUI.GUI_Service
             {
                 MessageBox.Show("Đăng ký thất bại. Khách hàng đã đăng ký dịch vụ này rồi vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+            
             // Đóng form đăng ký sau khi thành công
             this.Close();
         }
@@ -238,10 +239,10 @@ namespace GUI.GUI_Service
         {
             string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
             string serviceID = Service.SelectedValue.ToString();  // Lấy ID từ ComboBox
+            string roomID = Room.SelectedValue.ToString();  // Lấy RoomID từ ComboBox
 
-            bool isSuccess = serviceUsageBLL.RegisterServiceUsage(tenantID, serviceID,"delete");
+            bool isSuccess = serviceUsageBLL.RegisterServiceUsage(tenantID, serviceID, roomID, "delete");
 
-          
             if (isSuccess)
             {
                 MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -65,12 +65,12 @@ namespace DAL.dal_service
                 try
                 {
                     // Câu truy vấn JOIN nhiều bảng để lấy phản hồi theo tòa nhà
-                    string query = @"SELECT f.*, t.FIRSTNAME, t.LASTNAME, t.EMAIL, c.ROOMID 
+                    string query = @"SELECT f.*, t.FIRSTNAME, t.LASTNAME, t.EMAIL as TENANT_EMAIL, r.ROOMNAME, r.ROOMID 
                           FROM FEEDBACK f 
                           LEFT JOIN TENANT t ON f.TENANTID = t.TENANTID 
-                          LEFT JOIN CONTRACT c ON t.TENANTID = c.TENANTID 
-                          LEFT JOIN ROOM r ON c.ROOMID = r.ROOMID 
+                          LEFT JOIN ROOM r ON f.ROOMID = r.ROOMID 
                           WHERE r.BUILDINGID = @buildingID 
+                          AND f.ISDELETED = 0
                           ORDER BY f.DATESEND DESC";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -85,16 +85,21 @@ namespace DAL.dal_service
 
                                 feedback.FeedbackID = reader["FEEDBACKID"].ToString();
                                 feedback.TenantID = reader["TENANTID"] != DBNull.Value ? reader["TENANTID"].ToString() : null;
+                                feedback.RoomID = reader["ROOMID"] != DBNull.Value ? reader["ROOMID"].ToString() : null;
                                 feedback.Email = reader["EMAIL"].ToString();
                                 feedback.HasFeedback = Convert.ToBoolean(reader["HAS_FEEDBACK"]);
                                 feedback.Content = reader["CONTENT"].ToString();
                                 feedback.DateSend = Convert.ToDateTime(reader["DATESEND"]);
                                 feedback.Status = reader["STATUS"].ToString();
 
-                                // Thêm thông tin về tenant nếu có
+                                // Thêm thông tin về tenant và room
                                 if (reader["FIRSTNAME"] != DBNull.Value && reader["LASTNAME"] != DBNull.Value)
                                 {
                                     feedback.TenantName = reader["FIRSTNAME"].ToString() + " " + reader["LASTNAME"].ToString();
+                                }
+                                if (reader["ROOMNAME"] != DBNull.Value)
+                                {
+                                    feedback.RoomName = reader["ROOMNAME"].ToString();
                                 }
 
                                 feedbacks.Add(feedback);
@@ -121,8 +126,8 @@ namespace DAL.dal_service
                     throw new Exception("Không thể kết nối với Google Sheets API");
                 }
 
-                // Định nghĩa phạm vi dữ liệu cần đọc
-                string range = $"{SHEET_NAME}!A:D";
+                // Định nghĩa phạm vi dữ liệu cần đọc (thêm cột ROOMID)
+                string range = $"{SHEET_NAME}!A:E"; // Mở rộng range để đọc thêm cột ROOMID
 
                 // Thực hiện request
                 SpreadsheetsResource.ValuesResource.GetRequest request =
@@ -145,22 +150,19 @@ namespace DAL.dal_service
                     var row = values[i];
 
                     // Kiểm tra có đủ dữ liệu không
-                    if (row.Count >= 4)
+                    if (row.Count >= 5) // Đã thêm kiểm tra cột ROOMID
                     {
                         DateTime submitTime;
                         string rawTimeString = row[0]?.ToString() ?? "";
 
                         try
                         {
-                            // QUAN TRỌNG: Parse chính xác thời gian từ sheet
-                            // Format thường là DD/MM/YYYY HH:MM:SS
                             if (DateTime.TryParse(rawTimeString, out submitTime))
                             {
                                 Console.WriteLine($"Parsed time successfully: {rawTimeString} -> {submitTime}");
                             }
                             else
                             {
-                                // Thử format cụ thể nếu không parse được trực tiếp
                                 string[] formats = { "dd/MM/yyyy HH:mm:ss", "dd/MM/yyyy HH:mm", "MM/dd/yyyy HH:mm:ss", "MM/dd/yyyy HH:mm" };
                                 submitTime = DateTime.ParseExact(rawTimeString, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
                                 Console.WriteLine($"Parsed time with format: {rawTimeString} -> {submitTime}");
@@ -169,7 +171,6 @@ namespace DAL.dal_service
                         catch (Exception ex)
                         {
                             Console.WriteLine($"Không thể parse thời gian '{rawTimeString}': {ex.Message}");
-                            // Sử dụng thời gian hiện tại như là fallback cuối cùng
                             submitTime = DateTime.Now;
                             Console.WriteLine($"Using current time instead: {submitTime}");
                         }
@@ -183,19 +184,24 @@ namespace DAL.dal_service
                         // Cột D: Nội dung phản ánh/nhận xét
                         string content = row.Count > 3 ? row[3].ToString() : "";
 
+                        // Cột E: ROOMID
+                        string roomId = row.Count > 4 ? row[4].ToString() : "";
+
                         // Tạo feedback DTO
                         FeedbackDTO feedback = new FeedbackDTO
                         {
                             Email = email,
                             HasFeedback = hasFeedback,
                             Content = content,
-                            DateSend = submitTime, // Sử dụng thời gian từ sheet
-                            Status = "PENDING", // Mặc định là chưa xử lý
+                            DateSend = submitTime,
+                            Status = "PENDING",
                             TenantID = null,
-                            TenantName = ""
+                            TenantName = "",
+                            RoomID = roomId // Thêm ROOMID từ sheet
                         };
 
                         feedbacks.Add(feedback);
+                        Console.WriteLine($"Sheet data: {email} - {content} - Time: {submitTime}");
                     }
                 }
 
@@ -325,34 +331,42 @@ namespace DAL.dal_service
                         feedback.TenantID = FindTenantIdByEmail(feedback.Email, conn);
                     }
 
+                    // Tìm ROOMID dựa vào TenantID (nếu có)
+                    string roomId = null;
+                    if (!string.IsNullOrEmpty(feedback.TenantID))
+                    {
+                        roomId = FindRoomIdByTenantId(feedback.TenantID, conn);
+                    }
+                    else
+                    {
+                        // Nếu không có TenantID, sử dụng ROOMID mặc định
+                        roomId = "R001";
+                    }
+
                     // Tạo FeedbackID mới
                     string feedbackId = GenerateNewFeedbackID(conn);
 
-                    // QUAN TRỌNG: Log thời gian trước khi lưu vào database để kiểm tra
-                    Console.WriteLine($"Saving feedback with time: {feedback.DateSend} (ID: {feedbackId})");
+                    Console.WriteLine($"Saving feedback with time: {feedback.DateSend} (ID: {feedbackId}, RoomID: {roomId})");
 
                     // Thêm phản hồi mới
                     string insertQuery = @"INSERT INTO FEEDBACK 
-                        (FEEDBACKID, TENANTID, EMAIL, HAS_FEEDBACK, CONTENT, DATESEND, STATUS) 
+                        (FEEDBACKID, TENANTID, ROOMID, EMAIL, HAS_FEEDBACK, CONTENT, DATESEND, STATUS, ISDELETED) 
                         VALUES 
-                        (@feedbackId, @tenantId, @email, @hasFeedback, @content, @dateSend, @status)";
+                        (@feedbackId, @tenantId, @roomId, @email, @hasFeedback, @content, @dateSend, @status, 0)";
 
                     using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn))
                     {
                         cmd.Parameters.AddWithValue("@feedbackId", feedbackId);
                         cmd.Parameters.AddWithValue("@tenantId", string.IsNullOrEmpty(feedback.TenantID) ? DBNull.Value : (object)feedback.TenantID);
+                        cmd.Parameters.AddWithValue("@roomId", roomId); // Luôn có giá trị, không null
                         cmd.Parameters.AddWithValue("@email", feedback.Email);
                         cmd.Parameters.AddWithValue("@hasFeedback", feedback.HasFeedback);
                         cmd.Parameters.AddWithValue("@content", feedback.Content);
-
-                        // QUAN TRỌNG: Sử dụng đúng thời gian từ DTO
                         cmd.Parameters.AddWithValue("@dateSend", feedback.DateSend);
-
                         cmd.Parameters.AddWithValue("@status", feedback.Status);
 
                         int result = cmd.ExecuteNonQuery();
 
-                        // Kiểm tra sau khi lưu
                         if (result > 0)
                         {
                             Console.WriteLine($"Đã lưu feedback ID {feedbackId} với thời gian {feedback.DateSend}");
@@ -368,6 +382,51 @@ namespace DAL.dal_service
                 }
             }
         }
+
+        // Thêm phương thức mới để tìm ROOMID từ TenantID
+        private static string FindRoomIdByTenantId(string tenantId, MySqlConnection conn)
+        {
+            try
+            {
+                // Tìm ROOMID từ bảng CONTRACT thay vì TENANT_ROOM
+                string query = @"SELECT ROOMID FROM CONTRACT 
+                               WHERE TENANTID = @tenantId 
+                               AND ISDELETED = 0 
+                               AND (ENDDATE IS NULL OR ENDDATE >= CURDATE())
+                               ORDER BY STARTDATE DESC 
+                               LIMIT 1";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@tenantId", tenantId);
+                    var result = cmd.ExecuteScalar();
+
+                    if (result != null && result != DBNull.Value)
+                    {
+                        return result.ToString();
+                    }
+                }
+
+                // Nếu không tìm thấy trong CONTRACT, thử tìm phòng mặc định
+                query = "SELECT ROOMID FROM ROOM WHERE ISDELETED = 0 LIMIT 1";
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    var result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        Console.WriteLine($"Sử dụng ROOMID mặc định: {result}");
+                        return result.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi tìm ROOMID: " + ex.Message);
+            }
+
+            return "R001"; // Trả về một ROOMID mặc định nếu không tìm thấy
+        }
+
         public static bool SyncFeedbacksFromGoogleSheet()
         {
             try
@@ -472,14 +531,15 @@ namespace DAL.dal_service
 
                         // Thêm phản hồi mới
                         string insertQuery = @"INSERT INTO FEEDBACK 
-                                    (FEEDBACKID, TENANTID, EMAIL, HAS_FEEDBACK, CONTENT, DATESEND, STATUS) 
+                                    (FEEDBACKID, TENANTID, ROOMID, EMAIL, HAS_FEEDBACK, CONTENT, DATESEND, STATUS) 
                                     VALUES 
-                                    (@feedbackId, @tenantId, @email, @hasFeedback, @content, @dateSend, @status)";
+                                    (@feedbackId, @tenantId, @roomId, @email, @hasFeedback, @content, @dateSend, @status)";
 
                         using (MySqlCommand cmd = new MySqlCommand(insertQuery, conn, transaction))
                         {
                             cmd.Parameters.AddWithValue("@feedbackId", feedbackId);
                             cmd.Parameters.AddWithValue("@tenantId", string.IsNullOrEmpty(feedback.TenantID) ? DBNull.Value : (object)feedback.TenantID);
+                            cmd.Parameters.AddWithValue("@roomId", string.IsNullOrEmpty(feedback.RoomID) ? DBNull.Value : (object)feedback.RoomID);
                             cmd.Parameters.AddWithValue("@email", feedback.Email);
                             cmd.Parameters.AddWithValue("@hasFeedback", feedback.HasFeedback);
                             cmd.Parameters.AddWithValue("@content", feedback.Content);

@@ -45,7 +45,6 @@ namespace DAL.DAL_Service
                 }
             }
             return list;
-
         }
     }
     public class PhongAccess

@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeedbackManagementForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnResetFilter = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnFilter = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -409,6 +408,7 @@
             this.dgvFeedbacks.ThemeStyle.RowsStyle.Height = 24;
             this.dgvFeedbacks.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvFeedbacks.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+   
             this.dgvFeedbacks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFeedbacks_CellDoubleClick);
             // 
             // btnExport
@@ -525,7 +525,6 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FeedbackManagementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

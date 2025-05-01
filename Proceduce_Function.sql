@@ -2238,44 +2238,60 @@ END //
 CREATE PROCEDURE INSERT_SERVICE_USAGE(
     IN P_TENANTID VARCHAR(10),
     IN P_SERVICEID VARCHAR(10),
+    IN P_ROOMID VARCHAR(10),
     IN P_STARTDATE DATE,
     IN P_ENDDATE DATE
 )
 BEGIN
-    INSERT INTO use_service (TENANTID, SERVICEID, START_DATE, END_DATE)
-    VALUES (P_TENANTID, P_SERVICEID, P_STARTDATE, P_ENDDATE);
+    DECLARE v_exists INT DEFAULT 0;
+    
+    -- Kiểm tra xem có tồn tại bản ghi nào có cả 3 điều kiện giống hệt nhau và chưa bị xóa
+    SELECT COUNT(*) INTO v_exists
+    FROM use_service 
+    WHERE ROOMID = P_ROOMID 
+    AND TENANTID = P_TENANTID
+    AND SERVICEID = P_SERVICEID
+    AND ISDELETED = 0;
+    
+    IF v_exists = 0 THEN
+        -- Nếu có bản ghi cũ đã bị xóa, cập nhật lại thành chưa xóa
+        UPDATE use_service 
+        SET ISDELETED = 0,
+            DELETED_DATE = NULL,
+            START_DATE = P_STARTDATE,
+            END_DATE = P_ENDDATE
+        WHERE ROOMID = P_ROOMID 
+        AND TENANTID = P_TENANTID
+        AND SERVICEID = P_SERVICEID
+        AND ISDELETED = 1;
+        
+        -- Nếu không có bản ghi nào (kể cả đã xóa), thêm mới
+        IF ROW_COUNT() = 0 THEN
+            INSERT INTO use_service (TENANTID, SERVICEID, ROOMID, START_DATE, END_DATE, ISDELETED)
+            VALUES (P_TENANTID, P_SERVICEID, P_ROOMID, P_STARTDATE, P_ENDDATE, 0);
+        END IF;
+        
+        SELECT 1 AS success, 'service.register_success' AS message_key;
+    ELSE
+        SELECT 0 AS success, 'service.register_duplicate' AS message_key;
+    END IF;
 END //
 
-CREATE PROCEDURE InsertService(
-    IN p_ServiceName VARCHAR(255),
-    IN p_UnitPrice DECIMAL(10,2)
-)
-BEGIN
-    DECLARE newID INT;
-    DECLARE formattedID VARCHAR(10);
-
-    -- Lấy số lượng bản ghi hiện tại
-    SELECT COUNT(*) + 1 INTO newID FROM Service;
-
-    -- Định dạng ID theo mẫu DVXXX
-    SET formattedID = CONCAT('DV', LPAD(newID, 3, '0'));
-
-    -- Thêm dữ liệu vào bảng
-    INSERT INTO Service (SERVICEID, SERVICENAME, UNITPRICE)
-    VALUES (formattedID, p_ServiceName, p_UnitPrice);
-END//
-
-
 CREATE PROCEDURE DeleteTenantService(
-    IN p_TenantID VARCHAR(10),
-    IN p_ServiceID VARCHAR(10)
+    IN P_TENANTID VARCHAR(10),
+    IN P_SERVICEID VARCHAR(10),
+    IN P_ROOMID VARCHAR(10)
 )
 BEGIN
     UPDATE use_service
     SET ISDELETED = 1,
         DELETED_DATE = CURDATE()
-    WHERE TENANTID = p_TenantID AND SERVICEID = p_ServiceID;
+    WHERE TENANTID = P_TENANTID 
+    AND SERVICEID = P_SERVICEID
+    AND ROOMID = P_ROOMID;
 END //
+
+
 
 CREATE PROCEDURE sp_GetAllDichVu ()
 BEGIN
@@ -2334,8 +2350,7 @@ BEGIN
         FROM USE_SERVICE US
         JOIN TENANT T ON US.TENANTID = T.TENANTID
         JOIN SERVICE S ON US.SERVICEID = S.SERVICEID
-        JOIN CONTRACT C ON C.TENANTID = T.TENANTID
-        JOIN ROOM R ON C.ROOMID = R.ROOMID
+        JOIN ROOM R ON US.ROOMID = R.ROOMID
         JOIN BUILDING B ON R.BUILDINGID = B.BUILDINGID 
         WHERE R.BUILDINGID = ''', P_BUILDINGID, '''
         AND T.ISDELETED = 0
@@ -2442,32 +2457,49 @@ END//
 DROP PROCEDURE IF EXISTS GetTenantsByUsername //
 CREATE PROCEDURE GetTenantsByUsername(IN p_username VARCHAR(20), IN p_buildingid VARCHAR(10))
 BEGIN
-	DELETE FROM TENANT 
+    DELETE FROM TENANT 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT t.TENANTID, t.FIRSTNAME, t.LASTNAME, t.PHONENUMBER, r.ROOMNAME, r.BUILDINGID
+    SELECT DISTINCT t.TENANTID, t.FIRSTNAME, t.LASTNAME, t.PHONENUMBER
     FROM TENANT t
-    LEFT JOIN CONTRACT c ON t.TENANTID = c.TENANTID
-    LEFT JOIN ROOM r ON c.ROOMID = r.ROOMID
+    JOIN CONTRACT c ON t.TENANTID = c.TENANTID
+    JOIN ROOM r ON c.ROOMID = r.ROOMID
     WHERE r.BUILDINGID = p_buildingid
     AND t.ISDELETED = 0
-    AND r.ISDELETED = 0;
+    AND c.ISDELETED = 0
+    AND r.ISDELETED = 0
+    ORDER BY t.LASTNAME, t.FIRSTNAME;
 END //
 
 CREATE PROCEDURE GetTenantsByBuilding(
     IN p_buildingID VARCHAR(50)
 )
 BEGIN
-	DELETE FROM TENANT 
+    DELETE FROM TENANT 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT T.TenantID, T.FIRSTNAME, T.LASTNAME 
-    FROM Tenant T
-    JOIN CONTRACT C ON T.TenantID = C.TenantID
-    JOIN ROOM R ON C.RoomID = R.RoomID
-    WHERE R.BUILDINGID = p_buildingID
-    AND T.ISDELETED = 0
-    AND R.ISDELETED = 0;
+    WITH ActiveTenants AS (
+        SELECT 
+            T.TenantID,
+            T.FIRSTNAME,
+            T.LASTNAME,
+            ROW_NUMBER() OVER (PARTITION BY T.TenantID ORDER BY C.ENDDATE DESC) as rn
+        FROM Tenant T
+        JOIN CONTRACT C ON T.TenantID = C.TenantID
+        JOIN ROOM R ON C.RoomID = R.RoomID
+        WHERE R.BUILDINGID = p_buildingID
+        AND T.ISDELETED = 0
+        AND C.ISDELETED = 0
+        AND R.ISDELETED = 0
+        AND C.ENDDATE >= CURDATE()
+    )
+    SELECT 
+        TenantID,
+        FIRSTNAME,
+        LASTNAME
+    FROM ActiveTenants
+    WHERE rn = 1
+    ORDER BY LASTNAME, FIRSTNAME;
 END //
 
 CREATE PROCEDURE update_Tenant(
@@ -2578,4 +2610,75 @@ BEGIN
         p_Email,
         p_buildingid
     );
+END //
+
+
+
+CREATE PROCEDURE DeleteServiceByRoom(
+    IN P_TENANTID VARCHAR(10),
+    IN P_SERVICEID VARCHAR(10),
+    IN P_ROOMID VARCHAR(10)
+)
+BEGIN
+    UPDATE use_service
+    SET ISDELETED = 1,
+        DELETED_DATE = CURDATE()
+    WHERE TENANTID = P_TENANTID 
+    AND SERVICEID = P_SERVICEID 
+    AND ROOMID = P_ROOMID;
+END //
+
+CREATE PROCEDURE CHECK_SERVICE_REGISTRATION(
+    IN P_TENANTID VARCHAR(10),
+    IN P_SERVICEID VARCHAR(10),
+    IN P_ROOMID VARCHAR(10)
+)
+BEGIN
+    -- Kiểm tra các đăng ký hiện có
+    SELECT 
+        us.TENANTID,
+        us.SERVICEID,
+        us.ROOMID,
+        us.ISDELETED,
+        us.START_DATE,
+        us.END_DATE
+    FROM use_service us
+    WHERE (us.TENANTID = P_TENANTID OR us.SERVICEID = P_SERVICEID OR us.ROOMID = P_ROOMID)
+    ORDER BY us.ISDELETED;
+END //
+
+CREATE PROCEDURE GetServicesByRoom(
+    IN P_ROOMID VARCHAR(10)
+)
+BEGIN
+    SELECT 
+        us.SERVICEID, 
+        s.SERVICENAME, 
+        s.UNITPRICE, 
+        us.START_DATE, 
+        us.END_DATE,
+        us.TENANTID,
+        CONCAT(t.FIRSTNAME, ' ', t.LASTNAME) as TENANT_NAME
+    FROM use_service us
+    JOIN service s ON s.SERVICEID = us.SERVICEID
+    JOIN tenant t ON t.TENANTID = us.TENANTID
+    WHERE us.ROOMID = P_ROOMID 
+    AND us.ISDELETED = 0 
+    AND s.ISDELETED = 0
+    AND t.ISDELETED = 0;
+END //
+
+CREATE PROCEDURE InsertService(
+    IN p_ServiceName VARCHAR(100),
+    IN p_UnitPrice DECIMAL(10,2)
+)
+BEGIN
+    DECLARE new_id VARCHAR(10);
+    SET new_id = (
+        SELECT CONCAT('SV', LPAD(COALESCE(MAX(CAST(SUBSTRING(SERVICEID, 3) AS UNSIGNED)) + 1, 1), 3, '0'))
+        FROM service
+    );
+    
+    INSERT INTO service (SERVICEID, SERVICENAME, UNITPRICE, ISDELETED)
+    VALUES (new_id, p_ServiceName, p_UnitPrice, 0);
 END //
