@@ -1,3 +1,4 @@
+select * from parking;
 -- 1 USER
 INSERT INTO USER (USERNAME, FULLNAME, PASSWORD, EMAIL, BIRTH, GENDER, PHONENUMBER, ADDRESS) VALUES
 ('ad', 'Nguyễn Văn An', 'ad', 'hoaianduong2411@gmail.com', '1980-05-15', 'nam', '0912345678', '123 Đường Lê Lợi, Q1, TP.HCM'),
@@ -136,27 +137,27 @@ INSERT INTO SERVICE (SERVICEID, SERVICENAME, UNITPRICE) VALUES
 ('SV020', 'Dịch vụ đỗ xe', 200000);
 
 -- 7 USE_SERVICE
-INSERT INTO USE_SERVICE (TENANTID, SERVICEID, START_DATE, END_DATE) VALUES
-('T001', 'SV001', '2024-01-15', '2025-01-14'),
-('T001', 'SV003', '2024-01-15', '2025-01-14'),
-('T001', 'SV006', '2024-01-15', '2025-01-14'),
-('T002', 'SV002', '2024-02-10', '2024-08-09'),
-('T002', 'SV004', '2024-02-10', '2024-08-09'),
-('T003', 'SV003', '2024-03-05', '2025-03-04'),
-('T003', 'SV007', '2024-03-05', '2025-03-04'),
-('T004', 'SV005', '2024-04-20', '2024-10-19'),
-('T004', 'SV009', '2024-04-20', '2024-10-19'),
-('T005', 'SV001', '2024-05-15', '2025-05-14'),
-('T011', 'SV011', '2024-01-15', '2025-01-14'),
-('T012', 'SV012', '2024-02-10', '2024-08-09'),
-('T013', 'SV013', '2024-03-05', '2025-03-04'),
-('T014', 'SV014', '2024-04-20', '2024-10-19'),
-('T015', 'SV015', '2024-05-15', '2025-05-14'),
-('T016', 'SV016', '2024-06-10', '2024-12-09'),
-('T017', 'SV017', '2024-07-05', '2025-07-04'),
-('T018', 'SV018', '2024-08-20', '2025-02-19'),
-('T019', 'SV019', '2024-09-15', '2025-09-14'),
-('T020', 'SV020', '2024-10-10', '2025-04-09');
+INSERT INTO USE_SERVICE (TENANTID, SERVICEID, ROOMID, START_DATE, END_DATE) VALUES
+('T001', 'SV001', 'R0001', '2024-01-15', '2025-01-14'),
+('T001', 'SV003', 'R0001', '2024-01-15', '2025-01-14'),
+('T001', 'SV006', 'R0001', '2024-01-15', '2025-01-14'),
+('T002', 'SV002', 'R0003', '2024-02-10', '2024-08-09'),
+('T002', 'SV004', 'R0003', '2024-02-10', '2024-08-09'),
+('T003', 'SV003', 'R0004', '2024-03-05', '2025-03-04'),
+('T003', 'SV007', 'R0004', '2024-03-05', '2025-03-04'),
+('T004', 'SV005', 'R0006', '2024-04-20', '2024-10-19'),
+('T004', 'SV009', 'R0006', '2024-04-20', '2024-10-19'),
+('T005', 'SV001', 'R0008', '2024-05-15', '2025-05-14'),
+('T011', 'SV011', 'R0011', '2024-01-15', '2025-01-14'),
+('T012', 'SV012', 'R0012', '2024-02-10', '2024-08-09'),
+('T013', 'SV013', 'R0013', '2024-03-05', '2025-03-04'),
+('T014', 'SV014', 'R0014', '2024-04-20', '2024-10-19'),
+('T015', 'SV015', 'R0015', '2024-05-15', '2025-05-14'),
+('T016', 'SV016', 'R0016', '2024-06-10', '2024-12-09'),
+('T017', 'SV017', 'R0017', '2024-07-05', '2025-07-04'),
+('T018', 'SV018', 'R0018', '2024-08-20', '2025-02-19'),
+('T019', 'SV019', 'R0019', '2024-09-15', '2025-09-14'),
+('T020', 'SV020', 'R0020', '2024-10-10', '2025-04-09');
 
 -- 8 BILL
 INSERT INTO BILL (BILLID, TENANTID, TOTAL, START_DATE, END_DATE, NOTIFICATION_SENT, REFUND_AMOUNT) VALUES
@@ -370,17 +371,27 @@ INSERT INTO REPAIR_REQUEST (REQUESTID, ASSETID, TENANTID, REQUEST_DATE, DESCRIPT
 ('YC020', 'TS020', 'T020', '2024-10-13', 'Quạt trần không quay', 'hoanthanh');
 
 -- 19 FEEDBACK
-INSERT INTO FEEDBACK (FEEDBACKID, TENANTID, TYPE, CONTENT, DATESEND, STATUS) VALUES
-('PH001', 'T001', 'chatluongphong', 'Phòng sạch sẽ, đầy đủ tiện nghi', '2024-01-25', 'resolved'),
-('PH002', 'T002', 'dichvu', 'Nhân viên nhiệt tình, thân thiện', '2024-02-15', 'resolved'),
-('PH003', 'T003', 'cosovatchat', 'Máy lạnh hoạt động không tốt', '2024-03-10', 'resolved'),
-('PH004', 'T004', 'anninh', 'Khu vực để xe cần tăng cường bảo vệ', '2024-04-20', 'resolved'),
-('PH005', 'T005', 'vesinh', 'Khu vực chung cần vệ sinh thường xuyên hơn', '2024-05-15', 'resolved'),
-('PH006', 'T006', 'tienich', 'Cần bổ sung thêm máy tập gym', '2024-06-10', 'pending'),
-('PH007', 'T007', 'dichvu', 'Thang máy chờ lâu', '2024-07-05', 'resolved'),
-('PH008', 'T008', 'cosovatchat', 'Vòi nước bị rò rỉ', '2024-08-20', 'resolved'),
-('PH009', 'T009', 'anninh', 'Hệ thống khóa cửa cần nâng cấp', '2024-09-15', 'pending'),
-('PH010', 'T010', 'tienich', 'Wifi chập chờn', '2024-10-10', 'pending');
+INSERT INTO FEEDBACK (FEEDBACKID, TENANTID, ROOMID, TYPE, CONTENT, DATESEND, STATUS) VALUES
+('PH001', 'T001', 'R0001', 'chatluongphong', 'Phòng sạch sẽ, đầy đủ tiện nghi', '2024-01-25', 'resolved'),
+('PH002', 'T002', 'R0003', 'dichvu', 'Nhân viên nhiệt tình, thân thiện', '2024-02-15', 'resolved'),
+('PH003', 'T003', 'R0004', 'cosovatchat', 'Máy lạnh hoạt động không tốt', '2024-03-10', 'resolved'),
+('PH004', 'T004', 'R0006', 'anninh', 'Khu vực để xe cần tăng cường bảo vệ', '2024-04-20', 'resolved'),
+('PH005', 'T005', 'R0008', 'vesinh', 'Khu vực chung cần vệ sinh thường xuyên hơn', '2024-05-15', 'resolved'),
+('PH006', 'T006', 'R0010', 'tienich', 'Cần bổ sung thêm máy tập gym', '2024-06-10', 'pending'),
+('PH007', 'T007', 'R0002', 'dichvu', 'Thang máy chờ lâu', '2024-07-05', 'resolved'),
+('PH008', 'T008', 'R0005', 'cosovatchat', 'Vòi nước bị rò rỉ', '2024-08-20', 'resolved'),
+('PH009', 'T009', 'R0007', 'anninh', 'Hệ thống khóa cửa cần nâng cấp', '2024-09-15', 'pending'),
+('PH010', 'T010', 'R0009', 'tienich', 'Wifi chập chờn', '2024-10-10', 'pending'),
+('PH011', 'T011', 'R0011', 'chatluongphong', 'Phòng rộng rãi, thoáng mát', '2024-01-30', 'resolved'),
+('PH012', 'T012', 'R0012', 'dichvu', 'Nhân viên hỗ trợ nhanh chóng', '2024-02-20', 'resolved'),
+('PH013', 'T013', 'R0013', 'cosovatchat', 'Tủ lạnh hoạt động không ổn định', '2024-03-15', 'pending'),
+('PH014', 'T014', 'R0014', 'anninh', 'An ninh tốt, camera đầy đủ', '2024-04-25', 'resolved'),
+('PH015', 'T015', 'R0015', 'vesinh', 'Vệ sinh hành lang cần cải thiện', '2024-05-20', 'pending'),
+('PH016', 'T016', 'R0016', 'tienich', 'Hồ bơi sạch sẽ, chất lượng', '2024-06-15', 'resolved'),
+('PH017', 'T017', 'R0017', 'dichvu', 'Bảo vệ thân thiện', '2024-07-10', 'resolved'),
+('PH018', 'T018', 'R0018', 'cosovatchat', 'Máy giặt đôi khi không hoạt động', '2024-08-25', 'pending'),
+('PH019', 'T019', 'R0019', 'anninh', 'Cửa ra vào có vấn đề', '2024-09-20', 'resolved'),
+('PH020', 'T020', 'R0020', 'tienich', 'Khu vực để xe cần mở rộng', '2024-10-15', 'pending');
 
 -- 22 PET
 INSERT INTO PET (PETID, TENANTID, TYPE) VALUES

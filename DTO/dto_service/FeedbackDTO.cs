@@ -11,6 +11,7 @@ namespace DTO.dto_service
     {
         public string FeedbackID { get; set; }
         public string TenantID { get; set; }
+        public string RoomID { get; set; }
         public string Email { get; set; }
         public bool HasFeedback { get; set; }
         public string Content { get; set; }
@@ -19,6 +20,7 @@ namespace DTO.dto_service
 
         // Thêm các trường phụ để hiển thị thông tin bổ sung trên form
         public string TenantName { get; set; }        // Tên người thuê (nếu có)
+        public string RoomName { get; set; }          // Tên phòng (nếu có)
         public string FormattedDateSend { get; set; } // Ngày gửi định dạng đẹp
         public string StatusDescription                // Mô tả trạng thái
         {
@@ -32,12 +34,13 @@ namespace DTO.dto_service
         public FeedbackDTO() { }
 
         // Constructor đầy đủ tham số
-        public FeedbackDTO(string feedbackID, string tenantID, string email,
+        public FeedbackDTO(string feedbackID, string tenantID, string roomID, string email,
                             bool hasFeedback, string content,
                             DateTime dateSend, string status)
         {
             FeedbackID = feedbackID;
             TenantID = tenantID;
+            RoomID = roomID;
             Email = email;
             HasFeedback = hasFeedback;
             Content = content;

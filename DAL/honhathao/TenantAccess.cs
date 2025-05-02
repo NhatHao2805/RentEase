@@ -168,7 +168,7 @@ namespace DAL.honhathao
             return "Success to delete Tenant";
         }
 
-        public static DataTable load_Tenant_by_Roomid(string roomid)
+        public static DataTable load_Tenant_by_Roomid(string p_building_id, string roomid)
         {
             DataTable output = new DataTable();
 
@@ -180,7 +180,8 @@ namespace DAL.honhathao
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@p_room_id", roomid);
-                        
+                        command.Parameters.AddWithValue("@p_building_id", p_building_id);
+
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
 

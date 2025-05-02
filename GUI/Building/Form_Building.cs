@@ -85,7 +85,7 @@ namespace GUI.BuildingManagement
                     case "btn_quaylai":
                         btnBack.Text = a.Value;
                         break;
-                    case "building_add":
+                    case "add_key":
                         guna2Button5.Text = a.Value;
                         break;
 
@@ -335,6 +335,21 @@ namespace GUI.BuildingManagement
             MessageBox.Show(KeyBLL.add_Key(form1.taikhoan.Username, guna2TextBox3.Text));
             LoadBuildingData();
             guna2TextBox3.Text = "";
+        }
+
+        private void panelAddBuilding_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void numFloors_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numRooms_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -103,6 +103,7 @@ namespace DAL
             }
         }
 
+
         public static DataTable GetVehicleUnitPriceByType(string type)
         {
             DataTable output = new DataTable();

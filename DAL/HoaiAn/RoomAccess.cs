@@ -92,7 +92,7 @@ namespace DAL
                 using (MySqlCommand command = new MySqlCommand("" +
                     "Select ROOMNAME from room r " +
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
-                    "where b.ADDRESS = @addr AND ISDELETED = 0", conn))
+                    "where b.ADDRESS = @addr AND r.ISDELETED = 0", conn))
                 {
                     command.Parameters.AddWithValue("@addr", addressBuilding);
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -123,8 +123,12 @@ namespace DAL
 
                 using (MySqlCommand command = new MySqlCommand("" +
                     "Select ROOMNAME from room r " +
+                    "join contract c on c.ROOMID = r.ROOMID "+
                     "join building b on b.BUILDINGID = r.BUILDINGID " +
-                    "where b.BUILDINGID = @addr AND r.ISDELETED = 0", conn))
+                    "where b.BUILDINGID = @addr " +
+                    "AND r.ISDELETED = 0 " +
+                    "AND c.ISDELETED = 0 " +
+                    "", conn))
                 {
                     command.Parameters.AddWithValue("@addr", buildingid);
                     using (MySqlDataReader reader = command.ExecuteReader())
@@ -145,21 +149,21 @@ namespace DAL
             }
             return listRoom;
         }
-        public static List<string> RoomAccess_Load_RoomAddress(string username)
+        public static List<string> RoomAccess_Load_RoomAddress(string buildingid)
         {
             List<string> address = new List<string>();
             using (MySqlConnection conn = MySqlConnectionData.Connect())
             {
                 if (conn == null) return address;
                 using (MySqlCommand command = new MySqlCommand("" +
-                    "Select ADDRESS from building " +
-                    "where USERNAME = @usern AND ISDELETED = 0", conn))
+                    "Select ROOMNAME from room r " +
+                    "join building b on b.BUILDINGID = r.BUILDINGID " +
+                    "where b.BUILDINGID = @addr AND r.ISDELETED = 0", conn))
                 {
 
-                    command.Parameters.AddWithValue("@usern", username);
+                    command.Parameters.AddWithValue("@addr", buildingid);
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        Console.WriteLine(reader.HasRows + " " + "\'" + username + "\'");
                         if (reader.HasRows)
                         {
                             while (reader.Read())

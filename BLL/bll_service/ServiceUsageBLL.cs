@@ -13,9 +13,10 @@ namespace BLL.BLL_Service
     {
         private ServiceUsageDAL serviceUsageDAL = new ServiceUsageDAL();
         private DeleteTenantService deleteTS = new DeleteTenantService();
-        public bool RegisterServiceUsage(string tenantID, string serviceID, string action)
+
+        public bool RegisterServiceUsage(string tenantID, string serviceID, string roomID, string action)
         {
-            ServiceUsageDTO newServiceUsage = new ServiceUsageDTO(tenantID, serviceID);
+            ServiceUsageDTO newServiceUsage = new ServiceUsageDTO(tenantID, serviceID, roomID);
 
             if (action.Equals("delete", StringComparison.OrdinalIgnoreCase))
             {
@@ -25,9 +26,6 @@ namespace BLL.BLL_Service
             {
                 return serviceUsageDAL.InsertServiceUsage(newServiceUsage);
             }
-   
-                
         }
     }
-
 }

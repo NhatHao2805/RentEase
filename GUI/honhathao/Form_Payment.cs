@@ -125,7 +125,7 @@ namespace GUI.honhathao
             }
             else
             {
-                MessageBox.Show("Không có dữ liệu để xuất Excel.", "Thông báo",
+                MessageBox.Show(Language.translate("fail_"), "",
                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

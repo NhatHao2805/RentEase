@@ -1,4 +1,12 @@
-﻿building_key: Building key
+﻿nonData: No data to register 
+invalid_: Value Invalid
+valid_: Valid
+asking: Please select an object
+success_: Success
+fail_: Fail
+hoidelete: Are you sure you want to delete this?
+add_key: Add Key
+building_key: Building key
 building_address: Address
 num_of_floors: Number of floors
 num_of_rooms: Number of rooms each floor

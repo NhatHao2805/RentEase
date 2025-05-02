@@ -24,12 +24,44 @@ namespace GUI
         // Sửa constructor để nhận tham số buildingID
         public FeedbackManagementForm(string buildingID)
         {
-
             InitializeComponent();
+            SetupDataGridView();
             InitializeAdditionalControls();
             this.currentBuildingID = buildingID;
             btnResetFilter.Click += new EventHandler(btnResetFilter_Click);
             btnExport.Click += new EventHandler(btnExport_Click);
+        }
+
+        private void SetupDataGridView()
+        {
+            // Xóa tất cả cột hiện có
+            dgvFeedbacks.Columns.Clear();
+
+            // Thêm các cột mới
+            dgvFeedbacks.Columns.Add("ID", "ID");
+            dgvFeedbacks.Columns.Add("TenantName", "Tên khách hàng");
+            dgvFeedbacks.Columns.Add("RoomName", "Phòng");
+            dgvFeedbacks.Columns.Add("Email", "Email");
+            dgvFeedbacks.Columns.Add("Content", "Nội dung");
+            dgvFeedbacks.Columns.Add("DateSend", "Ngày gửi");
+            dgvFeedbacks.Columns.Add("Status", "Trạng thái");
+
+            // Cấu hình các cột
+            dgvFeedbacks.Columns["ID"].Visible = false;
+            dgvFeedbacks.Columns["Content"].Width = 300;
+            dgvFeedbacks.Columns["Email"].Width = 150;
+            dgvFeedbacks.Columns["TenantName"].Width = 150;
+            dgvFeedbacks.Columns["RoomName"].Width = 100;
+            dgvFeedbacks.Columns["DateSend"].Width = 120;
+            dgvFeedbacks.Columns["Status"].Width = 100;
+
+            // Cấu hình thêm cho DataGridView
+            dgvFeedbacks.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dgvFeedbacks.AllowUserToAddRows = false;
+            dgvFeedbacks.AllowUserToDeleteRows = false;
+            dgvFeedbacks.ReadOnly = true;
+            dgvFeedbacks.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvFeedbacks.MultiSelect = false;
         }
 
         private void FeedbackManagementForm_Load(object sender, EventArgs e)
@@ -174,11 +206,10 @@ namespace GUI
             try
             {
                 Cursor = Cursors.WaitCursor;
+                Console.WriteLine("Bắt đầu tải dữ liệu feedback...");
 
                 // Lưu trữ danh sách hiện tại (nếu có) để giữ lại trạng thái đã xử lý
                 List<FeedbackDTO> currentFeedbacks = feedbackList ?? new List<FeedbackDTO>();
-
-                // Tạo từ điển để dễ dàng tìm kiếm bằng key là FeedbackID
                 Dictionary<string, FeedbackDTO> currentFeedbacksDict = new Dictionary<string, FeedbackDTO>();
 
                 foreach (var feedback in currentFeedbacks)
@@ -197,6 +228,8 @@ namespace GUI
                     newFeedbackList = new List<FeedbackDTO>();
                     MessageBox.Show("Không thể tải dữ liệu phản ánh.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+
+                Console.WriteLine($"Đã tải được {newFeedbackList.Count} feedback từ database");
 
                 // Danh sách kết quả cuối cùng
                 List<FeedbackDTO> mergedList = new List<FeedbackDTO>();
@@ -224,15 +257,15 @@ namespace GUI
                 // Hiển thị danh sách lên grid
                 BindDataToGrid(feedbackList);
 
-                Cursor = Cursors.Default;
+                Console.WriteLine($"Đã hiển thị {feedbackList.Count} feedback lên DataGridView");
 
-                // In log để kiểm tra
-                Console.WriteLine($"Đã tải {newFeedbackList.Count} phản ánh, giữ lại {mergedList.Count(f => f.Status == "RESOLVED")} phản ánh đã xử lý");
+                Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
                 Cursor = Cursors.Default;
                 MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Lỗi: {ex.Message}\nStack trace: {ex.StackTrace}");
             }
         }
 
@@ -268,53 +301,62 @@ namespace GUI
         }
 
         // Sửa hàm BindDataToGrid để hiển thị thêm email
-        private void BindDataToGrid(List<FeedbackDTO> list)
+        private void BindDataToGrid(List<FeedbackDTO> feedbacks)
         {
             try
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("ID", typeof(string));
-                dt.Columns.Add("Tên khách hàng", typeof(string));
-                dt.Columns.Add("Email", typeof(string));
-                dt.Columns.Add("Nội dung", typeof(string));
-                dt.Columns.Add("Ngày gửi", typeof(string));
-                dt.Columns.Add("Trạng thái", typeof(string));
+                // Xóa dữ liệu cũ
+                dgvFeedbacks.Rows.Clear();
 
-                foreach (var feedback in list)
+                // Thêm dữ liệu mới
+                foreach (var feedback in feedbacks)
                 {
-                    dt.Rows.Add(
-                        feedback.FeedbackID,
-                        string.IsNullOrEmpty(feedback.TenantName) ? "Không có thông tin" : feedback.TenantName,
-                        string.IsNullOrEmpty(feedback.Email) ? "Không có email" : feedback.Email,
-                        feedback.Content,
-                        feedback.DateSend.ToString("dd/MM/yyyy HH:mm"), // Hiển thị đúng định dạng ngày tháng
-                        feedback.Status == "PENDING" ? "Chưa xử lý" : "Đã xử lý"
-                    );
+                    try
+                    {
+                        int rowIndex = dgvFeedbacks.Rows.Add();
+                        var row = dgvFeedbacks.Rows[rowIndex];
+
+                        // Lưu FeedbackID vào Tag của row để sử dụng sau này
+                        row.Tag = feedback.FeedbackID;
+
+                        // Gán giá trị cho các cell
+                        row.Cells["TenantName"].Value = feedback.TenantName ?? "Không xác định";
+                        row.Cells["RoomName"].Value = feedback.RoomName ?? "Không xác định";
+                        row.Cells["Email"].Value = feedback.Email;
+                        row.Cells["Content"].Value = feedback.Content;
+                        row.Cells["DateSend"].Value = feedback.DateSend.ToString("dd/MM/yyyy HH:mm");
+                        row.Cells["Status"].Value = feedback.Status == "RESOLVED" ? "Đã xử lý" : "Chưa xử lý";
+
+                        // Tô màu cho trạng thái
+                        if (feedback.Status == "RESOLVED")
+                        {
+                            row.Cells["Status"].Style.ForeColor = Color.Green;
+                        }
+                        else
+                        {
+                            row.Cells["Status"].Style.ForeColor = Color.Red;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Lỗi khi thêm dòng cho feedback {feedback.FeedbackID}: {ex.Message}");
+                    }
                 }
 
-                // Bind DataTable vào DataGridView
-                dgvFeedbacks.DataSource = dt;
-
-                // Định dạng lại các cột
-                if (dgvFeedbacks.Columns.Count > 0)
-                {
-                    dgvFeedbacks.Columns["Nội dung"].Width = 300;
-                    dgvFeedbacks.Columns["Email"].Width = 150;
-                    dgvFeedbacks.Columns["Tên khách hàng"].Width = 150;
-
-                    // Ẩn cột ID
-                    dgvFeedbacks.Columns["ID"].Visible = false;
-                }
+                // Cập nhật giao diện
+                dgvFeedbacks.Refresh();
 
                 // Hiển thị số lượng phản ánh
                 if (lblTotalCount != null)
                 {
-                    lblTotalCount.Text = $"Tổng số: {list.Count} phản ánh";
+                    lblTotalCount.Text = $"Tổng số: {feedbacks.Count} phản ánh";
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Lỗi khi binding dữ liệu: {ex.Message}");
+                MessageBox.Show("Lỗi khi hiển thị dữ liệu: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Stack trace: {ex.StackTrace}");
             }
         }
 
@@ -624,94 +666,6 @@ namespace GUI
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Cursor = Cursors.WaitCursor;
-            //    Console.WriteLine("Bắt đầu xuất Excel...");
-
-            //    // Kiểm tra có dữ liệu không
-            //    if (dgvFeedbacks.Rows.Count == 0)
-            //    {
-            //        MessageBox.Show("Không có dữ liệu để xuất!", "Thông báo",
-            //                       MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //        Cursor = Cursors.Default;
-            //        return;
-            //    }
-
-            //    // Phương pháp 1: Sử dụng ExcelExporter có sẵn
-            //    if (typeof(ExcelExporter) != null)
-            //    {
-            //        ExcelExporter.ExportToExcel(dgvFeedbacks, "Danh sách phản ánh khách hàng");
-            //    }
-            //    else
-            //    {
-            //        // Phương pháp 2: Xuất Excel thủ công nếu ExcelExporter không có
-            //        SaveFileDialog saveDialog = new SaveFileDialog();
-            //        saveDialog.Filter = "Excel Files|*.xlsx";
-            //        saveDialog.Title = "Xuất danh sách phản ánh";
-            //        saveDialog.FileName = "DanhSachPhanAnh_" + DateTime.Now.ToString("yyyyMMdd");
-
-            //        if (saveDialog.ShowDialog() == DialogResult.OK)
-            //        {
-            //            // Tạo Excel application
-            //            Excel.Application excelApp = new Excel.Application();
-            //            excelApp.Visible = false;
-            //            Excel.Workbook workbook = excelApp.Workbooks.Add();
-            //            Excel.Worksheet worksheet = workbook.ActiveSheet;
-
-            //            // Tiêu đề
-            //            worksheet.Cells[1, 1] = "DANH SÁCH PHẢN ÁNH KHÁCH HÀNG";
-            //            Excel.Range titleRange = worksheet.Range["A1", GetExcelColumnName(dgvFeedbacks.Columns.Count) + "1"];
-            //            titleRange.Merge();
-            //            titleRange.Font.Bold = true;
-            //            titleRange.Font.Size = 14;
-            //            titleRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-
-            //            // Header
-            //            for (int i = 0; i < dgvFeedbacks.Columns.Count; i++)
-            //            {
-            //                if (dgvFeedbacks.Columns[i].Visible)
-            //                {
-            //                    worksheet.Cells[2, i + 1] = dgvFeedbacks.Columns[i].HeaderText;
-            //                    worksheet.Cells[2, i + 1].Font.Bold = true;
-            //                }
-            //            }
-
-            //            // Dữ liệu
-            //            for (int i = 0; i < dgvFeedbacks.Rows.Count; i++)
-            //            {
-            //                for (int j = 0; j < dgvFeedbacks.Columns.Count; j++)
-            //                {
-            //                    if (dgvFeedbacks.Columns[j].Visible && dgvFeedbacks.Rows[i].Cells[j].Value != null)
-            //                    {
-            //                        worksheet.Cells[i + 3, j + 1] = dgvFeedbacks.Rows[i].Cells[j].Value.ToString();
-            //                    }
-            //                }
-            //            }
-
-            //            // Tự động điều chỉnh cột
-            //            worksheet.Columns.AutoFit();
-
-            //            // Lưu file
-            //            workbook.SaveAs(saveDialog.FileName);
-            //            workbook.Close();
-            //            excelApp.Quit();
-
-            //            MessageBox.Show("Xuất Excel thành công!\nFile: " + saveDialog.FileName,
-            //                           "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        }
-            //    }
-
-            //    Cursor = Cursors.Default;
-            //}
-            //catch (Exception ex)
-            //{
-            //    Cursor = Cursors.Default;
-            //    MessageBox.Show("Lỗi khi xuất Excel: " + ex.Message, "Lỗi",
-            //                   MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    Console.WriteLine("Lỗi xuất Excel: " + ex.Message);
-            //    Console.WriteLine("Stack trace: " + ex.StackTrace);
-            //}
             if (dgvFeedbacks.Visible)
             {
                 ExcelExporter.ExportToExcel(dgvFeedbacks, "Danh sách phản hồi");
@@ -742,20 +696,34 @@ namespace GUI
             {
                 if (e.RowIndex >= 0)
                 {
-                    // Lấy dữ liệu từ dòng được chọn
-                    string feedbackId = dgvFeedbacks.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-                    string email = dgvFeedbacks.Rows[e.RowIndex].Cells["Email"].Value.ToString();
-                    string content = dgvFeedbacks.Rows[e.RowIndex].Cells["Nội dung"].Value.ToString();
-                    string status = dgvFeedbacks.Rows[e.RowIndex].Cells["Trạng thái"].Value.ToString();
+                    // Lấy dữ liệu từ dòng được chọn một cách an toàn
+                    string feedbackId = dgvFeedbacks.Rows[e.RowIndex].Tag?.ToString();
+                    if (string.IsNullOrEmpty(feedbackId))
+                    {
+                        MessageBox.Show("Không thể xác định phản ánh được chọn!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Tìm feedback trong danh sách
+                    var feedback = feedbackList.FirstOrDefault(f => f.FeedbackID == feedbackId);
+                    if (feedback == null)
+                    {
+                        MessageBox.Show("Không tìm thấy thông tin phản ánh!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Tạo thông điệp chi tiết
+                    string roomInfo = !string.IsNullOrEmpty(feedback.RoomName) ? $"\nPhòng: {feedback.RoomName}" : "";
+                    string message = $"Chi tiết phản ánh từ: {feedback.Email}{roomInfo}\n\n{feedback.Content}\n\nBạn có muốn đánh dấu phản ánh này là đã xử lý không?";
 
                     // Hiển thị hộp thoại chi tiết
                     DialogResult result = MessageBox.Show(
-                        $"Chi tiết phản ánh từ: {email}\n\n{content}\n\nBạn có muốn đánh dấu phản ánh này là đã xử lý không?",
+                        message,
                         "Chi tiết phản ánh",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Information);
 
-                    if (result == DialogResult.Yes && status == "Chưa xử lý")
+                    if (result == DialogResult.Yes && feedback.Status != "RESOLVED")
                     {
                         // Cập nhật trạng thái
                         bool updateResult = FeedbackBLL.UpdateFeedbackStatus(feedbackId, "RESOLVED");
@@ -774,7 +742,8 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi xử lý phản ánh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Stack trace: {ex.StackTrace}");
             }
         }
 

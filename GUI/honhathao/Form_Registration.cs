@@ -89,9 +89,10 @@ namespace GUI.honhathao
                     {
                         SoPhong.Items.Add(id);
                     }
-                    //TenKhachHang.SelectedIndex = 0;
-                    //SoPhong.SelectedIndex = 0;
-                    //TrangThai.SelectedIndex = 0;
+
+                    TrangThai.SelectedIndex = 0;
+                    TenKhachHang.SelectedIndex = 0;
+                    SoPhong.SelectedIndex = 0;
                     break;
                 case 1:
                     TenKhachHang.Items.Clear();
@@ -152,9 +153,15 @@ namespace GUI.honhathao
             switch (control)
             {
                 case 0:
-                    if (ngayDk.Value > ngayHethan.Value)
+                    
+                    if (ngayDk.Value > ngayHethan.Value 
+                        || tenant.Rows[TenKhachHang.SelectedIndex].Cells[0].Value.ToString().Trim() == " " 
+                        || SoPhong.Text.Trim() == ""
+                        || SoPhong.Text.Trim() == ""
+                        || SoPhong.Text.Trim() == ""
+                        )
                     {
-                        MessageBox.Show("Ngày đăng ký không được lớn hơn ngày hết hạn");
+                        MessageBox.Show(Language.translate("invalid_"));
                         return;
                     }
                     string result = RegistrationBLL.RegistrationBLL_add_Registration(
@@ -174,7 +181,7 @@ namespace GUI.honhathao
                 case 1:
                     if (ngayDk.Value > ngayHethan.Value)
                     {
-                        MessageBox.Show("Ngày đăng ký không được lớn hơn ngày hết hạn");
+                        MessageBox.Show(Language.translate("invalid_"));
                         return;
                     }
                     string result1 = RegistrationBLL.RegistratrionBLL_update_registration(
@@ -183,19 +190,23 @@ namespace GUI.honhathao
                         Language.reverseTranslate(TrangThai.Text));
                     if (result1 == "Success")
                     {
-                        MessageBox.Show("Cập nhật thành công");
+                        MessageBox.Show(Language.translate("success_"));
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("Cập nhật thất bại");
-                   
+                        MessageBox.Show(Language.translate("fail_"));
                     }
                     break;
             }
         }
 
         private void TrangThai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SoPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
