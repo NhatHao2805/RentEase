@@ -291,12 +291,12 @@ namespace GUI
                 }
 
 
-                dgv_QLCSVC.Columns[0].Width = 90;
-                dgv_QLCSVC.Columns[1].Width = 90;
+                dgv_QLCSVC.Columns[0].Width = 70;
+                dgv_QLCSVC.Columns[1].Width = 70;
                 dgv_QLCSVC.Columns[2].Width = 150;
-                dgv_QLCSVC.Columns[3].Width = 100;
+                dgv_QLCSVC.Columns[3].Width = 80;
                 dgv_QLCSVC.Columns[4].Width = 120;
-                dgv_QLCSVC.Columns[5].Width = 80;
+                dgv_QLCSVC.Columns[5].Width = 150;
 
 
                 translateValue(dgv_QLCSVC, 4);
@@ -315,7 +315,7 @@ namespace GUI
                 string status = (DangO_chbox1.Checked ? Language.reverseTranslate(DangO_chbox1.Text) + "; " : "")
                               + (DangTrong_chbox1.Checked ? Language.reverseTranslate(DangTrong_chbox1.Text) + "; " : "")
                               + (DangKT_chbox1.Checked ? Language.reverseTranslate(DangKT_chbox1.Text) + "; " : "")
-                              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
+                              //+ (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
                               + (DaQuaHan_chbox.Checked ? Language.reverseTranslate(DaQuaHan_chbox.Text) + "; " : "")
                               + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
                               + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) + "" : "");
@@ -1254,11 +1254,7 @@ namespace GUI
                 if (result == DialogResult.Yes)
                 {
                     var (success, message) = AssetBLL.DeleteAssets(dgv_QLCSVC.SelectedRows[0].Cells["AssetID"].Value.ToString());
-
-                    MessageBox.Show(message,
-                                    success ? "" : "Lỗi",
-                                    MessageBoxButtons.OK,
-                                    success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                    MessageBox.Show(Language.translate(message));
 
                     if (success)
                     {
@@ -1357,6 +1353,7 @@ namespace GUI
                     MessageBox.Show(Language.translate(ContractBLL.ContractBLL_delete_Contract(selectedRow.Cells[0].Value.ToString())));
                 }
                 load_Contract(0, timkiem_contract.Text);
+                load_QLP();
             }
 
             catch (Exception ex)
@@ -1390,21 +1387,21 @@ namespace GUI
         // New HoaiAn 14/4
         private void DangKT_chbox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangKT_chbox1.Checked)
-            {
-                DangCoc_chbox.Checked = false;
-            }
+            //if (DangKT_chbox1.Checked)
+            //{
+            //    DangCoc_chbox.Checked = false;
+            //}
             load_QLP();
         }
         // New HoaiAn 14/4
-        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangCoc_chbox.Checked)
-            {
-                DangKT_chbox1.Checked = false;
-            }
-            load_QLP();
-        }
+        //private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (DangCoc_chbox.Checked)
+        //    {
+        //        DangKT_chbox1.Checked = false;
+        //    }
+        //    load_QLP();
+        //}
         // New HoaiAn 14/4
         private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
         {
@@ -1552,10 +1549,7 @@ namespace GUI
                 {
                     var (success, message) = RoomBLL.DeleteRoom(dgv_QLP.SelectedRows[0].Cells["ROOMNAME"].Value.ToString(), listBuildingID.Text);
 
-                    MessageBox.Show(message,
-                                  success ? "Thành công" : "Lỗi",
-                                  MessageBoxButtons.OK,
-                                  success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                    MessageBox.Show(Language.translate(message));
 
                     if (success)
                     {
@@ -1792,6 +1786,7 @@ namespace GUI
             if (updateArea.DialogResult == DialogResult.OK)
             {
                 load_PA();
+                load_Vehicle();
             }
         }
         private void button52_Click(object sender, EventArgs e)
@@ -1807,14 +1802,12 @@ namespace GUI
                 {
                     var (success, message) = ParkingAreaBLL.DeleteArea(guna2DataGridView7.SelectedRows[0].Cells["AreaId"].Value.ToString());
 
-                    MessageBox.Show(message,
-                                  success ? "Thành công" : "Lỗi",
-                                  MessageBoxButtons.OK,
-                                  success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                    MessageBox.Show(Language.translate(message));
 
                     if (success)
                     {
                         load_PA();
+                        load_Vehicle();
                     }
                 }
             }
@@ -1937,10 +1930,7 @@ namespace GUI
                 {
                     var (success, message) = VehicleBLL.DeleteVehicle(guna2DataGridView1.SelectedRows[0].Cells["VehicleId"].Value.ToString());
 
-                    MessageBox.Show(message,
-                                  success ? "Thành công" : "Lỗi",
-                                  MessageBoxButtons.OK,
-                                  success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
+                    MessageBox.Show(Language.translate(message));
 
                     if (success)
                     {
@@ -2093,9 +2083,9 @@ namespace GUI
                     case "vacant":
                         DangTrong_chbox1.Text = kvp.Value;
                         break;
-                    case "reserved":
-                        DangCoc_chbox.Text = kvp.Value;
-                        break;
+                    //case "reserved":
+                    //    DangCoc_chbox.Text = kvp.Value;
+                    //    break;
                     case "ending_soon":
                         DangKT_chbox1.Text = kvp.Value;
                         break;
@@ -2830,6 +2820,12 @@ namespace GUI
         private void dgv_Tenant_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2Button3_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            form1.Show();
         }
     }
 }

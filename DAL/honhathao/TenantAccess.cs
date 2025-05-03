@@ -38,6 +38,36 @@ namespace DAL.honhathao
             return name;
 
         }
+
+        public static List<string> Load_TenantID_By_Buildingid(string buildingid)
+        {
+            List<string> name = new List<string>();
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                if (conn == null) return name;
+                using (MySqlCommand command = new MySqlCommand("Select TENANTID from tenant WHERE ISDELETED = 0 AND BUILDINGID = @p_buildingid", conn))
+                {
+                    command.Parameters.AddWithValue("p_buildingid", buildingid);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                name.Add(reader.GetString(0));
+                            }
+                        }
+                        else
+                        {
+                            return name;
+                        }
+                    }
+                }
+            }
+            return name;
+
+        }
+
         public static DataTable load_Tenant(string buildingid, string name)
         {
             DataTable output = new DataTable();

@@ -33,7 +33,6 @@
             this.SapHetHan_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DaHetHan_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangO_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.DangCoc_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangKT_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangNoTien_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangTrong_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -175,24 +174,6 @@
             this.DangO_chbox.UncheckedState.BorderThickness = 0;
             this.DangO_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.DangO_chbox.CheckedChanged += new System.EventHandler(this.DangO_chbox_CheckedChanged);
-            // 
-            // DangCoc_chbox
-            // 
-            this.DangCoc_chbox.AutoSize = true;
-            this.DangCoc_chbox.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.DangCoc_chbox.CheckedState.BorderRadius = 0;
-            this.DangCoc_chbox.CheckedState.BorderThickness = 0;
-            this.DangCoc_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangCoc_chbox.Location = new System.Drawing.Point(319, 51);
-            this.DangCoc_chbox.Name = "DangCoc_chbox";
-            this.DangCoc_chbox.Size = new System.Drawing.Size(132, 20);
-            this.DangCoc_chbox.TabIndex = 89;
-            this.DangCoc_chbox.Text = "Đang cọc giữ chỗ";
-            this.DangCoc_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DangCoc_chbox.UncheckedState.BorderRadius = 0;
-            this.DangCoc_chbox.UncheckedState.BorderThickness = 0;
-            this.DangCoc_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DangCoc_chbox.CheckedChanged += new System.EventHandler(this.DangCoc_chbox_CheckedChanged);
             // 
             // DangKT_chbox
             // 
@@ -474,7 +455,6 @@
             this.guna2GradientPanel7.Controls.Add(this.DangNoTien_chbox);
             this.guna2GradientPanel7.Controls.Add(this.DangKT_chbox);
             this.guna2GradientPanel7.Controls.Add(this.SapHetHan_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DangCoc_chbox);
             this.guna2GradientPanel7.Controls.Add(this.DaHetHan_chbox);
             this.guna2GradientPanel7.Controls.Add(this.DangO_chbox);
             this.guna2GradientPanel7.FillColor = System.Drawing.Color.White;
@@ -704,7 +684,6 @@
         private Guna.UI2.WinForms.Guna2CheckBox SapHetHan_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DaHetHan_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangO_chbox;
-        private Guna.UI2.WinForms.Guna2CheckBox DangCoc_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangKT_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangNoTien_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangTrong_chbox;

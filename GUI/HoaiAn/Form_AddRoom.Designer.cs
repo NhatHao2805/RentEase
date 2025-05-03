@@ -34,11 +34,6 @@
             this.type_cb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DangO_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.DangTrong_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.DangKT_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.DangCoc_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.SapHetHan_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.DaHetHan_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.DangNoTien_chbox = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.convenient_tb = new Guna.UI2.WinForms.Guna2TextBox();
@@ -152,7 +147,7 @@
             this.DangO_chbox.CheckedState.BorderThickness = 0;
             this.DangO_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
             this.DangO_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F);
-            this.DangO_chbox.Location = new System.Drawing.Point(164, 32);
+            this.DangO_chbox.Location = new System.Drawing.Point(174, 23);
             this.DangO_chbox.Name = "DangO_chbox";
             this.DangO_chbox.Size = new System.Drawing.Size(73, 21);
             this.DangO_chbox.TabIndex = 64;
@@ -171,7 +166,7 @@
             this.DangTrong_chbox.CheckedState.BorderThickness = 0;
             this.DangTrong_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
             this.DangTrong_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DangTrong_chbox.Location = new System.Drawing.Point(348, 32);
+            this.DangTrong_chbox.Location = new System.Drawing.Point(286, 23);
             this.DangTrong_chbox.Name = "DangTrong_chbox";
             this.DangTrong_chbox.Size = new System.Drawing.Size(97, 21);
             this.DangTrong_chbox.TabIndex = 65;
@@ -181,100 +176,6 @@
             this.DangTrong_chbox.UncheckedState.BorderThickness = 0;
             this.DangTrong_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.DangTrong_chbox.CheckedChanged += new System.EventHandler(this.DangTrong_chbox_CheckedChanged);
-            // 
-            // DangKT_chbox
-            // 
-            this.DangKT_chbox.AutoSize = true;
-            this.DangKT_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.DangKT_chbox.CheckedState.BorderRadius = 0;
-            this.DangKT_chbox.CheckedState.BorderThickness = 0;
-            this.DangKT_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangKT_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DangKT_chbox.Location = new System.Drawing.Point(164, 70);
-            this.DangKT_chbox.Name = "DangKT_chbox";
-            this.DangKT_chbox.Size = new System.Drawing.Size(137, 21);
-            this.DangKT_chbox.TabIndex = 66;
-            this.DangKT_chbox.Text = "Đang báo kết thúc";
-            this.DangKT_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DangKT_chbox.UncheckedState.BorderRadius = 0;
-            this.DangKT_chbox.UncheckedState.BorderThickness = 0;
-            this.DangKT_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DangKT_chbox.CheckedChanged += new System.EventHandler(this.DangKT_chbox_CheckedChanged);
-            // 
-            // DangCoc_chbox
-            // 
-            this.DangCoc_chbox.AutoSize = true;
-            this.DangCoc_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.DangCoc_chbox.CheckedState.BorderRadius = 0;
-            this.DangCoc_chbox.CheckedState.BorderThickness = 0;
-            this.DangCoc_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangCoc_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DangCoc_chbox.Location = new System.Drawing.Point(348, 70);
-            this.DangCoc_chbox.Name = "DangCoc_chbox";
-            this.DangCoc_chbox.Size = new System.Drawing.Size(133, 21);
-            this.DangCoc_chbox.TabIndex = 67;
-            this.DangCoc_chbox.Text = "Đang cọc giữ chỗ";
-            this.DangCoc_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DangCoc_chbox.UncheckedState.BorderRadius = 0;
-            this.DangCoc_chbox.UncheckedState.BorderThickness = 0;
-            this.DangCoc_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DangCoc_chbox.CheckedChanged += new System.EventHandler(this.DangCoc_chbox_CheckedChanged);
-            // 
-            // SapHetHan_chbox
-            // 
-            this.SapHetHan_chbox.AutoSize = true;
-            this.SapHetHan_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.SapHetHan_chbox.CheckedState.BorderRadius = 0;
-            this.SapHetHan_chbox.CheckedState.BorderThickness = 0;
-            this.SapHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.SapHetHan_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SapHetHan_chbox.Location = new System.Drawing.Point(348, 105);
-            this.SapHetHan_chbox.Name = "SapHetHan_chbox";
-            this.SapHetHan_chbox.Size = new System.Drawing.Size(161, 21);
-            this.SapHetHan_chbox.TabIndex = 68;
-            this.SapHetHan_chbox.Text = "Sắp hết hạn hợp đồng";
-            this.SapHetHan_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.SapHetHan_chbox.UncheckedState.BorderRadius = 0;
-            this.SapHetHan_chbox.UncheckedState.BorderThickness = 0;
-            this.SapHetHan_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.SapHetHan_chbox.CheckedChanged += new System.EventHandler(this.SapHetHan_chbox_CheckedChanged);
-            // 
-            // DaHetHan_chbox
-            // 
-            this.DaHetHan_chbox.AutoSize = true;
-            this.DaHetHan_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.DaHetHan_chbox.CheckedState.BorderRadius = 0;
-            this.DaHetHan_chbox.CheckedState.BorderThickness = 0;
-            this.DaHetHan_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DaHetHan_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DaHetHan_chbox.Location = new System.Drawing.Point(164, 105);
-            this.DaHetHan_chbox.Name = "DaHetHan_chbox";
-            this.DaHetHan_chbox.Size = new System.Drawing.Size(155, 21);
-            this.DaHetHan_chbox.TabIndex = 69;
-            this.DaHetHan_chbox.Text = "Đã hết hạn hợp đồng";
-            this.DaHetHan_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DaHetHan_chbox.UncheckedState.BorderRadius = 0;
-            this.DaHetHan_chbox.UncheckedState.BorderThickness = 0;
-            this.DaHetHan_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DaHetHan_chbox.CheckedChanged += new System.EventHandler(this.DaHetHan_chbox_CheckedChanged);
-            // 
-            // DangNoTien_chbox
-            // 
-            this.DangNoTien_chbox.AutoSize = true;
-            this.DangNoTien_chbox.CheckedState.BorderColor = System.Drawing.Color.Green;
-            this.DangNoTien_chbox.CheckedState.BorderRadius = 0;
-            this.DangNoTien_chbox.CheckedState.BorderThickness = 0;
-            this.DangNoTien_chbox.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(120)))));
-            this.DangNoTien_chbox.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DangNoTien_chbox.Location = new System.Drawing.Point(164, 139);
-            this.DangNoTien_chbox.Name = "DangNoTien_chbox";
-            this.DangNoTien_chbox.Size = new System.Drawing.Size(105, 21);
-            this.DangNoTien_chbox.TabIndex = 70;
-            this.DangNoTien_chbox.Text = "Đang nợ tiền";
-            this.DangNoTien_chbox.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.DangNoTien_chbox.UncheckedState.BorderRadius = 0;
-            this.DangNoTien_chbox.UncheckedState.BorderThickness = 0;
-            this.DangNoTien_chbox.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
             // convenient_tb
             // 
@@ -413,7 +314,7 @@
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.AliceBlue;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(2, 71);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(550, 674);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(550, 570);
             this.guna2GradientPanel1.TabIndex = 142;
             // 
             // guna2GradientPanel7
@@ -423,13 +324,8 @@
             this.guna2GradientPanel7.BorderRadius = 10;
             this.guna2GradientPanel7.BorderThickness = 1;
             this.guna2GradientPanel7.Controls.Add(this.guna2HtmlLabel1);
-            this.guna2GradientPanel7.Controls.Add(this.DangCoc_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.SapHetHan_chbox);
             this.guna2GradientPanel7.Controls.Add(this.DangTrong_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DaHetHan_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DangNoTien_chbox);
             this.guna2GradientPanel7.Controls.Add(this.DangO_chbox);
-            this.guna2GradientPanel7.Controls.Add(this.DangKT_chbox);
             this.guna2GradientPanel7.FillColor = System.Drawing.Color.White;
             this.guna2GradientPanel7.FillColor2 = System.Drawing.Color.GhostWhite;
             this.guna2GradientPanel7.Location = new System.Drawing.Point(15, 382);
@@ -437,14 +333,14 @@
             this.guna2GradientPanel7.ShadowDecoration.BorderRadius = 10;
             this.guna2GradientPanel7.ShadowDecoration.Enabled = true;
             this.guna2GradientPanel7.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.guna2GradientPanel7.Size = new System.Drawing.Size(525, 187);
+            this.guna2GradientPanel7.Size = new System.Drawing.Size(525, 62);
             this.guna2GradientPanel7.TabIndex = 146;
             // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(13, 82);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(19, 19);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(85, 25);
             this.guna2HtmlLabel1.TabIndex = 141;
@@ -551,7 +447,7 @@
             this.add_btn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.add_btn.ForeColor = System.Drawing.Color.White;
             this.add_btn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.add_btn.Location = new System.Drawing.Point(218, 586);
+            this.add_btn.Location = new System.Drawing.Point(218, 479);
             this.add_btn.Name = "add_btn";
             this.add_btn.ShadowDecoration.BorderRadius = 15;
             this.add_btn.ShadowDecoration.Depth = 50;
@@ -621,7 +517,7 @@
             // Form_AddRoom
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(554, 748);
+            this.ClientSize = new System.Drawing.Size(554, 643);
             this.Controls.Add(this.guna2GradientPanel1);
             this.Controls.Add(this.guna2GradientPanel12);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -655,11 +551,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox type_cb;
         private Guna.UI2.WinForms.Guna2CheckBox DangO_chbox;
         private Guna.UI2.WinForms.Guna2CheckBox DangTrong_chbox;
-        private Guna.UI2.WinForms.Guna2CheckBox DangKT_chbox;
-        private Guna.UI2.WinForms.Guna2CheckBox DangCoc_chbox;
-        private Guna.UI2.WinForms.Guna2CheckBox SapHetHan_chbox;
-        private Guna.UI2.WinForms.Guna2CheckBox DaHetHan_chbox;
-        private Guna.UI2.WinForms.Guna2CheckBox DangNoTien_chbox;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow2;
         private Guna.UI2.WinForms.Guna2TextBox convenient_tb;

@@ -132,7 +132,7 @@ namespace GUI
         private void Form_AddVehicle_Load(object sender, EventArgs e)
         {
             tenantid_cb.Items.Clear();
-            foreach (string tenantid in TenantBLL.TenantBll_Load_TenantID())
+            foreach (string tenantid in TenantBLL.Load_TenantID_By_Buildingid(_buildingid))
             {
                 tenantid_cb.Items.Add(tenantid);
             }

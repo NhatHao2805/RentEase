@@ -156,9 +156,13 @@ namespace DAL
             {
                 if (conn == null) return address;
                 using (MySqlCommand command = new MySqlCommand("" +
-                    "Select ROOMNAME from room r " +
-                    "join building b on b.BUILDINGID = r.BUILDINGID " +
-                    "where b.BUILDINGID = @addr AND r.ISDELETED = 0", conn))
+                    "SELECT r.ROOMNAME " +
+                      "FROM ROOM r " +
+                      "JOIN BUILDING b ON b.BUILDINGID = r.BUILDINGID " +
+                      "WHERE b.BUILDINGID = @addr " +
+                      "  AND b.ISDELETED  = 0 " +
+                      "  AND r.ISDELETED  = 0 " +
+                      "  AND r.STATUS    LIKE '%dangtrong%';", conn))
                 {
 
                     command.Parameters.AddWithValue("@addr", buildingid);
