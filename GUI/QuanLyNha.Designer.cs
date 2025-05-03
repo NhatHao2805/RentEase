@@ -115,7 +115,6 @@ namespace GUI
             this.DaQuaHan_chbox = new System.Windows.Forms.CheckBox();
             this.DangNoTien_chbox = new System.Windows.Forms.CheckBox();
             this.SapHetHan_chbox = new System.Windows.Forms.CheckBox();
-            this.DangCoc_chbox = new System.Windows.Forms.CheckBox();
             this.DangTrong_chbox1 = new System.Windows.Forms.CheckBox();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.button35 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -342,10 +341,12 @@ namespace GUI
             this.exitButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2AnimateWindow2 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panelMain = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2PictureBox8 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GradientPanel22 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.ListBuilding = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.buildingKhoa = new Guna.UI2.WinForms.Guna2HtmlToolTip();
+            this.guna2AnimateWindow3 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2GradientPanel17.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabQuanLy.SuspendLayout();
@@ -1017,7 +1018,6 @@ namespace GUI
             this.guna2CustomGradientPanel19.Controls.Add(this.DaQuaHan_chbox);
             this.guna2CustomGradientPanel19.Controls.Add(this.DangNoTien_chbox);
             this.guna2CustomGradientPanel19.Controls.Add(this.SapHetHan_chbox);
-            this.guna2CustomGradientPanel19.Controls.Add(this.DangCoc_chbox);
             this.guna2CustomGradientPanel19.Controls.Add(this.DangTrong_chbox1);
             this.guna2CustomGradientPanel19.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2CustomGradientPanel19.FillColor4 = System.Drawing.Color.FromArgb(((int)(((byte)(202)))), ((int)(((byte)(249)))), ((int)(((byte)(252)))));
@@ -1105,19 +1105,6 @@ namespace GUI
             this.SapHetHan_chbox.Text = "Sắp hết hạn hợp đồng";
             this.SapHetHan_chbox.UseVisualStyleBackColor = false;
             this.SapHetHan_chbox.CheckedChanged += new System.EventHandler(this.SapHetHan_chbox_CheckedChanged);
-            // 
-            // DangCoc_chbox
-            // 
-            this.DangCoc_chbox.AutoSize = true;
-            this.DangCoc_chbox.BackColor = System.Drawing.Color.Transparent;
-            this.DangCoc_chbox.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.DangCoc_chbox.Location = new System.Drawing.Point(292, 39);
-            this.DangCoc_chbox.Name = "DangCoc_chbox";
-            this.DangCoc_chbox.Size = new System.Drawing.Size(183, 29);
-            this.DangCoc_chbox.TabIndex = 7;
-            this.DangCoc_chbox.Text = "Đang cọc giữ chỗ";
-            this.DangCoc_chbox.UseVisualStyleBackColor = false;
-            this.DangCoc_chbox.CheckedChanged += new System.EventHandler(this.DangCoc_chbox_CheckedChanged);
             // 
             // DangTrong_chbox1
             // 
@@ -2708,7 +2695,7 @@ namespace GUI
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(240)))), ((int)(((byte)(210)))));
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(80)))), ((int)(((byte)(70)))));
             this.dgv_Tenant.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgv_Tenant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_Tenant.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None;
             this.dgv_Tenant.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(251)))), ((int)(((byte)(249)))));
             this.dgv_Tenant.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_Tenant.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -5963,6 +5950,7 @@ namespace GUI
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Controls.Add(this.guna2Button3);
             this.panelMain.Controls.Add(this.guna2PictureBox8);
             this.panelMain.Controls.Add(this.guna2GradientPanel17);
             this.panelMain.Controls.Add(this.panel2);
@@ -5975,11 +5963,34 @@ namespace GUI
             this.panelMain.Size = new System.Drawing.Size(251, 819);
             this.panelMain.TabIndex = 127;
             // 
+            // guna2Button3
+            // 
+            this.guna2Button3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.HoverState.BorderColor = System.Drawing.Color.Teal;
+            this.guna2Button3.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(255)))), ((int)(((byte)(240)))));
+            this.guna2Button3.HoverState.ForeColor = System.Drawing.Color.Teal;
+            this.guna2Button3.HoverState.Image = global::GUI.Properties.Resources.icons8_logout_100__077777;
+            this.guna2Button3.Image = global::GUI.Properties.Resources.icons8_logout_100;
+            this.guna2Button3.ImageSize = new System.Drawing.Size(35, 35);
+            this.guna2Button3.Location = new System.Drawing.Point(5, 50);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(54, 65);
+            this.guna2Button3.TabIndex = 134;
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click_1);
+            // 
             // guna2PictureBox8
             // 
             this.guna2PictureBox8.Image = global::GUI.Properties.Resources.LogoApp;
             this.guna2PictureBox8.ImageRotate = 0F;
-            this.guna2PictureBox8.Location = new System.Drawing.Point(60, 16);
+            this.guna2PictureBox8.Location = new System.Drawing.Point(91, 12);
             this.guna2PictureBox8.Name = "guna2PictureBox8";
             this.guna2PictureBox8.Size = new System.Drawing.Size(134, 90);
             this.guna2PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -6157,7 +6168,6 @@ namespace GUI
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.CheckBox DangNoTien_chbox;
-        private System.Windows.Forms.CheckBox DangCoc_chbox;
         private System.Windows.Forms.CheckBox DangTrong_chbox1;
         private System.Windows.Forms.CheckBox SapHetHan_chbox;
         private System.Windows.Forms.CheckBox DaQuaHan_chbox;
@@ -6412,5 +6422,7 @@ namespace GUI
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private System.Windows.Forms.CheckBox checkBox6;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow3;
     }
 }

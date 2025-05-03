@@ -1,6 +1,7 @@
 ﻿using BLL;
 using BLL.honhathao;
 using DTO;
+using Guna.UI2.WinForms;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -74,52 +75,64 @@ namespace GUI
             vehicle.Type = Language.reverseTranslate(type_cb.Text);
             vehicle.LicensePlate = licenseplate_tb.Text;
 
+            var (success, message) = ParkingAreaBLL.checkCapacity(areaid_cb.Text);
 
-            string check = VehicleBLL.CheckLogic(vehicle, areaid_cb.Text, unitprice_tb.Text);
-
-            switch (check)
+            if (success)
             {
-                case "required_tenantid":
-                    MessageBox.Show("Bạn chưa chọn mã khách thuê");
-                    return;
-                case "required_type":
-                    MessageBox.Show("Bạn chưa phân loại xe");
-                    return;
-                case "required_areaid":
-                    MessageBox.Show("Bạn chưa chọn mã bãi xe");
-                    return;
-                case "required_unitpriceid":
-                    MessageBox.Show("Bạn chưa chọn mã đơn giá");
-                    return;
-                case "required_unitprice":
-                    MessageBox.Show("Bạn chưa nhập đơn giá");
-                    return;
-                case "invalid_unitprice_format":
-                    MessageBox.Show("Đơn giá không hợp lệ");
-                    unitprice_tb.Text = string.Empty;
-                    return;
-                case "required_licenseplate":
-                    MessageBox.Show("Bạn chưa nhập biển số xe");
-                    return;
-                case "Database connection failed!":
-                    MessageBox.Show("Kết nối thất bại");
-                    return;
-                case "Add Successfully":
-                    MessageBox.Show("Thêm phương tiện thành công!");
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                    return;
 
-                default:
-                    MessageBox.Show($"Lỗi không xác định: {check}");
-                    return;
+                string check = VehicleBLL.CheckLogic(vehicle, areaid_cb.Text, unitprice_tb.Text);
+
+                switch (check)
+                {
+                    case "required_tenantid":
+                        MessageBox.Show("Bạn chưa chọn mã khách thuê");
+                        return;
+                    case "required_type":
+                        MessageBox.Show("Bạn chưa phân loại xe");
+                        return;
+                    case "required_areaid":
+                        MessageBox.Show("Bạn chưa chọn mã bãi xe");
+                        return;
+                    case "required_unitpriceid":
+                        MessageBox.Show("Bạn chưa chọn mã đơn giá");
+                        return;
+                    case "required_unitprice":
+                        MessageBox.Show("Bạn chưa nhập đơn giá");
+                        return;
+                    case "invalid_unitprice_format":
+                        MessageBox.Show("Đơn giá không hợp lệ");
+                        unitprice_tb.Text = string.Empty;
+                        return;
+                    case "required_licenseplate":
+                        MessageBox.Show("Bạn chưa nhập biển số xe");
+                        return;
+                    case "Database connection failed!":
+                        MessageBox.Show("Kết nối thất bại");
+                        return;
+                    case "Add Successfully":
+                        MessageBox.Show("Thêm phương tiện thành công!");
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                        return;
+
+                    default:
+                        MessageBox.Show($"Lỗi không xác định: {check}");
+                        return;
+                }
+            }
+            else
+            {
+                MessageBox.Show(message,
+                          success ? "Thành công" : "Lỗi",
+                          MessageBoxButtons.OK,
+                          success ? MessageBoxIcon.Information : MessageBoxIcon.Error);
             }
         }
 
         private void Form_AddVehicle_Load(object sender, EventArgs e)
         {
             tenantid_cb.Items.Clear();
-            foreach (string tenantid in TenantBLL.TenantBll_Load_TenantID())
+            foreach (string tenantid in TenantBLL.Load_TenantID_By_Buildingid(_buildingid))
             {
                 tenantid_cb.Items.Add(tenantid);
             }

@@ -27,6 +27,7 @@ DROP TRIGGER IF EXISTS after_add_W_E//
 
 CREATE PROCEDURE add_w_e(
     IN p_buildingid VARCHAR(50),
+    IN p_roomname VARCHAR(50),
     IN p_tenantid VARCHAR(50),
     IN p_o_w VARCHAR(50),  -- Chỉ số nước cũ
     IN p_n_w VARCHAR(50),  -- Chỉ số nước mới
@@ -54,7 +55,7 @@ BEGIN
     
     SET new_ID = createFigureID();
     INSERT INTO WATER_ELECTRICITY (FIGUREID, UNITPRICEID, TENANTID, OLDFIGURE, NEWFIGURE, START_DATE, END_DATE,RECORD_DATE,TYPE,UNIT)
-    VALUES (new_ID, 'UP001',p_tenantID,p_o_e,  p_n_e, v_start_date,v_end_date,v_now,'ELECTRICITY','kWh');
+    VALUES (new_ID, 'UP001',p_tenantID, p_o_e,  p_n_e, v_start_date,v_end_date,v_now,'ELECTRICITY','kWh');
     
     SET new_ID_0 = createFigureID();
     INSERT INTO WATER_ELECTRICITY (FIGUREID, UNITPRICEID, TENANTID, OLDFIGURE, NEWFIGURE, START_DATE, END_DATE,RECORD_DATE,TYPE,UNIT)
@@ -82,7 +83,6 @@ BEGIN
     
    
     set billdt_id_3 = createBillDetailID();
-    
    INSERT INTO billdetail (BILLDETAIL_ID, BILLID, ID, AMOUNT)
    SELECT billdt_id_3,new_id_2, r.ROOMID, r.PRICE
    FROM room r
@@ -90,7 +90,6 @@ BEGIN
    WHERE c.TENANTID = p_tenantid
     AND c.ISDELETED = 0
     AND r.ISDELETED = 0;
-    
     
    SELECT SUM(AMOUNT) INTO v_total
    FROM billdetail
@@ -463,7 +462,7 @@ BEGIN
     DELETE FROM water_electricity 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-SELECT 
+SELECT DISTINCT
     we.FIGUREID,
     we.UNITPRICEID,
     we.TENANTID,
@@ -542,7 +541,7 @@ BEGIN
     DELETE FROM bill 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT b.BILLID,b.TENANTID,t.FIRSTNAME,t.LASTNAME,b.TOTAL,b.START_DATE,b.END_DATE,COALESCE(p.TOTAL,0) AS 'TOTALS' FROM bill b
+    SELECT DISTINCT b.BILLID,b.TENANTID,t.FIRSTNAME,t.LASTNAME,b.TOTAL,b.START_DATE,b.END_DATE,COALESCE(p.TOTAL,0) AS 'TOTALS' FROM bill b
     JOIN tenant t ON t.TENANTID = b.TENANTID
     LEFT JOIN payment p ON p.BILLID = b.BILLID
     JOIN contract c ON c.TENANTID = t.TENANTID
@@ -567,6 +566,42 @@ END //
 
 
 -- PARKING AREA
+CREATE PROCEDURE sp_CheckParkingCapacity(
+    IN p_areaid VARCHAR(10),
+    OUT p_result INT,
+    OUT p_message VARCHAR(255)
+)
+BEGIN
+    DECLARE v_capacity INT DEFAULT NULL;
+    DECLARE v_current_vehicles INT DEFAULT 0;
+
+    -- Kiểm tra bãi đậu xe có tồn tại và chưa bị xóa
+    SELECT CAPACITY INTO v_capacity
+    FROM PARKINGAREA
+    WHERE AREAID = p_areaid AND ISDELETED = 0;
+
+    -- Nếu không tìm thấy bãi đậu xe
+    IF v_capacity IS NULL THEN
+        SET p_result = 0;
+        SET p_message = 'Không tìm thấy bãi đậu xe hoặc bãi đã bị xóa';
+    ELSE
+        -- Đếm số lượng xe đang đậu trong bãi (chưa bị xóa)
+        SELECT COUNT(*) INTO v_current_vehicles
+        FROM PARKING
+        WHERE AREAID = p_areaid AND ISDELETED = 0;
+
+        -- Kiểm tra sức chứa
+        IF v_current_vehicles >= v_capacity THEN
+            SET p_result = 0;
+            SET p_message = 'Bãi đậu xe đã đầy, vui lòng chọn bãi đậu xe khác!';
+        ELSE
+            SET p_result = 1;
+            SET p_message = 'Còn chỗ trống, có thể thêm phương tiện.';
+        END IF;
+    END IF;
+END;
+
+
 -- Thủ tục để lấy tất cả bãi đậu xe
 CREATE PROCEDURE sp_GetAllParkingAreas()
 BEGIN
@@ -631,7 +666,7 @@ BEGIN
                 ELSE 'empty'
             END as STATUS
         FROM PARKINGAREA pa
-        LEFT JOIN PARKING p ON pa.AREAID = p.AREAID
+        LEFT JOIN PARKING p ON pa.AREAID = p.AREAID AND p.ISDELETED = 0
         WHERE pa.ISDELETED = 0
         GROUP BY pa.AREAID, pa.BUILDINGID, pa.ADDRESS, pa.TYPE, pa.CAPACITY
     ) AS temp
@@ -746,10 +781,10 @@ BEGIN
         WHERE AREAID = p_areaid;
         
         SET p_result = 1;
-        SET p_message = 'Bãi đậu xe đã được xóa thành công';
+        SET p_message = 'success_';
     ELSE
         SET p_result = 0;
-        SET p_message = 'Không tìm thấy bãi đậu xe';
+        SET p_message = 'fail_';
     END IF;
 END//
 
@@ -888,6 +923,7 @@ BEGIN
     DECLARE p_new_vehicle_id VARCHAR(20);
     DECLARE new_parking_id VARCHAR(10);
     DECLARE i INT DEFAULT 0;
+    DECLARE p_buildingid VARCHAR(10);
 
     -- Tạo ID mới cho phương tiện
     SET p_new_vehicle_id = createVehicleID();
@@ -915,6 +951,7 @@ BEGIN
 	SET new_parking_id = generate_parking_id();
 	INSERT INTO PARKING (PARKINGID, AREAID, VEHICLEID, STATUS)
 	VALUES (new_parking_id, p_areaid, p_new_vehicle_id, 'dangsudung');
+    
 END //
 -- New 12/4
 CREATE PROCEDURE proc_updateVehicle(
@@ -962,11 +999,16 @@ BEGIN
             DELETED_DATE = CURDATE()
         WHERE VEHICLEID = p_vehicleid;
         
+        UPDATE PARKING
+        SET ISDELETED = 1,
+			DELETED_DATE = CURDATE()
+		WHERE VEHICLEID = p_vehicleid;
+        
         SET p_result = 1;
-        SET p_message = 'Phương tiện đã được xóa thành công';
+        SET p_message = 'success_';
     ELSE
         SET p_result = 0;
-        SET p_message = 'Không tìm thấy phương tiện';
+        SET p_message = 'fail_';
     END IF;
 END//
 
@@ -1256,7 +1298,7 @@ BEGIN
     
     IF asset_exists = 0 THEN
         SET p_result = 0;
-        SET p_message = 'Tài sản không tồn tại';
+        SET p_message = 'fail_';
     ELSE
         -- Cập nhật cả ISDELETED và DELETED_DATE
         UPDATE ASSETS 
@@ -1265,7 +1307,7 @@ BEGIN
         WHERE ASSETID = p_assetid;
         
         SET p_result = 1;
-        SET p_message = CONCAT('Đã xóa tài sản ', p_assetid, ' thành công. Tài sản sẽ được xóa vĩnh viễn sau 30 ngày.');
+        SET p_message = CONCAT('success_');
     END IF;
 END//
 
@@ -1293,11 +1335,10 @@ BEGIN
         ROOM r ON a.ROOMID = r.ROOMID
     JOIN 
         BUILDING b ON r.BUILDINGID = b.BUILDINGID
-    JOIN 
-        USER u ON b.USERNAME = u.USERNAME
+    -- JOIN USER u ON b.USERNAME = u.USERNAME
     WHERE 
-        u.USERNAME = p_username
-        AND a.ISDELETED = 0
+       -- u.USERNAME = p_username
+         a.ISDELETED = 0
         AND (p_asset_name IS NULL OR a.ASSETNAME LIKE CONCAT('%', p_asset_name, '%') COLLATE utf8mb4_general_ci)
         AND (p_buildingid IS NULL OR r.BUILDINGID = p_buildingid)
     ORDER BY 
@@ -1523,7 +1564,7 @@ BEGIN
     
     IF room_exists = 0 THEN
         SET p_result = 0;
-        SET p_message = 'Phòng không tồn tại';
+        SET p_message = 'fail_';
     ELSE
         -- Xóa phòng (với ON DELETE CASCADE, các bản ghi liên quan sẽ tự động xóa)
         UPDATE ROOM
@@ -1532,73 +1573,97 @@ BEGIN
 		WHERE ROOMNAME = p_roomid AND BUILDINGID = p_buildingid;
         
         SET p_result = 1;
-        SET p_message = CONCAT('Đã xóa phòng ', p_roomid, ' thành công');
+        SET p_message = CONCAT('success_');
     END IF;
 END//
 
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE IF NOT EXISTS `filter_room`(
-    IN p_username VARCHAR(50),
+    IN p_username VARCHAR(50),  -- vẫn khai báo nhưng không sử dụng
     IN p_buildingid VARCHAR(20),
     IN p_status_list VARCHAR(1000)
 )
 BEGIN
-    -- Delete records that have been soft-deleted for more than 30 days
+
+    -- Xóa các bản ghi đã bị đánh dấu xóa hơn 30 ngày
     DELETE FROM ROOM 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
     
-    IF p_buildingid is null then
-		SELECT 
-			r.ROOMNAME, 
-			r.BUILDINGID, 
-			r.TYPE, 
+    IF p_buildingid IS NULL THEN
+        SELECT 
+            r.ROOMNAME, 
+            r.BUILDINGID, 
+            r.TYPE, 
             r.FLOOR,
-			r.CONVENIENT, 
-			r.AREA, 
-			r.PRICE, 
-			r.STATUS
-		FROM ROOM r
-		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
-		JOIN USER u ON u.USERNAME = b.USERNAME
-		WHERE u.USERNAME = p_username
-		AND r.ISDELETED = 0
-        AND b.ISDELETED = 0
-        AND u.ISDELETED = 0;
-	ELSE
+            r.CONVENIENT, 
+            r.AREA, 
+            r.PRICE, 
+            r.STATUS
+        FROM ROOM r
+        JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+        WHERE 
+            r.ISDELETED = 0
+            AND b.ISDELETED = 0;
+    ELSE
+        -- Tạo bảng tạm chứa danh sách trạng thái
+        CREATE TEMPORARY TABLE IF NOT EXISTS temp_statuses (
+            status_value VARCHAR(100)
+        );
+        TRUNCATE TABLE temp_statuses;
+        
+        -- Chèn trạng thái vào bảng tạm
+        SET @sql = CONCAT('INSERT INTO temp_statuses VALUES ("', 
+                          REPLACE(p_status_list, '; ', '"),("'), '")');
+        PREPARE stmt FROM @sql;
+        EXECUTE stmt;
+        DEALLOCATE PREPARE stmt;
+        
+        -- Đếm tổng số trạng thái
+        SET @total_statuses = (SELECT COUNT(*) FROM temp_statuses);
+        
+        -- Truy vấn phòng với tất cả trạng thái phù hợp
+        SELECT 
+            r.ROOMNAME, 
+            r.BUILDINGID, 
+            r.TYPE, 
+            r.FLOOR, 
+            r.CONVENIENT, 
+            r.AREA, 
+            r.PRICE, 
+            r.STATUS
+        FROM ROOM r
+        JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
+        WHERE 
+            r.BUILDINGID = p_buildingid
+            AND r.ISDELETED = 0
+            AND b.ISDELETED = 0
+            AND (
+                SELECT COUNT(*) 
+                FROM temp_statuses ts 
+                WHERE r.STATUS LIKE CONCAT('%', ts.status_value, '%')
+            ) = @total_statuses;
+        
+        DROP TEMPORARY TABLE IF EXISTS temp_statuses;
+    END IF;
+    
+    UPDATE ROOM R
+	JOIN CONTRACT C ON R.ROOMID = C.ROOMID
+	SET R.STATUS = CASE
+		WHEN DATEDIFF(CURDATE(), C.ENDATE) > 20
+			THEN 'dango'
+		WHEN DATEDIFF(CURDATE(), C.ENDATE) BETWEEN 10 AND 20
+			THEN 'dango; saphethanhopdong'
+		WHEN DATEDIFF(CURDATE(), C.ENDATE) BETWEEN 1 AND 9
+			THEN 'dango; dangbaoketthuc'
+		WHEN DATEDIFF(CURDATE(), C.ENDATE) = 0
+			THEN 'dango; daquahanhopdong'
+		ELSE R.STATUS  -- giữ nguyên nếu không rơi vào điều kiện nào
+	END
+	;
 
-		-- Tạo bảng tạm lưu trạng thái
-		CREATE TEMPORARY TABLE IF NOT EXISTS temp_statuses (
-			status_value VARCHAR(100)
-		);
-		TRUNCATE TABLE temp_statuses;
-		
-		-- Chèn các trạng thái vào bảng tạm
-		SET @sql = CONCAT('INSERT INTO temp_statuses VALUES ("', 
-						 REPLACE(p_status_list, '; ', '"),("'), '")');
-		PREPARE stmt FROM @sql;
-		EXECUTE stmt;
-		DEALLOCATE PREPARE stmt;
-		
-		-- Đếm tổng số trạng thái cần kiểm tra
-		SET @total_statuses = (SELECT COUNT(*) FROM temp_statuses);
-		
-		-- Lọc phòng phải chứa TẤT CẢ trạng thái được chọn
-		SELECT r.ROOMNAME, r.BUILDINGID, r.TYPE, r.FLOOR, r.CONVENIENT, r.AREA, r.PRICE, r.STATUS
-		FROM ROOM r
-		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
-		WHERE b.USERNAME = p_username 
-		AND r.buildingid = p_buildingid
-		AND r.ISDELETED = 0
-        AND b.ISDELETED = 0
-		AND (
-			SELECT COUNT(*) 
-			FROM temp_statuses ts 
-			WHERE r.STATUS LIKE CONCAT('%', ts.status_value, '%')
-		) = @total_statuses;
-		
-		DROP TEMPORARY TABLE IF EXISTS temp_statuses;
-	end if;
+                
 END//
+
 
  CREATE DEFINER=`root`@`localhost` FUNCTION IF NOT EXISTS `checkFloorCapacity`(
     p_buildingid VARCHAR(10),
@@ -1708,9 +1773,7 @@ BEGIN
 			r.STATUS
 		FROM ROOM r
 		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
-		JOIN USER u ON u.USERNAME = b.USERNAME
-		WHERE u.USERNAME = p_username
-		AND r.ISDELETED = 0;
+		WHERE r.ISDELETED = 0;
 	ELSE
 		SELECT 
 			r.ROOMNAME, 
@@ -1723,9 +1786,7 @@ BEGIN
 			r.STATUS
 		FROM ROOM r
 		JOIN BUILDING b ON r.BUILDINGID = b.BUILDINGID
-		JOIN USER u ON u.USERNAME = b.USERNAME
-		WHERE u.USERNAME = p_username 
-		AND b.BUILDINGID = p_buildingid
+		WHERE b.BUILDINGID = p_buildingid
 		AND r.ISDELETED = 0;
 	END IF;
 END//
@@ -2092,13 +2153,6 @@ BEGIN
     DECLARE room_id VARCHAR(10);
 
     SET v_contractid = createContractID();
-
-	SELECT ROOMID INTO room_id
-    FROM ROOM
-    WHERE BUILDINGID = p_building_id
-    AND ROOMNAME = p_id_room;
-    
-    UPDATE ROOM SET STATUS = 'dango' WHERE ROOMID = room_id;
     
     SELECT r.PRICE INTO v_monthrent
     FROM room r 
@@ -2119,7 +2173,7 @@ BEGIN
         NOTES
     ) VALUES (
         v_contractid,
-        room_id,
+        p_id_room,
         p_tenantid,
         p_createddate,
         p_startdate,
@@ -2129,6 +2183,13 @@ BEGIN
         p_deposit,
         p_note
     );
+    
+    SELECT ROOMID INTO room_id
+    FROM ROOM
+    WHERE BUILDINGID = p_building_id
+    AND ROOMNAME = p_id_room;
+    
+    UPDATE ROOM SET STATUS = 'dango' WHERE ROOMID = room_id;
 
     SELECT CONCAT('Contract ', v_contractid, ' created successfully') AS result;
 END//
@@ -2570,7 +2631,7 @@ BEGIN
     DELETE FROM tenant 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT t.* FROM tenant t
+    SELECT  t.USERNAME,t.TENANTID,t.FIRSTNAME,t.LASTNAME,t.BIRTHDAY,t.GENDER,t.PHONENUMBER,t.EMAIL FROM tenant t
 	WHERE t.BUILDINGID = p_building
 	AND t.ISDELETED = 0
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));

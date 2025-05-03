@@ -258,7 +258,7 @@ billtable_lastname: Tên
 billtable_total: Tổng tiền
 billtable_startdate: Ngày bắt đầu
 billtable_enddate: Ngày bắt đầu
-billtable_coalesce: Nợ
+billtable_coalesce: Đã thanh toán
 : Bảng đăng ký dịch vụ
 servicetable_ordernumber: STT
 servicetable_roomid: Mã phòng

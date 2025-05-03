@@ -131,6 +131,35 @@ namespace DAL
             }
         }
 
+        public static (bool success, string message) checkCapacity(string areaid)
+        {
+            using (MySqlConnection conn = MySqlConnectionData.Connect())
+            {
+                try
+                {
+                    using (MySqlCommand cmd = new MySqlCommand("sp_CheckParkingCapacity", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.Parameters.AddWithValue("@p_areaid", areaid);
+                        cmd.Parameters.Add("@p_result", MySqlDbType.Int32).Direction = ParameterDirection.Output;
+                        cmd.Parameters.Add("@p_message", MySqlDbType.VarChar, 255).Direction = ParameterDirection.Output;
+
+                        cmd.ExecuteNonQuery();
+
+                        int result = Convert.ToInt32(cmd.Parameters["@p_result"].Value);
+                        string message = cmd.Parameters["@p_message"].Value.ToString();
+
+                        return (result == 1, message);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return (false, $"Database error: {ex.Message}");
+                }
+            }
+        }
+
         public static DataTable FilterParkingArea(string buildingid, string type, string status)
         {
             DataTable dt = new DataTable();

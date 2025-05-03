@@ -265,7 +265,7 @@ billtable_lastname: Last name
 billtable_total: Total amount
 billtable_startdate: Start date
 billtable_enddate: End date
-billtable_coalesce: Debt
+billtable_coalesce: Paid
 : Service Registration Table
 servicetable_ordernumber: Order number
 servicetable_roomid: Room id

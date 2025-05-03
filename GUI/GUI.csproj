@@ -600,6 +600,9 @@
     <Content Include="honhathao\languages\Vietnamese.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\icons8-logout-100_#077777.png" />
+    <None Include="Resources\icons8-logout-100.png" />
+    <None Include="Resources\icons8-log-out-100_1.png" />
     <None Include="Resources\icons8-feedback-50.png" />
     <None Include="Resources\icons8-form-50.png" />
     <None Include="Resources\icons8-request-feedback-96.png" />

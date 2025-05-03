@@ -67,9 +67,9 @@ namespace GUI
                     case "notification.ending":
                         DangKT_chbox.Text = a.Value;
                         break;
-                    case "notification.reserved":
-                        DangCoc_chbox.Text = a.Value;
-                        break;
+                    //case "notification.reserved":
+                    //    DangCoc_chbox.Text = a.Value;
+                    //    break;
                     case "contract.expired":
                         DaHetHan_chbox.Text = a.Value;
                         break;
@@ -140,9 +140,9 @@ namespace GUI
                         case "saphethanhopdong":
                             SapHetHan_chbox.Checked = true;
                             break;
-                        case "dangcocgiucho":
-                            DangCoc_chbox.Checked = true;
-                            break;
+                        //case "dangcocgiucho":
+                        //    DangCoc_chbox.Checked = true;
+                        //    break;
                         case "daquahanhopdong":
                             DaHetHan_chbox.Checked = true;
                             break;
@@ -180,7 +180,7 @@ namespace GUI
             string status = (DangO_chbox.Checked ? Language.reverseTranslate(DangO_chbox.Text) + "; " : "")
               + (DangTrong_chbox.Checked ? Language.reverseTranslate(DangTrong_chbox.Text) + "; " : "")
               + (DangKT_chbox.Checked ? Language.reverseTranslate(DangKT_chbox.Text) + "; " : "")
-              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
+              //+ (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
               + (DaHetHan_chbox.Checked ? Language.reverseTranslate(DaHetHan_chbox.Text) + "; " : "")
               + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
               + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) : "");
@@ -239,7 +239,7 @@ namespace GUI
             DangTrong_chbox.Checked = false;
             DangNoTien_chbox.Checked = false;
             DangKT_chbox.Checked = false;
-            DangCoc_chbox.Checked = false;
+            //DangCoc_chbox.Checked = false;
             DaHetHan_chbox.Checked = false;
             SapHetHan_chbox.Checked = false;
 
@@ -279,19 +279,19 @@ namespace GUI
 
         private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangKT_chbox.Checked)
-            {
-                DangCoc_chbox.Checked = false;
-            }
+            //if (DangKT_chbox.Checked)
+            //{
+            //    DangCoc_chbox.Checked = false;
+            //}
         }
 
-        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if(DangCoc_chbox.Checked)
-{
-                DangKT_chbox.Checked = false;
-            }
-        }
+//        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
+//        {
+//            if(DangCoc_chbox.Checked)
+//{
+//                DangKT_chbox.Checked = false;
+//            }
+//        }
 
         private void DaHetHan_chbox_CheckedChanged(object sender, EventArgs e)
         {

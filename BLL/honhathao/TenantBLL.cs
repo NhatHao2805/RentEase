@@ -149,5 +149,10 @@ namespace BLL.honhathao
             return TenantAccess.load_Tenant_by_Roomid(p_building_id,roomID);
         }
 
+        public static List<string> Load_TenantID_By_Buildingid(string buildingid)
+        {
+            return TenantAccess.Load_TenantID_By_Buildingid(buildingid);
+        }
+
     }
 }

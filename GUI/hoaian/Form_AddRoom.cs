@@ -59,21 +59,21 @@ namespace GUI
                     case "status_options.vacant":
                         DangTrong_chbox.Text = a.Value;
                         break;
-                    case "status_options.owing":
-                        DangNoTien_chbox.Text = a.Value;
-                        break;
-                    case "notification.ending":
-                        DangKT_chbox.Text = a.Value;
-                        break;
-                    case "notification.reserved":
-                        DangCoc_chbox.Text = a.Value;
-                        break;
-                    case "contract.expired":
-                        DaHetHan_chbox.Text = a.Value;
-                        break;
-                    case "contract.near_expiry":
-                        SapHetHan_chbox.Text = a.Value;
-                        break;
+                    //case "status_options.owing":
+                    //    DangNoTien_chbox.Text = a.Value;
+                    //    break;
+                    //case "notification.ending":
+                    //    DangKT_chbox.Text = a.Value;
+                    //    break;
+                    //case "notification.reserved":
+                    //    DangCoc_chbox.Text = a.Value;
+                    //    break;
+                    //case "contract.expired":
+                    //    DaHetHan_chbox.Text = a.Value;
+                    //    break;
+                    //case "contract.near_expiry":
+                    //    SapHetHan_chbox.Text = a.Value;
+                    //    break;
 
                     case "room.add_title":
                         label23.Text = a.Value;
@@ -98,12 +98,12 @@ namespace GUI
             room.Area = area_tb.Text;
 
             string status = (DangO_chbox.Checked ? Language.reverseTranslate(DangO_chbox.Text) + "; " : "")
-              + (DangTrong_chbox.Checked ? Language.reverseTranslate(DangTrong_chbox.Text) + "; " : "")
-              + (DangKT_chbox.Checked ? Language.reverseTranslate(DangKT_chbox.Text) + "; " : "")
-              + (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
-              + (DaHetHan_chbox.Checked ? Language.reverseTranslate(DaHetHan_chbox.Text) + "; " : "")
-              + (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
-              + (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) : "");
+              + (DangTrong_chbox.Checked ? Language.reverseTranslate(DangTrong_chbox.Text) + "; " : "");
+              //+ (DangKT_chbox.Checked ? Language.reverseTranslate(DangKT_chbox.Text) + "; " : "")
+              //+ (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
+              //+ (DaHetHan_chbox.Checked ? Language.reverseTranslate(DaHetHan_chbox.Text) + "; " : "")
+              //+ (SapHetHan_chbox.Checked ? Language.reverseTranslate(SapHetHan_chbox.Text) + "; " : "")
+              //+ (DangNoTien_chbox.Checked ? Language.reverseTranslate(DangNoTien_chbox.Text) : "");
             room.Status = status.TrimEnd(';', ' ');
 
             string check = roomBLL.CheckLogic(room);
@@ -169,11 +169,11 @@ namespace GUI
         {
             DangO_chbox.Checked = false;
             DangTrong_chbox.Checked = false;
-            DangNoTien_chbox.Checked = false;
-            DangKT_chbox.Checked = false;
-            DangCoc_chbox.Checked = false;
-            DaHetHan_chbox.Checked = false;
-            SapHetHan_chbox.Checked = false;
+            //DangNoTien_chbox.Checked = false;
+            //DangKT_chbox.Checked = false;
+            //DangCoc_chbox.Checked = false;
+            //DaHetHan_chbox.Checked = false;
+            //SapHetHan_chbox.Checked = false;
 
             room.Status = "";
         }
@@ -221,37 +221,37 @@ namespace GUI
             }
         }
 
-        private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangCoc_chbox.Checked)
-            {
-                DangKT_chbox.Checked = false;
-            }
-        }
+        //private void DangCoc_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (DangCoc_chbox.Checked)
+        //    {
+        //        DangKT_chbox.Checked = false;
+        //    }
+        //}
 
-        private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangKT_chbox.Checked)
-            {
-                DangCoc_chbox.Checked = false;
-            }
-        }
+        //private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (DangKT_chbox.Checked)
+        //    {
+        //        DangCoc_chbox.Checked = false;
+        //    }
+        //}
 
-        private void DaHetHan_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if(DaHetHan_chbox.Checked)
-            {
-                SapHetHan_chbox.Checked = false;
-            }
-        }
+        //private void DaHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if(DaHetHan_chbox.Checked)
+        //    {
+        //        SapHetHan_chbox.Checked = false;
+        //    }
+        //}
 
-        private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SapHetHan_chbox.Checked)
-            {
-                DaHetHan_chbox.Checked = false;
-            }
-        }
+        //private void SapHetHan_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (SapHetHan_chbox.Checked)
+        //    {
+        //        DaHetHan_chbox.Checked = false;
+        //    }
+        //}
 
         private void floor_cb_SelectedIndexChanged(object sender, EventArgs e)
         {

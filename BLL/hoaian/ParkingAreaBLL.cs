@@ -90,5 +90,10 @@ namespace BLL
         {
             return ParkingAreaAccess.GetAreaIdByVehicleId(vehicleid);
         }
+
+        public static (bool success, string message) checkCapacity(string areaid)
+        {
+            return ParkingAreaAccess.checkCapacity(areaid);
+        }
     }
 }
