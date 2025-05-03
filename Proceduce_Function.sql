@@ -482,8 +482,7 @@ WHERE b.BUILDINGID = p_buildingid
         AND t.ISDELETED = 0
         AND we.ISDELETED = 0
         AND c.ISDELETED = 0
-        AND r.ISDELETED = 0
-        AND t.USERNAME = p_user;
+        AND r.ISDELETED = 0;
 END //
 
 CREATE FUNCTION createFigureID()
@@ -547,8 +546,7 @@ BEGIN
     JOIN contract c ON c.TENANTID = t.TENANTID
     JOIN room r ON r.ROOMID = c.ROOMID
     JOIN building bu ON bu.BUILDINGID = r.BUILDINGID
-    WHERE t.USERNAME = p_user
-	AND t.ISDELETED = 0
+    WHERE t.ISDELETED = 0
     AND b.ISDELETED = 0
 	AND c.ISDELETED = 0
     AND r.ISDELETED = 0
