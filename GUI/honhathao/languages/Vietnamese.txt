@@ -258,7 +258,7 @@ billtable_lastname: Tên
 billtable_total: Tổng tiền
 billtable_startdate: Ngày bắt đầu
 billtable_enddate: Ngày bắt đầu
-billtable_coalesce: Nợ
+billtable_coalesce: Đã thanh toán
 : Bảng đăng ký dịch vụ
 servicetable_ordernumber: STT
 servicetable_roomid: Mã phòng
@@ -357,6 +357,7 @@ parking.type.motor_bike: Bãi xe máy/xe đạp
 parking.type.mixed: Bãi xe hỗn hợp
 parking.type.available: Bãi xe còn trống
 parking.type.full: Bãi xe đã đầy
+required_empty: Vui lòng hủy đăng ký phương tiện trước khi thay đổi phân loại
 :Form_Vehicle
 vehicle.table_header.vehicle_id: Mã xe
 vehicle.table_header.customer_id: Mã khách hàng

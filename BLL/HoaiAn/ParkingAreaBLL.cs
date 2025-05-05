@@ -48,6 +48,10 @@ namespace BLL
 
         public static string UpdateArea(ParkingArea area)
         {
+            if(ParkingAreaAccess.GetCurrentVehicle(area.AreaId) > 0)
+            {
+                return "required_empty";
+            }
 
             if (string.IsNullOrEmpty(area.Address))
             {

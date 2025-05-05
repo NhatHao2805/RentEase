@@ -125,12 +125,12 @@ namespace GUI
                 }
                 data.Columns.RemoveAt(0);
                 dgv_Tenant.DataSource = data;
-                dgv_Tenant.Columns[0].Width = 90;
+                dgv_Tenant.Columns[0].Width = 100;
                 dgv_Tenant.Columns[1].Width = 150;
                 dgv_Tenant.Columns[2].Width = 100;
-                dgv_Tenant.Columns[3].Width = 80;
+                dgv_Tenant.Columns[3].Width = 100;
                 dgv_Tenant.Columns[4].Width = 100;
-                dgv_Tenant.Columns[5].Width = 200;
+                dgv_Tenant.Columns[5].Width = 150;
                 dgv_Tenant.Columns[6].Width = 300;
                 dgv_Tenant.ScrollBars = ScrollBars.Both;
 
@@ -1766,11 +1766,6 @@ namespace GUI
         }
         private void button53_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView7.SelectedRows.Count == 0)
-            {
-                MessageBox.Show(Language.translate("asking"));
-                return;
-            }
             DataGridViewRow selectedRow = guna2DataGridView7.SelectedRows[0];
 
             ParkingArea selectedArea = new ParkingArea
@@ -1781,6 +1776,20 @@ namespace GUI
                 Type = selectedRow.Cells["Type"].Value?.ToString(),
                 Capacity = selectedRow.Cells["Capacity"].Value?.ToString()
             };
+
+            if (ParkingAreaBLL.UpdateArea(selectedArea) == "required_empty")
+            {
+                MessageBox.Show(Language.translate("required_empty"), "",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (guna2DataGridView7.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(Language.translate("asking"));
+                return;
+            }
+            
             Form_UpdateParkingArea updateArea = new Form_UpdateParkingArea(form1.taikhoan.Username, selectedArea);
             OverlayManager.ShowWithOverlay(this, updateArea);//thêm
             if (updateArea.DialogResult == DialogResult.OK)
@@ -2365,25 +2374,25 @@ namespace GUI
                         break;
 
                     case "tenanttable_tenantid":
-                        dgv_Tenant.Columns["TENANTID"].HeaderText = kvp.Value;
+                        dgv_Tenant.Columns[0].HeaderText = kvp.Value;
                         break;
                     case "tenanttable_firstname":
-                        dgv_Tenant.Columns["FIRSTNAME"].HeaderText = kvp.Value;
+                        dgv_Tenant.Columns[1].HeaderText = kvp.Value;
                         break;
                     case "tenanttable_lastname":
-                        dgv_Tenant.Columns["LASTNAME"].HeaderText = kvp.Value;
+                        dgv_Tenant.Columns[2].HeaderText = kvp.Value;
                         break;
                     case "tenanttable_birthday":
-                        dgv_Tenant.Columns["BIRTHDAY"].HeaderText = kvp.Value;
+                        dgv_Tenant.Columns[3].HeaderText = kvp.Value;
                         break;
                     case "tenanttable_gender":
-                        dgv_Tenant.Columns["GENDER"].HeaderText = kvp.Value;
+                        dgv_Tenant.Columns[4].HeaderText = kvp.Value;
                         break;
                     case "tenanttable_numberphone":
-                        dgv_Tenant.Columns["PHONENUMBER"].HeaderText = kvp.Value;
+                        dgv_Tenant.Columns[5].HeaderText = kvp.Value;
                         break;
                     case "tenanttable_email":
-                        dgv_Tenant.Columns["EMAIL"].HeaderText = kvp.Value;
+                        dgv_Tenant.Columns[6].HeaderText = kvp.Value;
                         break;
 
                     case "registrationtable_registrationid":

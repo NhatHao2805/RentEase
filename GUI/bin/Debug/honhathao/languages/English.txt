@@ -265,7 +265,7 @@ billtable_lastname: Last name
 billtable_total: Total amount
 billtable_startdate: Start date
 billtable_enddate: End date
-billtable_coalesce: Debt
+billtable_coalesce: Paid
 : Service Registration Table
 servicetable_ordernumber: Order number
 servicetable_roomid: Room id
@@ -363,6 +363,7 @@ parking.type.motor_bike: Motorbike/Bike Parking
 parking.type.mixed: Mixed Parking
 parking.type.available: Available Parking
 parking.type.full: Full Parking
+required_empty: Please unsubscribe from the extension before changing the classification type
 :Form_Vehicle
 vehicle.table_header.vehicle_id: Vehicle Id
 vehicle.table_header.customer_id: Customer Id

@@ -27,6 +27,7 @@ DROP TRIGGER IF EXISTS after_add_W_E//
 
 CREATE PROCEDURE add_w_e(
     IN p_buildingid VARCHAR(50),
+    IN p_roomname VARCHAR(50),
     IN p_tenantid VARCHAR(50),
     IN p_o_w VARCHAR(50),  -- Chỉ số nước cũ
     IN p_n_w VARCHAR(50),  -- Chỉ số nước mới
@@ -54,7 +55,7 @@ BEGIN
     
     SET new_ID = createFigureID();
     INSERT INTO WATER_ELECTRICITY (FIGUREID, UNITPRICEID, TENANTID, OLDFIGURE, NEWFIGURE, START_DATE, END_DATE,RECORD_DATE,TYPE,UNIT)
-    VALUES (new_ID, 'UP001',p_tenantID,p_o_e,  p_n_e, v_start_date,v_end_date,v_now,'ELECTRICITY','kWh');
+    VALUES (new_ID, 'UP001',p_tenantID, p_o_e,  p_n_e, v_start_date,v_end_date,v_now,'ELECTRICITY','kWh');
     
     SET new_ID_0 = createFigureID();
     INSERT INTO WATER_ELECTRICITY (FIGUREID, UNITPRICEID, TENANTID, OLDFIGURE, NEWFIGURE, START_DATE, END_DATE,RECORD_DATE,TYPE,UNIT)
@@ -82,7 +83,6 @@ BEGIN
     
    
     set billdt_id_3 = createBillDetailID();
-    
    INSERT INTO billdetail (BILLDETAIL_ID, BILLID, ID, AMOUNT)
    SELECT billdt_id_3,new_id_2, r.ROOMID, r.PRICE
    FROM room r
@@ -90,7 +90,6 @@ BEGIN
    WHERE c.TENANTID = p_tenantid
     AND c.ISDELETED = 0
     AND r.ISDELETED = 0;
-    
     
    SELECT SUM(AMOUNT) INTO v_total
    FROM billdetail
@@ -463,7 +462,7 @@ BEGIN
     DELETE FROM water_electricity 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-SELECT 
+SELECT DISTINCT
     we.FIGUREID,
     we.UNITPRICEID,
     we.TENANTID,
@@ -483,8 +482,7 @@ WHERE b.BUILDINGID = p_buildingid
         AND t.ISDELETED = 0
         AND we.ISDELETED = 0
         AND c.ISDELETED = 0
-        AND r.ISDELETED = 0
-        AND t.USERNAME = p_user;
+        AND r.ISDELETED = 0;
 END //
 
 CREATE FUNCTION createFigureID()
@@ -542,14 +540,13 @@ BEGIN
     DELETE FROM bill 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT b.BILLID,b.TENANTID,t.FIRSTNAME,t.LASTNAME,b.TOTAL,b.START_DATE,b.END_DATE,COALESCE(p.TOTAL,0) AS 'TOTALS' FROM bill b
+    SELECT DISTINCT b.BILLID,b.TENANTID,t.FIRSTNAME,t.LASTNAME,b.TOTAL,b.START_DATE,b.END_DATE,COALESCE(p.TOTAL,0) AS 'TOTALS' FROM bill b
     JOIN tenant t ON t.TENANTID = b.TENANTID
     LEFT JOIN payment p ON p.BILLID = b.BILLID
     JOIN contract c ON c.TENANTID = t.TENANTID
     JOIN room r ON r.ROOMID = c.ROOMID
     JOIN building bu ON bu.BUILDINGID = r.BUILDINGID
-    WHERE t.USERNAME = p_user
-	AND t.ISDELETED = 0
+    WHERE t.ISDELETED = 0
     AND b.ISDELETED = 0
 	AND c.ISDELETED = 0
     AND r.ISDELETED = 0
@@ -600,7 +597,7 @@ BEGIN
             SET p_message = 'Còn chỗ trống, có thể thêm phương tiện.';
         END IF;
     END IF;
-END;
+END //
 
 
 -- Thủ tục để lấy tất cả bãi đậu xe
@@ -744,6 +741,17 @@ BEGIN
     
 END//
 
+CREATE PROCEDURE proc_changParingAreaType(
+	IN p_areaid VARCHAR(20),
+    IN p_buildingid VARCHAR(20),
+    IN p_address VARCHAR(100),
+    IN p_type VARCHAR(50),
+    IN p_capacity INT
+)
+BEGIN
+	
+END //
+
 CREATE PROCEDURE proc_updateParkingArea(
 	IN p_areaid VARCHAR(20),
     IN p_buildingid VARCHAR(20),
@@ -752,13 +760,21 @@ CREATE PROCEDURE proc_updateParkingArea(
     IN p_capacity INT
 )
 BEGIN
-    UPDATE PARKINGAREA
-    SET 
-        BUILDINGID = p_buildingid,
-        ADDRESS = p_address,
-        TYPE = p_type,
-        CAPACITY = p_capacity
-    WHERE AREAID = p_areaid;
+	IF (SELECT COUNT(*) FROM PARKING WHERE AREAID = p_areaid) = 0 THEN
+		BEGIN
+			UPDATE PARKINGAREA
+			SET 
+				BUILDINGID = p_buildingid,
+				ADDRESS = p_address,
+				TYPE = p_type,
+				CAPACITY = p_capacity
+			WHERE AREAID = p_areaid;
+		END;
+    ELSE 
+		BEGIN
+			proc_changParingAreaType(p_areaid, p_buildingid, p_address, p_type, p_capacity);
+		END;
+    END IF;
     
 END//
 
@@ -2153,12 +2169,15 @@ BEGIN
     DECLARE v_monthrent FLOAT;
     DECLARE room_id VARCHAR(10);
 
+	
+
     SET v_contractid = createContractID();
     
-    SELECT r.PRICE INTO v_monthrent
+    SELECT r.ROOMID,r.PRICE INTO room_id,v_monthrent
     FROM room r 
     JOIN building b ON b.BUILDINGID = r.BUILDINGID 
     WHERE b.BUILDINGID = p_building_id
+    and r.ROOMNAME = p_id_room
     LIMIT 1;
   
     INSERT INTO contract (
@@ -2632,7 +2651,7 @@ BEGIN
     DELETE FROM tenant 
     WHERE ISDELETED = 1 AND DATEDIFF(CURDATE(), DELETED_DATE) > 30;
 
-    SELECT t.* FROM tenant t
+    SELECT  t.USERNAME,t.TENANTID,t.FIRSTNAME,t.LASTNAME,t.BIRTHDAY,t.GENDER,t.PHONENUMBER,t.EMAIL FROM tenant t
 	WHERE t.BUILDINGID = p_building
 	AND t.ISDELETED = 0
 	AND (p_lastname IS NULL OR CONCAT(t.FIRSTNAME,' ',t.LASTNAME) LIKE CONCAT('%', p_lastname, '%'));

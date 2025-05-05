@@ -58,9 +58,9 @@ namespace GUI
                     case "status_options.occupied":
                         DangO_chbox.Text = a.Value;
                         break;
-                    case "status_options.vacant":
-                        DangTrong_chbox.Text = a.Value;
-                        break;
+                    //case "status_options.vacant":
+                    //    DangTrong_chbox.Text = a.Value;
+                    //    break;
                     case "status_options.owing":
                         DangNoTien_chbox.Text = a.Value;
                         break;
@@ -152,9 +152,9 @@ namespace GUI
                         case "dangnotien":
                             DangNoTien_chbox.Checked = true;
                             break;
-                        case "dangtrong":
-                            DangTrong_chbox.Checked = true;
-                            break;
+                        //case "dangtrong":
+                        //    DangTrong_chbox.Checked = true;
+                        //    break;
                         case "dango":
                             DangO_chbox.Checked = true;
                             break;
@@ -178,7 +178,7 @@ namespace GUI
             room.Area = area_tb.Text;
 
             string status = (DangO_chbox.Checked ? Language.reverseTranslate(DangO_chbox.Text) + "; " : "")
-              + (DangTrong_chbox.Checked ? Language.reverseTranslate(DangTrong_chbox.Text) + "; " : "")
+              //+ (DangTrong_chbox.Checked ? Language.reverseTranslate(DangTrong_chbox.Text) + "; " : "")
               + (DangKT_chbox.Checked ? Language.reverseTranslate(DangKT_chbox.Text) + "; " : "")
               //+ (DangCoc_chbox.Checked ? Language.reverseTranslate(DangCoc_chbox.Text) + "; " : "")
               + (DaHetHan_chbox.Checked ? Language.reverseTranslate(DaHetHan_chbox.Text) + "; " : "")
@@ -236,7 +236,7 @@ namespace GUI
         private void UndoCheckBox()
         {
             DangO_chbox.Checked = false;
-            DangTrong_chbox.Checked = false;
+            //DangTrong_chbox.Checked = false;
             DangNoTien_chbox.Checked = false;
             DangKT_chbox.Checked = false;
             //DangCoc_chbox.Checked = false;
@@ -263,19 +263,19 @@ namespace GUI
 
         private void DangO_chbox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DangO_chbox.Checked)
-            {
-                DangTrong_chbox.Checked = false;
-            }
+            //if (DangO_chbox.Checked)
+            //{
+            //    DangTrong_chbox.Checked = false;
+            //}
         }
 
-        private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (DangTrong_chbox.Checked)
-            {
-                DangO_chbox.Checked = false;
-            }
-        }
+        //private void DangTrong_chbox_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (DangTrong_chbox.Checked)
+        //    {
+        //        DangO_chbox.Checked = false;
+        //    }
+        //}
 
         private void DangKT_chbox_CheckedChanged(object sender, EventArgs e)
         {

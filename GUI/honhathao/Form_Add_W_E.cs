@@ -84,13 +84,12 @@ namespace GUI.honhathao
             
             if(tenantID != null)
             {
-                Console.WriteLine("Tenant ID: hi " + tenantID);
                 if (o_w.Text.Length == 0 || n_w.Text.Length == 0 || o_e.Text.Length == 0 || n_e.Text.Length == 0 || month.Text.Length == 0)
                 {
                     MessageBox.Show(Language.translate("invalid_"));
                     return;
                 }
-                W_E_BLL.Add_W_E(buildingid, tenantID, o_w.Text, n_w.Text, o_e.Text, n_e.Text, month.Text); 
+                W_E_BLL.Add_W_E(buildingid, SoPhong.Text, tenantID, o_w.Text, n_w.Text, o_e.Text, n_e.Text, month.Text); 
             }
             else
             {

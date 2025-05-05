@@ -159,8 +159,8 @@ namespace DAL
 
         public static String add_Contract(string buildingid, string RoomId, string Tenantid, string CreateDate, string StartDate, string EndDate, string PaymenSchedule, string Deposite, string Note)
         {
-            try
-            {
+            //try
+            //{
                 using (MySqlConnection conn = MySqlConnectionData.Connect())
                 {
                     using (MySqlCommand command = new MySqlCommand("add_Contract", conn))
@@ -175,16 +175,17 @@ namespace DAL
                         command.Parameters.AddWithValue("@p_paymentschedule", PaymenSchedule);
                         command.Parameters.AddWithValue("@p_deposit", Deposite);
                         command.Parameters.AddWithValue("@p_note", Note);
-                        command.ExecuteNonQuery();
+                        Console.WriteLine("Command: " + RoomId);   
+                    command.ExecuteNonQuery();
                     }
                 }
 
-            }
-            catch (Exception ex)
-            {
-                return "Thêm thất bại";
-            }
-            return "Thêm thành công!";
+            //}
+            //catch (Exception ex)
+            //{
+            //    return "";
+            //}
+            return "";
         }
         //alter_Contract
         public static string update_Contract(string contractid,string enddate,string paymentschedule, string deposit, string note)
