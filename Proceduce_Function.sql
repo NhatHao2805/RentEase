@@ -2150,12 +2150,15 @@ BEGIN
     DECLARE v_monthrent FLOAT;
     DECLARE room_id VARCHAR(10);
 
+	
+
     SET v_contractid = createContractID();
     
-    SELECT r.PRICE INTO v_monthrent
+    SELECT r.ROOMID,r.PRICE INTO room_id,v_monthrent
     FROM room r 
     JOIN building b ON b.BUILDINGID = r.BUILDINGID 
     WHERE b.BUILDINGID = p_building_id
+    and r.ROOMNAME = p_id_room
     LIMIT 1;
   
     INSERT INTO contract (
@@ -2171,7 +2174,7 @@ BEGIN
         NOTES
     ) VALUES (
         v_contractid,
-        p_id_room,
+        room_id,
         p_tenantid,
         p_createddate,
         p_startdate,
