@@ -29,7 +29,7 @@ namespace BLL.honhathao
             }
             else
             {
-                return "Invalid registration date format.";
+                return "invalid_";
             }
             if (DateTime.TryParse(expiration_date, out parsedDate))
             {
@@ -37,11 +37,11 @@ namespace BLL.honhathao
             }
             else
             {
-                return "Invalid expiration date format.";
+                return "invalid_";
             }
             if(registration_date.CompareTo(expiration_date) > 0)
             {
-                return "Registration date cannot be after expiration date.";
+                return "invalid_";
             }
 
             return RegistrationAccess.add_Registration(p_tenant_id, RoomId, registration_date, expiration_date, status, buildingid);

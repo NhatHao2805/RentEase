@@ -172,8 +172,8 @@ namespace GUI.honhathao
                         Language.reverseTranslate(TrangThai.Text),
                         buildingid);
                     
-                    MessageBox.Show(result);
-                    if(result == "Success")
+                    MessageBox.Show(Language.translate(result));
+                    if(result == "success_")
                     {
                         this.Close();
                     }

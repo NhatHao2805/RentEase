@@ -37,10 +37,13 @@ namespace GUI
             this.control = control;
             this.buildingid = buildingid;
             this.table = table;
+
             this.table_tenant = table_tenant;
             InitializeComponent(); 
             LoadInfo();
             loadLanguage();
+            LichThanhToan.SelectedIndex = 0;
+
         }
 
         private void loadLanguage()
@@ -169,17 +172,14 @@ namespace GUI
                     LichThanhToan.Items.Add(table.Rows[row].Cells[9].Value.ToString());
                     string[] ac = {Language.translate("dauthang"), Language.translate("cuoithang") };
                     foreach (string id in ac)
-                    {
-                        Console.WriteLine(!LichThanhToan.Items.Contains(id));   
+                    { 
                         if (!LichThanhToan.Items.Contains(id))
                         {
                             LichThanhToan.Items.Add(id);
 
                         }
                     }
-                    LichThanhToan.SelectedIndex = 0;
-                    LichThanhToan.Enabled = false;
-                    TienDatCoc.Text = string.Format("{0:#,##0}", table.Rows[row].Cells[10].Value);
+                    TienDatCoc.Text = table.Rows[row].Cells[10].Value.ToString();
                     break;
             }
                 
@@ -195,7 +195,6 @@ namespace GUI
         {
             switch (control)
             {
-                // buildingid,  RoomId,  Tenantid,  CreateDate,  StartDate,  EndDate,  PaymenSchedule,  Deposite,  Note
                 case 0:
                     if(ListTenantID.SelectedIndex > -1) {
                         if (guna2DateTimePicker2.Value > guna2DateTimePicker3.Value)
@@ -231,8 +230,9 @@ namespace GUI
                         }
                         else
                         {
-                            MessageBox.Show(result);
+                            MessageBox.Show(Language.translate("success_"));
                         }
+
                         this.Close();
                     }
                     else {
@@ -265,7 +265,7 @@ namespace GUI
                     }
                     else
                     {
-                        MessageBox.Show(result1);
+                        MessageBox.Show(Language.translate("success_"));
                     }
                     this.Close();
                     break;
@@ -280,19 +280,7 @@ namespace GUI
 
         private void TienDatCoc_TextChanged(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(TienDatCoc.Text)) return;
-            //int selectionStart = TienDatCoc.SelectionStart;
-            //string cleanText = TienDatCoc.Text.Replace(",", "");
-
-            //if (decimal.TryParse(cleanText, out decimal number))
-            //{
-            //    TienDatCoc.Text = number.ToString("#,##0");
-            //    TienDatCoc.SelectionStart = selectionStart + (TienDatCoc.Text.Length - cleanText.Length);
-            //}
-            //else
-            //{
-            //    TienDatCoc.Text = "0";
-            //}
+            
         }
     }
 }

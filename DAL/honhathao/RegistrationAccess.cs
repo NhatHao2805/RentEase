@@ -102,9 +102,9 @@ namespace DAL.honhathao
         }
             catch (Exception ex)
             {
-                return "Fail";
+                return "fail_";
             }
-            return "Success";
+            return "success_";
         }
         public static string update_registration(string registrationid,string endDate ,string state)
         {

@@ -30,7 +30,6 @@
         {
             this.ListTenantID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.GiaThue = new Guna.UI2.WinForms.Guna2TextBox();
-            this.LichThanhToan = new Guna.UI2.WinForms.Guna2ComboBox();
             this.TienDatCoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.GhiChu = new Guna.UI2.WinForms.Guna2TextBox();
             this.SoPhong = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -63,6 +62,7 @@
             this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LichThanhToan = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GradientPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
@@ -122,28 +122,6 @@
             this.GiaThue.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
             this.GiaThue.Size = new System.Drawing.Size(337, 36);
             this.GiaThue.TabIndex = 28;
-            // 
-            // LichThanhToan
-            // 
-            this.LichThanhToan.BackColor = System.Drawing.Color.Transparent;
-            this.LichThanhToan.BorderColor = System.Drawing.Color.Silver;
-            this.LichThanhToan.BorderRadius = 10;
-            this.LichThanhToan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.LichThanhToan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.LichThanhToan.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LichThanhToan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.LichThanhToan.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.LichThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.LichThanhToan.ItemHeight = 30;
-            this.LichThanhToan.Items.AddRange(new object[] {
-            "Đầu tháng",
-            "Cuối tháng"});
-            this.LichThanhToan.Location = new System.Drawing.Point(171, 7);
-            this.LichThanhToan.Name = "LichThanhToan";
-            this.LichThanhToan.ShadowDecoration.BorderRadius = 10;
-            this.LichThanhToan.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
-            this.LichThanhToan.Size = new System.Drawing.Size(376, 36);
-            this.LichThanhToan.TabIndex = 29;
             // 
             // TienDatCoc
             // 
@@ -377,8 +355,8 @@
             this.guna2GradientPanel9.BorderColor = System.Drawing.Color.Gray;
             this.guna2GradientPanel9.BorderRadius = 10;
             this.guna2GradientPanel9.BorderThickness = 1;
-            this.guna2GradientPanel9.Controls.Add(this.guna2HtmlLabel17);
             this.guna2GradientPanel9.Controls.Add(this.LichThanhToan);
+            this.guna2GradientPanel9.Controls.Add(this.guna2HtmlLabel17);
             this.guna2GradientPanel9.FillColor = System.Drawing.Color.White;
             this.guna2GradientPanel9.FillColor2 = System.Drawing.Color.GhostWhite;
             this.guna2GradientPanel9.Location = new System.Drawing.Point(11, 392);
@@ -669,6 +647,25 @@
             this.guna2HtmlLabel16.TabIndex = 1;
             this.guna2HtmlLabel16.Text = "Khách thuê:";
             // 
+            // LichThanhToan
+            // 
+            this.LichThanhToan.BackColor = System.Drawing.Color.Transparent;
+            this.LichThanhToan.BorderColor = System.Drawing.Color.Silver;
+            this.LichThanhToan.BorderRadius = 10;
+            this.LichThanhToan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.LichThanhToan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LichThanhToan.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.LichThanhToan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.LichThanhToan.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.LichThanhToan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.LichThanhToan.ItemHeight = 30;
+            this.LichThanhToan.Location = new System.Drawing.Point(172, 9);
+            this.LichThanhToan.Name = "LichThanhToan";
+            this.LichThanhToan.ShadowDecoration.BorderRadius = 10;
+            this.LichThanhToan.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(0, -7, 0, 5);
+            this.LichThanhToan.Size = new System.Drawing.Size(377, 36);
+            this.LichThanhToan.TabIndex = 25;
+            // 
             // Form_AddContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -709,7 +706,6 @@
         #endregion
         private Guna.UI2.WinForms.Guna2ComboBox ListTenantID;
         private Guna.UI2.WinForms.Guna2TextBox GiaThue;
-        private Guna.UI2.WinForms.Guna2ComboBox LichThanhToan;
         private Guna.UI2.WinForms.Guna2TextBox TienDatCoc;
         private Guna.UI2.WinForms.Guna2TextBox GhiChu;
         private Guna.UI2.WinForms.Guna2ComboBox SoPhong;
@@ -742,5 +738,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker3;
+        private Guna.UI2.WinForms.Guna2ComboBox LichThanhToan;
     }
 }

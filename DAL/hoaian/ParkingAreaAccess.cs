@@ -286,5 +286,38 @@ namespace DAL
             }
             return output;
         }
+
+        public static int GetCurrentVehicle(string areaid)
+        {
+            int curr_vehicle = 0;
+
+            try
+            {
+                using (MySqlConnection conn = MySqlConnectionData.Connect())
+                {
+                    if (conn.State != ConnectionState.Open)
+                        conn.Open();
+
+                    string sql = @"
+                                SELECT COUNT(*) 
+                                FROM PARKING 
+                                WHERE AREAID = @p_areaid 
+                                  AND ISDELETED = 0;
+            ";
+
+                    using (MySqlCommand command = new MySqlCommand(sql, conn))
+                    {
+                        command.Parameters.AddWithValue("@p_areaid", areaid);
+                        curr_vehicle = Convert.ToInt32(command.ExecuteScalar());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetCurrentVehicle: " + ex.Message);
+            }
+            return curr_vehicle;
+        }
+
     }
 }

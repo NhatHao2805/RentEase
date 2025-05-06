@@ -597,7 +597,7 @@ BEGIN
             SET p_message = 'Còn chỗ trống, có thể thêm phương tiện.';
         END IF;
     END IF;
-END;
+END //
 
 
 -- Thủ tục để lấy tất cả bãi đậu xe
@@ -749,14 +749,13 @@ CREATE PROCEDURE proc_updateParkingArea(
     IN p_capacity INT
 )
 BEGIN
-    UPDATE PARKINGAREA
-    SET 
-        BUILDINGID = p_buildingid,
-        ADDRESS = p_address,
-        TYPE = p_type,
-        CAPACITY = p_capacity
-    WHERE AREAID = p_areaid;
-    
+		UPDATE PARKINGAREA
+		SET 
+			BUILDINGID = p_buildingid,
+			ADDRESS = p_address,
+			TYPE = p_type,
+			CAPACITY = p_capacity
+		WHERE AREAID = p_areaid;
 END//
 
 CREATE PROCEDURE sp_DeleteParkingArea(
@@ -2662,8 +2661,8 @@ BEGIN
         EMAIL,
         BUILDINGID
     ) VALUES (
-    		p_username,
-    		newid,
+		p_username,
+		newid,
         p_FirstName,
         p_LastName,
         p_Birthday,

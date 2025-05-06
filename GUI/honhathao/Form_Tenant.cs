@@ -97,7 +97,6 @@ namespace GUI.honhathao
                 hodem.Text = data.Cells[1].Value.ToString();
                 ten.Text = data.Cells[2].Value.ToString();
                 ngaysinh.Value = DateTime.Parse(data.Cells[3].Value.ToString());
-                //gioitinh.Text = Language.translate(data.Cells[4].Value.ToString());
                 gioitinh.SelectedItem = data.Cells[4].Value.ToString();
                 sdt.Text = data.Cells[5].Value.ToString();
                 email.Text = data.Cells[6].Value.ToString();
@@ -130,7 +129,7 @@ namespace GUI.honhathao
                         buildingid
                     );
 
-                    MessageBox.Show(result, "Information", MessageBoxButtons.OK);
+                    MessageBox.Show(Language.translate(result), "Information", MessageBoxButtons.OK);
                     this.Close();
 
                     break;
@@ -145,7 +144,7 @@ namespace GUI.honhathao
                         email.Text
                     );
 
-                    MessageBox.Show(result1, "Information", MessageBoxButtons.OK);
+                    MessageBox.Show(Language.translate(result1), "Information", MessageBoxButtons.OK);
                     this.Close();
 
 

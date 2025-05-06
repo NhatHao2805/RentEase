@@ -141,11 +141,11 @@ namespace DAL.honhathao
                 }
 
         }   
-            catch (Exception ex)
-            {
-                return "Fail!";
-            }
-            return "Success!";
+                catch (Exception ex)
+                {
+                    return "Fail!";
+                }
+                return "Success!";
         }
 
         public static String update_Tenant(string TenantId, string FirstName, string LastName, string Birthday, string Gender, string PhoneNumber, string Email)
@@ -171,9 +171,9 @@ namespace DAL.honhathao
             }
             catch (Exception ex)
             {
-                return "Fail!";
+                return "fail_";
             }
-            return "Success!";
+            return "success_";
         }
 
         public static String del_Tenant(string TenantId)

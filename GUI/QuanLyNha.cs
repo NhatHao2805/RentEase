@@ -1197,7 +1197,6 @@ namespace GUI
         {
             DataGridViewRow data = null;
             Form_Tenant f = new Form_Tenant(data, 0, form1.taikhoan.Username,listBuildingID.Text);
-            //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
             loadInfo();
         }
@@ -1312,7 +1311,6 @@ namespace GUI
         private void button38_Click(object sender, EventArgs e)
         {
             Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 0, 1, listBuildingID.Text, dgv_QLHD, dgv_Tenant);
-            //f.ShowDialog();
             OverlayManager.ShowWithOverlay(this, f);
 
             load_Contract(0, timkiem_contract.Text);
@@ -1326,9 +1324,7 @@ namespace GUI
                 if (row >= 0)
                 {
                     Form_AddContract f = new Form_AddContract(form1.taikhoan.Username, 1, row, listBuildingID.Text, dgv_QLHD, dgv_Tenant);
-
                     OverlayManager.ShowWithOverlay(this, f);
-                    //f.ShowDialog();
                     load_Contract(0, timkiem_contract.Text);
                 }
             }
@@ -1766,11 +1762,6 @@ namespace GUI
         }
         private void button53_Click(object sender, EventArgs e)
         {
-            if (guna2DataGridView7.SelectedRows.Count == 0)
-            {
-                MessageBox.Show(Language.translate("asking"));
-                return;
-            }
             DataGridViewRow selectedRow = guna2DataGridView7.SelectedRows[0];
 
             ParkingArea selectedArea = new ParkingArea
@@ -1781,6 +1772,20 @@ namespace GUI
                 Type = selectedRow.Cells["Type"].Value?.ToString(),
                 Capacity = selectedRow.Cells["Capacity"].Value?.ToString()
             };
+
+            if (ParkingAreaBLL.UpdateArea(selectedArea) == "required_empty")
+            {
+                MessageBox.Show(Language.translate("required_empty"), "",
+                              MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (guna2DataGridView7.SelectedRows.Count == 0)
+            {
+                MessageBox.Show(Language.translate("asking"));
+                return;
+            }
+            
             Form_UpdateParkingArea updateArea = new Form_UpdateParkingArea(form1.taikhoan.Username, selectedArea);
             OverlayManager.ShowWithOverlay(this, updateArea);//thêm
             if (updateArea.DialogResult == DialogResult.OK)

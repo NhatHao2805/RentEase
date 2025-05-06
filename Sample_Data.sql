@@ -46,26 +46,26 @@ INSERT INTO BUILDING (BUILDINGID, BUILDING_KEY, USERNAME, ADDRESS, NUMOFFLOORS, 
 
 -- 3 ROOM
 INSERT INTO ROOM (ROOMID, ROOMNAME, BUILDINGID, TYPE, FLOOR, CONVENIENT, AREA, PRICE, STATUS) VALUES
-('R0001', 'R101', 'B001', 'studio', 1, 'Điều hòa, Wifi, Tủ lạnh', 25.5, 5000000, 'dango; saphethanhopdong'),
-('R0002', 'R201', 'B001', 'phongdon', 2, 'Điều hòa, Wifi, Máy giặt', 35.0, 7000000, 'dangtrong'),
+('R0001', 'R101', 'B001', 'studio', 1, 'Điều hòa, Wifi, Tủ lạnh', 25.5, 5000000, 'dango'),
+('R0002', 'R201', 'B001', 'phongdon', 2, 'Điều hòa, Wifi, Máy giặt', 35.0, 7000000, 'dango'),
 ('R0003', 'R301', 'B002', 'phongdoi', 3, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 45.5, 9000000, 'dango; dangnotien'),
 ('R0004', 'R102', 'B003', 'studio', 1, 'Điều hòa, Wifi', 22.0, 4500000, 'dangbaoketthuc; daquahanhopdong'),
-('R0005', 'R202', 'B004', 'phongthuong', 2, 'Điều hòa, Wifi, Tủ lạnh', 30.0, 6000000, 'dangtrong'),
+('R0005', 'R202', 'B004', 'phongthuong', 2, 'Điều hòa, Wifi, Tủ lạnh', 30.0, 6000000, 'dango'),
 ('R0006', 'R401', 'B005', 'phongcapcap', 4, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt, Bếp', 60.0, 12000000, 'dango; saphethanhopdong; dangnotien'),
 ('R0007', 'R103', 'B006', 'studio', 1, 'Điều hòa, Wifi', 20.0, 4000000, 'dangcocgiucho'),
 ('R0008', 'R302', 'B007', 'phongnguyencan', 3, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 42.0, 8500000, 'dango; daquahanhopdong'),
-('R0009', 'R203', 'B008', 'phongdoi', 2, 'Điều hòa, Wifi', 28.0, 5500000, 'dangtrong'),
+('R0009', 'R203', 'B008', 'phongdoi', 2, 'Điều hòa, Wifi', 28.0, 5500000, 'dango'),
 ('R0010', 'R104', 'B009', 'phongcaocap', 1, 'Điều hòa, Wifi, Tủ lạnh', 24.0, 4800000, 'daquahanhopdong'),
-('R0011', 'R101', 'B011', 'studio', 1, 'Điều hòa, Wifi', 20.0, 4000000, 'dangtrong'),
+('R0011', 'R101', 'B011', 'studio', 1, 'Điều hòa, Wifi', 20.0, 4000000, 'dango'),
 ('R0012', 'R201', 'B012', 'phongdoi', 2, 'Điều hòa, Wifi, Tủ lạnh', 30.0, 6000000, 'dango'),
 ('R0013', 'R301', 'B013', 'phongnguyencan', 3, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 45.0, 9000000, 'dango; daquahanhopdong'),
-('R0014', 'R102', 'B014', 'studio', 1, 'Điều hòa, Wifi', 22.0, 4500000, 'dangtrong'),
+('R0014', 'R102', 'B014', 'studio', 1, 'Điều hòa, Wifi', 22.0, 4500000, 'dango'),
 ('R0015', 'R202', 'B015', 'phongdoi', 2, 'Điều hòa, Wifi, Tủ lạnh', 32.0, 6500000, 'dango'),
-('R0016', 'R302', 'B016', 'phongnguyencan', 3, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 48.0, 9500000, 'dangtrong'),
-('R0017', 'R103', 'B017', 'studio', 1, 'Điều hòa, Wifi', 24.0, 5000000, 'dangtrong'),
+('R0016', 'R302', 'B016', 'phongnguyencan', 3, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 48.0, 9500000, 'dango'),
+('R0017', 'R103', 'B017', 'studio', 1, 'Điều hòa, Wifi', 24.0, 5000000, 'dango'),
 ('R0018', 'R203', 'B018', 'phongdoi', 2, 'Điều hòa, Wifi, Tủ lạnh', 34.0, 7000000, 'saphethanhopdong'),
 ('R0019', 'R303', 'B019', 'phongnguyencan', 3, 'Điều hòa, Wifi, Tủ lạnh, Máy giặt', 50.0, 10000000, 'dango'),
-('R0020', 'R104', 'B020', 'studio', 1, 'Điều hòa, Wifi', 26.0, 5500000, 'dangtrong');
+('R0020', 'R104', 'B020', 'studio', 1, 'Điều hòa, Wifi', 26.0, 5500000, 'dango');
 
 -- 4 TENANT
 INSERT INTO TENANT (USERNAME, TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, PHONENUMBER, EMAIL, BUILDINGID) VALUES
@@ -92,13 +92,13 @@ INSERT INTO TENANT (USERNAME, TENANTID, FIRSTNAME, LASTNAME, BIRTHDAY, GENDER, P
 
 -- 5 CONTRACT
 INSERT INTO CONTRACT (CONTRACTID, ROOMID, TENANTID, CREATEDATE, STARTDATE, ENDDATE, MONTHLYRENT, PAYMENTSCHEDULE, DEPOSIT, STATUS, NOTES, AUTO_RENEW, TERMINATION_REASON, CONTRACT_FILE_PATH) VALUES
-('CT001', 'R0001', 'T001', '2024-01-10', '2024-01-15', '2025-01-14', 5000000, 'dauthang', 10000000, 'khonghieuluc ', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct001.pdf'),
+('CT001', 'R0001', 'T001', '2024-01-10', '2024-01-15', '2025-01-14', 5000000, 'dauthang', 10000000, 'khonghieuluc', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct001.pdf'),
 ('CT002', 'R0003', 'T002', '2024-02-05', '2024-02-10', '2024-08-09', 9000000, 'cuoithang', 18000000, 'danghieuluc', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct002.pdf'),
 ('CT003', 'R0004', 'T003', '2024-03-01', '2024-03-05', '2025-03-04', 4500000, 'dauthang', 9000000, 'danghieuluc', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct003.pdf'),
 ('CT004', 'R0006', 'T004', '2024-04-15', '2024-04-20', '2024-10-19', 12000000, 'cuoithang', 24000000, 'danghieuluc', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct004.pdf'),
 ('CT005', 'R0008', 'T005', '2024-05-10', '2024-05-15', '2025-05-14', 8500000, 'dauthang', 17000000, 'danghieuluc', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct005.pdf'),
 ('CT006', 'R0010', 'T006', '2024-06-05', '2024-06-10', '2024-12-09', 4800000, 'cuoithang', 9600000, 'danghieuluc', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct006.pdf'),
-('CT007', 'R0002', 'T007', '2024-07-01', '2024-07-05', '2025-07-04', 7000000, 'dauthang', 14000000, 'khonghieuluc ', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct007.pdf'),
+('CT007', 'R0002', 'T007', '2024-07-01', '2024-07-05', '2025-07-04', 7000000, 'dauthang', 14000000, 'khonghieuluc', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct007.pdf'),
 ('CT008', 'R0005', 'T008', '2024-08-15', '2024-08-20', '2025-02-19', 6000000, 'cuoithang', 12000000, 'danghieuluc', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct008.pdf'),
 ('CT009', 'R0007', 'T009', '2024-09-10', '2024-09-15', '2025-09-14', 4000000, 'dauthang', 8000000, 'danghieuluc', 'Hợp đồng 1 năm', TRUE, NULL, '/contracts/ct009.pdf'),
 ('CT010', 'R0009', 'T010', '2024-10-05', '2024-10-10', '2025-04-09', 5500000, 'cuoithang', 11000000, 'danghieuluc', 'Hợp đồng 6 tháng', FALSE, NULL, '/contracts/ct010.pdf'),

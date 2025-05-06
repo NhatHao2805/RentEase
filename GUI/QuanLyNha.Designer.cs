@@ -1085,7 +1085,7 @@ namespace GUI
             this.DangNoTien_chbox.AutoSize = true;
             this.DangNoTien_chbox.BackColor = System.Drawing.Color.Transparent;
             this.DangNoTien_chbox.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.DangNoTien_chbox.Location = new System.Drawing.Point(790, 12);
+            this.DangNoTien_chbox.Location = new System.Drawing.Point(292, 39);
             this.DangNoTien_chbox.Name = "DangNoTien_chbox";
             this.DangNoTien_chbox.Size = new System.Drawing.Size(146, 29);
             this.DangNoTien_chbox.TabIndex = 8;

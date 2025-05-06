@@ -107,7 +107,7 @@ namespace BLL.honhathao
                 string.IsNullOrWhiteSpace(Gender) &&
                 string.IsNullOrWhiteSpace(PhoneNumber))
             {
-                return "Vui lòng nhập đầy đủ thông tin";
+                return "invalid_";
             }
             var result = checklogic(FirstName, LastName, Birthday, Gender, PhoneNumber, Email);
             if (result.Item1)
@@ -129,7 +129,7 @@ namespace BLL.honhathao
             }
             else
             {
-                return result.Item2;
+                return "invalid_";
             }
             
         }

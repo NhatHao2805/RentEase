@@ -311,8 +311,8 @@ tenant.phone: SĐT
 tenant.email: Email
 tenant.save_button: Lưu
 :Form_addRegistration
-registration.title: Đăng ký
-registration.subtitle: Đăng ký mới
+registration.title: Đăng ký/Chỉnh 
+registration.subtitle: Đăng ký/Chỉnh sửa lưu trú
 registration.customer_name: Tên khách hàng
 registration.room_code: Mã phòng
 registration.start_date: Ngày đăng ký ở
@@ -357,6 +357,7 @@ parking.type.motor_bike: Bãi xe máy/xe đạp
 parking.type.mixed: Bãi xe hỗn hợp
 parking.type.available: Bãi xe còn trống
 parking.type.full: Bãi xe đã đầy
+required_empty: Vui lòng hủy đăng ký phương tiện trước khi thay đổi phân loại
 :Form_Vehicle
 vehicle.table_header.vehicle_id: Mã xe
 vehicle.table_header.customer_id: Mã khách hàng
