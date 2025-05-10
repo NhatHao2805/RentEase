@@ -311,8 +311,8 @@ tenant.phone: SĐT
 tenant.email: Email
 tenant.save_button: Lưu
 :Form_addRegistration
-registration.title: Đăng ký
-registration.subtitle: Đăng ký mới
+registration.title: Đăng ký/Chỉnh 
+registration.subtitle: Đăng ký/Chỉnh sửa lưu trú
 registration.customer_name: Tên khách hàng
 registration.room_code: Mã phòng
 registration.start_date: Ngày đăng ký ở

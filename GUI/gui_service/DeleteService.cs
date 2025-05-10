@@ -80,8 +80,14 @@ namespace GUI.GUI_Service
         // Delete
         private void deleteService_btn_Click(object sender, EventArgs e)
         {
-            if (serviceComboBoX.SelectedValue != null)
+            try
             {
+                if (serviceComboBoX.SelectedValue == null || serviceComboBoX.SelectedValue == DBNull.Value)
+                {
+                    MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 string id = serviceComboBoX.SelectedValue.ToString();
 
                 if (MessageBox.Show("Bạn có chắc chắn muốn xóa dịch vụ này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -90,7 +96,10 @@ namespace GUI.GUI_Service
                     if (del.XoaDichVu(id))
                     {
                         MessageBox.Show("Xóa dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        parentForm.btn_dichvu_Click(sender, e);
+                        if (parentForm != null)
+                        {
+                            parentForm.btn_dichvu_Click(sender, e);
+                        }
                     }
                     else
                     {
@@ -98,65 +107,76 @@ namespace GUI.GUI_Service
                     }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng chọn dịch vụ cần xóa!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"Có lỗi xảy ra khi xóa dịch vụ: {ex.Message}", "Lỗi", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            // Đóng form đăng ký sau khi thành công
-            this.Close();
-
-           
-
+            finally
+            {
+                this.Close();
+            }
         }
 
         // CHinh Gia
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            //updateCost_btn
-            string serviceName = serviceComboBoX.SelectedValue.ToString();
-
-            decimal newPrice;
-
-            if (serviceName == null)
+            try
             {
-                MessageBox.Show("Vui lòng chọn dịch vụ!");
-                return;
-            }
+                if (serviceComboBoX.SelectedValue == null || serviceComboBoX.SelectedValue == DBNull.Value)
+                {
+                    MessageBox.Show("Vui lòng chọn dịch vụ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            // Kiểm tra nếu TextBox rỗng
-            if (string.IsNullOrWhiteSpace(updateCost.Text))
+                string serviceName = serviceComboBoX.SelectedValue.ToString();
+                decimal newPrice;
+
+                // Kiểm tra nếu TextBox rỗng
+                if (string.IsNullOrWhiteSpace(updateCost.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập giá dịch vụ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!decimal.TryParse(updateCost.Text, out newPrice))
+                {
+                    MessageBox.Show("Giá trị nhập không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (newPrice <= 0)
+                {
+                    MessageBox.Show("Giá dịch vụ phải lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                ServiceBLL sBLL = new ServiceBLL();
+                bool isUpdated = sBLL.UpdateServicePrice(serviceName, newPrice);
+
+                if (isUpdated)
+                {
+                    MessageBox.Show("Cập nhật giá thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (parentForm != null)
+                    {
+                        parentForm.btn_dichvu_Click(sender, e);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại! Vì dịch vụ đang chọn có khách đang được sử dụng. Chỉ cập nhật được dành cho dịch vụ chưa có người dùng", 
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Vui lòng nhập giá dịch vụ!");
-                return;
+                MessageBox.Show($"Có lỗi xảy ra khi cập nhật giá dịch vụ: {ex.Message}", "Lỗi", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-     
-
-            if (!decimal.TryParse(updateCost.Text, out newPrice))
+            finally
             {
-                MessageBox.Show("Giá trị nhập không hợp lệ!");
-                return;
+                this.Close();
             }
-
-            ServiceBLL sBLL = new ServiceBLL();
-            bool isUpdated = sBLL.UpdateServicePrice(serviceName, newPrice);
-
-            if (isUpdated)
-            {
-                MessageBox.Show("Cập nhật giá thành công!");
-                // load lai du lieu
-                parentForm.btn_dichvu_Click(sender, e);
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại! Vì dịch vụ đang chọn có khách đang được sử dụng. Chỉ cập nhật được dành cho dịch vụ chưa có người dùng");
-            }
-
-            // Đóng form đăng ký sau khi thành công
-            this.Close();
-
-           
-
-
         }
 
         // text dieu chinh gia

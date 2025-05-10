@@ -22,6 +22,7 @@ namespace GUI.GUI_Service
         
         private string buildingID;
         private quanlynha parentForm;
+        private bool isUserAction = false;
         public AddService(string buildingid, quanlynha parent = null)
         {
             this.buildingID = buildingid;
@@ -79,38 +80,50 @@ namespace GUI.GUI_Service
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                                       (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             LoadComboBoxData();
+            
+            // Kiểm tra nếu không có dữ liệu sau khi load, đóng form
+            if ((TenantName.DataSource == null || TenantName.Items.Count == 0) ||
+                (Service.DataSource == null || Service.Items.Count == 0))
+            {
+                MessageBox.Show("Không đủ dữ liệu để đăng ký dịch vụ, form sẽ đóng!", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
 
         private void TenantName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!isUserAction || TenantName.SelectedIndex == -1) return;
             try
             {
-                // Lấy ID của khách hàng được chọn
-                if (TenantName.SelectedValue != null)
+                if (TenantName.SelectedValue != null && TenantName.SelectedValue != DBNull.Value)
                 {
-                    // Lấy ID khách hàng từ SelectedValue vì đã set ValueMember = "ID"
                     string tenantID = TenantName.SelectedValue.ToString();
-
-                    // Tạo instance của PhongBLL nếu chưa có
                     if (phongBLL == null)
                         phongBLL = new PhongBLL();
-
-                    // Lấy danh sách phòng của khách hàng
                     List<PhongDTO> rooms = phongBLL.GetPhongByTenantID(tenantID, buildingID);
-
-                    // Hiển thị danh sách phòng vào ComboBox
-                    Room.DataSource = rooms;
-                    Room.DisplayMember = "Name"; // Hiển thị tên phòng (ROOMNAME)
-                    Room.ValueMember = "ID";   // Giá trị là ID phòng (ROOMID)
-
-                   
+                    if (rooms != null && rooms.Any())
+                    {
+                        Room.DataSource = rooms;
+                        Room.DisplayMember = "Name";
+                        Room.ValueMember = "ID";
+                    }
+                    else
+                    {
+                        Room.DataSource = null;
+                        Room.Items.Clear();
+                        MessageBox.Show("Khách hàng này chưa thuê phòng nào!", "Thông báo", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi tải thông tin phòng: " + ex.Message,
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Room.DataSource = null;
+                Room.Items.Clear();
             }
         }
 
@@ -119,20 +132,28 @@ namespace GUI.GUI_Service
         {
             try
             {
+                bool hasValidData = true;
+
                 // Load danh sách khách hàng
                 var tenants = khachHangBLL.GetKhachHangForComboBox(buildingID);
-                TenantName.DataSource = tenants;
+                TenantName.SelectedIndexChanged -= TenantName_SelectedIndexChanged; // Xóa sự kiện cũ nếu có
                 if (tenants != null && tenants.Any())
                 {
+                    TenantName.DataSource = tenants;
                     TenantName.DisplayMember = "Name";
                     TenantName.ValueMember = "ID";
-                    TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
+                    TenantName.SelectedIndex = -1; // Không chọn ai cả lúc đầu
                 }
                 else
                 {
                     TenantName.DataSource = null;
                     TenantName.Items.Clear();
+                    MessageBox.Show("Không có dữ liệu khách hàng để đăng ký dịch vụ!", "Thông báo", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hasValidData = false;
                 }
+                TenantName.SelectedIndexChanged += TenantName_SelectedIndexChanged;
+                isUserAction = true; // Cho phép xử lý khi người dùng chọn
 
                 // Cấu hình cho Room ComboBox
                 Room.DisplayMember = "Name";  // Đảm bảo hiển thị tên phòng (ROOMNAME)
@@ -152,20 +173,32 @@ namespace GUI.GUI_Service
                 {
                     Service.DataSource = null;
                     Service.Items.Clear();
+                    MessageBox.Show("Không có dữ liệu dịch vụ để đăng ký!", "Thông báo", 
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hasValidData = false;
+                }
+
+                if (!hasValidData)
+                {
+                    this.BeginInvoke(new Action(() => 
+                    {
+                        MessageBox.Show("Không đủ dữ liệu để đăng ký dịch vụ, form sẽ đóng!", "Thông báo", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }));
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Có lỗi xảy ra khi tải dữ liệu: {ex.Message}", "Lỗi", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-                // Reset tất cả ComboBox về trạng thái an toàn
                 TenantName.DataSource = null;
                 TenantName.Items.Clear();
                 Room.DataSource = null;
                 Room.Items.Clear();
                 Service.DataSource = null;
                 Service.Items.Clear();
+                this.BeginInvoke(new Action(() => this.Close()));
             }
         }
 
@@ -206,28 +239,53 @@ namespace GUI.GUI_Service
         // Nut Dang Ky
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
-            string serviceID = Service.SelectedValue.ToString();  // Lấy ID từ ComboBox
-            string roomID = Room.SelectedValue.ToString();  // Lấy RoomID từ ComboBox
-
-            bool isSuccess = serviceUsageBLL.RegisterServiceUsage(tenantID, serviceID, roomID, "insert");
-
-            if (isSuccess)
+            try
             {
-                MessageBox.Show("Đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Refresh data in parent form if it exists
-                if (parentForm != null)
+                // Kiểm tra null cho tất cả các dropdown
+                if (TenantName.SelectedValue == null || TenantName.SelectedValue == DBNull.Value)
                 {
-                    parentForm.LoadDichVu();
+                    MessageBox.Show("Vui lòng chọn khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
+                if (Service.SelectedValue == null || Service.SelectedValue == DBNull.Value)
+                {
+                    MessageBox.Show("Vui lòng chọn dịch vụ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
+                if (Room.SelectedValue == null || Room.SelectedValue == DBNull.Value)
+                {
+                    MessageBox.Show("Vui lòng chọn phòng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
+                string serviceID = Service.SelectedValue.ToString();  // Lấy ID từ ComboBox
+                string roomID = Room.SelectedValue.ToString();  // Lấy RoomID từ ComboBox
+
+                bool isSuccess = serviceUsageBLL.RegisterServiceUsage(tenantID, serviceID, roomID, "insert");
+
+                if (isSuccess)
+                {
+                    MessageBox.Show("Đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Refresh data in parent form if it exists
+                    if (parentForm != null)
+                    {
+                        parentForm.btn_dichvu_Click(sender, e);
+                    }
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Đăng ký thất bại. Vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Đăng ký thất bại. Khách hàng đã đăng ký dịch vụ này rồi vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Có lỗi xảy ra khi đăng ký dịch vụ: {ex.Message}", "Lỗi", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
-            // Đóng form đăng ký sau khi thành công
-            this.Close();
         }
 
         private void guna2HtmlLabel1_Click_2(object sender, EventArgs e)
@@ -237,27 +295,56 @@ namespace GUI.GUI_Service
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
-            string serviceID = Service.SelectedValue.ToString();  // Lấy ID từ ComboBox
-            string roomID = Room.SelectedValue.ToString();  // Lấy RoomID từ ComboBox
-
-            bool isSuccess = serviceUsageBLL.RegisterServiceUsage(tenantID, serviceID, roomID, "delete");
-
-            if (isSuccess)
+            try
             {
-                MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Refresh data in parent form if it exists
-                if (parentForm != null)
+                // Kiểm tra null cho tất cả các dropdown
+                if (TenantName.SelectedValue == null || TenantName.SelectedValue == DBNull.Value)
                 {
-                    parentForm.LoadDichVu();
+                    MessageBox.Show("Vui lòng chọn khách hàng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
+                if (Service.SelectedValue == null || Service.SelectedValue == DBNull.Value)
+                {
+                    MessageBox.Show("Vui lòng chọn dịch vụ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
+                if (Room.SelectedValue == null || Room.SelectedValue == DBNull.Value)
+                {
+                    MessageBox.Show("Vui lòng chọn phòng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string tenantID = TenantName.SelectedValue.ToString();  // Lấy ID từ ComboBox
+                string serviceID = Service.SelectedValue.ToString();  // Lấy ID từ ComboBox
+                string roomID = Room.SelectedValue.ToString();  // Lấy RoomID từ ComboBox
+
+                bool isSuccess = serviceUsageBLL.RegisterServiceUsage(tenantID, serviceID, roomID, "delete");
+
+                if (isSuccess)
+                {
+                    MessageBox.Show("Hủy đăng ký dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Refresh data in parent form if it exists
+                    if (parentForm != null)
+                    {
+                        parentForm.btn_dichvu_Click(sender, e);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Hủy đăng ký thất bại. Chưa có dịch vụ để hủy, vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Hủy đăng ký thất bại. Chưa có dịch vụ để hủy, vui lòng thử lại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Có lỗi xảy ra khi hủy đăng ký dịch vụ: {ex.Message}", "Lỗi", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            this.Close();
+            finally
+            {
+                this.Close();
+            }
         }
 
         private void TenantName_SelectedIndexChanged_1(object sender, EventArgs e)

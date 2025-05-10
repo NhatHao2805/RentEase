@@ -63,26 +63,51 @@ namespace GUI.GUI_Service
         private InsertServiceBLL serviceBLL = new InsertServiceBLL();
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
-            string serviceName = ServiceName.Text.Trim();
-            decimal unitPrice;
-
-            if (string.IsNullOrEmpty(serviceName) || !decimal.TryParse(Cost.Text, out unitPrice))
+            try
             {
-                MessageBox.Show("Vui lòng nhập đúng thông tin!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                string serviceName = ServiceName.Text.Trim();
+                decimal unitPrice;
+
+                if (string.IsNullOrEmpty(serviceName))
+                {
+                    MessageBox.Show("Vui lòng nhập tên dịch vụ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrEmpty(Cost.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập giá dịch vụ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!decimal.TryParse(Cost.Text, out unitPrice))
+                {
+                    MessageBox.Show("Giá trị nhập không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (unitPrice <= 0)
+                {
+                    MessageBox.Show("Giá dịch vụ phải lớn hơn 0!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                bool isAdded = serviceBLL.AddService(serviceName, unitPrice);
+
+                if (isAdded)
+                {
+                    MessageBox.Show("Thêm dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close(); // Đóng form sau khi thêm
+                }
+                else
+                {
+                    MessageBox.Show("Thêm dịch vụ thất bại! Dịch vụ này có thể đã tồn tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-            bool isAdded = serviceBLL.AddService(serviceName, unitPrice);
-
-            if (isAdded)
+            catch (Exception ex)
             {
-                MessageBox.Show("Thêm dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close(); // Đóng form sau khi thêm
-            }
-            else
-            {
-                MessageBox.Show("Thêm dịch vụ thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Có lỗi xảy ra khi thêm dịch vụ: {ex.Message}", "Lỗi", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

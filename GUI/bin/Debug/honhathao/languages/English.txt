@@ -176,8 +176,8 @@ view_all_tenants: View all tenants
 evaluation: Evaluation
 tenant_information_title: Tenant Information
 tenant_information_description: List of tenant information
-residence_registration_title: Residence Registration
-residence_registration_description: List of residence registration information
+residence_registration_title: Register/Edit
+residence_registration_description: Register/Edit stay
 bill_information_title: All bills
 bill_information_description: All rent bills appear here
 button_diennuoc:Electricity and water
